@@ -25,22 +25,46 @@
     background-color: lightblue;
     margin: 0;
     font-family:  Roboto, sans-serif;
-    color: darkblue;              /* Dark blue text */
-    padding: 20px;
-    font-size: 16px;
-    line-height: 1.5;
-    border-radius: 8px;           /* Optional: rounded corners */
-    padding-top: 80px;
-  }
-html {
-  /* Set this value to the exact height of your fixed menu (80px in your case) */
-    scroll-padding-top: 90px; 
+  color: darkblue;              /* Dark blue text */
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 8px;           /* Optional: rounded corners */
+  padding-top: 80px;
 }
+  html {
+  /* Set this value to the exact height of your fixed menu (80px in your case) */
+  scroll-padding-top: 90px; 
+}
+
   .center-image {
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
+
+
+/* Add this new style */
+.mission-heading {
+    text-align: center;       /* Centers the text horizontally */
+    vertical-align: middle;   /* Centers the text vertically */
+    color: white;             /* Sets the text color to white */
+    background-color: #243117; /* Sets the background color */
+}
+
+.mission-heading h1 {
+    /* Ensures the <h1> text is centered within the full-width block */
+    text-align: center;
+    /* Remove default top/bottom margin from h1 to make vertical-align work better */
+    margin: 0; 
+    padding: 20px 0; /* Add padding for height instead of margin */
+}
+
+/* Optional: Since you use an anchor link inside the h1, ensure it looks right */
+.mission-heading a {
+    color: inherit; /* Ensure the link color is white */
+    text-decoration: none;
+}
 </style>
 
 <div class="menu">
@@ -58,8 +82,7 @@ html {
   </p>
 </div>
 
-
-  <table border="0" width="100%" cellspacing="0" cellpadding="20" >
+  <table border="0" width="100%" cellspacing="0" cellpadding="0" >
     <tbody>
       <tr>
         <td width="100%">
@@ -73,31 +96,36 @@ html {
   <p><strong><img src="Steciblr_files/image122.png" alt="" width="100%" height="542" border="0" /></strong></p>
 <p></p>
 
-<h1><a name="_Parish_Pastor"></a></h1>
 <div>
-<table border="1" width="1483" cellspacing="0" cellpadding="0" bgcolor="#243117" style="text-align:center; vertical-align:middle; color:white;">
+<h1><a name="_Parish_Pastor"></a></h1>
+<table border="1" width="100%" cellspacing="0" cellpadding="0">
   <tbody>
    <tr>
-    <td width="1493">
+     <td class="mission-heading">
       <h1><a name="_Parish_Pastor_1"></a><strong>Parish Pastor</strong></h1>
     </td>
    </tr>
  </tbody>
 </table>
+</div>
 <p><img src="Steciblr_files/image123.png" alt="Centered Image" class="center-image" width="1190" height="577" border="0" /></p>
 <p></p>
-</div>
-  <h1><a name="_Mission_Statement"></a><a name="_Mission"></a>&nbsp;</h1>
-    <table border="1" width="1483" cellspacing="0" cellpadding="0" bgcolor="#243117" style="text-align:center; vertical-align:middle; color:white;">
-       <tbody>
+<div>
+<h1><a name="_Mission_Statement"></a><a name="_Mission"></a>&nbsp;</h1>
+<table border="1" width="100%" cellspacing="0" cellpadding="0">
+    <tbody>
         <tr>
-          <td width="100%">
-            <h1><a name="_Mission_&amp;_Vision"></a><strong>Mission &amp; Vision</strong></h1>
-          </td>
+            <td class="mission-heading">
+                <h1>
+                    <a name="_Mission_&amp;_Vision"></a>
+                    <strong>Mission &amp; Vision</strong>
+                </h1>
+            </td>
         </tr>
-      </tbody>
-    </table>
- 
+    </tbody>
+</table>
+ </div>
+
 <p></p>
 <p><em><img src="Steciblr_files/image124.png" alt="" width="1168" height="379" border="0" /></em></p>
 <p>(Excerpt from Late Very Rev. P. T Chandapilla)</p>
@@ -118,11 +146,11 @@ html {
 <p>Along with the relevance to all of India we shall be concerned about the evangelization of the whole world. That is included in the evangelical commitment of the Great Commission of the Lord Jesus. Our Declaration calls us to this unfinished task as well.</p>
 <p>We have great things to do. We have much way to go. Our destiny is to fulfill our life as a church according to God s purpose in Christ. This will determine and require each individual member fulfilling his/her part in this comprehensive call.</p>
 <div>
-<table border="1" width="1483" cellspacing="0" cellpadding="0" bgcolor="#243117" style="text-align:center; vertical-align:middle; color:white;">
+<table border="1" width="100%" cellspacing="0" cellpadding="0" >
 <tbody>
 <tr>
-<td width="100%">
-<h1><a name="_Parish_Programs"></a><a name="_Our_Ministries"></a><strong>Parish Programs</strong></h1>
+<td class="mission-heading">
+<h1><a name="_Parish_Programs"></a><strong>Parish Programs</strong></h1>
 </td>
 </tr>
 </tbody>
@@ -161,7 +189,7 @@ html {
 </tr>
 <tr>
 <td width="397">
-<p>Gather in the House of the Lord to raise our voices in praise and worship to Almighty God. It's a time to lift our hearts in reverence, express our gratitude, and remember the sacrifice of Christ through Holy Communion.</p>
+<p>Gather in the house of the Lord to praise and worship the Almighty God, lifting our hearts in reverence and gratitude. Remember the sacrifice of Christ through Holy Communion</p>
 </td>
 <td width="397">
 <p>The Sunday School is focus on nurturing children in biblical teachings, Christian values, and spiritual growth</p>
@@ -219,16 +247,15 @@ html {
 </table>
 <p> </p>
 <div>
-<table border="1" width="1483" cellspacing="0" cellpadding="0" bgcolor="#243117" style="text-align:center; vertical-align:middle; color:white;">
+<table border="1" width="100%" cellspacing="0" cellpadding="0" >
     <tbody>
       <tr>
-       <td width="100%">
+        <td class="mission-heading">
          <h1><a name="_Parish_Executive_Committee"></a><strong>Parish Executive Committee FY 25 -26</strong></h1>
        </td>
       </tr>
     </tbody>
-  </table>
-</div>
+  </table></div>
 <p></p>
 <table border="1" cellspacing="0" cellpadding="0">
 <tbody>
@@ -451,16 +478,15 @@ html {
 </table>
 <p></p>
 <div>
-<table border="1" width="1483" cellspacing="0" cellpadding="0" bgcolor="#243117" style="text-align:center; vertical-align:middle; color:white;">
+<table border="1" width="100%" cellspacing="0" cellpadding="0" >
 <tbody>
 <tr>
-<td width="100%">
-<h1><a name="_Hlk211536376"></a><a name="_Church_Leaders_1"></a><strong>Church Leaders</strong></h1>
+ <td class="mission-heading">
+<h1><a name="_Church_Leaders_1"></a><strong>Church Leaders</strong></h1>
 </td>
 </tr>
 </tbody>
-</table>
-</div>
+</table></div>
 <p></p>
 <table border="1" width="100%" cellspacing="0" cellpadding="0">
 <tbody>
@@ -573,12 +599,12 @@ html {
 </tbody>
 </table>
 <p>Visit Our Main Church: <a href="https://steci.org/bishops-and-clergies/" target="_blank">ST.THOMAS EVANGELICAL CHURCH OF INDIA</a></p>
-<h1><a name="_History_of_"></a>&nbsp;</h1>
+
 <div>
-<table border="1" width="1483" cellspacing="0" cellpadding="0" bgcolor="#243117" style="text-align:center; vertical-align:middle; color:white;">
+<table border="1" width="100%" cellspacing="0" cellpadding="0" >
 <tbody>
 <tr>
-<td width="100%">
+<td class="mission-heading">
 <h1><a name="_Brief_History_of"></a><strong>Brief History of Bangalore Parish</strong></h1>
 </td>
 </tr>
@@ -603,12 +629,12 @@ Incorporate a subtle cross silhouette rising behind a stylized skyline of Bangal
 </tr>
 </tbody>
 </table>
-<h1><a name="_Fundamental_Teaching_of"></a>&nbsp;</h1>
+<p></p>
 <div>
-<table border="1" width="100%" cellspacing="0" cellpadding="0" bgcolor="#243117" style="text-align:center; vertical-align:middle; color:white;">
+<table border="1" width="100%" cellspacing="0" cellpadding="0" >
 <tbody>
 <tr>
-<td width="100%">
+<td class="mission-heading">
 <h1><a name="_Fundamental_Teaching_of_1"></a><strong>Fundamental Teaching of STECI</strong></h1>
 </td>
 </tr>
@@ -648,12 +674,12 @@ Incorporate a subtle cross silhouette rising behind a stylized skyline of Bangal
 <p>If parents desire that their children personally confess their faith in the Lord Jesus Christ before being baptized, they may choose to do so. In such cases, the parents should dedicate their children during infancy. Before the children reach the age of 14, they should openly profess their faith in the Lord and receive baptism.</p>
 <p>Finally, let us remind ourselves of the vital importance of staying spiritually alert and guarding our faith with unwavering devotion. In a world of distractions and shifting values, may we hold fast to the truth and walk faithfully with the Lord. </p>
 <p>Let us remember the warning administered by St. Paul; <em>It is for freedom that Christ has set us free. Stand firm, then, and do not let yourself be burdened again by a yoke of slavery - </em>Galatians 5:1</p>
-<h1><a name="_STECI_&amp;_Mission"></a><a name="_Photo_Gallery"></a>&nbsp;</h1>
+
 <div>
-<table border="1" width="100%" cellspacing="0" cellpadding="0" bgcolor="#243117" style="text-align:center; vertical-align:middle; color:white;">
+<table border="1" width="100%" cellspacing="0" cellpadding="0" >
 <tbody>
 <tr>
-<td width="100%">
+<td class="mission-heading">
 <h1><a name="_Photo_Gallery_1"></a><strong>Photo Gallery</strong></h1>
 </td>
 </tr>
@@ -731,12 +757,12 @@ Incorporate a subtle cross silhouette rising behind a stylized skyline of Bangal
 </tr>
 </tbody>
 </table>
-<h1><a name="_Contact"></a>&nbsp;</h1>
+<p></p>
 <div>
-<table border="1" width="100%" cellspacing="0" cellpadding="0" bgcolor="#243117" style="text-align:center; vertical-align:middle; color:white;">
+<table border="1" width="100%" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
-<td width="100%">
+<td class="mission-heading">
 <h1><a name="_Contact_1"></a><strong>Contact</strong></h1>
 </td>
 </tr>
@@ -763,6 +789,8 @@ secysteciblr@yahoo.com(Secretary) <br>treassteciblr@yahoo.com(Treasurer)</p>
 </tr>
 </tbody>
 </table>
+<p></p>
+<p><font color="#360816"><strong>Click the map image below for a navigable guide to the Parish Location.<strong></font></p>
 <table border="1" width="100%" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
@@ -774,16 +802,4 @@ secysteciblr@yahoo.com(Secretary) <br>treassteciblr@yahoo.com(Treasurer)</p>
 </td>
 </tr>
 </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
+</table>wo
