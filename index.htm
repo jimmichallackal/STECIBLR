@@ -1,72 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Responsive Webpage</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-<p> </p>
-<style>
-  .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 60px;
-    width: 100%;
-    background-color: #5C1A1B; /* Wine red */
-    color: maroon;
+    <style>
+        /* ------------------------------------------------ */
+        /* All Your Existing CSS */
+        /* ------------------------------------------------ */
+
+        .menu {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 60px;
+          width: 100%;
+          background-color: #5C1A1B; /* Wine red */
+          color: maroon;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          z-index: 1000;
+        }
+
+        .menu a {
+          color: #FFFF99;
+          margin-right: 40px;
+          text-decoration: none;
+        }
+
+        body {
+          background-color: lightblue;
+          margin: 0;
+          font-family: Roboto, sans-serif;
+          color: darkblue;
+          padding: 20px;
+          font-size: 16px;
+          line-height: 1.5;
+          border-radius: 8px;
+          padding-top: 80px; /* Adjusted for the fixed menu height */
+        }
+        
+        html {
+          scroll-padding-top: 90px;
+        }
+
+        .center-image {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .mission-heading {
+          text-align: center;
+          vertical-align: middle;
+          color: white;
+          background-color: #243117;
+        }
+
+        .mission-heading h1 {
+          text-align: center;
+          margin: 0;
+          padding: 20px 0;
+        }
+
+        .mission-heading a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        /* ------------------------------------------------ */
+        /* 2. FIX: Image Scaling CSS */
+        /* ------------------------------------------------ */
+        
+        /* This ensures ALL images scale down with the screen */
+        img {
+            max-width: 100%; 
+            width: 100%
+            height: auto;
+        }
+
+.responsive-table-wrapper {
+    /* Allows the entire table to scroll horizontally if it overflows the screen */
+    overflow-x: auto; 
+    /* Ensures the div itself uses the full width */
+    width: 100%; 
+}
+
+/* Optional: remove any default padding/margin on the table */
+table {
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Style (Default for Desktops/Laptops) */
+.programs-grid-container {
+    display: grid;
+    /* 1. Sets up 4 equal columns for wide screens */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Space between the grid items */
+    padding: 0 10px; /* Optional padding */
+}
+
+.program-item {
+    /* Optional: Add borders/shadows to visually separate each program */
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center; /* Center the image and text within the item */
+}
+
+/* Ensure images remain fluid (THIS IS CRITICAL!) */
+.program-item img {
+    max-width: 100%;
+    height: auto;
+    /* Optional: Make all images the same height */
+    aspect-ratio: 4/3; 
+    object-fit: cover;
+}
+
+/* ---------------------------------------------------- */
+/* MEDIA QUERY: The Magic for Responsiveness! */
+/* ---------------------------------------------------- */
+
+@media (max-width: 768px) {
+    /* 2. For screens 768px wide or less (like tablets/phones) */
+    .programs-grid-container {
+        /* Change from 4 columns to 2 columns */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 500px) {
+    /* 3. For very small screens (most phones) */
+    .programs-grid-container {
+        /* Change from 2 columns to a single column, stacking vertically */
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* Ensure all images scale down inside their containers (CRITICAL FIX) */
+.team-grid-container img {
+    max-width: 100%;
+    /* Keep a consistent height for team photos (optional) */
+    height: 189px; 
+    object-fit: contain; /* Ensures the image fits without cropping */
+    display: block;
+    margin: 10px auto; /* Centers the image */
+}
+
+/* ---------------------------------------------------- */
+/* CSS Grid Setup (Default: 6 Columns for Desktops) */
+/* ---------------------------------------------------- */
+
+.team-grid-container {
+    display: grid;
+    /* Sets up 6 equal columns for wide screens */
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 15px; /* Space between the team members */
+    padding: 20px 0;
+}
+
+.team-member {
+    /* Styles for the entire block (title, image, name) */
+    text-align: center; 
+    /* Optional: Add a subtle border for visual separation */
+    border: 1px solid #eee;
     padding: 10px;
+}
+
+.team-member p {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.team-member .name {
+    /* Highlight the name */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.team-member .title-top {
+    /* Ensure the top title is distinct */
+    font-size: 0.9em;
+    height: 3em; /* Use a fixed height to align titles across the row */
     display: flex;
     align-items: center;
-    z-index: 1000;
-  }
-
-  .menu a {
-    color: #FFFF99;
-    margin-right: 40px;
-    text-decoration: none;
-  }
-
-  body {
-    background-color: lightblue;
-    margin: 0;
-    font-family:  Roboto, sans-serif;
-  color: darkblue;              /* Dark blue text */
-  padding: 20px;
-  font-size: 16px;
-  line-height: 1.5;
-  border-radius: 8px;           /* Optional: rounded corners */
-  padding-top: 80px;
-}
-  html {
-  /* Set this value to the exact height of your fixed menu (80px in your case) */
-  scroll-padding-top: 90px; 
+    justify-content: center;
 }
 
-  .center-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+/* ---------------------------------------------------- */
+/* MEDIA QUERIES (The Responsiveness) */
+/* ---------------------------------------------------- */
 
-
-/* Add this new style */
-.mission-heading {
-    text-align: center;       /* Centers the text horizontally */
-    vertical-align: middle;   /* Centers the text vertically */
-    color: white;             /* Sets the text color to white */
-    background-color: #243117; /* Sets the background color */
+/* For smaller Desktops/large Tablets (up to 1200px) */
+@media (max-width: 1200px) {
+    .team-grid-container {
+        /* Drop to 4 columns */
+        grid-template-columns: repeat(4, 1fr); 
+    }
 }
 
-.mission-heading h1 {
-    /* Ensures the <h1> text is centered within the full-width block */
+/* For Tablets (up to 768px) */
+@media (max-width: 768px) {
+    .team-grid-container {
+        /* Drop to 2 columns */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 25px;
+    }
+}
+
+/* For Mobile Phones (up to 480px) */
+@media (max-width: 480px) {
+    .team-grid-container {
+        /* Stack everything into a single, highly readable column */
+        grid-template-columns: 1fr; 
+    }
+}
+
+
+/* GLOBAL STYLES FOR CONSISTENCY */
+.section-title {
     text-align: center;
-    /* Remove default top/bottom margin from h1 to make vertical-align work better */
+    font-size: 24px; /* Matches your old style */
+    padding: 5px 0 5px;
+    clear: both; /* Ensures the title sits below any floating content */
+}
+
+.leader-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.leader-item img {
+    /* CRITICAL: Ensures images scale down and maintain aspect ratio */
+    max-width: 100%; 
+    height: auto; 
+    border: 1px solid #ccc;
+    margin: 10px auto;
+    display: block;
+    /* Optional: Ensure images have a consistent look */
+    object-fit: contain; 
+}
+
+.leader-item .role, .leader-item .name {
+    margin: 5px 0;
+}
+
+/* ---------------------------------------------------- */
+/* SECTION 1: 2-COLUMN LAYOUT */
+/* ---------------------------------------------------- */
+.leadership-grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    gap: 20px;
+}
+
+/* ---------------------------------------------------- */
+/* SECTION 2: 4-COLUMN LAYOUT */
+/* ---------------------------------------------------- */
+.leadership-grid-4-col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 15px;
+}
+
+/* ---------------------------------------------------- */
+/* SECTION 3: 3-COLUMN LAYOUT */
+/* ---------------------------------------------------- */
+.leadership-grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 15px;
+}
+
+/* ---------------------------------------------------- */
+/* MEDIA QUERIES (The Responsiveness) */
+/* ---------------------------------------------------- */
+
+/* Tablet-sized screens (up to 768px) */
+@media (max-width: 768px) {
+    /* 2-column section goes to 1 column */
+    .leadership-grid-2-col {
+        grid-template-columns: 1fr;
+    }
+    /* 3-column section goes to 2 columns */
+    .leadership-grid-3-col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* 4-column section goes to 2 columns */
+    .leadership-grid-4-col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Phone screens (up to 480px) */
+@media (max-width: 480px) {
+    /* ALL sections stack into a single column */
+    .leadership-grid-2-col,
+    .leadership-grid-3-col,
+    .leadership-grid-4-col {
+        grid-template-columns: 1fr;
+    }
+}
+/* CRITICAL: Image Scaling */
+.image-gallery-grid img {
+    /* Ensures every image is responsive and centered */
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto;
+    /* Optional: Use this to make all images the same height if needed */
+    /* object-fit: cover; 
+    aspect-ratio: 4/3; */
+}
+
+/* ---------------------------------------------------- */
+/* CSS Grid Setup (Default: 3 Columns for Desktops) */
+/* ---------------------------------------------------- */
+
+.image-gallery-grid {
+    display: grid;
+    /* Sets up 3 equal columns for wide screens */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; /* Space between the photos */
+    padding: 20px;
+}
+
+.gallery-item {
+    /* Optional: Styling for the container around each image */
+    padding: 10px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+/* ---------------------------------------------------- */
+/* MEDIA QUERIES (The Responsiveness) */
+/* ---------------------------------------------------- */
+
+/* Tablet-sized screens (up to 768px) */
+@media (max-width: 768px) {
+    .image-gallery-grid {
+        /* Drops to a 2-column layout */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+    }
+}
+
+/* Mobile Phone screens (up to 480px) */
+@media (max-width: 480px) {
+    .image-gallery-grid {
+        /* Stacks into a single column for easy viewing */
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+}
+/* Styling to match the original table's appearance */
+.contact-flex-container {
+    display: flex; /* CRITICAL: Enables flex layout */
+    background-color: #EFCC6B; /* Matches original bgcolor */
+    width: 100%;
+    /* Ensures content doesn't get squished when wrapping on small screens */
+    flex-wrap: wrap; 
+    padding: 15px; /* Add some padding around the container */
+}
+
+.contact-item {
+    /* Each item takes up an equal portion of the row */
+   /* flex: 1 1 33.33%; */
+    /* 1 1 33.33% means: can grow (1), can shrink (1), starts at 33.33% width */
+    line-height: 1.5;
+    font-weight: bold; /* Matches your original style */
+    padding: 10px;
+}
+
+.contact-item p {
+    /* Remove default margins from paragraphs */
     margin: 0; 
-    padding: 20px 0; /* Add padding for height instead of margin */
 }
 
-/* Optional: Since you use an anchor link inside the h1, ensure it looks right */
-.mission-heading a {
-    color: inherit; /* Ensure the link color is white */
-    text-decoration: none;
+.contact-item .label {
+    /* Optional: Ensure the labels stand out */
+    text-decoration: underline; 
 }
-</style>
 
+
+/* ---------------------------------------------------- */
+/* MEDIA QUERY (The Responsiveness) */
+/* ---------------------------------------------------- */
+
+/* For Mobile Phones (screens 600px wide or less) */
+@media (max-width: 600px) {
+    .contact-flex-container {
+        /* Optional: Change direction to column if you want items top-to-bottom */
+        /* flex-direction: column; */
+    }
+    
+    .contact-item {
+        /* Each item takes up the full width, causing them to stack vertically */
+        flex: 1 1 100%; 
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Separator between stacked items */
+    }
+    
+    /* Remove the border from the last item */
+    .contact-item:last-child {
+        border-bottom: none;
+    }
+}
+/* CRITICAL: Image Scaling */
+.flex-item img {
+    max-width: 100%; /* Image never exceeds the width of its parent container */
+    height: auto; 
+    display: block;
+}
+
+/* ---------------------------------------------------- */
+/* FLEXBOX SETUP (Default: Side-by-Side for Desktops) */
+/* ---------------------------------------------------- */
+
+.two-col-flex-container {
+    display: flex; /* Enables flex layout */
+    width: 100%;
+    gap: 20px; /* Space between the image and the text */
+    align-items: flex-start; /* Aligns items to the top (optional) */
+    padding: 15px 0;
+}
+
+.flex-item {
+    /* Each item takes up roughly 50% of the space, but can shrink/grow */
+    flex: 1 1 50%; 
+    padding: 5px;
+}
+
+.text-item p {
+    line-height: 2; /* Matches your original style */
+    font-size: 18px;
+    margin: 0;
+}
+
+/* ---------------------------------------------------- */
+/* MEDIA QUERY (The Responsiveness) */
+/* ---------------------------------------------------- */
+
+/* For Tablet and Mobile screens (screens 768px wide or less) */
+@media (max-width: 768px) {
+    .two-col-flex-container {
+        /* Changes the layout direction to stack the items vertically */
+        flex-direction: column; 
+    }
+    
+    .flex-item {
+        /* Each item takes the full width (100%) when stacked */
+        flex: 1 1 100%; 
+        padding: 10px 0;
+    }
+}
+
+/* Base Styles (Assuming a wide screen/desktop) */
+.menu {
+    /* (Your existing styles for fixed position, background, etc., go here) */
+    display: flex; /* Makes the menu a flexible container */
+    align-items: center;
+    justify-content: space-around; /* Distributes space evenly between links */
+    height: 60px; /* Example height */
+    width: 100%;
+}
+
+.menu p {
+    /* Flexbox needs to be applied to the <p> if you keep it, or ideally, remove the <p> */
+    display: flex;
+    flex-wrap: nowrap; /* Tries to keep them on one line initially */
+    margin: 0; /* Remove default paragraph margin */
+    padding: 0;
+    width: 100%;
+}
+
+.menu a {
+    text-decoration: none; /* Recommended: handle underlining in CSS */
+    text-align: center;
+    padding: 0 5px; /* Add padding for spacing */
+    white-space: nowrap; /* Prevents link text from wrapping onto two lines */
+}
+
+/* ------------------------------------------------ */
+/* CSS Fix for Mobile Phones (The Responsive Part) */
+/* ------------------------------------------------ */
+@media (max-width: 768px) {
+    .menu {
+        /* Allow the menu container to grow taller */
+        height: auto; 
+        min-height: 60px;
+    }
+
+    .menu p {
+        /* CRITICAL: Allows the links to wrap onto new lines */
+        flex-wrap: wrap; 
+        /* Centers the wrapped links */
+        justify-content: center; 
+        padding: 5px 0;
+    }
+
+    .menu a {
+        /* CRITICAL: Gives each link space and forces wrapping */
+        flex: 0 0 45%; /* Each link takes up 45% of the width (2 per row) */
+        padding: 8px 5px;
+        margin: 2px;
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Optional visual separator */
+        box-sizing: border-box;
+    }
+}
+    </style>
+</head>
+<body>
 <div class="menu">
   <p>
     <u><a href="#_Parish"><strong>Home</strong></a></u>
@@ -92,160 +537,152 @@
     </tbody>
   </table>
 
-  <p><img src="Steciblr_files/image037.png" alt="" width="100%" height="181" border="0" /></p>
-  <p><strong><img src="Steciblr_files/image122.png" alt="" width="100%" height="542" border="0" /></strong></p>
-<p></p>
-
+ <p></p>
 <div>
-<h1><a name="_Parish_Pastor"></a></h1>
-<table border="1" width="100%" cellspacing="0" cellpadding="0">
-  <tbody>
-   <tr>
-     <td class="mission-heading">
-      <h1><a name="_Parish_Pastor_1"></a><strong>Parish Pastor</strong></h1>
-    </td>
-   </tr>
- </tbody>
-</table>
+    <img src="Steciblr_files/image037.png" alt="Church banner or logo" width="100%" border="0" />
 </div>
-<p><img src="Steciblr_files/image123.png" alt="Centered Image" class="center-image" width="1190" height="577" border="0" /></p>
-<p></p>
+ 
 <div>
-<h1><a name="_Mission_Statement"></a><a name="_Mission"></a>&nbsp;</h1>
-<table border="1" width="100%" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td class="mission-heading">
-                <h1>
-                    <a name="_Mission_&amp;_Vision"></a>
-                    <strong>Mission &amp; Vision</strong>
-                </h1>
-            </td>
-        </tr>
-    </tbody>
-</table>
- </div>
+    <img src="Steciblr_files/image122.png" alt="Church building or scene" width="100%" border="0" />
+</div>
+<p></p>
+<p></p>
+
+<div>
+    <table border="1" style="width: 100%; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td class="mission-heading">
+                    <h1><a name="_Parish_Pastor_1"></a><strong>Parish Pastor</strong></h1>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>
+    <img src="Steciblr_files/image123.png" alt="Parish Pastor" class="center-image" border="0" />
+</p>
+<p></p>
+
+<div>
+    <table border="1" style="width: 100%; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td class="mission-heading">
+                    <h1>
+                        <a name="_Mission_&amp;_Vision"></a>
+                        <strong>Mission &amp; Vision</strong>
+                    </h1>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <p></p>
-<p><em><img src="Steciblr_files/image124.png" alt="" width="1168" height="379" border="0" /></em></p>
+
+<p>
+    <img src="Steciblr_files/image124.png" alt="Visual representation of Mission and Vision" border="0" />
+</p>
+
 <p>(Excerpt from Late Very Rev. P. T Chandapilla)</p>
-<p><strong><u>STECI is Historically Based</u></strong><u></u></p>
+
+<p><strong>STECI is Historically Based</strong></p>
 <p>Apostle Thomas, one of the Twelve, was known as the Apostle of Christ to India. The ministry and life of Apostle Thomas were abundantly blessed with churches formed and left behind him. The churches of Kerala and the traditions of his martyrdom on the Coromandel Cost (nothing less than the St. Thomas Mount in South Madras, not far from the Mylapore coast) all need satisfactory explanation. That is what we try to do in our Church, along with other different ecclesiastical streams, to say Apostle Thomas originated Christian history in India after 52 AD. This is just about when Apostle Paul reached Europe with the Gospel.<br /> The witness to Jesus Christ as Savior and God comes through nearly two millennia of Christian existence on the Malabar Coast of south India.</p>
+
 <p>The STECI is related to this historical and traditional realities of India. This is important for us. So our name upholds this. There are other Christians in Kerala, equally valid, who do not wish to relate to Apostle Thomas. May be to them history is not all that significant. But in an ancient country like India this historical is good and valuable for us. So we must hold on.</p>
-<p><strong><u>STECI is Evangelical</u></strong></p>
+
+<p><strong>STECI is Evangelical</strong></p>
 <p>It is a fact that through the years Christian church in Malabar and all over the world became more tradition bound than impregnated by the Scriptures. With the coming of the Church Missionary Society missionaries in Kerala nearly two hundred years ago did the Syrian Christians receive Bible of the 66 books in Malayalam tongue. The coming of the open Bible in Malayalam gave the sense of the evangelical message in the church, through the clear Word of God. Abraham Malpan among the Syrian Christians was like John Wycliffe of the West. He liberated the evangelical message in Kerala. That message was of special and revolutionary effect among the existing Christians, The Mar Thoma Church resulted from Abraham Malpan s course of teachings and evangelical reformation. The evangelical, Biblically true and related, message became clearer and finer until in 1961, that is until our church fathers brought into existence and from the Declaration of the STECI and proclaimed it at the great gathering of 25000 strong believers in Thiruvalla. That clearly placed Evangelical Church, our church, in the biblical and world evangelical stream the church catholic.</p>
+
 <p>Thus the STECI is related to and based on the whole Bible. In that way, it is part of the reformed tradition in theology and doctrine. The Reformation and renewals have taken place in the Western Church through such leaders and John Wycliffe, Martin Luther and others. Our Church gets related to these reformations due to the doctrinal and theological cleansing which came to us through the proclamation of the Word of God and exposition of the Scriptures, and missionary impetus.</p>
+
 <p>The Evangelical Church (STECI) is the group of believers who proclaims the whole counsel of God according to the Scriptures. This takes the whole Bible with its 66 books making up the evangelical message. The Bible, in this manner, becomes fundamentally necessary for us in the STECI. And we are evangelical.</p>
-<p><strong><u>STECI is for Church Planting</u></strong></p>
+
+<p><strong>STECI is for Church Planting</strong></p>
 <p>The STECI is a Church and is out to extend the church of Jesus Christ. Church planting becomes of the focus of the objectives of the Church. Along with all the other aims of the Church, evangelizing, disciple-making and Church planting take up the primary position in our goals. To these we are committed. The reformed churches are all so committed and Missions have launched out for this from living churches.</p>
+
 <p>Church life is guided by the examples and dynamic of the Lord Jesus and His Apostles. The individual Christian is to pattern his life after Jesus. This means Christians are to be marked by holiness of life. That is to live even as Jesus lived 33 and 1/2 years on this earth. This is incarnation or the life of God in the world in any believer.</p>
-<p><u>&nbsp;<strong>STECI is India Comprehending</strong></u></p>
+
+<p><strong>STECI is India Comprehending</strong></p>
 <p>There was a time when India was splintered in so many sections, groups and languages. From 1947 and the formation of the Indian Republic a new India emerged. It was an India superseding all her divergence, differences and division. That nation building still goes on. To this new India the STECI got oriented and related in 1961.We become a Church envisaging and comprehending the whole of India, with all her languages, caste divisions or the tiny geographical sector of Kerala were given up to take in the vastness and millions of people of India into our bulging swoop of advance.</p>
+
 <p>This means the missionary programme and church planting need to comprehend the whole nation of India. Every language (there are 17 statutory languages in India) becomes the languages of the Evangelical Church. Reaching out in the lingua Francona, English, is a must to cover the significant sections of India. Our programme must be also in all the languages of India. Being an Episcopal Church such comprehensive programmes will mean local parishes in all languages of India. Indeed this is a heroic programme and challenging plan.</p>
+
 <p>To such a vision our founding fathers geared this Church, STECI, and launched her in AD 1961. That is what shall guide and challenge her, and us. Various forces may try to limit us, tell us that we are a small people and it is enough to do this and so. We are called to go the full compass of claims and commitment. All our programmes, activities, plans and movements are with the purpose of living up to our name.</p>
+
 <p>Along with the relevance to all of India we shall be concerned about the evangelization of the whole world. That is included in the evangelical commitment of the Great Commission of the Lord Jesus. Our Declaration calls us to this unfinished task as well.</p>
+
 <p>We have great things to do. We have much way to go. Our destiny is to fulfill our life as a church according to God s purpose in Christ. This will determine and require each individual member fulfilling his/her part in this comprehensive call.</p>
+
 <div>
-<table border="1" width="100%" cellspacing="0" cellpadding="0" >
-<tbody>
-<tr>
-<td class="mission-heading">
-<h1><a name="_Parish_Programs"></a><strong>Parish Programs</strong></h1>
-</td>
-</tr>
-</tbody>
-</table>
+    <table border="1" style="width: 100%; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td class="mission-heading">
+                    <h1><a name="_Parish_Programs"></a><strong>Parish Programs</strong></h1>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+
 <p></p>
-<table border="1" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td width="397">
-<p><img src="Steciblr_files/image125.png" alt="" width="267" height="169" border="0" /></p>
-</td>
-<td width="397">
-<p><img src="Steciblr_files/image126.png" alt="" width="274" height="178" border="0" /></p>
-</td>
-<td width="397">
-<p><img src="Steciblr_files/image127.png" alt="" width="274" height="178" border="0" /></p>
-</td>
-<td width="397">
-<p><img src="Steciblr_files/image128.png" alt="" width="274" height="178" border="0" /></p>
-</td>
-</tr>
-<tr>
-<td width="397">
-<p><strong>Sunday, 8:30am</strong></p>
-</td>
-<td width="397">
-<p><strong>Sunday, 11:00am</strong></p>
-</td>
-<td width="397">
-<p><strong>2<sup>nd</sup> Saturday, 4:00pm</strong></p>
-</td>
-<td width="397">
-<p><strong>1<sup>st</sup> &amp; 3<sup>rd</sup> Sundays, 11:00am</strong></p>
-</td>
-</tr>
-<tr>
-<td width="397">
-<p>Gather in the House of the Lord to raise our voices in praise and worship to Almighty God. It's a time to lift our hearts in reverence, express our gratitude, and remember the sacrifice of Christ through Holy Communion."</p>
-</td>
-<td width="397">
-<p>The Sunday School is focus on nurturing children in biblical teachings, Christian values, and spiritual growth.</p>
-</td>
-<td width="397">
-<p>Bangalore Parish is part of their vibrant ministry focused on engaging young people in spiritual growth, fellowship, and service.</p>
-</td>
-<td width="397">
-<p>Sevini Samajam described as a pillar of strength for the parish, with many sisters dedicating their time to spiritual growth and fellowship.</p>
-</td>
-</tr>
-<tr>
-<td width="397">
-<p><img src="Steciblr_files/image129.png" alt="" width="274" height="178" border="0" /></p>
-</td>
-<td width="397">
-<p><img src="Steciblr_files/image130.png" alt="" width="274" height="177" border="0" /></p>
-</td>
-<td width="397">
-<p><img src="Steciblr_files/image131.png" alt="" width="274" height="178" border="0" /></p>
-</td>
-<td width="397">
-<p><img src="Steciblr_files/image132.png" alt="" width="274" height="178" border="0" /></p>
-</td>
-</tr>
-<tr>
-<td width="397">
-<p><strong>Friday, 10:00am</strong></p>
-</td>
-<td width="397">
-<p><strong>Wednesday, 7:00pm (online)</strong></p>
-</td>
-<td width="397">
-<p><strong>Saturday, 5:00pm</strong></p>
-</td>
-<td width="397">
-<p><strong>Friday, 7:00pm (online)</strong></p>
-</td>
-</tr>
-<tr>
-<td width="397">
-<p>Weekly gathering for intercessory prayer and spiritual fellowship</p>
-</td>
-<td width="397">
-<p>To spend one hour in dedicated prayer, lifting up the personal, spiritual, and physical needs of individuals and families before God.</p>
-</td>
-<td width="397">
-<p>The Choir Practice is preparing singers and musicians for Sunday services, special events, and spiritual gatherings.</p>
-</td>
-<td width="397">
-<p>In-depth scripture study and discussion via video conference.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p> </p>
+
+<p></p>
+<div class="programs-grid-container">
+    
+    <div class="program-item">
+        <img src="Steciblr_files/image125.png" alt="Sunday Service" border="0" />
+        <p><strong>Sunday, 8:30am</strong></p>
+        <p>Gather in the House of the Lord to raise our voices in praise and worship to Almighty God. It's a time to lift our hearts in reverence, express our gratitude, and remember the sacrifice of Christ through Holy Communion.</p>
+    </div>
+
+    <div class="program-item">
+        <img src="Steciblr_files/image126.png" alt="Sunday School" border="0" />
+        <p><strong>Sunday, 11:00am</strong></p>
+        <p>The Sunday School is focus on nurturing children in biblical teachings, Christian values, and spiritual growth.</p>
+    </div>
+    
+    <div class="program-item">
+        <img src="Steciblr_files/image127.png" alt="Youth Ministry" border="0" />
+        <p><strong>2<sup>nd</sup> Saturday, 4:00pm</strong></p>
+        <p>Bangalore Parish is part of their vibrant ministry focused on engaging young people in spiritual growth, fellowship, and service.</p>
+    </div>
+    
+    <div class="program-item">
+        <img src="Steciblr_files/image128.png" alt="Sevini Samajam" border="0" />
+        <p><strong>1<sup>st</sup> &amp; 3<sup>rd</sup> Sundays, 11:00am</strong></p>
+        <p>Sevini Samajam described as a pillar of strength for the parish, with many sisters dedicating their time to spiritual growth and fellowship.</p>
+    </div>
+
+    <div class="program-item">
+        <img src="Steciblr_files/image129.png" alt="Prayer Gathering image" border="0" />
+        <p><strong>Wednesday, 7:00pm (online)</strong></p>
+        <p>Weekly gathering for intercessory prayer and spiritual fellowship</p>
+    </div>
+
+    <div class="program-item">
+        <img src="Steciblr_files/image130.png" alt="Online Prayer image" border="0" />
+        <p><strong>Wednesday, 7:00pm (online)</strong></p>
+        <p>To spend one hour in dedicated prayer, lifting up the personal, spiritual, and physical needs of individuals and families before God.</p>
+    </div>
+
+    <div class="program-item">
+        <img src="Steciblr_files/image131.png" alt="Choir Practice image" border="0" />
+        <p><strong>Saturday, 5:00pm</strong></p>
+        <p>The Choir Practice is preparing singers and musicians for Sunday services, special events, and spiritual gatherings.</p>
+    </div>
+
+    <div class="program-item">
+        <img src="Steciblr_files/image132.png" alt="Bible Study image" border="0" />
+        <p><strong>Friday, 7:00pm (online)</strong>
+        <p>In-depth scripture study and discussion via video conference</p>
+    </div>
+
+    </div>
+<p></p>
 <div>
 <table border="1" width="100%" cellspacing="0" cellpadding="0" >
     <tbody>
@@ -257,226 +694,158 @@
     </tbody>
   </table></div>
 <p></p>
-<table border="1" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>President Vicar <br> &amp; Sunday School H M </p>
-</td style="line-height:1;">
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Vice President</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Treasurer</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Secretary</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Accountant</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Jt. Secretary<br> &amp; Lay Leader(Youth)</p>
-</td style="line-height:1;">
-</tr>
-<tr>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image133.png" alt="Centered Image" width="156" height="189" border="0" /></p>
-</td>
-<td width="246"style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image134.jpg" alt="Centered Image" width="176" height="189" border="0" /></p>
-</td>
-<td width="246"style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image135.png" alt="" width="158" height="189" border="0" /></p>
-</td>
-<td width="246"style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image136.png" alt="" width="157" height="189" border="0" /></p>
-</td>
-<td width="246"style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image137.png" alt="" width="146" height="189" border="0" /></p>
-</td>
-<td width="246"style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image138.png" alt="" width="150" height="189" border="0" /></p>
-</td>
-</tr>
-<tr>
-<td width="246"style="text-align:center; vertical-align:middle;">
-<p>Rev. Laji Varughese</p>
-</td>
-<td width="246"style="text-align:center; vertical-align:middle;">
-<p>Mr. K O George</p>
-</td>
-<td width="246"style="text-align:center; vertical-align:middle;">
-<p>Mr. Geojy Varughese Mathew</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mr. Biju Jacob</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mr. Justin K Paul</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mr. Vipin Kuriakose</p>
-</td>
-</tr>
-<tr>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Prathinidhi Sabha Member <br> &amp; Council Member</p>
-</td style="line-height:1;">
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Prathinidhi Sabha Member</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>BKD Representative</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>BKD Representative</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Lay Leader</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Youth Union Secretary</p>
-</td>
-</tr>
-<tr>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/roshan.png" alt="" width="164" height="189" border="0" /></p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image140.png" alt="" width="143" height="189" border="0" /></p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image141.png" alt="" width="134" height="189" border="0" /></p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image142.png" alt="" width="175" height="189" border="0" /></p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/jimmi.jpg" alt="" width="170" height="190" border="0" /></p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/sachin.png" alt="" width="161" height="189" border="0" /></p>
-</td>
-</tr>
-<tr>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mr. Roshan Sam Abraham</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mr. Anish Abraham</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mr. Tobin Samuel</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mr. Abin Kurien</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mr. Jimmi George</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mr. Sachin John</p>
-</td>
-</tr>
-<tr>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Sevini Samajam Secretary</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Choir Leader</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Committee Member</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Committee Member</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Committee Member</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Committee Member</p>
-</td>
-</tr>
-<tr>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image145.png" alt="" width="146" height="189" border="0" /></p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image146.png" alt="" width="155" height="170" border="0" /></p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image147.png" alt="" width="153" height="189" border="0" /></p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image148.png" alt="" width="157" height="189" border="0" /></p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image149.png" alt="" width="166" height="189" border="0" /></p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image059.png" alt="" width="158" height="189" border="0" /></p>
-</td>
-</tr>
-<tr>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mrs. Seena Laji Varughese</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mrs. Elizabeth Geojy</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mr. Prathap Oommen</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mrs. Rubin Mary John</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mrs. Nisha Sachin</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mrs. Anju Joy</p>
-</td>
-</tr>
-<tr>
 
-</tr>
-<tr>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Committee Member</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Women Representative</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Women Representative</p>
-</tr>
-<tr>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image150.png" alt="" width="149" height="189" border="0" /></p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image151.png" alt="" width="161" height="189" border="0" /></p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image064.png" alt="" width="161" height="189" border="0" /></p>
-</td>
-</tr>
-<tr>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mrs. Smitha Biju</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mrs. Rinu P Kurian</p>
-</td>
-<td width="246" style="text-align:center; vertical-align:middle;">
-<p>Mrs. Asha Susy George</p>
-</td>
-</tr>
-</tbody>
-</table>
+<div class="team-grid-container">
+
+    <div class="team-member">
+        <p class="title-top">President Vicar <br> &amp; Sunday School H M</p>
+        <img src="Steciblr_files/image133.png" alt="Rev. Laji Varughese" border="0" />
+        <p class="name">Rev. Laji Varughese</p>
+        
+    </div>
+
+    <div class="team-member">
+        <p class="title-top">Vice President</p>
+        <img src="Steciblr_files/image134.jpg" alt="Mr. K O George" border="0" />
+        <p class="name">Mr. K O George</p>
+        
+    </div>
+
+    <div class="team-member">
+        <p class="title-top">Treasurer</p>
+        <img src="Steciblr_files/image135.png" alt="Mr. Geojy Varughese Mathew" border="0" />
+        <p class="name">Mr. Geojy Varughese Mathew</p>
+        
+    </div>
+
+    <div class="team-member">
+        <p class="title-top">Secretary</p>
+        <img src="Steciblr_files/image136.png" alt="Mr. Biju Jacob" border="0" />
+        <p class="name">Mr. Biju Jacob</p>
+        
+    </div>
+
+    <div class="team-member">
+        <p class="title-top">Accountant</p>
+        <img src="Steciblr_files/image137.png" alt="Mr. Justin K Paul" border="0" />
+        <p class="name">Mr. Justin K Paul</p>
+        
+    </div>
+
+    <div class="team-member">
+        <p class="title-top">Jt. Secretary<br> &amp; Lay Leader(Youth)</p>
+        <img src="Steciblr_files/image138.png" alt="Mr. Vipin Kuriakose" border="0" />
+        <p class="name">Mr. Vipin Kuriakose</p>
+        
+    </div>
+
+    <div class="team-member">
+        <p class="title-top">Prathinidhi Sabha Member <br> &amp; Council Member</p>
+        <img src="Steciblr_files/roshan.png" alt="Mr. Roshan Sam Abraham" border="0" />
+        <p class="name">Mr. Roshan Sam Abraham</p>
+        
+    </div>
+
+    <div class="team-member">
+        <p class="title-top">Prathinidhi Sabha Member</p>
+        <img src="Steciblr_files/image140.png" alt="Mr. Anish Abraham" border="0" />
+        <p class="name">Mr. Anish Abraham</p>
+        
+    </div>
+    
+    <div class="team-member">
+        <p class="title-top">BKD Representative</p>
+        <img src="Steciblr_files/image141.png" alt="Mr. Tobin Samuel" border="0" />
+        <p class="name">Mr. Tobin Samuel</p>
+    
+    </div>
+
+    <div class="team-member">
+        <p class="title-top">BKD Representative</p>
+        <img src="Steciblr_files/image142.png" alt="Mr. Abin Kurien" border="0" />
+        <p class="name">Mr. Abin Kurien</p>
+ 
+    </div>
+
+    <div class="team-member">
+        <p class="title-top">Lay Leader</p>
+        <img src="Steciblr_files/jimmi.jpg" alt="Mr. Jimmi George" border="0" />
+        <p class="name">Mr. Jimmi George</p>
+
+    </div>
+    
+    <div class="team-member">
+        <p class="title-top">Youth Union Secretary</p>
+        <img src="Steciblr_files/sachin.png" alt="Mr. Sachin John" border="0" />
+        <p class="name">Mr. Sachin John</p>
+
+    </div>
+    
+    <div class="team-member">
+        <p class="title-top">Sevini Samajam Secretary</p>
+        <img src="Steciblr_files/image145.png" alt="Mrs. Seena Laji Varughese" border="0" />
+        <p class="name">Mrs. Seena Laji Varughese</p>
+     
+    </div>
+    
+    <div class="team-member">
+        <p class="title-top">Choir Leader</p>
+        <img src="Steciblr_files/image146.png" alt="Mrs. Elizabeth Geojy" border="0" />
+        <p class="name">Mrs. Elizabeth Geojy</p>
+    </div>
+    
+    <div class="team-member">
+        <p class="title-top">Committee Member</p>
+        <img src="Steciblr_files/image147.png" alt="Mr. Prathap Oommen" border="0" />
+        <p class="name">Mr. Prathap Oommen</p>
+
+    </div>
+
+    <div class="team-member">
+        <p class="title-top">Committee Member</p>
+        <img src="Steciblr_files/image148.png" alt="Mrs. Rubin Mary John" border="0" />
+        <p class="name">Mrs. Rubin Mary John</p>
+ 
+    </div>
+    
+    <div class="team-member">
+        <p class="title-top">Committee Member</p>
+        <img src="Steciblr_files/image149.png" alt="Mrs. Nisha Sachin" border="0" />
+        <p class="name">Mrs. Nisha Sachin</p>
+    
+     </div>
+    
+    <div class="team-member">
+        <p class="title-top">Committee Member</p>
+        <img src="Steciblr_files/image059.png" alt="Mrs. Anju Joy" border="0" />
+        <p class="name">Mrs. Anju Joy</p>
+     </div>
+
+    <div class="team-member">
+        <p class="title-top">Committee Member</p>
+        <img src="Steciblr_files/image150.png" alt="Mrs. Smitha Biju" border="0" />
+        <p class="name">Mrs. Smitha Biju</p>
+       
+    </div>
+
+    <div class="team-member">
+        <p class="title-top">Women Representative</p>
+        <img src="Steciblr_files/image151.png" alt="Mrs. Rinu P Kurian" border="0" />
+        <p class="name">Mrs. Rinu P Kurian</p>
+     
+    </div>
+
+    <div class="team-member">
+        <p class="title-top">Women Representative</p>
+        <img src="Steciblr_files/image064.png" alt="Mrs. Asha Susy George" border="0" />
+        <p class="name">Mrs. Asha Susy George</p>
+    
+    </div>
+    
+</div>
 <p></p>
+
+
 <div>
 <table border="1" width="100%" cellspacing="0" cellpadding="0" >
 <tbody>
@@ -486,118 +855,93 @@
 </td>
 </tr>
 </tbody>
-</table></div>
-<p></p>
-<table border="1" width="100%" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td colspan="4" width="741" style="text-align:center; vertical-align:middle; font-size:24px;">
-<p><strong>Presiding Bishop</strong></p>
-</td>
-<td colspan="4 width="741" style="text-align:center; vertical-align:middle; font-size:24px;">
-<p><strong>Bahya</strong><strong> Kerala Dioecian Bishop</strong></p>
-</td>
-
-
-</tr>
-<tr>
-<td colspan="4" rowspan="4" width="741" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image152.jpg" alt="" width="429" height="642" border="0" /></p>
-</td>
-<td colspan="4" rowspan="4" width="741" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image153.jpg" alt="" width="429" height="642" border="0" /></p>
-</td>
-</tr>
-<tr>
-
-</tr>
-<tr>
-</tr>
-<tr>
-</tr>
-<tr>
-<td colspan="4" width="741" style="text-align:center; vertical-align:middle;">
-<p><strong>Most Rev. Dr. Thomas Abraham</strong></p>
-</td>
-<td colspan="4" width="741" style="text-align:center; vertical-align:middle;">
-<p><strong>Rt. Rev. Dr. Abraham Chacko</strong></p>
-</td>
-
-</tr>
-<tr>
-<td colspan="8" width="1483" style="text-align:center; vertical-align:middle; font-size:24px;">
-<p><strong>Bishops</strong></p>
-</td>
-
-</tr>
-<tr>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image154.jpg" alt="" width="234" height="302" border="0" /></p>
-</td>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image155.jpg" alt="" width="234" height="302" border="0" /></p>
-</td>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image156.jpg" alt="" width="233" height="302" border="0" /></p>
-</td>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image157.jpg" alt="" width="233" height="302" border="0" /></p>
-</td>
-</tr>
-<tr>
-<td colspan="2"  width="370.75" style="text-align:center; vertical-align:middle;">
-<p><strong>Bishop Dr. M. K. Koshy</strong></p>
-</td>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle;">
-<p><strong>Bishop Dr. T. C. Cherian</strong></p>
-</td>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle;">
-<p><strong>Bishop A. I. Alexander</strong></p>
-</td>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle;">
-<p><strong>Bishop Dr. C.V. Mathew</strong></p>
-</td>
-</tr>
-<tr>
-</tr>
-<tr>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle; font-size:20px;">
-<p><strong>Prathinidhi Sabha President</strong></p>
-</td>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle; font-size:20px;">
-<p><strong>Sabha Secretary</strong></p>
-</td>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle; font-size:20px;">
-<p><strong>Sabha Treasurer</strong></p>
-</td>
-</tr>
-<tr>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle;">
-<p><strong><img src="Steciblr_files/image158.jpg" alt="" width="223" height="283" border="0" /></strong></p>
-</td>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image160.png" alt="" width="250" height="283" border="0" /></p>
-</td>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image162.jpg" alt="" width="210" height="283" border="0" /></p>
-</td>
-</tr>
-<tr>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle;" >
-<p><strong>Rev. Dr. John Mathew</strong></p>
-</td>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle;">
-<p><strong>Rev. Saji Mathew</strong></p>
-</td>
-<td colspan="2" width="370.75" style="text-align:center; vertical-align:middle;"> 
-<p><strong>Rev. Saji Abraham</strong></p>
-</td>
-</tr>
-<tr>
-
-</tr>
-</tbody>
 </table>
+</div>
+
+<p></p>
+
+<div class="leadership-section">
+       
+    <div class="leadership-grid-2-col">
+        
+        <div class="leader-item">
+            <p class="role"><strong>Presiding Bishop</strong></p>
+            <img src="Steciblr_files/image152.jpg" alt="Most Rev. Dr. Thomas Abraham" border="0" />
+            <p class="name"><strong>Most Rev. Dr. Thomas Abraham</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <p class="role"><strong>Bahya Kerala Dioecian Bishop</strong></p>
+            <img src="Steciblr_files/image153.jpg" alt="Rt. Rev. Dr. Abraham Chacko" border="0" />
+            <p class="name"><strong>Rt. Rev. Dr. Abraham Chacko</strong></p>
+        </div>
+        
+    </div>
+</div>
+
+<hr/>
+
+<div class="leadership-section">
+    <div class="section-title">
+        <p><strong>Other Bishops</strong></p>
+    </div>
+
+    <div class="leadership-grid-4-col">
+        
+        <div class="leader-item">
+            <img src="Steciblr_files/image154.jpg" alt="Bishop Dr. M. K. Koshy" border="0" />
+            <p class="name"><strong>Bishop Dr. M. K. Koshy</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <img src="Steciblr_files/image155.jpg" alt="Bishop Dr. T. C. Cherian" border="0" />
+            <p class="name"><strong>Bishop Dr. T. C. Cherian</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <img src="Steciblr_files/image156.jpg" alt="Bishop A. I. Alexander" border="0" />
+            <p class="name"><strong>Bishop A. I. Alexander</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <img src="Steciblr_files/image157.jpg" alt="Bishop Dr. C.V. Mathew" border="0" />
+            <p class="name"><strong>Bishop Dr. C.V. Mathew</strong></p>
+        </div>
+
+    </div>
+</div>
+
+<hr/>
+
+<div class="leadership-section">
+    <div class="section-title">
+        <p><strong>Sabha Officers</strong></p>
+    </div>
+
+    <div class="leadership-grid-3-col">
+        
+        <div class="leader-item">
+            <p class="role"><strong>Prathinidhi Sabha President</strong></p>
+            <img src="Steciblr_files/revjohnvarghese.jpg" alt="Rev. Dr. John Mathew" border="0" />
+            <p class="name"><strong>Rev. Dr. John Mathew</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <p class="role"><strong>Sabha Secretary</strong></p>
+            <img src="Steciblr_files/image160.png" alt="Rev. Saji Mathew" border="0" />
+            <p class="name"><strong>Rev. Saji Mathew</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <p class="role"><strong>Sabha Treasurer</strong></p>
+            <img src="Steciblr_files/image162.jpg" alt="Rev. Saji Abraham" border="0" />
+            <p class="name"><strong>Rev. Saji Abraham</strong></p>
+        </div>
+
+    </div>
+</div>
+<p></p>
+
 <p>Visit Our Main Church: <a href="https://steci.org/bishops-and-clergies/" target="_blank">ST.THOMAS EVANGELICAL CHURCH OF INDIA</a></p>
 
 <div>
@@ -610,28 +954,24 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p></p>
-<table border="1" width="100%" cellspacing="0" cellpadding="0">
+<table border="1" style="width: 100%; border-collapse: collapse;" cellspacing="0" cellpadding="0">
 <tbody>
-<tr>
-<td width="301">
-<p><img src="Steciblr_files/image163.png" alt="Design a commemorative layout titled 'Bangalore Parish of STECI A Journey of Faith'. Use a soft gradient background transitioning from deep indigo to sunrise gold, symbolizing spiritual progression. Include four key milestones:
-1. 1964: The Bangalore Parish of STECI began its spiritual journey.
-2. 21 September 1980: Consecration of the first dedicated church building at Lingarajapuram.
-3. 24 March 2007: Dedication of the current church building.
-4. Founding Members: Late Mr. P V Alexander, Late Mr. M J Thomas, Late Mr. P D Varghese, Mr. M J Mathai.
-Incorporate a subtle cross silhouette rising behind a stylized skyline of Bangalore. Add gentle rays of light from the top right corner illuminating each milestone. Use faint overlays of olive branches or stained-glass textures to evoke peace and tradition. The text should be formal and reverent, with elegant serif fonts." width="473" height="701" border="0" /></p>
-</td>
-<td width="301">
-<p><strong><img src="Steciblr_files/image164.png" alt="" width="994" height="702" border="0" /></strong></p>
-</td>
-</tr>
+    <tr>
+        <td>
+            <p>
+                <img src="Steciblr_files/image163.png" alt="Description of first image" border="0" />
+            </p>
+        </td>
+        <td>
+            <p>
+                <strong><img src="Steciblr_files/image164.png" alt="Description of second image" border="0" /></strong>
+            </p>
+        </td>
+    </tr>
 </tbody>
 </table>
-<p></p>
-<div>
-<table border="1" width="100%" cellspacing="0" cellpadding="0" >
+<p></p><table border="1" width="100%" cellspacing="0" cellpadding="0" >
 <tbody>
 <tr>
 <td class="mission-heading">
@@ -687,76 +1027,70 @@ Incorporate a subtle cross silhouette rising behind a stylized skyline of Bangal
 </table>
 </div>
 <p></p>
-<table border="1" width="100%" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image085.png" alt="" width="350" height="241" border="0" /></p>
-</td>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image165.png" alt="" width="350" height="238" border="0" /></p>
-</td>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image166.png" alt="" width="350" height="235" border="0" /></p>
-</td>
-</tr>
-<tr>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image167.png" alt="" width="350" height="216" border="0" /></p>
-</td>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image168.png" alt="" width="350" height="219" border="0" /></p>
-</td>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image169.png" alt="" width="447" height="243" border="0" /></p>
-</td>
-</tr>
-<tr>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image170.jpg" alt="" width="479" height="269" border="0" /></p>
-</td>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image172.jpg" alt="" width="350" height="268" border="0" /></p>
-</td>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image171.jpg" alt="" width="464" height="271" border="0" /></p>
-</td>
-</tr>
-<tr>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image173.jpg" alt="" width="353" height="265" border="0" /></p>
-</td>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image174.jpg" alt="" width="350" height="265" border="0" /></p>
-</td>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image175.jpg" alt="" width="464" height="254" border="0" /></p>
-</td>
-</tr>
-<tr>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image176.jpg" alt="" width="353" height="265" border="0" /></p>
-</td>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image177.jpg" alt="" width="350" height="265" border="0" /></p>
-</td>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image178.jpg" alt="" width="464" height="265" border="0" /></p>
-</td>
-</tr>
-<tr>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image179.jpg" alt="" width="353" height="250" border="0" /></p>
-</td>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image180.jpg" alt="" width="350" height="230" border="0" /></p>
-</td>
-<td width="494" style="text-align:center; vertical-align:middle;">
-<p><img src="Steciblr_files/image182.png" alt="" width="464" height="250" border="0" /></p>
-</td>
-</tr>
-</tbody>
-</table>
+
+<div class="image-gallery-grid">
+
+    <div class="gallery-item">
+        <img src="Steciblr_files/image085.png" alt="Gallery Image 1" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image165.png" alt="Gallery Image 2" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image166.png" alt="Gallery Image 3" border="0" />
+    </div>
+
+    <div class="gallery-item">
+        <img src="Steciblr_files/image167.png" alt="Gallery Image 4" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image168.png" alt="Gallery Image 5" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image169.png" alt="Gallery Image 6" border="0" />
+    </div>
+
+    <div class="gallery-item">
+        <img src="Steciblr_files/image170.jpg" alt="Gallery Image 7" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image172.jpg" alt="Gallery Image 8" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image171.jpg" alt="Gallery Image 9" border="0" />
+    </div>
+
+    <div class="gallery-item">
+        <img src="Steciblr_files/image173.jpg" alt="Gallery Image 10" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image174.jpg" alt="Gallery Image 11" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image175.jpg" alt="Gallery Image 12" border="0" />
+    </div>
+    
+    <div class="gallery-item">
+        <img src="Steciblr_files/image176.jpg" alt="Gallery Image 13" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image177.jpg" alt="Gallery Image 14" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image178.jpg" alt="Gallery Image 15" border="0" />
+    </div>
+
+    <div class="gallery-item">
+        <img src="Steciblr_files/image179.jpg" alt="Gallery Image 16" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image180.jpg" alt="Gallery Image 17" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image182.png" alt="Gallery Image 18" border="0" />
+    </div>
+    
+</div>
 <p></p>
 <div>
 <table border="1" width="100%" cellspacing="0" cellpadding="0">
@@ -769,38 +1103,53 @@ Incorporate a subtle cross silhouette rising behind a stylized skyline of Bangal
 </tbody>
 </table>
 </div>
+
 <p></p>
-<table border="1" width="100%" cellspacing="0" cellpadding="0" bgcolor="#EFCC6B">
-<tbody>
-<tr>
-<td width="557" style="line-height:1.5; font-weight:bold;">
-<p>St. Thomas Evangelical Church of India Bangalore Parish,<br> #17,18, Church Lane, Kavery Nagar, Defence Colony, <br>
-Horamavu Agara, Bangalore 560 013</p>
-</td>
-<td width="520" style="line-height:1.5; font-weight:bold;">
-<p>Phone No : <br>
-97426 99915(Vicar)<br>
-97426 99916(Treasurer)</p>
-</td>
-<td width="520" style="line-height:1.5; font-weight:bold;">
-<p>Email Address :<br>
-secysteciblr@yahoo.com(Secretary) <br>treassteciblr@yahoo.com(Treasurer)</p>
-</td>
-</tr>
-</tbody>
-</table>
+<div class="contact-flex-container">
+    
+    <div class="contact-item address-item">
+        <p>
+            St. Thomas Evangelical Church of India Bangalore Parish,<br> 
+            #17,18, Church Lane, Kavery Nagar, Defence Colony, <br>
+            Horamavu Agara, Bangalore 560 013
+        </p>
+    </div>
+    
+    <div class="contact-item phone-item">
+        <p>
+            <span class="label">Phone No:</span><br>
+            97426 99915 (Vicar)<br>
+            97426 99916 (Treasurer)
+        </p>
+    </div>
+    
+    <div class="contact-item email-item">
+        <p>
+            <span class="label">Email Address:</span><br>
+            secysteciblr@yahoo.com (Secretary) <br>
+            treassteciblr@yahoo.com (Treasurer)
+        </p>
+    </div>
+    
+</div>
 <p></p>
 <p><font color="#360816"><strong>Click the map image below for a navigable guide to the Parish Location.<strong></font></p>
-<table border="1" width="100%" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td width="741">
-<p><a href="https://maps.app.goo.gl/oQMG15LYFXqeNRwv5" target="_blank"><img src="Steciblr_files/image183.png" alt="" width="636" height="358" border="0" /></a></p>
-</td>
-<td width="742" style="line-height:1.5;">
-<p>St. Thomas Evangelical Church of India (STECI) is an Evangelical, Episcopal Church which firmly affirms that the Bible is the inspired, inerrant and infallible Word of God. All that is necessary for our salvation and living in righteousness is given in the Bible. It further affirms that the Church has a responsibility to preach the Gospel of Jesus Christ to all the nations of the world, especially to India. The church is engaged in active evangelism. The headquarters of this church is at Thiruvalla, a town in the state of Kerala which is in the Southwestern part of South India. The <strong>Bangalore Parish</strong> is one of the many vibrant communities under STECI, located in the heart of Bengaluru (Garden City). It plays an active role in worship, discipleship, and outreach, reflecting the church's broader mission.</p>
-</td>
-</tr>
-</tbody>
-</table>wo
-
+<p></p>
+<div class="two-col-flex-container">
+    
+    <div class="flex-item image-item">
+        <a href="https://maps.app.goo.gl/oQMG15LYFXqeNRwv5" target="_blank">
+            <img src="Steciblr_files/image183.png" alt="Map/Photo of St. Thomas Evangelical Church of India" border="0" />
+        </a>
+    </div>
+    
+    <div class="flex-item text-item" style="text-align: bottom;">
+        <p>
+            St. Thomas Evangelical Church of India (STECI) is an Evangelical, Episcopal Church which firmly affirms that the Bible is the inspired, inerrant and infallible Word of God. All that is necessary for our salvation and living in righteousness is given in the Bible. It further affirms that the Church has a responsibility to preach the Gospel of Jesus Christ to all the nations of the world, especially to India. The church is engaged in active evangelism. The headquarters of this church is at Thiruvalla, a town in the state of Kerala which is in the Southwestern part of South India. The <strong>Bangalore Parish</strong> is one of the many vibrant communities under STECI, located in the heart of Bengaluru (Garden City). It plays an active role in worship, discipleship, and outreach, reflecting the church's broader mission.
+        </p>
+    </div>
+    
+</div>
+<p></p>
+</body>
+</html>
