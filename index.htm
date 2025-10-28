@@ -359,17 +359,20 @@ table {
 .contact-flex-container {
     display: flex; /* CRITICAL: Enables flex layout */
     background-color: #EFCC6B; /* Matches original bgcolor */
-    width: 100%;
+    width: 98%;
     /* Ensures content doesn't get squished when wrapping on small screens */
     flex-wrap: wrap; 
-    padding: 15px; /* Add some padding around the container */
+    padding: 15px ; /* Add some padding around the container */
 }
 
 .contact-item {
     /* Each item takes up an equal portion of the row */
-   /* flex: 1 1 33.33%; */
-    /* 1 1 33.33% means: can grow (1), can shrink (1), starts at 33.33% width */
-    line-height: 1.5;
+   flex: 1 1 30%; 
+    /* 1 1 30% means: can grow (1), can shrink (1), starts at 30% width */
+overflow-wrap: break-word; /* Standard way to break long words */
+    word-wrap: break-word;     /* Legacy support for break-word */
+    word-break: break-all;     /* More aggressive breaking for tight spaces */    
+line-height: 1.5;
     font-weight: bold; /* Matches your original style */
     padding: 10px;
 }
@@ -435,6 +438,7 @@ table {
 .text-item p {
     line-height: 2; /* Matches your original style */
     font-size: 19.5px;
+font-weight: normal;
     margin: 0;
 }
 
@@ -659,8 +663,8 @@ table {
 
     <div class="program-item">
         <img src="Steciblr_files/image129.png" alt="Prayer Gathering image" border="0" />
-        <p><strong>Wednesday, 7:00pm (online)</strong></p>
-        <p>Weekly gathering for intercessory prayer and spiritual fellowship</p>
+        <p><strong>Friday, 10:00am </strong></p>
+        <p>Weekly gathering for fasting prayer and spiritual fellowship</p>
     </div>
 
     <div class="program-item">
@@ -998,12 +1002,12 @@ table {
 <p><strong>8. </strong><strong>Holy Trinity.</strong></p>
 <p>We believe in the Holy Trinity </p>
 <p>God the Father, </p>
-<p>God the Son and </p>
-<p>God the Holy Spirit</p>
+<p>God the Son, and </p>
+<p>God the Holy Spirit.</p>
 <p><strong>9. Creations.</strong></p>
-<p>We believe that the Sovereign God created the universe out of nothing</p>
+<p>We believe that the Sovereign God created the universe out of nothing.</p>
 <p><strong>10. Second Coming of the Lord.</strong></p>
-<p>We believe in the personal return of Lord Jesus Christ with glory to judge both the living and the dead </p>
+<p>We believe in the personal return of Lord Jesus Christ with glory to judge both the living and the dead. </p>
 <p>We believe in the final establishment of the Kingdom of God in its fullness. </p>
 <p>We believe in the bodily resurrection of the dead the just will rise to live, and the unjust will rise to be condemned.</p>
 <p><strong>11. Sacraments.</strong></p>
@@ -1143,7 +1147,7 @@ table {
         </a>
     </div>
     
-    <div class="flex-item text-item" style="text-align: bottom;">
+    <div class="flex-item text-item">
         <p>
             St. Thomas Evangelical Church of India (STECI) is an Evangelical, Episcopal Church which firmly affirms that the Bible is the inspired, inerrant and infallible Word of God. All that is necessary for our salvation and living in righteousness is given in the Bible. It further affirms that the Church has a responsibility to preach the Gospel of Jesus Christ to all the nations of the world, especially to India. The church is engaged in active evangelism. The headquarters of this church is at Thiruvalla, a town in the state of Kerala which is in the Southwestern part of South India. The <strong>Bangalore Parish</strong> is one of the many vibrant communities under STECI, located in the heart of Bengaluru (Garden City). It plays an active role in worship, discipleship, and outreach, reflecting the church's broader mission.
         </p>
@@ -1153,4 +1157,3 @@ table {
 <p></p>
 </body>
 </html>
-
