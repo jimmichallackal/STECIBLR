@@ -14,22 +14,30 @@
           position: fixed;
           top: 0;
           left: 0;
-          height: 60px;
+          height: auto;
           width: 100%;
           background-color: #5C1A1B; /* Wine red */
           color: maroon;
-          padding: 10px;
+          padding: 10px 5px;
           display: flex;
           align-items: center;
           z-index: 1000;
+          /* CRITICAL CHANGE: Allow the links inside to wrap onto a new line */
+          flex-wrap: wrap; 
+          /* CRITICAL CHANGE: Center items when they wrap */
+          justify-content: center;
         }
 
         .menu a {
-          color: #FFFF99;
-          margin-right: 40px;
-          text-decoration: none;
-        }
-
+    color: #FFFF99;
+    /* Use padding/margin to control spacing, not fixed margin-right */
+    margin: 5px 10px; 
+    text-decoration: none;
+    padding: 5px;
+    /* Allow text to wrap if it's a very long link title */
+    white-space: normal; 
+    text-align: center;
+}
         body {
           background-color: lightblue;
           margin: 0;
@@ -367,7 +375,7 @@ table {
 
 .contact-item {
     /* Each item takes up an equal portion of the row */
-   flex: 1 1 30%; 
+   flex: 1 1 33.33%; 
     /* 1 1 30% means: can grow (1), can shrink (1), starts at 30% width */
 overflow-wrap: break-word; /* Standard way to break long words */
     word-wrap: break-word;     /* Legacy support for break-word */
@@ -470,20 +478,12 @@ font-weight: normal;
     width: 100%;
 }
 
-.menu p {
-    /* Flexbox needs to be applied to the <p> if you keep it, or ideally, remove the <p> */
-    display: flex;
-    flex-wrap: nowrap; /* Tries to keep them on one line initially */
-    margin: 0; /* Remove default paragraph margin */
-    padding: 0;
-    width: 100%;
-}
 
 .menu a {
     text-decoration: none; /* Recommended: handle underlining in CSS */
     text-align: center;
     padding: 0 5px; /* Add padding for spacing */
-    white-space: nowrap; /* Prevents link text from wrapping onto two lines */
+    
 }
 
 /* ------------------------------------------------ */
@@ -516,8 +516,9 @@ font-weight: normal;
     </style>
 </head>
 <body>
+
 <div class="menu">
-  <p>
+  
     <u><a href="#_Parish"><strong>Home</strong></a></u>
     <u><a href="#_Parish_Pastor_1"><strong>Parish Pastor</strong></a></u>
     <u><a href="#_Mission_&amp;_Vision"><strong>Mission &amp; Vision</strong></a></u>
@@ -528,7 +529,7 @@ font-weight: normal;
     <u><a href="#_Fundamental_Teaching_of_1"><strong>Teaching</strong></a></u>
     <u><a href="#_Photo_Gallery_1"><strong>Gallery</strong></a></u>
     <u><a href="#_Contact_1"><strong>Contact</strong></a></u>
-  </p>
+ 
 </div>
 
   <table border="0" width="100%" cellspacing="0" cellpadding="0" >
@@ -1117,17 +1118,13 @@ font-weight: normal;
             #17,18, Church Lane, Kavery Nagar, Defence Colony, <br>
             Horamavu Agara, Bangalore 560 013
         </p>
-    </div>
-    
-    <div class="contact-item phone-item">
+  
         <p>
             <span class="label">Phone No:</span><br>
             97426 99915 (Vicar)<br>
             97426 99916 (Treasurer)
         </p>
-    </div>
-    
-    <div class="contact-item email-item">
+   
         <p>
             <span class="label">Email Address:</span><br>
             secysteciblr@yahoo.com (Secretary) <br>
