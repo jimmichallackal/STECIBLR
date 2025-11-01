@@ -513,7 +513,26 @@ font-weight: normal;
         box-sizing: border-box;
     }
 }
-    </style>
+.vicar-message {
+  /* Set max width and center the container */
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.vicar-image img {
+  /* Float the image to the left */
+  float: left;
+  /* Add margin to the right to create space between image and text */
+  margin-right: 40px;
+  margin-bottom: 10px;
+  width: 260px; /* Set a specific width for the image */
+  height: auto;
+  border-radius: 15px; 
+  background-color: white;
+}
+
+</style>
 </head>
 <body>
 
@@ -553,23 +572,22 @@ font-weight: normal;
 <p></p>
 <p></p>
 
-<div>
-    <table border="1" style="width: 100%; border-collapse: collapse;" cellspacing="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td class="mission-heading">
-                    <h1><a name="_Parish_Pastor_1"></a><strong>Parish Vicar</strong></h1>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div class="vicar-message">
+  <div class="vicar-image">
+    <img src="Steciblr_files/laji.png" alt="Rev. Laji Varughese, Vicar, Bangalore Parish" />
+  </div>
+  <div class="vicar-text">
+     Dear beloved,
+     <p>Grace and peace to you in the name of our Lord and Savior Jesus Christ.</p>
+     <p>As we reflect on the journey of our parish, I am filled with gratitude for the faith, dedication, and unity that have brought us to this moment. We stand on the shoulders of those   who came before us—our founding members—whose vision and sacrifice laid the foundation for a vibrant spiritual community. Let us honor their legacy by continuing to build a church rooted in love, service, and prayer.</p>
+     <p>In a world that often feels uncertain, may our fellowship be a beacon of hope. Let us support one another, grow in faith, and extend our hands to those in need. I encourage each of you to be active participants in the life of our parish—whether through worship, outreach, or simply by being present for one another.</p>
+     <p>May the Lord bless you and keep you. May His face shine upon you and give you peace.</p>
+     <p>With love and prayers, <br>
+      Rev. Laji Varughese <br>
+      Vicar, Bangalore Parish
+    </p>
+  </div>
 </div>
-
-<p>
-    <img src="Steciblr_files/image123.png" alt="Parish Pastor" class="center-image" border="0" />
-</p>
-<p></p>
-
 <div>
     <table border="1" style="width: 100%; border-collapse: collapse;" cellspacing="0" cellpadding="0">
         <tbody>
@@ -1186,6 +1204,7 @@ The St. Thomas Evangelical Church of India (STECI) is defined by a missionary vi
 <p></p>
 </body>
 </html>
+
 
 
 
