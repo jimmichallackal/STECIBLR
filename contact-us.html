@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us & Location Map | STECI Bangalore Parish</title> 
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Get in touch with the St. Thomas Evangelical Church of India, Bangalore Parish. Find our full address, Vicar and Treasurer contact numbers, email addresses, and a navigable Google Map."> 
+    <style>
+             /* ------------------------------------------------ */
+        /* All Your Existing CSS */
+        /* ------------------------------------------------ */
+        
+        /* --- NEW BANNER CSS --- */
+        .header-banner {
+       /*   position: fixed;*/
+		  background-color: #FFFFFF; /* Light Cream/Yellow background for the banner */
+            /*padding: 10px 0;*/
+            text-align: center;
+          /*  border-bottom: 2px solid #5C1A1B; *//* Dark line to separate from menu */
+
+        }
+        
+        .header-banner img {
+            max-width: 100%;
+            height: auto;
+			display: block;
+            /* The banner image is image184.png from your files */
+            /* Using a max-width ensures it scales nicely on mobile */
+        }
+        /* --- END NEW BANNER CSS --- */
+
+
+        .menu {
+          position: sticky; /* Flows naturally below the banner */
+          top: 0px;
+          left: 0;
+          height: auto;
+          width: 100%;
+          background-color: #5C1A1B; /* Wine red */
+          color: maroon;
+         /* padding: 2px 2px; */
+          display: flex;
+          align-items: center;
+          /* Keep flex properties for responsive wrapping */
+          flex-wrap: wrap; 
+          justify-content: center;
+         /* margin-bottom: 20px;*/ /* Space below the menu before main content starts */
+        }
+
+        .menu a {
+            color: #FFFF99;
+            margin: 5px 5px; 
+            text-decoration: none;
+            padding: 10px;
+            white-space: normal; 
+            text-align: center;
+        }
+        
+        body {
+          background-color: #FFFFFF;
+          margin: 0;
+          font-family: Roboto, sans-serif;
+          color: darkblue;
+          padding: 0; /* Remove padding here, add to content div instead */
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        
+        .main-content {
+            padding-top: 0px /* New padding for content area */
+        }
+        
+        html {
+          scroll-padding-top: 90px;
+        }
+
+        .mission-heading {
+          text-align: center;
+          vertical-align: middle;
+          color: #FFFF99;
+          background-color: #243117;
+        }
+
+        .mission-heading h1 {
+          text-align: center;
+          margin: 0;
+          padding: 20px 0;
+        }
+        
+        /* Global Image Scaling */
+        img {
+            max-width: 100%; 
+            height: auto;
+            display: block; 
+            margin: 0 auto; 
+        }
+
+        .contact-flex-container {
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .contact-details {
+            flex: 1; /* Takes up one part of the flexible space */
+            padding: 10px;
+            border-right: 1px solid #ccc;
+        }
+
+        .map-container {
+            flex: 2; /* Takes up two parts of the flexible space (wider column) */
+            min-height: 300px; /* Minimum height for the map iframe */
+            width: 100%;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .contact-details .label {
+            font-weight: bold;
+            color: #5C1A1B;
+            display: block;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+        
+        /* Media Query for Mobile: Stack them vertically */
+        @media (max-width: 768px) {
+            .contact-flex-container {
+                flex-direction: column; 
+            }
+            .contact-details {
+                border-right: none;
+                border-bottom: 1px solid #ccc; /* Add separator on bottom for mobile */
+                padding-bottom: 20px;
+            }
+        }
+  .footer-address {
+            background-color: #243117;
+            color: #FFFF99;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- STEP 1: ADD THE NEW BANNER SECTION FIRST -->
+<!-- ---------------------------------------------------------------------------------- -->
+<div class="header-banner">
+    <img src="Steciblr_files/steciblrbanner.png" alt="Church banner or logo" width="100%" border="0" />
+</div>
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- STEP 2: MENU BAR COMES SECOND -->
+<!-- ---------------------------------------------------------------------------------- -->
+<div class="menu">
+  
+    <a href="index.html"><strong>Home</strong></a>
+    <a href="parish-vicar.html"><strong>Vicar</strong></a>
+    <a href="mission-vision.html"><strong>Mission & Vision</strong></a>
+    <a href="parish-programs.html"><strong>Programs</strong></a>
+    <a href="parish-bulletin.html"><strong>Bulletin</strong></a>
+    <a href="reading-card.html"><strong>Reading Card</strong></a>
+    <a href="executive-committee.html"><strong>Committee</strong></a>
+    <a href="church-leaders.html"><strong>Leaders</strong></a>
+    <a href="our-history.html"><strong>History of Parish</strong></a>
+    <a href="fundamental-teaching.html"><strong>Teaching</strong></a>
+    <a href="photo-gallery.html"><strong>Gallery</strong></a>
+    <a href="contact-us.html"><strong>Contact</strong></a>
+ 
+</div>
+<main class="main-content">
+<div>
+    <table border="1" width="100%" cellspacing="0" cellpadding="0" >
+        <tbody>
+          <tr>
+            <td class="mission-heading">
+              <h1><strong>Contact Us & Location</strong></h1>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+</main>
+<p></p>
+
+
+    <div class="two-col-flex-container">
+    <p style="text-align: center; margin-bottom: 5px;">Find us on the map:<br>Click the map image below for a navigable guide to the Parish Location.</br></p>
+    <div class="flex-item image-item">
+        <a href="https://maps.app.goo.gl/oQMG15LYFXqeNRwv5" target="_blank">
+            <img src="Steciblr_files/image183.png" alt="Map/Photo of St. Thomas Evangelical Church of India" border="0" />
+        </a>
+    </div>
+    
+</div>
+<p></p>
+<div class="footer-address">
+    <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+    <p>#17,18, Church Lane, Kavery Nagar, Defence Colony, <br>Horamavu Agara, Bangalore 560 013</p>
+    <p>
+	 Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> | Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
+        </p>
+        Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a> | 
+        Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+    </p>
+</div>
+</body>
+</html>

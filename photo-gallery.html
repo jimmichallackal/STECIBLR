@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Gallery | Worship, Programs, and Events - STECI Bangalore</title> 
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="View the full photo gallery of the St. Thomas Evangelical Church of India, Bangalore Parish, featuring worship services, ministry programs, and special events."> 
+    <style>
+            /* ------------------------------------------------ */
+        /* All Your Existing CSS */
+        /* ------------------------------------------------ */
+        
+        /* --- NEW BANNER CSS --- */
+        .header-banner {
+         /* position: fixed;*/
+		  background-color: #FFFFFF; /* Light Cream/Yellow background for the banner */
+            /*padding: 10px 0;*/
+            text-align: center;
+          /*  border-bottom: 2px solid #5C1A1B; *//* Dark line to separate from menu */
+
+        }
+        
+        .header-banner img {
+            max-width: 100%;
+            height: auto;
+			display: block;
+            /* The banner image is image184.png from your files */
+            /* Using a max-width ensures it scales nicely on mobile */
+        }
+        /* --- END NEW BANNER CSS --- */
+
+
+        .menu {
+          position: sticky; /* Flows naturally below the banner */
+          top: 0px;
+          left: 0;
+          height: auto;
+          width: 100%;
+          background-color: #5C1A1B; /* Wine red */
+          color: maroon;
+         /* padding: 2px 2px; */
+          display: flex;
+          align-items: center;
+          /* Keep flex properties for responsive wrapping */
+          flex-wrap: wrap; 
+          justify-content: center;
+         /* margin-bottom: 20px;*/ /* Space below the menu before main content starts */
+        }
+
+        .menu a {
+            color: #FFFF99;
+            margin: 5px 5px; 
+            text-decoration: none;
+            padding: 10px;
+            white-space: normal; 
+            text-align: center;
+        }
+        
+        body {
+          background-color: #FFFFFF;
+          margin: 0;
+          font-family: Roboto, sans-serif;
+          color: darkblue;
+          padding: 0; /* Remove padding here, add to content div instead */
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        
+        .main-content {
+            padding-top: 0px /* New padding for content area */
+        }
+        
+        html {
+          scroll-padding-top: 90px;
+        }
+
+        .mission-heading {
+          text-align: center;
+          vertical-align: middle;
+          color: #FFFF99;
+          background-color: #243117;
+        }
+
+        .mission-heading h1 {
+          text-align: center;
+          margin: 0;
+          padding: 20px 0;
+        }
+        
+        /* Global Image Scaling */
+        img {
+            max-width: 100%; 
+            height: auto;
+            display: block; 
+        }
+
+        /* --- GALLERY GRID SPECIFIC CSS --- */
+        .image-gallery-grid {
+            display: grid;
+            /* Default: 4 columns for wide screens */
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 15px; /* Space between photos */
+            padding: 20px 0;
+        }
+
+        .gallery-item img {
+            /* Ensure all images in the grid fill their space and look consistent */
+            width: 100%;
+            height: 200px; /* Fixed height for consistent look */
+            object-fit: cover; /* Crops image to fit the dimensions */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* ---------------------------------------------------- */
+        /* MEDIA QUERIES (The Responsiveness) */
+        /* ---------------------------------------------------- */
+
+        /* Tablet-sized screens (up to 768px) */
+        @media (max-width: 768px) {
+            .image-gallery-grid {
+                /* Change to 2 columns */
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-item img {
+                height: 150px; /* Adjust height for smaller screens */
+            }
+        }
+
+        /* Mobile Phone screens (up to 480px) */
+        @media (max-width: 480px) {
+            .image-gallery-grid {
+                /* Stack into a single column */
+                grid-template-columns: 1fr;
+            }
+            .gallery-item img {
+                height: 250px; /* Make image larger when stacked vertically */
+            }
+        }
+   .footer-address {
+            background-color: #243117;
+            color: #FFFF99;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- STEP 1: ADD THE NEW BANNER SECTION FIRST -->
+<!-- ---------------------------------------------------------------------------------- -->
+<div class="header-banner">
+    <img src="Steciblr_files/steciblrbanner.png" alt="Church banner or logo" width="100%" border="0" />
+</div>
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- STEP 2: MENU BAR COMES SECOND -->
+<!-- ---------------------------------------------------------------------------------- -->
+<div class="menu">
+  
+    <a href="index.html"><strong>Home</strong></a>
+    <a href="parish-vicar.html"><strong>Vicar</strong></a>
+    <a href="mission-vision.html"><strong>Mission & Vision</strong></a>
+    <a href="parish-programs.html"><strong>Programs</strong></a>
+    <a href="parish-bulletin.html"><strong>Bulletin</strong></a>
+    <a href="reading-card.html"><strong>Reading Card</strong></a>
+    <a href="executive-committee.html"><strong>Committee</strong></a>
+    <a href="church-leaders.html"><strong>Leaders</strong></a>
+    <a href="our-history.html"><strong>History of Parish</strong></a>
+    <a href="fundamental-teaching.html"><strong>Teaching</strong></a>
+    <a href="photo-gallery.html"><strong>Gallery</strong></a>
+    <a href="contact-us.html"><strong>Contact</strong></a>
+ 
+</div>
+<main class="main-content">
+<div>
+    <table border="1" width="100%" cellspacing="0" cellpadding="0" >
+        <tbody>
+          <tr>
+            <td class="mission-heading">
+              <h1><a name="_Gallery_1"></a><strong>Photo Gallery</strong></h1>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+</main>
+<p></p>
+
+<div class="image-gallery-grid">
+
+    <div class="gallery-item">
+        <img src="Steciblr_files/image085.png" alt="Gallery Image 1" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image165.png" alt="Gallery Image 2" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image166.png" alt="Gallery Image 3" border="0" />
+    </div>
+
+    <div class="gallery-item">
+        <img src="Steciblr_files/image167.png" alt="Gallery Image 4" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image168.png" alt="Gallery Image 5" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image169.png" alt="Gallery Image 6" border="0" />
+    </div>
+
+    <div class="gallery-item">
+        <img src="Steciblr_files/image170.jpg" alt="Gallery Image 7" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image172.jpg" alt="Gallery Image 8" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image171.jpg" alt="Gallery Image 9" border="0" />
+    </div>
+
+    <div class="gallery-item">
+        <img src="Steciblr_files/image173.jpg" alt="Gallery Image 10" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image174.jpg" alt="Gallery Image 11" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image175.jpg" alt="Gallery Image 12" border="0" />
+    </div>
+    
+    <div class="gallery-item">
+        <img src="Steciblr_files/image176.jpg" alt="Gallery Image 13" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image177.jpg" alt="Gallery Image 14" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image178.jpg" alt="Gallery Image 15" border="0" />
+    </div>
+
+    <div class="gallery-item">
+        <img src="Steciblr_files/image179.jpg" alt="Gallery Image 16" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image180.jpg" alt="Gallery Image 17" border="0" />
+    </div>
+    <div class="gallery-item">
+        <img src="Steciblr_files/image182.png" alt="Gallery Image 18" border="0" />
+    </div>
+    
+</div>
+<div class="footer-address">
+    <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+    <p>#17,18, Church Lane, Kavery Nagar, Defence Colony, <br>Horamavu Agara, Bangalore 560 013</p>
+    <p>
+	 Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> | Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
+        </p>
+        Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a> | 
+        Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+    </p>
+</div>
+
+</body>
+</html>

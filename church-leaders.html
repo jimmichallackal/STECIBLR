@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Church Leaders, Lay Leaders & Trustees | STECI Bangalore Parish</title> 
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Meet the key spiritual and administrative Church Leaders, Trustees, Lay Leaders, and Ministry Secretaries of the St. Thomas Evangelical Church of India, Bangalore Parish."> 
+    <style>
+           /* ------------------------------------------------ */
+        /* All Your Existing CSS */
+        /* ------------------------------------------------ */
+        
+        /* --- NEW BANNER CSS --- */
+        .header-banner {
+        /*  position: fixed;*/
+		  background-color: #FFFFFF; /* Light Cream/Yellow background for the banner */
+            /*padding: 10px 0;*/
+            text-align: center;
+          /*  border-bottom: 2px solid #5C1A1B; *//* Dark line to separate from menu */
+
+        }
+        
+        .header-banner img {
+            max-width: 100%;
+            height: auto;
+			display: block;
+            /* The banner image is image184.png from your files */
+            /* Using a max-width ensures it scales nicely on mobile */
+        }
+        /* --- END NEW BANNER CSS --- */
+
+
+        .menu {
+          position: sticky; /* Flows naturally below the banner */
+          top: 0px;
+          left: 0;
+          height: auto;
+          width: 100%;
+          background-color: #5C1A1B; /* Wine red */
+          color: maroon;
+         /* padding: 2px 2px; */
+          display: flex;
+          align-items: center;
+          /* Keep flex properties for responsive wrapping */
+          flex-wrap: wrap; 
+          justify-content: center;
+         /* margin-bottom: 20px;*/ /* Space below the menu before main content starts */
+        }
+
+        .menu a {
+            color: #FFFF99;
+            margin: 5px 5px; 
+            text-decoration: none;
+            padding: 10px;
+            white-space: normal; 
+            text-align: center;
+        }
+        
+        body {
+          background-color: #FFFFFF;
+          margin: 0;
+          font-family: Roboto, sans-serif;
+          color: darkblue;
+          padding: 0; /* Remove padding here, add to content div instead */
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        
+        .main-content {
+            padding-top: 0px /* New padding for content area */
+        }
+        
+        html {
+          scroll-padding-top: 90px;
+        }
+
+        .mission-heading {
+          text-align: center;
+          vertical-align: middle;
+          color: #FFFF99;
+          background-color: #243117;
+        }
+
+        .mission-heading h1 {
+          text-align: center;
+          margin: 0;
+          padding: 20px 0;
+        }
+        
+        /* Global Image Scaling */
+        img {
+            max-width: 100%; 
+            width: 100%
+            height: auto;
+        }
+
+        /* --- Leadership Grid Specific CSS --- */
+        
+        /* FIX: New wrapper to ensure proper spacing and prevent overlap */
+        .leader-section-wrapper {
+            margin-bottom: 40px; /* Adds vertical space between different leader groups */
+            padding: 10px;
+            /* Optional subtle background/border for visual grouping */
+            border: 1px solid #f0f0f0; 
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+
+
+        /* GLOBAL STYLES FOR CONSISTENCY */
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            padding: 5px 0 15px; /* Added padding-bottom for separation from the grid */
+            margin: 0;
+            clear: both;
+        }
+
+        .leader-item {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .leader-item img {
+            max-width: 100%;  
+            height: auto; 
+            border: 1px solid #ccc;
+            margin: 10px auto;
+            display: block;
+            object-fit: contain; 
+        }
+
+        .leader-item .role, .leader-item .name {
+            margin: 5px 0;
+            line-height: 1.2;
+        }
+        .leader-item .name {
+            font-weight: bold;
+        }
+
+
+        /* SECTION 1: 2-COLUMN LAYOUT */
+        .leadership-grid-2-col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px;
+        }
+
+        /* SECTION 2: 4-COLUMN LAYOUT */
+        .leadership-grid-4-col {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 15px;
+        }
+
+        /* SECTION 3: 3-COLUMN LAYOUT */
+        .leadership-grid-3-col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 15px;
+        }
+
+        /* ---------------------------------------------------- */
+        /* MEDIA QUERIES (The Responsiveness) */
+        /* ---------------------------------------------------- */
+
+        /* Tablet-sized screens (up to 768px) */
+        @media (max-width: 768px) {
+            .leadership-grid-2-col {
+                grid-template-columns: 1fr;
+            }
+            .leadership-grid-3-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .leadership-grid-4-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile Phone screens (up to 480px) */
+        @media (max-width: 480px) {
+            /* ALL sections stack into a single column */
+            .leadership-grid-2-col,
+            .leadership-grid-3-col,
+            .leadership-grid-4-col {
+                grid-template-columns: 1fr;
+            }
+        }
+   .footer-address {
+            background-color: #243117;
+            color: #FFFF99;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- STEP 1: ADD THE NEW BANNER SECTION FIRST -->
+<!-- ---------------------------------------------------------------------------------- -->
+<div class="header-banner">
+    <img src="Steciblr_files/steciblrbanner.png" alt="Church banner or logo" width="100%" border="0" />
+</div>
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- STEP 2: MENU BAR COMES SECOND -->
+<!-- ---------------------------------------------------------------------------------- -->
+<div class="menu">
+  
+    <a href="index.html"><strong>Home</strong></a>
+    <a href="parish-vicar.html"><strong>Vicar</strong></a>
+    <a href="mission-vision.html"><strong>Mission & Vision</strong></a>
+    <a href="parish-programs.html"><strong>Programs</strong></a>
+    <a href="parish-bulletin.html"><strong>Bulletin</strong></a>
+    <a href="reading-card.html"><strong>Reading Card</strong></a>
+    <a href="executive-committee.html"><strong>Committee</strong></a>
+    <a href="church-leaders.html"><strong>Leaders</strong></a>
+    <a href="our-history.html"><strong>History of Parish</strong></a>
+    <a href="fundamental-teaching.html"><strong>Teaching</strong></a>
+    <a href="photo-gallery.html"><strong>Gallery</strong></a>
+    <a href="contact-us.html"><strong>Contact</strong></a>
+ 
+</div>
+<main class="main-content">
+<div>
+    <table border="1" width="100%" cellspacing="0" cellpadding="0" >
+        <tbody>
+          <tr>
+            <td class="mission-heading">
+              <h1><a name="_Church_Leaders_1"></a><strong>Church Leaders</strong></h1>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+</main>
+
+<p></p>
+       
+<div class="leader-section-wrapper">
+    
+    <div class="leadership-grid-2-col">
+        
+        <div class="leader-item">
+		
+            <p class="role" style="font-size: 1.5em;"><strong>Presiding Bishop</strong></p>
+            <img src="Steciblr_files/image152.jpg" alt="Most Rev. Dr. Thomas Abraham" border="0" />
+            <p class="name"><strong>Most Rev. Dr. Thomas Abraham</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <p class="role" style="font-size: 1.5em;"><strong>Bahya Kerala Dioecian Bishop</strong></p>
+            <img src="Steciblr_files/image153.jpg" alt="Rt. Rev. Dr. Abraham Chacko" border="0" />
+            <p class="name"><strong>Rt. Rev. Dr. Abraham Chacko</strong></p>
+        </div>
+        
+    </div>
+</div>
+<hr/>
+
+<div class="leadership-section">
+    <div class="section-title">
+        <p><strong>Other Bishops</strong></p>
+    </div>
+
+    <div class="leadership-grid-4-col">
+        
+        <div class="leader-item">
+            <img src="Steciblr_files/image154.jpg" alt="Bishop Dr. M. K. Koshy" border="0" />
+            <p class="name"><strong>Bishop Dr. M. K. Koshy</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <img src="Steciblr_files/image155.jpg" alt="Bishop Dr. T. C. Cherian" border="0" />
+            <p class="name"><strong>Bishop Dr. T. C. Cherian</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <img src="Steciblr_files/image156.jpg" alt="Bishop A. I. Alexander" border="0" />
+            <p class="name"><strong>Bishop A. I. Alexander</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <img src="Steciblr_files/image157.jpg" alt="Bishop Dr. C.V. Mathew" border="0" />
+            <p class="name"><strong>Bishop Dr. C.V. Mathew</strong></p>
+        </div>
+
+    </div>
+</div>
+
+<hr/>
+<div class="leadership-section">
+    <div class="section-title">
+        <p><strong>Sabha Officers</strong></p>
+    </div>
+
+    <div class="leadership-grid-3-col">
+        
+        <div class="leader-item">
+            <p class="role" style="font-size: 1.2em;"><strong>Prathinidhi Sabha President</strong></p>
+            <img src="Steciblr_files/revjohnvarghese.jpg" alt="Rev. Dr. John Mathew" border="0" />
+            <p class="name"><strong>Rev. Dr. John Mathew</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <p class="role" style="font-size: 1.2em;"><strong>Sabha Secretary</strong></p>
+            <img src="Steciblr_files/image160.png" alt="Rev. Saji Mathew" border="0" />
+            <p class="name"><strong>Rev. Saji Mathew</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <p class="role" style="font-size: 1.2em;"><strong>Sabha Treasurer</strong></p>
+            <img src="Steciblr_files/image162.jpg" alt="Rev. Saji Abraham" border="0" />
+            <p class="name"><strong>Rev. Saji Abraham</strong></p>
+        </div>
+
+    </div>
+</div>
+<p></p>
+<p>Visit Our Main Church: <a href="https://steci.org/bishops-and-clergies/" target="_blank">ST.THOMAS EVANGELICAL CHURCH OF INDIA</a></p>
+<div class="footer-address">
+    <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+    <p>#17,18, Church Lane, Kavery Nagar, Defence Colony, <br>Horamavu Agara, Bangalore 560 013</p>
+    <p>
+	 Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> | Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
+        </p>
+        Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a> | 
+        Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+    </p>
+</body>
+</html>
