@@ -144,6 +144,26 @@
             text-align: center;
             margin-top: 30px;
         }
+		.video-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+    justify-items: center;
+}
+
+.video-item iframe {
+    width: 100%;
+    max-width: 560px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .video-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
@@ -249,9 +269,66 @@
     </div>
     <div class="gallery-item">
         <img src="Steciblr_files/image182.png" alt="Gallery Image 18" border="0" />
-    </div>
-    
+    </div>   
 </div>
+	<main class="main-content">
+<div>
+    <table border="1" width="100%" cellspacing="0" cellpadding="0" >
+        <tbody>
+          <tr>
+            <td class="mission-heading">
+              <h1><a name="_Gallery_1"></a><strong>Video Gallery</strong></h1>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+<div class="video-gallery-grid">
+
+<div class="video-item">
+  <iframe width="560" height="315" 
+          src="https://www.youtube-nocookie.com/embed/Pvst_iYjC-g" 
+          title="I Believe" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+          referrerpolicy="strict-origin-when-cross-origin" 
+ </iframe>
+   <p>
+      🎥 I Believe - A Story of Hope
+   </p>
+
+</div>
+
+
+      <div class="video-item">
+        <iframe width="560" height="315" 
+        src="https://www.youtube-nocookie.com/embed/VE-iRuSsIAI"
+        title="Emmanuel 2023 - Kalam Randai Piriyum Neram" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+        referrerpolicy="strict-origin-when-cross-origin"
+       </iframe>
+  <p> 
+       🎥 Emmanuel 2023 - Kalam Randai Piriyum Neram
+    
+  </p>
+    </div>
+
+    <div class="video-item">
+        <iframe width="560" height="315" 
+                src="https://www.youtube-nocookie.com/embed/oyXs0PaTCnk" 
+                title="Nazarayan 2024 - Oru Cherudheepamayi" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+                referrerpolicy="strict-origin-when-cross-origin"
+         </iframe>
+  <p>
+    🎥 Nazarayan 2024 - Oru Cherudheepamayi
+  </p>
+    </div>
+</div>
+
 <div class="footer-address">
     <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
     <p>#17,18, Church Lane, Kavery Nagar, Defence Colony, <br>Horamavu Agara, Bangalore 560 013</p>
@@ -264,4 +341,5 @@
 </div>
 
 </body>
+
 </html>
