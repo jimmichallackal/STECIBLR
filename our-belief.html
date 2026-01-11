@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mission & Vision | Apostolic Origin, Evangelical Commitment, Church Planting - STECI</title> 
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Discover the Mission & Vision of the St. Thomas Evangelical Church of India (STECI): Historically based on Apostle Thomas, fundamentally Evangelical, and committed to nationwide Church Planting in the Indian Republic."> 
+    <style>
+            /* ------------------------------------------------ */
+        /* All Your Existing CSS */
+        /* ------------------------------------------------ */
+        
+        /* --- NEW BANNER CSS --- */
+        .header-banner {
+        /*  position: fixed;*/
+		  background-color: #FFFFFF; /* Light Cream/Yellow background for the banner */
+            /*padding: 10px 0;*/
+            text-align: center;
+          /*  border-bottom: 2px solid #5C1A1B; *//* Dark line to separate from menu */
+
+        }
+        
+        .header-banner img {
+            max-width: 100%;
+            height: auto;
+			display: block;
+            /* The banner image is image184.png from your files */
+            /* Using a max-width ensures it scales nicely on mobile */
+        }
+        /* --- END NEW BANNER CSS --- */
+
+
+        .menu {
+          position: sticky; /* Flows naturally below the banner */
+          top: 0px;
+          left: 0;
+          height: auto;
+          width: 100%;
+          background-color: #5C1A1B; /* Wine red */
+          color: maroon;
+         /* padding: 2px 2px; */
+          display: flex;
+          align-items: center;
+          /* Keep flex properties for responsive wrapping */
+          flex-wrap: wrap; 
+          justify-content: center;
+          margin-bottom: 0; /* Space below the menu before main content starts */
+          z-index: 2000;
+        }
+
+        .menu a {
+            color: #FFFF99;
+            margin: 5px 5px; 
+            text-decoration: none;
+            padding: 10px;
+            white-space: normal; 
+            text-align: center;
+        }
+        
+        body {
+          background-color: #FFFFFF;
+          margin: 0;
+          font-family: Roboto, sans-serif;
+          color: darkblue;
+          padding: 0; /* Remove padding here, add to content div instead */
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        
+        .main-content {
+            padding-top: 0px /* New padding for content area */
+
+        }
+        html {
+          scroll-padding-top: 90px;
+        }
+
+        .mission-heading {
+          text-align: center;
+          vertical-align: middle;
+          color: #FFFF99;
+          background-color: #243117;
+        }
+
+        .mission-heading h1 {
+          text-align: center;
+          margin: 0;
+          padding: 20px 0;
+
+        }
+        
+        /* This ensures ALL images scale down with the screen */
+        img {
+            max-width: 100%; 
+            width: 100%
+            height: auto;
+        }
+   .footer-address {
+            background-color: #243117;
+            color: #FFFF99;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+.mission-vision-section {
+            margin-left: 1%; /* Using % makes it look better on mobile */
+             /* Keeps the text from stretching too far */
+        }
+
+:root {
+    --stec-navy: #002147;
+    --stec-gold: #D4AF37;
+    --stec-light: #f4f7f6;
+    --menu-height: 60px;
+    --sidebar-gap: 0px;
+
+}
+
+
+.stec-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Sticky Sidebar */
+.stec-sidebar {
+    flex: 0 0 280px;
+    position: sticky;
+    top: calc(var(--menu-height) + var(--sidebar-gap));
+    height: fit-content;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 100
+}
+
+.stec-sidebar-title {
+    background: var(--stec-navy);
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+.stec-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stec-nav-item {
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s;
+    color: #444;
+}
+
+.stec-nav-item:hover {
+    background: var(--stec-light);
+    color: var(--stec-navy);
+}
+
+.stec-nav-item.active {
+    border-left: 5px solid var(--stec-gold);
+    background: var(--stec-light);
+    color: var(--stec-navy);
+    font-weight: 600;
+}
+
+/* Content Area */
+.stec-content {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.chapter-box {
+    display: none;
+    line-height: 1.6;
+}
+
+.chapter-box.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    .stec-container { flex-direction: column; }
+    .stec-sidebar { position: static; width: 100%; }
+}
+  ol {
+    margin-left: 10px;       /* space for numbers */
+  }
+  ol li {
+    text-align: justify;     /* align text like Word */
+    padding-left: 5px;
+     margin-bottom: 10px;       /* small gap after number */
+  }
+
+    </style>
+</head>
+<body>
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- STEP 1: ADD THE NEW BANNER SECTION FIRST -->
+<!-- ---------------------------------------------------------------------------------- -->
+<div class="header-banner">
+    <img src="Steciblr_files/steciblrbanner.png" alt="Church banner or logo" width="100%" border="0" />
+</div>
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- STEP 2: MENU BAR COMES SECOND -->
+<!-- ---------------------------------------------------------------------------------- -->
+<div class="menu">
+  
+    <a href="index.html"><strong>Home</strong></a>
+    <a href="parish-vicar.html"><strong>Vicar</strong></a>
+    <a href="mission-vision.html"><strong>Mission & Vision</strong></a>
+    <a href="parish-programs.html"><strong>Programs</strong></a>
+    <a href="parish-bulletin.html"><strong>Bulletin</strong></a>
+    <a href="reading-card.html"><strong>Reading Card</strong></a>
+    <a href="executive-committee.html"><strong>Committee</strong></a>
+    <a href="church-leaders.html"><strong>Leaders</strong></a>
+    <a href="our-history.html"><strong>History of Parish</strong></a>
+    <a href="our-belief.html"><strong>Faith</strong></a>
+    <a href="photo-gallery.html"><strong>Gallery</strong></a>
+    <a href="contact-us.html"><strong>Contact</strong></a>
+ 
+</div>
+<main class="main-content">
+<div>
+    <table border="1" style="width: 100%; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td class="mission-heading">
+                    <h1>
+                        <strong>What we Believe - Foundational Doctrines</strong>
+                    </h1>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</main>
+<p></p>
+<section class="mission-vision-section">
+The St. Thomas Evangelical Church of India (STECI) is a fellowship committed to the historical Christian faith and the tenets of the Evangelical tradition. Our beliefs are comprehensively outlined in our Declaration and Fundamental Teachings, centered on the inerrant authority of the Holy Bible.
+Our Church affirms that the purpose and work of the Church is the stewardship of the divine doctrines and teachings, as revealed through Jesus Christ and proclaimed by the Holy Apostles, and the preservation of these in their pristine purity, and the enrichment of the spiritual life of the members of the Church.
+
+ <p>
+    "What we believe" is foundational to the faith life of all who trust in God. 
+    Every Christian needs a clear understanding of the doctrines that are derived 
+    from the Word of God. The doctrinal statements presented herein are in full 
+    agreement with the teachings of the sixty-six books of the Bible (The Holy Scripture).
+  </p>
+
+
+
+<div class="stec-container">
+    <nav class="stec-sidebar">
+        <div class="stec-sidebar-title">OUR BELIEFS</div>
+        <ul class="stec-nav-list">
+            <li class="stec-nav-item active" onclick="showChapter(event, 'scripture')">The Holy Scripture</li>
+            <li class="stec-nav-item" onclick="showChapter(event, 'trinity')">Holy Trinity</li>
+            <li class="stec-nav-item" onclick="showChapter(event, 'ceations')">Creations</li>
+            <li class="stec-nav-item" onclick="showChapter(event, 'mediator')">Christ, the Mediator</li>
+            <li class="stec-nav-item" onclick="showChapter(event, 'sacraments')">The Sacraments</li>
+        </ul>
+    </nav>
+
+<main class="stec-content">
+<div id="scripture" class="chapter-box active">
+        <h1>The Holy Scriptures</h1>
+        <p><strong>We believe in the Holy Bible.</strong></p>
+	<p>By the Holy Scripture or the Word of God, we mean the sixty-six books of the Bible, including the Old Testament, which contains 39 books from 	   Genesis to Malachi, and the New Testament, which contains 27 books from the Gospel of Matthew to the Book of Revelation.</p>
+	<p>The Holy Scripture is given by the inspiration of God, to be the rule of faith and life (2 Tim. 3:16, 17; 2 Pet. 1:21). It is inerrant 		   and infallible in the original writing and its teachings and authority are absolute, supreme, and final. The Holy Spirit guided the holy men     	   of God in their writings.</p>
+<ol>
+<li>The Authority of the Holy Scriptures is wholly upon God, who is its Author. Thus, it is the Word of God and, therefore, ought to be believed and obeyed. (Exodus 20:1; 2 Samuel 23:2; Psalms 119:89; Isaiah 34:16). </li>
+
+<li>Its authority does not, in any manner or measure, depend on the testimony of any man or the church.</li>
+
+<li>Nobody has any authority to add to or subtract from the contents of the Bible, whether by new revelations claimed by men or by human traditions. (Deut. 4:2; 13:1; Jos. 1:7; Prov. 30:6; Rev. 22:18–19).</li>
+
+<li>The whole counsel of God, essential for human beings concerning God’s own glory, man’s salvation, faith and life, are expressly set out in the Bible. (Acts. 20:20, 27).</li>
+
+<li>The infallible rule of interpretation of the Scripture is given in the Scripture itself.</li>
+
+<li> When questions about the true and full meaning of any Scripture portion arises, it may be searched, compared with, and understood in conjunction with other Scripture portions that clarify. (1 Cor. 2:13).</li>
+
+
+<li> The supreme judge on matters of doctrine, faith, life, and practices must be the Holy Spirit speaking in and through the Scripture. (2 Timothy 3:16, 17)</li>
+
+<li> The Old Testament was written in Hebrew (with a few sections in Aramaic), the language of the Israelites, and the New Testament in Greek, which was the common language of the first Century AD.</li>
+
+<li> The collection of 14 books called Apocrypha is not divinely inspired and accepted as part of the Holy Scripture by our Lord Jesus Christ, the apostles and the early Church and so it is not part of the Canon of the Scripture.</li>
+
+<li> We accept the Nicene Creed of AD 325 (first adopted at the Council of Nicaea in AD 325 and revised with additions and expansions by the Council of Constantinople in AD 381 and the Council of Toledo in AD 589) for it is in conformity with the teachings of the Scripture.</li>
+</li>
+</ol>
+</div>
+
+<div id="trinity" class="chapter-box">
+            <h1>Holy Trinity</h1>
+<p><strong>We believe in Holy Trinity.</strong></p>
+<p>
+ We believe in One True God, who has revealed himself to us as Father, Son and Holy Spirit, three distinct persons, but without division of nature, essence or being, but one in substance, power and eternality, each having a distinct ministry in relation to His creation and people. Three in one Godhead, who is the intelligent, sovereign, spiritual and personal Being, perfect, infinite, eternal in His Being, holiness, love, wisdom and power. He is absolutely separate and different from and above the universe as its Creator, yet anywhere present in the universe, as the sustainer and controller of all things. (Gen. 1:1,26; 3:22-11:7; Ex. 15:11; Ps. 83:18; 139:7-9; Is. 6:8; Mt. 3:16-17; 28:19; Jn. 10:30; 14:16; 15:26; 2 Cor. 13:14)
+</p>
+
+<p> <strong>A. God, the Father</strong></p>
+<ol>
+<li>
+God is Almighty, All-knowing, All-present (Omnipotent, Omniscient and Omnipresent) and immutable (Gen. 17:1; 28:3; Exodus 6:3; Numbers 24:4; Job. 29:2; Psalms 91:1-2; Psalms 139; Prov. 2:8).
+</li>
+
+<li>
+He is the creator and preserver of all things, both visible and invisible (Gen. 1:1-31; 1 Samuel 30:23; 2 Samuel 8:6; 1 Chronicles 18:6,13; Psalms 31:23; 37:28; Proverbs 8:22-30).
+</li>
+
+<li>
+God is self-existent: God is life and the source of life for all. Glory, goodness, and blessedness are in and of Himself. He is all-sufficient God, not standing in need of any creatures which He has made, nor to derive glory from them, but manifesting His glory in all His creations (Exodus 3:14; Isaiah 40:12-15; Psalms 19:1).
+</li>
+
+<li>
+He is most Holy – most Holy in all His counsel, in all His works and in all His commands (Isaiah 6:3; Lev. 20:3; 22:2; 1 Chr. 16:10; Psalms 105:3; 106:47; Isaiah 29:23).
+</li>
+
+<li>
+He is worthy of worship, service and obedience of all angelic and human creations and every other creature (Exodus 34:14; Deut. 26:10; Ps. 45:11; 81:9; 97:7).
+</li>
+
+<li>
+God the Father is revealed as the Creator of all things.
+</li>
+</ol>
+
+<p> <strong>B. God the Son - Jesus Christ, the Lord</strong> </p>
+<ol>
+<li>
+Christ Jesus is the second person of the Holy Trinity. (Gen. 4:4; Phil. 2:5-11; Col. 2:9,19; Deut. 18:15,18). Jesus Christ is the Son, revealed as the only eternally begotten of the Father. He is eternal, the very God of very God, of one substance, and equal with the Father (Lk. 7:16,39; 24:19; Jn. 4:19; 9:17).
+</li>
+
+<li>
+He is the same yesterday, today and forever (Heb. 13:8).
+</li>
+
+<li>
+Jesus is the only mediator between God and man; He holds the offices of the Prophet, Priest, and King. He is the head and Saviour of His Church, which is His body.
+</li>
+
+<li>
+He is the heir of all things, the Judge of the living and dead.
+</li>
+
+<li>
+He is the Creator of all things (John 1:3; Col. 1:16-18). He redeems, justifies, sanctifies and glorifies all who truly believe on Him.
+</li>
+
+<li>
+When the fullness of time came, He became a man with all the properties and infirmities of human nature, yet, without sin (Jn. 1:14; Rom. 8:3; Gal. 4:4; 2 Cor. 2:21; Heb. 4:15).
+</li>
+
+<li>
+When He took the form of a man, He was conceived by the power of the Holy Spirit, in the womb of virgin Mary. (Luke 1:30,32,35)
+</li>
+
+<li>
+The conception of Jesus by virgin Mary was the work of Almighty God; and thus, the child was kept from sin, and therefore was called a Holy child (Luke 1:35).
+</li>
+
+<li>
+Thus, two perfect and distinct natures, the Deity and humanity, were inseparably joined together in one person, never to be divided. Jesus is thus, both perfect God and perfect Man.
+</li>
+
+<li>
+Since Jesus Christ is the only mediator between God and man, we reject the mediatorship of anybody else as unbiblical (1 Tim. 2:5; Heb. 4:14-16).
+</li>
+
+<li>
+Jesus, anointed with the Holy Spirit, is the Christ, the foretold Messiah of the Old Testament; in Him are all the treasures of wisdom and knowledge and in Him dwells all the fullness of God (Mt. 3:16,17; Mk. 1:9-11; Jn. 1:32; Col. 1:15-20; 2:10).
+</li>
+
+<li>
+Jesus is the Lord; the Lord of all creations, Lord of life and death; He was vindicated as the Lord of all through His resurrection. Thus, He received a name (Lordship) above all names (Rom. 1:5; Acts 2:30-36; Rom. 14:9,11; Phil. 2:8-11).
+</li>
+
+<li>
+Jesus Christ became the substitute for sinners before God and died a propitiatory death for the sins of the whole world. Jesus, by and through this perfect obedience and sacrifice, had fully satisfied the justice of the Father, and thus, purchased the redemption, and gained reconciliation and an eternal inheritance into the Kingdom of Heaven for all those who believe on His name (Rom. 3:21-31; 4:4-8; 5:1-11; 8:1-11; 2 Cor. 5:14-21; Mk. 10:45).
+</li>
+
+<li>
+Jesus took the most painful suffering in His body, died the shameful death on the cross, was buried, and remained in the tomb for three days yet without corruption. On the third day, He rose from the dead, with the same body, but glorified, and appeared to His disciples and others not less than ten times in forty days, proving that He is alive. He then ascended to heaven, now sits at the right hand of His Father, interceding for His own, and shall return to judge both righteous and wicked at the end of the age. His death didn't, in any manner, diminish His Deity (Mat. 28:1-7; Mk. 16:6; Lk. 24:5-7,13,31; Jn. 20:1-10, 15-17, 26-29; 21:7-14; 1 Cor. 15:1-5).
+</li>
+</ol>
+<p>
+<i>(Rf: Mt. 1:16-25; Lk. 1:31; 2:7-11; Jn. 1:1-3,14; Jn. 10, 30, 38; 5:17-23; Gal. 4:4; Col 1:15-20; 2:10; Heb. 1:1-3,8; 2:14)</i>
+</p>
+
+<p><strong> C. God, the Holy Spirit </strong></p>
+<ol>
+<li>
+We believe in the Holy Spirit, the Third Person in the Trinity, who proceeds eternally from the Father and the Son, is of one substance, majesty and glory, with the Father and the Son, the very God of the very God, and Eternal (Mt. 10:20, 28:19; Mk. 1:10; Jn. 1:32).
+</li>
+
+<li>
+The Holy Spirit is the Divine person who works in creation, revelation, and redemption.
+</li>
+
+<li>
+It is the work of the Holy Spirit to reprove and convince the world of sin, and of righteousness, and of judgment; to take the things of Christ and show them to men, and to lead and guide men in truth (Jn. 14:16,26; 16:7-15).
+</li>
+
+<li>
+The Holy Spirit leads men to faith in Christ. He regenerates, indwells, baptizes, anoints and seals all who become children of God through Jesus Christ.
+</li>
+
+<li>
+The Holy Spirit empowers, guides, teaches, sanctifies and fills believers who surrender to Him.
+</li>
+
+<li>
+The Holy Spirit baptizes the regenerated person into the Body of Christ, which is the Church.
+</li>
+
+<li>
+We reject the teaching that ‘speaking in tongues’ is the only outward sign of being filled with the Holy Spirit or baptized in the Holy Spirit. Everyone, who is born of God, is indwelt by the Holy Spirit. Jesus Christ baptizes the believer by the Holy Spirit to be joined to His Body, the Church. So, we deny a separate ‘baptism of the Spirit’ (Jn. 3:5; 14:16, 17, 26; 15:26; 16:7-14; Acts 13:2; Rom. 8:9, 26-27; 1 Cor. 12:13; Zeph. 1:13-14; 5:18; 1 Jn. 2:27).
+</li>
+
+<li>
+We believe in the gifts of the Holy Spirit given to believers. All gifts are not given to anyone and none lacks any gift of the Holy Spirit. All these are activated by the same Spirit, who allots to each one individually just as the Spirit chooses. Gifts need not necessarily be the sign of being filled by the Spirit. Even carnal Christians (people of flesh, infants in Christ) may be able to display such gifts, even while dishonoring the Giver (1 Cor. 12:11, 28-30; 3:1-7; Gal. 5:17-21, 26; Mat. 7:21-23).
+</li>
+
+<li>
+The fruit of the Spirit is the clear outward sign of being filled with the Spirit. The tree is known by the fruit and not necessarily by the gifts (Mt. 7:20; 12:33; Lk. 6:44; Gal. 5:16, 22-26).
+</li>
+
+<li>
+We are exhorted not to grieve the Spirit (Eph. 4:30) nor to quench the Spirit nor despise prophesying (1 Thess. 5:19, 20). The Holy Spirit is grieved or pained by all sins (Eph. 4:29-31). The Spirit is quenched whenever the ministry is stifled in an individual or in the church, by despising the Holy utterances, the Word of God. Prophesying is not foretelling, but forthtelling.
+</li>
+</ol>
+</div>
+
+<div id="ceations" class="chapter-box">
+   <h1>Creations</h1>
+<p> <strong>We believe that the Sovereign God created the universe out of nothing.</strong></p>
+<ol>
+<li>God Almighty is the creator of all things, visible and invisible, in heaven, on earth and under the earth. He created all things from nothing. (Gen. 1; Jn. 1:1-3; Col. 1:15-17)</li>
+
+<li>The Triune God did the creation work in unison. (Gen. 1:26).</li>
+
+<li>We do believe the creation account as is given in Genesis chapter one; God created all things in six days; after completing the creation work, "on the seventh day He rested from all his work" (Gen. 2:1-33).</li>
+
+<li>We reject any other theories on creation (such as Evolution Theory, Chance Theory or Big-Bang Theory, Process Theory, and Theistic Evolution) as unbiblical.</li>
+
+<li>However, God is not inactive, but is very much active in upholding and sustaining His creations, and He is sovereign over all His creations, leading to His eternal and ultimate purposes.</li>
+
+<li>As the crown of all creation, God created man, male and female, in His own image and likeness. (Gen. 1:26, 27).</li>
+
+<li>When God created man, He created him with an earthly body, with a soul (having rational mind, emotion and will) and an immortal spirit, endued with knowledge, righteousness and true holiness, having the law of God written in his heart. (Gen. 2:15-17; Rom. 2:13-15; 1 Thess. 5:23; Heb. 4:12). The terms soul and spirit are sometimes interchangeably used; sometimes spirit or soul are used for the whole of meta-physical (Dichotomy—soul and spirit together). Body, soul and spirit (Trichotomy) are specifically used only in 1 Thess. 5:23; Heb. 4:12.</li>
+
+<li>He created man as a rational being having free-will to choose good and evil and having dominion over the creatures. (Gen. 1:26; 2:16, 17; 3:22)</li>
+</ol>
+</div>
+
+<div id="mediator" class="chapter-box">
+<h1>Christ, the Mediator</h1>
+          
+<ol>
+<li> It pleased God, in His eternal purpose, to ordain His only begotten Son, the Lord Jesus Christ, to be the Mediator between God and Man (1 Tim. 2:5).</li>
+
+<li> Jesus Christ, the mediator, is the Prophet, Priest and King; the Head and Saviour of His Church; the heir of all things and the Judge of the world.</li>
+
+<li> The Son of God, the second Person in the Trinity, of one substance and equal with the Father, in the fullness of time became man. Though He became a man with all the essential human properties and common infirmities thereof, yet He was without sin. He was conceived by the power of the Holy Spirit in the womb of the Virgin Mary, of her substance. Thus, two perfect and distinct natures, the Godhead and the Manhood, were inseparably joined together in one person. This person is very God and very Man. (Heb. 4:14–16).</li>
+
+<li> The Lord Jesus Christ in His human nature, united to the Divine, was sanctified and was anointed with the Holy Spirit. In Him are all treasures of wisdom and knowledge, and it pleased the Father that all the fullness of the Godhead should dwell in Him. He was holy, blameless, undefiled and full of grace and truth, and was thoroughly equipped to execute the office of a Mediator. He did not take this office on His own, but the Father had appointed Him to this unique office, and gave all power and judgment into His hand, and authorized and empowered Him to execute the same. (Mt. 3:16,17; Mk. 1:10,11; Jn. 5:22,26,27).</li>
+
+<li> Jesus, born under the law, perfectly fulfilled all the requirements of the law, and thus redeemed all from under the law, suffered in His body, was crucified. He died and was buried. He remained under the power of death, yet saw no corruption. On the third day, He rose from the dead, in the same but glorified body in which He suffered, ascended into Heaven. He now sits at the right hand of His Father, making intercession for those who believe in Him. He shall return to judge men and angels, at the end of the age. (John 20:17; 21:7; Mt. 5:17; 28:5,6; Acts 1:9–11; Rom. 8:3; Gal. 4:4–7; Heb. 4:12; 7:25).</li>
+
+<li> Jesus, by His perfect obedience and sacrifice of Himself, which He once for all offered, has fully satisfied the justice of His Father, has thus purchased reconciliation and an everlasting inheritance in the Kingdom of Heaven, for all those who believe on His name, expressing the mercy of His Father to those who believe in Him. (Rom. 5:6–8, 16–19; 2 Cor. 5:21; Heb. 10:10–14).</li>
+
+<li> The work of redemption was completed through Jesus’ crucifixion only; yet, the virtue, efficacy, and benefits of this redemption are communicated to all those who believe on Him in all ages from the beginning of the world. In and by those promises, types, and sacrifices, He was revealed and signified to be the seed of the woman. On one hand He bruised the serpent’s head, and on the other, He was the Lamb, slain from the foundation of the world. (Gen. 3:15; Jn. 1:29; Rev. 13:8).</li>
+
+<li> Christ is the ever-present Mediator before God making intercession for those who are purchased or redeemed by His own blood (of the Lamb). Through His Word and Spirit, He persuades them to obey God and helps, by His almighty power and wisdom, to overcome Satan and all his temptations. (1 Cor. 10:13; <br>1 Tim. 2:5; Jas. 1:12; 1 Pet. 4:12–16; 1 Jn. 2:1).</br>
+</li>
+</ol>
+</div>
+        
+<div id="sacraments" class="chapter-box">
+<h1>The Sacraments</h1>
+<ol>
+<li>
+Sacrament is derived from the Latin “Sacramentum” which refers to an “Oath of obedience.” However, in the Greek New Testament, there is no word corresponding to “Sacrament.” The word “Sacramentum” was used in the old Latin Bible and in the Vulgate, as a translation to Greek “mysterion” (mystery) (E.g., Eph. 5:32; 1 Tim. 3:16; Rev. 1:20; 17:7). Later on, this word was employed to refer to religious rites.
+</li>
+<li>
+By the word sacrament we mean only a symbol or sign Divinely appointed.
+</li>
+<li>
+Sacraments are to represent Christ and His benefits, and to confirm our faith in Him, and to put a visible difference to those who belong to Christ from the rest of the world.
+</li>
+<li>
+Sacraments are to be solemnly administered in our service of God in Christ, according to His Word. Sacraments are the outward symbols and means of the inward grace of God experienced.
+</li>
+<li>
+Our Lord Jesus Christ has knit together His people in a visible company by sacraments most easy to observe, most excellent in signification. They are two in number, namely, Baptism and the Lord’s Supper.
+</li>
+<li>
+When the Sacraments are administered, the minister declares the grace which is exhibited in and by the sacraments rightly used. But it is not conferred by any power in the minister, nor does it depend on the piety or intention of him who administers it, but upon the work of the Holy Spirit, and on the promises of the Word.
+</li>
+<li>
+Sacraments are mandatory for every Christian, but Sacraments are not a means for salvation. No one ever is regenerated, saved or sanctified by any sacrament.
+</li>
+<li>
+The Sacraments ordained by Jesus Christ are to be received in a worthy manner, and these confirm our faith in God and increase grace by virtue of prayers to God.
+</li>
+<li>
+However, they that receive the Sacraments unworthily, purchase to themselves Judgment, as St. Paul puts it. Normally, the minister does not debar anyone from receiving the sacraments, unless he is explicitly aware of the participant continuing in any known immorality. It is equally true that none, however conscious of unworthiness, is debarred from receiving the elements if they trust in the Lord Jesus Christ alone for salvation and pray for forgiveness and cleansing through confession of their sins before participation. (1 Cor. 11:28,29).
+</li>
+<li>
+Negligence or condemning of the Sacraments are viewed as disobedience to the Commandments of the Lord Jesus Christ. However, grace and salvation are not inseparably annexed to these sacraments. It is unscriptural to teach that no one is regenerated or saved without them or that all that have observed them are undoubtedly regenerated.
+</li>
+<li>
+There are only two Sacraments ordained by Jesus Christ in the Gospels. They are <strong>Baptism and the Lord’s Supper</strong>. These are administered by a minister lawfully ordained by the Church. (Mt.26:26-29; 28:18, 19).
+</li>
+<li>
+Order of services such as Confirmation, Ordination of Presbyters, Consecration of Bishops, Matrimony, Dedication etc. are conducted in STECI in accordance with the principles of services given in the Holy Scripture; but they do not come as Sacraments instituted by Christ. We do not accept them as Sacraments since they are not ordained by the Lord. This includes institution of differently named Priestly Orders (with non-Scriptural names like priests instead of presbyters or pastors), as well as Penance, extreme unction etc. observed in certain other churches as Sacraments.
+</li>
+</ol>
+
+<p> <strong>A. Baptism</strong> </p>
+<ol>
+<li>
+Baptism is a Sacrament of the New Testament, ordained by Jesus Christ (Mt.28:18, 19; Mk.16:16).
+</li>
+<li>
+By the solemn administration of it, the baptized person is received into the visible church (Acts. 4:32). </li>
+It is a sign and seal of the covenant of grace, referring to the person’s engrafting into Christ, of regeneration, remission of sins and the giving up of the person to God through Jesus Christ to walk in the newness of life. These spiritual benefits are received only by grace through faith in Christ.
+</li>
+<li>
+This sacrament, appointed by Christ, is to be continued in his Church until the end of the world.
+</li>
+<li>
+The element used in Baptism is water, and a person is baptized in the name of the Father, and of the Son, and of the Holy Spirit, by a minister lawfully ordained.
+</li>
+<li>
+The mode of baptism is not crucial, according to Scriptural teachings. Immersion of the person into water is not necessary as immersion in baptism has no theological meaning in itself; other interpretations are on speculations of different people. Baptism, as a sign, is rightly administered by pouring or sprinkling water upon the person, or by immersion as desired by the candidate.
+</li>
+<li>
+We believe that the baptism of children of believing parents is Biblical, considering the whole truth of the Word of God, baptizing and bringing them into the community of the believers (Church) under the covenant of grace and teaching them to become disciples of the Lord Jesus Christ (Mt. 28:19,20). Infant baptism to become effectual in their lives, they need to be confirmed in their Christian faith and shall individually confess his/her faith in the Lord Jesus Christ.
+</li>
+<li>
+Normally, the infants of one or both believing parents be baptized, by pouring or sprinkling of water, as per the decision of the parents. If the parents decide their children are not to be baptised as infants, they shall be dedicated in infancy in the name of the Triune God. When such infants come of age and publicly profess their faith in, and obedience to Jesus Christ, they are baptised by any of the modes, pouring or sprinkling of water or by immersion if the candidate opt for the same.
+</li>
+<li>
+The doctrine of baptismal regeneration is rejected as unscriptural.
+</li>
+<li>
+The sacrament of Baptism is to be administered only once to any person.
+</li>
+</ol>
+
+
+<p> <strong>B. The Lord’s Supper</strong></p>
+<ol>
+<li>
+Our Lord Jesus, in the night in which He was betrayed, instituted the Sacrament of Lord’s Supper, symbolizing the breaking of His body and the shedding of His blood (1 Cor.11:23-26).
+</li>
+<li>
+This sacrament is a memorial of Christ’s death for the redemption of those who believe on him, and is to be observed in His Church till he comes (Mat.26:26-29; Mk.14:22-25; Lk.22:19,20).
+</li>
+<li>
+It is also a symbol of the soul’s feeding (spiritual nourishment) upon Christ, and to be a bond and pledge of believers’ communion with Him, and with each other as members of the mystical body of Christ (Jn.6:53-57).
+</li>
+<li>
+Every time the Lord’s Supper is observed, Christ is not offered afresh as an atoning sacrifice for the remission of the sins of the living or the dead. It is a solemn commemoration of His one and only sacrifice upon the cross, once for all, and a spiritual offering of praise and thanksgiving to God for the same. His death on the cross is the fulfilment of all the Old Testament sacrifices, including the slain Passover Lamb.
+</li>
+<li>
+Through the declaration of the Lord’s Word of Institution, prayer and blessing of the elements of bread and wine, they are set apart from a common to a holy use. The bread is taken and broken, and the cup is taken and given separately to the communicants.
+</li>
+<li>
+The elements of the Lord’s Supper are bread and wine. Bread representing the body and wine representing the blood of Christ are symbolically used. Worshiping the elements, the lifting them up (not just taking them in hand) or carrying them about for adoration, and reserving them for any extra ceremonial use, are all contrary to the purpose for which Christ instituted this sacrament.
+</li>
+<li>
+Though at times, the bread and wine used in the Lord’s Supper are called the body and blood of Christ as stated by the Lord, in substance and nature they still remain truly and only bread and wine, as they were before.
+</li>
+<li>
+The elements of bread and wine are used to symbolize the broken body and shed blood of Christ on the cross for the redemption of the mankind.
+</li>
+<li>
+The doctrine of Transubstantiation, the change of the substance of bread and wine into the very body and blood of Christ, by the consecration of a “priest” is repugnant and contrary to the Gospel, and hence we reject this doctrine as unscriptural.
+</li>
+<li>
+The doctrine of Consubstantiation, the teaching that Christ is veiled under the unchanged bread and wine and that His very body and blood are present therein, is also without the warrant of Scriptures, and contradictory to Christ’s teaching, and hence we deny and reject this doctrine.
+</li>
+<li>
+We deny and reject the teaching of localization or the claim that Christ’s spiritual presence is effective in inexplicable terms in the bread and wine of Lord’s Supper or any other kind of teaching of the presence of Christ along with Holy Communion elements as equally unwarranted of the Scriptures and contrary to the teachings of Christ. We do not use the term “Eucharist” for Holy Communion because of the various unscriptural implications attributed to the term.
+</li>
+<li>
+As the Lord Jesus intended, the participants of the Lord’s Supper must be only His disciples, meaning only those who believe on Him, and put their trust in Jesus for the forgiveness of their sins, and who are committed to live in the newness of life. But the wicked and ignorant persons receiving the elements in the sacrament are guilty of the body and blood of the Lord and shall come under Judgment (1 Cor.11:27-31).
+</li>
+<li>
+The Lord’s Supper should not be denied to any of His people. By Christ’s ordinance and commandment, both the bread and the wine, ought to be ministered to all Christians (meaning believers) alike. It is not the duty of the minister to judge who is eligible to be a partaker of the Holy Communion; the participant will take the responsibility for his eligibility before God (though the minister could counsel and warn anyone who participates in the Communion but lives in open sinful life) (1 Cor. 11:27-32).
+</li>
+<li>
+The participation in Lord’s Supper is also a manifestation of Christian unity, as a community of people sharing the same bread and same cup, being part of the same Body of Christ.
+</li>
+<li>
+As commanded by the Lord Jesus, this Sacrament is to be observed by God’s people in remembrance of Jesus till His Second coming.
+</li>
+</ol>
+
+</div>
+</main>
+</div>
+
+
+<div class="footer-address">
+    <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+    <p>#17,18, Church Lane, Kavery Nagar, Defence Colony, <br>Horamavu Agara, Bangalore 560 013</p>
+    <p>
+	 Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> | Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
+        </p>
+        Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a> | 
+        Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+    </p>
+</div>
+
+<script>
+      function showChapter(event, chapterId) {
+          const chapters = document.querySelectorAll('.chapter-box');
+          chapters.forEach(ch => ch.classList.remove('active'));
+
+          const navItems = document.querySelectorAll('.stec-nav-item');
+          navItems.forEach(item => item.classList.remove('active'));
+
+          document.getElementById(chapterId).classList.add('active');
+          event.currentTarget.classList.add('active');
+      }
+    </script>
+<script>
+  function showChapter(event, chapterId) {
+    // Hide all chapters
+    const chapters = document.querySelectorAll('.chapter-box');
+    chapters.forEach(ch => ch.classList.remove('active'));
+
+    // Remove active state from all nav items
+    const navItems = document.querySelectorAll('.stec-nav-item');
+    navItems.forEach(item => item.classList.remove('active'));
+
+    // Show selected chapter + highlight nav item
+    const target = document.getElementById(chapterId);
+    target.classList.add('active');
+    event.currentTarget.classList.add('active');
+
+    // Scroll to top of selected chapter (account for fixed menu bar height)
+    const menuHeight = 150; // adjust to your menu bar height
+    const y = target.getBoundingClientRect().top + window.pageYOffset - menuHeight;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+</script>
+
+  </body>
+</html>
+</body>
+</html>
