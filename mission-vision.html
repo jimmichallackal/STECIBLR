@@ -45,6 +45,7 @@
           flex-wrap: wrap; 
           justify-content: center;
           margin-bottom: 0; /* Space below the menu before main content starts */
+          z-index: 2000;
         }
 
         .menu a {
@@ -106,6 +107,108 @@
              /* Keeps the text from stretching too far */
         }
 
+:root {
+    --stec-navy: #002147;
+    --stec-gold: #D4AF37;
+    --stec-light: #f4f7f6;
+    --menu-height: 60px;
+    --sidebar-gap: 0px;
+
+}
+
+
+.stec-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Sticky Sidebar */
+.stec-sidebar {
+    flex: 0 0 280px;
+    position: sticky;
+    top: calc(var(--menu-height) + var(--sidebar-gap));
+    height: fit-content;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 100
+}
+
+.stec-sidebar-title {
+    background: var(--stec-navy);
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+.stec-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stec-nav-item {
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s;
+    color: #444;
+}
+
+.stec-nav-item:hover {
+    background: var(--stec-light);
+    color: var(--stec-navy);
+}
+
+.stec-nav-item.active {
+    border-left: 5px solid var(--stec-gold);
+    background: var(--stec-light);
+    color: var(--stec-navy);
+    font-weight: 600;
+}
+
+/* Content Area */
+.stec-content {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.chapter-box {
+    display: none;
+    line-height: 1.6;
+}
+
+.chapter-box.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    .stec-container { flex-direction: column; }
+    .stec-sidebar { position: static; width: 100%; }
+}
+  ol {
+    margin-left: 10px;       /* space for numbers */
+  }
+  ol li {
+    text-align: justify;     /* align text like Word */
+    padding-left: 5px;
+     margin-bottom: 10px;       /* small gap after number */
+  }
+
     </style>
 </head>
 <body>
@@ -124,7 +227,7 @@
   
     <a href="index.html"><strong>Home</strong></a>
     <a href="parish-vicar.html"><strong>Vicar</strong></a>
-    <a href="mission-vision.html"><strong>Mission & Vision</strong></a>
+    <a href="mission-vision.html"><strong>Vision & Mission</strong></a>
     <a href="parish-programs.html"><strong>Programs</strong></a>
     <a href="parish-bulletin.html"><strong>Bulletin</strong></a>
     <a href="reading-card.html"><strong>Lectionary</strong></a>
@@ -143,7 +246,7 @@
             <tr>
                 <td class="mission-heading">
                     <h1>
-                        <strong>Mission & Vision</strong>
+                        <strong>What we Believe - Foundational Doctrines</strong>
                     </h1>
                 </td>
             </tr>
@@ -153,69 +256,97 @@
 </main>
 <p></p>
 
-<p>
-    <img src="Steciblr_files/image124.png" alt="Visual representation of Mission and Vision for STECI" border="0" />
+<div class="stec-container">
+    <nav class="stec-sidebar">
+        <div class="stec-sidebar-title">Vison & Mission</div>
+        <ul class="stec-nav-list">
+            <li class="stec-nav-item active" onclick="showChapter(event, 'vision')">STECI Vision</li>
+            <li class="stec-nav-item" onclick="showChapter(event, 'objective')">Objective of Parish</li>
+            <li class="stec-nav-item" onclick="showChapter(event, 'mission')">STECI Mission</li>
+        </ul>
+    </nav>
+
+<main class="stec-content">
+<div id="vision" class="chapter-box active">
+        <h1>STECI Vision</h1>
+        <p><strong>Every Member is a Missionary, Every House is a Mission Center, Every Parish is a Mission Station </strong></p>
+<p>This vision reminds us that mission is not confined to a few individuals or special places. It is the calling of every believer, the sanctification of every home, and the collective witness of every parish.</p>
+	
+</div>
+<div id="objective" class="chapter-box">
+            <h1>Objectives of the Parish</h1>
+
+<p>1. To profess, practice, preach, teach, and propagate the Christian Faith and Gospel to the community of Believers and others, as enumerated in the objectives of the STECI Constitution as follows: 
 </p>
+<p>	<strong>a. Guard the Sound Doctrine</strong></p>
 
-   <section class="mission-vision-section">
-<h2 style="font-size: 22px;"><strong>STECI is Historically Based: An Enduring Legacy</strong></h2>
-<p>The St. Thomas Evangelical Church of India (STECI) proudly traces its roots back to the very foundation of Christianity in India, connecting us directly to the ministry of **Apostle Thomas**, one of the original Twelve disciples of Jesus Christ.</p>
-<p> <strong>The Apostolic Origin (AD 52)</strong></p>
-<p>We affirm that Apostle Thomas, known as the Apostle of Christ to India, initiated Christian history on the subcontinent shortly after AD 52. This timeline is significant, occurring at approximately the same time that Apostle Paul was beginning his missionary work in Europe. The churches established along the Malabar Coast of Kerala and the strong traditions surrounding St. Thomas's martyrdom on the Coromandel Coast—specifically at St. Thomas Mount near Mylapore—provide compelling evidence for this apostolic origin. For nearly two millennia, the witness to Jesus Christ as Savior and God has been maintained on the Malabar Coast of South India. The STECI is a continuation of this enduring Christian existence.</p>
+<p style="margin-left:30px"><strong><i>Contend for the Faith</i></strong></p>
 
-<p> <strong>Upholding Historical Identity</strong></p>
-<p> The STECI is fundamentally related to these historical and traditional realities of India. In an ancient nation like ours, this unbroken historical link is not merely a detail; it is a vital part of our identity and heritage. This conviction is reflected in our very name. While we recognize that other valid ecclesiastical streams in Kerala may not emphasize a direct link to Apostle Thomas, we believe that holding onto this powerful historical foundation is good and valuable for our Church. It provides a unique, deep-rooted identity that we are committed to upholding. </p>
+<p style="margin-left:30px">We are called to earnestly contend for the most holy faith once delivered unto the saints, as revealed in the Scriptures (Jude 3, 20). This faith is not a human invention but a divine trust, handed down through the apostles and preserved in the Word of God.</p>
+<p style="margin-left:30px"><strong><i>The Authority of Scripture</i></strong></p>
+<p style="margin-left:30px" >The Bible, consisting of 66 books in the Old and New Testaments, is the sole basis for all faith and conduct. Every aspect of life and belief must be measured against its truth, for not one jot or tittle shall pass away until all is fulfilled (Matthew 5:18).</p>
+<p style="margin-left:30px"><strong><i>Stewardship of Divine Instruction</i></strong></p>
+<p style="margin-left:30px">We are stewards of the divine instructions revealed through Jesus Christ and proclaimed by His apostles. This stewardship requires vigilance, reverence, and obedience, ensuring that the truth is preserved, taught, and lived out faithfully in every generation.</p>
 
-<h2 style="font-size: 22px;"><strong>STECI is Evangelical: Rooted in Scripture</strong></h2>
-<p>The St. Thomas Evangelical Church of India (STECI) is fundamentally Evangelical, stemming from a deep commitment to the authority of the Holy Scriptures and the liberating message of the Gospel. Our identity is rooted in the reformation and renewal movements that have historically swept both the global and Indian church.</p>
+<p><strong>b. Holy Life</strong></p>
+<p style="margin-left:30px"><strong><i>Emphasis on Holiness</i></strong></p>
+<p style="margin-left:30px">We are called to emphasize holiness in life as described in the Bible. Our life and practices must align with the teachings of Scripture (Matthew 5:8; 1 Thessalonians 4:3; Hebrews 12:14; Romans 12:1–2).</p>
+<p style="margin-left:30px"><i><strong>Spiritual Enrichment</i></strong></p>
+<p style="margin-left:30px">The spiritual life of believers is enriched through the ministry of the Word and the sacraments, and by observing these teachings with sincerity and devotion. Holiness is not optional—it is the mark of true discipleship and fellowship with God.</p>
 
-<p><strong>The Evangelical Awakening in Malabar</strong></p>
-<p>For centuries, the Christian church in Malabar often became more bound by tradition than impregnated by the Scriptures. A significant turning point came with the arrival of the Church Missionary Society missionaries in Kerala nearly two hundred years ago, which led to the translation and distribution of the 66-book Bible in the Malayalam language.</p>
+<p><strong>c. Evangelisation</strong> 
 
-<p>Abraham Malpan, a key figure among Syrian Christians, championed this evangelical reformation in Kerala, much like John Wycliffe in the West. He was instrumental in liberating the evangelical message through the clear Word of God.</p>
+<p style="margin-left:30px"><strong><i>The Gospel of Grace</i></p></strong>
+<p style="margin-left:30px">We are called to preach the gospel of grace to all nations, making disciples of everyone who believes, and baptizing them in the name of the Triune God (Matthew 28:18–20; Mark 16:15; Acts 1:8).</p>
+	<p style="margin-left:30px"><strong><i>Commitment to the Great Commission</i></p></strong>
+<p style="margin-left:30px">As a Church, we commit ourselves to evangelism in obedience to the Great Commission of our Lord Jesus Christ. This mission is especially urgent in our land of India, where we are entrusted to proclaim Christ faithfully and invite all people into His kingdom.</p>
 
-<p>This revolutionary message had a special effect among existing Christians and eventually led to the formation of the Mar Thoma Church.</p>
+<p>2. To engage and carry out any educational and other charitable works that find expression from biblical beliefs and doctrines and tenets of the Christian Faith.</p>
 
-<p><strong>A Biblical Declaration (1961)</strong></p>
-<p>The evangelical, Biblically true, and related message became progressively clearer and refined until 1961. It was in this year that our church fathers formally declared the existence and distinct identity of the STECI at a great gathering of 25,000 believers in Thiruvalla. This declaration formally placed our church in the biblical and world evangelical stream of the Church Catholic.</p>
+</div>
 
-<p><strong>Part of the Reformed Tradition</strong></p>
-<p>The STECI is thus related to and based on the whole Bible. This commitment aligns us with the reformed tradition in theology and doctrine—the same tradition that birthed the global Reformation through leaders like John Wycliffe and Martin Luther.</p>
+<div id="mission" class="chapter-box">
+   <h1>STECI & Mission</h1>
+<p><strong>STECI is Historically Based</strong></p>
 
-<p>Our theological cleansing and doctrinal distinctiveness came through the proclamation of the Word of God and the exposition of the Scriptures, fueling our missionary impetus. The Evangelical Church (STECI) is therefore a group of believers who proclaim the whole counsel of God according to the Scriptures, taking the entire 66 books of the Bible as fundamentally necessary for our faith and mission.</p>
+<p>Apostle Thomas, one of the Twelve, was known as the Apostle of Christ to India. The ministry and life of Apostle Thomas were abundantly blessed with churches formed and left behind him. The churches of Kerala and the traditions of his martyrdom on the Coromandel Cost (nothing less than the St. Thomas Mount in South Madras, not far from the Mylapore coast) all need satisfactory explanation. That is what we try to do in our Church, along with other different ecclesiastical streams, to say Apostle Thomas originated Christian history in India after 52 AD. This is just about when Apostle Paul reached Europe with the Gospel.</p>
 
-<h2 style="font-size: 22px;"><strong>STECI is for Church Planting</strong></h2>
-<p>The St. Thomas Evangelical Church of India (STECI) is fundamentally dedicated to the extension of the Church of Jesus Christ. Our core objectives place Evangelizing, Disciple-Making, and Church Planting in the primary position among our goals, a commitment shared by the wider stream of reformed churches and missions launched from vibrant, faithful congregations.</p>
+<p>The witness to Jesus Christ as Savior and God comes through nearly two millennia of Christian existence on the Malabar Coast of south India.
+</p>
+<p>The STECI is related to this historical and traditional realities of India. This is important for us. So our name upholds this. There are other Christians in Kerala, equally valid, who do not wish to relate to Apostle Thomas. May be to them history is not all that significant. But in an ancient country like India this historical is good and valuable for us. So we must hold on.</p>
 
-<p>The dynamic of our Church life is patterned after the examples and teachings of the Lord Jesus and His Apostles. The individual Christian is called to holiness of life—to live as Jesus lived during His earthly ministry. This embodies the principle of Incarnation (the life of God in the world) manifested in every believer, ensuring that our outreach is rooted in authentic witness.</p>
+<p> <strong> STECI is Evangelical</strong></p>
 
-<h2 style="font-size: 22px;"> <strong>STECI is India-Comprehending: A National Vision</strong></h2>
-<p>The St. Thomas Evangelical Church of India (STECI) is defined by a missionary vision that encompasses the entire nation of India.</p>
+<p>It is a fact that through the years Christian church in Malabar and all over the world became more tradition bound than impregnated by the Scriptures. With the coming of the Church Missionary Society missionaries in Kerala nearly two hundred years ago did the Syrian Christians receive Bible of the 66 books in Malayalam tongue. The coming of the open Bible in Malayalam gave the sense of the evangelical message in the church, through the clear Word of God. Abraham Malpan among the Syrian Christians was like John Wycliffe of the West. He liberated the evangelical message in Kerala. That message was of special and revolutionary effect among the existing Christians, The Mar Thoma Church resulted from Abraham Malpan’s course of teachings and evangelical reformation. The evangelical, Biblically true and related, message became clearer and finer until in 1961, that is until our church fathers brought into existence and from the Declaration of the STECI and proclaimed it at the Great gathering of 25000 strong in Thiruvalla. That clearly placed Evangelical Church, our church, in the biblical and world evangelical stream the church catholic.</p>
 
-<p><strong>Orienting to the New Republic</strong></p>
-<p>Historically, India was characterized by numerous splintered sections, groups, and languages. With the formation of the Indian Republic in 1947, a new, unified nation emerged—an India superseding its divergences and divisions.</p>
+<p>Thus the STECI is related to and based on the whole Bible. In that way, it is part of the reformed tradition in theology and doctrine. The Reformation and renewals have taken place in the Western Church through such leaders and John Wycliffe, Martin Luther and others. Our Church gets related to these reformations due to the doctrinal and theological cleansing which came to us through the proclamation of the Word of God and exposition of the Scriptures, and missionary impetus.</p>
 
-<p>In 1961, the STECI oriented itself to this new India. Our founding vision deliberately abandoned the focus on the tiny geographical sector of Kerala and its associated linguistic or caste divisions.</p>
+<p>The Evangelical Church (STECI) is the group of believers who proclaims the whole counsel of God according to the Scriptures. This takes the whole Bible with its 66 books making up the evangelical message. The Bible, in this manner, becomes fundamentally necessary for us in the STECI. And we are evangelical.
+</p>
+<p><strong>STECI is for Church Planting</strong></p>
+<p>The STECI is a Church and is out to extend the church of Jesus Christ. Church planting becomes of the focus of the objectives of the Church. Along with all the other aims of the Church, evangelizing, disciple-making and Church planting take up the primary position in our goals. To these we are committed. The reformed churches are all so committed and Missions have launched out for this from living churches.
+</p>
+<p>Church life is guided by the examples and dynamic of the Lord Jesus and His Apostles. The individual Christian is to pattern his life after Jesus. This means Christians are to be marked by holiness of life. That is to live even as Jesus lived 33 and 1/2 years on this earth. This is incarnation or the life of God in the world in any believer.
+</p>
+<p><strong>STECI is India Comprehending</strong></p>
+<p>There was a time when India was splintered in so many sections, groups and languages. From 1947 and the formation of the Indian Republic a new India emerged. It was an India superseding all her divergence, differences and division. That nation building still goes on. To this new India the STECI got oriented and related in 1961.We become a Church envisaging and comprehending the whole of India, with all her languages, caste divisions or the tiny geographical sector of Kerala were given up to take in the vastness and millions of people of India into our bulging swoop of advance.
+</p>
+<p>This means the missionary programme and church planting need to comprehend the whole nation of India. Every language (there are 17 statutory languages in India) becomes the languages of the Evangelical Church. Reaching out in the lingua Francona, English, is a must to cover the significant sections of India. Our programme must be also in all the languages of India. Being an Episcopal Church such comprehensive programmes will mean local parishes in all languages of India. Indeed this is a heroic programme and challenging plan.
+</p>
+<p>To such a vision our founding fathers geared this Church, STECI, and launched her 60 years ago. That is what shall guide and challenge her, and us. Various forces may try to limit us, tell us that we are a small people and it is enough to do this and so. We are called to go the full compass of claims and commitment. All our programmes, activities, plans and movements are with the purpose of living up to our name.
+</p>
+<p>Along with the relevance to all of India we shall be concerned about the evangelization of the whole world. That is included in the evangelical commitment of the Great Commission of the Lord Jesus. Our Declaration calls us to this unfinished task as well.
+</p>
+<p>We have great things to do. We have much way to go. Our destiny is to fulfill our life as a church according to God’s purpose in Christ. This will determine and require each individual member fulfilling his/her part in this comprehensive call.</p>
+<p><i>(Excerpt from Late Very Rev. P. T Chandapilla)</i></p>
+</div>
 
-<p>We became a Church envisaging and comprehending the whole of India, fully committed to taking in the vastness and millions of people of the nation into our mission of advance.</p>
 
-<p><strong>The Missionary Programme</strong></p>
-<p>This national vision means that our missionary and church planting programmes must comprehend the entire country.</p>
+</main>
+</div>
 
-<p>Language and Reach: Every language of India, including the statutory languages, becomes a language of the Evangelical Church. Furthermore, reaching out through the lingua franca, English, is essential to cover significant urban and educated sections of India.</p>
 
-<p>Episcopal Structure: As an Episcopal Church, this requires a demanding yet necessary programme: establishing local parishes in all languages of India. This is a heroic and challenging plan, demanding commitment and dedication from all members.</p>
 
-<p><strong>Commitment to a Comprehensive Call</strong></p>
-<p>Our founding fathers launched the STECI with this compelling vision in 1961, and it continues to guide and challenge us today. Though various forces may attempt to limit our aspirations, we are called to pursue the full compass of our claims and commitment. All our programs, activities, and plans are geared toward fulfilling this national scope.</p>
-
-<p>Beyond India, our commitment is intrinsically linked to the Great Commission of the Lord Jesus Christ, mandating the evangelization of the whole world. Our Declaration affirms this unfinished global task.</p>
-
-<p>Fulfilling this comprehensive call and destiny requires that every individual member plays their part in advancing the Church according to God's purpose in Christ.</p>
-
-</section>
-
-<p>(Excerpt from Late Very Rev. P. T Chandapilla)</P>
 <div class="footer-address">
     <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
     <p>#17,18, Church Lane, Kavery Nagar, Defence Colony, <br>Horamavu Agara, Bangalore 560 013</p>
@@ -226,8 +357,42 @@
         Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
     </p>
 </div>
+
+<script>
+      function showChapter(event, chapterId) {
+          const chapters = document.querySelectorAll('.chapter-box');
+          chapters.forEach(ch => ch.classList.remove('active'));
+
+          const navItems = document.querySelectorAll('.stec-nav-item');
+          navItems.forEach(item => item.classList.remove('active'));
+
+          document.getElementById(chapterId).classList.add('active');
+          event.currentTarget.classList.add('active');
+      }
+    </script>
+<script>
+  function showChapter(event, chapterId) {
+    // Hide all chapters
+    const chapters = document.querySelectorAll('.chapter-box');
+    chapters.forEach(ch => ch.classList.remove('active'));
+
+    // Remove active state from all nav items
+    const navItems = document.querySelectorAll('.stec-nav-item');
+    navItems.forEach(item => item.classList.remove('active'));
+
+    // Show selected chapter + highlight nav item
+    const target = document.getElementById(chapterId);
+    target.classList.add('active');
+    event.currentTarget.classList.add('active');
+
+    // Scroll to top of selected chapter (account for fixed menu bar height)
+    const menuHeight = 150; // adjust to your menu bar height
+    const y = target.getBoundingClientRect().top + window.pageYOffset - menuHeight;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+</script>
+
+  </body>
+</html>
 </body>
 </html>
-
-
-
