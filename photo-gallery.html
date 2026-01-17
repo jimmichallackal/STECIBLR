@@ -164,6 +164,110 @@
         grid-template-columns: 1fr;
     }
 }
+:root {
+    --stec-navy: #002147;
+    --stec-gold: #D4AF37;
+    --stec-light: #f4f7f6;
+    --menu-height: 60px;
+    --sidebar-gap: 0px;
+
+}
+
+
+.stec-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Sticky Sidebar */
+.stec-sidebar {
+    flex: 0 0 280px;
+    position: sticky;
+    top: calc(var(--menu-height) + var(--sidebar-gap));
+    height: fit-content;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 100
+}
+
+.stec-sidebar-title {
+    background: var(--stec-navy);
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+.stec-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stec-nav-item {
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s;
+    color: #444;
+}
+
+.stec-nav-item:hover {
+    background: var(--stec-light);
+    color: var(--stec-navy);
+}
+
+.stec-nav-item.active {
+    border-left: 5px solid var(--stec-gold);
+    background: var(--stec-light);
+    color: var(--stec-navy);
+    font-weight: 600;
+}
+
+/* Content Area */
+.stec-content {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.chapter-box {
+    display: none;
+    line-height: 1.6;
+}
+
+.chapter-box.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    .stec-container { flex-direction: column; }
+    .stec-sidebar { position: static; width: 100%; }
+}
+  ol {
+    margin-left: 10px;       /* space for numbers */
+  }
+  ol li {
+    text-align: justify;     /* align text like Word */
+    padding-left: 5px;
+     margin-bottom: 10px;       /* small gap after number */
+  }
+
+
+
     </style>
 </head>
 <body>
@@ -185,7 +289,7 @@
     <a href="mission-vision.html"><strong>Vision & Mission</strong></a>
     <a href="parish-programs.html"><strong>Programs</strong></a>
     <a href="parish-bulletin.html"><strong>Bulletin</strong></a>
-    <a href="reading-card.html"><strong>Lectionary</strong></a>
+    <a href="reading-card.html"><strong>Reading Card</strong></a>
     <a href="executive-committee.html"><strong>Committee</strong></a>
     <a href="church-leaders.html"><strong>Leaders</strong></a>
     <a href="our-history.html"><strong>History of Parish</strong></a>
@@ -209,9 +313,20 @@
 </main>
 <p></p>
 
-<div class="image-gallery-grid">
+<div class="stec-container">
+    <nav class="stec-sidebar">
+        <div class="stec-sidebar-title">Gallery</div>
+        <ul class="stec-nav-list">
+            <li class="stec-nav-item active" onclick="showChapter(event, 'photo')">Photo Gallery</li>
+            <li class="stec-nav-item" onclick="showChapter(event, 'video')">Video Gallery</li>
+        </ul>
+    </nav>
+<section class="mission-vision-section">
+<main class="stec-content">
+<div id="photo" class="chapter-box active">
+        <h1>Photo Gallery</h1>
 
-    
+<div class="image-gallery-grid">
 
     <div class="gallery-item">
         <a href="Steciblr_files/church4.png" class="gallery-item" target="_blank" rel="noopener noreferrer">
@@ -396,19 +511,11 @@
         </a>
     </div>
 </div>  
-	 
-<main class="main-content">
-<div>
-    <table border="1" width="100%" cellspacing="0" cellpadding="0" >
-        <tbody>
-          <tr>
-            <td class="mission-heading">
-              <h1><a name="_Gallery_1"></a><strong>Video Gallery</strong></h1>
-            </td>
-          </tr>
-        </tbody>
-      </table>
 </div>
+	 
+
+<div id="video" class="chapter-box">
+        <h1>Video Gallery</h1>
 
 <div class="video-gallery-grid">
 
@@ -442,6 +549,9 @@
     </div>
 </div>
 
+</section>
+</main>
+</div>
 <div class="footer-address">
     <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
     <p>#17,18, Church Lane, Kavery Nagar, Defence Colony, <br>Horamavu Agara, Bangalore 560 013</p>
@@ -452,13 +562,39 @@
         Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
     </p>
 </div>
+<script>
+      function showChapter(event, chapterId) {
+          const chapters = document.querySelectorAll('.chapter-box');
+          chapters.forEach(ch => ch.classList.remove('active'));
 
+          const navItems = document.querySelectorAll('.stec-nav-item');
+          navItems.forEach(item => item.classList.remove('active'));
 
+          document.getElementById(chapterId).classList.add('active');
+          event.currentTarget.classList.add('active');
+      }
+    </script>
+<script>
+  function showChapter(event, chapterId) {
+    // Hide all chapters
+    const chapters = document.querySelectorAll('.chapter-box');
+    chapters.forEach(ch => ch.classList.remove('active'));
+
+    // Remove active state from all nav items
+    const navItems = document.querySelectorAll('.stec-nav-item');
+    navItems.forEach(item => item.classList.remove('active'));
+
+    // Show selected chapter + highlight nav item
+    const target = document.getElementById(chapterId);
+    target.classList.add('active');
+    event.currentTarget.classList.add('active');
+
+    // Scroll to top of selected chapter (account for fixed menu bar height)
+    const menuHeight = 150; // adjust to your menu bar height
+    const y = target.getBoundingClientRect().top + window.pageYOffset - menuHeight;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+</script>
 </body>
-
 </html>
-
-
-
-
 
