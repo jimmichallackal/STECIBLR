@@ -147,6 +147,33 @@
             margin-left: 1%; /* Using % makes it look better on mobile */
              /* Keeps the text from stretching too far */
         }
+
+  /* --- Programs Grid Specific CSS --- */
+
+        /* Base Style (Default for Desktops/Laptops) */
+        .programs-grid-container {
+            display: grid;
+            /* 1. Sets up 4 equal columns for wide screens */
+            grid-template-columns: repeat(4, 1fr);  
+            gap: 20px; /* Space between the grid items */
+            padding: 0 10px; /* Optional padding */
+        }
+
+        .program-item {
+            /* Optional: Add borders/shadows to visually separate each program */
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: center; /* Center the image and text within the item */
+        }
+
+        /* Ensure images remain fluid (THIS IS CRITICAL!) */
+        .program-item img {
+            max-width: 100%;
+            height: auto;
+            /* Optional: Make all images the same height */
+            aspect-ratio: 4/3;  
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
@@ -186,17 +213,82 @@
 <section class="mission-vision-section">
 <div class="flex-item text-item">
         <p>
-            St. Thomas Evangelical Church of India (STECI) is an Evangelical, Episcopal Church which firmly affirms that the Bible is the inspired, inerrant and infallible Word of God. All that is necessary for our salvation and living in righteousness is given in the Bible. It further affirms that the Church has a responsibility to preach the Gospel of Jesus Christ to all the nations of the world, especially to India. The church is engaged in active evangelism. The headquarters of this church is at Thiruvalla, a town in the state of Kerala which is in the Southwestern part of South India. The <strong>Bangalore Parish</strong> is one of the many vibrant communities under STECI, located in the heart of Bengaluru (Garden City). It plays an active role in worship, discipleship, and outreach, reflecting the church's broader mission.
-        </p>
-
-<p>At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire is to glorify God, share the love of Jesus Christ, and walk together as a family of faith. Whether you are new to the area, exploring faith, or looking for a church home, you are warmly invited to join us.
+            St. Thomas Evangelical Church of India (STECI) is an Evangelical, Episcopal Church which firmly affirms that the Bible is the inspired, inerrant and infallible Word of God. All that is necessary for our salvation and living in righteousness is given in the Bible. It further affirms that the Church has a responsibility to preach the Gospel of Jesus Christ to all the nations of the world, especially to India. The church is engaged in active evangelism. The headquarters of this church is at Thiruvalla, a town in the state of Kerala which is in the Southwestern part of South India. </p>
+ <p>The <strong>Bangalore Parish</strong> is one of the many vibrant communities under STECI, located in the heart of Bengaluru (Garden City). It plays an active role in worship, discipleship, and outreach, reflecting the church's broader mission.
+At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire is to glorify God, share the love of Jesus Christ, and walk together as a family of faith. </p>
+<p>Whether you are a long-time believer, a vistor new to the area, exploring faith, or looking for a church home, you are warmly invited to join us.
 </p>
     </div>
 
 <p></p>
     
     
+<div>
+    <table border="1" style="width: 100%; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td class="mission-heading">
+                    <h1><strong>Parish Programs</strong></h1>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+</main>
+<p></p>
+<p></p>
+<div class="programs-grid-container">
+    
+    <div class="program-item">
+        <img src="Steciblr_files/image125.png" alt="Sunday Service, Holy Communion" border="0" />
+        <p><strong>Sunday, 8:30am</strong></p>
+        <p>Gather in the House of the Lord to raise our voices in praise and worship to Almighty God. It's a time to lift our hearts in reverence, express our gratitude, and remember the sacrifice of Christ through Holy Communion.</p>
+    </div>
+
+    <div class="program-item">
+        <img src="Steciblr_files/image126.png" alt="Sunday School for children" border="0" />
+        <p><strong>Sunday, 11:00am</strong></p>
+        <p>The Sunday School is focused on nurturing children in biblical teachings, Christian values, and spiritual growth.</p>
+    </div>
+    
+    <div class="program-item">
+        <img src="Steciblr_files/image127.png" alt="Youth Ministry" border="0" />
+        <p><strong>2<sup>nd</sup> Saturday, 4:00pm</strong></p>
+        <p>Bangalore Parish's Youth Ministry is a vibrant group focused on engaging young people in spiritual growth, fellowship, and service.</p>
+    </div>
+    
+    <div class="program-item">
+        <img src="Steciblr_files/women.png" alt="Sevini Samajam (Women's Ministry)" border="0" />
+        <p><strong>1<sup>st</sup> & 3<sup>rd</sup> Sundays, 11:00am at church<br>& Tuesday, 8:30pm (online prayer) </br></strong></p>
+        <p>Sevini Samajam (Women's Ministry) described as a pillar of strength for the parish, dedicated to spiritual growth and fellowship.</p>
+    </div>
+
+    <div class="program-item">
+        <img src="Steciblr_files/image129.png" alt="Fasting Prayer Gathering" border="0" />
+        <p><strong>Friday, 10:00am </strong></p>
+        <p>Weekly gathering for fasting prayer and spiritual fellowship.</p>
+    </div>
+
+    <div class="program-item">
+        <img src="Steciblr_files/image130.png" alt="Online Prayer" border="0" />
+        <p><strong>Wednesday, 7:00pm (online)</strong></p>
+        <p>To spend one hour in dedicated online prayer, lifting up the personal, spiritual, and physical needs of individuals and families before God.</p>
+    </div>
+
+    <div class="program-item">
+        <img src="Steciblr_files/choir.png" alt="Choir Practice" border="0" />
+        <p><strong>Saturday, 5:00pm</strong></p>
+        <p>The Choir Practice prepares singers and musicians for Sunday services, special events, and spiritual gatherings.</p>
+    </div>
+
+    <div class="program-item">
+        <img src="Steciblr_files/image132.png" alt="Bible Study" border="0" />
+        <p><strong>Friday, 7:00pm (online)</strong>
+        <p>In-depth scripture study and discussion via video conference.</p>
+    </div>
+
+</div>
+</main>
 <p></p>
 
 </section>
