@@ -129,8 +129,69 @@
             margin-top: 10px;
         }
 
+ /* --- Leadership Grid Specific CSS --- */
+        
+        /* FIX: New wrapper to ensure proper spacing and prevent overlap */
+        .leader-section-wrapper {
+            margin-bottom: 40px; /* Adds vertical space between different leader groups */
+            padding: 10px;
+            /* Optional subtle background/border for visual grouping */
+            border: 1px solid #f0f0f0; 
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+
+
+        /* GLOBAL STYLES FOR CONSISTENCY */
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            padding: 5px 0 15px; /* Added padding-bottom for separation from the grid */
+            margin: 0;
+            clear: both;
+        }
+
+        .leader-item {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .leader-item img {
+            max-width: 100%;  
+            height: auto; 
+            border: 1px solid #ccc;
+            margin: 10px auto;
+            display: block;
+            object-fit: contain; 
+        }
+
+        .leader-item .role, .leader-item .name {
+            margin: 5px 0;
+            line-height: 1.2;
+        }
+        .leader-item .name {
+            font-weight: bold;
+        }
+
+
+    .leadership-grid-5-col {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 15px;
+        }
+      .gallery-item img {
+            /* Ensure all images in the grid fill their space and look consistent */
+            width: 100%;
+            height: 300px; /* Fixed height for consistent look */
+            object-fit: cover; /* Crops image to fit the dimensions */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+ 	    text-align: center;
+            padding: 10px;
+        }
+
         /* Media Query for Mobile: Stack them vertically */
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
             .vicar-bio-flex {
                 flex-direction: column; /* Stacks photo and text vertically */
             }
@@ -138,14 +199,28 @@
                 order: -1; /* Puts the image at the top */
                 margin-bottom: 20px;
             }
+  .leadership-grid-5col {
+                grid-template-columns: 1fr;
+            }
         }
-		   .footer-address {
+        }
+/* Tablet-sized screens (up to 768px) */
+        @media (max-width: 768px) {
+            .leadership-grid-5-col {
+                grid-template-columns: 1fr;
+            }
+          }
+
+      
+       .footer-address {
             background-color: #243117;
             color: #FFFF99;
             padding: 20px;
             text-align: center;
             margin-top: 30px;
         }
+  
+
     </style>
 </head>
 <body>
@@ -181,7 +256,7 @@
         <tbody>
           <tr>
             <td class="mission-heading">
-              <h1><strong>Parish Vicar</strong></h1>
+              <h1><strong>Parish Vicars</strong></h1>
             </td>
           </tr>
         </tbody>
@@ -191,7 +266,7 @@
 <div class="vicar-bio-flex">
 
     <div class="vicar-image-container">
-        <img src="Steciblr_files/laji.png" alt="Photo of Rev. Laji Varughese" border="0" />
+        <img src="Steciblr_files/revlaji.jpg" alt="Photo of Rev. Laji Varughese" border="0" />
         <p class="vicar-name-title">With love and prayers,<br> Rev. Laji Varughese<br>
         Vicar - Bangalore Parish</p>
         
@@ -213,6 +288,163 @@
 	</div>
 </div>
 
+<hr/>
+<div class="leadership-section">
+    <div class="section-title">
+        <strong>Former Parish Vicars</strong>
+    </div>
+<hr/>
+<p> Our parish has been blessed with dedicated spiritual shepherds since 1980. Each vicar has contributed uniquely to building our community of faith, leaving lasting impacts on generations of believers. We remain grateful for their pastoral care and guidance, which continue to inspire us today.</p>
+   
+ <div class="leadership-grid-5-col">
+        
+        <div class="gallery-item">
+            <img src="Steciblr_files/revtcgeorge.jpg" alt="Rev. Dr. T.C. George" border="0" />
+            <br><strong>Late Rev. Dr. T. C. George</strong>
+            <br><strong>1980 - 1984</strong></p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Steciblr_files/bishopthomas.jpg" alt="Bishop. Thomas Abraham" border="0" />
+            <br><strong>Most Rev. Dr. Thomas Abraham</strong>
+            <br><strong>1984 - 1987</strong></p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Steciblr_files/bishopkoshy1.jpg" alt="Bishop M. K. Koshy" border="0" />
+            <br><strong>Bishop Dr. M. K. Koshy</strong>
+            <br><strong>1987 - 1989</strong></p>        
+	</div>
+
+        <div class="gallery-item">
+            <img src="Steciblr_files/revthomas.jpg" alt="Rev. Dr. Thomas Varghese" border="0" />
+            <br><strong>Rev. Dr. Thomas Varghese</strong>
+	    <br><strong>1989 - 1990 & 1991 - 1994 </strong></p>        
+	</div>
+	<div class="gallery-item">
+            <img src="Steciblr_files/revvarghese.jpg" alt="Rev. Varghese Philip" border="0" />
+            <br><strong>Rev. Varghese Philip</strong>
+	    <br><strong>1990 - 1991 & 1994 - 1996</strong></p>        
+	</div>
+
+            <div class="gallery-item">
+
+            <img src="Steciblr_files/revjohn.jpg" alt="Rev. John M Prasad" border="0" />
+            <br><strong>Rev. John M Prasad</strong>
+	    <br><strong>1996 - 1996</strong></p>
+        </div>
+	<div class="gallery-item">
+
+            <img src="Steciblr_files/bishopabraham.jpg" alt="Bishop Abraham Chacko" border="0" />
+            <br><strong>Rt. Rev. Dr. Abraham Chacko</strong>
+	    <br><strong>1996 - 1998</strong></p>
+        </div>
+
+       <div class="gallery-item">
+
+            <img src="Steciblr_files/revksjames.jpg" alt="Rev. K. S. James" border="0" />
+            <br><strong>Rev. K. S. James</strong>
+	    <br><strong>1998 - 2002</strong></p>
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="Steciblr_files/revkoruth.jpg" alt="Bishop Dr. C.V. Mathew" border="0" />
+            <br><strong>Late Rev. P. K. Koruth</strong>
+            <br><strong>2002 - 2006</strong></p>
+        </div>
+
+     <div class="gallery-item">
+
+            <img src="Steciblr_files/revbiju.jpg" alt="Rev. Biju Thomas" border="0" />
+            <br><strong>Rev. Biju Thomas</strong>
+	    <br><strong>2006 - 2007 & 2019 - 2022</strong></p>
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="Steciblr_files/revthottathil.jpg" alt="Rev. Thomas Thottathil" border="0" />
+            <br><strong>Rev. Thomas Thottathil</strong>
+	    <br><strong>2007 - 2009</strong></p>
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="Steciblr_files/revpmjoseph.jpg" alt="Bishop Dr. C.V. Mathew" border="0" />
+            <br><strong>Rev. P. M. Joseph</strong>
+	    <br><strong>2009 - 2013</strong></p>
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="Steciblr_files/revshaji.jpg" alt="Rev. Shaji Alexander" border="0" />
+            <br><strong>Rev. Shaji Alexander</strong>
+ 	    <br><strong>2013 - 2016</strong></p>
+        </div>
+
+       <div class="gallery-item">
+
+            <img src="Steciblr_files/revmoncy.jpg" alt="Rev. Moncy Varghese" border="0" />
+            <br><strong>Rev. Moncy Varghese</strong>
+	    <br><strong>2016 - 2019</strong></p>
+        </div>
+
+        
+    </div>
+</div>
+
+<hr/>
+<div class="leadership-section">
+    <div class="section-title">
+        <strong>Other Presbyters served the Parish</strong>
+    </div>
+<hr/>
+
+    <div class="leadership-grid-5-col">
+        
+        <div class="gallery-item">
+            <img src="Steciblr_files/revmammen.jpg" alt="Rev. V. M. Mammen" border="0" />
+            <p class="name"><strong>Rev. V. M. Mammen</strong></p>
+             </div>
+
+        <div class="gallery-item">
+            <img src="Steciblr_files/revcherian.jpg" alt="Rev. M. Cherian" border="0" />
+            <p class="name"><strong>Late Rev. M. Cherian</strong></p>
+            <p class="name"><strong></strong></p>
+        </div>
+
+    <div class="gallery-item">
+
+            <img src="Steciblr_files/revsunny.jpg" alt="Rev. Sunny C John" border="0" />
+            <p class="name"><strong>Rev. Sunny C John</strong>
+	   <br> <strong>1994 - 1996</strong>
+	    <br><strong>Assistant Vicar</strong></p>
+        </div>
+
+        <div class="gallery-item">
+
+            <img src="Steciblr_files/revtitus.jpg" alt="Bishop A. I. Alexander" border="0" />
+            <p class="name"><strong>Rev. K. J. Titus</strong>
+      	    <br><strong>1994 - 1996</strong>
+	    <br><strong>Assistant Vicar</strong></p>  
+        </div>
+ 		<div class="gallery-item">
+
+            <img src="Steciblr_files/revprakash.jpg" alt="Rev. Dr. Prakash Abraham Mathew" border="0" />
+            <p class="name"><strong>Rev. Dr. Prakash Abraham Mathew</strong>
+	    <br><strong>Principal, JMBC</strong></p>
+	    
+        </div><div class="gallery-item">
+
+            <img src="Steciblr_files/revvarghesejohn.jpg" alt="Rev. Dr. Varughese John" border="0" />
+            <p class="name"><strong>Rev. Dr. Varughese John</strong>
+	    <br><strong>2021 - 2024</strong>
+	    <br><strong>Assistant Vicar</strong></p>
+        </div>
+    </div>
+</div>
+
+
 <div class="footer-address">
     <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
     <p>#17,18, Church Lane, Kavery Nagar, Defence Colony, <br>Horamavu Agara, Bangalore 560 013</p>
@@ -226,6 +458,4 @@
 </body>
 
 </html>
-
-
 
