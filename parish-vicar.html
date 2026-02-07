@@ -199,11 +199,17 @@
                 order: -1; /* Puts the image at the top */
                 margin-bottom: 20px;
             }
-  .leadership-grid-5col {
+          }
+       
+		        /* Mobile Phone screens (up to 480px) */
+        @media (max-width: 480px) {
+            /* ALL sections stack into a single column */
+            .leadership-grid-2-col,
+            .leadership-grid-3-col,
+            .leadership-grid-4-col {
                 grid-template-columns: 1fr;
             }
-        }
-        }
+		 }
 /* Tablet-sized screens (up to 768px) */
         @media (max-width: 768px) {
             .leadership-grid-5-col {
@@ -458,4 +464,5 @@
 </body>
 
 </html>
+
 
