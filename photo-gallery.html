@@ -671,19 +671,8 @@
         Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
     </p>
 </div>
-<script>
-      function showChapter(event, chapterId) {
-          const chapters = document.querySelectorAll('.chapter-box');
-          chapters.forEach(ch => ch.classList.remove('active'));
 
-          const navItems = document.querySelectorAll('.stec-nav-item');
-          navItems.forEach(item => item.classList.remove('active'));
-
-          document.getElementById(chapterId).classList.add('active');
-          event.currentTarget.classList.add('active');
-      }
-    </script>
-<script>
+	<script>
   function showChapter(event, chapterId) {
     // Hide all chapters
     const chapters = document.querySelectorAll('.chapter-box');
@@ -703,13 +692,18 @@
     const y = target.getBoundingClientRect().top + window.pageYOffset - menuHeight;
     window.scrollTo({ top: y, behavior: 'smooth' });
   }
-</script>
 
-
-<script>
+  // Submenu filtering + auto-activate Photo Gallery
   document.querySelectorAll('.stec-subitem').forEach(item => {
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent parent toggle
       const filter = item.getAttribute('data-filter');
+
+      // ✅ Step 1: Activate Photo Gallery tab
+      document.querySelectorAll('.chapter-box').forEach(ch => ch.classList.remove('active'));
+      document.getElementById('photo').classList.add('active');
+
+      // ✅ Step 2: Apply filter
       document.querySelectorAll('.gallery-item').forEach(photo => {
         if (filter === 'all' || photo.dataset.category === filter) {
           photo.style.display = 'block';
@@ -717,12 +711,17 @@
           photo.style.display = 'none';
         }
       });
+
+      // ✅ Step 3: Highlight submenu item
+      document.querySelectorAll('.stec-subitem').forEach(sub => sub.classList.remove('active'));
+      item.classList.add('active');
     });
   });
 </script>
 
 </body>
 </html>
+
 
 
 
