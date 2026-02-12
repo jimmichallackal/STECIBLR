@@ -747,6 +747,13 @@
       // ✅ Step 3: Highlight submenu item
       document.querySelectorAll('.stec-subitem').forEach(sub => sub.classList.remove('active'));
       item.classList.add('active');
+     // ✅ Step 4: Scroll to first visible photo
+      const firstVisible = document.querySelector('.gallery-item[style*="block"]');
+      if (firstVisible) {
+        const menuHeight = 150; // adjust to your menu bar height
+        const y = firstVisible.getBoundingClientRect().top + window.pageYOffset - menuHeight;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
     });
   });
 
@@ -765,6 +772,7 @@ document.getElementById('reset-gallery').addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 
