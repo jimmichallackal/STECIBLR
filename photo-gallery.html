@@ -292,6 +292,34 @@
   display: block;
 }
 
+.stec-subitem.active {
+  background: var(--stec-light);
+  color: var(--stec-navy);
+  font-weight: 600;
+}
+
+.gallery-item {
+  transition: opacity 0.4s ease;
+}
+
+
+#reset-gallery {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  background: var(--stec-gold);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+#reset-gallery:hover {
+  background: var(--stec-navy);
+}
+
 
     </style>
 </head>
@@ -351,7 +379,7 @@
 		<li class="stec-subitem" data-filter="2024 - Christmas">2024 and before - Christmas</li>
 		<li class="stec-subitem" data-filter="2024 - Shalom Bhavan Visit">2024 - Shalom Bhavan Visit</li>
 		<li class="stec-subitem" data-filter="2007 - Church Dedication">2007 - Church Dedication</li>
-		<li class="stec-subitem" data-filter="all">Show All</li>
+	
      	      </ul>
             <li class="stec-nav-item" onclick="showChapter(event, 'video')">Video Gallery</li>
         </ul>
@@ -361,6 +389,10 @@
 <main class="stec-content">
 <div id="photo" class="chapter-box active">
      <h1>Photo Gallery</h1>
+ <!-- ✅ Reset button goes here -->
+
+<button id="reset-gallery">Show All Photos</button>
+
 	<div class="image-gallery-grid">
 
 	<div class="gallery-item" data-category="2026 - Harvest Festival">
@@ -611,7 +643,6 @@
 	</div>  
 </div>
 	 
-
 	 
 
 <div id="video" class="chapter-box">
@@ -672,7 +703,7 @@
     </p>
 </div>
 
-	<script>
+<script>
   function showChapter(event, chapterId) {
     // Hide all chapters
     const chapters = document.querySelectorAll('.chapter-box');
@@ -717,20 +748,22 @@
       item.classList.add('active');
     });
   });
+
+
+document.getElementById('reset-gallery').addEventListener('click', () => {
+  document.querySelectorAll('.gallery-item').forEach(photo => {
+    photo.style.display = 'block';
+    photo.style.opacity = 1;
+  });
+  document.querySelectorAll('.stec-subitem').forEach(sub => sub.classList.remove('active'));
+});
+
+
+
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
 
 
 
