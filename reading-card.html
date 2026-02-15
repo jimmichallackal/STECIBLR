@@ -214,7 +214,7 @@
  
   
 <button class="month-btn" onclick="showMonth('jan')">JANUARY</button>
-<button class="month-btn active" onclick="showMonth('feb')">FEBRUARY</button>
+<button class="month-btn" onclick="showMonth('feb')">FEBRUARY</button>
 <button class="month-btn" onclick="showMonth('mar')">MARCH</button>
 <button class="month-btn" onclick="showMonth('apr')">APRIL</button>
 <button class="month-btn" onclick="showMonth('may')">MAY</button>
@@ -251,7 +251,7 @@
         </table>
     </div>
 
-    <div id="feb" class="scripture-container active">
+    <div id="feb" class="scripture-container">
         <table class="scripture-table">
             <thead><tr><th>Date</th><th>Theme</th><th>Reading</th><th>Portion</th><th>Memory Verse</th></tr></thead>
             <tbody>
@@ -551,94 +551,94 @@
 
 
 <div class="special-offerings-container">
-  <h2 style="text-align: center; font-family: sans-serif;">2026 Special Offerings</h2>
+  <h2 style="text-align: center; font-family: sans-serif; color: #333;">2026 Special Offerings</h2>
   <table class="scripture-table">
     <thead>
       <tr>
-        <th>Sl. No.</th>
+        <th style="text-align: center; width: 80px;">Sl. No.</th>
         <th>Offering / Fund Name</th>
         <th>Month</th>
-        <th>Date</th>
+        <th style="text-align: center; width: 100px;">Date</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>1</td>
+        <td style="text-align: center;">1</td>
         <td>Church Day (സഭാ ദിനം)</td>
         <td>January</td>
-        <td>11</td>
+        <td style="text-align: center;">11</td>
       </tr>
       <tr>
-        <td>2</td>
+        <td style="text-align: center;">2</td>
         <td>Sunday School Day (സംണ്ടേസ്കൂൾ ദിനം)</td>
         <td>February</td>
-        <td>8</td>
+        <td style="text-align: center;">8</td>
       </tr>
       <tr>
-        <td>3</td>
+        <td style="text-align: center;">3</td>
         <td>Bible Seminary (ബൈബിൾ സെമിനാരി)</td>
         <td>April</td>
-        <td>5</td>
+        <td style="text-align: center;">5</td>
       </tr>
       <tr>
-        <td>4</td>
+        <td style="text-align: center;">4</td>
         <td>Development Fund (വികസന ഫണ്ട്)</td>
         <td>April</td>
-        <td>19</td>
+        <td style="text-align: center;">19</td>
       </tr>
       <tr>
-        <td>5</td>
+        <td style="text-align: center;">5</td>
         <td>Sevini Sunday (സേവിനി സണ്ടേ)</td>
         <td>May</td>
-        <td>3</td>
+        <td style="text-align: center;">3</td>
       </tr>
       <tr>
-        <td>6</td>
+        <td style="text-align: center;">6</td>
         <td>Vijaya Sthothram (വിജയ സ്തോത്രം)</td>
         <td>June</td>
-        <td>7</td>
+        <td style="text-align: center;">7</td>
       </tr>
       <tr>
-        <td>7</td>
+        <td style="text-align: center;">7</td>
         <td>Education Day (വിദ്യാഭ്യാസദിനം)</td>
         <td>June</td>
-        <td>21</td>
+        <td style="text-align: center;">21</td>
       </tr>
       <tr>
-        <td>8</td>
+        <td style="text-align: center;">8</td>
         <td>J.M.B.C. (ജെ.എം.ബി.സി.)</td>
         <td>July</td>
-        <td>5</td>
+        <td style="text-align: center;">5</td>
       </tr>
       <tr>
-        <td>9</td>
+        <td style="text-align: center;">9</td>
         <td>Clergy Aid Fund (പട്ടക്കാരുടെ സഹായനിധി)</td>
         <td>August</td>
-        <td>2</td>
+        <td style="text-align: center;">2</td>
       </tr>
       <tr>
-        <td>10</td>
+        <td style="text-align: center;">10</td>
         <td>Bible Society (ബൈബിൾ സൊസൈറ്റി)</td>
         <td>September</td>
-        <td>6</td>
+        <td style="text-align: center;">6</td>
       </tr>
       <tr>
-        <td>11</td>
+        <td style="text-align: center;">11</td>
         <td>Youth Sunday (യുവജന സണ്ടേ)</td>
         <td>October</td>
-        <td>4</td>
+        <td style="text-align: center;">4</td>
       </tr>
       <tr>
-        <td>12</td>
+        <td style="text-align: center;">12</td>
         <td>Missionary Sunday (മിഷനറി സണ്ടേ)</td>
         <td>November</td>
-        <td>1</td>
+        <td style="text-align: center;">1</td>
       </tr>
       <tr>
-        <td>13</td>
+        <td style="text-align: center;">13</td>
         <td>Poor Aid (സാധുസഹായ നിധി)</td>
         <td>December</td>
-        <td>6</td>
+        <td style="text-align: center;">6</td>
       </tr>
     </tbody>
   </table>
@@ -658,39 +658,45 @@
 
 <script>
   function showMonth(monthId) {
-    // 1. Get all containers and buttons
-    const allContainers = document.querySelectorAll('.scripture-container');
-    const allButtons = document.querySelectorAll('.month-btn');
+    // 1. Get all table containers and menu buttons
+    const containers = document.querySelectorAll('.scripture-container');
+    const buttons = document.querySelectorAll('.month-btn');
 
-    // 2. Hide all containers
-    allContainers.forEach(container => {
-      container.style.display = 'none';
-      container.classList.remove('active');
+    // 2. Hide all tables and remove animations
+    containers.forEach(div => {
+        div.style.display = 'none';
+        div.classList.remove('active');
     });
 
-    // 3. Remove 'active' class from all buttons
-    allButtons.forEach(btn => {
-      btn.classList.remove('active');
+    // 3. Remove the 'active' highlight from all buttons
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // 4. Show the requested month's table
+    const selected = document.getElementById(monthId);
+    if (selected) {
+        selected.style.display = 'block';
+        // Short delay to allow the fade-in animation to trigger
+        setTimeout(() => selected.classList.add('active'), 10);
+    }
+
+    // 5. Find the button that belongs to this month and highlight it
+    buttons.forEach(btn => {
+        if (btn.getAttribute('onclick').includes("'" + monthId + "'")) {
+            btn.classList.add('active');
+        }
     });
-
-    // 4. Show the specific container requested
-    const selectedMonth = document.getElementById(monthId);
-    if (selectedMonth) {
-      selectedMonth.style.display = 'block';
-      selectedMonth.classList.add('active');
-    }
-
-    // 5. Highlight the clicked button
-    // We use window.event to ensure we find the right element if event is missing
-    const currentBtn = event.currentTarget;
-    if (currentBtn) {
-      currentBtn.classList.add('active');
-    }
   }
 
-  // Optional: Run this once on page load to make sure FEB is open
+  // --- AUTOMATIC MONTH DETECTION ---
   window.onload = function() {
-    showMonth('feb');
+    const monthNames = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+    
+    // Get the current month (0 = Jan, 1 = Feb, etc.)
+    const currentMonthIndex = new Date().getMonth(); 
+    const currentMonthId = monthNames[currentMonthIndex];
+
+    // Automatically trigger the display for the current month
+    showMonth(currentMonthId);
   };
 </script>
 </body>
