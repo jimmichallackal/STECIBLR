@@ -216,9 +216,35 @@
             text-align: center;
             margin-top: 30px;
         }
+
+
+ /* Style the button */
+  #backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background-color: #006400; /* Dark green */
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+  }
+
+  #backToTopBtn:hover {
+    background-color: #228B22; /* Lighter green on hover */
+  }
+
+
     </style>
 </head>
 <body>
+<button id="backToTopBtn" title="Go to top">↑ Top</button>
 
 <!-- ---------------------------------------------------------------------------------- -->
 <!-- STEP 1: ADD THE NEW BANNER SECTION FIRST -->
@@ -415,7 +441,7 @@
 <p></p>
 <div class="footer-address">
     <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
-   <p>#17,18, Church Lane, Defence Colony, Kavery Nagar, <br>Horamavu Agara, Bangalore 560 013</p>
+    <p>#17,18, Church Lane, Defence Colony, Kavery Nagar, <br>Horamavu Agara, Bangalore 560 013</p>
     <p>
 	 Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> | Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
         </p>
@@ -423,20 +449,30 @@
         Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
     </p>
 </div>
+
+<script>
+
+ // Get the button
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  // Show button when user scrolls down 100px
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  // Scroll smoothly to top when clicked
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+</script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
