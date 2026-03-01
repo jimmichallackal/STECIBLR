@@ -209,9 +209,33 @@
      margin-bottom: 10px;       /* small gap after number */
   }
 
+
+ /* Style the button */
+  #backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background-color: #006400; /* Dark green */
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+  }
+
+  #backToTopBtn:hover {
+    background-color: #228B22; /* Lighter green on hover */
+  }
+
     </style>
 </head>
 <body>
+<button id="backToTopBtn" title="Go to top">↑ Top</button>
 
 <!-- ---------------------------------------------------------------------------------- -->
 <!-- STEP 1: ADD THE NEW BANNER SECTION FIRST -->
@@ -1159,7 +1183,7 @@ It is the New Covenant in Christ.
 </ol>
 </div>
 <div id="prayer" class="chapter-box">
-        <h1>Prayer for the Living (Why we do not pray for the dead?).</h1>
+        <h1>Prayer for the Living (Why we do not pray for the dead?)</h1>
 <p>
 We believe that every human being is afforded their earthly lifetime as the sole opportunity to make the critical choice: to accept Jesus Christ as Lord and Savior. If an individual declines to accept Christ during their lifetime, that spiritual condition becomes permanently and irrevocably fixed upon their death. The status of the deceased can in no way be rectified or improved by subsequent rituals, observances, or prayers offered by their children, relatives, or any other living persons. The efficacy of personal choice terminates with the conclusion of the mortal life.
 </p>
@@ -1222,12 +1246,32 @@ We are called upon to actively pray for and endeavor to aid all people within ou
     const y = target.getBoundingClientRect().top + window.pageYOffset - menuHeight;
     window.scrollTo({ top: y, behavior: 'smooth' });
   }
+
+
+ // Get the button
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  // Show button when user scrolls down 100px
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  // Scroll smoothly to top when clicked
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
 </script>
 
   </body>
 </html>
 </body>
 </html>
+
 
 
 
