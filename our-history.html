@@ -90,11 +90,122 @@
         }
         
         /* This ensures ALL images scale down with the screen */
+
+
+    /* Global Image Scaling */
         img {
             max-width: 100%; 
             width: 100%
             height: auto;
         }
+
+        /* --- Leadership Grid Specific CSS --- */
+        
+        /* FIX: New wrapper to ensure proper spacing and prevent overlap */
+        .leader-section-wrapper {
+            margin-bottom: 40px; /* Adds vertical space between different leader groups */
+            padding: 10px;
+            /* Optional subtle background/border for visual grouping */
+            border: 1px solid #f0f0f0; 
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+
+
+        /* GLOBAL STYLES FOR CONSISTENCY */
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            padding: 5px 0 15px; /* Added padding-bottom for separation from the grid */
+            margin: 0;
+            clear: both;
+        }
+
+        .leader-item {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .leader-item img {
+            max-width: 100%;  
+            height: 150px; 
+           object-fit: cover; 
+           border: 1px solid #ccc;
+            border-radius: 4px;
+
+        }
+
+        .leader-item .role, .leader-item .name {
+            margin: 5px 0;
+            line-height: 1.2;
+        }
+        .leader-item .name {
+            font-weight: bold;
+        }
+
+
+        /* SECTION 1: 2-COLUMN LAYOUT */
+        .leadership-grid-2-col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px;
+        }
+
+        /* SECTION 2: 4-COLUMN LAYOUT */
+        .leadership-grid-4-col {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 15px;
+        }
+
+        /* SECTION 3: 3-COLUMN LAYOUT */
+        .leadership-grid-3-col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 15px;
+        }
+     
+
+        /* ---------------------------------------------------- */
+        /* MEDIA QUERIES (The Responsiveness) */
+        /* ---------------------------------------------------- */
+
+        /* Tablet-sized screens (up to 768px) */
+        @media (max-width: 768px) {
+            .leadership-grid-2-col {
+                grid-template-columns: 1fr;
+            }
+            .leadership-grid-3-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .leadership-grid-4-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile Phone screens (up to 480px) */
+        @media (max-width: 480px) {
+            /* ALL sections stack into a single column */
+            .leadership-grid-2-col,
+            .leadership-grid-3-col,
+            .leadership-grid-4-col {
+                grid-template-columns: 1fr;
+            }
+        }
+   .footer-address {
+            background-color: #243117;
+            color: #FFFF99;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+
+
+
+
+
+
    .footer-address {
             background-color: #243117;
             color: #FFFF99;
@@ -232,6 +343,127 @@
     background-color: #228B22; /* Lighter green on hover */
   }
 
+
+     /* --- NEW CSS FOR RESPONSIVE SIDE-BY-SIDE LAYOUT --- */
+        .history-bio-flex {
+            display: flex;
+            flex-direction: row; /* Default: Photo and text side by side */
+            gap: 30px;
+            margin-top: 20px;
+            align-items: flex-start; /* Aligns content to the top */
+        }
+        
+        .history-image-container {
+            /* Photo column is narrower (approx 1/3) */
+            flex: 1; 
+            min-width: 200px; /* Ensures photo has space on desktop */
+            text-align: center;
+        }
+
+        .history-text-container {
+            /* Text column is wider (approx 2/3) */
+            flex: 2; 
+        }
+        
+        .history-image-container img {
+            /* Style for the history's photo */
+            border: 5px solid #ccc;
+            border-radius: 8px;
+            width: 100%;
+            height: auto;
+        }
+        
+        .history-name-title {
+            text-align: center;
+           /* font-weight: bold;*/
+          /*  font-size: 1.2em;*/
+            margin-top: 10px;
+        }
+
+#bangalore-parish-history {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px;
+  font-family: "Georgia", serif;
+  line-height: 1.7;
+  color: #2c3e50;
+}
+
+#bangalore-parish-history h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #34495e;
+}
+
+.timeline {
+  border-left: 4px solid #8e44ad;
+  padding-left: 20px;
+  margin-bottom: 40px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.timeline h2 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.timeline p {
+  margin: 10px 0;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+
+        /* --- GALLERY GRID SPECIFIC CSS --- */
+        .image-gallery-grid {
+            display: grid;
+            /* Default: 3 columns for wide screens */
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 15px; /* Space between photos */
+            padding: 20px 0;
+        }
+
+        .gallery-item img {
+            /* Ensure all images in the grid fill their space and look consistent */
+            width: 100%;
+            height: 200px; /* Fixed height for consistent look */
+            object-fit: cover; /* Crops image to fit the dimensions */
+            border: 5px solid #ccc;
+            border-radius: 8px;
+        }
+    /* ---------------------------------------------------- */
+        /* MEDIA QUERIES (The Responsiveness) */
+        /* ---------------------------------------------------- */
+
+        /* Tablet-sized screens (up to 768px) */
+        @media (max-width: 768px) {
+            .image-gallery-grid {
+                /* Change to 2 columns */
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-item img {
+                height: 150px; /* Adjust height for smaller screens */
+            }
+        }
+
+        /* Mobile Phone screens (up to 480px) */
+        @media (max-width: 480px) {
+            .image-gallery-grid {
+                /* Stack into a single column */
+                grid-template-columns: 1fr;
+            }
+            .gallery-item img {
+                height: 250px; /* Make image larger when stacked vertically */
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -319,40 +551,166 @@
             <h1>🌿The History of Bangalore Parish (1964–2025)
 </h1>
 
-<p><strong>I. Humble Beginnings (1964–1979)</strong></p>
-<br>The Bangalore Parish traces its origin to the deep desire of Sabha members to join together in fellowship wherever they were placed. This passion gave birth to a prayer group in 1964 at Berian Bible College, initiated by Mr. Rajan Abraham and Mr. Varghese Tenali. Soon, they were joined by Mr. P.V. Alexander, Mr. M.J. Thomas, Mr. P.D. Varghese, and Mr. M.J. Mathai—remembered today as the Founding Pillars of the parish.
-<br>For fifteen years, worship was nomadic, moving across:
-<br>•	India Crusade Workers Hostel under Mr. P.K. Koruth’s leadership
-<br>•	Hindustan Congregation Parish Hall at Infantry Road (Vishranthi Nilayam Campus)
-<br>•	Residences of members such as Mr. V.M. Mammen and Dr. M.M. Ninan
-<br>In 1975, land was purchased at Lingarajapuram, laying the foundation for a permanent sanctuary.
-<p><strong>II. The First Church Building (1980–2003)</p></strong>
-<br>Under Rev. T.C. George, the parish constructed its first church building at Lingarajapuram—the first STECI church in Bangalore City. On September 21, <br>1980, Bishop T.C. Cherian consecrated the sanctuary, marking a historic milestone.
-<br>The parish matured into a hub of faith:
-<br>•	During Rev. Thomas Abraham’s tenure, in 1984 the parish hosted the Bahya Kerala Diocese Conference for the first time. 
-<br>•	Nurturing the Young: Rev. Thomas Varghese recognized that a church without children is a church without a future. He established the Sunday School sowing the seeds of scripture in young minds.
-<br>•	In 1992, the Parish hosted the Bahya Kerala Diocese conference 2nd time under the guidance of Rev. Thomas Varghese.
-<br>•	Continuing the passion to bring the believers from Bahya Kerala Diocese, parish hosted the conference on third time in 2004 lead by Rev. K. S. James.
-<br>This era cemented Bangalore Parish as a spiritual anchor for diaspora believers.
-<p><strong>III. Expansion and New Foundations (2004–2007)</p></strong>
-<br>As Bangalore grew into a global IT hub, the parish expanded. Under Rev. P.K. Koruth, members purchased land at Horamavu Agara.
-<br>Key milestones:
-<br>•	October 6, 2005: Foundation stone laid by Rev. P.K. Koruth
-<br>•	2006: Basement dedicated by Bishop Dr. M.K. Koshy
-<br>•	March 24, 2007: New church consecrated by Presiding Bishop Most Rev. T.C. Cherian
-<br>Mission initiatives flourished:
-<br>•	Karnataka Jyothi (2006): Rev. Biju Thomas initiated outreach in Ambedkar Nagar along with Mission Interest Group, transforming prayer meetings into a worship group.
-<br>•	2007: A parsonage was constructed under Rev. Thomas Tottathil.
-<p><strong>IV. Growth and New Initiatives (2008–2025)</p></strong>
-<br>The parish continued to evolve with vision and compassion:
-<br>•	2008: Families branched out to form Koramangala Parish.
-<br>•	2009: English worship service introduced under Rev. P.M. Joseph, serving the younger generation.
-<br>•	2014: Hosted the BKD Conference under Rev. Shaji Alexander.
-<br>•	September 3, 2021: Officially registered as a Public Religious and Charitable Trust.
-<br>•	July 14, 2024: New prayer hall dedicated in Bellary mission field under Rev. Laji Varughese.
-<br>•	August 4, 2024: Utility complex and parking facilities inaugurated by Rev Laji Varughese.
-<br>•	Participation in the Sabha’s Urban Mission, leading to the formation of STECI City Serve Fellowship (CSF). On February 21, 2025, CSF officially recognized by the Church Council under Rev. Varghese John.
-<br>•	The year 2025 also saw a physical "rebirth." Under Rev. Laji Varughese, the church underwent a significant renovation. The interiors were redesigned to reflect the beauty and sanctity of God’s presence. On December 21, 2025, the renovated building was rededicated, blending the heritage of the past with the aesthetics of the future.
+
+  <div class="timeline">
+    <h2>Humble Beginnings (1964–1979)</h2>
+    <p>
+      The Bangalore Parish traces its origin to the deep desire of Sabha members to gather in fellowship wherever Providence placed them. In 1964, at Berian Bible College, Mr. Rajan Abraham and Mr. Varghese Tenali initiated a prayer group that soon drew others—Mr. P.V. Alexander, Mr. M.J. Thomas, Mr. P.D. Varghese, and Mr. M.J. Mathai. These men are remembered today as the <strong>Founding Pillars</strong> of the parish.
+    </p>
+
+
+
+
+    <div class="leadership-grid-4-col">
+        
+        <div class="leader-item">
+            <p class="role" style="font-size: 1.2em;"></p>
+            <img src="Steciblr_files/alex.jpg" style="width:100%; alt="Mr. Alexander" border="0" />
+            <p class="name"><strong>Late Mr. Alexander</strong></p>
+        </div>
+       <div class="leader-item">
+            <p class="role" style="font-size: 1.2em;"></p>
+            <img src="Steciblr_files/thomas.jpg" style="width:100%; alt="Mr. M J Thomas" border="0" />
+            <p class="name"><strong>Late Mr. M. J. Thomas</strong></p>
+        </div>
+        <div class="leader-item">
+            <p class="role" style="font-size: 1.2em;"></p>
+            <img src="Steciblr_files/varghese.jpg" style="width:70%; alt="Mr. P. D. Varghese" border="0" />
+            <p class="name"><strong>Late Mr. P. D. Varghese</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <p class="role" style="font-size: 1.2em;"></p>
+            <img src="Steciblr_files/mathai.jpg" style="width:70%; alt="Mr. M. J. Mathai" border="0" />
+            <p class="name"><strong>Mr. M. J. Mathai</strong></p>
+        </div>
+
+    </div>
+
+
+    <p>
+      For fifteen years, worship was nomadic, moving from the India Crusade Workers Hostel under Mr. P.K. Koruth’s leadership, to the Hindustan Congregation Parish Hall at Infantry Road (Vishranthi Nilayam Campus), and even to the homes of faithful members such as Mr. V.M. Mammen and Dr. M.M. Ninan. In 1975, land was purchased at Lingarajapuram, laying the foundation for a permanent sanctuary.
+    </p>
+  </div>
+
+ <div class="timeline">
+    <h2>The First Church Building (1980–2004)</h2>
+    <p>
+<div class="history-bio-flex">
+
+    <div class="history-image-container">
+        <img src="Steciblr_files/oldchurch.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+      <img src="Steciblr_files/oldchurch1.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+    </div>
+    <div class="history-text-container">
+
+      Under Rev. T.C. George, the parish constructed its first church building at Lingarajapuram—the <strong>first STECI church in Bangalore City</strong>. On September 21, 1980, Bishop T.C. Cherian consecrated the sanctuary, with Rev. T.C. George, Rev. P.T. Thomas, and Rev. M.I. Thomas present.
+    </p>
+    <p>
+      The parish matured into a hub of faith: in 1984, under Rev. Thomas Abraham, it hosted the Bahya Kerala Diocese Conference for the first time. Rev. Thomas Varghese emphasized nurturing the young, establishing the Sunday School. The parish hosted the conference again in 1992 under Rev. Thomas Varghese, and Continuing the passion to bring the believers from Bahya Kerala Diocese, parish hosted the conference on third time in 2004 lead by Rev. K. S. James.
+This era cemented Bangalore Parish as a spiritual anchor for diaspora believers.
+    </p>
+  </div>
+</div>
+</div>
+<div class="timeline">
+    <h2>Expansion and New Foundations (2005–2007)</h2>
+<div class="history-bio-flex">
+
+    <div class="history-image-container">
+        <img src="Steciblr_files/construction1.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+<img src="Steciblr_files/image085.png" alt="Photo of Lingarajapuram Church" border="0" />
+
+      <img src="Steciblr_files/basementchurch.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+    
+    </div>
+    <div class="history-text-container">
+
+    <p>
+      As Bangalore grew into a global IT hub, the parish expanded. More families are added to the Parish as young families and youngsters moved to Bangalore for their career and education. Under Rev. P.K. Koruth, members purchased land at Horamavu Agara. On October 6, 2005, the foundation stone was laid. During this time, the Lingarajapuram building was sold, and worship was conducted at New Life Bible College, Hennur.
+    </p>
+
+<p>
+    In 2006, Bishop Dr. M.K. Koshy dedicated the basement, which served as the worship space until completion. On March 24, 2007, the church building construction was completed under the supervision of Rev. Biju Thomas, and the new church was consecrated by Presiding Bishop Most Rev. T.C. Cherian. Bishop Dr. M.K. Koshy, Rev. Dr. Thomas Varghese, Rev. John V. John, Rev. Titus, Rev. David P. Varghese, and Rev. K.S. James were present on this historic day.
+  </p>
+
+    <p>
+      Mission initiatives flourished: Karnataka Jyothi (2006), initiated by Rev. Biju Thomas, expanded worship groups in Ambedkar Nagar, Adur, Pagathi Nagar, and Bannerghatta. Rev. Puttaswamy coordinated the mission, later succeeded by Br. Radhakrishnan.
+<p>
+    In 2007, a parsonage was constructed under Rev. Thomas Tottathil, located next to the church, providing a dignified and convenient residence for the Vicar and family. This ensured pastoral care could be offered with greater stability and presence.
+  </p>
+    </p>
+  </div>
+  </div>
+
+<div class="image-gallery-grid">
+     <div class="gallery-item">
+         <img src="Steciblr_files/inauguration3.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+     </div>
+     <div class="gallery-item">   
+         <img src="Steciblr_files/church10.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+     </div>
+     <div class="gallery-item">   
+        <img src="Steciblr_files/parsonage2.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+     </div>
+</div> 
+</div>
+
+<div class="timeline">
+    <h2>Growth and New Initiatives (2008–2025)</h2>
+
+<p> The parish continued to evolve with vision and compassion.</p>
+    <p>
+Parish members continued to attend worship services faithfully, even though many had to travel long distances. Their perseverance was driven not by convenience, but by their love for Christ and their steadfast support of the St. Thomas Evangelical Church of India. Over time, however, the parish recognized that building churches closer to the homes of families would allow for easier access to worship and greater participation. Thus, in 2008, a group of families branched out to form the Koramangala Parish, ensuring that the growing community could worship with less burden of travel while remaining united in faith.
+</p>
+
+    In the initial days, worship services were attended primarily by believers who had migrated from Kerala to Bangalore. As the years passed, many of these families began to settle permanently in this beautiful city. A new generation was born and raised here, and unlike their parents, their fluency in the Malayalam language was limited. Educated in English-medium schools, English naturally became their first language.
+  </p>
+  <p>
+    Recognizing this shift, and with a vision to serve the younger generation more effectively, the parish introduced an English worship service in 2009 under Rev. P.M. Joseph. This initiative ensured that the spiritual life of the community remained vibrant and accessible, bridging tradition with the evolving linguistic and cultural identity of its members.
+  </p>
+ <p>
+  The 33rd Bahya Kerala Diocese (BKD) Conference of the St. Thomas Evangelical Church of India was held from October 23–26, 2014, at Claret Nivas, Bangalore, hosted by the Bangalore Parish under the leadership of Rev. Shaji Alexander. Sabha leaders and prominent servants of God led various sessions, offering deep spiritual insights and guidance to the gathered faithful.
+  </p>
+<p>
+On September 3, 2021, it was officially registered as a Public Religious and Charitable Trust. 
+</p>
+<p>
+On 14 July 2024, a new prayer hall was dedicated in Bellary mission field under Rev. Laji Varughese. And on 4 August 2024, a utility complex with parking facilities was inaugurated.
+</p>
+
+<p>
+Participation in the Sabha’s Urban Mission, leading to the formation of STECI City Serve Fellowship (CSF). On February 21, 2025, CSF officially recognized by the Church Council under Rev. Varghese John.
+</p>
+<div class="history-bio-flex">
+    <div class="history-image-container">
+         <img src="Steciblr_files/church5.png" alt="PPhoto of Bangalore Parish Horamavu" border="0" />
+         <img src="Steciblr_files/rededication.jpeg" alt="Photo of Bangalore Parish Horamavu" border="0" />
+         <img src="Steciblr_files/rededication2.jpeg" alt="Photo of Bangalore Parish Horamavu" border="0" />
+    </div>
+<div class="history-text-container">
+  <p>
+    Later that year, under the leadership of Rev. Laji Varughese, the church underwent a significant renovation—the first major interior transformation since the construction of the new building in 2007. For nearly two decades, the sanctuary had remained unchanged, faithfully serving the parish. Yet, the elders discerned the need for renewal, voicing their desire to replace the plastic chairs with traditional wooden benches. This change not only honored the heritage of historic churches but also provided greater convenience and capacity for the growing congregation.
+  </p>
+  <p>
+    Alongside this, the pulpit and altar were carefully redesigned and beautified, reflecting both reverence and aesthetic grace. The interiors were reimagined to embody the sanctity of worship, blending heritage with modern sensibilities. On December 21, 2025, the renovated sanctuary was solemnly rededicated by Rev. Laji Varughese. The occasion symbolized a bridge between past and future—preserving tradition while embracing renewal—so that the church might continue to inspire generations in the beauty and presence of God.
+  </p>
+
+</div>
+</div>
+<div class="image-gallery-grid">
+     <div class="gallery-item">
+          <img src="Steciblr_files/ribbon.jpeg" alt="Photo of Ribbob cutting Church" border="0" />
+     </div>
+     <div class="gallery-item">   
+          <img src="Steciblr_files/alter5.jpeg" alt="Photo of Lingarajapuram Church" border="0" />
+     </div>
+     <div class="gallery-item">
+         <img src="Steciblr_files/church9.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+     </div>
+</div> 
+</div>
+
 <p>✨ Legacy and Vision
 From six believers in a Bible college room to a thriving, multi-lingual parish with missions in Bellary and beyond, the Bangalore Parish stands as a living testimony to faith, fellowship, and perseverance.
 <br>It is not merely a record of land and buildings, but a spiritual epic—proof that “The Lord has done great things for us, and we are filled with joy” (Psalm 126:3). Today, the parish shines as a beacon of hope, carrying forward the legacy of its pioneers into a purposeful future.
