@@ -352,7 +352,31 @@
             margin-top: 20px;
             align-items: flex-start; /* Aligns content to the top */
         }
-        
+
+		
+/* MOBILE: Stack photo above text */
+@media (max-width: 768px) {
+.history-bio-flex {
+flex-direction: column;
+gap: 15px;
+}
+
+.history-image-container {
+min-width: unset;
+width: 100%;
+}
+
+.history-text-container {
+width: 100%;
+}
+
+.history-image-container img {
+width: 100%;
+height: auto; /* Let height adjust naturally */
+max-height: 300px;
+object-fit: cover;
+}
+}
         .history-image-container {
             /* Photo column is narrower (approx 1/3) */
             flex: 1; 
@@ -565,23 +589,23 @@ footer {
         
         <div class="leader-item">
             <p class="role" style="font-size: 1.2em;"></p>
-            <img src="Steciblr_files/alex.jpg" style="width:100%; alt="Mr. Alexander" border="0" />
+            <img src="Steciblr_files/alex.jpg" style="width:100%;" alt="Mr. Alexander" border="0" />
             <p class="name"><strong>Late Mr. Alexander</strong></p>
         </div>
        <div class="leader-item">
             <p class="role" style="font-size: 1.2em;"></p>
-            <img src="Steciblr_files/thomas.jpg" style="width:100%; alt="Mr. M J Thomas" border="0" />
+            <img src="Steciblr_files/thomas.jpg" style="width:100%;" alt="Mr. M J Thomas" border="0" />
             <p class="name"><strong>Late Mr. M. J. Thomas</strong></p>
         </div>
         <div class="leader-item">
             <p class="role" style="font-size: 1.2em;"></p>
-            <img src="Steciblr_files/varghese.jpg" style="width:100%; alt="Mr. P. D. Varghese" border="0" />
+            <img src="Steciblr_files/varghese.jpg" style="width:100%;" alt="Mr. P. D. Varghese" border="0" />
             <p class="name"><strong>Late Mr. P.D. Varghese</strong></p>
         </div>
 
         <div class="leader-item">
             <p class="role" style="font-size: 1.2em;"></p>
-            <img src="Steciblr_files/mathai.jpg" style="width:100%; alt="Mr. M. J. Mathai" border="0" />
+            <img src="Steciblr_files/mathai.jpg" style="width:100%;" alt="Mr. M. J. Mathai" border="0" />
             <p class="name"><strong>Mr. M. J. Mathai</strong></p>
         </div>
 
@@ -796,6 +820,7 @@ From six believers in a Bible college room to a thriving, multi-lingual parish w
 </html>
 </body>
 </html>
+
 
 
 
