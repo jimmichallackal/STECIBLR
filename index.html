@@ -356,12 +356,14 @@ At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire i
         Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
     </p>
 
-	<!-- Visible Visitor Counter -->
-	<div id="visitorCount" 
-   	  style="background:#f9f9f9; border:1px solid #d4af37; border-radius:8px; 
-            padding:10px 20px; font-family:'Segoe UI', sans-serif; 
-            font-size:16px; color:#000; text-align:center; max-width:300px; margin:20px auto;">
-	</div>
+
+<!-- Visitor Counter -->
+<div style="text-align:center;">
+  <a href="https://www.hitwebcounter.com" target="_blank">
+    <img src="https://hitwebcounter.com/counter/counter.php?page=1964&style=0006&nbdigits=5&type=page&initCount=0" 
+         title="Visitor Counter" alt="Visitor Counter" border="0" />
+  </a>
+</div>
 
 </div>
 <script>
@@ -382,15 +384,7 @@ At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire i
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Simple counter using localStorage
 
-  if(localStorage.getItem("visitCount")){
-    localStorage.setItem("visitCount", Number(localStorage.getItem("visitCount"))+1);
-  } else {
-    localStorage.setItem("visitCount", 1);
-  }
-  document.getElementById("visitorCount").innerHTML = 
-    "👥 Visitor Count: " + localStorage.getItem("visitCount");
 
 </script>
 
