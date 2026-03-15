@@ -327,6 +327,13 @@ At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire i
                 <td class="mission-heading">
                     <h1><strong>Upcoming Program</strong></h1>
 		<p> <strong>Parish Day - Sunday, 22 Mar 26, 11:30am</strong> </p>
+
+		<p style="font-family:'Segoe UI', sans-serif; font-size:16px; line-height:1.6; text-align:center; background:#f9f9f9; border:1px solid 				#d4af37; border-radius:8px; padding:12px; max-width:800px; margin:20px auto; color:#000;">
+  				<strong>Bangalore Center Meeting</strong> will be held on 
+ 				 <strong>Sunday, 29 March 2026 at 9:30 AM</strong> at 
+ 				 <strong>Athibele Parish</strong>.<br>
+				  <span style="font-weight:bold;">Note: There will be no service at Bangalore Parish on 29 March.</span>
+		</p>
 		<p> <strong>VBS - April 06 to 08 , Venue - STECI, Bangalore Parish</strong> </p>
 			<img src="Steciblr_files/vbs.jpeg" alt="VBS" style="width:35%; display:block; margin:0 auto; border:0;" />		
                </td>
@@ -348,7 +355,16 @@ At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire i
         Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a> | 
         Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
     </p>
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsteciblr.com&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false" alt="Visitor Count">
+
+	<div id="visitorCount" 
+     	style="font-family:'Courier New', monospace; 
+            font-size:18x; 
+            background:#222; 
+            color:#0f0; 
+            padding:10px 20px; 
+            border-radius:6px; 
+            display:inline-block;">
+	</div>
 </div>
 <script>
  // Get the button
@@ -367,11 +383,33 @@ At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire i
   backToTopBtn.addEventListener("click", function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  // Simple counter using localStorage
+  if(localStorage.getItem("visitCount")){
+    localStorage.setItem("visitCount", Number(localStorage.getItem("visitCount"))+1);
+  } else {
+    localStorage.setItem("visitCount", 1);
+  }
+  document.getElementById("visitorCount").innerHTML = 
+    "Visitor Count: " + localStorage.getItem("visitCount");
 </script>
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
