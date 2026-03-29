@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Gallery | Worship, Programs, and Events - STECI Bangalore</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="View the full photo gallery of the St. Thomas Evangelical Church of India, Bangalore Parish, featuring worship services, ministry programs, and special events."> 
+    <style>
+        /* Unified Navbar Styling */
+        .navbar {
+          background-color: #5C1A1B; 
+          font-family: Roboto, Arial, sans-serif;
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+          border-bottom: 2px solid #FFFF99;
+        }
+
+        .nav-links {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+  .nav-links li a {
+  display: block;
+  color: #FFFF99; 
+  text-align: center;
+  padding: 10px 30px; /* Changed from 25px to 15px */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+        .nav-links li a:hover {
+          background-color: #3d1112;
+        }
+
+        .dropdown { position: relative; }
+
+        .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1001;
+  text-align: left;
+  top: 100%; /* Forces the dropdown to start exactly at the bottom of the parent LI */
+  left: 0;
+}
+
+
+.dropdown-content a {
+  color: #5C1A1B !important; /* Dark red text for readability on light bg */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #eee;
+  font-weight: normal;
+ white-space: nowrap;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #5C1A1B; /* Change background to Maroon on hover */
+  color: #FFFF99 !important;  /* Change text to Light Yellow on hover */
+}
+/* Show the menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+        /* Mobile CSS */
+/* Hamburger Icon Styling */
+        .menu-icon {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+          padding: 15px;
+        }
+
+        .bar {
+          width: 25px;
+          height: 3px;
+          background-color: #FFFF99;
+          margin: 4px 0;
+        }
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: flex; /* Show hamburger on mobile */
+  }
+
+
+@media screen and (min-width: 769px) {
+  .dropdown-content a {
+    white-space: nowrap;
+  }
+}
+    .nav-links {
+    display: none; /* Hide menu by default on mobile */
+    width: 100%;
+    flex-direction: column;
+    background-color: #5C1A1B;
+  }
+
+  /* Show menu when "active" class is added via JS */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-top: 1px solid #7a2425;
+  }
+
+  .dropdown-content {
+    position: static; /* Stack dropdown items vertically on mobile */
+    width: 100%;
+    background-color: #4a1415;
+  }
+}
+    
+
+    body {
+          background-color: #FFFFFF;
+          margin: 0;
+          font-family: Roboto, sans-serif;
+          color: darkblue;
+          padding: 0; /* Remove padding here, add to content div instead */
+          font-size: 16px;
+          line-height: 1.5;
+        }
+
+        .mission-heading {
+          text-align: center;
+          vertical-align: middle;
+          color: #FFFF99;
+          background-color: #243117;
+        }
+       .mission-heading h1 {
+          text-align: center;
+          margin: 0;
+          padding: 20px 0;
+        }
+ /* Global Image Scaling */
+     img {
+            max-width: 100%; 
+            height: auto;
+            display: block; 
+        }
+        .image-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 15px; 
+            padding: 20px 0;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px; 
+            object-fit: cover; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+     .main-content { padding-top: 0px; }
+        
+        @media (max-width: 768px) {
+            .image-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            .image-gallery-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Sidebar Styling */
+        :root {
+            --stec-navy: #002147;
+            --stec-gold: #D4AF37;
+            --stec-light: #f4f7f6;
+        }
+
+        .stec-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .stec-sidebar {
+            flex: 0 0 280px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .stec-sidebar-title {
+            background: var(--stec-navy);
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .stec-submenu { list-style: none; padding: 10px; }
+        .stec-subitem {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: 0.3s;
+            color: #444;
+        }
+
+        .stec-subitem:hover, .stec-subitem.active {
+            background: var(--stec-light);
+            color: var(--stec-navy);
+            font-weight: bold;
+            border-left: 4px solid var(--stec-gold);
+        }
+
+        .stec-content { flex: 1; }
+        #reset-gallery {
+            background: var(--stec-gold);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .footer-address {
+            background-color: #243117;
+            color: #FFFF99;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #backToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px; right: 20px;
+            background-color: #006400;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+/*Footer */
+
+.site-footer {
+    background-color: #222; /* Adjust to your site's color */
+    color: #fff;
+    padding: 2px 8%;
+    border-top: 2px solid #444;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* This pushes left and right apart */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+    align-self: center; /* Centers current content vertically */
+font-size: 0.9rem;
+}
+
+.quick-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns of links */
+    gap: 10px 30px;
+}
+
+.quick-links li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.quick-links li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Mobile View: Stack them vertically */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .footer-left, .footer-right {
+        text-align: center;
+        width: 100%;
+    }
+    .quick-links {
+        justify-content: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<button id="backToTopBtn" title="Go to top">↑ Top</button>
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- STEP 1: ADD THE NEW BANNER SECTION FIRST -->
+<!-- ---------------------------------------------------------------------------------- -->
+<div class="header-banner">
+    <img src="Steciblr_files/steciblrbanner.png" alt="Church banner or logo" width="100%" border="0" />
+</div>
+
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- STEP 2: MENU BAR COMES SECOND -->
+<!-- ---------------------------------------------------------------------------------- -->
+
+<nav class="navbar">
+  <div class="menu-icon" onclick="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Church ▾</a>
+      <div class="dropdown-content">
+	<a href="church-leaders.html">Church Leaders</a>
+        <a href="church-history.html">Church History</a>
+
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Parish ▾</a>
+      <div class="dropdown-content">
+        <a href="parish-vicar.html">Parish Vicars</a>
+        <a href="parish-history.html">Parish History</a>
+        <a href="lectionary.html">Lectionary</a>
+        <a href="parish-bulletin.html">Parish Bulletin</a>
+        <a href="executive-committee.html">Executive Committee</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Foundation ▾</a>
+      <div class="dropdown-content">
+        <a href="mission-vision.html">Mission & Vision</a>
+        <a href="our-belief.html">Our Faith</a>
+        <a href="bible-reading.html">365 Day Bible Reading</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Gallery ▾</a>
+      <div class="dropdown-content">
+        <a href="photos-gallery.html">Photo Gallery</a>
+        <a href="videos-gallery.html">Video Gallery</a>
+      </div>
+    </li>
+
+    <li><a href="contact-us.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="main-content">
+<div>
+    <table border="0" width="100%" cellspacing="0" cellpadding="0" >
+        <tbody>
+          <tr>
+            <td class="mission-heading">
+              <h1><strong>Photo Gallery</strong></h1>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+</main>
+<p></p>
+
+<div class="stec-container">
+<!-- Sidebar -->
+<aside class="stec-sidebar">
+   
+      <div class="stec-sidebar-title">Photo Gallery</div>
+      	      <ul class="stec-submenu">
+		<li class="stec-subitem" data-filter="2026 - Harvest Festival">2026 - Harvest Festival</li>
+        	<li class="stec-subitem" data-filter="2025 - Church Rennovation">2025 - Church Rennovation</li>
+		<li class="stec-subitem" data-filter="2025 - Christmas">2025 - Christmas</li>
+		<li class="stec-subitem" data-filter="2025 - Center Conference">2025 - Center Conference</li>
+		<li class="stec-subitem" data-filter="2024 - Christmas">2024 and before - Christmas</li>
+		<li class="stec-subitem" data-filter="2024 - Shalom Bhavan Visit">2024 - Shalom Bhavan Visit</li>
+		<li class="stec-subitem" data-filter="2022 - Parish Day">2022 - Parish Day</li>
+		<li class="stec-subitem" data-filter="2007 - Church Dedication">2007 - Church Dedication</li>
+	
+     	  
+           </ul>
+    </aside>
+<!-- Content -->
+
+<main class="stec-content">
+        <button id="reset-gallery">Show All Photos</button>	
+<div class="image-gallery-grid">
+
+	<div class="gallery-item" data-category="2026 - Harvest Festival">
+			<a href="Steciblr_files/harvest4.jpg" target="_blank" rel="noopener noreferrer">
+         	  	 <img src="Steciblr_files/harvest4.jpg" alt="Harvest  2025" border="0" />
+       			</a>
+		</div>
+	<div class="gallery-item" data-category="2026 - Harvest Festival">
+			<a href="Steciblr_files/harvest1.jpeg" target="_blank" rel="noopener noreferrer">
+         	  	 <img src="Steciblr_files/harvest1.jpeg" alt="Harvest  2025" border="0" />
+       			</a>
+		</div>
+	     
+	<div class="gallery-item" data-category="2026 - Harvest Festival">
+			<a href="Steciblr_files/harvest2.jpeg" target="_blank" rel="noopener noreferrer">
+         	  	 <img src="Steciblr_files/harvest2.jpeg" alt="Harvest  2025" border="0" />
+       			</a>
+		</div>
+
+
+		
+	<div class="gallery-item" data-category="2026 - Harvest Festival">
+			<a href="Steciblr_files/harvest5.jpeg" target="_blank" rel="noopener noreferrer">
+         	  	 <img src="Steciblr_files/harvest5.jpeg" alt="Harvest  2025" border="0" />
+       			</a>
+		</div>
+		
+	<div class="gallery-item" data-category="2026 - Harvest Festival">
+			<a href="Steciblr_files/harvest3.jpeg" target="_blank" rel="noopener noreferrer">
+         	  	 <img src="Steciblr_files/harvest3.jpeg" alt="Harvest  2025" border="0" />
+       			</a>
+		</div>
+		<div class="gallery-item" data-category="2025 - Church Rennovation">
+			<a href="Steciblr_files/church4.png" target="_blank" rel="noopener noreferrer">
+         	  	 <img src="Steciblr_files/church4.png" alt="Church Rennovation 2025" border="0" />
+       			</a>
+		</div>
+
+		<div class="gallery-item" data-category="2025 - Church Rennovation">
+			<a href="Steciblr_files/opening8.jpg" target="_blank" rel="noopener noreferrer">
+         	  	 <img src="Steciblr_files/opening8.jpg" alt="Church Rennovation 2025" border="0" />
+       			</a>
+		</div>
+
+	     
+		<div class="gallery-item" data-category="2025 - Church Rennovation">
+        		<a href="Steciblr_files/alter6.jpeg" target="_blank" rel="noopener noreferrer">
+           		   <img src="Steciblr_files/alter5.jpeg" alt="Church Rennovation 2025" border="0" />
+      			</a>
+		</div>
+
+		<div class="gallery-item" data-category="2025 - Church Rennovation">
+        		<a href="Steciblr_files/benches.jpeg"  target="_blank" rel="noopener noreferrer">
+          		 <img src="Steciblr_files/benches.jpeg" alt="Church Rennovation 2025" border="0" />
+      			</a>
+		</div>
+     		<div class="gallery-item" data-category="2025 - Church Rennovation">
+		        <a href="Steciblr_files/alter5.jpeg" target="_blank" rel="noopener noreferrer">
+        		   <img src="Steciblr_files/alter5.jpeg" alt="Church Rennovation 2025" border="0" />
+   			  </a>
+    		</div>
+     		<div class="gallery-item" data-category="2025 - Church Rennovation">
+      		  <a href="Steciblr_files/alter7.jpeg"  target="_blank" rel="noopener noreferrer">
+    		       <img src="Steciblr_files/alter7.jpeg" alt="Church Rennovation 2025" border="0" />
+     		   </a>    
+    		</div>  
+  	   		<div class="gallery-item" data-category="2025 - Church Rennovation">
+  		      <a href="Steciblr_files/alter9.jpeg" target="_blank" rel="noopener noreferrer">
+   		        <img src="Steciblr_files/alter9.jpeg" alt="Church Rennovation 2025" border="0" />
+  		      </a>    
+  		 </div>  
+
+     		<div class="gallery-item" data-category="2025 - Church Rennovation">
+   		     <a href="Steciblr_files/alter2.jpeg"  target="_blank" rel="noopener noreferrer">
+  	    	     <img src="Steciblr_files/alter2.jpeg" alt="Church Rennovation 2025" border="0" />
+	        	</a>
+  		  </div> 
+     		<div class="gallery-item" data-category="2025 - Church Rennovation">
+       		 <a href="Steciblr_files/church5.png" target="_blank" rel="noopener noreferrer">
+       		    <img src="Steciblr_files/church5.png" alt="Church Rennovation 2025" border="0" />
+       		 </a>
+  		  </div>
+     		<div class="gallery-item" data-category="2025 - Church Rennovation">
+    		    <a href="Steciblr_files/church6.jpg"  target="_blank" rel="noopener noreferrer">
+   		        <img src="Steciblr_files/church6.jpg" alt="Church Rennovation 2025" border="0" />
+   		     </a>
+		</div>	
+
+			<div class="gallery-item" data-category="2025 - Church Rennovation">
+    		    <a href="Steciblr_files/church9.jpg"  target="_blank" rel="noopener noreferrer">
+   		        <img src="Steciblr_files/church9.jpg" alt="Church Rennovation 2025" border="0" />
+   		     </a>
+ 		</div>
+     		<div class="gallery-item" data-category="2025 - Church Rennovation">
+  		      <a href="Steciblr_files/carpark.png"  target="_blank" rel="noopener noreferrer">
+   		        <img src="Steciblr_files/carpark.png" alt="Church Rennovation 2025" border="0" />
+   		     </a>
+  		  </div> 
+
+     		<div class="gallery-item" data-category="2025 - Church Rennovation">
+    		    <a href="Steciblr_files/Church1-2025.png"  target="_blank" rel="noopener noreferrer">
+     		      <img src="Steciblr_files/Church1-2025.png" alt="Church Rennovation 2025" border="0" />
+  		      </a>
+ 		   </div> 
+ 
+     		<div class="gallery-item" data-category="2025 - Church Rennovation">
+    		    <a href="Steciblr_files/cong1.png"  target="_blank" rel="noopener noreferrer">
+   		       <img src="Steciblr_files/cong1.png" alt="Gallery Image 8" border="0" />
+    		    </a>
+ 		   </div>
+     		<div class="gallery-item" data-category="2025 - Church Rennovation">
+ 		       <a href="Steciblr_files/cong2.png"  target="_blank" rel="noopener noreferrer">
+ 		          <img src="Steciblr_files/cong2.png" alt="Church Rennovation 2025" border="0" />
+ 		       </a>
+  		  </div>
+		<div class="gallery-item" data-category="2025 - Christmas">
+        		<a href="Steciblr_files/carolchoir.jpeg" target="_blank" rel="noopener noreferrer">
+       			    <img src="Steciblr_files/carolchoir.jpeg" alt="Gallery Image 4" border="0" />
+    			    </a>
+    		</div>
+  		<div class="gallery-item" data-category="2025 - Christmas">
+        		<a href="Steciblr_files/Choir1-2025.png" target="_blank" rel="noopener noreferrer">
+       			    <img src="Steciblr_files/Choir1-2025.png" alt="Gallery Image 4" border="0" />
+    			    </a>
+    		</div>
+		<div class="gallery-item" data-category="2025 - Christmas">
+ 		       <a href="Steciblr_files/choir3.png" target="_blank" rel="noopener noreferrer">
+		           <img src="Steciblr_files/choir3.png" alt="Gallery Image 5" border="0" />
+    		    </a>
+  		</div>
+
+		<div class="gallery-item" data-category="2025 - Christmas">
+       			 <a href="Steciblr_files/youth1.png" target="_blank" rel="noopener noreferrer">
+      			     <img src="Steciblr_files/youth1.png" alt="Gallery Image 6" border="0" />
+      			 </a>
+    		</div>
+
+		<div class="gallery-item" data-category="2025 - Christmas">
+    			    <a href="Steciblr_files/youth3.jpeg" target="_blank" rel="noopener noreferrer">
+      			    <img src="Steciblr_files/youth3.jpeg" alt="Gallery Image 6" border="0" />
+      			  </a>
+    		</div>
+		<div class="gallery-item" data-category="2025 - Christmas">
+    			    <a href="Steciblr_files/choir2.jpeg" target="_blank" rel="noopener noreferrer">
+    			      <img src="Steciblr_files/choir2.jpeg" alt="Gallery Image 7" border="0" />
+    			    </a>
+    		</div> 
+    
+		<div class="gallery-item" data-category="2025 - Christmas">
+   			     <a href="Steciblr_files/sevini.jpeg" target="_blank" rel="noopener noreferrer">
+      			    <img src="Steciblr_files/sevini.jpeg" alt="Gallery Image 7" border="0" />
+     			   </a>
+    		</div> 
+    
+		<div class="gallery-item" data-category="2025 - Christmas">
+   			     <a href="Steciblr_files/parishchoir.png" target="_blank" rel="noopener noreferrer">
+     			      <img src="Steciblr_files/parishchoir.png" alt="Gallery Image 9" border="0" />
+    			    </a>
+    		</div>
+		<div class="gallery-item" data-category="2024 - Christmas">
+      			  <a href="Steciblr_files/image176.jpg" target="_blank" rel="noopener noreferrer">
+        		   <img src="Steciblr_files/image176.jpg" alt="Gallery Image 10" border="0" />
+      			  </a>
+    		</div>
+		<div class="gallery-item" data-category="2024 - Christmas">
+   		  	   <a href="Steciblr_files/image177.jpg" target="_blank" rel="noopener noreferrer">
+    			    <img src="Steciblr_files/image177.jpg" alt="Gallery Image 11" border="0" />
+        		</a>
+  		</div>
+
+		<div class="gallery-item" data-category="2024 - Christmas">
+        		<a href="Steciblr_files/image173.jpg" target="_blank" rel="noopener noreferrer">
+        		   <img src="Steciblr_files/image173.jpg" alt="Gallery Image 15" border="0" />
+        		</a>
+    		</div>
+
+		<div class="gallery-item" data-category="2024 - Christmas">
+        		<a href="Steciblr_files/image172.jpg" target="_blank" rel="noopener noreferrer">
+       			    <img src="Steciblr_files/image172.jpg" alt="Gallery Image 13" border="0" />
+      			</a>
+ 		</div>
+		<div class="gallery-item" data-category="2024 - Christmas">
+        		<a href="Steciblr_files/image171.jpg" target="_blank" rel="noopener noreferrer">
+       			    <img src="Steciblr_files/image171.jpg" alt="Gallery Image 14" border="0" />
+      			</a>
+    		</div>
+
+		<div class="gallery-item" data-category="2024 - Christmas">
+        		<a href="Steciblr_files/image174.jpg" target="_blank" rel="noopener noreferrer">
+         		  <img src="Steciblr_files/image174.jpg" alt="Gallery Image 16" border="0" />
+       			 </a>
+   		</div>
+
+		<div class="gallery-item" data-category="2024 - Christmas">
+        		<a href="Steciblr_files/image170.jpg" target="_blank" rel="noopener noreferrer">
+           		<img src="Steciblr_files/image170.jpg" alt="Gallery Image 12" border="0" />
+        		</a>
+    		</div>
+		<div class="gallery-item" data-category="2024 - Shalom Bhavan Visit">
+        		<a href="Steciblr_files/image178.jpg" target="_blank" rel="noopener noreferrer">
+     		      	<img src="Steciblr_files/image178.jpg" alt="Gallery Image 18" border="0" />
+      			</a>
+    		</div>
+
+    		<div class="gallery-item">
+       			 <a href="Steciblr_files/image175.jpg" target="_blank" rel="noopener noreferrer">
+          		 <img src="Steciblr_files/image175.jpg" alt="Gallery Image 17" border="0" />
+        		</a>
+  		</div>
+
+		<div class="gallery-item" data-category="2025 - Center Conference">
+        		<a href="Steciblr_files/image179.jpg" target="_blank" rel="noopener noreferrer">
+        		   <img src="Steciblr_files/image179.jpg" alt="Gallery Image 16" border="0" />
+        		</a>
+   		</div>
+
+		<div class="gallery-item" data-category="2025 - Center Conference">
+     			   <a href="Steciblr_files/image180.jpg" target="_blank" rel="noopener noreferrer">
+     			      <img src="Steciblr_files/image180.jpg" alt="Gallery Image 16" border="0" />
+      			  </a>
+   		</div>
+
+		<div class="gallery-item" data-category="2025 - Center Conference">
+  			      <a href="Steciblr_files/image182.png" target="_blank" rel="noopener noreferrer">
+  			         <img src="Steciblr_files/image182.png" alt="Gallery Image 16" border="0" />
+     			   </a>
+   		 </div>
+
+			<div class="gallery-item" data-category="2022 - Parish Day">
+		        <a href="Steciblr_files/parish2022.jpeg" target="_blank" rel="noopener noreferrer">
+       			    <img src="Steciblr_files/parish2022.jpeg" alt="parish2022" border="0" />
+      			  </a>
+  		  </div>   
+   		<div class="gallery-item" data-category="2007 - Church Dedication">
+		        <a href="Steciblr_files/construction3.jpg" target="_blank" rel="noopener noreferrer">
+       			    <img src="Steciblr_files/construction3.jpg" alt="Gallery Image 22" border="0" />
+      			  </a>
+  		  </div>   
+
+   		<div class="gallery-item" data-category="2007 - Church Dedication">
+		        <a href="Steciblr_files/construction1.jpg" target="_blank" rel="noopener noreferrer">
+       			    <img src="Steciblr_files/construction1.jpg" alt="Gallery Image 22" border="0" />
+      			  </a>
+  		  </div>   
+  		<div class="gallery-item" data-category="2007 - Church Dedication">
+		        <a href="Steciblr_files/basededication.jpg" target="_blank" rel="noopener noreferrer">
+       			    <img src="Steciblr_files/basededication.jpg" alt="Gallery Image 22" border="0" />
+      			  </a>
+  		  </div>
+
+		   <div class="gallery-item" data-category="2007 - Church Dedication">
+   			     <a href="Steciblr_files/inauguration1.jpg" target="_blank" rel="noopener noreferrer">
+    		    	   <img src="Steciblr_files/inauguration1.jpg" alt="Gallery Image 25" border="0" />
+        		</a>
+    		</div>
+  
+ 		 <div class="gallery-item" data-category="2007 - Church Dedication">
+        			<a href="Steciblr_files/inauguration3.jpg" target="_blank" rel="noopener noreferrer">
+           			<img src="Steciblr_files/inauguration3.jpg" alt="Gallery Image 24" border="0" />
+        		</a>
+   		 </div>
+ 		 <div class="gallery-item" data-category="2007 - Church Dedication">
+   			     <a href="Steciblr_files/inauguration2.jpg" target="_blank" rel="noopener noreferrer">
+           			<img src="Steciblr_files/inauguration2.jpg" alt="Gallery Image 26" border="0" />
+        		</a>
+    		</div>
+   		<div class="gallery-item" data-category="2007 - Church Dedication">
+      			  <a href="Steciblr_files/dedication.jpg" target="_blank" rel="noopener noreferrer">
+         		  <img src="Steciblr_files/dedication.jpg" alt="Gallery Image 23" border="0" />
+       			 </a>
+    		</div>
+   		<div class="gallery-item" data-category="2007 - Church Dedication">
+      			  <a href="Steciblr_files/procession.jpg" target="_blank" rel="noopener noreferrer">
+         		  <img src="Steciblr_files/procession.jpg" alt="Gallery Image 23" border="0" />
+       			 </a>
+    		</div>
+    		<div class="gallery-item">
+    			    <a href="Steciblr_files/church10.jpg" target="_blank" rel="noopener noreferrer">
+           			<img src="Steciblr_files/church10.jpg" alt="Gallery Image 27" border="0" />
+      			  </a>
+    		</div>
+    		<div class="gallery-item">
+    			    <a href="Steciblr_files/parsonage2.jpg" target="_blank" rel="noopener noreferrer">
+           			<img src="Steciblr_files/parsonage2.jpg" alt="Gallery Image 27" border="0" />
+      			  </a>
+    		</div>
+    		<div class="gallery-item">
+    			    <a href="Steciblr_files/parsonage.jpg" target="_blank" rel="noopener noreferrer">
+           			<img src="Steciblr_files/parsonage.jpg" alt="Gallery Image 27" border="0" />
+      			  </a>
+    		</div>
+	 	
+    		<div class="gallery-item">
+    			    <a href="Steciblr_files/parishmembers.jpg" target="_blank" rel="noopener noreferrer">
+           			<img src="Steciblr_files/parishmembers.jpg" alt="Gallery Image 27" border="0" />
+      			  </a>
+    		</div>
+   		 <div class="gallery-item">
+        		<a href="Steciblr_files/youth2.png" target="_blank" rel="noopener noreferrer">
+           		<img src="Steciblr_files/youth2.png" alt="Gallery Image 28" border="0" />
+        	</a>
+    		</div>
+	</div>  
+
+	 
+</main>
+</div>
+
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="quick-links">
+       	        <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
+                <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
+                <li><a href="our-belief.html">Our Faith - What we believe</a></li>
+                <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
+                <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
+	        <li><a href="contact-us.html">Parish Location</a></li>
+		<li><a href="parish-history.html">Bangalore Parish History</a></li> 
+            </ul>
+        </div>
+<div class="footer-right">
+    	<p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+	<p>#17,18, Church Lane, Defence Colony,<br> Kavery Nagar, Horamavu Agara, <br> Bangalore - 560 013</p>
+    	<p> Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> 
+  	    <br> Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
+            <br>Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a>  
+            <br>Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+   	</p>
+
+</div>
+</footer>
+
+<script>
+
+// 1. Mobile Menu Toggle
+function toggleMenu() {
+    document.getElementById('nav-links').classList.toggle('active');
+}
+
+// 2. Filtering Logic
+const filterItems = document.querySelectorAll('.stec-subitem');
+const galleryPhotos = document.querySelectorAll('.gallery-item');
+const resetBtn = document.getElementById('reset-gallery');
+
+filterItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const filterValue = item.getAttribute('data-filter');
+
+        // Toggle Active Class in Sidebar
+        filterItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+
+        // Filter Photos
+        galleryPhotos.forEach(photo => {
+            if (photo.getAttribute('data-category') === filterValue) {
+                photo.style.display = 'block';
+            } else {
+                photo.style.display = 'none';
+            }
+        });
+    });
+});
+
+// 3. Reset Button Logic
+resetBtn.addEventListener('click', () => {
+    filterItems.forEach(i => i.classList.remove('active'));
+    galleryPhotos.forEach(photo => photo.style.display = 'block');
+});
+
+// 4. Back to Top Button
+window.onscroll = function() {
+    let btn = document.getElementById("backToTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
+
+document.getElementById("backToTopBtn").onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mission & Vision | Apostolic Origin, Evangelical Commitment, Church Planting - STECI</title> 
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Discover the Mission & Vision of the St. Thomas Evangelical Church of India (STECI): Historically based on Apostle Thomas, fundamentally Evangelical, and committed to nationwide Church Planting in the Indian Republic."> 
+    <style>
+
+
+/* Unified Navbar Styling */
+/* --- Dropdown menu --- */
+.navbar {
+  background-color: #5C1A1B; /* Wine Red to match your theme */
+  font-family: Roboto, Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #FFFF99;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-links li a {
+  display: block;
+  color: #FFFF99; 
+  text-align: center;
+  padding: 10px 30px; /* Changed from 25px to 15px */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.nav-links li a:hover {
+  background-color: #3d1112; /* Darker red on hover */
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1001;
+  text-align: left;
+  top: 100%; /* Forces the dropdown to start exactly at the bottom of the parent LI */
+  left: 0;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #5C1A1B !important; /* Dark red text for readability on light bg */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #eee;
+  font-weight: normal;
+ white-space: nowrap;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #5C1A1B; /* Change background to Maroon on hover */
+  color: #FFFF99 !important;  /* Change text to Light Yellow on hover */
+}
+/* Show the menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* --- MOBILE NAVIGATION CSS --- */
+
+/* Hamburger Icon Styling */
+.menu-icon {
+  display: none; /* Hidden on Desktop */
+  flex-direction: column;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #FFFF99;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Mobile Media Query (Screens smaller than 768px) */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: flex; /* Show hamburger on mobile */
+  }
+@media screen and (min-width: 769px) {
+  .dropdown-content a {
+    white-space: nowrap;
+  }
+}
+
+  .nav-links {
+    display: none; /* Hide menu by default on mobile */
+    width: 100%;
+    flex-direction: column;
+    background-color: #5C1A1B;
+  }
+
+  /* Show menu when "active" class is added via JS */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-top: 1px solid #7a2425;
+  }
+
+  .dropdown-content {
+    position: static; /* Stack dropdown items vertically on mobile */
+    width: 100%;
+    background-color: #4a1415;
+  }
+}
+        body {
+          background-color: #FFFFFF;
+          margin: 0;
+          font-family: Roboto, sans-serif;
+          color: darkblue;
+          padding: 0; /* Remove padding here, add to content div instead */
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        
+        .main-content {
+            padding-top: 0px /* New padding for content area */
+
+        }
+        html {
+          scroll-padding-top: 90px;
+        }
+
+        .mission-heading {
+          text-align: center;
+          vertical-align: middle;
+          color: #FFFF99;
+          background-color: #243117;
+        }
+
+        .mission-heading h1 {
+          text-align: center;
+          margin: 0;
+          padding: 20px 0;
+
+        }
+        
+        /* This ensures ALL images scale down with the screen */
+
+
+    /* Global Image Scaling */
+ img {
+    max-width: 100%; 
+    width: 100%; /* Added semicolon here */
+    height: auto;
+    display: block; /* Ensures no gap below images */
+}
+
+.header-banner {
+    line-height: 0;
+    font-size: 0;
+}
+        /* --- Leadership Grid Specific CSS --- */
+        
+        /* FIX: New wrapper to ensure proper spacing and prevent overlap */
+        .leader-section-wrapper {
+            margin-bottom: 40px; /* Adds vertical space between different leader groups */
+            padding: 10px;
+            /* Optional subtle background/border for visual grouping */
+            border: 1px solid #f0f0f0; 
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+
+
+        /* GLOBAL STYLES FOR CONSISTENCY */
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            padding: 5px 0 15px; /* Added padding-bottom for separation from the grid */
+            margin: 0;
+            clear: both;
+        }
+
+        .leader-item {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .leader-item img {
+            max-width: 100%;  
+            height: 150px; 
+           object-fit: cover; 
+	   object-position: top; 
+           border: 1px solid #ccc;
+            border-radius: 4px;
+
+        }
+
+        .leader-item .role, .leader-item .name {
+            margin: 5px 0;
+            line-height: 1.2;
+        }
+        .leader-item .name {
+            font-weight: bold;
+        }
+
+
+        /* SECTION 1: 2-COLUMN LAYOUT */
+        .leadership-grid-2-col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px;
+        }
+
+        /* SECTION 2: 4-COLUMN LAYOUT */
+        .leadership-grid-4-col {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 15px;
+        }
+
+        /* SECTION 3: 3-COLUMN LAYOUT */
+        .leadership-grid-3-col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 15px;
+        }
+     
+
+        /* ---------------------------------------------------- */
+        /* MEDIA QUERIES (The Responsiveness) */
+        /* ---------------------------------------------------- */
+
+        /* Tablet-sized screens (up to 768px) */
+        @media (max-width: 768px) {
+            .leadership-grid-2-col {
+                grid-template-columns: 1fr;
+            }
+            .leadership-grid-3-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .leadership-grid-4-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile Phone screens (up to 480px) */
+        @media (max-width: 480px) {
+            /* ALL sections stack into a single column */
+            .leadership-grid-2-col,
+            .leadership-grid-3-col,
+            .leadership-grid-4-col {
+                grid-template-columns: 1fr;
+            }
+        }
+   .footer-address {
+            background-color: #243117;
+            color: #FFFF99;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+
+        }
+.mission-vision-section {
+            margin-left: 1%; /* Using % makes it look better on mobile */
+             /* Keeps the text from stretching too far */
+        }
+
+:root {
+    --stec-navy: #002147;
+    --stec-gold: #D4AF37;
+    --stec-light: #f4f7f6;
+    --menu-height: 60px;
+    --sidebar-gap: 0px;
+
+}
+
+
+.stec-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Sticky Sidebar */
+.stec-sidebar {
+    flex: 0 0 280px;
+    position: sticky;
+    top: calc(var(--menu-height) + var(--sidebar-gap));
+    height: fit-content;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 100
+}
+
+.stec-sidebar-title {
+    background: var(--stec-navy);
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+.stec-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stec-nav-item {
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s;
+    color: #444;
+}
+
+.stec-nav-item:hover {
+    background: var(--stec-light);
+    color: var(--stec-navy);
+}
+
+.stec-nav-item.active {
+    border-left: 5px solid var(--stec-gold);
+    background: var(--stec-light);
+    color: var(--stec-navy);
+    font-weight: 600;
+}
+
+/* Content Area */
+.stec-content {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.chapter-box {
+    display: none;
+    line-height: 1.6;
+}
+
+.chapter-box.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    .stec-container { flex-direction: column; }
+    .stec-sidebar { position: static; width: 100%; }
+}
+  ol {
+    margin-left: 10px;       /* space for numbers */
+  }
+  ol li {
+    text-align: justify;     /* align text like Word */
+    padding-left: 5px;
+     margin-bottom: 10px;       /* small gap after number */
+  }
+
+
+ /* Style the button */
+  #backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background-color: #006400; /* Dark green */
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+  }
+
+  #backToTopBtn:hover {
+    background-color: #228B22; /* Lighter green on hover */
+  }
+
+
+     /* --- NEW CSS FOR RESPONSIVE SIDE-BY-SIDE LAYOUT --- */
+        .history-bio-flex {
+            display: flex;
+            flex-direction: row; /* Default: Photo and text side by side */
+            gap: 30px;
+            margin-top: 20px;
+            align-items: flex-start; /* Aligns content to the top */
+        }
+        
+
+/* MOBILE: Stack photo above text */
+@media (max-width: 768px) {
+.history-bio-flex {
+flex-direction: column;
+gap: 15px;
+}
+
+.history-image-container {
+min-width: unset;
+width: 100%;
+}
+
+.history-text-container {
+width: 100%;
+}
+
+.history-image-container img {
+width: 100%;
+height: auto; /* Let height adjust naturally */
+max-height: 300px;
+object-fit: cover;
+}
+}
+
+        .history-image-container {
+            /* Photo column is narrower (approx 1/3) */
+            flex: 1; 
+            min-width: 200px; /* Ensures photo has space on desktop */
+            text-align: center;
+        }
+
+        .history-text-container {
+            /* Text column is wider (approx 2/3) */
+            flex: 2; 
+        }
+        
+        .history-image-container img {
+            /* Style for the history's photo */
+            border: 5px solid #ccc;
+            border-radius: 8px;
+            width: 100%;
+            height: auto;
+        }
+        
+        .history-name-title {
+            text-align: center;
+           /* font-weight: bold;*/
+          /*  font-size: 1.2em;*/
+            margin-top: 10px;
+        }
+
+#bangalore-parish-history {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px;
+  font-family: "Georgia", serif;
+  line-height: 1.7;
+  color: #2c3e50;
+}
+
+#bangalore-parish-history h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #34495e;
+}
+
+.timeline {
+  border-left: 4px solid #8e44ad;
+  padding-left: 20px;
+  margin-bottom: 40px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.timeline h2 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.timeline p {
+  margin: 10px 0;
+}
+
+
+
+
+        /* --- GALLERY GRID SPECIFIC CSS --- */
+        .image-gallery-grid {
+            display: grid;
+            /* Default: 3 columns for wide screens */
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 15px; /* Space between photos */
+            padding: 20px 0;
+        }
+
+        .gallery-item img {
+            /* Ensure all images in the grid fill their space and look consistent */
+            width: 100%;
+            height: 200px; /* Fixed height for consistent look */
+            object-fit: cover; /* Crops image to fit the dimensions */
+            border: 5px solid #ccc;
+            border-radius: 8px;
+        }
+    /* ---------------------------------------------------- */
+        /* MEDIA QUERIES (The Responsiveness) */
+        /* ---------------------------------------------------- */
+
+        /* Tablet-sized screens (up to 768px) */
+        @media (max-width: 768px) {
+            .image-gallery-grid {
+                /* Change to 2 columns */
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-item img {
+                height: 150px; /* Adjust height for smaller screens */
+            }
+        }
+
+        /* Mobile Phone screens (up to 480px) */
+        @media (max-width: 480px) {
+            .image-gallery-grid {
+                /* Stack into a single column */
+                grid-template-columns: 1fr;
+            }
+            .gallery-item img {
+                height: 250px; /* Make image larger when stacked vertically */
+            }
+        }
+
+/*Footer */
+
+.site-footer {
+    background-color: #222; /* Adjust to your site's color */
+    color: #fff;
+    padding: 2px 8%;
+    border-top: 2px solid #444;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* This pushes left and right apart */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+    align-self: center; /* Centers current content vertically */
+font-size: 0.9rem;
+}
+
+.quick-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns of links */
+    gap: 10px 30px;
+}
+
+.quick-links li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.quick-links li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Mobile View: Stack them vertically */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .footer-left, .footer-right {
+        text-align: center;
+        width: 100%;
+    }
+    .quick-links {
+        justify-content: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<button id="backToTopBtn" title="Go to top">↑ Top</button>
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- STEP 1: ADD THE NEW BANNER SECTION FIRST -->
+<!-- ---------------------------------------------------------------------------------- -->
+<div class="header-banner">
+    <img src="Steciblr_files/steciblrbanner.png" alt="Church banner or logo" width="100%" border="0" />
+</div>
+
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- STEP 2: MENU BAR COMES SECOND -->
+<!-- ---------------------------------------------------------------------------------- -->
+<nav class="navbar">
+  <div class="menu-icon" onclick="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Church ▾</a>
+      <div class="dropdown-content">
+	<a href="church-leaders.html">Church Leaders</a>
+        <a href="church-history.html">Church History</a>
+
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Parish ▾</a>
+      <div class="dropdown-content">
+        <a href="parish-vicar.html">Parish Vicars</a>
+        <a href="parish-history.html">Parish History</a>
+        <a href="lectionary.html">Lectionary</a>
+        <a href="parish-bulletin.html">Parish Bulletin</a>
+        <a href="executive-committee.html">Executive Committee</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Foundation ▾</a>
+      <div class="dropdown-content">
+        <a href="mission-vision.html">Mission & Vision</a>
+        <a href="our-belief.html">Our Faith</a>
+        <a href="bible-reading.html">365 Day Bible Reading</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Gallery ▾</a>
+      <div class="dropdown-content">
+        <a href="photos-gallery.html">Photo Gallery</a>
+        <a href="videos-gallery.html">Video Gallery</a>
+      </div>
+    </li>
+
+    <li><a href="contact-us.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="main-content">
+<div>
+<table border="0" width="100%" cellspacing="0" cellpadding="0" >
+ <tbody>
+  <tr>
+   <td class="mission-heading">
+       <h1><a name="_Brief_History_of"></a><strong>Church & Bangalore Parish History in a Glance</strong></h1>
+   </td>
+  </tr>
+ </tbody>
+</table>
+</main>
+<p></p>
+
+<div class="stec-container">
+    <nav class="stec-sidebar">
+        <div class="stec-sidebar-title">History</div>
+        <ul class="stec-nav-list">
+            <li class="stec-nav-item active" onclick="showChapter(event, 'stecihistory')">STECI History</li>
+            <li class="stec-nav-item" onclick="showChapter(event, 'parishhistory')">Parish History</li>
+        </ul>
+    </nav>
+<section class="mission-vision-section">
+<main class="stec-content">
+<div id="stecihistory" class="chapter-box active">
+        <h1>STECI History</h1>
+ 
+	
+<p>St. Thomas Evangelical Church of India (STECI) originated from the Mar Thoma Syrian Church with the objective of reconstituting the church according to its founding principles. The STECI was launched at Thymala, Manjadi, Thiruvalla, Kerala, India on Jan 26, 1961.</p>
+
+
+
+<p>The Malankara Mar Thoma Syrian Church formally came into existence in 1889 after losing the ‘Seminary Case’ or Royal Court Case against the Jacobite Metropolitan Mar Dionysius. The rift with the Jacobite Metropolitan began after 12 clergymen of the reformed faction of the church under the leadership of Abraham Malpan declared opposition to 24 non-biblical evil practices in the Malankara Church on 5th Sept. 1836. This development was the result of a great reformation that was triggered by the Church Missionary Society and the reformation movement led by Abraham Malpan and Kaithayil Gee Varghese Malpan in 1826.
+</p>
+
+
+<p>Based on Biblical teachings, they gave up beliefs and practices contrary to the Word of God that was proclaimed by St. Thomas (one of the Apostles of Jesus Christ who landed in Cranganore, near Cochin in 52 A.D. according to tradition). Within four decades of the formation of the Mar Thoma Church, led by a section of leadership, the Mar Thoma Church started deviating from its reformed faith, doctrines and practices, and became lenient to non-Biblical practices.
+</p>
+
+
+<p>Therefore, another Reformist Forum was started by Mr. K. N. Daniel, a lay theologian and activist in 1929. Abraham Mar Thoma Metropolitan was supportive of him until his demise in 1947. However, the drifting from reformist positions continued. It is in this context that on October 29, 1952, the Pathyopadesa Samithi, Forum to Defend Sound Doctrine, was formed. Under the able leadership of Mr. K. N. Daniel, they raised their voices within the church against the drifting away of faith for about a decade.
+
+</p>
+
+<p>When this became futile and impossible, the reformed section of the Mar Thoma Church decided to reconstitute the Mother Church under the name St. Thomas Evangelical Church of India in 1961 to retain and continue the reformation. These facts are mentioned in the preamble of the constitution of the STECI.
+</p>
+    
+   </div>
+
+
+
+
+<div id="parishhistory" class="chapter-box">
+            <h1>🌿The History of Bangalore Parish (1964–2025)
+</h1>
+
+
+  <div class="timeline">
+    <h2>Humble Beginnings (1964–1979)</h2>
+    <p>
+      The Bangalore Parish traces its origin to the deep desire of Sabha members to gather in fellowship wherever Providence placed them. In 1964, at Berian Bible College, Mr. Rajan Abraham and Mr. Varghese Tenali initiated a prayer group that soon drew others—Mr. P.V. Alexander, Mr. M.J. Thomas, Mr. P.D. Varghese, and Mr. M.J. Mathai. These men are remembered today as the <strong>Founding Pillars</strong> of the parish.
+    </p>
+
+
+
+
+    <div class="leadership-grid-4-col">
+        
+        <div class="leader-item">
+            <p class="role" style="font-size: 1.2em;"></p>
+            <img src="Steciblr_files/alex.jpg" style="width:100%;" alt="Mr. Alexander" border="0" />
+            <p class="name"><strong>Late Mr.P.V. Alexander</strong></p>
+        </div>
+       <div class="leader-item">
+            <p class="role" style="font-size: 1.2em;"></p>
+            <img src="Steciblr_files/thomas.jpg" style="width:100%;" alt="Mr. M J Thomas" border="0" />
+            <p class="name"><strong>Late Mr. M.J. Thomas</strong></p>
+        </div>
+        <div class="leader-item">
+            <p class="role" style="font-size: 1.2em;"></p>
+            <img src="Steciblr_files/varghese.jpg" style="width:100%;" alt="Mr. P. D. Varghese" border="0" />
+            <p class="name"><strong>Late Mr. P.D. Varghese</strong></p>
+        </div>
+
+        <div class="leader-item">
+            <p class="role" style="font-size: 1.2em;"></p>
+            <img src="Steciblr_files/mathai.jpg" style="width:100%;" alt="Mr. M. J. Mathai" border="0" />
+            <p class="name"><strong>Mr. M.J. Mathai</strong></p>
+        </div>
+
+    </div>
+
+
+    <p>
+      For fifteen years, worship was nomadic, moving from the India Crusade Workers Hostel under Mr. P.K. Koruth’s leadership, to the Hindustan Congregation Parish Hall at Infantry Road (Vishranthi Nilayam Campus), and even to the homes of faithful members such as Mr. V.M. Mammen and Dr. M.M. Ninan. In 1975, land was purchased at Lingarajapuram, laying the foundation for a permanent sanctuary.
+    </p>
+  </div>
+
+ <div class="timeline">
+    <h2>The First Church Building (1980–2004)</h2>
+    <p>
+<div class="history-bio-flex">
+
+    <div class="history-image-container">
+        <img src="Steciblr_files/oldchurch.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+      <img src="Steciblr_files/oldchurch1.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+    </div>
+    <div class="history-text-container">
+
+      Under Rev. T.C. George, the parish constructed its first church building at Lingarajapuram—the <strong>first STECI church in Bangalore City</strong>. On September 21, 1980, Bishop T.C. Cherian consecrated the sanctuary, with Rev. T.C. George, Rev. P.T. Thomas, and Rev. M.I. Thomas present.
+    </p>
+    <p>
+      The parish matured into a hub of faith: in 1981, under Rev. T. C. George, it hosted the Bahya Kerala Diocese Conference for the first time. In 1984, under Rev. Thomas Abraham, it hosted the Bahya Kerala Diocese Conference for the Second time.  Rev. Thomas Varghese emphasized nurturing the young, establishing the Sunday School. The parish hosted the conference again in 1992 under Rev. Thomas Varghese, and continuing the passion to bring the believers from Bahya Kerala Diocese, parish hosted the conference on fourth time in 2004 lead by Rev. K. S. James.
+This era cemented Bangalore Parish as a spiritual anchor for diaspora believers
+          </p>
+  </div>
+</div>
+</div>
+<div class="timeline">
+    <h2>Expansion and New Foundations (2005–2007)</h2>
+<div class="history-bio-flex">
+
+    <div class="history-image-container">
+        <img src="Steciblr_files/construction1.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+<img src="Steciblr_files/image085.png" alt="Photo of Lingarajapuram Church" border="0" />
+
+      <img src="Steciblr_files/basementchurch.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+    
+    </div>
+    <div class="history-text-container">
+As Bangalore flourished into a global IT hub, many people from Kerala moved to the city in pursuit of career opportunities and higher education. With this migration, more families and young professionals became part of the Parish community. Under the leadership of Rev. P. K. Koruth, the members took a significant step forward by purchasing land at Horamavu Agara, laying the foundation for future growth. On October 6, 2005, the foundation stone was laid. During this time, the Lingarajapuram building was sold, and worship was conducted at New Life Bible College, Hennur.
+
+<p>
+    In 2006, Bishop Dr. M.K. Koshy dedicated the basement, which served as the worship space until completion of parish building. On March 24, 2007, the church building construction was completed under the supervision of Rev. Biju Thomas, and the new church was consecrated by Presiding Bishop Most Rev. T.C. Cherian. Bishop Dr. M.K. Koshy, Rev. Dr. Thomas Varghese, Rev. John V. John, Rev. Titus, Rev. David P. Varghese, and Rev. K.S. James were present on this historic day.
+  </p>
+
+    <p>
+      Mission initiatives flourished: Karnataka Jyothi (2006), initiated by Rev. Biju Thomas, expanded worship groups in Ambedkar Nagar, Adur, Pagathi Nagar, and Bannerghatta. Rev. Puttaswamy coordinated the mission, later succeeded by Br. Radhakrishnan.
+<p>
+    In 2007, a parsonage was constructed under Rev. Thomas Tottathil, located next to the church, providing a dignified and convenient residence for the Vicar and family. This ensured pastoral care could be offered with greater stability and presence.
+  </p>
+    </p>
+  </div>
+  </div>
+
+<div class="image-gallery-grid">
+     <div class="gallery-item">
+         <img src="Steciblr_files/inauguration3.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+     </div>
+     <div class="gallery-item">   
+         <img src="Steciblr_files/church10.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+     </div>
+     <div class="gallery-item">   
+        <img src="Steciblr_files/parsonage2.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+     </div>
+</div> 
+</div>
+
+<div class="timeline">
+    <h2>Growth and New Initiatives (2008–2025)</h2>
+
+<p> The parish continued to evolve with vision and compassion.</p>
+    <p>
+Parish members continued to attend worship services faithfully, even though many had to travel long distances. Their perseverance was driven not by convenience, but by their love for Christ and their steadfast support of the St. Thomas Evangelical Church of India. Over time, however, the parish recognized that building churches closer to the homes of families would allow for easier access to worship and greater participation. Thus, in 2008, a group of families branched out to form the Koramangala Parish, ensuring that the growing community could worship with less burden of travel while remaining united in faith.
+</p>
+
+    In the initial days, worship services were attended primarily by believers who had migrated from Kerala to Bangalore. As the years passed, many of these families began to settle permanently in this beautiful city. A new generation was born and raised here, and unlike their parents, their fluency in the Malayalam language was limited. Educated in English-medium schools, English naturally became their first language.
+  </p>
+  <p>
+    Recognizing this shift, and with a vision to serve the younger generation more effectively, the parish introduced an English worship service in 2009 under Rev. P.M. Joseph. This initiative ensured that the spiritual life of the community remained vibrant and accessible, bridging tradition with the evolving linguistic and cultural identity of its members.
+  </p>
+ <p>
+  The 33rd Bahya Kerala Diocese (BKD) Conference of the St. Thomas Evangelical Church of India was held from October 23–26, 2014, at Claret Nivas, Bangalore, hosted by the Bangalore Parish under the leadership of Rev. Shaji Alexander. Sabha leaders and prominent servants of God led various sessions, offering deep spiritual insights and guidance to the gathered faithful.
+  </p>
+
+<p>
+As the parish continued to emphasize mission-oriented work, an evangelistic Christmas Carol Service was held on 9th December 2018 under the leadership of Rev. Moncy Varghese. The special purpose of this gathering was to create a platform through which the message of salvation could be introduced into the lives of unbelievers. This event not only reflected the parish’s commitment to outreach but also demonstrated its heartfelt desire to share the hope of Christ with the wider community.
+</p>
+
+<p>
+On September 3, 2021, it was officially registered as a Public Religious and Charitable Trust. 
+</p>
+<p>
+On 14 July 2024, a new prayer hall was dedicated in Bellary mission field under Rev. Laji Varughese. And on 4 August 2024, a utility complex with parking facilities was inaugurated.
+</p>
+
+<p>
+Participation in the Sabha’s Urban Mission, leading to the formation of STECI City Serve Fellowship (CSF). On February 21, 2025, CSF officially recognized by the Church Council under Rev. Varghese John.
+</p>
+<div class="history-bio-flex">
+    <div class="history-image-container">
+         <img src="Steciblr_files/church5.png" alt="PPhoto of Bangalore Parish Horamavu" border="0" />
+         <img src="Steciblr_files/rededication.jpeg" alt="Photo of Bangalore Parish Horamavu" border="0" />
+         <img src="Steciblr_files/rededication2.jpeg" alt="Photo of Bangalore Parish Horamavu" border="0" />
+    </div>
+<div class="history-text-container">
+  <p>
+    Later that year, under the leadership of Rev. Laji Varughese, the church underwent a significant renovation—the first major interior transformation since the construction of the new building in 2007. For nearly two decades, the sanctuary had remained unchanged, faithfully serving the parish. Yet, the elders discerned the need for renewal, voicing their desire to replace the plastic chairs with traditional wooden benches. This change not only honored the heritage of historic churches but also provided greater convenience and capacity for the growing congregation.
+  </p>
+  <p>
+     Alongside this, the pulpit and altar were carefully redesigned and beautified, reflecting both reverence and aesthetic grace. The interiors were reimagined to embody the sanctity of worship, blending heritage with modern sensibilities. On December 21, 2025, thanks giving prayer offered by Rev. Laji Varughese and resumed the worship in the renovated santury. The occasion symbolized a bridge between past and future—preserving tradition while embracing renewal—so that the church might continue to inspire generations in the beauty and presence of God.
+
+  </p>
+
+</div>
+</div>
+<div class="image-gallery-grid">
+     <div class="gallery-item">
+          <img src="Steciblr_files/ribbon.jpeg" alt="Photo of Ribbob cutting Church" border="0" />
+     </div>
+     <div class="gallery-item">   
+          <img src="Steciblr_files/alter5.jpeg" alt="Photo of Lingarajapuram Church" border="0" />
+     </div>
+     <div class="gallery-item">
+         <img src="Steciblr_files/church9.jpg" alt="Photo of Lingarajapuram Church" border="0" />
+     </div>
+</div> 
+</div>
+
+<p>✨ Legacy and Vision
+From six believers in a Bible college room to a thriving, multi-lingual parish with missions in Bellary and beyond, the Bangalore Parish stands as a living testimony to faith, fellowship, and perseverance.
+<br>It is not merely a record of land and buildings, but a spiritual epic—proof that “The Lord has done great things for us, and we are filled with joy” (Psalm 126:3). Today, the parish shines as a beacon of hope, carrying forward the legacy of its pioneers into a purposeful future.
+</p>
+ 
+
+</div>
+</section>
+</main>
+</div>
+
+
+
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="quick-links">
+       	        <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
+                <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
+                <li><a href="our-belief.html">Our Faith - What we believe</a></li>
+                <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
+                <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
+	        <li><a href="contact-us.html">Parish Location</a></li>
+		<li><a href="parish-history.html">Bangalore Parish History</a></li> 
+            </ul>
+        </div>
+<div class="footer-right">
+    	<p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+	<p>#17,18, Church Lane, Defence Colony,<br> Kavery Nagar, Horamavu Agara, <br> Bangalore - 560 013</p>
+    	<p> Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> 
+  	    <br> Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
+            <br>Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a>  
+            <br>Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+   	</p>
+
+</div>
+</footer>
+
+
+<script>
+  // 1. Sidebar Navigation Logic
+  function showChapter(event, chapterId) {
+    // Hide all chapters
+    const chapters = document.querySelectorAll('.chapter-box');
+    chapters.forEach(ch => ch.classList.remove('active'));
+
+    // Remove active state from all nav items
+    const navItems = document.querySelectorAll('.stec-nav-item');
+    navItems.forEach(item => item.classList.remove('active'));
+
+    // Show selected chapter + highlight nav item
+    const target = document.getElementById(chapterId);
+    if (target) {
+        target.classList.add('active');
+        event.currentTarget.classList.add('active');
+
+        // Scroll to top of selected chapter
+        const menuHeight = 150; 
+        const y = target.getBoundingClientRect().top + window.pageYOffset - menuHeight;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+
+  // 2. Mobile Menu Toggle Logic
+  function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    nav.classList.toggle("active");
+  }
+
+  // 3. Back to Top Button Logic
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  backToTopBtn.onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+</script>
+</body>
+</html>
+
+
+
+
