@@ -6,222 +6,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta name="description" content="Meet the key spiritual and administrative Church Leaders, Trustees, Lay Leaders, and Ministry Secretaries of the St. Thomas Evangelical Church of India, Bangalore Parish."> 
     <style>
-           /* ------------------------------------------------ */
-        /* All Your Existing CSS */
-        /* ------------------------------------------------ */
+ 
+/* Unified Navbar Styling */
+        .navbar { background-color: #5C1A1B; font-family: Roboto, Arial, sans-serif; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #FFFF99; }
+        .nav-links { list-style-type: none; margin: 0; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+  .nav-links li a {
+  	display: block;
+	color: #FFFF99; 
+	text-align: center;
+	padding: 10px 30px; /* Changed from 25px to 15px */
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+        .nav-links li a:hover { background-color: #3d1112; }
         
-        /* --- NEW BANNER CSS --- */
-        .header-banner {
-        /*  position: fixed;*/
-		  background-color: #FFFFFF; /* Light Cream/Yellow background for the banner */
-            /*padding: 10px 0;*/
-            text-align: center;
-          /*  border-bottom: 2px solid #5C1A1B; *//* Dark line to separate from menu */
+        /* Dropdown Logic */
+        .dropdown { position: relative; }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1001;
+  text-align: left;
+  top: 100%; /* Forces the dropdown to start exactly at the bottom of the parent LI */
+  left: 0;
+}
 
-        }
+.dropdown-content a {
+  color: #5C1A1B !important; /* Dark red text for readability on light bg */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #eee;
+  font-weight: normal;
+ white-space: nowrap;
+}
+
         
-        .header-banner img {
-            max-width: 100%;
-            height: auto;
-			display: block;
-            /* The banner image is image184.png from your files */
-            /* Using a max-width ensures it scales nicely on mobile */
-        }
-        /* --- END NEW BANNER CSS --- */
+.dropdown-content a:hover {
+  background-color: #5C1A1B; /* Change background to Maroon on hover */
+  color: #FFFF99 !important;  /* Change text to Light Yellow on hover */
+}
+       .dropdown:hover .dropdown-content { display: block; }
 
-
-        .menu {
-          position: sticky; /* Flows naturally below the banner */
-          top: 0px;
-          left: 0;
-          height: auto;
-          width: 100%;
-          background-color: #5C1A1B; /* Wine red */
-          color: maroon;
-         /* padding: 2px 2px; */
-          display: flex;
-          align-items: center;
-          /* Keep flex properties for responsive wrapping */
-          flex-wrap: wrap; 
-          justify-content: center;
-         /* margin-bottom: 20px;*/ /* Space below the menu before main content starts */
-        }
-
-        .menu a {
-            color: #FFFF99;
-            margin: 5px 5px; 
-            text-decoration: none;
-            padding: 10px;
-            white-space: normal; 
-            text-align: center;
-        }
+        /* Mobile Adjustments */
+        .menu-icon { display: none; flex-direction: column; cursor: pointer; padding: 15px; }
+        .bar { width: 25px; height: 3px; background-color: #FFFF99; margin: 4px 0; transition: 0.4s; }
         
-        body {
-          background-color: #FFFFFF;
-          margin: 0;
-          font-family: Roboto, sans-serif;
-          color: darkblue;
-          padding: 0; /* Remove padding here, add to content div instead */
-          font-size: 16px;
-          line-height: 1.5;
+        @media screen and (max-width: 768px) {
+            .menu-icon { display: flex; }
+      @media screen and (min-width: 769px) {
+  .dropdown-content a {
+    white-space: nowrap;
+  }
+ }   
+            .nav-links { display: none; width: 100%; flex-direction: column; background-color: #5C1A1B; }
+            .nav-links.active { display: flex; }
+            .nav-links li { width: 100%; border-top: 1px solid #7a2425; }
+            .dropdown-content { position: static; width: 100%; background-color: #4a1415; }
+            .dropdown-content a { color: #FFFF99 !important; border-bottom: 1px solid #5C1A1B; }
         }
-        
-        .main-content {
-            padding-top: 0px /* New padding for content area */
-        }
-        
-        html {
-          scroll-padding-top: 90px;
-        }
+ 
+        body { background-color: #FFFFFF; margin: 0; font-family: Roboto, sans-serif; color: darkblue; font-size: 16px; line-height: 1.5; }
+        .mission-heading { text-align: center; color: #FFFF99; background-color: #243117; padding: 20px 0; }
+        .mission-heading h1 { margin: 0; }
+        img {display: block; max-width: 100%; height: auto; }
 
-        .mission-heading {
-          text-align: center;
-          vertical-align: middle;
-          color: #FFFF99;
-          background-color: #243117;
-        }
+        /* Leadership Grid Stylings */
+        .leader-section-wrapper { margin-bottom: 40px; padding: 20px; border: 1px solid #f0f0f0; border-radius: 8px; background-color: #fafafa; }
+        .section-title { text-align: center; font-size: 24px; padding: 15px 0; margin: 0; color: #5C1A1B; }
+        .leader-item { text-align: center; padding: 10px; }
+        .leader-item img { border: 1px solid #ccc; margin: 10px auto; display: block; object-fit: contain; background: white; transition: transform 0.3s; }
+        .leader-item img:hover { transform: translateY(-5px); }
+        .leader-item .role { margin: 5px 0; font-weight: bold; color: #444; }
+        .leader-item .name { font-weight: bold; color: darkblue; }
 
-        .mission-heading h1 {
-          text-align: center;
-          margin: 0;
-          padding: 20px 0;
-        }
-        
-        /* Global Image Scaling */
-        img {
-            max-width: 100%; 
-            width: 100%
-            height: auto;
-        }
+        .leadership-grid-2-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .leadership-grid-3-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .leadership-grid-4-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
 
-        /* --- Leadership Grid Specific CSS --- */
-        
-        /* FIX: New wrapper to ensure proper spacing and prevent overlap */
-        .leader-section-wrapper {
-            margin-bottom: 40px; /* Adds vertical space between different leader groups */
-            padding: 10px;
-            /* Optional subtle background/border for visual grouping */
-            border: 1px solid #f0f0f0; 
-            border-radius: 8px;
-            background-color: #fafafa;
-        }
-
-
-        /* GLOBAL STYLES FOR CONSISTENCY */
-        .section-title {
-            text-align: center;
-            font-size: 24px;
-            padding: 5px 0 15px; /* Added padding-bottom for separation from the grid */
-            margin: 0;
-            clear: both;
-        }
-
-        .leader-item {
-            text-align: center;
-            padding: 10px;
-        }
-
-        .leader-item img {
-            max-width: 100%;  
-            height: auto; 
-            border: 1px solid #ccc;
-            margin: 10px auto;
-            display: block;
-            object-fit: contain; 
-        }
-
-        .leader-item .role, .leader-item .name {
-            margin: 5px 0;
-            line-height: 1.2;
-        }
-        .leader-item .name {
-            font-weight: bold;
-        }
-
-
-        /* SECTION 1: 2-COLUMN LAYOUT */
-        .leadership-grid-2-col {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 20px;
-        }
-
-        /* SECTION 2: 4-COLUMN LAYOUT */
-        .leadership-grid-4-col {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 15px;
-        }
-
-        /* SECTION 3: 3-COLUMN LAYOUT */
-        .leadership-grid-3-col {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 15px;
-        }
-     
-
-        /* ---------------------------------------------------- */
-        /* MEDIA QUERIES (The Responsiveness) */
-        /* ---------------------------------------------------- */
-
-        /* Tablet-sized screens (up to 768px) */
         @media (max-width: 768px) {
-            .leadership-grid-2-col {
-                grid-template-columns: 1fr;
-            }
-            .leadership-grid-3-col {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .leadership-grid-4-col {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .leadership-grid-2-col, .leadership-grid-3-col, .leadership-grid-4-col { grid-template-columns: repeat(2, 1fr); }
         }
-
-        /* Mobile Phone screens (up to 480px) */
         @media (max-width: 480px) {
-            /* ALL sections stack into a single column */
-            .leadership-grid-2-col,
-            .leadership-grid-3-col,
-            .leadership-grid-4-col {
-                grid-template-columns: 1fr;
-            }
-        }
-   .footer-address {
-            background-color: #243117;
-            color: #FFFF99;
-            padding: 20px;
-            text-align: center;
-            margin-top: 30px;
+            .leadership-grid-2-col, .leadership-grid-3-col, .leadership-grid-4-col { grid-template-columns: 1fr; }
         }
 
+        .footer-address { background-color: #243117; color: #FFFF99; padding: 30px; text-align: center; margin-top: 30px; }
+        .footer-address a { color: #FFFF99; text-decoration: underline; transition: opacity 0.3s; }
+        .footer-address a:hover { opacity: 0.7; }
 
- /* Style the button */
-  #backToTopBtn {
-    display: none; /* Hidden by default */
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99;
-    font-size: 14px;
-    border: none;
-    outline: none;
-    background-color: #006400; /* Dark green */
-    color: white;
-    cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 4px;
-    transition: opacity 0.3s ease;
-  }
+        #backToTopBtn { display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; background-color: #006400; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; transition: 0.3s; }
+        #backToTopBtn:hover { background-color: #228B22; }
+ /*Footer */
 
-  #backToTopBtn:hover {
-    background-color: #228B22; /* Lighter green on hover */
-  }
+.site-footer {
+    background-color: #222; /* Adjust to your site's color */
+    color: #fff;
+    padding: 2px 8%;
+    border-top: 2px solid #444;
+}
 
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* This pushes left and right apart */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+    align-self: center; /* Centers current content vertically */
+font-size: 0.9rem;
+}
+
+.quick-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns of links */
+    gap: 10px 30px;
+}
+
+.quick-links li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.quick-links li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Mobile View: Stack them vertically */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .footer-left, .footer-right {
+        text-align: center;
+        width: 100%;
+    }
+    .quick-links {
+        justify-content: center;
+    }
+}
+   
     </style>
 </head>
 <body>
-<button id="backToTopBtn" title="Go to top">↑ Top</button>
+
 <!-- ---------------------------------------------------------------------------------- -->
 <!-- STEP 1: ADD THE NEW BANNER SECTION FIRST -->
 <!-- ---------------------------------------------------------------------------------- -->
@@ -232,212 +179,190 @@
 <!-- ---------------------------------------------------------------------------------- -->
 <!-- STEP 2: MENU BAR COMES SECOND -->
 <!-- ---------------------------------------------------------------------------------- -->
-<div class="menu">
-  
-    <a href="index.html"><strong>Home</strong></a>
-    <a href="parish-vicar.html"><strong>Parish Vicars</strong></a>
-    <a href="church-leaders.html"><strong>Church Leaders</strong></a>
-    <a href="mission-vision.html"><strong>Vision & Mission</strong></a>
-    <a href="our-belief.html"><strong>Faith</strong></a>
-    <a href="executive-committee.html"><strong>Committee</strong></a>
-    <a href="our-history.html"><strong>History of Parish</strong></a>
-    <a href="parish-bulletin.html"><strong>Bulletin</strong></a>
-    <a href="reading-card.html"><strong>Lectionary</strong></a>
-    <a href="photo-gallery.html"><strong>Gallery</strong></a>
-    <a href="contact-us.html"><strong>Contact</strong></a>
- 
-</div>
+
+<nav class="navbar">
+  <div class="menu-icon" onclick="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Church ▾</a>
+      <div class="dropdown-content">
+	<a href="church-leaders.html">Church Leaders</a>
+        <a href="church-history.html">Church History</a>
+
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Parish ▾</a>
+      <div class="dropdown-content">
+        <a href="parish-vicar.html">Parish Vicars</a>
+        <a href="parish-history.html">Parish History</a>
+        <a href="lectionary.html">Lectionary</a>
+        <a href="parish-bulletin.html">Parish Bulletin</a>
+        <a href="executive-committee.html">Executive Committee</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Foundation ▾</a>
+      <div class="dropdown-content">
+        <a href="mission-vision.html">Mission & Vision</a>
+        <a href="our-belief.html">Our Faith</a>
+        <a href="bible-reading.html">365 Day Bible Reading</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Gallery ▾</a>
+      <div class="dropdown-content">
+        <a href="photos-gallery.html">Photo Gallery</a>
+        <a href="videos-gallery.html">Video Gallery</a>
+      </div>
+    </li>
+
+    <li><a href="contact-us.html">Contact</a></li>
+  </ul>
+</nav>
+<button id="backToTopBtn" title="Go to top">↑ Top</button>
+
 <main class="main-content">
-<div>
-    <table border="1" width="100%" cellspacing="0" cellpadding="0" >
-        <tbody>
-          <tr>
-            <td class="mission-heading">
-              <h1><a name="_Church_Leaders_1"></a><strong>Church Leaders</strong></h1>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-</div>
+    <div class="mission-heading">
+        <h1><strong>Church Leaders</strong></h1>
+    </div>
+
+    <div class="leader-section-wrapper">
+        <div class="leadership-grid-2-col">
+            <div class="leader-item">
+                <p class="role" style="font-size: 1.5em;">Presiding Bishop</p>
+                <img src="Steciblr_files/image152.jpg" alt="Most Rev. Dr. Thomas Abraham">
+                <p class="name">Most Rev. Dr. Thomas Abraham</p>
+            </div>
+            <div class="leader-item">
+                <p class="role" style="font-size: 1.5em;">Bahya Kerala Diocesan Bishop</p>
+                <img src="Steciblr_files/image153.jpg" alt="Rt. Rev. Dr. Abraham Chacko">
+                <p class="name">Rt. Rev. Dr. Abraham Chacko</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="leadership-section">
+	<hr/>
+        <div class="section-title"><strong>Retired Bishops</strong></div>
+        <hr/>
+        <div class="leadership-grid-4-col">
+            <div class="leader-item"><img src="Steciblr_files/bishopkoshy.jpg" alt="Bishop Dr. M. K. Koshy"><p class="name">Bishop Dr. M. K. Koshy</p></div>
+            <div class="leader-item"><img src="Steciblr_files/bishoptccherian.jpg" alt="Bishop Dr. T. C. Cherian"><p class="name">Bishop Dr. T. C. Cherian</p></div>
+            <div class="leader-item"><img src="Steciblr_files/bishopalaxander.jpg" alt="Bishop A. I. Alexander"><p class="name">Bishop A. I. Alexander</p></div>
+            <div class="leader-item"><img src="Steciblr_files/bishicvmathew.jpg" alt="Bishop Dr. C.V. Mathew"><p class="name">Bishop Dr. C.V. Mathew</p></div>
+        </div>
+    </div>
+
+    <div class="leadership-section">
+	<hr/>
+        <div class="section-title"><strong>Prathinidhi Sabha Officers</strong></div>
+        <hr/>
+        <div class="leadership-grid-3-col">
+            <div class="leader-item">
+                <p class="role">Prathinidhi Sabha President</p>
+                <img src="Steciblr_files/revjohnvarghese.jpg" style="width:70%;" alt="Rev. Dr. John Mathew">
+                <p class="name">Rev. Dr. John Mathew</p>
+            </div>
+            <div class="leader-item">
+                <p class="role">Sabha Secretary</p>
+                <img src="Steciblr_files/revsajimathew.jpg" style="width:70%;" alt="Rev. Saji Mathew">
+                <p class="name">Rev. Saji Mathew</p>
+            </div>
+            <div class="leader-item">
+                <p class="role">Sabha Treasurer</p>
+                <img src="Steciblr_files/revsajiabraham.jpg" style="width:70%;" alt="Rev. Saji Abraham">
+                <p class="name">Rev. Saji Abraham</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="leadership-section">
+	<hr/>
+        <div class="section-title"><strong>Bahya Kerala Diocese Officers</strong></div>
+        <hr/>
+        <div class="leadership-grid-3-col">
+            <div class="leader-item">
+                <p class="role">BKD President</p>
+                <img src="Steciblr_files/bishopabraham.jpg" style="width:70%;" alt="Rt. Rev. Dr. Abraham Chacko">
+                <p class="name">Rt. Rev. Dr. Abraham Chacko</p>
+            </div>
+            <div class="leader-item">
+                <p class="role">BKD Vice President</p>
+                <img src="Steciblr_files/revjerish.jpg" style="width:70%;" alt="Rev. Jerish Varghese">
+                <p class="name">Rev. Jerish Varghese</p>
+            </div>
+            <div class="leader-item">
+                <p class="role">BKD Secretary</p>
+                <img src="Steciblr_files/revprakashthomas.jpg" style="width:73%;" alt="Rev. Prakash Thomas">
+                <p class="name">Rev. Prakash Thomas</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="leadership-section">
+	<hr/>
+        <div class="section-title"><strong>First Bishops of STECI</strong></div>
+        <hr/>
+        <div class="leadership-grid-3-col">
+            <div class="leader-item"><img src="Steciblr_files/oomman.jpg" style="width:85%;" alt="Late Bishop Dr. K.N. Oommen"><p class="name">Late Bishop Dr. K.N. Oommen</p></div>
+            <div class="leader-item"><img src="Steciblr_files/johnpvarghese.jpg" style="width:85%;" alt="Late Bishop Dr. P. John Varghese"><p class="name">Late Bishop Dr. P. John Varghese</p></div>
+            <div class="leader-item"><img src="Steciblr_files/bishopvarghese.jpg" style="width:85%;" alt="Late Bishop P. S. Varghese"><p class="name">Late Bishop P. S. Varghese</p></div>
+        </div>
+    </div>
 </main>
 
-<p></p>
-       
-<div class="leader-section-wrapper">
-    
-    <div class="leadership-grid-2-col">
-        
-        <div class="leader-item">
-		
-            <p class="role" style="font-size: 1.5em;"><strong>Presiding Bishop</strong></p>
-            <img src="Steciblr_files/image152.jpg" alt="Most Rev. Dr. Thomas Abraham" border="0" />
-            <p class="name"><strong>Most Rev. Dr. Thomas Abraham</strong></p>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="quick-links">
+       	        <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
+                <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
+                <li><a href="our-belief.html">Our Faith - What we believe</a></li>
+                <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
+                <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
+	        <li><a href="contact-us.html">Parish Location</a></li>
+		<li><a href="parish-history.html">Bangalore Parish History</a></li> 
+            </ul>
         </div>
+<div class="footer-right">
+    	<p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+	<p>#17,18, Church Lane, Defence Colony,<br> Kavery Nagar, Horamavu Agara, <br> Bangalore - 560 013</p>
+    	<p> Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> 
+  	    <br> Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
+            <br>Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a>  
+            <br>Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+   	</p>
 
-        <div class="leader-item">
-            <p class="role" style="font-size: 1.5em;"><strong>Bahya Kerala Diocesan Bishop</strong></p>
-            <img src="Steciblr_files/image153.jpg" alt="Rt. Rev. Dr. Abraham Chacko" border="0" />
-            <p class="name"><strong>Rt. Rev. Dr. Abraham Chacko</strong></p>
-        </div>
-        
-    </div>
 </div>
-<hr/>
-
-<div class="leadership-section">
-    <div class="section-title">
-        <strong>Retired Bishops</strong>
-    </div>
-<hr/>
-    <div class="leadership-grid-4-col">
-        
-        <div class="leader-item">
-            <img src="Steciblr_files/bishopkoshy.jpg" alt="Bishop Dr. M. K. Koshy" border="0" />
-            <p class="name"><strong>Bishop Dr. M. K. Koshy</strong></p>
-        </div>
-
-        <div class="leader-item">
-            <img src="Steciblr_files/bishoptccherian.jpg" alt="Bishop Dr. T. C. Cherian" border="0" />
-            <p class="name"><strong>Bishop Dr. T. C. Cherian</strong></p>
-        </div>
-
-        <div class="leader-item">
-            <img src="Steciblr_files/bishopalaxander.jpg" alt="Bishop A. I. Alexander" border="0" />
-            <p class="name"><strong>Bishop A. I. Alexander</strong></p>
-        </div>
-
-        <div class="leader-item">
-            <img src="Steciblr_files/bishicvmathew.jpg" alt="Bishop Dr. C.V. Mathew" border="0" />
-            <p class="name"><strong>Bishop Dr. C.V. Mathew</strong></p>
-        </div>
-
-    </div>
-</div>
-
-<hr/>
-<div class="leadership-section">
-    <div class="section-title">
-        <strong>Prathinidhi Sabha Officers</strong>
-    </div>
-<hr/>
-    <div class="leadership-grid-3-col">
-        
-        <div class="leader-item">
-            <p class="role" style="font-size: 1.2em;"><strong>Prathinidhi Sabha President</strong></p>
-            <img src="Steciblr_files/revjohnvarghese.jpg" style="width:70%; alt="Rev. Dr. John Mathew" border="0" />
-            <p class="name"><strong>Rev. Dr. John Mathew</strong></p>
-        </div>
-
-        <div class="leader-item">
-            <p class="role" style="font-size: 1.2em;"><strong>Sabha Secretary</strong></p>
-            <img src="Steciblr_files/revsajimathew.jpg" style="width:70%; alt="Rev. Saji Mathew" border="0" />
-            <p class="name"><strong>Rev. Saji Mathew</strong></p>
-        </div>
-
-        <div class="leader-item">
-            <p class="role" style="font-size: 1.2em;"><strong>Sabha Treasurer</strong></p>
-            <img src="Steciblr_files/revsajiabraham.jpg" style="width:70%; alt="Rev. Saji Abraham" border="0" />
-            <p class="name"><strong>Rev. Saji Abraham</strong></p>
-        </div>
-
-    </div>
-</div>
-
-<hr/>
-<div class="leadership-section">
-    <div class="section-title">
-        <strong>Bahya Kerala Diocese Officers</strong>
-    </div>
-<hr/>
-    <div class="leadership-grid-4-col">
-        
-        <div class="leader-item">
-            <p class="role" style="font-size: 1.2em;"><strong>BKD President</strong></p>
-            <img src="Steciblr_files/bishopabraham.jpg" style="width:70%; alt="Rt. Rev. Dr. Abraham Chacko" border="0" />
-            <p class="name"><strong>Rt. Rev. Dr. Abraham Chacko</strong></p>
-        </div>
-       <div class="leader-item">
-            <p class="role" style="font-size: 1.2em;"><strong>BKD Vice President</strong></p>
-            <img src="Steciblr_files/revjerish.jpg" style="width:70%; alt="Rev. Jerish Varghese" border="0" />
-            <p class="name"><strong>Rev. Jerish Varghese</strong></p>
-        </div>
-        <div class="leader-item">
-            <p class="role" style="font-size: 1.2em;"><strong>BKD Secretary</strong></p>
-            <img src="Steciblr_files/revprakashthomas.jpg" style="width:73%; alt="Rev. Prakash Thomas" border="0" />
-            <p class="name"><strong>Rev. Prakash Thomas</strong></p>
-        </div>
-    </div>
-</div>
-<hr/>
-
-
-<div class="leadership-section">
-    <div class="section-title">
-        <strong>First Bishops of STECI</strong>
-    </div>
-<hr/>
-    <div class="leadership-grid-3-col">
-        
-        <div class="leader-item">
-            <img src="Steciblr_files/oomman.jpg" style="width:85%; alt="Late Bishop K.N. Oommen" border="0" />
-            <p class="name"><strong>Late Bishop Dr. K.N. Oommen</strong></p>
-        </div>
-
-        <div class="leader-item">
-           <img src="Steciblr_files/johnpvarghese.jpg" style="width:85%; alt="Late Bishop P. John Varghese" border="0" />
-            <p class="name"><strong>Late Bishop Dr. P. John Varghese</strong></p>
-        </div>
- 	<div class="leader-item">
-           <img src="Steciblr_files/bishopvarghese.jpg" style="width:85%; alt="Late Bishop P. S. Varghese" border="0" />
-            <p class="name"><strong>Late Bishop P. S. Varghese</strong></p>
-        </div>
-    </div>
-</div>
-<hr/>
-
-
-<p></p>
- <!--
-<p>Visit Our Main Church: <a href="https://steci.org/bishops-and-clergies/" target="_blank">ST.THOMAS EVANGELICAL CHURCH OF INDIA</a></p>
--->
-
-<div class="footer-address">
-    <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
-    <p>#17,18, Church Lane, Kavery Nagar, Defence Colony, <br>Horamavu Agara, Bangalore 560 013</p>
-    <p>
-	 Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> | Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
-        </p>
-        Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a> | 
-        Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
-    </p>
+</footer>
 
 <script>
+    const backToTopBtn = document.getElementById("backToTopBtn");
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    };
+    backToTopBtn.onclick = function() { window.scrollTo({ top: 0, behavior: 'smooth' }); };
 
-
- // Get the button
-  const backToTopBtn = document.getElementById("backToTopBtn");
-
-  // Show button when user scrolls down 100px
-  window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
+    function toggleMenu() {
+        document.getElementById("nav-links").classList.toggle("active");
     }
-  };
-
-  // Scroll smoothly to top when clicked
-  backToTopBtn.addEventListener("click", function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-
 </script>
 
 </body>
-
 </html>
-
-
-
-
