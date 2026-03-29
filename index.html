@@ -8,56 +8,141 @@
     <!-- SEO Tags -->
 
     <style>
-        /* ------------------------------------------------ */
-        /* All Your Existing CSS */
-        /* ------------------------------------------------ */
-        
-        /* --- NEW BANNER CSS --- */
-        .header-banner {
-       /*   position: fixed;*/
-		  background-color: #FFFFFF; /* Light Cream/Yellow background for the banner */
-            /*padding: 10px 0;*/
-            text-align: center;
-          /*  border-bottom: 2px solid #5C1A1B; *//* Dark line to separate from menu */
 
-        }
-        
-        .header-banner img {
-            max-width: 100%;
-            height: auto;
-			display: block;
-            /* The banner image is image184.png from your files */
-            /* Using a max-width ensures it scales nicely on mobile */
-        }
-        /* --- END NEW BANNER CSS --- */
+/* Unified Navbar Styling */
+/* --- Dropdown menu --- */
+.navbar {
+  background-color: #5C1A1B; /* Wine Red to match your theme */
+  font-family: Roboto, Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #FFFF99;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --- Update this part to reduce top/bottom padding --- */
+.nav-links li a {
+  display: block;
+  color: #FFFF99; 
+  text-align: center;
+  padding: 10px 30px; /* Changed from 25px to 15px */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links li a:hover {
+  background-color: #3d1112; /* Darker red on hover */
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1001;
+  text-align: left;
+  top: 100%; /* Forces the dropdown to start exactly at the bottom of the parent LI */
+  left: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #5C1A1B !important; /* Dark red text for readability on light bg */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #eee;
+  font-weight: normal;
+ white-space: nowrap;
+
+}
+
+.dropdown-content a:hover {
+  background-color: #5C1A1B; /* Change background to Maroon on hover */
+  color: #FFFF99 !important;  /* Change text to Light Yellow on hover */
+}
+
+/* Show the menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 
-        .menu {
-          position: sticky; /* Flows naturally below the banner */
-          top: 0px;
-          left: 0;
-          height: auto;
-          width: 100%;
-          background-color: #5C1A1B; /* Wine red */
-          color: maroon;
-         /* padding: 2px 2px; */
-          display: flex;
-          align-items: center;
-          /* Keep flex properties for responsive wrapping */
-          flex-wrap: wrap; 
-          justify-content: center;
-         /* margin-bottom: 20px;*/ /* Space below the menu before main content starts */
-        }
+/* --- MOBILE NAVIGATION CSS --- */
 
-        .menu a {
-            color: #FFFF99;
-            margin: 5px 5px; 
-            text-decoration: none;
-            padding: 10px;
-            white-space: normal; 
-            text-align: center;
-        }
-        
+/* Hamburger Icon Styling */
+.menu-icon {
+  display: none; /* Hidden on Desktop */
+  flex-direction: column;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #FFFF99;
+  margin: 4px 0;
+  
+}
+
+/* Mobile Media Query (Screens smaller than 768px) */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: flex; /* Show hamburger on mobile */
+  }
+
+@media screen and (min-width: 769px) {
+  .dropdown-content a {
+    white-space: nowrap;
+  }
+}
+
+  .nav-links {
+    display: none; /* Hide menu by default on mobile */
+    width: 100%;
+    flex-direction: column;
+    background-color: #5C1A1B;
+  }
+
+  /* Show menu when "active" class is added via JS */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-top: 1px solid #7a2425;
+  }
+
+.dropdown-content {
+        position: static; 
+        width: 100%;
+        background-color: #4a1415;
+        box-shadow: none; /* Removes the shadow for a cleaner flat list */
+        display: none; /* Hidden by default until JS toggles it */
+    }
+
+    .nav-links li a {
+        border-bottom: 1px solid #7a2425; /* Visual separator for mobile items */
+    } 
+}
+    
         body {
           background-color: #FFFFFF;
           margin: 0;
@@ -203,11 +288,72 @@
   #backToTopBtn:hover {
     background-color: #228B22; /* Lighter green on hover */
   }
+
+.site-footer {
+    background-color: #222; /* Adjust to your site's color */
+    color: #fff;
+    padding: 2px 8%;
+    border-top: 2px solid #444;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* This pushes left and right apart */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+    align-self: center; /* Centers current content vertically */
+font-size: 0.9rem;
+}
+
+.quick-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns of links */
+    gap: 10px 30px;
+}
+
+.quick-links li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.quick-links li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Mobile View: Stack them vertically */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .footer-left, .footer-right {
+        text-align: center;
+        width: 100%;
+    }
+    .quick-links {
+        justify-content: center;
+    }
+}
+
     </style>
 </head>
 <body>
 <button id="backToTopBtn" title="Go to top">↑ Top</button>
-
 <!-- ---------------------------------------------------------------------------------- -->
 <!-- STEP 1: ADD THE NEW BANNER SECTION FIRST -->
 <!-- ---------------------------------------------------------------------------------- -->
@@ -218,27 +364,62 @@
 <!-- ---------------------------------------------------------------------------------- -->
 <!-- STEP 2: MENU BAR COMES SECOND -->
 <!-- ---------------------------------------------------------------------------------- -->
-<div class="menu">
-  
-    <a href="index.html"><strong>Home</strong></a>
-    <a href="parish-vicar.html"><strong>Parish Vicars</strong></a>
-    <a href="church-leaders.html"><strong>Church Leaders</strong></a>
-    <a href="mission-vision.html"><strong>Vision & Mission</strong></a>
-    <a href="our-belief.html"><strong>Faith</strong></a>
-    <a href="executive-committee.html"><strong>Committee</strong></a>
-    <a href="our-history.html"><strong>History of Parish</strong></a>
-    <a href="parish-bulletin.html"><strong>Bulletin</strong></a>
-    <a href="reading-card.html"><strong>Lectionary</strong></a>
-    <a href="photo-gallery.html"><strong>Gallery</strong></a>
-    <a href="contact-us.html"><strong>Contact</strong></a>
- 
-</div>
+<nav class="navbar">
+  <div class="menu-icon" onclick="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Church ▾</a>
+      <div class="dropdown-content">
+	<a href="church-leaders.html">Church Leaders</a>
+        <a href="church-history.html">Church History</a>
+
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Parish ▾</a>
+      <div class="dropdown-content">
+        <a href="parish-vicar.html">Parish Vicars</a>
+        <a href="parish-history.html">Parish History</a>
+        <a href="lectionary.html">Lectionary</a>
+        <a href="parish-bulletin.html">Parish Bulletin</a>
+        <a href="executive-committee.html">Executive Committee</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Foundation ▾</a>
+      <div class="dropdown-content">
+        <a href="mission-vision.html">Mission & Vision</a>
+        <a href="our-belief.html">Our Faith</a>
+        <a href="bible-reading.html">365 Day Bible Reading</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Gallery ▾</a>
+      <div class="dropdown-content">
+        <a href="photos-gallery.html">Photo Gallery</a>
+        <a href="videos-gallery.html">Video Gallery</a>
+      </div>
+    </li>
+
+    <li><a href="contact-us.html">Contact</a></li>
+  </ul>
+</nav>
+
 <main class="main-content">
-<div>
+
     <img src="Steciblr_files/mainphoto.jpg" alt="Church building or scene" width="100%" border="0" />
-</div>
-</main>
-</p>
+
+
 <section class="mission-vision-section">
 <div class="flex-item text-item">
         <p>
@@ -266,7 +447,7 @@ At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire i
         </tbody>
     </table>
 </div>
-</main>
+
 <p></p>
 <p></p>
 <div class="programs-grid-container">
@@ -291,7 +472,7 @@ At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire i
     
     <div class="program-item">
         <img src="Steciblr_files/women.png" alt="Sevini Samajam (Women's Ministry)" border="0" />
-        <p><strong>1<sup>st</sup> & 3<sup>rd</sup> Sundays, 11:00am at church<br>& Tuesday, 8:30pm (online prayer) </br></strong></p>
+        <p><strong>1<sup>st</sup> & 3<sup>rd</sup> Sundays, 11:00am at church<br>& Tuesday, 8:30pm (online prayer)</strong></p>
         <p>Sevini Samajam (Women's Ministry) described as a pillar of strength for the parish, dedicated to spiritual growth and fellowship.</p>
     </div>
 
@@ -315,7 +496,7 @@ At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire i
 
     <div class="program-item">
         <img src="Steciblr_files/image132.png" alt="Bible Study" border="0" />
-        <p><strong>Friday, 7:00pm (online)</strong>
+        <p><strong>Friday, 7:00pm (online)</strong></p>
         <p>In-depth scripture study and discussion via video conference.</p>
     </div>
 </div>
@@ -326,11 +507,13 @@ At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire i
             <tr>
                 <td class="mission-heading">
                 <h1><strong>Upcoming Program</strong></h1>
-				<p style="font-family:'Segoe UI', sans-serif; font-size:16px; line-height:1.6; text-align:center; background:#f9f9f9; border:1px solid 				#d4af37; border-radius:8px; padding:12px; max-width:800px; margin:20px auto; color:#000;">
-  				<strong>Bangalore Center Meeting</strong> will be held on 
- 				 <strong>Sunday, 29 March 2026 at 9:30 AM</strong> at 
- 				 <strong>Athibele Parish</strong>.<br>
-				  <span style="font-weight:bold;">Note: There will be no service at Bangalore Parish on 29 March.</span>
+		
+		<p style="font-family:'Segoe UI', sans-serif; font-size:16px; line-height:1.6; text-align:center; background:#f9f9f9; border:1px solid 				#d4af37; border-radius:8px; padding:12px; max-width:800px; margin:20px auto; color:#000;">
+  				 <strong>Passion Week Program</strong> 
+				 <br><strong>Maundy Thurshday Worship service, 2 April 2026 at 7:00 PM</strong> 
+				 <br><strong>Good Friday service, 3 April 2026 at 8:30 AM</strong> 
+				 <br><strong>Easter Sunday Worship service, 5 April 2026 at 7:30 AM</strong> 
+ 				
 		</p>
 		<p> <strong>VBS - April 06 to 08 , Venue - STECI, Bangalore Parish</strong> </p>
 			<img src="Steciblr_files/vbs.jpeg" alt="VBS" style="width:35%; display:block; margin:0 auto; border:0;" />		
@@ -340,69 +523,83 @@ At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire i
     </table>
 </div>
 
-</main>
+
 <p></p>
 
 </section>
-<div class="footer-address">
-    <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
-    <p>#17,18, Church Lane, Defence Colony, Kavery Nagar, <br>Horamavu Agara, Bangalore 560 013</p>
-    <p>
-	 Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> | Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
-        </p>
-        Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a> | 
-        Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
-    </p>
-<h3>Training & Academics</h3>
-<a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer" style="color: #FFFF99;">Jubilee Memorial Bible College</a>
+</main>
 
-<!-- Visitor Counter -->
-<div style="text-align:center;">
-  <a href="https://www.hitwebcounter.com" target="_blank">
-    <img src="https://hitwebcounter.com/counter/counter.php?page=1964&style=0006&nbdigits=5&type=page&initCount=0" 
-         title="Visitor Counter" alt="Visitor Counter" border="0" />
-  </a>
-</div>
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="quick-links">
+       	        <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
+                <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
+                <li><a href="our-belief.html">Our Faith - What we believe</a></li>
+                <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
+                <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
+	        <li><a href="contact-us.html">Parish Location</a></li>
+		<li><a href="parish-history.html">Bangalore Parish History</a></li> 
+            </ul>
+        </div>
+<div class="footer-right">
+    	<p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+	<p>#17,18, Church Lane, Defence Colony,<br> Kavery Nagar, Horamavu Agara, <br> Bangalore - 560 013</p>
+    	<p> Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> 
+  	    <br> Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
+            <br>Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a>  
+            <br>Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+   	</p>
 
 </div>
+</footer>
+
+
 <script>
- // Get the button
-  const backToTopBtn = document.getElementById("backToTopBtn");
+// Get the "Back to Top" button
+const backToTopBtn = document.getElementById("backToTopBtn");
 
-  // Show button when user scrolls down 100px
-  window.onscroll = function() {
+// Show button when user scrolls down 100px
+window.onscroll = function() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      backToTopBtn.style.display = "block";
+        backToTopBtn.style.display = "block";
     } else {
-      backToTopBtn.style.display = "none";
+        backToTopBtn.style.display = "none";
     }
-  };
+};
 
-  // Scroll smoothly to top when clicked
-  backToTopBtn.addEventListener("click", function() {
+// Scroll smoothly to top
+backToTopBtn.addEventListener("click", function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+});
 
+// Toggle Mobile Main Menu
+function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    nav.classList.toggle("active");
+}
 
-
+// Toggle Dropdowns on Mobile Click
+document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault(); // Prevent jump to top
+            const content = this.nextElementSibling;
+            
+            // Toggle visibility
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    });
+});
 </script>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
