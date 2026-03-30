@@ -102,11 +102,7 @@
   .menu-icon {
     display: flex; /* Show hamburger on mobile */
   }
-@media screen and (min-width: 769px) {
-  .dropdown-content a {
-    white-space: nowrap;
-  }
-}
+
 
   .nav-links {
     display: none; /* Hide menu by default on mobile */
@@ -129,6 +125,13 @@
     position: static; /* Stack dropdown items vertically on mobile */
     width: 100%;
     background-color: #4a1415;
+  }
+	.dropdown-content a {
+    color: #FFFF99 !important; /* Golden/Light Yellow */
+    background-color: #4a1415 !important;
+    padding: 12px 40px; /* Indented for visual hierarchy */
+    border-bottom: 1px solid #5C1A1B;
+    white-space: normal; /* Allows long text to wrap */
   }
 }
 
