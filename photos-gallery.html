@@ -125,7 +125,24 @@
   }
 }
     
+/* Media Query for Mobile (Phones) */
+@media screen and (max-width: 480px) {
+    .programs-grid-container {
+        display: grid;
+        grid-template-columns: 1fr; /* This forces 1 image per row */
+        gap: 15px; /* Adds space between the stacked photos */
+        padding: 10px;
+    }
 
+    .program-item {
+        width: 100%; /* Ensures the container takes full width */
+    }
+
+    .program-item img {
+        width: 100%; /* Makes the image stretch to fit the screen */
+        height: auto; /* Maintains the correct proportions */
+    }
+}
     body {
           background-color: #FFFFFF;
           margin: 0;
