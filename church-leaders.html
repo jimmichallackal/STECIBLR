@@ -350,7 +350,9 @@ font-size: 0.9rem;
 </footer>
 
 <script>
+    // --- 1. Back to Top Button Logic ---
     const backToTopBtn = document.getElementById("backToTopBtn");
+    
     window.onscroll = function() {
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
             backToTopBtn.style.display = "block";
@@ -358,11 +360,53 @@ font-size: 0.9rem;
             backToTopBtn.style.display = "none";
         }
     };
-    backToTopBtn.onclick = function() { window.scrollTo({ top: 0, behavior: 'smooth' }); };
 
+    backToTopBtn.onclick = function() { 
+        window.scrollTo({ top: 0, behavior: 'smooth' }); 
+    };
+
+    // --- 2. Main Mobile Menu Toggle ---
     function toggleMenu() {
         document.getElementById("nav-links").classList.toggle("active");
     }
+
+    // --- 3. Submenu (Dropdown) Logic for Mobile ---
+    document.addEventListener('DOMContentLoaded', function() {
+        // Find all menu items that have a dropdown
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach(dropdown => {
+            // Find the main link (e.g., "About Us" or "Organizations")
+            const parentLink = dropdown.querySelector('a');
+            
+            parentLink.addEventListener('click', function(e) {
+                // Only trigger this logic if we are on a mobile screen (width <= 768px)
+                if (window.innerWidth <= 768) {
+                    
+                    const submenu = this.nextElementSibling; // This is the .dropdown-content div
+
+                    // If a submenu exists for this link...
+                    if (submenu && submenu.classList.contains('dropdown-content')) {
+                        e.preventDefault(); // Stop the page from changing/jumping
+
+                        // Close any OTHER open submenus first (prevents the "multiple open" glitch)
+                        document.querySelectorAll('.dropdown-content').forEach(otherSub => {
+                            if (otherSub !== submenu) {
+                                otherSub.style.display = 'none';
+                            }
+                        });
+
+                        // Toggle the visibility of THIS submenu
+                        if (submenu.style.display === 'block') {
+                            submenu.style.display = 'none';
+                        } else {
+                            submenu.style.display = 'block';
+                        }
+                    }
+                }
+            });
+        });
+    });
 </script>
 
 </body>
