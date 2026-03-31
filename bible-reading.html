@@ -508,8 +508,8 @@ font-size: 0.9rem;
 </div>
 </footer>
 
-
 <script>
+// --- 1. Bible Schedule Data ---
 const bibleSchedule = {
     "2026-04-01": { portion: "Exodus 25", audio: "audio/apr01.mp3" },
     "2026-04-02": { portion: "Exodus 26", audio: "audio/apr02.mp3" },
@@ -543,27 +543,22 @@ const bibleSchedule = {
     "2026-04-30": { portion: "Leviticus 14", audio: "audio/apr30.mp3" }
 };
 
+// --- 2. Bible Logic Functions ---
 function loadToday() {
     const today = new Date();
-    
-    // This creates the YYYY-MM-DD format using local time instead of UTC
     const yyyy = today.getFullYear();
     const mm = String(today.getMonth() + 1).padStart(2, '0');
     const dd = String(today.getDate()).padStart(2, '0');
     const dateKey = `${yyyy}-${mm}-${dd}`;
     
     document.getElementById('today-date-text').innerText = today.toLocaleDateString('en-US', { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
     });
     
     const data = bibleSchedule[dateKey];
     if (data) {
         document.getElementById('today-portion').innerText = data.portion;
         const player = document.getElementById('today-audio');
-        // Important: Update the source tag and the player src
         document.getElementById('today-source').src = data.audio;
         player.src = data.audio; 
         player.load();
@@ -572,7 +567,6 @@ function loadToday() {
         document.getElementById('today-audio').style.display = "none";
     }
 
-    // Set max date for archive search to yesterday
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
     const y_yyyy = yesterday.getFullYear();
@@ -585,7 +579,6 @@ function searchArchive(dateString) {
     if(!dateString) return;
     const data = bibleSchedule[dateString];
     const archiveDiv = document.getElementById('archive-display');
-    
     archiveDiv.style.display = "block";
     document.getElementById('archive-date-text').innerText = new Date(dateString).toLocaleDateString();
 
@@ -605,28 +598,43 @@ function closeArchive() {
     document.getElementById('archive-audio').pause();
 }
 
+// --- 3. Navigation & Dropdown Logic ---
 function toggleMenu() {
     document.getElementById("nav-links").classList.toggle("active");
 }
 
-// Mobile Dropdown Fix
+// Fixed Mobile Dropdown: Only opens one at a time
 document.querySelectorAll('.dropdown > a').forEach(item => {
     item.addEventListener('click', function(e) {
         if (window.innerWidth <= 768) {
             e.preventDefault();
-            const content = this.nextElementSibling;
-            content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+            const currentContent = this.nextElementSibling;
+            
+            // Close all other dropdowns before opening the selected one
+            document.querySelectorAll('.dropdown-content').forEach(otherContent => {
+                if (otherContent !== currentContent) {
+                    otherContent.style.display = 'none';
+                }
+            });
+
+            // Toggle the clicked one
+            currentContent.style.display = (currentContent.style.display === 'block') ? 'none' : 'block';
         }
     });
 });
 
+// --- 4. Back to Top Button ---
 window.onscroll = () => {
-    document.getElementById("backToTopBtn").style.display = (window.scrollY > 100) ? "block" : "none";
+    const btn = document.getElementById("backToTopBtn");
+    if (btn) btn.style.display = (window.scrollY > 100) ? "block" : "none";
 };
-document.getElementById("backToTopBtn").onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
+if (document.getElementById("backToTopBtn")) {
+    document.getElementById("backToTopBtn").onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Run initial Bible load
 window.onload = loadToday;
 </script>
-
 </body>
 </html>
