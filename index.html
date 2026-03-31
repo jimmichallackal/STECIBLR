@@ -218,6 +218,10 @@
             .two-col-flex-container {
                 flex-direction: column; 
             }
+			        .mission-vision-section {
+            margin-left: 1%; /* Using % makes it look better on mobile */
+             /* Keeps the text from stretching too far */
+        }
         }
         
         .footer-address {
@@ -564,41 +568,55 @@ At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire i
 
 
 <script>
-// Get the "Back to Top" button
+// 1. Back to Top Button Logic
 const backToTopBtn = document.getElementById("backToTopBtn");
 
-// Show button when user scrolls down 100px
 window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        backToTopBtn.style.display = "block";
-    } else {
-        backToTopBtn.style.display = "none";
+    // Only run if the button exists on this page
+    if (backToTopBtn) {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
     }
 };
 
-// Scroll smoothly to top
-backToTopBtn.addEventListener("click", function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Toggle Mobile Main Menu
-function toggleMenu() {
-    const nav = document.getElementById("nav-links");
-    nav.classList.toggle("active");
+if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 }
 
-// Toggle Dropdowns on Mobile Click
+// 2. Toggle Mobile Main Menu
+function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    if (nav) {
+        nav.classList.toggle("active");
+    }
+}
+
+// 3. Smart Submenu Logic (The "Accordion" Fix)
 document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
     dropdownToggle.addEventListener('click', function(e) {
+        // Only run on mobile screens
         if (window.innerWidth <= 768) {
-            e.preventDefault(); // Prevent jump to top
-            const content = this.nextElementSibling;
+            e.preventDefault(); // Stop the page from changing
             
-            // Toggle visibility
-            if (content.style.display === "block") {
-                content.style.display = "none";
+            const currentContent = this.nextElementSibling;
+            
+            // --- FIX: Close all OTHER open submenus first ---
+            document.querySelectorAll('.dropdown-content').forEach(otherContent => {
+                if (otherContent !== currentContent) {
+                    otherContent.style.display = 'none';
+                }
+            });
+
+            // Toggle the visibility of the clicked submenu
+            if (currentContent.style.display === "block") {
+                currentContent.style.display = "none";
             } else {
-                content.style.display = "block";
+                currentContent.style.display = "block";
             }
         }
     });
