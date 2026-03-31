@@ -131,6 +131,13 @@
     border-bottom: 1px solid #5C1A1B;
     white-space: normal; /* Allows long text to wrap */
   }
+	.vicar-profile-img {
+        width: 100% !important; /* Makes the photo fill the width of the phone */
+        max-width: 300px; /* Limits size so it doesn't get too giant */
+        height: auto !important;
+        margin: 0 auto 20px auto;
+        display: block;
+    }
 }
         body {
           background-color: #FFFFFF;
@@ -705,26 +712,62 @@ font-size: 0.9rem;
 </footer>
 
 <script>
-
-
- const backToTopBtn = document.getElementById("backToTopBtn");
+  // 1. Back to Top Button Logic
+  const backToTopBtn = document.getElementById("backToTopBtn");
 
   window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
+    if (backToTopBtn) {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
     }
   };
 
-  backToTopBtn.addEventListener("click", function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  function toggleMenu() {
-    const x = document.getElementById("nav-links");
-    x.classList.toggle("active"); // More reliable for mobile
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
+
+  // 2. Main Mobile Menu Toggle
+  function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    if (nav) {
+      nav.classList.toggle("active");
+    }
+  }
+
+  // 3. Golden Submenu "Accordion" Logic
+  // Prevents multiple submenus from staying open on mobile
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Only trigger on mobile screens (768px or less)
+        if (window.innerWidth <= 768) {
+          e.preventDefault(); // Prevents the browser from jumping to a new page
+          const currentSubmenu = this.nextElementSibling;
+          
+          // Close all OTHER open submenus for a clean mobile experience
+          document.querySelectorAll('.dropdown-content').forEach(otherContent => {
+            if (otherContent !== currentSubmenu) {
+              otherContent.style.display = 'none';
+            }
+          });
+
+          // Toggle visibility of the selected golden submenu
+          if (currentSubmenu.style.display === 'block') {
+            currentSubmenu.style.display = 'none';
+          } else {
+            currentSubmenu.style.display = 'block';
+          }
+        }
+      });
+    });
+  });
 </script>
 
 </body>
