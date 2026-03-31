@@ -123,6 +123,35 @@
     border-bottom: 1px solid #5C1A1B;
     white-space: normal; /* Allows long text to wrap */
   }
+	.stec-subitem {
+            padding: 12px 15px; /* Larger hit area for fingers */
+            display: block;
+            border-bottom: 1px solid #444; /* Optional: adds a thin line between categories */
+        }
+	/* 1. Force the Sidebar and Gallery to stack vertically */
+    .gallery-page-wrapper, .main-container { 
+        display: block !important; 
+    }
+
+    /* 2. Ensure the sidebar takes full width at the top */
+    .stec-sidebar {
+        width: 100% !important;
+        margin-bottom: 30px; /* Adds space before the photos start */
+        float: none !important;
+    }
+
+    /* 3. Ensure the gallery starts below the sidebar */
+    .gallery-container, .programs-grid-container {
+        width: 100% !important;
+        display: block !important;
+        clear: both; /* Prevents any floating elements from overlapping */
+    }
+
+    /* 4. Make each photo fill the screen width */
+    .gallery-item {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
 }
     
 /* Media Query for Mobile (Phones) */
@@ -816,21 +845,23 @@ font-size: 0.9rem;
 
 </div>
 </footer>
-
-	<script>
-// 1. Mobile Menu Toggle
+<script>
+// 1. Main Mobile Menu Toggle
 function toggleMenu() {
-    document.getElementById('nav-links').classList.toggle('active');
+    const nav = document.getElementById('nav-links');
+    if (nav) {
+        nav.classList.toggle('active');
+    }
 }
 
-// --- NEW: Mobile Submenu Fix (Prevents multiple submenus opening) ---
+// 2. Mobile Submenu Fix (The Golden Accordion)
 document.querySelectorAll('.dropdown > a').forEach(item => {
     item.addEventListener('click', function(e) {
         if (window.innerWidth <= 768) {
-            e.preventDefault(); // Stop immediate navigation
+            e.preventDefault(); 
             const currentContent = this.nextElementSibling;
             
-            // Close all OTHER open submenus first
+            // Close all OTHER open submenus
             document.querySelectorAll('.dropdown-content').forEach(otherContent => {
                 if (otherContent !== currentContent) {
                     otherContent.style.display = 'none';
@@ -847,41 +878,49 @@ document.querySelectorAll('.dropdown > a').forEach(item => {
     });
 });
 
-// 2. Filtering Logic (Preserved)
+// 3. Filtering Logic
 const filterItems = document.querySelectorAll('.stec-subitem');
 const galleryPhotos = document.querySelectorAll('.gallery-item');
 const resetBtn = document.getElementById('reset-gallery');
 
-filterItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const filterValue = item.getAttribute('data-filter');
+if (filterItems.length > 0) {
+    filterItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const filterValue = item.getAttribute('data-filter');
 
-        // Toggle Active Class in Sidebar
-        filterItems.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
+            // Toggle Active Class in Sidebar/Filter list
+            filterItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
 
-        // Filter Photos
-        galleryPhotos.forEach(photo => {
-            if (photo.getAttribute('data-category') === filterValue) {
-                photo.style.display = 'block';
-            } else {
-                photo.style.display = 'none';
-            }
+            // Filter Photos with a slight fade effect
+            galleryPhotos.forEach(photo => {
+                if (photo.getAttribute('data-category') === filterValue) {
+                    photo.style.display = 'block';
+                    // Optional: Add a small delay for a fade-in look
+                    setTimeout(() => { photo.style.opacity = '1'; }, 10);
+                } else {
+                    photo.style.opacity = '0';
+                    photo.style.display = 'none';
+                }
+            });
         });
-    });
-});
-
-// 3. Reset Button Logic (Preserved)
-if (resetBtn) {
-    resetBtn.addEventListener('click', () => {
-        filterItems.forEach(i => i.classList.remove('active'));
-        galleryPhotos.forEach(photo => photo.style.display = 'block');
     });
 }
 
-// 4. Back to Top Button
+// 4. Reset Button Logic
+if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+        filterItems.forEach(i => i.classList.remove('active'));
+        galleryPhotos.forEach(photo => {
+            photo.style.display = 'block';
+            photo.style.opacity = '1';
+        });
+    });
+}
+
+// 5. Back to Top Button
 window.onscroll = function() {
-    let btn = document.getElementById("backToTopBtn");
+    const btn = document.getElementById("backToTopBtn");
     if (btn) {
         if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
             btn.style.display = "block";
@@ -898,7 +937,6 @@ if (topBtn) {
     };
 }
 </script>
-
 </body>
 </html>
 
