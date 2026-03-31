@@ -131,6 +131,16 @@
     border-bottom: 1px solid #5C1A1B;
     white-space: normal; /* Allows long text to wrap */
   }
+	/* Keeps committee tables/lists from overflowing on mobile */
+.committee-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.committee-member-card {
+    width: 100% !important;
+    margin: 10px 0;
+}
 }
         
         body {
@@ -661,39 +671,63 @@ font-size: 0.9rem;
 </div>
 </footer>
 
-
-
 <script>
-
- // Get the button
+  // 1. Back to Top Button Logic
   const backToTopBtn = document.getElementById("backToTopBtn");
 
-  // Show button when user scrolls down 100px
   window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
+    if (backToTopBtn) {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
     }
   };
 
-
-
-  // Scroll smoothly to top when clicked
-  backToTopBtn.addEventListener("click", function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-function toggleMenu() {
-  var x = document.getElementById("nav-links");
-  if (x.className === "nav-links") {
-    x.className += " active";
-  } else {
-    x.className = "nav-links";
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
-}
 
+  // 2. Main Mobile Menu Toggle
+  function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    // This is a cleaner way to toggle the 'active' class
+    nav.classList.toggle("active");
+  }
+
+  // 3. Submenu (Dropdown) Logic for Mobile
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Only run on mobile screens (768px or less)
+        if (window.innerWidth <= 768) {
+          e.preventDefault(); // Stop the link from jumping to the page
+          const currentSubmenu = this.nextElementSibling;
+          
+          // Close all OTHER open submenus first (Fixes the overlapping glitch)
+          document.querySelectorAll('.dropdown-content').forEach(content => {
+            if (content !== currentSubmenu) {
+              content.style.display = 'none';
+            }
+          });
+
+          // Toggle ONLY this specific golden submenu
+          if (currentSubmenu.style.display === 'block') {
+            currentSubmenu.style.display = 'none';
+          } else {
+            currentSubmenu.style.display = 'block';
+          }
+        }
+      });
+    });
+  });
 </script>
+
 </body>
 
 </html>
