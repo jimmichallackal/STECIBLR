@@ -894,14 +894,12 @@ document.querySelectorAll('.dropdown > a').forEach(item => {
             e.preventDefault(); 
             const currentContent = this.nextElementSibling;
             
-            // Close all OTHER open submenus
             document.querySelectorAll('.dropdown-content').forEach(otherContent => {
                 if (otherContent !== currentContent) {
                     otherContent.style.display = 'none';
                 }
             });
 
-            // Toggle only THIS submenu
             if (currentContent.style.display === 'block') {
                 currentContent.style.display = 'none';
             } else {
@@ -911,34 +909,44 @@ document.querySelectorAll('.dropdown > a').forEach(item => {
     });
 });
 
-// 3. Filtering Logic
+// 3. Filtering Logic (DEFINITIONS ADDED HERE)
 const filterItems = document.querySelectorAll('.stec-subitem');
 const galleryPhotos = document.querySelectorAll('.gallery-item');
 const resetBtn = document.getElementById('reset-gallery');
 
-if (filterItems.length > 0) {
-    filterItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const filterValue = item.getAttribute('data-filter');
+filterItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const filterValue = item.getAttribute('data-filter');
 
-            // Toggle Active Class in Sidebar/Filter list
-            filterItems.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
+        // Toggle Active Class
+        filterItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
 
-            // Filter Photos with a slight fade effect
-            galleryPhotos.forEach(photo => {
-                if (photo.getAttribute('data-category') === filterValue) {
-                    photo.style.display = 'block';
-                    // Optional: Add a small delay for a fade-in look
-                    setTimeout(() => { photo.style.opacity = '1'; }, 10);
-                } else {
-                    photo.style.opacity = '0';
-                    photo.style.display = 'none';
-                }
-            });
+        // Filter Photos
+        galleryPhotos.forEach(photo => {
+            if (photo.getAttribute('data-category') === filterValue) {
+                photo.style.display = 'block';
+            } else {
+                photo.style.display = 'none';
+            }
         });
+
+        // Auto-Scroll down to the first photo on Mobile
+        if (window.innerWidth <= 768) {
+            const galleryContent = document.querySelector('.stec-content');
+            if (galleryContent) {
+                const offset = 100; 
+                const elementPosition = galleryContent.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
     });
-}
+});
 
 // 4. Reset Button Logic
 if (resetBtn) {
