@@ -133,6 +133,10 @@
     border-bottom: 1px solid #5C1A1B;
     white-space: normal; /* Allows long text to wrap */
   }
+	/* Ensure Maps and Forms don't break the mobile layout */
+iframe, form {
+    max-width: 100% !important;
+}
 }
 
         body {
@@ -435,33 +439,60 @@ font-size: 0.9rem;
 </div>
 </footer>
 
-
 <script>
-
- // Get the button
+  // 1. Back to Top Button Logic
   const backToTopBtn = document.getElementById("backToTopBtn");
 
-  // Show button when user scrolls down 100px
   window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
+    if (backToTopBtn) {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
     }
   };
-  // Scroll smoothly to top when clicked
-  backToTopBtn.addEventListener("click", function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
 
-function toggleMenu() {
-  var x = document.getElementById("nav-links");
-  if (x.className === "nav-links") {
-    x.className += " active";
-  } else {
-    x.className = "nav-links";
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
-}
+
+  // 2. Main Mobile Menu Toggle
+  function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    nav.classList.toggle("active");
+  }
+
+  // 3. Submenu (Dropdown) Logic for Mobile
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown > a');
+
+    dropdowns.forEach(item => {
+      item.addEventListener('click', function(e) {
+        // Only run this on mobile screens (768px or less)
+        if (window.innerWidth <= 768) {
+          e.preventDefault(); // Stop the link from following the URL
+          const currentContent = this.nextElementSibling;
+          
+          // Close all OTHER open submenus first (prevents the overlapping glitch)
+          document.querySelectorAll('.dropdown-content').forEach(otherContent => {
+            if (otherContent !== currentContent) {
+              otherContent.style.display = 'none';
+            }
+          });
+
+          // Toggle ONLY this specific golden submenu
+          if (currentContent.style.display === 'block') {
+            currentContent.style.display = 'none';
+          } else {
+            currentContent.style.display = 'block';
+          }
+        }
+      });
+    });
+  });
 </script>
 </body>
 
