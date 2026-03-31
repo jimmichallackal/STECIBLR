@@ -133,6 +133,25 @@
     border-bottom: 1px solid #5C1A1B;
     white-space: normal; /* Allows long text to wrap */
   }
+
+    
+    /* 1. Fix for Photo Gallery stacking */
+    .programs-grid-container, .gallery-container {
+        grid-template-columns: 1fr !important;
+        display: grid;
+        gap: 20px;
+    }
+
+    /* 2. Fix for Images being cut off */
+    .program-item img, .gallery-item img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* 3. Fix for Maps/Forms overlapping */
+    iframe, form {
+        max-width: 100% !important;
+    }
 }
         body {
           background-color: #FFFFFF;
@@ -948,51 +967,85 @@ From six believers in a Bible college room to a thriving, multi-lingual parish w
 </div>
 </footer>
 
-
-<script>
-  // 1. Sidebar Navigation Logic
+	<script>
+  // 1. Sidebar Navigation Logic (Chapter Switching)
   function showChapter(event, chapterId) {
-    // Hide all chapters
+    // Hide all history chapters
     const chapters = document.querySelectorAll('.chapter-box');
     chapters.forEach(ch => ch.classList.remove('active'));
 
-    // Remove active state from all nav items
+    // Remove active state from all sidebar items
     const navItems = document.querySelectorAll('.stec-nav-item');
     navItems.forEach(item => item.classList.remove('active'));
 
-    // Show selected chapter + highlight nav item
+    // Show selected chapter + highlight sidebar item
     const target = document.getElementById(chapterId);
     if (target) {
         target.classList.add('active');
         event.currentTarget.classList.add('active');
 
-        // Scroll to top of selected chapter
+        // Scroll to top of selected chapter (accounting for sticky navbar)
         const menuHeight = 150; 
         const y = target.getBoundingClientRect().top + window.pageYOffset - menuHeight;
         window.scrollTo({ top: y, behavior: 'smooth' });
     }
   }
 
-  // 2. Mobile Menu Toggle Logic
+  // 2. Main Mobile Menu Toggle
   function toggleMenu() {
     const nav = document.getElementById("nav-links");
-    nav.classList.toggle("active");
+    if (nav) {
+      nav.classList.toggle("active");
+    }
   }
 
-  // 3. Back to Top Button Logic
+  // 3. Golden Submenu Logic (The "Accordion" Fix)
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Only run on mobile screens (768px or less)
+        if (window.innerWidth <= 768) {
+          e.preventDefault(); // Prevents jumping to a new page immediately
+          const currentSubmenu = this.nextElementSibling;
+          
+          // Close all OTHER open submenus first (prevents overlapping glitch)
+          document.querySelectorAll('.dropdown-content').forEach(otherContent => {
+            if (otherContent !== currentSubmenu) {
+              otherContent.style.display = 'none';
+            }
+          });
+
+          // Toggle visibility of this specific golden submenu
+          if (currentSubmenu.style.display === 'block') {
+            currentSubmenu.style.display = 'none';
+          } else {
+            currentSubmenu.style.display = 'block';
+          }
+        }
+      });
+    });
+  });
+
+  // 4. Back to Top Button Logic
   const backToTopBtn = document.getElementById("backToTopBtn");
 
   window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
+    if (backToTopBtn) {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
     }
   };
 
-  backToTopBtn.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  if (backToTopBtn) {
+    backToTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  }
 </script>
 </body>
 </html>
