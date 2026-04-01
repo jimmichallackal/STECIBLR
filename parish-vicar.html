@@ -97,8 +97,8 @@
   transition: 0.4s;
 }
 
-/* Mobile Media Query (Screens smaller than 768px) */
-@media screen and (max-width: 768px) {
+/* Mobile Media Query (Screens smaller than 600px) */
+@media screen and (max-width: 600px) {
   .menu-icon {
     display: flex; /* Show hamburger on mobile */
   }
@@ -283,8 +283,8 @@
             }
         }
         
-/* Tablet-sized screens (up to 768px) */
-        @media (max-width: 768px) {
+/* Tablet-sized screens (up to 600px) */
+        @media (max-width: 600px) {
             .leadership-grid-5-col {
                 grid-template-columns: 1fr;
             }
@@ -370,7 +370,7 @@ font-size: 0.9rem;
 }
 
 /* Mobile View: Stack them vertically */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
@@ -746,8 +746,8 @@ font-size: 0.9rem;
 
     dropdownLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        // Only trigger on mobile screens (768px or less)
-        if (window.innerWidth <= 768) {
+        // Only trigger on mobile screens (600px or less)
+        if (window.innerWidth <= 600) {
           e.preventDefault(); // Prevents the browser from jumping to a new page
           const currentSubmenu = this.nextElementSibling;
           
