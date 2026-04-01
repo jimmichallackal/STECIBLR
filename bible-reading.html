@@ -582,46 +582,100 @@ function switchLanguage(lang) {
 }
 
 // --- 2. Bible Logic Functions ---
-
 function loadToday() {
     const today = new Date();
+    
+    // 1. Calculate Today's Key (for the main display)
     const yyyy = today.getFullYear();
     const mm = String(today.getMonth() + 1).padStart(2, '0');
     const dd = String(today.getDate()).padStart(2, '0');
     const dateKey = `${yyyy}-${mm}-${dd}`;
+
+    // 2. Calculate Yesterday's Key (for the Archive limit)
+    const yesterday = new Date();
+    yesterday.setDate(today.getDate() - 1);
+    const y_yyyy = yesterday.getFullYear();
+    const y_mm = String(yesterday.getMonth() + 1).padStart(2, '0');
+    const y_dd = String(yesterday.getDate()).padStart(2, '0');
+    const yesterdayKey = `${y_yyyy}-${y_mm}-${y_dd}`;
     
-const datePicker = document.getElementById('jump-to-date');
+    // 3. Set Date Picker Constraints
+    const datePicker = document.getElementById('jump-to-date');
     if (datePicker) {
-        datePicker.setAttribute('min', '2026-04-01'); // Earliest date
-        datePicker.setAttribute('max', yesterdayKey);       // Latest date (Today) datePicker.setAttribute('max', dateKey); 
+        datePicker.setAttribute('min', '2026-04-01'); // Start of your plan
+        datePicker.setAttribute('max', yesterdayKey); // Limits search to YESTERDAY
     }
-    // 1. Format: Wednesday, April 1, 2026
+
+    // 4. Display Today's Full Date Header
     const fullDate = today.toLocaleDateString('en-US', { 
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
     });
-
-    // 2. Set the date OUTSIDE the box (above the portion label)
     const dateElement = document.getElementById('today-date-text');
     if (dateElement) {
         dateElement.innerText = fullDate;
-        dateElement.style.fontSize = "1.2rem";
-        dateElement.style.color = "#5C1A1B"; // Matches your Wine Red theme
-        dateElement.style.marginBottom = "20px";
     }
     
+    // 5. Load Today's Reading Portion
     const data = bibleSchedule[dateKey];
     if (data) {
-        // 3. Set ONLY the Bible portion inside the box
         document.getElementById('today-portion').innerText = data.portion;
         
-        // Update Video Link based on selected language
+        // Load Video if ID exists
         const videoId = (currentLang === 'eng') ? data.engId : data.malId;
-        document.getElementById('today-video').src = `https://www.youtube.com/embed/${videoId}?rel=0`;
-        document.querySelector('.video-section').style.display = "block";
+        if (videoId && videoId !== "") {
+            document.getElementById('today-video').src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+            document.querySelector('.video-section').style.display = "block";
+        } else {
+            document.querySelector('.video-section').style.display = "none";
+        }
     } else {
         document.getElementById('today-portion').innerText = "Coming Soon";
         document.querySelector('.video-section').style.display = "none";
     }
+}
+function searchArchive(dateString) {
+    if(!dateString) return;
+    currentArchiveDate = dateString; // Store the date
+    const data = bibleSchedule[dateString];
+    const archiveDiv = document.getElementById('archive-display');
+    
+    archiveDiv.style.display = "block";
+    document.getElementById('archive-date-text').innerText = new Date(dateString).toLocaleDateString();
+
+    if (data) {
+        document.getElementById('archive-portion').innerText = data.portion;
+        // Default to English in Archive
+        switchArchiveLanguage('eng'); 
+    } else {
+        document.getElementById('archive-portion').innerText = "Data not found.";
+        document.getElementById('archive-video').src = "";
+    }
+}
+
+function switchArchiveLanguage(lang) {
+    const data = bibleSchedule[currentArchiveDate];
+    if (!data) return;
+
+    const videoId = (lang === 'eng') ? data.engId : data.malId;
+    document.getElementById('archive-video').src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+
+    // Visual feedback for Archive buttons
+    const engBtn = document.getElementById('arch-btn-eng');
+    const malBtn = document.getElementById('arch-btn-mal');
+
+    if (lang === 'eng') {
+        engBtn.style.background = "white"; engBtn.style.color = "#16a085";
+        malBtn.style.background = "transparent"; malBtn.style.color = "white";
+    } else {
+        malBtn.style.background = "white"; malBtn.style.color = "#16a085";
+        engBtn.style.background = "transparent"; engBtn.style.color = "white";
+    }
+}
+
+function closeArchive() {
+    document.getElementById('archive-display').style.display = "none";
+    document.getElementById('jump-to-date').value = "";
+    document.getElementById('archive-video').src = ""; // Stops the video when closing
 }
 
 
