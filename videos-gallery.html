@@ -84,7 +84,7 @@
             transition: 0.4s;
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 600px) {
             .menu-icon { display: flex; }
             .nav-links {
                 display: none;
@@ -250,7 +250,7 @@ font-size: 0.9rem;
 }
 
 /* Mobile View: Stack them vertically */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
@@ -457,7 +457,7 @@ font-size: 0.9rem;
 
     dropdownLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 600) {
           e.preventDefault(); // Stop the page from jumping
           const currentSubmenu = this.nextElementSibling;
           
