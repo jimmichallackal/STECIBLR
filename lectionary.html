@@ -99,8 +99,8 @@
   transition: 0.4s;
 }
 
-/* Mobile Media Query (Screens smaller than 768px) */
-@media screen and (max-width: 768px) {
+/* Mobile Media Query (Screens smaller than 600px) */
+@media screen and (max-width: 600px) {
   .menu-icon {
     display: flex; /* Show hamburger on mobile */
   }
@@ -339,7 +339,7 @@ font-size: 0.9rem;
 }
 
 /* Mobile View: Stack them vertically */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
@@ -951,7 +951,7 @@ font-size: 0.9rem;
 
     dropdowns.forEach(link => {
       link.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 600) {
           e.preventDefault(); // Stay on menu to see golden sub-links
           const currentContent = this.nextElementSibling;
           
