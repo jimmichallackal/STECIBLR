@@ -453,32 +453,50 @@ font-size: 0.9rem;
                     <span class="portion-label">Today's Portion</span>
                     <div id="today-portion" class="portion-text">-</div>
                 </div>
-                <div class="audio-section">
-                    <p>Listen to Today's Meditation</p>
-                    <audio id="today-audio" controls style="width:100%;">
-                        <source id="today-source" src="" type="audio/mpeg">
-                    </audio>
-                </div>
-            </div>
 
-            <div style="margin: 30px 0; color: #bbb; font-weight: bold;">OR</div>
+
+<div class="video-section">
+    <p>Watch Today's Meditation</p>
+    
+    <div style="margin-bottom: 15px;">
+        <button onclick="switchLanguage('eng')" id="btn-eng" style="padding: 8px 15px; cursor: pointer; background: #5C1A1B; color: #FFFF99; border: 1px solid #FFFF99; border-radius: 5px;">English</button>
+        <button onclick="switchLanguage('mal')" id="btn-mal" style="padding: 8px 15px; cursor: pointer; background: #f0f0f0; color: #333; border: 1px solid #ccc; border-radius: 5px;">മലയാളം</button>
+    </div>
+
+    <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+        <iframe id="today-video" 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>                
+	
+<div style="margin: 30px 0; color: #bbb; font-weight: bold;">OR</div>
+
 
             <div class="history-selector">
                 <label style="display:block; margin-bottom:10px; font-size:0.9rem; color:#95a5a6;">Refer to a Previous Date</label>
-                <input type="date" id="jump-to-date" onchange="searchArchive(this.value)" style="padding:10px; border-radius:8px; border:1px solid #ddd;">
+                <input type="date" id="jump-to-date" min="2026-04-01" onchange="searchArchive(this.value)" style="padding:10px; border-radius:8px; border:1px solid #ddd;">
             </div>
-
-            <div id="archive-display" style="display: none;">
-                <div class="archive-box">
-                    <span>Archive: <span id="archive-date-text"></span></span>
-                    <div id="archive-portion" style="font-size:1.5rem; margin:10px 0;">-</div>
-                    <audio id="archive-audio" controls style="width:100%;">
-                        <source id="archive-source" src="" type="audio/mpeg">
-                    </audio><br>
-                    <button onclick="closeArchive()" class="close-btn">Clear Search</button>
-                </div>
-            </div>
+<div id="archive-display" style="display: none; margin-top: 20px;">
+    <div class="archive-box" style="background: #16a085; color: white; padding: 25px; border-radius: 12px;">
+        <span style="font-weight: bold;">Archive: <span id="archive-date-text"></span></span>
+        <div id="archive-portion" style="font-size:1.8rem; margin:15px 0; font-weight: 800;">-</div>
+        
+        <div style="margin-bottom: 15px;">
+            <button onclick="switchArchiveLanguage('eng')" id="arch-btn-eng" style="padding: 6px 12px; cursor: pointer; border-radius: 4px; border: none; background: white; color: #16a085; font-weight: bold;">English</button>
+            <button onclick="switchArchiveLanguage('mal')" id="arch-btn-mal" style="padding: 6px 12px; cursor: pointer; border-radius: 4px; border: 1px solid white; background: transparent; color: white;">മലയാളം</button>
         </div>
+
+        <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000;">
+            <iframe id="archive-video" 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                    src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <button onclick="closeArchive()" class="close-btn" style="margin-top: 15px; background: #e74c3c; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer;">Clear Search</button>
+    </div>
+</div>           
+         </div>
     </section>
 </main>
 
@@ -511,15 +529,15 @@ font-size: 0.9rem;
 <script>
 // --- 1. Bible Schedule Data ---
 const bibleSchedule = {
- "2026-04-01": { portion: "Genesis 1-3", audio: "audio/apr01.mp3" },
-    "2026-04-02": { portion: "Genesis 4-7", audio: "audio/apr02.mp3" },
-    "2026-04-03": { portion: "Genesis 8-11", audio: "audio/apr03.mp3" },
-    "2026-04-04": { portion: "Job 1-5", audio: "audio/apr04.mp3" },
-    "2026-04-05": { portion: "Job 6-9", audio: "audio/apr05.mp3" },
-    "2026-04-06": { portion: "Job 10-13", audio: "audio/apr06.mp3" },
-    "2026-04-07": { portion: "Job 14-16", audio: "audio/apr07.mp3" },
-    "2026-04-08": { portion: "Job 17-20", audio: "audio/apr08.mp3" },
-    "2026-04-09": { portion: "Job 21-23", audio: "audio/apr09.mp3" },
+    "2026-04-01": {portion: "Genesis 1-3", engId: "SshorPZFbq8", malId: "EVeNaZN1DWI"},
+    "2026-04-02": { portion: "Genesis 4-7", engId: "", malId: ""},
+    "2026-04-03": { portion: "Genesis 8-11", engId: "", malId: ""},
+    "2026-04-04": { portion: "Job 1-5", engId: "", malId: ""  },
+    "2026-04-05": { portion: "Job 6-9", engId: "", malId: ""  },
+    "2026-04-06": { portion: "Job 10-13", engId: "", malId: ""  },
+    "2026-04-07": { portion: "Job 14-16", engId: "", malId: ""  },
+    "2026-04-08": { portion: "Job 17-20", engId: "", malId: "" },
+    "2026-04-09": { portion: "Job 21-23", engId: "", malId: "" },
     "2026-04-10": { portion: "Job 24-28", audio: "audio/apr10.mp3" },
     "2026-04-11": { portion: "Job 29-31", audio: "audio/apr11.mp3" },
     "2026-04-12": { portion: "Job 32-34", audio: "audio/apr12.mp3" },
@@ -543,7 +561,28 @@ const bibleSchedule = {
     "2026-04-30": { portion: "Exodus 1-3", audio: "audio/apr30.mp3" }
 };
 
+let currentLang = 'eng'; // Default language
+
+function switchLanguage(lang) {
+    currentLang = lang;
+    const today = new Date().toISOString().split('T')[0];
+    const data = bibleSchedule[today];
+    
+    if (data) {
+        const videoId = (lang === 'eng') ? data.engId : data.malId;
+        document.getElementById('today-video').src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+        
+        // Visual feedback for buttons
+        document.getElementById('btn-eng').style.background = (lang === 'eng') ? '#5C1A1B' : '#f0f0f0';
+        document.getElementById('btn-eng').style.color = (lang === 'eng') ? '#FFFF99' : '#333';
+        
+        document.getElementById('btn-mal').style.background = (lang === 'mal') ? '#5C1A1B' : '#f0f0f0';
+        document.getElementById('btn-mal').style.color = (lang === 'mal') ? '#FFFF99' : '#333';
+    }
+}
+
 // --- 2. Bible Logic Functions ---
+
 function loadToday() {
     const today = new Date();
     const yyyy = today.getFullYear();
@@ -551,51 +590,84 @@ function loadToday() {
     const dd = String(today.getDate()).padStart(2, '0');
     const dateKey = `${yyyy}-${mm}-${dd}`;
     
-    document.getElementById('today-date-text').innerText = today.toLocaleDateString('en-US', { 
+const datePicker = document.getElementById('jump-to-date');
+    if (datePicker) {
+        datePicker.setAttribute('min', '2026-04-01'); // Earliest date
+        datePicker.setAttribute('max', dateKey);       // Latest date (Today) datePicker.setAttribute('max', yesterdayKey); 
+    }
+    // 1. Format: Wednesday, April 1, 2026
+    const fullDate = today.toLocaleDateString('en-US', { 
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
     });
+
+    // 2. Set the date OUTSIDE the box (above the portion label)
+    const dateElement = document.getElementById('today-date-text');
+    if (dateElement) {
+        dateElement.innerText = fullDate;
+        dateElement.style.fontSize = "1.2rem";
+        dateElement.style.color = "#5C1A1B"; // Matches your Wine Red theme
+        dateElement.style.marginBottom = "20px";
+    }
     
     const data = bibleSchedule[dateKey];
     if (data) {
+        // 3. Set ONLY the Bible portion inside the box
         document.getElementById('today-portion').innerText = data.portion;
-        const player = document.getElementById('today-audio');
-        document.getElementById('today-source').src = data.audio;
-        player.src = data.audio; 
-        player.load();
+        
+        // Update Video Link based on selected language
+        const videoId = (currentLang === 'eng') ? data.engId : data.malId;
+        document.getElementById('today-video').src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+        document.querySelector('.video-section').style.display = "block";
     } else {
         document.getElementById('today-portion').innerText = "Coming Soon";
-        document.getElementById('today-audio').style.display = "none";
+        document.querySelector('.video-section').style.display = "none";
     }
-
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    const y_yyyy = yesterday.getFullYear();
-    const y_mm = String(yesterday.getMonth() + 1).padStart(2, '0');
-    const y_dd = String(yesterday.getDate()).padStart(2, '0');
-    document.getElementById('jump-to-date').setAttribute('max', `${y_yyyy}-${y_mm}-${y_dd}`);
 }
+
 
 function searchArchive(dateString) {
     if(!dateString) return;
+    currentArchiveDate = dateString; // Store the date
     const data = bibleSchedule[dateString];
     const archiveDiv = document.getElementById('archive-display');
+    
     archiveDiv.style.display = "block";
     document.getElementById('archive-date-text').innerText = new Date(dateString).toLocaleDateString();
 
     if (data) {
         document.getElementById('archive-portion').innerText = data.portion;
-        const archPlayer = document.getElementById('archive-audio');
-        archPlayer.src = data.audio;
-        archPlayer.load();
+        // Default to English in Archive
+        switchArchiveLanguage('eng'); 
     } else {
         document.getElementById('archive-portion').innerText = "Data not found.";
+        document.getElementById('archive-video').src = "";
+    }
+}
+
+function switchArchiveLanguage(lang) {
+    const data = bibleSchedule[currentArchiveDate];
+    if (!data) return;
+
+    const videoId = (lang === 'eng') ? data.engId : data.malId;
+    document.getElementById('archive-video').src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+
+    // Visual feedback for Archive buttons
+    const engBtn = document.getElementById('arch-btn-eng');
+    const malBtn = document.getElementById('arch-btn-mal');
+
+    if (lang === 'eng') {
+        engBtn.style.background = "white"; engBtn.style.color = "#16a085";
+        malBtn.style.background = "transparent"; malBtn.style.color = "white";
+    } else {
+        malBtn.style.background = "white"; malBtn.style.color = "#16a085";
+        engBtn.style.background = "transparent"; engBtn.style.color = "white";
     }
 }
 
 function closeArchive() {
     document.getElementById('archive-display').style.display = "none";
     document.getElementById('jump-to-date').value = "";
-    document.getElementById('archive-audio').pause();
+    document.getElementById('archive-video').src = ""; // Stops the video when closing
 }
 
 // --- 3. Navigation & Dropdown Logic ---
