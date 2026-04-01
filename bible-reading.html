@@ -593,7 +593,7 @@ function loadToday() {
 const datePicker = document.getElementById('jump-to-date');
     if (datePicker) {
         datePicker.setAttribute('min', '2026-04-01'); // Earliest date
-        datePicker.setAttribute('max', dateKey);       // Latest date (Today) datePicker.setAttribute('max', yesterdayKey); 
+        datePicker.setAttribute('max', yesterdayKey);       // Latest date (Today) datePicker.setAttribute('max', dateKey); 
     }
     // 1. Format: Wednesday, April 1, 2026
     const fullDate = today.toLocaleDateString('en-US', { 
