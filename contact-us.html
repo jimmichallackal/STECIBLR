@@ -97,8 +97,8 @@
   transition: 0.4s;
 }
 
-/* Mobile Media Query (Screens smaller than 768px) */
-@media screen and (max-width: 768px) {
+/* Mobile Media Query (Screens smaller than 600px) */
+@media screen and (max-width: 600px) {
   .menu-icon {
     display: flex; /* Show hamburger on mobile */
   }
@@ -216,7 +216,7 @@ iframe, form {
         }
         
         /* Media Query for Mobile: Stack them vertically */
-        @media (max-width: 768px) {
+        @media (max-width: 600x) {
             .contact-flex-container {
                 flex-direction: column; 
             }
@@ -302,7 +302,7 @@ font-size: 0.9rem;
 }
 
 /* Mobile View: Stack them vertically */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
@@ -471,8 +471,8 @@ font-size: 0.9rem;
 
     dropdowns.forEach(item => {
       item.addEventListener('click', function(e) {
-        // Only run this on mobile screens (768px or less)
-        if (window.innerWidth <= 768) {
+        // Only run this on mobile screens (600px or less)
+        if (window.innerWidth <= 600) {
           e.preventDefault(); // Stop the link from following the URL
           const currentContent = this.nextElementSibling;
           
