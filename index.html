@@ -82,60 +82,54 @@
   display: block;
 }
 
-
+/* --- FULL-WIDTH HERO SLIDER CSS --- */
+.hero-slider-wrapper {
+  width: 100vw; /* Standard full view width */
+  margin-left: 50%; /* Center the overflow */
+  transform: translateX(-50%); /* Center the overflow */
+  overflow: hidden;
+}
 
 .hero-slider {
     width: 100%;
-    height: auto; /* Adjust height (e.g., 500px or 70vh) */
+    height: auto; /* Let the image dictate the height */
     overflow: hidden;
     position: relative;
-    background-color: #000; /* Black background for contrast */
+background-color: #000;
 }
+
 
 .slides-container {
     display: flex;
-    width: 200%; /* Total width = 100% * number of slides (2) */
+    /* MATH: 3 slides = 300% width */
+    width: 300%; 
     height: 100%;
-    animation: slideLoop 12s infinite ease-in-out; /* Total time loop */
+    /* 15 seconds allows ~4 seconds of viewing per image */
+    animation: slideLoop 15s infinite ease-in-out; 
 }
 
 .slide-item {
-    width: 50%; /* Each slide is half of the container */
-    height: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 33.333%;
+  height: 100%;
 }
+
 
 .slide-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the photo fills the space without stretching */
+    object-fit: cover; /* Keeps images from looking stretched */
+object-position: center; /* Keeps the middle of the photo visible */
     display: block;
 }
 
-/* Optional Overlay Text on Slides */
-.slide-text {
-    position: absolute;
-    bottom: 30px;
-    left: 5%;
-    color: #FFFF99; /* Light Yellow text */
-    background-color: rgba(92, 26, 27, 0.7); /* Translucent Maroon bg */
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-family: Roboto, sans-serif;
-}
-
-.slide-text h2 { margin: 0; font-size: 2rem; }
-.slide-text p { margin: 5px 0 0; font-size: 1.1rem; }
-
-/* The Automatic Sliding Animation */
+/* Updated math for a 3-image cycle */
 @keyframes slideLoop {
-    0%, 45% { transform: translateX(0%); }      /* Show Slide 1 */
-    50%, 95% { transform: translateX(-50%); }   /* Show Slide 2 */
-    100% { transform: translateX(0%); }         /* Reset to Slide 1 */
+    0%, 30% { transform: translateX(0%); }             /* Show Image 1 */
+    33.33%, 63.33% { transform: translateX(-33.333%); } /* Slide to Image 2 */
+    66.66%, 96.66% { transform: translateX(-66.666%); } /* Slide to Image 3 */
+    100% { transform: translateX(0%); }                 /* Reset to Start */
 }
+
 
 /* Mobile Specific Height */
 @media (max-width: 768px) {
@@ -488,20 +482,18 @@ font-size: 0.9rem;
 
 <div class="hero-slider">
     <div class="slides-container">
-
         <div class="slide-item">
             <img src="Steciblr_files/mainphoto.jpg" alt="STECI Bangalore Parish">
-            
         </div>
         
-        <div class="slide-item fade-in">
+        <div class="slide-item">
             <img src="Steciblr_files/passionweek.jpeg" alt="Passion Week Services 2026">
-            
         </div>
 
+        <div class="slide-item">
+            <img src="Steciblr_files/vbs.jpg" alt="VBS 2026"> </div>
     </div>
 </div>
-
 
 <section class="mission-vision-section">
 <div class="flex-item text-item">
@@ -591,15 +583,17 @@ At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire i
                 <td class="mission-heading">
                 <h1><strong>Upcoming Program</strong></h1>
 		
-		<p style="font-family:'Segoe UI', sans-serif; font-size:16px; line-height:1.6; text-align:center; background:#f9f9f9; border:1px solid 				#d4af37; border-radius:8px; padding:12px; max-width:800px; margin:20px auto; color:#000;">
+		<p style="font-family:'Segoe UI', sans-serif; font-size:16px; line-height:1.6; text-align:center; background:#f9f9f9; border:1px solid #d4af37; border-radius:8px; padding:12px; max-width:800px; margin:20px auto; color:#000;">
   				 <strong>Passion Week Program</strong> 
 				 <br><strong>Maundy Thursday Worship service, 2 April 2026 at 7:00 PM</strong> 
 				 <br><strong>Good Friday service, 3 April 2026 at 8:30 AM</strong> 
 				 <br><strong>Easter Sunday Worship service, 5 April 2026 at 7:30 AM</strong> 
  				
 		</p>
-		<p> <strong>VBS - April 06 to 08 , Venue - STECI, Bangalore Parish</strong> </p>
-			<img src="Steciblr_files/vbs.jpeg" alt="VBS" style="width:35%; display:block; margin:0 auto; border:0;" />		
+		<p> <strong>VBS - 06 to 08 April 26 , Venue - STECI, Bangalore Parish</strong> </p>
+		<p> <strong>Confirmation Service - Sunday, 12 April 26</strong> </p>
+
+
                </td>
             </tr>
         </tbody>
@@ -706,4 +700,3 @@ document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
 </body>
 
 </html>
-
