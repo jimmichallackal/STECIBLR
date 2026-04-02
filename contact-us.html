@@ -80,21 +80,36 @@
 
 
 /* --- MOBILE NAVIGATION CSS --- */
-
 /* Hamburger Icon Styling */
 .menu-icon {
   display: none; /* Hidden on Desktop */
-  flex-direction: column;
+  flex-direction: row;
+	align-items: center;
+	gap: 8px
   cursor: pointer;
   padding: 15px;
 }
-
+/* Style for the "Menu" word */
+.menu-text {
+  color: #FFFF99; /* Matching your gold/yellow theme */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase; /* Gives it that clean, modern look */
+line-height: 1;
+}
+		/* Container to keep the 3 bars stacked vertically */
+.hamburger-bars {
+  display: flex;
+  flex-direction: column;
+	gap: 3px;
+}
+			
 .bar {
-  width: 25px;
+  width: 22px;
   height: 3px;
   background-color: #FFFF99;
-  margin: 4px 0;
-  transition: 0.4s;
+  margin: 0;
 }
 
 /* Mobile Media Query (Screens smaller than 600px) */
@@ -331,11 +346,14 @@ font-size: 0.9rem;
 <!-- STEP 2:  -->
 
 <nav class="navbar">
-  <div class="menu-icon" onclick="toggleMenu()">
+<div class="menu-icon" onclick="toggleMenu()">
+  <span class="menu-text">Menu</span>
+  <div class="hamburger-bars">
     <span class="bar"></span>
     <span class="bar"></span>
     <span class="bar"></span>
   </div>
+</div>
 
   <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
