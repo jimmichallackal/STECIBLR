@@ -145,28 +145,30 @@ object-position: center; /* Keeps the middle of the photo visible */
   display: none; /* Hidden on Desktop */
   flex-direction: column;
 	align-items: center;
-	gap: 12px
+	gap: 8px
   cursor: pointer;
-  padding: 15px;
+  padding: 12px 15px;
 }
 /* Style for the "Menu" word */
 .menu-text {
-  color: #FFFF99;
-  font-weight: bold;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
+  color: #FFFF99; /* Matching your gold/yellow theme */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase; /* Gives it that clean, modern look */
 }
 		/* Container to keep the 3 bars stacked vertically */
 .hamburger-bars {
   display: flex;
   flex-direction: column;
+	gap: 4px;
 }
+			
 .bar {
-  width: 25px;
+  width: 22px;
   height: 3px;
   background-color: #FFFF99;
   margin: 2px 0;
-  
 }
 
 /* Mobile Media Query (Screens smaller than 600px) */
@@ -441,8 +443,8 @@ font-size: 0.9rem;
 <!-- STEP 2: MENU BAR COMES SECOND -->
 <!-- ---------------------------------------------------------------------------------- -->
 <nav class="navbar">
-  <div class="menu-icon" onclick="toggleMenu()">
-  <span class="menu-text">MENU</span>
+<div class="menu-icon" onclick="toggleMenu()">
+  <span class="menu-text">Menu</span>
   <div class="hamburger-bars">
     <span class="bar"></span>
     <span class="bar"></span>
