@@ -143,32 +143,33 @@ object-position: center; /* Keeps the middle of the photo visible */
 /* Hamburger Icon Styling */
 .menu-icon {
   display: none; /* Hidden on Desktop */
-  flex-direction: column;
+  flex-direction: row;
 	align-items: center;
 	gap: 8px
   cursor: pointer;
-  padding: 12px 15px;
+  padding: 15px;
 }
 /* Style for the "Menu" word */
 .menu-text {
   color: #FFFF99; /* Matching your gold/yellow theme */
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
   text-transform: uppercase; /* Gives it that clean, modern look */
+line-height: 1;
 }
 		/* Container to keep the 3 bars stacked vertically */
 .hamburger-bars {
   display: flex;
   flex-direction: column;
-	gap: 4px;
+	gap: 3px;
 }
 			
 .bar {
   width: 22px;
   height: 3px;
   background-color: #FFFF99;
-  margin: 2px 0;
+  margin: 0;
 }
 
 /* Mobile Media Query (Screens smaller than 600px) */
