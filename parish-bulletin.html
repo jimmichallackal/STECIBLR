@@ -96,8 +96,8 @@
   transition: 0.4s;
 }
 
-/* Mobile Media Query (Screens smaller than 600x) */
-@media screen and (max-width: 600px) {
+/* Mobile Media Query (Screens smaller than 768px) */
+@media screen and (max-width: 768px) {
   .menu-icon {
     display: flex; /* Show hamburger on mobile */
   }
@@ -253,7 +253,7 @@ font-size: 0.9rem;
 }
 
 /* Mobile View: Stack them vertically */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
@@ -344,17 +344,16 @@ font-size: 0.9rem;
         <tbody>
             <tr>
                 <td class="mission-heading">
-                    <h1><strong>Parish Bulletin - Jan to Mar 2026</strong></h1>
+                    <h1><strong>Parish Bulletin - April to June 2026</strong></h1>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
 
-<p><strong> Schedule and activity details for January to March 2026.</strong> </p>
 <p>
-    <img src="Steciblr_files/parishbulletin1.png" alt="Full Parish Bulletin for Jan to Mar 2026 activity schedule" border="0" />
-    <img src="Steciblr_files/parishbulletin2.png" alt="Full Parish Bulletin for Jan to Mar 2026 activity schedule" border="0" />
+    <img src="Steciblr_files/parishbulletin1.jpeg" alt="Full Parish Bulletin for Apr to Jun 2026 activity schedule" border="0" />
+    <img src="Steciblr_files/parishbulletin2.jpeg" alt="Full Parish Bulletin for Apr to Jun 2026 activity schedule" border="0" />
 </p>
 <p></p>
 </main>
@@ -419,8 +418,8 @@ font-size: 0.9rem;
 
     dropdownLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        // Only trigger on mobile screens (600px or less)
-        if (window.innerWidth <= 600) {
+        // Only trigger on mobile screens (768px or less)
+        if (window.innerWidth <= 768) {
           e.preventDefault(); // Stop the link from jumping to a new page
           const currentSubmenu = this.nextElementSibling;
           
@@ -444,5 +443,4 @@ font-size: 0.9rem;
 </script>
 </body>
 </html>
-
 
