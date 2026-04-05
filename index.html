@@ -85,7 +85,6 @@
 /* --- FULL-WIDTH HERO SLIDER CSS --- */
 .hero-slider-wrapper {
   width: 100vw; /* Standard full view width */
-	height: auto !important; /* Removes the fixed height that causes cropping */
   margin-left: 50%; /* Center the overflow */
   transform: translateX(-50%); /* Center the overflow */
   overflow: hidden;
@@ -117,8 +116,8 @@ background-color: #000;
 
 .slide-item img {
     width: 100%;
-object-fit: contain !important; /* Shows the FULL image without zooming/cutting */
-        height: auto !important;
+    height: 100%;
+    object-fit: cover; /* Keeps images from looking stretched */
 object-position: center; /* Keeps the middle of the photo visible */
     display: block;
 }
@@ -138,26 +137,7 @@ object-position: center; /* Keeps the middle of the photo visible */
     .slide-text { bottom: 10px; padding: 10px; }
     .slide-text h2 { font-size: 1.3rem; }
     .slide-text p { font-size: 0.9rem; }
-
-		.slides-container {
-        height: auto !important;
-    }
-.slide-item {
-        height: auto !important;
-    }
-
-.slide-item img {
-        width: 100% !important;
-        height: auto !important; /* This ensures the height scales with the width */
-        object-fit: contain !important;
-        display: block; /* Removes tiny gap at bottom of images */
-    }
-
-/* Keep your text styling as is */
-    .slide-text { bottom: 10px; padding: 10px; }
-    .slide-text h2 { font-size: 1.3rem; }
-    .slide-text p { font-size: 0.9rem; }
-
+}
 /* --- MOBILE NAVIGATION CSS --- */
 
 /* Hamburger Icon Styling */
@@ -191,7 +171,7 @@ line-height: 1;
   background-color: #FFFF99;
   margin: 0;
 }
-}
+
 /* Mobile Media Query (Screens smaller than 600px) */
 @media screen and (max-width: 600px) {
   .menu-icon {
@@ -201,13 +181,6 @@ line-height: 1;
         padding-left: 5px !important;
         padding-right: 5px !important;
         box-sizing: border-box; /* This ensures the padding doesn't make the page wider than the screen */
-    }
-	/* Targets the scrolling/banner image */
-    .banner-image, .slider-img, img.scrolling { 
-        object-fit: contain !important; /* Shows the full image without cropping */
-        width: 100% !important;        /* Ensures it spans the width of the phone */
-        height: auto !important;       /* Adjusts height automatically to prevent stretching */
-        background-size: contain !important; /* Use this if the image is a background */
     }
   .nav-links {
     display: none; /* Hide menu by default on mobile */
@@ -531,9 +504,9 @@ font-size: 0.9rem;
         <div class="slide-item">
             <img src="Steciblr_files/mainphoto.jpg" alt="STECI Bangalore Parish">
         </div>
-      
+
         <div class="slide-item">
-            <img src="Steciblr_files/confirmation.jpg" alt="Confirmation Services 2026">
+            <img src="Steciblr_files/confirmation.jpg" alt="confirmation Services 2026">
         </div>
 
         <div class="slide-item">
@@ -630,6 +603,8 @@ At St. Thomas Evangelical Church of India [STECI] Bangalore Parish, our desire i
                 <h1><strong>Upcoming Program</strong></h1>
 		
 		<p style="font-family:'Segoe UI', sans-serif; font-size:16px; line-height:1.6; text-align:center; background:#f9f9f9; border:1px solid #d4af37; border-radius:8px; padding:12px; max-width:800px; margin:20px auto; color:#000;">
+  				 
+ 				
 		 <strong>VBS - 06 to 08 April 26 , Venue - STECI, Bangalore Parish</strong>
 		<br> <strong>Confirmation Service - Sunday, 12 April 26</strong> </p>
 
