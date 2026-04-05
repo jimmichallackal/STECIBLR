@@ -182,6 +182,13 @@ line-height: 1;
         padding-right: 5px !important;
         box-sizing: border-box; /* This ensures the padding doesn't make the page wider than the screen */
     }
+	/* Targets the scrolling/banner image */
+    .banner-image, .slider-img, img.scrolling { 
+        object-fit: contain !important; /* Shows the full image without cropping */
+        width: 100% !important;        /* Ensures it spans the width of the phone */
+        height: auto !important;       /* Adjusts height automatically to prevent stretching */
+        background-size: contain !important; /* Use this if the image is a background */
+    }
   .nav-links {
     display: none; /* Hide menu by default on mobile */
     width: 100%;
