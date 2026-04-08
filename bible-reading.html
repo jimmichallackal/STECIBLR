@@ -657,7 +657,23 @@ function switchArchiveLanguage(lang) {
     if (!data) return;
 
     const videoId = (lang === 'eng') ? data.engId : data.malId;
-    document.getElementById('archive-video').src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+
+	 const archVideoFrame = document.getElementById('archive-video');
+
+	if (videoId && videoId !== "") {
+        const newUrl = `https://www.youtube.com/embed/${videoId}?rel=0&autoplay=0`;
+        
+        // Mobile-Specific Fix: Use location.replace to prevent opening new tabs
+        if (archVideoFrame.contentWindow) {
+            archVideoFrame.contentWindow.location.replace(newUrl);
+        } else {
+            archVideoFrame.src = newUrl;
+        }
+        
+        archVideoFrame.style.display = "block";
+    } else {
+        archVideoFrame.src = "";
+    }
 
     // Visual feedback for Archive buttons
     const engBtn = document.getElementById('arch-btn-eng');
