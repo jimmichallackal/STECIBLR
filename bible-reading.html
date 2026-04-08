@@ -679,51 +679,6 @@ function closeArchive() {
 }
 
 
-function searchArchive(dateString) {
-    if(!dateString) return;
-    currentArchiveDate = dateString; // Store the date
-    const data = bibleSchedule[dateString];
-    const archiveDiv = document.getElementById('archive-display');
-    
-    archiveDiv.style.display = "block";
-    document.getElementById('archive-date-text').innerText = new Date(dateString).toLocaleDateString();
-
-    if (data) {
-        document.getElementById('archive-portion').innerText = data.portion;
-        // Default to English in Archive
-        switchArchiveLanguage('eng'); 
-    } else {
-        document.getElementById('archive-portion').innerText = "Data not found.";
-        document.getElementById('archive-video').src = "";
-    }
-}
-
-function switchArchiveLanguage(lang) {
-    const data = bibleSchedule[currentArchiveDate];
-    if (!data) return;
-
-    const videoId = (lang === 'eng') ? data.engId : data.malId;
-    document.getElementById('archive-video').src = `https://www.youtube.com/embed/${videoId}?rel=0`;
-
-    // Visual feedback for Archive buttons
-    const engBtn = document.getElementById('arch-btn-eng');
-    const malBtn = document.getElementById('arch-btn-mal');
-
-    if (lang === 'eng') {
-        engBtn.style.background = "white"; engBtn.style.color = "#16a085";
-        malBtn.style.background = "transparent"; malBtn.style.color = "white";
-    } else {
-        malBtn.style.background = "white"; malBtn.style.color = "#16a085";
-        engBtn.style.background = "transparent"; engBtn.style.color = "white";
-    }
-}
-
-function closeArchive() {
-    document.getElementById('archive-display').style.display = "none";
-    document.getElementById('jump-to-date').value = "";
-    document.getElementById('archive-video').src = ""; // Stops the video when closing
-}
-
 // --- 3. Navigation & Dropdown Logic ---
 function toggleMenu() {
     document.getElementById("nav-links").classList.toggle("active");
