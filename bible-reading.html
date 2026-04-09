@@ -487,11 +487,8 @@ font-size: 0.9rem;
             <button onclick="switchArchiveLanguage('mal')" id="arch-btn-mal" style="padding: 6px 12px; cursor: pointer; border-radius: 4px; border: 1px solid white; background: transparent; color: white;">മലയാളം</button>
         </div>
 
-        <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000;">
-            <iframe id="archive-video" 
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                    src="" frameborder="0" allowfullscreen playsinline></iframe>
-        </div>
+   <div id="archive-video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000;">
+    </div>
         
         <button onclick="closeArchive()" class="close-btn" style="margin-top: 15px; background: #e74c3c; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer;">Clear Search</button>
     </div>
@@ -657,34 +654,40 @@ function switchArchiveLanguage(lang) {
     if (!data) return;
 
     const videoId = (lang === 'eng') ? data.engId : data.malId;
+    const container = document.getElementById('archive-video-container');
+    
+    // 1. Clear the container entirely
+    container.innerHTML = "";
 
-	 const archVideoFrame = document.getElementById('archive-video');
+    if (videoId && videoId !== "") {
+        // 2. Create a BRAND NEW iframe element
+        const newIframe = document.createElement('iframe');
+        
+        // 3. Set all necessary attributes for Mobile compatibility
+        newIframe.setAttribute('id', 'archive-video');
+        newIframe.setAttribute('style', 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;');
+        newIframe.setAttribute('frameborder', '0');
+        newIframe.setAttribute('allowfullscreen', 'true');
+        newIframe.setAttribute('playsinline', 'true'); // CRITICAL FOR MOBILE
+        
+        // 4. Set the Source
+        newIframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&enablejsapi=1`;
 
-	if (videoId && videoId !== "") {
-        const newUrl = `https://www.youtube.com/embed/${videoId}?rel=0&autoplay=0`;
-        
-        // Mobile-Specific Fix: Use location.replace to prevent opening new tabs
-        if (archVideoFrame.contentWindow) {
-            archVideoFrame.contentWindow.location.replace(newUrl);
-        } else {
-            archVideoFrame.src = newUrl;
-        }
-        
-        archVideoFrame.style.display = "block";
-    } else {
-        archVideoFrame.src = "";
+        // 5. Add it to the page
+        container.appendChild(newIframe);
     }
 
-    // Visual feedback for Archive buttons
+    // --- Keep your button styling logic below ---
     const engBtn = document.getElementById('arch-btn-eng');
     const malBtn = document.getElementById('arch-btn-mal');
-
     if (lang === 'eng') {
         engBtn.style.background = "white"; engBtn.style.color = "#16a085";
         malBtn.style.background = "transparent"; malBtn.style.color = "white";
+        malBtn.style.border = "1px solid white";
     } else {
         malBtn.style.background = "white"; malBtn.style.color = "#16a085";
         engBtn.style.background = "transparent"; engBtn.style.color = "white";
+        engBtn.style.border = "1px solid white";
     }
 }
 
