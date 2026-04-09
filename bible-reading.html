@@ -691,12 +691,12 @@ function switchArchiveLanguage(lang) {
     }
 }
 
+
 function closeArchive() {
     document.getElementById('archive-display').style.display = "none";
     document.getElementById('jump-to-date').value = "";
-    document.getElementById('archive-video').src = ""; // Stops the video when closing
+    document.getElementById('archive-video-container').innerHTML = ""; // This stops the video
 }
-
 
 // --- 3. Navigation & Dropdown Logic ---
 function toggleMenu() {
