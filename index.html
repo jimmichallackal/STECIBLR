@@ -81,64 +81,6 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-<!--
-/* --- FULL-WIDTH HERO SLIDER CSS --- */
-.hero-slider-wrapper {
-  width: 100vw; /* Standard full view width */
-  margin-left: 50%; /* Center the overflow */
-  transform: translateX(-50%); /* Center the overflow */
-  overflow: hidden;
-}
-
-.hero-slider {
-    width: 100%;
-    height: auto; /* Let the image dictate the height */
-    overflow: hidden;
-    position: relative;
-background-color: #000;
-}
-
-
-.slides-container {
-    display: flex;
-    /* MATH: 3 slides = 300% width */
-    width: 300%; 
-   height: auto !important;
-    /* 15 seconds allows ~4 seconds of viewing per image */
-    animation: slideLoop 15s infinite ease-in-out; 
-}
-
-.slide-item {
-  width: 33.333%;
-  height: 100%;
-}
-
-
-
-		.slide-item img {
-        object-fit: contain !important; /* Change 'cover' to 'contain' */
-        height: auto !important;
-        width: 100% !important;
-			   display: block;
-    }
-
-/* Updated math for a 3-image cycle */
-@keyframes slideLoop {
-    0%, 30% { transform: translateX(0%); }             /* Show Image 1 */
-    33.33%, 63.33% { transform: translateX(-33.333%); } /* Slide to Image 2 */
-    66.66%, 96.66% { transform: translateX(-66.666%); } /* Slide to Image 3 */
-    100% { transform: translateX(0%); }                 /* Reset to Start */
-}
-
-
-/* Mobile Specific Height */
-@media (max-width: 600px) {
-    .hero-slider { height: auto !important; }
-    .slide-text { bottom: 10px; padding: 10px; }
-    .slide-text h2 { font-size: 1.3rem; }
-    .slide-text p { font-size: 0.9rem; }
-}
--->		
 /* --- MOBILE NAVIGATION CSS --- */
 
 /* Hamburger Icon Styling */
@@ -499,22 +441,7 @@ font-size: 0.9rem;
 </nav>
 
 <main class="main-content">
-
-<div class="hero-slider">
-    <div class="slides-container">
-        <div class="slide-item">
             <img src="Steciblr_files/mainphoto.jpg" alt="STECI Bangalore Parish">
-        </div>
-<!--
-        <div class="slide-item">
-            <img src="Steciblr_files/confirmation.jpg" alt="confirmation Services 2026">
-        </div>
-
-        <div class="slide-item">
-            <img src="Steciblr_files/vbs.jpg" alt="VBS 2026"> </div>
-    </div>
-	-->
-</div>
 
 <section class="mission-vision-section">
 <div class="flex-item text-item">
