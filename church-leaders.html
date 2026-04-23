@@ -86,15 +86,15 @@
         .leader-item .role { margin: 5px 0; font-weight: bold; color: #444; }
         .leader-item .name { font-weight: bold; color: darkblue; }
 
-        .leadership-grid-2-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .leadership-grid-1-col { display: grid; grid-template-columns: repeat(1, 1fr); gap: 20px; }
         .leadership-grid-3-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .leadership-grid-4-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .leadership-grid-5-col { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
 
         @media (max-width: 768px) {
-            .leadership-grid-2-col, .leadership-grid-3-col, .leadership-grid-4-col { grid-template-columns: repeat(2, 1fr); }
+            .leadership-grid-1-col, .leadership-grid-3-col, .leadership-grid-5-col { grid-template-columns: repeat(1, 1fr); }
         }
         @media (max-width: 480px) {
-            .leadership-grid-2-col, .leadership-grid-3-col, .leadership-grid-4-col { grid-template-columns: 1fr; }
+            .leadership-grid-1-col, .leadership-grid-3-col, .leadership-grid-5-col { grid-template-columns: 1fr; }
         }
 
         .footer-address { background-color: #243117; color: #FFFF99; padding: 30px; text-align: center; margin-top: 30px; }
@@ -238,31 +238,36 @@ font-size: 0.9rem;
         <h1><strong>Church Leaders</strong></h1>
     </div>
 
-    <div class="leader-section-wrapper">
-        <div class="leadership-grid-2-col">
+    <div class="leader-section-wrapper">    <div class="leader-section-wrapper">
+        <div class="leadership-grid-1-col">
             <div class="leader-item">
                 <p class="role" style="font-size: 1.5em;">Presiding Bishop</p>
-                <img src="Steciblr_files/image152.jpg" alt="Most Rev. Dr. Thomas Abraham">
-                <p class="name">Most Rev. Dr. Thomas Abraham</p>
+                <img src="Steciblr_files/image153.jpg" alt="Most Rev. Dr. Abraham Chacko">
+                <p class="name">Most Rev. Dr. Abraham Chacko</p>
             </div>
+<!-- ----------------------------------------------------------------------------------
+
             <div class="leader-item">
                 <p class="role" style="font-size: 1.5em;">Bahya Kerala Diocesan Bishop</p>
                 <img src="Steciblr_files/image153.jpg" alt="Rt. Rev. Dr. Abraham Chacko">
                 <p class="name">Rt. Rev. Dr. Abraham Chacko</p>
             </div>
+ -->
         </div>
     </div>
+
 
     <div class="leadership-section">
 	<hr/>
         <div class="section-title"><strong>Retired Bishops</strong></div>
         <hr/>
-        <div class="leadership-grid-4-col">
+        <div class="leadership-grid-5-col">
             <div class="leader-item"><img src="Steciblr_files/bishopkoshy.jpg" alt="Bishop Dr. M. K. Koshy"><p class="name">Bishop Dr. M. K. Koshy</p></div>
             <div class="leader-item"><img src="Steciblr_files/bishoptccherian.jpg" alt="Bishop Dr. T. C. Cherian"><p class="name">Bishop Dr. T. C. Cherian</p></div>
             <div class="leader-item"><img src="Steciblr_files/bishopalaxander.jpg" alt="Bishop A. I. Alexander"><p class="name">Bishop A. I. Alexander</p></div>
             <div class="leader-item"><img src="Steciblr_files/bishicvmathew.jpg" alt="Bishop Dr. C.V. Mathew"><p class="name">Bishop Dr. C.V. Mathew</p></div>
-        </div>
+           <div class="leader-item"><img src="Steciblr_files/bishopthomas.jpg" alt="Bishop Dr. Thomas Abraham"><p class="name">Bishop Dr. Thomas Abraham</p></div>
+		</div>
     </div>
 
     <div class="leadership-section">
