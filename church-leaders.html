@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Church Leaders, Lay Leaders & Trustees | STECI Bangalore Parish</title> 
-     <link rel="icon" type="image/png" href="favicon.png">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta name="description" content="Meet the key spiritual and administrative Church Leaders, Trustees, Lay Leaders, and Ministry Secretaries of the St. Thomas Evangelical Church of India, Bangalore Parish."> 
     <style>
@@ -57,7 +57,7 @@
         .menu-icon { display: none; flex-direction: column; cursor: pointer; padding: 15px; }
         .bar { width: 25px; height: 3px; background-color: #FFFF99; margin: 4px 0; transition: 0.4s; }
         
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 768px) {
             .menu-icon { display: flex; }
               .nav-links { display: none; width: 100%; flex-direction: column; background-color: #5C1A1B; }
             .nav-links.active { display: flex; }
@@ -86,12 +86,13 @@
         .leader-item .role { margin: 5px 0; font-weight: bold; color: #444; }
         .leader-item .name { font-weight: bold; color: darkblue; }
 
-        .leadership-grid-2-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .leadership-grid-1-col { display: grid; grid-template-columns: repeat(1, 1fr); gap: 20px; }
         .leadership-grid-3-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .leadership-grid-4-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .leadership-grid-5-col { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
+
 
         @media (max-width: 768px) {
-            .leadership-grid-2-col, .leadership-grid-3-col, .leadership-grid-4-col { grid-template-columns: repeat(1, 1fr); }
+            .leadership-grid-1-col, .leadership-grid-3-col, .leadership-grid-5-col { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 480px) {
             .leadership-grid-1-col, .leadership-grid-3-col, .leadership-grid-5-col { grid-template-columns: 1fr; }
@@ -151,7 +152,7 @@ font-size: 0.9rem;
 }
 
 /* Mobile View: Stack them vertically */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
@@ -238,44 +239,29 @@ font-size: 0.9rem;
         <h1><strong>Church Leaders</strong></h1>
     </div>
 
-    <div class="leader-section-wrapper">    <div class="leader-section-wrapper">
-        <div class="leadership-grid-2-col">
+    <div class="leader-section-wrapper">
+        <div class="leadership-grid-1-col">
             <div class="leader-item">
                 <p class="role" style="font-size: 1.5em;">Presiding Bishop</p>
-                <img src="Steciblr_files/image152.jpg" alt="Most Rev. Dr. Thomas Abraham">
-                <p class="name">Most Rev. Dr. Thomas Abraham </p>
-            </div>
-
-            <div class="leader-item">
-                <p class="role" style="font-size: 1.5em;">Bahya Kerala Diocesan Bishop</p>
-                <img src="Steciblr_files/image153.jpg" alt="Rt. Rev. Dr. Abraham Chacko">
-                <p class="name">Rt. Rev. Dr. Abraham Chacko</p>
-            </div>
-<!-- ----------------------------------------------------------------------------------
-			<div class="leader-item">
-                <p class="role" style="font-size: 1.5em;">Presiding Bishop</p>
-                <img src="Steciblr_files/image153.jpg" alt="Most Rev. Dr. Abraham Chacko">
+                <img src="Steciblr_files/bishopabrahamchacko.jpg" alt="Most Rev. Dr. Abraham Chacko">
                 <p class="name">Most Rev. Dr. Abraham Chacko</p>
             </div>
 
- -->
         </div>
     </div>
-
 
     <div class="leadership-section">
 	<hr/>
         <div class="section-title"><strong>Retired Bishops</strong></div>
         <hr/>
-        <div class="leadership-grid-4-col">
+        <div class="leadership-grid-5-col">
             <div class="leader-item"><img src="Steciblr_files/bishopkoshy.jpg" alt="Bishop Dr. M. K. Koshy"><p class="name">Bishop Dr. M. K. Koshy</p></div>
             <div class="leader-item"><img src="Steciblr_files/bishoptccherian.jpg" alt="Bishop Dr. T. C. Cherian"><p class="name">Bishop Dr. T. C. Cherian</p></div>
             <div class="leader-item"><img src="Steciblr_files/bishopalaxander.jpg" alt="Bishop A. I. Alexander"><p class="name">Bishop A. I. Alexander</p></div>
             <div class="leader-item"><img src="Steciblr_files/bishicvmathew.jpg" alt="Bishop Dr. C.V. Mathew"><p class="name">Bishop Dr. C.V. Mathew</p></div>
-<!-- ----------------------------------------------------------------------------------
-			<div class="leader-item"><img src="Steciblr_files/bishopthomas.jpg" alt="Bishop Dr. Thomas Abraham"><p class="name">Bishop Dr. Thomas Abraham</p></div>
- -->
-		</div>
+<div class="leader-item"><img src="Steciblr_files/bishopthomas.jpg" alt="Bishop Dr. Thomas Abraham"><p class="name">Bishop Dr. Thomas Abraham</p></div>
+
+        </div>
     </div>
 
     <div class="leadership-section">
@@ -309,7 +295,7 @@ font-size: 0.9rem;
             <div class="leader-item">
                 <p class="role">BKD President</p>
                 <img src="Steciblr_files/bishopabraham.jpg" style="width:70%;" alt="Rt. Rev. Dr. Abraham Chacko">
-                <p class="name">Rt. Rev. Dr. Abraham Chacko</p>
+                <p class="name">Most Rev. Dr. Abraham Chacko</p>
             </div>
             <div class="leader-item">
                 <p class="role">BKD Vice President</p>
@@ -393,8 +379,8 @@ font-size: 0.9rem;
             const parentLink = dropdown.querySelector('a');
             
             parentLink.addEventListener('click', function(e) {
-                // Only trigger this logic if we are on a mobile screen (width <= 600px)
-                if (window.innerWidth <= 600) {
+                // Only trigger this logic if we are on a mobile screen (width <= 768px)
+                if (window.innerWidth <= 768) {
                     
                     const submenu = this.nextElementSibling; // This is the .dropdown-content div
 
