@@ -449,14 +449,14 @@ font-size: 0.9rem;
         <div class="reading-card">
             <h2 class="main-title" style="font-size: 1.1rem; color: #2c3e50; margin-bottom: 25px;">365 Days Bible Reading (1 Apr 26 to 31 Mar 27) </h2>
 
-            <div class="today-section">
-                <span id="today-date-text" class="today-date" style="font-weight:700; color:#7f8c8d; display:block; margin-bottom:15px;"></span>
-                <div class="single-portion-box">
-                    <span class="portion-label">Today's Portion</span>
-                    <div id="today-portion" class="portion-text">-</div>
-                </div>
 
-
+<div class="today-section">
+    <span id="today-date-text" class="today-date" style="font-weight:700; color:#7f8c8d; display:block; margin-bottom:15px;"></span>
+    <div class="single-portion-box">
+        <!-- Added the day count span here -->
+        <span class="portion-label">Today's Portion (<span id="day-count-display"></span>)</span>
+        <div id="today-portion" class="portion-text">-</div>
+    </div>
 	
 <div style="margin: 30px 0; color: #bbb; font-weight: bold;">OR</div>
 
@@ -467,7 +467,7 @@ font-size: 0.9rem;
             </div>
 <div id="archive-display" style="display: none; margin-top: 20px;">
     <div class="archive-box" style="background: #16a085; color: white; padding: 25px; border-radius: 12px;">
-        <span style="font-weight: bold;">Archive: <span id="archive-date-text"></span></span>
+        <span style="font-weight: bold;">Archive: <span id="archive-date-text"></span> (<span id="archive-day-count"></span>)</span>
         <div id="archive-portion" style="font-size:1.8rem; margin:15px 0; font-weight: 800;">-</div>
         
        
@@ -511,13 +511,13 @@ font-size: 0.9rem;
 <script>
 // --- 1. Bible Schedule Data ---
 const bibleSchedule = {
-    "2026-04-01": {portion: "Genesis(ഉൽപത്തി) 1-3", engId: "SshorPZFbq8", malId: "EVeNaZN1DWI"},
-    "2026-04-02": { portion: "Genesis(ഉൽപത്തി) 4-7", engId: "yVJYKGAW2ik", malId: "CsS2FJdhHwo"},
-    "2026-04-03": { portion: "Genesis(ഉൽപത്തി) 8-11", engId: "T6KS0pS4w4c", malId: "U-Ty5mSmw3E"},
-    "2026-04-04": { portion: "Job(ഇയ്യോബ്) 1-5", engId: "FbVJrp3pEWc", malId: "wH9qkRQknWU"  },
-    "2026-04-05": { portion: "Job(ഇയ്യോബ്) 6-9", engId: "uue8HyM7RD0", malId: "1UHc9iqONWY"  },
-    "2026-04-06": { portion: "Job(ഇയ്യോബ്) 10-13", engId: "sl_cTFMalDI", malId: "-F4PvYEdIz4"  },
-    "2026-04-07": { portion: "Job(ഇയ്യോബ്) 14-16", engId: "AsnMe-HgRxI", malId: "r_q2DyY3Kb8"  },
+   "2026-04-01": {portion: "Genesis(ഉൽപത്തി) 1-3"},
+    "2026-04-02": { portion: "Genesis(ഉൽപത്തി) 4-7"},
+    "2026-04-03": { portion: "Genesis(ഉൽപത്തി) 8-11"},
+    "2026-04-04": { portion: "Job(ഇയ്യോബ്) 1-5"},
+    "2026-04-05": { portion: "Job(ഇയ്യോബ്) 6-9"},
+    "2026-04-06": { portion: "Job(ഇയ്യോബ്) 10-13"},
+    "2026-04-07": { portion: "Job(ഇയ്യോബ്) 14-16"},
     "2026-04-08": { portion: "Job(ഇയ്യോബ്) 17-20", engId: "OacHYRmjK20", malId: "MhEs6GgqbW8" },
     "2026-04-09": { portion: "Job(ഇയ്യോബ്) 21-23", engId: "Q9IK-ikoJ5E", malId: "1xZP016e5MI" },
     "2026-04-10": { portion: "Job(ഇയ്യോബ്) 24-28", engId: "GOzgEgl5rTQ", malId: "emKSzpnKYYY" },
@@ -578,6 +578,27 @@ const bibleSchedule = {
 // --- 2. Bible Logic Functions ---
 function loadToday() {
     const today = new Date();
+
+// --- NEW DAY COUNT CALCULATION ---
+    const startDate = new Date("2026-04-01");
+    // Reset hours to ensure clean day-to-day transitions
+    const d1 = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const d2 = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+    
+    const diffInMs = d1 - d2;
+    const dayCount = Math.floor(diffInMs / (1000 * 60 * 60 * 24)) + 1;
+    
+    // Display the count
+    const countElement = document.getElementById('day-count-display');
+    if (countElement) {
+        if (dayCount > 0 && dayCount <= 365) {
+            countElement.innerText = "Day " + dayCount;
+        } else if (dayCount > 365) {
+            countElement.innerText = "Plan Completed";
+        } else {
+            countElement.innerText = "Starting Soon";
+        }
+    }
     
     // 1. Calculate Today's Key (for the main display)
     const yyyy = today.getFullYear();
@@ -620,22 +641,40 @@ function loadToday() {
         document.querySelector('.video-section').style.display = "none";
     }
 }
+
 function searchArchive(dateString) {
     if(!dateString) return;
-    currentArchiveDate = dateString; // Store the date
+    currentArchiveDate = dateString; 
     const data = bibleSchedule[dateString];
     const archiveDiv = document.getElementById('archive-display');
     
     archiveDiv.style.display = "block";
     document.getElementById('archive-date-text').innerText = new Date(dateString).toLocaleDateString();
 
+    // --- NEW ARCHIVE DAY COUNT CALCULATION ---
+    const startDate = new Date("2026-04-01");
+    const selectedDate = new Date(dateString);
+    
+    // Reset hours for accurate calculation
+    startDate.setHours(0,0,0,0);
+    selectedDate.setHours(0,0,0,0);
+
+    const diffInMs = selectedDate - startDate;
+    const archDayCount = Math.floor(diffInMs / (1000 * 60 * 60 * 24)) + 1;
+
+    const archDayElement = document.getElementById('archive-day-count');
+    if (archDayElement) {
+        archDayElement.innerText = "Day " + archDayCount;
+    }
+    // --- END CALCULATION ---
+
     if (data) {
         document.getElementById('archive-portion').innerText = data.portion;
-        // Default to English in Archive
         switchArchiveLanguage('eng'); 
     } else {
         document.getElementById('archive-portion').innerText = "Data not found.";
-        document.getElementById('archive-video').src = "";
+        const archVideoFrame = document.getElementById('archive-video');
+        if(archVideoFrame) archVideoFrame.src = "";
     }
 }
 
