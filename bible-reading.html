@@ -574,21 +574,76 @@ const bibleSchedule = {
     "2026-05-31": { portion: "Numbers(സംഖ്യാപുസ്തകം) 16-17",},
 };
 
+let currentArchiveDate = "";
 
-// --- 2. Bible Logic Functions ---
+// --- 2. Dynamic Splitting Logic with Complete Style Isolation ---
+function processTextTo3Lines(rawText, isArchive = false) {
+    if (!rawText) return "-";
+    
+    const segments = rawText.split(/,\s*(?=[A-Za-z])/);
+    let outputHtml = "";
+    
+    // Unique prefix selector ensures Archive styles never overwrite Today's styles
+    const pfx = isArchive ? "arch" : "today";
+    const engColor = isArchive ? "#FFFFFF" : "#2c3e50";
+    const malColor = isArchive ? "#FFFF99" : "#5C1A1B";
+    const numColor = isArchive ? "#FFFF99" : "#3498db";
+    
+    outputHtml += `
+    <style>
+        .${pfx}-eng { font-size: 1.7rem; font-weight: 800; color: ${engColor}; margin-bottom: 2px; }
+        .${pfx}-mal { font-size: 1.4rem; font-weight: 700; color: ${malColor}; margin-bottom: 6px; word-wrap: break-word; }
+        .${pfx}-num { font-size: 2.3rem; font-weight: 800; color: ${numColor}; margin-top: 2px; }
+        
+        @media screen and (max-width: 480px) {
+            .${pfx}-eng { font-size: 1.3rem; }
+            .${pfx}-mal { font-size: 1.15rem; }
+            .${pfx}-num { font-size: 1.8rem; }
+            .single-portion-box { padding: 20px 10px !important; }
+        }
+    </style>
+    `;
+    
+    segments.forEach((segment, i) => {
+        segment = segment.trim();
+        const startBracket = segment.indexOf('(');
+        const endBracket = segment.indexOf(')');
+        
+        if (startBracket !== -1 && endBracket !== -1) {
+            const englishName = segment.substring(0, startBracket).trim();
+            const malayalamName = segment.substring(startBracket + 1, endBracket).trim();
+            const chapterNumbers = segment.substring(endBracket + 1).trim();
+            
+            if (i > 0) {
+                const separatorColor = isArchive ? "rgba(255,255,255,0.3)" : "#ccc";
+                outputHtml += `<div style="margin: 15px 0; border-top: 1px dashed ${separatorColor};"></div>`;
+            }
+            
+            outputHtml += `
+                <div class="${pfx}-eng">${englishName}</div>
+                <div class="${pfx}-mal">(${malayalamName})</div>
+                <div class="${pfx}-num">${chapterNumbers}</div>
+            `;
+        } else {
+            if (i > 0) outputHtml += "<br>";
+            outputHtml += `<div style="font-size: 1.2rem; font-weight:700; color: ${isArchive ? '#FFFFFF' : '#2c3e50'};">${segment}</div>`;
+        }
+    });
+    
+    return outputHtml;
+}
+
+// --- 3. Bible Logic Functions ---
 function loadToday() {
     const today = new Date();
 
-// --- NEW DAY COUNT CALCULATION ---
     const startDate = new Date("2026-04-01");
-    // Reset hours to ensure clean day-to-day transitions
     const d1 = new Date(today.getFullYear(), today.getMonth(), today.getDate());
     const d2 = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
     
     const diffInMs = d1 - d2;
     const dayCount = Math.floor(diffInMs / (1000 * 60 * 60 * 24)) + 1;
     
-    // Display the count
     const countElement = document.getElementById('day-count-display');
     if (countElement) {
         if (dayCount > 0 && dayCount <= 365) {
@@ -600,13 +655,11 @@ function loadToday() {
         }
     }
     
-    // 1. Calculate Today's Key (for the main display)
     const yyyy = today.getFullYear();
     const mm = String(today.getMonth() + 1).padStart(2, '0');
     const dd = String(today.getDate()).padStart(2, '0');
     const dateKey = `${yyyy}-${mm}-${dd}`;
 
-    // 2. Calculate Yesterday's Key (for the Archive limit)
     const yesterday = new Date();
     yesterday.setDate(today.getDate() - 1);
     const y_yyyy = yesterday.getFullYear();
@@ -614,14 +667,12 @@ function loadToday() {
     const y_dd = String(yesterday.getDate()).padStart(2, '0');
     const yesterdayKey = `${y_yyyy}-${y_mm}-${y_dd}`;
     
-    // 3. Set Date Picker Constraints
     const datePicker = document.getElementById('jump-to-date');
     if (datePicker) {
-        datePicker.setAttribute('min', '2026-04-01'); // Start of your plan
-        datePicker.setAttribute('max', yesterdayKey); // Limits search to YESTERDAY
+        datePicker.setAttribute('min', '2026-04-01');
+        datePicker.setAttribute('max', yesterdayKey);
     }
 
-    // 4. Display Today's Full Date Header
     const fullDate = today.toLocaleDateString('en-US', { 
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
     });
@@ -630,15 +681,11 @@ function loadToday() {
         dateElement.innerText = fullDate;
     }
     
-    // 5. Load Today's Reading Portion
     const data = bibleSchedule[dateKey];
     if (data) {
-        document.getElementById('today-portion').innerText = data.portion;
-        
-      
+        document.getElementById('today-portion').innerHTML = processTextTo3Lines(data.portion, false);
     } else {
         document.getElementById('today-portion').innerText = "Coming Soon";
-        document.querySelector('.video-section').style.display = "none";
     }
 }
 
@@ -651,11 +698,9 @@ function searchArchive(dateString) {
     archiveDiv.style.display = "block";
     document.getElementById('archive-date-text').innerText = new Date(dateString).toLocaleDateString();
 
-    // --- NEW ARCHIVE DAY COUNT CALCULATION ---
     const startDate = new Date("2026-04-01");
     const selectedDate = new Date(dateString);
     
-    // Reset hours for accurate calculation
     startDate.setHours(0,0,0,0);
     selectedDate.setHours(0,0,0,0);
 
@@ -666,15 +711,12 @@ function searchArchive(dateString) {
     if (archDayElement) {
         archDayElement.innerText = "Day " + archDayCount;
     }
-    // --- END CALCULATION ---
 
     if (data) {
-        document.getElementById('archive-portion').innerText = data.portion;
+        document.getElementById('archive-portion').innerHTML = processTextTo3Lines(data.portion, true);
         switchArchiveLanguage('eng'); 
     } else {
         document.getElementById('archive-portion').innerText = "Data not found.";
-        const archVideoFrame = document.getElementById('archive-video');
-        if(archVideoFrame) archVideoFrame.src = "";
     }
 }
 
@@ -682,70 +724,48 @@ function switchArchiveLanguage(lang) {
     const data = bibleSchedule[currentArchiveDate];
     if (!data) return;
 
-    const videoId = (lang === 'eng') ? data.engId : data.malId;
-//    document.getElementById('archive-video').src = `https://www.youtube.com/embed/${videoId}?rel=0`;
-    const archVideoFrame = document.getElementById('archive-video');
-
-	if (videoId && videoId !== "") {
-        const newUrl = `https://www.youtube.com/embed/${videoId}?rel=0&autoplay=0`;
-        
-        // Mobile-Specific Fix: Use location.replace to prevent opening new tabs
-        if (archVideoFrame.contentWindow) {
-            archVideoFrame.contentWindow.location.replace(newUrl);
-        } else {
-            archVideoFrame.src = newUrl;
-        }
-        
-        archVideoFrame.style.display = "block";
-    } else {
-        archVideoFrame.src = "";
-    }
-    // Visual feedback for Archive buttons
     const engBtn = document.getElementById('arch-btn-eng');
     const malBtn = document.getElementById('arch-btn-mal');
 
-
-    if (lang === 'eng') {
-        engBtn.style.background = "white"; engBtn.style.color = "#16a085";
-        malBtn.style.background = "transparent"; malBtn.style.color = "white";
-    } else {
-        malBtn.style.background = "white"; malBtn.style.color = "#16a085";
-        engBtn.style.background = "transparent"; engBtn.style.color = "white";
+    if (engBtn && malBtn) {
+        if (lang === 'eng') {
+            engBtn.style.background = "white"; engBtn.style.color = "#16a085";
+            malBtn.style.background = "transparent"; malBtn.style.color = "white";
+        } else {
+            malBtn.style.background = "white"; malBtn.style.color = "#16a085";
+            engBtn.style.background = "transparent"; engBtn.style.color = "white";
+        }
     }
 }
 
 function closeArchive() {
     document.getElementById('archive-display').style.display = "none";
     document.getElementById('jump-to-date').value = "";
-    document.getElementById('archive-video').src = ""; // Stops the video when closing
 }
 
-// --- 3. Navigation & Dropdown Logic ---
+// --- 4. Navigation & Dropdown Logic ---
 function toggleMenu() {
     document.getElementById("nav-links").classList.toggle("active");
 }
 
-// Fixed Mobile Dropdown: Only opens one at a time
 document.querySelectorAll('.dropdown > a').forEach(item => {
     item.addEventListener('click', function(e) {
         if (window.innerWidth <= 600) {
             e.preventDefault();
             const currentContent = this.nextElementSibling;
             
-            // Close all other dropdowns before opening the selected one
             document.querySelectorAll('.dropdown-content').forEach(otherContent => {
                 if (otherContent !== currentContent) {
                     otherContent.style.display = 'none';
                 }
             });
 
-            // Toggle the clicked one
             currentContent.style.display = (currentContent.style.display === 'block') ? 'none' : 'block';
         }
     });
 });
 
-// --- 4. Back to Top Button ---
+// --- 5. Back to Top Button ---
 window.onscroll = () => {
     const btn = document.getElementById("backToTopBtn");
     if (btn) btn.style.display = (window.scrollY > 100) ? "block" : "none";
@@ -755,7 +775,6 @@ if (document.getElementById("backToTopBtn")) {
     document.getElementById("backToTopBtn").onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Run initial Bible load
 window.onload = loadToday;
 </script>
 </body>
