@@ -371,6 +371,70 @@ font-size: 0.9rem;
         justify-content: center;
     }
 }
+		
+.bible-reading-section {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Space between the image and the text */
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bible-reading-image-box {
+    flex: 1; /* Takes up equal width split */
+    min-width: 300px;
+}
+
+.bible-reading-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Slightly softens the image corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow around the image */
+    display: block;
+}
+
+.bible-reading-text-box {
+    flex: 1.2; /* Gives slightly more room to the text for easy reading */
+    line-height: 1.6;
+}
+
+.bible-reading-p {
+    font-size: 1.01rem;
+    color: #444;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.bible-reading-p:last-child {
+    margin-bottom: 0;
+}
+
+.bible-reading-p.highlight-p {
+    font-size: 1.01rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Responsive Viewport Settings (Mobile & Tablets) */
+@media (max-width: 768px) {
+    .bible-reading-section {
+        flex-direction: column; /* Stacks image on top of text on smaller screens */
+        gap: 25px;
+        padding: 15px;
+    }
+    
+    .bible-reading-image-box, 
+    .bible-reading-text-box {
+        width: 100%;
+    }
+    
+    .bible-reading-title {
+        font-size: 1.6rem;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -443,6 +507,29 @@ font-size: 0.9rem;
         <h1><strong>Bible Reading in 365 days</strong></h1>
     </div>
 
+<!-- Bible Reading Section Container -->
+<div class="bible-reading-section">
+    
+    <!-- Left Side: Image -->
+    <div class="bible-reading-image-box">
+        <img src="Steciblr_files/365days.png" alt="365 Days Bible Reading" class="bible-reading-img">
+    </div>
+    
+    <!-- Right Side: Text Content -->
+    <div class="bible-reading-text-box">
+        
+        <p class="bible-reading-p highlight-p">
+            Welcome to a life-changing journey through the entire Word of God! The 365-Day Bible Reading Plan is more than just a schedule—it is a daily invitation to anchor your life in timeless wisdom and experience the grand narrative of Scripture unfolding from beginning to end.
+        </p>
+        <p class="bible-reading-p">
+            By dedicating just a few moments each day to this habit, you will step away from the noise of the world to find clarity, comfort, and unshakeable peace. You won't just be reading history; you will uncover hidden treasures of truth that apply directly to your modern life, sharpening your perspective and renewing your mind every single morning.
+        </p>
+        <p class="bible-reading-p">
+            Whether you are exploring the Bible for the first time or looking to ignite a fresh passion for the Word, this structured path creates a life-giving rhythm that turns routine into daily transformation. Let’s embark on this exciting journey together, growing in strength, wisdom, and joy—one day at a time!
+        </p>
+    </div>
+
+</div>
 
 
     <section id="daily-bible" class="page-center-wrapper">
