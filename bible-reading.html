@@ -233,7 +233,7 @@
 }
 
 .portion-text {
-    font-size: 2rem; /* Larger font for emphasis */
+    font-size: 1.5rem; /* Larger font for emphasis */
     color: #2c3e50;
     font-weight: 800;
     margin-top: 10px;
@@ -371,70 +371,134 @@ font-size: 0.9rem;
         justify-content: center;
     }
 }
-		
+
 .bible-reading-section {
     display: flex;
-    align-items: center;
-    gap: 40px; /* Space between the image and the text */
+    align-items: flex-start; /* CRITICAL: Aligns the top of the text perfectly with the top of the image */
+    gap: 40px;
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
 }
 
 .bible-reading-image-box {
-    flex: 1; /* Takes up equal width split */
+    flex: 1;
     min-width: 300px;
 }
 
 .bible-reading-img {
     width: 100%;
     height: auto;
-    border-radius: 8px; /* Slightly softens the image corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow around the image */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: block;
 }
 
 .bible-reading-text-box {
-    flex: 1.2; /* Gives slightly more room to the text for easy reading */
+    flex: 1.2;
     line-height: 1.6;
+    overflow: hidden; /* Prevents any wild horizontal layout overflow leaks */
 }
+
+.bible-reading-subtitle {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
 
 .bible-reading-p {
-    font-size: 1.01rem;
+    font-size: 1.0rem;
     color: #444;
     margin-bottom: 15px;
-    text-align: justify;
-}
-
-.bible-reading-p:last-child {
-    margin-bottom: 0;
+    text-align: justify; /* Keeps paragraph edges crisp */
 }
 
 .bible-reading-p.highlight-p {
-    font-size: 1.01rem;
+    font-size: 1.0rem;
     color: #333;
     font-weight: 500;
 }
 
-/* Responsive Viewport Settings (Mobile & Tablets) */
+/* Grid Dashboard Wrapper Styling */
+.bible-grid-container {
+    margin-top: 35px;
+    padding: 25px;
+    background-color: #fcf8f5;
+    border: 1px solid #ebdcd0;
+    border-radius: 8px;
+}
+
+.grid-title {
+    margin: 0 0 15px 0;
+    font-size: 1.15rem;
+    color: #800020;
+    font-weight: 600;
+}
+
+/* Clickable Interactive Grid Rules */
+.days-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    gap: 6px;
+    max-height: 220px;
+    overflow-y: auto; /* Keeps only the number grid compact with an inner scroll bar */
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #e2d7cf;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.day-node-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.day-node-box:hover, .day-node-box.active-selection {
+    background-color: #800020;
+    color: #fff;
+    border-color: #800020;
+}
+
+/* Scripture Result Box styling */
+.search-result-box {
+    padding: 15px 20px;
+    background-color: #fff;
+    border-left: 5px solid #800020;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-top: 15px;
+}
+
+/* Responsive Rules */
 @media (max-width: 768px) {
     .bible-reading-section {
-        flex-direction: column; /* Stacks image on top of text on smaller screens */
+        flex-direction: column;
         gap: 25px;
-        padding: 15px;
     }
-    
-    .bible-reading-image-box, 
-    .bible-reading-text-box {
+    .bible-reading-image-box, .bible-reading-text-box {
         width: 100%;
     }
-    
     .bible-reading-title {
         font-size: 1.6rem;
     }
 }
-
     </style>
 </head>
 <body>
@@ -518,7 +582,7 @@ font-size: 0.9rem;
     <!-- Right Side: Text Content -->
     <div class="bible-reading-text-box">
         
-        <p class="bible-reading-p highlight-p">
+        <p class="bible-reading-p highlight-p" style="margin-top: 0;">
             Welcome to a life-changing journey through the entire Word of God! The 365-Day Bible Reading Plan is more than just a schedule—it is a daily invitation to anchor your life in timeless wisdom and experience the grand narrative of Scripture unfolding from beginning to end.
         </p>
         <p class="bible-reading-p">
@@ -527,11 +591,9 @@ font-size: 0.9rem;
         <p class="bible-reading-p">
             Whether you are exploring the Bible for the first time or looking to ignite a fresh passion for the Word, this structured path creates a life-giving rhythm that turns routine into daily transformation. Let’s embark on this exciting journey together, growing in strength, wisdom, and joy—one day at a time!
         </p>
-    </div>
+ </div>
 
 </div>
-
-
     <section id="daily-bible" class="page-center-wrapper">
         <div class="reading-card">
             <h2 class="main-title" style="font-size: 1.1rem; color: #2c3e50; margin-bottom: 25px;">365 Days Bible Reading (1 Apr 26 to 31 Mar 27) </h2>
@@ -555,7 +617,7 @@ font-size: 0.9rem;
 <div id="archive-display" style="display: none; margin-top: 20px;">
     <div class="archive-box" style="background: #16a085; color: white; padding: 25px; border-radius: 12px;">
         <span style="font-weight: bold;">Archive: <span id="archive-date-text"></span> (<span id="archive-day-count"></span>)</span>
-        <div id="archive-portion" style="font-size:1.8rem; margin:15px 0; font-weight: 800;">-</div>
+        <div id="archive-portion" style="font-size:1.5rem; margin:15px 0; font-weight: 800;">-</div>
         
        
         <button onclick="closeArchive()" class="close-btn" style="margin-top: 15px; background: #e74c3c; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer;">Clear Search</button>
@@ -566,7 +628,19 @@ font-size: 0.9rem;
   <div class="single-portion-box">
 <a href="https://www.youtube.com/@RevLajiVarghese/videos" target="_blank" rel="noopener noreferrer"> Click here to view the Audio Summary of chapters</a>
 </div>
+
     </section>
+<!-- Interactive Grid Dashboard -->
+        <div class="bible-grid-container">
+            <h3 class="grid-title">Select a Day to Reveal the Reading Portion:</h3>
+            
+            <!-- Interactive Days Container Grid Layout (1 to 365 Generated by JavaScript) -->
+            <div id="daysGridContainer" class="days-matrix-grid"></div>
+
+            <!-- Dynamic Scripture Output display element -->
+            <div id="searchResultDisplay" class="search-result-box" style="display: none;"></div>
+        </div>   
+
 </main>
 
 <footer class="site-footer">
@@ -596,41 +670,136 @@ font-size: 0.9rem;
 </footer>
 
 <script>
+// Centralized Reading Database Container 
+const bibleScheduleDatabase = {
+     1: ["Genesis(ഉൽപത്തി) 1-3"],
+    2: ["Genesis(ഉൽപത്തി) 4-7"],
+    3: ["Genesis(ഉൽപത്തി) 8-11"],
+    4: ["Job(ഇയ്യോബ്) 1-5"],
+    5: ["Job(ഇയ്യോബ്) 6-9"],
+    6: ["Job(ഇയ്യോബ്) 10-13"],
+    7: ["Job(ഇയ്യോബ്) 14-16"],
+    8: ["Job(ഇയ്യോബ്) 17-20"],
+    9: ["Job(ഇയ്യോബ്) 21-23"],
+    10: ["Job(ഇയ്യോബ്) 24-28"],
+    11: ["Job(ഇയ്യോബ്) 29-31"],
+    12: ["Job(ഇയ്യോബ്) 32-34"],
+    13: ["Job(ഇയ്യോബ്) 35-37"],
+    14: ["Job(ഇയ്യോബ്) 38-39"],
+    15: ["Job(ഇയ്യോബ്) 40-42"],
+    16: ["Genesis(ഉൽപത്തി) 12-15"],
+    17: ["Genesis(ഉൽപത്തി) 16-18"],
+    18: ["Genesis(ഉൽപത്തി) 19-21"],
+    19: ["Genesis(ഉൽപത്തി) 22-24"],
+    20: ["Genesis(ഉൽപത്തി) 25-26"],
+    21: ["Genesis(ഉൽപത്തി) 27-29"],
+    22: ["Genesis(ഉൽപത്തി) 30-31"],
+    23: ["Genesis(ഉൽപത്തി) 32-34"],
+    24: ["Genesis(ഉൽപത്തി) 35-37"],
+    25: ["Genesis(ഉൽപത്തി) 38-40"],
+    26: ["Genesis(ഉൽപത്തി) 41-42"],
+    27: ["Genesis(ഉൽപത്തി) 43-45"],
+    28: ["Genesis(ഉൽപത്തി) 46-47"],
+    29: ["Genesis(ഉൽപത്തി) 48-50"],
+    30: ["Exodus(പുറപ്പാട്) 1-3"],
+    31: ["Exodus(പുറപ്പാട്) 4-6"],
+    32: ["Exodus(പുറപ്പാട്) 7-9"],
+    33: ["Exodus(പുറപ്പാട്) 10-12"],
+    34: ["Exodus(പുറപ്പാട്) 13-15"],
+    35: ["Exodus(പുറപ്പാട്) 16-18"],
+    36: ["Exodus(പുറപ്പാട്) 19-21"],
+    37: ["Exodus(പുറപ്പാട്) 22-24"],
+    38: ["Exodus(പുറപ്പാട്) 25-27"],
+    39: ["Exodus(പുറപ്പാട്) 28-29"],
+    40: ["Exodus(പുറപ്പാട്) 30-32"],
+    41: ["Exodus(പുറപ്പാട്) 33-35"],
+    42: ["Exodus(പുറപ്പാട്) 36-38"],
+    43: ["Exodus(പുറപ്പാട്) 39-40"],
+    44: ["Leviticus(ലേവ്യപുസ്തകം) 1-4"],
+    45: ["Leviticus(ലേവ്യപുസ്തകം) 5-7"],
+    46: ["Leviticus(ലേവ്യപുസ്തകം) 8-10"],
+    47: ["Leviticus(ലേവ്യപുസ്തകം) 11-13"],
+    48: ["Leviticus(ലേവ്യപുസ്തകം) 14-15"],
+    49: ["Leviticus(ലേവ്യപുസ്തകം) 16-18"],
+    50: ["Leviticus(ലേവ്യപുസ്തകം) 19-21"],
+    51: ["Leviticus(ലേവ്യപുസ്തകം) 22-23"],
+    52: ["Leviticus(ലേവ്യപുസ്തകം) 24-25"],
+    53: ["Leviticus(ലേവ്യപുസ്തകം) 26-27"],
+    54: ["Numbers(സംഖ്യാപുസ്തകം) 1-2"],
+    55: ["Numbers(സംഖ്യാപുസ്തകം) 3-4"],
+    56: ["Numbers(സംഖ്യാപുസ്തകം) 5-6"],
+    57: ["Numbers(സംഖ്യാപുസ്തകം) 7"],
+    58: ["Numbers(സംഖ്യാപുസ്തകം) 8-10"],
+    59: ["Numbers(സംഖ്യാപുസ്തകം) 11-13"],
+    60: ["Numbers(സംഖ്യാപുസ്തകം) 14-15, Psalms(സങ്കീർത്തനങ്ങൾ) 90"],
+    61: ["Numbers(സംഖ്യാപുസ്തകം) 16-17"],
+    62: ["Numbers(സംഖ്യാപുസ്തകം) 18-20"],
+    63: ["Numbers(സംഖ്യാപുസ്തകം) 21-22"],
+    64: ["Numbers(സംഖ്യാപുസ്തകം) 23-25"],
+    65: ["Numbers(സംഖ്യാപുസ്തകം) 26-27"],
+    66: ["Numbers(സംഖ്യാപുസ്തകം) 28-30"],
+    67: ["Numbers(സംഖ്യാപുസ്തകം) 31-32"],
+    68: ["Numbers(സംഖ്യാപുസ്തകം) 33-34"],
+    69: ["Numbers(സംഖ്യാപുസ്തകം) 35-36"],
+    70: ["Deuteromony(ആവർത്തനം) 01-02"],
+    71: ["Deuteromony(ആവർത്തനം) 03-04"],
+    72: ["Deuteromony(ആവർത്തനം) 05-07"],
+    73: ["Deuteromony(ആവർത്തനം) 08-10"],
+    74: ["Deuteromony(ആവർത്തനം) 11-13"],
+    75: ["Deuteromony(ആവർത്തനം) 14-16"],
+    76: ["Deuteromony(ആവർത്തനം) 17-20"],
+    77: ["Deuteromony(ആവർത്തനം) 21-23"],
+    78: ["Deuteromony(ആവർത്തനം) 24-27"],
+    79: ["Deuteromony(ആവർത്തനം) 28-29"],
+    80: ["Deuteromony(ആവർത്തനം) 30-31"],
+    81: ["Deuteromony(ആവർത്തനം) 32-34,Psalms(സങ്കീർത്തനങ്ങൾ) 91"],
+    82: ["Joshua(യോശുവ) 01-04"],
+    83: ["Joshua(യോശുവ) 05-08"],
+    84: ["Joshua(യോശുവ) 09-11"],
+    85: ["Joshua(യോശുവ) 12-15"],
+    86: ["Joshua(യോശുവ) 16-18"],
+    87: ["Joshua(യോശുവ) 19-21"],
+    88: ["Joshua(യോശുവ) 22-24"],
+    89: ["Judges(ന്യായാധിപന്മാർ) 01-02"],
+    90: ["Judges(ന്യായാധിപന്മാർ) 03-05"],
+    91: ["Judges(ന്യായാധിപന്മാർ) 06-07"],
+
+};
 // --- 1. Bible Schedule Data ---
 const bibleSchedule = {
-   "2026-04-01": {portion: "Genesis(ഉൽപത്തി) 1-3"},
+    "2026-04-01": {portion: "Genesis(ഉൽപത്തി) 1-3"},
     "2026-04-02": { portion: "Genesis(ഉൽപത്തി) 4-7"},
     "2026-04-03": { portion: "Genesis(ഉൽപത്തി) 8-11"},
     "2026-04-04": { portion: "Job(ഇയ്യോബ്) 1-5"},
     "2026-04-05": { portion: "Job(ഇയ്യോബ്) 6-9"},
     "2026-04-06": { portion: "Job(ഇയ്യോബ്) 10-13"},
     "2026-04-07": { portion: "Job(ഇയ്യോബ്) 14-16"},
-    "2026-04-08": { portion: "Job(ഇയ്യോബ്) 17-20", engId: "OacHYRmjK20", malId: "MhEs6GgqbW8" },
-    "2026-04-09": { portion: "Job(ഇയ്യോബ്) 21-23", engId: "Q9IK-ikoJ5E", malId: "1xZP016e5MI" },
-    "2026-04-10": { portion: "Job(ഇയ്യോബ്) 24-28", engId: "GOzgEgl5rTQ", malId: "emKSzpnKYYY" },
-    "2026-04-11": { portion: "Job(ഇയ്യോബ്) 29-31", engId: "efXbrnfK0jU", malId: "kToGCJAUKfs" },
-    "2026-04-12": { portion: "Job(ഇയ്യോബ്) 32-34", engId: "akEHKakNsv0", malId: "elbfPs0Bxp0" },
-    "2026-04-13": { portion: "Job(ഇയ്യോബ്) 35-37", engId: "x-DUzoQNcv4", malId: "HrT3FQDZ8zY" },
-    "2026-04-14": { portion: "Job(ഇയ്യോബ്) 38-39", engId: "vClVBfGkcAU", malId: "YJHSgeeFvOo" },
-    "2026-04-15": { portion: "Job(ഇയ്യോബ്) 40-42", engId: "ezjmNwE-724", malId: "gulzylH3Hms" },
-    "2026-04-16": { portion: "Genesis(ഉൽപത്തി) 12-15", engId: "udyE-BzmLR4", malId: "XlL2lrFmSB8" },
-    "2026-04-17": { portion: "Genesis(ഉൽപത്തി) 16-18", engId: "kvSw9WdOY1g", malId: "A2CXFIA1UMo" },
-    "2026-04-18": { portion: "Genesis(ഉൽപത്തി) 19-21", engId: "7xmQ_Th0a8s", malId: "SjtnPpDc3bQ" },
-    "2026-04-19": { portion: "Genesis(ഉൽപത്തി) 22-24", engId: "K1bqliz4z-Q", malId: "gcRc8pTTwcc" },
-    "2026-04-20": { portion: "Genesis(ഉൽപത്തി) 25-26", engId: "KaG4eFc6lk4", malId: "v0w8AAmfIiU" },
-    "2026-04-21": { portion: "Genesis(ഉൽപത്തി) 27-29", engId: "XL-ZHHO50rk", malId: "iLRJwHFTD5M" },
-    "2026-04-22": { portion: "Genesis(ഉൽപത്തി) 30-31", engId: "4bhOrnqcwoM", malId: "nU_B_ixcIyE" },
-    "2026-04-23": { portion: "Genesis(ഉൽപത്തി) 32-34", engId: "Fxv9N_gUvd4", malId: "9yKr4i5ByPk" },
-    "2026-04-24": { portion: "Genesis(ഉൽപത്തി) 35-37", engId: "fLwrlMrL4JQ", malId: "lgNJoAHhjAI" },
-    "2026-04-25": { portion: "Genesis(ഉൽപത്തി) 38-40", engId: "QsKLliuA5-M", malId: "q-3-Jv752qM" },
-    "2026-04-26": { portion: "Genesis(ഉൽപത്തി) 41-42", engId: "51-EFnrR8ec", malId: "5kKd2ZwDsQ4" },
-    "2026-04-27": { portion: "Genesis(ഉൽപത്തി) 43-45", engId: "2DocteMz_yY", malId: "jW0Y3owr6oc" },
-    "2026-04-28": { portion: "Genesis(ഉൽപത്തി) 46-47", engId: "x7HyRAEXHmQ", malId: "6a2JehmQ8Sk" },
-    "2026-04-29": { portion: "Genesis(ഉൽപത്തി) 48-50", engId: "vFYr_KNlqm0", malId: "0VP8aPWBIw0" },
-    "2026-04-30": { portion: "Exodus(പുറപ്പാട്) 1-3",  engId: "8s4fKnQsO-I", malId: "6H_FBXostzo" },
-    "2026-05-01": { portion: "Exodus(പുറപ്പാട്) 4-6",  engId: "LtZQWYbFrgk", malId: "CIlN5k6XEFg" },
-    "2026-05-02": { portion: "Exodus(പുറപ്പാട്) 7-9",  engId: "ccJJb5KVYU8", malId: "IXcT72E2TDg" },
-    "2026-05-03": { portion: "Exodus(പുറപ്പാട്) 10-12", engId: "-npCX30MX1Q", malId: "myNcOLJne8s" },
+    "2026-04-08": { portion: "Job(ഇയ്യോബ്) 17-20",},
+    "2026-04-09": { portion: "Job(ഇയ്യോബ്) 21-23",},
+    "2026-04-10": { portion: "Job(ഇയ്യോബ്) 24-28",},
+    "2026-04-11": { portion: "Job(ഇയ്യോബ്) 29-31",},
+    "2026-04-12": { portion: "Job(ഇയ്യോബ്) 32-34",},
+    "2026-04-13": { portion: "Job(ഇയ്യോബ്) 35-37",},
+    "2026-04-14": { portion: "Job(ഇയ്യോബ്) 38-39",},
+    "2026-04-15": { portion: "Job(ഇയ്യോബ്) 40-42",},
+    "2026-04-16": { portion: "Genesis(ഉൽപത്തി) 12-15",},
+    "2026-04-17": { portion: "Genesis(ഉൽപത്തി) 16-18",},
+    "2026-04-18": { portion: "Genesis(ഉൽപത്തി) 19-21",},
+    "2026-04-19": { portion: "Genesis(ഉൽപത്തി) 22-24",},
+    "2026-04-20": { portion: "Genesis(ഉൽപത്തി) 25-26",},
+    "2026-04-21": { portion: "Genesis(ഉൽപത്തി) 27-29",},
+    "2026-04-22": { portion: "Genesis(ഉൽപത്തി) 30-31",},
+    "2026-04-23": { portion: "Genesis(ഉൽപത്തി) 32-34",},
+    "2026-04-24": { portion: "Genesis(ഉൽപത്തി) 35-37",},
+    "2026-04-25": { portion: "Genesis(ഉൽപത്തി) 38-40",},
+    "2026-04-26": { portion: "Genesis(ഉൽപത്തി) 41-42",},
+    "2026-04-27": { portion: "Genesis(ഉൽപത്തി) 43-45",},
+    "2026-04-28": { portion: "Genesis(ഉൽപത്തി) 46-47",},
+    "2026-04-29": { portion: "Genesis(ഉൽപത്തി) 48-50",},
+    "2026-04-30": { portion: "Exodus(പുറപ്പാട്) 1-3",},
+    "2026-05-01": { portion: "Exodus(പുറപ്പാട്) 4-6",},
+    "2026-05-02": { portion: "Exodus(പുറപ്പാട്) 7-9",},
+    "2026-05-03": { portion: "Exodus(പുറപ്പാട്) 10-12",},
     "2026-05-04": { portion: "Exodus(പുറപ്പാട്) 13-15",},
     "2026-05-05": { portion: "Exodus(പുറപ്പാട്) 16-18",},
     "2026-05-06": { portion: "Exodus(പുറപ്പാട്) 19-21",},
@@ -893,6 +1062,62 @@ if (document.getElementById("backToTopBtn")) {
 }
 
 window.onload = loadToday;
-</script>
+
+// 1. Core Render Engine: Creates clickable grid boxes (1 to 365) right away
+document.addEventListener("DOMContentLoaded", function() {
+    const gridContainer = document.getElementById('daysGridContainer');
+    let dynamicGridHTML = '';
+    
+    for (let day = 1; day <= 365; day++) {
+        dynamicGridHTML += `<div class="day-node-box" id="dayBtn_${day}" onclick="selectGridDay(${day})">${day}</div>`;
+    }
+    gridContainer.innerHTML = dynamicGridHTML;
+    
+    // Automatically display Day 63 readings on page load
+    selectGridDay(63); 
+});
+
+// 2. Action Controller: Runs when any Grid Box is Clicked
+function selectGridDay(dayNum) {
+    // Clear previously highlighted active grid items
+    document.querySelectorAll('.day-node-box').forEach(box => {
+        box.classList.remove('active-selection');
+    });
+    
+    // Highlight the newly selected box structure
+    const targetBox = document.getElementById(`dayBtn_${dayNum}`);
+    if(targetBox) {
+        targetBox.classList.add('active-selection');
+    }
+    
+    // Execute output display update
+    renderPortionToScreen(dayNum);
+}
+
+// 3. Interface UI Output Render engine
+function renderPortionToScreen(dayNum) {
+    const displayElement = document.getElementById('searchResultDisplay');
+    const assignedReadings = bibleScheduleDatabase[dayNum];
+    
+    displayElement.style.display = 'block';
+    
+    if (assignedReadings && assignedReadings.length > 0) {
+        // Join portions with a comma or vertical bar
+        const portionsText = assignedReadings.join(" — ");
+        
+        displayElement.innerHTML = `
+            <div style="text-align: center; color:#222; font-size: 1.05rem; line-height: 1.6;">
+                <strong style="color:#800020;">📖 Day ${dayNum} Assigned Scripture Reading: 
+                <span style="margin-left: 5px;">${portionsText}</span> </strong>
+            </div>
+        `;
+    } else {
+        displayElement.innerHTML = `
+            <div style="text-align: center; color:#777; font-style: italic;">
+                📖 Day ${dayNum}: Reading schedule coming soon.
+            </div>
+        `;
+    }
+}</script>
 </body>
 </html>
