@@ -1072,9 +1072,6 @@ document.addEventListener("DOMContentLoaded", function() {
         dynamicGridHTML += `<div class="day-node-box" id="dayBtn_${day}" onclick="selectGridDay(${day})">${day}</div>`;
     }
     gridContainer.innerHTML = dynamicGridHTML;
-    
-    // Automatically display Day 63 readings on page load
-    selectGridDay(63); 
 });
 
 // 2. Action Controller: Runs when any Grid Box is Clicked
