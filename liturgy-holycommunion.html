@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Holy Communion Liturgy | St. Thomas Evangelical Church of India</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Order of Worship For The Holy Communion - St. Thomas Evangelical Church of India (STECI)."> 
+    <style>
+    /* Global Styles */
+    :root {
+      --primary-maroon: #5C1A1B;
+      --primary-dark-maroon: #3d1112;
+      --accent-yellow: #FFFF99;
+      --accent-green: #243117;
+      --speaker-min: #8B0000;
+      --speaker-con: #00008B;
+      --speaker-deacon: #2E8B57;
+      --speaker-all: #4B0082;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      font-family: Roboto, Arial, sans-serif;
+      color: #333333;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* Header & Navigation */
+    .header-banner {
+      line-height: 0;
+      font-size: 0;
+    }
+
+    img {
+      max-width: 100%; 
+      width: 100%;
+      height: auto;
+    }
+
+    .navbar {
+      background-color: var(--primary-maroon);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--accent-yellow);
+    }
+
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      display: block;
+      color: var(--accent-yellow); 
+      text-align: center;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links li a:hover {
+      background-color: var(--primary-dark-maroon);
+    }
+
+    /* Dropdown Navigation */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 220px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1001;
+      text-align: left;
+      top: 100%;
+      left: 0;
+    }
+
+    .dropdown-content a {
+      color: var(--primary-maroon) !important;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #eee;
+      font-weight: normal;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--primary-maroon);
+      color: var(--accent-yellow) !important;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Mobile Navigation Drawer */
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 15px;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: var(--accent-yellow);
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    /* Page Titles */
+    .mission-heading {
+      text-align: center;
+      color: var(--accent-yellow);
+      background-color: var(--accent-green);
+      padding: 15px 10px;
+    }
+
+    .mission-heading h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    /* Responsive Grid Layout for Liturgy */
+    .liturgy-grid {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 12px 15px;
+      margin: 30px auto;
+      padding: 0 15px;
+      max-width: 900px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .speaker {
+      font-weight: bold;
+      text-align: right;
+      padding-right: 5px;
+    }
+
+    .speaker.min, .liturgy-text.min {
+      color: var(--speaker-min); 
+    }
+
+    .speaker.con, .liturgy-text.con {
+      color: var(--speaker-con); 
+    }
+
+    .speaker.deacon {
+      color: var(--speaker-deacon);
+    }
+
+    .speaker.all {
+      color: var(--speaker-all);
+    }
+
+    .liturgy-text {
+      text-align: left;
+    }
+
+    .liturgy-instruction {
+      grid-column: 1 / -1;
+      font-style: italic;
+      color: #555555;
+      text-align: center;
+      padding: 12px 0;
+      font-weight: 600;
+    }
+
+    /* Back to Top Button */
+    #backToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      font-size: 14px;
+      border: none;
+      outline: none;
+      background-color: var(--accent-green);
+      color: var(--accent-yellow);
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    /* Footer Layout */
+    .site-footer {
+      background-color: #222222;
+      color: #ffffff;
+      padding: 25px 8%;
+      border-top: 2px solid #444444;
+      margin-top: 40px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-right {
+      text-align: right;
+      font-size: 0.9rem;
+    }
+
+    .quick-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 30px;
+    }
+
+    .quick-links li a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .quick-links li a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Mobile Responsive Optimizations (< 768px) */
+    @media screen and (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--primary-maroon);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+        border-top: 1px solid #7a2425;
+      }
+
+      .dropdown-content {
+        position: static;
+        width: 100%;
+        background-color: #4a1415;
+        box-shadow: none;
+      }
+
+      .dropdown-content a {
+        color: var(--accent-yellow) !important;
+        background-color: #4a1415 !important;
+        padding: 12px 30px;
+        border-bottom: 1px solid var(--primary-maroon);
+        white-space: normal;
+      }
+
+      .liturgy-grid {
+        grid-template-columns: 65px 1fr;
+        gap: 8px 10px;
+        padding: 0 10px;
+      }
+
+      .speaker {
+        text-align: left;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .footer-left, .footer-right {
+        text-align: center;
+        width: 100%;
+      }
+
+      .quick-links {
+        grid-template-columns: 1fr;
+      }
+    }
+    </style>
+</head>
+<body>
+
+<button id="backToTopBtn" title="Go to top">↑ Top</button>
+
+<div class="header-banner">
+    <img src="Steciblr_files/steciblrbanner.png" alt="Church banner or logo" />
+</div>
+
+<nav class="navbar">
+  <div class="menu-icon" onclick="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Church ▾</a>
+      <div class="dropdown-content">
+        <a href="church-leaders.html">Church Leaders</a>
+        <a href="church-history.html">Church History</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Parish ▾</a>
+      <div class="dropdown-content">
+        <a href="parish-vicar.html">Parish Vicars</a>
+        <a href="parish-history.html">Parish History</a>
+        <a href="lectionary.html">Lectionary</a>
+        <a href="parish-bulletin.html">Parish Bulletin</a>
+        <a href="executive-committee.html">Executive Committee</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Foundation ▾</a>
+      <div class="dropdown-content">
+        <a href="mission-vision.html">Mission & Vision</a>
+        <a href="our-belief.html">Our Faith</a>
+        <a href="bible-reading.html">365 Day Bible Reading</a>
+       </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Liturgy ▾</a>
+      <div class="dropdown-content">
+        <a href="liturgy-public.html">Order of Public worship</a>
+        <a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Gallery ▾</a>
+      <div class="dropdown-content">
+        <a href="photos-gallery.html">Photo Gallery</a>
+        <a href="videos-gallery.html">Video Gallery</a>
+      </div>
+    </li>
+
+    <li><a href="contact-us.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="main-content">
+  <div class="mission-heading">
+    <h1><strong>Order of Worship For The Holy Communion</strong></h1>
+  </div>
+
+  <div class="liturgy-grid">
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Glory be to the Father and the Son and to the Holy Spirit.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">As it was in the beginning is now and ever shall be, world without end. Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Holy, Holy, Holy, Lord God of hosts, heaven and earth are full of your glory. Hosanna in the highest.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Blessed is he who has come and is yet to come in the name of the Lord. Hosanna in the highest.</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">* Holy are you, O God.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">* Holy are you, O Almighty</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">* Holy are you, O Immortal</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">* Bestow upon us your blessings O Lord, the Messiah who was crucified for us.</div>
+
+    <div class="liturgy-instruction">*(To be repeated thrice)</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O Lord, bestow upon us Your blessings.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">O Lord, have mercy and pour out Your blessings upon us.</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O Lord, accept our prayer and supplication and pour out Your blessings upon us.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Glory be to You, O God.</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Glory be to You, O Creator.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Glory be to You, O King, the Messiah, Who is gracious unto us sinners.</div>
+
+    <div class="liturgy-instruction">The Lord's Prayer (Matthew 6:9-13)</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Our Father Which art in heaven,</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Hallowed be Your name. Your kingdom come. Your will be done on earth, as it is in heaven. Give us this day our daily bread. And forgive us our debts, as we forgive our debtors. And lead us not into temptation, but deliver us from evil. For Yours is the kingdom, and the power, and the glory, for ever. Amen.</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O King and Lord the only begotten son of the Heavenly Father and the Word, we praise You.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">O Lord our Messiah, pour out Your blessings upon us, Amen</div>
+
+    <div class="speaker deacon">Deacon:</div>
+    <div class="liturgy-text">The blessed St. Paul says, “Even if we, or an angel from heaven, preach any gospel to you that what we have preached to you, let him be accursed.” Behold various kinds of teachings are preached from all places but blessed is he who begins and ends in the teachings of God.</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O Lord God accept these our prayers and petitions which we offer in Your presence at this time. Our Lord and our God make us worthy to observe Your commands, as well as those of Your Holy Apostles, and St. Paul, the architect and builder of Your Holy Church.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="liturgy-instruction">(The Deacon shall face the congregation and shall say)</div>
+
+    <div class="speaker deacon">Deacon:</div>
+    <div class="liturgy-text">From the Epistle of ___ to ___ chapter ____</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Lord grant us grace to discern Your words</div>
+
+    <div class="liturgy-instruction">(The Deacon reads the Epistle appointed for the day)</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O Lord, bestow unto us freely Your knowledge of Your divine word. Fill us with the essence of Your gospel, the treasures of Your divine wisdom, and the good gifts Your Holy Spirit. Grant us grace that we may gladly obey Your commandments and perfectly fulfill Your holy will so that we may always be worthy of blessings and mercies from You.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Peace be with us all.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">May the Lord make us all also worthy.</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">The life giving preaching of the holy gospel of our Lord Jesus, written by St. (Matthew, Mark, Luke or John), who proclaims life and salvation to the world, Chapter __.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Lord grant us grace to live in accordance with Your Words.</div>
+
+    <div class="liturgy-instruction">(Here, the Minister reads the prescribed Gospel portion)</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Peace be with us all.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="liturgy-instruction">(Congregation singing a verse of song)</div>
+
+    <div class="speaker all">Song:</div>
+    <div class="liturgy-text">
+      Sing them over again to me,<br>
+      Wonderful words of life;<br>
+      Let me more of their beauty see,<br>
+      Wonderful words of life.<br>
+      Words of life and beauty<br>
+      Teach me faith and duty;<br>
+      Beautiful words, wonderful words,<br>
+      Wonderful words of life;<br>
+      Beautiful words, wonderful words,<br>
+      Wonderful words of life;
+    </div>
+
+    <div class="liturgy-instruction">OR</div>
+
+    <div class="speaker all">All:</div>
+    <div class="liturgy-text">We praise You O Lord who has given us the gospel, which is the light of the world in order that we may be drawn to You. Make us worthy that we may magnify You through the living words which we have heard now from Your gospel.</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O Lord God, may we be found true and always worthy to offer Your praise, thanksgiving, majesty, and unfading honor. Unto Him who atones, pardons sins, purifies the unholy, receives the repentant, delights in the return of the sinners, longs for the salvation of the transgressors, who commanded “Knock I will open and extend my arms to pardon your sins and transgressions,” to Him are meet forever praise, glory, and honor both now when this divine sacrifice of praise is being offered and throughout all the days of our life.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Almighty God, our Father, we offer our true repentance, adoration, and praises before You and Your dear Son who was revealed to the world in Your love, and before Your Holy Spirit. Lord make us worthy, we beseech You, to take part at Your holy table in purity. Guard us all our days in blameless and holy living. Make our young people mature and disciplined. Tend our children in Your grace. Adorn our women with the abiding ornaments of humility and gentleness. Heal our sick ones. Care for the orphans and the widows. Make Your peace reign in our midst. We lift our adoration and praise You, You Father, and the Holy Spirit.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+  <div class="liturgy-instruction">The Nicene Creed</div>
+
+  <div class="speaker min">Min:</div>
+  <div class="liturgy-text min">We believe in one true God, the Father Almighty</div>
+
+  <div class="speaker con">Con:</div>
+  <div class="liturgy-text con">Maker of heaven and earth, and all things visible and invisible. And in One Lord Jesus Christ, the Only Begotten Son of God, begotten of the Father, before all the worlds, Light of Light, very God of very God, begotten not made, and of one substance with His Father; by whom all things were made; who for us men and for our salvation, came down from heaven, and was incarnate by the Holy Spirit of the Virgin Mary, and was made man, and was crucified for us under Pontius Pilate, and suffered, and died and was buried. And the third day He rose again by His own will, and ascended into heaven, and sits on the right hand of the Father; and He shall come again with glory, to judge both the quick and the dead, Whose Kingdom shall have no end.
+
+<p>And we believe in the Holy Spirit, the Lord and Giver of Life, Who proceeds from the Father, Who with the Father and the Son together is worshipped and glorified, Who spoke by the Prophets and the Apostles</p>
+  And we believe in One Holy Catholic and Apostolic Church; we acknowledge one baptism for the remission of sins, and look for the resurrection of the dead and the new life of the world to come. Amen.</div>
+
+    <div class="liturgy-instruction">Prayer of Peace</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O God and Lord of all, account these our unworthy selves worthy to greet one another, purified from all guile, and united in the bond of life, with a sincere heart and perfect conscience in one spirit and in the fellowship of peace and love. To this end grant upon the good gifts of Your Holy Spirit</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Peace be with us all</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker deacon">Deacon:</div>
+    <div class="liturgy-text">By the love of our Lord God greet one another in peace</div>
+
+    <div class="liturgy-instruction">(This kiss of peace is exchanged during which congregation shall say:)</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">May the love and peace of Messiah our Lord, dwell among us forever</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Merciful Lord, who alone dwells on high yet regards those lowly, send blessings on us who bend their heads before Your presence and bless us with the grace of Your only Son along with whom and with Your Holy Spirit, Your are worthy of all praise, honor, and dominion.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">The love of God the Father and the grace of the only begotten Son and the communion and abiding presence of God the Holy Spirit be with us all for ever</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">May all our consciousness, our thoughts, and our hearts at this time be on high where our Lord the Messiah sits at the right hand of God the Father.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">They are so with the Lord God.</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">To praise the Lord of all creation to worship and to adore Him.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Truly is meet and right to do so. Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">The sinless One when He prepared willingly to accept death on our behalf, He took bread and when He had given thanks He broke it – and gave it to the disciples and said, “Take eat” – “This is My body which is given for you; do this in remembrance of Me.”</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">In the same manner He took the cup after they had eaten saying, “This cup is the new covenant in My blood. This do, so often as you drink it, in remembrance of Me”. “But I say to you, I will not drink of this, the vine, from now on until that day when I drink it new with you in My father’s kingdom.”</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">“The cup of blessing which we bless, is it not the communion of the blood of Christ? The bread which we break, is it not the communion of the body of Christ? For we, being many, are one bread and one body; for we are all partakers of that one bread”. For as often as you eat this bread and drink this cup, you proclaim the Lord’s death till He comes”.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Lord Your death we remember, in your resurrection we rejoice, and we look forward and wait for your second coming.</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O Lord, we offer this bread and this cup remembering Your death, Your burial, and Your resurrection on the third day, and Your ascension into heaven and Your session on the right hand of God, and also Your second coming when You shall judge the world righteously and render every man according to his work</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">O Lord God we glorify You, we bless You, we worship You.</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O Lord we Your humble servants receive gratefully Your grace and give honor for Your loving kindness for all things and because of all things.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">O Lord God we glorify You, we bless You, we worship You.</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Almighty Lord although once this wheat was scattered, now as it has become one bread, You will bring together Your Church from the ends of the earth into Your kingdom. Our Father we praise You for the priceless body, and the blood of Christ which were poured out for us at Calvary. As their symbols we observe through these elements the proclamation of His death according to the commandment given to us. Through Him we offer glory to You for ever</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="liturgy-instruction">Prayer for the Holy Spirit</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">God our Father be merciful unto us. We beseech You to send upon us Your Holy Spirit who is Co-equal Lord with You and Your Son in enthroned Kingship and eternal substance, who spoke in the Old and New Testaments and who descended upon our Lord Jesus the Messiah, in the form of a dove in the River Jordan and in tongues of fire upon the Apostles in the upper room.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen.</div>
+
+    <div class="liturgy-instruction">Prayer for the church</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O God we pray for Your holy universal Church; also we pray, O Father for the St. Thomas Evangelical Church of India, which is a part of Your Church. The gifts of Your Holy Spirit may be given to her in abundance. We pray that Your blessing may rest upon all Your children who rightly divide the Word of Truth, and upon our Bishops, Ministers Deacons, Evangelists, and all believers.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen.</div>
+
+    <div class="liturgy-instruction">(Time for private prayer.)</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">May the blessing of the great God our Saviour, Jesus the Messiah be with us all for ever.</div>
+
+    <div class="speaker con">Con:</div>
+
+    <div class="liturgy-text con">Merciful Lord the voice of our cry knock at Your door. Do not refuse the petition of their need to those that worship You, Amen.</div>
+
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O God who receives prayers and grants supplications, we beseech You and pray before You, with contrite hearts the prayer of our Lord which Your holy and only begotten Son taught us:<br> Our Father in heaven,</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Hallowed be Your name. Your kingdom come. Your will be done on earth, as it is in heaven. Give us this day our daily bread. And forgive us our debts, as we forgive our debtors. And do not lead us into temptation, but deliver us from the evil one. For Yours is the kingdom, and the power, and the glory, for ever. Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O Lord God lead us not to temptation above which we are able to bear, but deliver us from the evil one making a way of escape. So shall we offer glory and praise to You, and to Your Only begotten Son, and to Your Holy Spirit.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">May the grace and blessings of the glorious, uncreated, self-existent, eternal, adorable, and non-substantial Holy Trinity be with all for ever</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">These holy elements are given to the holy and pure alone</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Glory be to the father, the son, and the holy spirit.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">From the beginning and for ever they are one and the same.</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">The one Father is Holy; the one Son is Holy; and the one spirit also is Holy.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">The one only Father who created the world through His mercy, be with us.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">The one only Son who redeemed the world through the precious suffering in His body be with us</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">The one living and Holy Spirit the perfector and fulfiller of all that has been, and of all that is, be with us.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen. Blessed be the holy name of the Lord for ever and ever.</div>
+
+    <div class="liturgy-instruction">(Participants for the Communion kneel down)</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O Son of God who came for our salvation, and will come again for our resurrection and for the renewal of our race for ever, we praise You for Your atoning sacrifice which brought us remission of sins.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">These elements are given to you to remember our Lord Jesus, the Messiah, who gave Himself to be an offering as a sacrifice upon Golgotha for the remission of debts and for the forgiveness of sins.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+ <div class="liturgy-instruction">(Here, the minister and the people receive the communion.<br> Sing appropriate songs while the elements are being administered.)</div>
+
+    <div class="liturgy-instruction">PRAYER OF PRAISE</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Praise be to You, praise be to you, praise be to you for ever, our Lord and our God. We bless You Lord for making us worthy through the greatness of Your mercy to take part in this Holy Communion. We beseech You to make this instrumental to bring renewal and strength in our lives.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">O great and wonderful Son of God, who for the salvation of the human race stepped down and descended from heaven, grant Your blessings upon us, that we may ever glorify You and God the Father who begat You and your Holy Spirit.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Amen</div>
+
+    <div class="liturgy-instruction">(Singing of Songs)</div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Beloved, depart now in peace with the gifts and blessings that you have received through the sacrifice of the cross of our Lord to make us worthy for the grace of our holy, glorious, and great God. Joyfully pray for me also who is even a weak servant, in order that I shall receive mercy and help through your supplications.</div>
+
+    <div class="speaker con">Con:</div>
+    <div class="liturgy-text con">Lord, bless your servant who has ministered in Your holy presence. Accept our prayers and petitions, and make us worthy of Your gifts and blessings, and dismiss us with your peace.</div>
+
+    <div class="liturgy-instruction">DOXOLOGY</div>
+
+    <div class="speaker all">All:</div>
+    <div class="liturgy-text">
+      Praise God, from whom all blessings flow;<br>
+      Praise Him all creatures here below;<br>
+      Praise Him above, ye heavenly host;<br>
+      Praise Father, Son, and Holy Ghost!<br>
+      Amen.
+    </div>
+
+    <div class="speaker min">Min:</div>
+    <div class="liturgy-text min">Benediction</div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h4 style="margin-top:0;">Quick Links</h4>
+            <ul class="quick-links">
+                <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
+                <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
+                <li><a href="our-belief.html">Our Faith - What we believe</a></li>
+                <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
+                <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
+                <li><a href="contact-us.html">Parish Location</a></li>
+                <li><a href="parish-history.html">Bangalore Parish History</a></li> 
+            </ul>
+        </div>
+        <div class="footer-right">
+            <p style="font-size: 1.1em; margin-top:0;"><strong>STECI Bangalore Parish</strong></p>
+            <p>#17,18, Church Lane, Defence Colony,<br> Kavery Nagar, Horamavu Agara, <br> Bangalore - 560 013</p>
+            <p> Vicar: <a href="tel:+919742699915" style="color: var(--accent-yellow);">97426 99915</a> 
+                <br> Treasurer: <a href="tel:+919742699916" style="color: var(--accent-yellow);">97426 99916</a>
+                <br> Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: var(--accent-yellow);">secysteciblr@yahoo.com</a>  
+                <br> Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: var(--accent-yellow);">treassteciblr@yahoo.com</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    nav.classList.toggle("active");
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const currentSubmenu = this.nextElementSibling;
+          
+          document.querySelectorAll('.dropdown-content').forEach(other => {
+            if (other !== currentSubmenu) {
+              other.style.display = 'none';
+            }
+          });
+
+          if (currentSubmenu.style.display === 'block') {
+            currentSubmenu.style.display = 'none';
+          } else {
+            currentSubmenu.style.display = 'block';
+          }
+        }
+      });
+    });
+  });
+
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.onscroll = function() {
+    if (backToTopBtn) {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    }
+  };
+
+  if (backToTopBtn) {
+    backToTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  }
+</script>
+
+</body>
+</html>
