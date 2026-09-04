@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Holy Communion Liturgy | St. Thomas Evangelical Church of India</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Order of Worship For The Holy Communion - St. Thomas Evangelical Church of India (STECI)."> 
+    <style>
+    /* Global Styles */
+    :root {
+      --primary-maroon: #5C1A1B;
+      --primary-dark-maroon: #3d1112;
+      --accent-yellow: #FFFF99;
+      --accent-green: #243117;
+      --speaker-min: #8B0000;
+      --speaker-con: #00008B;
+      --speaker-deacon: #2E8B57;
+      --speaker-all: #4B0082;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      font-family: Roboto, Arial, sans-serif;
+      color: #333333;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* Header & Navigation */
+    .header-banner {
+      line-height: 0;
+      font-size: 0;
+    }
+
+    img {
+      max-width: 100%; 
+      width: 100%;
+      height: auto;
+    }
+
+    .navbar {
+      background-color: var(--primary-maroon);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--accent-yellow);
+    }
+
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      display: block;
+      color: var(--accent-yellow); 
+      text-align: center;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links li a:hover {
+      background-color: var(--primary-dark-maroon);
+    }
+
+    /* Dropdown Navigation */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 220px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1001;
+      text-align: left;
+      top: 100%;
+      left: 0;
+    }
+
+    .dropdown-content a {
+      color: var(--primary-maroon) !important;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #eee;
+      font-weight: normal;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--primary-maroon);
+      color: var(--accent-yellow) !important;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Mobile Navigation Drawer */
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 15px;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: var(--accent-yellow);
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    /* Page Titles */
+    .mission-heading {
+      text-align: center;
+      color: var(--accent-yellow);
+      background-color: var(--accent-green);
+      padding: 15px 10px;
+    }
+
+    .mission-heading h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    /* Responsive Grid Layout for Liturgy */
+    .liturgy-grid {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 12px 15px;
+      margin: 30px auto;
+      padding: 0 15px;
+      max-width: 900px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .speaker {
+      font-weight: bold;
+      text-align: right;
+      padding-right: 5px;
+    }
+
+    .speaker.min, .liturgy-text.min {
+      color: var(--speaker-min); 
+    }
+
+    .speaker.con, .liturgy-text.con {
+      color: var(--speaker-con); 
+    }
+
+    .speaker.deacon {
+      color: var(--speaker-deacon);
+    }
+
+    .speaker.all {
+      color: var(--speaker-all);
+    }
+
+    .liturgy-text {
+      text-align: left;
+    }
+
+    .liturgy-instruction {
+      grid-column: 1 / -1;
+      font-style: italic;
+      color: #555555;
+      text-align: center;
+      padding: 12px 0;
+      font-weight: 600;
+    }
+
+    /* Back to Top Button */
+    #backToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      font-size: 14px;
+      border: none;
+      outline: none;
+      background-color: var(--accent-green);
+      color: var(--accent-yellow);
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    /* Footer Layout */
+    .site-footer {
+      background-color: #222222;
+      color: #ffffff;
+      padding: 25px 8%;
+      border-top: 2px solid #444444;
+      margin-top: 40px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-right {
+      text-align: right;
+      font-size: 0.9rem;
+    }
+
+    .quick-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 30px;
+    }
+
+    .quick-links li a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .quick-links li a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Mobile Responsive Optimizations (< 768px) */
+    @media screen and (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--primary-maroon);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+        border-top: 1px solid #7a2425;
+      }
+
+      .dropdown-content {
+        position: static;
+        width: 100%;
+        background-color: #4a1415;
+        box-shadow: none;
+      }
+
+      .dropdown-content a {
+        color: var(--accent-yellow) !important;
+        background-color: #4a1415 !important;
+        padding: 12px 30px;
+        border-bottom: 1px solid var(--primary-maroon);
+        white-space: normal;
+      }
+
+      .liturgy-grid {
+        grid-template-columns: 65px 1fr;
+        gap: 8px 10px;
+        padding: 0 10px;
+      }
+
+      .speaker {
+        text-align: left;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .footer-left, .footer-right {
+        text-align: center;
+        width: 100%;
+      }
+
+      .quick-links {
+        grid-template-columns: 1fr;
+      }
+    }
+    </style>
+</head>
+<body>
+
+<button id="backToTopBtn" title="Go to top">↑ Top</button>
+
+<div class="header-banner">
+    <img src="Steciblr_files/steciblrbanner.png" alt="Church banner or logo" />
+</div>
+
+<nav class="navbar">
+  <div class="menu-icon" onclick="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Church ▾</a>
+      <div class="dropdown-content">
+        <a href="church-leaders.html">Church Leaders</a>
+        <a href="church-history.html">Church History</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Parish ▾</a>
+      <div class="dropdown-content">
+        <a href="parish-vicar.html">Parish Vicars</a>
+        <a href="parish-history.html">Parish History</a>
+        <a href="lectionary.html">Lectionary</a>
+        <a href="parish-bulletin.html">Parish Bulletin</a>
+        <a href="executive-committee.html">Executive Committee</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Foundation ▾</a>
+      <div class="dropdown-content">
+        <a href="mission-vision.html">Mission & Vision</a>
+        <a href="our-belief.html">Our Faith</a>
+        <a href="bible-reading.html">365 Day Bible Reading</a>
+       </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Liturgy ▾</a>
+      <div class="dropdown-content">
+        <a href="liturgy-public.html">Order of Public worship</a>
+        <a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
+        <a href="mal-liturgy-holycommunion.html">തിരുവത്താഴ ശുശ്രൂഷാ ക്രമം</a>
+   	<a href="mal-liturgy-public.html">പരസ്യാരാധനാക്രമം</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Gallery ▾</a>
+      <div class="dropdown-content">
+        <a href="photos-gallery.html">Photo Gallery</a>
+        <a href="videos-gallery.html">Video Gallery</a>
+      </div>
+    </li>
+
+    <li><a href="contact-us.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="main-content">
+  <div class="mission-heading">
+    <h1><strong>പരിശുദ്ധ തിരുവത്താഴ ശുശ്രൂഷാ ക്രമം</strong></h1>
+  </div>
+
+  <div class="liturgy-grid">
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">പിതാവിനും പുത്രനും പരിശുദ്ധാത്മാവിനും സ്‌തുതി.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആദിമുതൽ എന്നന്നേക്കും തന്നെ ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ആകാശവും ഭൂമിയും തൻ്റെ മഹത്വം കൊണ്ട് നിറഞ്ഞിരിക്കുന്ന ബലവാനായ ദൈവം തമ്പുരാൻ പരിശുദ്ധൻ- പരിശുദ്ധൻ- പരിശുദ്ധൻ-ഉന്നതങ്ങളിൽ സ്‌തുതി.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">കർത്താവിൻ്റെ തിരുനാമത്തിൽ വന്നവനും വരുവാനിരിക്കുന്നവനും വാഴ്ത്തപ്പെട്ടവനാകുന്നു. ഉന്നതങ്ങളിൽ സ്തുതി.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">* ദൈവമേ, നീ പരിശുദ്ധനാകുന്നു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">* ബലവാനേ, നീ പരിശുദ്ധനാകുന്നു.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">* മരണമില്ലാത്തവനേ, നീ പരിശുദ്ധനാകുന്നു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">* ഞങ്ങൾക്കുവേണ്ടി ക്രൂശിക്കപ്പെട്ട മശിഹാ തമ്പുരാനേ, ഞങ്ങളുടെ മേൽ അനുഗ്രഹം ചൊരിയേണമേ.</div>
+
+    <div class="liturgy-instruction">*(ഇപ്രകാരം മൂന്നു പ്രാവശ്യം ചൊല്ലണം)</div>
+ <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ഞങ്ങളുടെ കർത്താവേ ഞങ്ങളുടെമേൽ അനുഗ്രഹം ചൊരിയേണമേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ഞങ്ങളുടെ കർത്താവേ കൃപതോന്നി ഞങ്ങളുടെമേൽ അനുഗ്രഹം ചൊരിയേണമേ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ഞങ്ങളുടെ കർത്താവേ ഞങ്ങളുടെ പ്രാർത്ഥനയും അപേക്ഷയും കൈക്കൊണ്ട് ഞങ്ങളുടെമേൽ അനുഗ്രഹം ചൊരിയേണമേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ദൈവമേ നിനക്കു സ്തുതി.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">സൃഷ്ടാവേ, നിനക്ക് സ്തുതി.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">പാപികളോട് കൃപ ചെയ്യുന്ന മ്ശിഹാ രാജാവേ നിനക്ക് സ്തുതി.</div>
+
+    <div class="liturgy-instruction">കർത്താവിൻ്റെ പ്രാർത്ഥന (മത്തായി 6:9-13)</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">സ്വർഗ്ഗസ്ഥനായ ഞങ്ങളുടെ പിതാവേ</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">നിൻ്റെ നാമം വിശുദ്ധീകരിക്കപ്പെടേണമേ; നിൻ്റെ രാജ്യം വരേണമേ; നിൻ്റെ ഇഷ്ടം ഭൂമിയിലും സ്വർഗ്ഗത്തിലെപ്പോലെ ആകേണമേ; ഞങ്ങൾക്ക് ആവശ്യമുള്ള ആഹാരം ഇന്നു തരേണമേ; ഞങ്ങളുടെ കടക്കാരോട് ഞങ്ങൾ ക്ഷമിച്ചിരിക്കുന്നതുപോലെ ഞങ്ങളുടെ കടങ്ങളെ ഞങ്ങളോടും ക്ഷമിക്കേണമേ; ഞങ്ങളെ പരീക്ഷയിൽ കടത്താതെ ദുഷ്ടങ്കൽനിന്നു ഞങ്ങളെ വിടുവിക്കേണമേ; രാജ്യവും ശക്തിയും മഹത്വവും എന്നേക്കും നിനക്കുള്ളതല്ലോ. ആമേൻ.</div>
+
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">സ്വർഗ്ഗസ്ഥനായ പിതാവിൻറ ഏകപുത്രനും വചനവുമായി ഞങ്ങളുടെ രാജാവായ കർത്താവേ, നിന്നെ ഞങ്ങൾ പുകഴ്ത്തുന്നു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ഞങ്ങളുടെ മശിഹാതമ്പുരാനേ -ഞങ്ങൾ എല്ലാവരുടേയും മേൽ അനുഗ്രഹം ചൊരിയേണമേ. ആമേൻ.</div>
+
+    <div class="speaker deacon">ശുശ്രൂ:</div>
+    <div class="liturgy-text">“ഞങ്ങൾ നിങ്ങളോടറിയിച്ചതിനു വിപരീതമായി, ഞങ്ങളാകട്ടെ, സ്വർഗ്ഗത്തിൽ നിന്ന് ഒരു ദൂതനാകട്ടെ നിങ്ങളോടു സുവിശേഷം അറിയിച്ചാൽ അവൻ ശപിക്കപ്പെട്ടവൻ” എന്നു വിശുദ്ധ പൗലോസപ്പോസ്‌ലൻ പറയുന്നു. കണ്ടാലും എല്ലാ ഭാഗങ്ങളിൽ നിന്നും പലതരമായ ഉപദേശങ്ങൾ പുറപ്പെടുന്നു. എന്നാൽ ദൈവത്തിൻറ ഉപദേശത്തിൽ തുടങ്ങി അവസാനിപ്പിക്കുന്നവൻ ഭാഗ്യവാനാകുന്നു.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ദൈവമായ കർത്താവേ, ഈ സമയത്ത് തിരുസന്നിധിയിൽ കഴിക്കുന്ന ഞങ്ങളുടെ പ്രാർത്ഥനകളും അപേക്ഷകളും കൈക്കൊള്ളേണമേ. ഞങ്ങളുടെ കർത്താവും ദൈവവുമേ, നിൻ്റെയും നിൻെറ അപ്പോസ്തലന്മാരുടേയും നിൻ്റെ സഭയുടെ ശില്പ്പിയും പണിക്കാരനുമായ പൗലോസ് അപ്പോസ്തലൻ്റെയും കൽപ്പനകളെ വെടിപ്പോടും വിശുദ്ധിയോടും കൂടെ ആചരിപ്പാൻ എന്നേക്കും ഞങ്ങളെ യോഗ്യതയുള്ളവരാക്കേണമേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker deacon">ശുശ്രൂ:</div>
+    <div class="liturgy-text">വി... അപ്പോസ്തലൻ എഴുതിയ ലേഖനം ___ നിന്ന് ___ അദ്ധ്യായത്തിൽ ___</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">കർത്താവേ, നിൻ്റെ വചനങ്ങൾ തിരിച്ചറിയുന്നതിന് ഞങ്ങൾക്ക് കൃപ നൽകേണമേ.</div>
+
+    <div class="liturgy-instruction">(ഇവിടെ നിശ്ചയിക്കപ്പെട്ട ലേഖനം വായിക്കുന്നു.)</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ദൈവമായ കർത്താവേ, ദൈവീകമായ നിൻ്റെ വചനങ്ങളുടെ അറിവ് ഞങ്ങൾക്കു സൗജന്യമായി നൽകേണമേ. നിൻെറ വിശുദ്ധ സുവിശേഷത്തിൻ്റെ സാരാംശവും നിൻ ദിവ്യ ജ്‌ഞാനങ്ങളുടെ ഐശ്യര്യവും വിശുദ്ധാത്മാവിൻറ നൽവരവും കൊണ്ട് ഞങ്ങളെ നിറയ്ക്കേണമേ. ഞങ്ങൾ സന്തോഷപൂർവ്വം തിരുകല്പനകൾ ആചരിക്കുകയും തിരുഹിതം പരിപൂർണ്ണമായി നിവർത്തിക്കയും ചെയ്‌വാൻ ഞങ്ങൾക്കു കൃപ നൽകേണമേ. നിന്നിൽനിന്നുള്ള അനുഗ്രഹങ്ങൾക്കും കരുണകൾക്കും ഞങ്ങൾ എല്ലായ്പ്‌പോഴും യോഗ്യതയുള്ളവരായിത്തീരുകയും ചെയ്യേണമേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">നമുക്കെല്ലാവർക്കും സമാധാനമുണ്ടായിരിക്കട്ടേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ദൈവമായ കർത്താവ് നമ്മെ എല്ലാവരേയും യോഗ്യതയുള്ളവരാക്കട്ടെ</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ലോകത്തിന് ജീവനും രക്ഷയും പ്രസംഗിക്കുന്ന വിശുദ്ധ (മത്തായി, മർക്കോസ്,..........) എഴുതിയ സുവിശേഷം ___ അദ്ധ്യായത്തിൽ നിന്ന്.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">കർത്താവേ, നിൻ്റെ വചനങ്ങൾ അനുസരിച്ച് ജീവിപ്പാൻ കൃപ അരുളേണമേ.</div>
+
+    <div class="liturgy-instruction">(ഇവിടെ പട്ടക്കാരൻ സുവിശേഷത്തിൽ നിന്ന് നിശ്ചയിക്കപ്പെട്ട വേദഭാഗം വായിക്കുന്നു.)</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">നമുക്കെല്ലാവർക്കും സമാധാനമുണ്ടായിരിക്കട്ടേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker all">ഗീതം:</div>
+    <div class="liturgy-text">
+      ദൈവവചനം ജീവനും ശക്‌തിയും ആകയാൽ<br>
+      ആത്മരക്ഷയുണ്ടേവനും ഉള്ളത്തിൽ കൈകൊണ്ടാൽ<br>
+      ആത്മമരണം മാറും നീതിയിലവൻ വാഴും<br>
+      കേൾക്കുക നാം കാക്കുക നാം ജീവൻറ വാക്യങ്ങൾ
+    </div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ദൈവമായ കർത്താവേ, സ്തുതിയും സ്തോത്രവും തേജസും പുകഴ്ച്ചയും മാഞ്ഞുപോകാത്ത നല്ല മഹിമയും നിരന്തരം നിനക്കു കരേറ്റുവാൻ ഞങ്ങൾ യോഗ്യതയുള്ളവരായിത്തീരേണമേ. കടങ്ങളെ പരിഹരിക്കുന്നവനും, പാപങ്ങളെ ക്ഷമിക്കുന്നവനും, അശുദ്ധരെ ശുദ്ധീകരിക്കുന്നവനും, അനുതാപികളെ കൈക്കൊള്ളുന്നവനും, പാപികളുടെ തിരിച്ചുവരവിൽ ഇഷ്ടമുള്ളവനും കുറ്റക്കാരുടെ രക്ഷയ്ക്കായി വാഞ്ചിച്ചിരിക്കുന്നവനും, വിളിപ്പീൻ ഞാൻ ഉത്തരം പറയുമെന്നും, മുട്ടുവീൻ ഞാൻ തുറന്ന് എൻ്റെ കൈ നിങ്ങൾക്കു നീട്ടിത്തന്ന്, നിങ്ങളുടെ പാപങ്ങളും അകൃത്യങ്ങളും ക്ഷമിക്കുമെന്നും അരുളി ചെയ്തവനുമായ തനിക്ക് ദൈവീകമായ ഈ സ്തോത്ര ശുശ്രൂഷാനേരത്തും, നമ്മുടെ ആയുസിൻ്റെ എല്ലാ ദിവസങ്ങളിലും സ്തുതിയും ബഹുമാനവും വന്ദനവും എന്നേക്കും യോഗ്യമായിരിക്കുന്നു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">സർവ്വശക്തിയുള്ള പിതാവായ ദൈവമേ, നിൻെറ മുമ്പാകെയും, നിൻെറ സ്നേഹം മൂലം ലോകത്തിനു വെളിപ്പെട്ട നിൻെറ വാത്സല്യ പുത്രൻ മുമ്പാകെയും തൻ്റെ ആവസിപ്പാൽ ലോകത്തെ പരിപാവനം ആക്കിത്തീർക്കുന്ന നിൻെറപരിശുദ്ധാത്മാവിൻെറ മുമ്പാകെയും ഞങ്ങളുടെ സത്യ അനുതാപവും സ്‌തുതി സ്തോത്രങ്ങളും ഞങ്ങൾ സമർപ്പിച്ചുകൊള്ളുന്നു. കർത്താവേ, വിശുദ്ധിയോടെ നിൻെറ വിശുദ്ധ മേശയിൽ സംബിപ്പാൻ ഞങ്ങളെ നീ യോഗ്യതയുള്ളവരാക്കേണമേ. ഞങ്ങളുടെ ആയുഷ്ക്കാലമൊക്കെയും നിരപരാധവും നിർമ്മലവുമായ ജീവിതത്തിൽ ഞങ്ങളെ കാത്തുകൊള്ളേണമേ. കർത്താവേ ഞങ്ങളുടെ വൃദ്ധൻമാരെ താങ്ങിക്കൊള്ളേണമേ. ഞങ്ങളുടെ യുവജനങ്ങളെ പരിപക്വതയുള്ളവരാക്കേണമേ. ഞങ്ങളുടെ പൈതങ്ങളെ നിൻെറ കൃപയിൽ വളർത്തേണമേ. ഞങ്ങളുടെ സ്ത്രീകളെ സൗമ്യതയും സാവധാനതയുമാകുന്ന അക്ഷയഭൂഷണത്താൽ അലങ്കരിക്കേണമേ. ഞങ്ങളുടെ രോഗികളെ നീ സൗഖ്യമാക്കേണമേ. അനാഥരേയും വിധവമാരേയും നീ സംരക്ഷിക്കേണമേ. നിൻെറ സമാധാനം ഞങ്ങളുടെ ഇടയിൽ വാഴുമാറാകേണമേ. ഞങ്ങൾ നിനക്കും നിൻ്റെ പിതാവിനും പരിശുദ്ധാത്മാവിനും സ്‌തുതിയും സ്തോത്രവും കരേററുന്നു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="liturgy-instruction">നിഖ്യാ വിശ്വാസപ്രമാണം</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">പിതാവായി-സർവ്വശക്തനായി</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആകാശത്തിൻറെയും ഭൂമിയുടേയും കാണപ്പെടുന്നവയും കാണപ്പെടാത്തവയുമായ സകലത്തിൻറെയും സൃഷ്‌ടാവായ സത്യ ഏക ദൈവത്തിൽ ഞങ്ങൾ വിശ്വസിക്കുന്നു.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ദൈവത്തിൻ്റെ ഏകപുത്രനും...</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">സർവ്വലോകങ്ങൾക്കും മുമ്പേ പിതാവിൽനിന്ന് ജനിച്ചവനും- പ്രകാശത്തിൽ നിന്നുള്ള പ്രകാശവും-സത്യ ദൈവത്തിൽ നിന്നുള്ള സത്യ ദൈവവും- ജനിച്ചവനും, സൃഷ്ടിയല്ലാത്തവനും, തത്വത്തിൽ പിതാവിനോട് ഏകത്വമുള്ളവനും-സകല സൃഷ്ടിക്കും മുഖാന്തരമായവനും-മനുഷ്യരായ ഞങ്ങൾക്കും ഞങ്ങളുടെ രക്ഷയ്ക്കും വേണ്ടി-സ്വർഗ്ഗത്തിൽ നിന്നിറങ്ങി, വിശുദ്ധാത്മാവിനാൽ കന്യകമറിയാമിൽ നിന്ന് ശരീരം ധരിച്ച് മനുഷ്യനായി-പൊന്തിയോസ് പീലാത്തോസിൻറ നാളുകളിൽ, ഞങ്ങൾക്കുവേണ്ടി ക്രൂശിക്കപ്പെട്ട് കഷ്ടതയനുഭവിച്ച് മരിച്ച് അടക്കപ്പെട്ട് തിരുഹിതപ്രകാരം മൂന്നാം ദിവസം ഉയിർത്തെഴുന്നേററ്-സ്വർഗ്ഗത്തിലേക്ക് കരേറി തൻറെ പിതാവിൻറ വലത്തുഭാഗത്തിരുന്നവനും അവസാനമില്ലാത്ത രാജ്യത്വമുള്ളവനും- ജീവിച്ചിരിക്കുന്നവരേയും മരിച്ചവരേയും വിധിപ്പാൻ,  തൻറ മഹാപ്രഭാവത്തേടെ ഇനിയും വരുവാനിരിക്കുന്നവനുമായ, യേശു മശിഹാ ആയ ഏക കർത്താവിലും ഞങ്ങൾ വിശ്വസിക്കുന്നു.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">സകലത്തേയും ജീവിപ്പിക്കുന്ന കർത്താവും.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">പിതാവിൽ നിന്നു പുറപ്പെട്ട്-പിതാവിനോടും പുത്രനോടും കൂടെ വന്ദിക്കപ്പെട്ട് സ്തുതിക്കപ്പെടുന്നവനും-പ്രവാചകന്മാരും അപ്പോസ്തലന്മാരും മുഖാന്തരം സംസാരിച്ചവനുമായ-ജീവനും വിശുദ്ധിയുമുള്ള ഏക ആത്മാവിലും- സാർവത്രികവും അപ്പൊസ്തലികവുമായ ഏക വിശുദ്ധ സഭയിലും ഞങ്ങൾ വിശ്വസിക്കുന്നു.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">പാപമോചനത്തിനുള്ള സ്‌നാനം..</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ഒന്നുമാത്രമെന്ന് ഞങ്ങൾ ഏറ്റുപറഞ്ഞ്, മരിച്ചവരുടെ ഉയിർത്തെഴുന്നേൽപ്പിനും വരുവാനിരിക്കുന്ന ലോകത്തിലെ പുതിയ ജീവനും ഞങ്ങൾ നോക്കിപ്പാർക്കുകയും ചെയ്യുന്നു. ആമേൻ</div>
+
+    <div class="liturgy-instruction">സമാധാനത്തിൻ്റെ പ്രാർത്ഥന</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">സകലത്തിൻ്റെയും ദൈവവും കർത്താവുമായുള്ളോവേ, അയോഗ്യരായിരിക്കുന്ന ഞങ്ങൾ, വഞ്ചന ഇല്ലാത്തവരും സ്നേഹബന്ധത്തിൽ ഐക്യപ്പെട്ടവരുമായി, നിർമ്മല ഹൃദയത്തോടും ഉത്തമ മനസാക്ഷിയോടും കൂടെ ഏകാത്മാവിൽ, സമാധാനത്തിൻ്റെയും സ്നേഹത്തിൻ്റെയും ബന്‌ധത്തിൽ അന്യോന്യം സൽക്കരിപ്പാൻ, നിൻ്റെ പരിശുദ്ധാത്മാവിൻ്റ നൽവരങ്ങൾ ഞങ്ങളുടെ മേൽ അയച്ചുതരേണമേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">നമുക്കെല്ലാവർക്കും സമാധാനമുണ്ടായിരിക്കട്ടേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker deacon">ശുശ്രൂ:</div>
+    <div class="liturgy-text">നമ്മുടെ ദൈവമായ കർത്താവിൻ്റെ സ്നേഹത്താൽ നാം എല്ലാവരും തമ്മിൽ തമ്മിൽ സമാധാനം ആചരിക്കേണം.</div>
+
+    <div class="liturgy-instruction">(ഇവിടെ സമാധാനത്തിൻ്റെ ലക്ഷ്യമായ ഹസ്തദാനം കൊടുത്തുതീരുവോളം ജനം ആവർത്തിച്ച് ചൊല്ലേണ്ടത്)</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">മശിഹാ തമ്പുരാൻറ സ്നേഹവും സമാധാനവും സർവ്വദാ ഞങ്ങളുടെ ഇടയിൽ വസിക്കുമാറാകേണമേ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">കാരുണ്യവാനായ കർത്താവേ, മഹോന്നതങ്ങളിൽ വസിക്കുകയും താഴ്മയുള്ളവരെ കടാക്ഷിക്കുകയും ചെയ്യുന്നവൻ നീ മാത്രമാകയാൽ നിൻ്റെ സന്നിധിയിൽ തലകളെ വണക്കിയിരിക്കുന്ന ഞങ്ങൾക്ക് അനുഗ്രഹങ്ങൾ അയച്ച്, നിൻ്റെ ഏക പുത്രൻ കൃപയാൽ ഞങ്ങളെ അനുഗ്രഹിക്കേണമേ. അവനോടും നിൻ്റെ പരിശുദ്ധാത്മാവിനോടും കൂടെ സ്തുതിയും ബഹുമാനവും ആധിപത്യവും എന്നേക്കും നിനക്ക് യോഗ്യമായിരിക്കുന്നു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">പിതാവായ ദൈവത്തിൻറ സ്നേഹവും ഏക പുത്രൻറ കൃപയും, പരിശുദ്ധാത്മാവിൻ്റ സംസർഗ്ഗവും സഹവാസവും നമ്മൾ എല്ലാവരോടും കൂടെ എന്നേക്കും ഉണ്ടായിരിക്കട്ടേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">പിതാവായ ദൈവത്തിൻറ വലതുഭാഗത്ത്, മശിഹാ തമ്പുരാൻ എഴുന്നള്ളിയിരിക്കുന്ന ഇടമായ ഉയരത്തിൽ നമ്മുടെ എല്ലാവരുടേയും ബോധങ്ങളും വിചാരങ്ങളും, ഹൃദയങ്ങളും ആയിരിക്കേണം.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ദൈവമായ കർത്താവിങ്കൽ അവയാകുന്നു.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">സർവ്വസൃഷ്ട്‌ടിയുടേയും നിർമ്മാതാവിനെ സ്തോത്രം ചെയ്യുന്നതും, വന്ദിക്കുന്നതും, സ്തുതിക്കുന്നതും...</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">സത്യമായിട്ടു യോഗ്യവും ന്യായവുമാകുന്നു. ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">പാപമില്ലാത്തവൻ പാപികളായ നമുക്കുവേണ്ടി മനസോടെ മരണം സഹിപ്പാൻ ഒരുങ്ങിയപ്പോൾ അവൻ അപ്പമെടുത്ത് സ്തോത്രം ചൊല്ലി നുറുക്കി, ശിഷ്യന്‌മാർക്കു കൊടുത്തു; വാങ്ങി ഭക്ഷിപ്പിൻ ഇതു നിങ്ങൾക്കു വേണ്ടി നൽകുന്ന എൻ്റെ ശരീരം; എൻ്റെ ഓർമ്മയ്ക്കായി ഇതു ചെയ്‌വീൻ എന്ന് അരുളിചെയ്തു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">അവ്വണ്ണം തന്നെ അത്താഴം കഴിഞ്ഞശേഷം അവൻ പാനപാത്രവും കൊടുത്തു. "ഈ പാനപാത്രം നിങ്ങൾക്കുവേണ്ടി ചൊരിയുന്ന എൻ്റെ രക്തത്തിലെ പുതിയനിയമം ആകുന്നു. "ഇതു കുടിക്കുമ്പോഴൊക്കെയും എൻറ ഓർമ്മയ്ക്കായി ചെയ്‌വീൻ എന്ന് പറഞ്ഞു”. എൻ്റെ പിതാവിൻ്റെ രാജ്യത്തിൽ നിങ്ങളോടുകൂടെ പുതുതായി കുടിക്കും നാൾ വരെ ഞാൻ മുന്തിരിവള്ളിയുടെ അനുഭവത്തിൽ നിന്ന് ഇനി കുടിക്കുകയില്ല എന്ന് അരുളിചെയ്തു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">നാം അനുഗ്രഹിക്കുന്ന അനുഗ്രഹപാത്രം ക്രിസ്‌തുവിൻറ രക്തത്തിൻ്റെ കൂട്ടായ്മയല്ലയോ? നാം നുറുക്കുന്ന അപ്പം ക്രിസ്തുവിൻ്റെ ശരീരത്തിൻറ കൂട്ടായ്മയല്ലയോ? അപ്പം ഒന്ന് ആകകൊണ്ട് പലരായ നാം ഒരു ശരീരമാകുന്നു. നാം എല്ലാവരും ആ ഒരേ അപ്പത്തിൻ്റെ അംശികൾ ആകുന്നുവല്ലോ. (1 കൊരി. 10:16-17) അങ്ങനെ നിങ്ങൾ ഈ അപ്പം തിന്നുകയും പാനപാത്രം കുടിക്കുകയും ചെയ്യുമ്പോൾ ഒക്കെയും കർത്താവു വരുവോളം അവൻറ മരണത്തെ പ്രസ്താവിക്കുന്നു. (1 കൊരി. 11:26)</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">കർത്താവേ, നിൻ്റെ മരണത്തെ ഞങ്ങൾ ഓർമ്മിക്കുകയും നിൻ്റെ ഉയിർത്തെഴുന്നേൽപ്പിൽ ഞങ്ങൾ ആനന്ദിക്കുകയും രണ്ടാമത്തെ നിൻെറ വരവിനായി ഞങ്ങൾ നോക്കിപ്പാർക്കുകയും ചെയ്യുന്നു.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">കർത്താവേ, നിൻ്റെ മരണത്തേയും കബറടക്കത്തേയും മൂന്നാം ദിവസത്തെ ഉയിർത്തെഴുന്നേല്പ്പിനേയും സ്വർഗ്ഗാരോഹണത്തേയും, പിതാവായ ദൈവത്തിൻ്റെ വലതുഭാഗത്തുള്ള ഇരിപ്പിനേയും, ഭൂലോകത്തെ നീതിയോടെ വിധിച്ച് അവനവൻറ പ്രവൃത്തികൾക്ക് തക്കവണ്ണം എല്ലാവർക്കും പ്രതിഫലം നല്‌കുന്നതായ രണ്ടാമത്തെ നിൻ്റെ വരവിനേയും ഞങ്ങൾ ഓർത്തുകൊണ്ട് ഈ അപ്പത്തേയും ഈ പാനപാത്രത്തേയും ഞങ്ങൾ വേർതിരിച്ചുകൊള്ളുന്നു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ദൈവമായ കർത്താവേ, നിന്നെ ഞങ്ങൾ സ്‌തുതിക്കയും വാഴ്ത്തുകയും വന്ദിക്കയും ചെയ്യുന്നു.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">കർത്താവേ, ബലഹീന ദാസരായ ഞങ്ങൾ നിൻ്റെ കൃപയെ നന്ദിപൂർവ്വം സ്വീകരിച്ച് സകലത്തിനു വേണ്ടിയും സകലത്തെക്കുറിച്ചും നിൻ്റെ ആർദ്രതയെ അഭിനന്ദിച്ചുകൊള്ളുന്നു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ദൈവമായ കർത്താവേ, നിന്നെ ഞങ്ങൾ സ്‌തുതിക്കയും വാഴ്ത്തുകയും വന്ദിക്കയും ചെയ്യുന്നു.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">സർവ്വശക്തനായ കർത്താവേ, ഈ ഗോതമ്പ് ഒരു കാലത്ത് ചിതറപ്പെട്ടിരുന്നു എങ്കിലും ഇപ്പോൾ ഒരപ്പമായിത്തീർന്നതുപോലെ നിൻ്റെ സഭയെ ഭൂമിയുടെ അറുതികളിൽനിന്ന് നിൻ്റെ രാജ്യത്തിൽ നീ കൂട്ടിച്ചേർക്കുമല്ലോ. ഞങ്ങളുടെ പിതാവേ, ഞങ്ങൾക്കുവേണ്ടി കാൽവറിയിൽ ചൊരിയപ്പെട്ട ക്രിസ്തുവിൻറ വിലയേറിയ രക്തത്തിനായും നുറുക്കപ്പെട്ട അവൻറ വിലയേറിയ ശരീരത്തിനായും നിനക്കു ഞങ്ങൾ സ്തോത്രം ചെയ്യുന്നു. അവയുടെ പ്രതിരൂപമായി ഇവയെ അവൻ ഞങ്ങളോട് ആജ്ഞാപിച്ചപ്രകാരം അവൻെറ മരണത്തെ പ്രസ്താവിക്കുന്നതിനായി ഞങ്ങൾ ആചരിക്കുന്നു. അവൻ മുഖാന്തരം എന്നന്നേക്കും നിനക്ക് ഞങ്ങൾ മഹത്വം സമർപ്പിച്ചുകൊള്ളുന്നു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="liturgy-instruction">പരിശുദ്ധാത്മാവിനുവേണ്ടിയുള്ള അപേക്ഷ</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">പിതാവായ ദൈവമേ, ഞങ്ങളോടു കരുണ ചെയ്യേണമേ. സിംഹാസന രാജ്യത്വത്തിലും നിത്യമായ തത്വത്തിലും നിനക്കും നിൻ്റ പുത്രനും തുല്യനായിരിക്കുന്ന കർത്താവും, പഴയതും പുതിയതുമായ നിയമത്തിൽ സംസാരിച്ചവനും യോർദ്ദാൻ നദിയിൽ വച്ച് ഞങ്ങളുടെ കർത്താവായ യേശുമശിഹായുടെമേൽ പ്രാവുപോലെയും മാളികമുറിയിൽ വച്ച് അപ്പൊസ്തലന്മാരുടെമേൽ അഗ്നിനാവുപോലെയും ഇറങ്ങി വന്നവനുമായ നിൻ്റെ പരിശുദ്ധാത്മാവിനാൽ ഞങ്ങളെ നിറയ്ക്കേണമേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="liturgy-instruction">പ്രത്യേകമായ അപേക്ഷ</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">കർത്താവേ, ഭൂലോകമെങ്ങുമുള്ള നിൻ്റ വിശുദ്ധ സഭയ്ക്കുവേണ്ടിയും വിശേഷാൽ അതിൻ്റെ ഒരു ഭാഗമായ സെൻ്റ് തോമസ് ഇവാൻജലിക്കൽ ചർച്ച് ഓഫ് ഇൻഡ്യയ്ക്കുവേണ്ടിയും ഞങ്ങൾ പ്രാർത്ഥിക്കുന്നു. നിൻ്റെ പരിശുദ്ധാത്മാവിൻറ ദാനങ്ങൾ അതിനു ധാരാളമായി നൽകേണമേ. സത്യത്തിൻ്റ വചനത്തെ ശരിയായി വിഭാഗിച്ചുകൊടുക്കുന്ന നിൻ്റെ സകല മക്കളേയും ഞങ്ങളുടെ മേലദ്ധ്യക്ഷന്മാരേയും, അദ്ധ്യക്ഷന്മാരേയും, ശെമ്മാശന്മാരേയും, സുവിശേഷകൻമാരേയും, സേവിനിമാരേയും, സഭാംഗങ്ങളാകുന്ന സകല വിശ്വാസികളെയും ഓർത്തുകൊള്ളണമേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">മഹാ ദൈവവും നമ്മുടെ രക്ഷിതാവുമായ യേശു മശിഹായുടെ അനുഗഹങ്ങൾ നാം എല്ലാവരോടും കൂടെ എന്നേക്കും ഉണ്ടായിരിക്കട്ടെ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text">കരുണയുള്ളവനേ, നിൻ്റെ വാതിലിൽ ഞങ്ങളുടെ അപേക്ഷകളുടെ ശബ്ദം മുട്ടുന്നു, നിന്നെ വന്ദിക്കുന്നവരിൽനിന്ന് അവരുടെ ആവശ്യങ്ങളുടെ യാചനയെ നീ മുടക്കരുതേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">പ്രാർത്ഥനകൾ കൈക്കൊള്ളുന്നവനും, യാചനകൾ നല്‌കുന്നതുമായ ദൈവം തമ്പുരാനേ, ഞങ്ങൾ നിന്നോടു യാചിച്ച് പരിശുദ്ധനായ നിൻ്റെ ഏകപുത്രൻ ഞങ്ങളെ പഠിപ്പിച്ച ഈ കർത്തൃപ്രാർത്ഥന തകർന്ന ഹൃദയത്തേടെ തിരുമുമ്പാകെ ഞങ്ങൾ പ്രാർത്ഥിച്ചു ചൊല്ലുന്നു.<br>സ്ഥനായ ഞങ്ങളുടെ പിതാവേ /div>
+
+     <div class="speaker con">ജ:</div>
+    <div class="liturgy-text">നിൻ്റെ നാമം വിശുദ്ധീകരിക്കപ്പെടേണമേ; നിൻ്റെ രാജ്യം വരേണമേ; നിൻ്റെ ഇഷ്ട‌ം സ്വർഗ്ഗത്തിലെപ്പോലെ ഭൂമിയിലും ആകേണമേ; ഞങ്ങൾക്ക് ആവശ്യമുള്ള ആഹാരം ഇന്നു തരേണമേ; ഞങ്ങളുടെ കടക്കാരോട് ഞങ്ങൾ ക്ഷമിച്ചിരിക്കുന്നതുപോലെ ഞങ്ങളുടെ കടങ്ങളെ ഞങ്ങളോടും ക്ഷമിക്കേണമേ; ഞങ്ങളെ പരീക്ഷയിൽ കടത്താതെ ദുഷ്ടങ്കൽനിന്നു ഞങ്ങളെ വിടുവിക്കേണമേ; രാജ്യവും ശക്തിയും മഹത്വവും എന്നേക്കും നിനക്കുള്ളതല്ലോ. ആമേൻ. (മത്താ. 6:9-13)</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ദൈവമായ കർത്താവേ, സഹിക്കാവതല്ലാത്ത പരീക്ഷയിലേക്ക് ഞങ്ങളെ പ്രവേശിപ്പിക്കാതെ പരീക്ഷയ്ക്കു നീക്കുപോക്കുണ്ടാകികൊണ്ട്, ദുഷ്ടനിൽനിന്ന് ഞങ്ങളെ രക്ഷിച്ചുകൊള്ളേണമേ. നിനക്കും നിൻ്റെ ഏക പുത്രനും, പരിശുദ്ധാത്മാവിനും സ്തുതിയും സ്തോത്രവും ഞങ്ങൾ കരേററും.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">നമുക്കെല്ലാവർക്കും സമാധാനമുണ്ടായിരിക്കട്ടേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">വിശുദ്ധിയുള്ളതും മഹത്വമുള്ളതും സൃഷ്ടിയല്ലാത്തതും സ്വയം ഭൂവായതും, ആദ്യന്തമില്ലാത്തതും വന്ദ്യമായിരിക്കുന്നതും തത്വത്തിൽ ഏകമായിരിക്കുന്നതുമായ ത്രിത്വത്തിൻ്റെ കൃപയും അനുഗ്രഹങ്ങളും നാം എല്ലാവരോടും കൂടെ എന്നേക്കും ഉണ്ടായിരിക്കട്ടെ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ഈ വിശുദ്ധ ദ്രവ്യങ്ങൾ വിശുദ്ധിയും വെടിപ്പും ഉള്ളവർക്കു നൽകപ്പെടുന്നു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">പിതാവിനും പുത്രനും പരിശുദ്ധാത്മാവിനും സ്‌തുതി.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആദിമുതൽ എന്നന്നേക്കും അവർ ഒന്നുതന്നെയാകുന്നു ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ഏകപിതാവു പരിശുദ്ധനാകുന്നു; ഏകപുത്രൻ പരിശുദ്ധനാകുന്നു; ഏകാത്മാവും പരിശുദ്ധനാകുന്നു,</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">തൻ്റെ കരുണയാൽ ലോകത്തെ നിർമ്മിച്ച പരിശുദ്ധനായ ഏകപിതാവു നമ്മോടുകൂടെ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">തൻ്റെ തിരുമേനിയുടെ വിലയേറിയ കഷ്‌ടാനുഭവങ്ങളാൽ ലോകത്തെ വീണ്ടെടുത്ത പരിശുദ്ധനായ ഏക പുത്രൻ നമ്മോടുകൂടെ</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ഉണ്ടായതും ഉണ്ടാകുന്നതുമായ സകലത്തേയും നിവൃത്തിവരുത്തുന്ന ജീവനും വിശുദ്ധിയുമുള്ള ഏകാത്മാവും നമ്മോടുകൂടെ</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.; കർത്താവിൻറ തിരുനാമം എന്നന്നേക്കും വാഴ്ത്തപ്പെട്ടതായിരിക്കട്ടെ</div>
+
+    <div class="liturgy-instruction">(തിരുവത്താഴത്തിൽ സംബന്ധിപ്പാൻ മുട്ടുകുത്തേണ്ട സമയം)</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ഞങ്ങളുടെ രക്ഷയ്ക്കായി വന്നവനും ഞങ്ങളുടെ ഉയിർത്തെഴുന്നേൽപ്പിനും, ഞങ്ങളുടെ വർഗ്ഗത്തിൻറ എന്നന്നേക്കുമുള്ള പുതുക്കത്തിനുമായി  വരുവാനിരിക്കുന്നവനുമായ ദൈവപുത്രാ -പാപപരിഹാരം ചെയ്തിരിക്കുന്നതായ നിൻ്റെ ക്രൂശിലെ യാഗത്താൽ ഉണ്ടായിരിക്കുന്ന പാപമോചനത്തിനായി നിനക്കു ഞങ്ങൾ സ്തോത്രം ചെയ്യുന്നു. ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">കടങ്ങളുടെ പരിഹാരത്തിനും പാപങ്ങളുടെ മോചനത്തിനുമായി ഗോൽഗോഥായിൽ നമുക്കുവേണ്ടി തന്നത്താൻ യാഗമായി അർപ്പിച്ച നമ്മുടെ കർത്താവായ യേശു മശിഹായെ ഓർമ്മിക്കുന്നതിനായി ഇവ നിങ്ങൾക്ക് നൽകപ്പെടുന്നു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="liturgy-instruction">(ഇവിടെ പട്ടക്കാരും ജനങ്ങളും തിരുവത്താഴം കൈക്കൊള്ളുന്നു.)</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ഞങ്ങളുടെ കർത്താവും ഞങ്ങളുടെ ദൈവവുമേ, എന്നേക്കും നിനക്കു സ്‌തുതി, നിനക്കു സ്തുതി, നിനക്കു സ്തുതി. കർത്താവേ, ഈ വിശുദ്ധ കൂട്ടായ്മയിൽ പങ്കുകൊള്ളുന്നതിന് ഞങ്ങളെയും നീ യോഗ്യതയുള്ളവരാക്കിയ നിൻ്റെ കരുണയുടെ ബഹുത്വം നിമിത്തം നിനക്കു ഞങ്ങൾ സ്തോത്രം ചെയ്യുന്നു. ഇത് ഞങ്ങളുടെ ജീവിതത്തിൽ ഉണർച്ചക്കും ശക്തിക്കും പ്രയോജന പ്രദമാക്കി തീർക്കണമെന്ന് നിന്നോടു ഞങ്ങൾ അപേക്ഷിക്കുന്നു.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">മനുഷ്യവർഗ്ഗത്തിൻ്റെ രക്ഷയ്ക്കായിട്ട് സ്വർഗ്ഗം ചായിച്ച് ഇറങ്ങിവന്ന വലിയവനും അത്ഭുതവാനുമായ ദൈവപുത്രാ ഞങ്ങൾ നിന്നെയും നിൻ്റെ പിതാവായ ദൈവത്തേയും നിൻ്റെ പരിശുദ്ധാത്മാവിനേയും ഇടവിടാതെ സ്തുതിപ്പാൻ തക്കവണ്ണം ഞങ്ങളുടെ മേൽ അനുഗ്രഹം ചെരിയേണമേ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">ആമേൻ.</div>
+
+    <div class="liturgy-instruction">ഗീതം</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">ഞങ്ങൾക്കുള്ള കർത്താവേ - ഞങ്ങളെയെല്ലാം വാഴ്ത്തണമേ<br>ഞങ്ങൾക്കുള്ള സൃഷ്ട‌ാവേ - ഞങ്ങളെയെല്ലാം കാക്കണമേ</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">സകലത്തിനും ഉടയവനാം - തുണയരുളീടും കർത്താവേ<br>രക്ഷയ്ക്കുള്ള വഴിയെ നീ - ഞങ്ങൾക്കെന്നും കാണിക്ക.</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">അലിവുനിറഞ്ഞ ബലവാനേ - അനുഗ്രഹമെങ്ങൾക്കേകണമേ</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">നല്ല പ്രയോജനമുള്ളവരായ് നടത്തീടണമെ അടിയാരെ -</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">കർത്തവേ കരുണാകരനേ ഞങ്ങളിൽ നീ കൃപ ചെയ്യണമേ</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">കുറവുവരാത്തൊരഭിവൃദ്ധി ഞങ്ങൾക്കെപ്പൊഴുമേകണമേ</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">സൗഖ്യസമാധാനാഹാരം ഞങ്ങൾക്കരുളുക കർത്താവേ</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">കാലോചിതമാം ഭാഗ്യത്താൽ തുഷ്ടിവരുത്തണമെങ്ങൾക്ക്</div>
+
+    <div class="speaker min">പ:</div>
+    <div class="liturgy-text min">പ്രിയരെ, നമ്മുടെ കർത്താവിൻ്റെ ക്രൂശിലെ യാഗത്താൽ നാം പ്രാപിച്ചിരിക്കുന്ന വാഴ്‌വുകളോടും  അനുഗ്രഹങ്ങളോടും കൂടെ വിശുദ്ധിയും മഹത്വവുമുള്ള മഹാ ദൈവത്തിൻ്റെ കൃപയ്ക്ക് നമ്മൾ അർഹരായിരിക്കുന്ന ഈ സമയത്ത് സമാധാനത്തോടെ പോകുവീൻ ബലഹീന ദാസനായ എനിക്കും നിങ്ങളുടെ പ്രാർത്ഥനയാൽ കരുണയും സഹായവും ലഭിപ്പാൻ നിങ്ങൾ സന്തോഷപൂർവ്വം എനിക്കുവേണ്ടിയും പ്രാർത്ഥിപ്പിൻ.</div>
+
+    <div class="speaker con">ജ:</div>
+    <div class="liturgy-text con">കർത്താവേ, തിരുസന്നിധിയിൽ ശുശ്രൂഷചെയ്ത നിൻ്റെ ദാസനെ അനുഗ്രഹിക്കേണമേ - ഞങ്ങളുടെ പ്രാർത്ഥനകളും അപേക്ഷകളും കൈക്കോള്ളേണമേ. നിൻെറ വാഴ്‌വുകൾക്കും അനുഗ്രഹങ്ങൾക്കും ഞങ്ങളെ യോഗ്യരാക്കി സമാധാനത്തോടെ ഞങ്ങളെ അയക്കേണമേ.</div>
+
+    <div class="liturgy-instruction">ഗീതം</div>
+
+    <div class="speaker all">സഭ:</div>
+    <div class="liturgy-text">
+      1. അനുഗ്രഹത്തൊടെ ഇപ്പോൾ അയക്ക അടിയാരെ യഹോവായേ<br>മനസലിവുയടയ മഹോന്നത പരനേ വന്ദനം നിനക്കാമേൻ.<br><br>
+      2. തിരുക്കരുണാണനത്തിൽ കൃപയടിയാരോടെ വരണം എല്ലായ്പ്‌പോഴും<br>നിന്നു ഇരിക്കണം രാപ്പകൽ വന്ദനം നിനക്കാമേൻ.<br><br>
+      3. തിരുസമാധാന വാക്യം അടിയാർ സ്ഥിരപ്പെടാൻ അരുൾക ഇപ്പോൾ<br>അരുൾകനിൻ വേദത്തെ അരുളിയ പരനെ ഹല്ലേലുയ്യാ ആമെൻ.
+    </div>
+
+  </div>
+</main>
+
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h4 style="margin-top:0;">Quick Links</h4>
+            <ul class="quick-links">
+                <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
+                <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
+                <li><a href="our-belief.html">Our Faith - What we believe</a></li>
+                <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
+                <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
+                <li><a href="contact-us.html">Parish Location</a></li>
+                <li><a href="parish-history.html">Bangalore Parish History</a></li> 
+            </ul>
+        </div>
+        <div class="footer-right">
+            <p style="font-size: 1.1em; margin-top:0;"><strong>STECI Bangalore Parish</strong></p>
+            <p>#17,18, Church Lane, Defence Colony,<br> Kavery Nagar, Horamavu Agara, <br> Bangalore - 560 013</p>
+            <p> Vicar: <a href="tel:+919742699915" style="color: var(--accent-yellow);">97426 99915</a> 
+                <br> Treasurer: <a href="tel:+919742699916" style="color: var(--accent-yellow);">97426 99916</a>
+                <br> Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: var(--accent-yellow);">secysteciblr@yahoo.com</a>  
+                <br> Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: var(--accent-yellow);">treassteciblr@yahoo.com</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    nav.classList.toggle("active");
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const currentSubmenu = this.nextElementSibling;
+          
+          document.querySelectorAll('.dropdown-content').forEach(other => {
+            if (other !== currentSubmenu) {
+              other.style.display = 'none';
+            }
+          });
+
+          if (currentSubmenu.style.display === 'block') {
+            currentSubmenu.style.display = 'none';
+          } else {
+            currentSubmenu.style.display = 'block';
+          }
+        }
+      });
+    });
+  });
+
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.onscroll = function() {
+    if (backToTopBtn) {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    }
+  };
+
+  if (backToTopBtn) {
+    backToTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  }
+</script>
+
+</body>
+</html>
