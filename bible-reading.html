@@ -68,7 +68,7 @@
   display: block;
   border-bottom: 1px solid #eee;
   font-weight: normal;
- white-space: nowrap;
+  white-space: nowrap;
 }
 
 .dropdown-content a:hover {
@@ -135,7 +135,8 @@
     border-bottom: 1px solid #5C1A1B;
     white-space: normal; /* Allows long text to wrap */
   }
-}   
+}    
+    
         body {
           background-color: #FFFFFF;
           margin: 0;
@@ -239,6 +240,43 @@
     margin-top: 10px;
 }
 
+/* Daily Verse Styling Box */
+.daily-verse-box {
+    background: #fdfbf7;
+    border-left: 5px solid #800020;
+    border-right: 1px solid #ebdcd0;
+    border-top: 1px solid #ebdcd0;
+    border-bottom: 1px solid #ebdcd0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.verse-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #800020;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.verse-text {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.verse-reference {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+    text-align: right;
+    margin: 0;
+}
+
 /* Audio Player */
 .audio-section audio {
     width: 100%;
@@ -287,7 +325,7 @@
     margin-top: 20px;
 }
 
- /* Style the button */
+  /* Style the button */
   #backToTopBtn {
     display: none; /* Hidden by default */
     position: fixed;
@@ -499,6 +537,13 @@ font-size: 0.9rem;
         font-size: 1.6rem;
     }
 }
+.day-node-box.future-day {
+    background-color: #f1f1f1;
+    color: #ccc;
+    border-color: #e5e5e5;
+    cursor: not-allowed;
+    pointer-events: none; /* Prevents click events entirely */
+}
     </style>
 </head>
 <body>
@@ -555,11 +600,11 @@ font-size: 0.9rem;
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Liturgy ▾</a>
       <div class="dropdown-content">
-    	 <a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
         <a href="liturgy-public.html">Order of Public worship</a>
-        <a href="manglish-liturgy-holycommunion.html">Holy Communion – Manglish</a>
-  		<a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
-        <a href="mal-liturgy-holycommunion.html">തിരുവത്താഴ ശുശ്രൂഷാ ക്രമം</a>
+        <a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
+		<a href="manglish-liturgy-holycommunion.html">Holy Communion – Manglish</a>
+ 		<a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
+		<a href="mal-liturgy-holycommunion.html">തിരുവത്താഴ ശുശ്രൂഷാ ക്രമം</a>
         <a href="mal-liturgy-public.html">പരസ്യാരാധനാക്രമം</a>
       </div>
     </li>
@@ -617,6 +662,13 @@ font-size: 0.9rem;
         <!-- Added the day count span here -->
         <span class="portion-label">Today's Portion (<span id="day-count-display"></span>)</span>
         <div id="today-portion" class="portion-text">-</div>
+        
+        <!-- Daily Key Verse Display Box -->
+        <div class="daily-verse-box">
+            <div class="verse-title">Today's Key Verse</div>
+            <div id="today-verse-text" class="verse-text">"Loading verse..."</div>
+            <p id="today-verse-ref" class="verse-reference">—</p>
+        </div>
     </div>
 	
 <div style="margin: 30px 0; color: #bbb; font-weight: bold;">OR</div>
@@ -624,17 +676,24 @@ font-size: 0.9rem;
 
             <div class="history-selector">
                 <label style="display:block; margin-bottom:10px; font-size:0.9rem; color:#95a5a6;">Did you miss the daily reading ? Refer to a Previous Date</label>
-                <input type="date" id="jump-to-date" min="2026-04-01" onchange="searchArchive(this.value)" style="padding:10px; border-radius:8px; border:1px solid #ddd;">
+               
+		<input type="date" id="jump-to-date" min="2026-04-01" onchange="searchArchive(this.value)" style="padding:10px; border-radius:8px; border:1px solid #ddd;">
             </div>
 <div id="archive-display" style="display: none; margin-top: 20px;">
     <div class="archive-box" style="background: #16a085; color: white; padding: 25px; border-radius: 12px;">
         <span style="font-weight: bold;">Archive: <span id="archive-date-text"></span> (<span id="archive-day-count"></span>)</span>
         <div id="archive-portion" style="font-size:1.5rem; margin:15px 0; font-weight: 800;">-</div>
         
-       
+        <!-- Archive Key Verse Display Box -->
+        <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px; margin-top: 15px; text-align: left;">
+            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; margin-bottom: 5px; color: #FFFF99;">Key Verse</div>
+            <div id="archive-verse-text" style="font-style: italic; font-size: 1rem; margin-bottom: 5px;">-</div>
+            <div id="archive-verse-ref" style="font-size: 0.85rem; text-align: right; font-weight: bold; margin: 0;">-</div>
+        </div>
+        
         <button onclick="closeArchive()" class="close-btn" style="margin-top: 15px; background: #e74c3c; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer;">Clear Search</button>
     </div>
-</div>           
+</div>            
 </div>
 <p></p>
   <div class="single-portion-box">
@@ -651,7 +710,7 @@ font-size: 0.9rem;
 
             <!-- Dynamic Scripture Output display element -->
             <div id="searchResultDisplay" class="search-result-box" style="display: none;"></div>
-        </div>   
+        </div>    
 
 </main>
 
@@ -660,12 +719,12 @@ font-size: 0.9rem;
         <div class="footer-left">
             <h4 class="footer-heading">Quick Links</h4>
             <ul class="quick-links">
-       	        <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
+		    <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
                 <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
                 <li><a href="our-belief.html">Our Faith - What we believe</a></li>
                 <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
                 <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
-	        <li><a href="contact-us.html">Parish Location</a></li>
+	 		<li><a href="contact-us.html">Parish Location</a></li>
 		<li><a href="parish-history.html">Bangalore Parish History</a></li> 
             </ul>
         </div>
@@ -673,7 +732,7 @@ font-size: 0.9rem;
     	<p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
 	<p>#17,18, Church Lane, Defence Colony,<br> Kavery Nagar, Horamavu Agara, <br> Bangalore - 560 113</p>
     	<p> Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> 
-  	    <br> Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
+  	  	<br> Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
             <br>Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a>  
             <br>Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
    	</p>
@@ -682,634 +741,338 @@ font-size: 0.9rem;
 </footer>
 
 <script>
-// Centralized Reading Database Container 
+// Centralized Reading & Key Verse Database Container 
 const bibleScheduleDatabase = {
-     1: ["Genesis(ഉൽപത്തി) 1-3"],
-    2: ["Genesis(ഉൽപത്തി) 4-7"],
-    3: ["Genesis(ഉൽപത്തി) 8-11"],
-    4: ["Job(ഇയ്യോബ്) 1-5"],
-    5: ["Job(ഇയ്യോബ്) 6-9"],
-    6: ["Job(ഇയ്യോബ്) 10-13"],
-    7: ["Job(ഇയ്യോബ്) 14-16"],
-    8: ["Job(ഇയ്യോബ്) 17-20"],
-    9: ["Job(ഇയ്യോബ്) 21-23"],
-    10: ["Job(ഇയ്യോബ്) 24-28"],
-    11: ["Job(ഇയ്യോബ്) 29-31"],
-    12: ["Job(ഇയ്യോബ്) 32-34"],
-    13: ["Job(ഇയ്യോബ്) 35-37"],
-    14: ["Job(ഇയ്യോബ്) 38-39"],
-    15: ["Job(ഇയ്യോബ്) 40-42"],
-    16: ["Genesis(ഉൽപത്തി) 12-15"],
-    17: ["Genesis(ഉൽപത്തി) 16-18"],
-    18: ["Genesis(ഉൽപത്തി) 19-21"],
-    19: ["Genesis(ഉൽപത്തി) 22-24"],
-    20: ["Genesis(ഉൽപത്തി) 25-26"],
-    21: ["Genesis(ഉൽപത്തി) 27-29"],
-    22: ["Genesis(ഉൽപത്തി) 30-31"],
-    23: ["Genesis(ഉൽപത്തി) 32-34"],
-    24: ["Genesis(ഉൽപത്തി) 35-37"],
-    25: ["Genesis(ഉൽപത്തി) 38-40"],
-    26: ["Genesis(ഉൽപത്തി) 41-42"],
-    27: ["Genesis(ഉൽപത്തി) 43-45"],
-    28: ["Genesis(ഉൽപത്തി) 46-47"],
-    29: ["Genesis(ഉൽപത്തി) 48-50"],
-    30: ["Exodus(പുറപ്പാട്) 1-3"],
-    31: ["Exodus(പുറപ്പാട്) 4-6"],
-    32: ["Exodus(പുറപ്പാട്) 7-9"],
-    33: ["Exodus(പുറപ്പാട്) 10-12"],
-    34: ["Exodus(പുറപ്പാട്) 13-15"],
-    35: ["Exodus(പുറപ്പാട്) 16-18"],
-    36: ["Exodus(പുറപ്പാട്) 19-21"],
-    37: ["Exodus(പുറപ്പാട്) 22-24"],
-    38: ["Exodus(പുറപ്പാട്) 25-27"],
-    39: ["Exodus(പുറപ്പാട്) 28-29"],
-    40: ["Exodus(പുറപ്പാട്) 30-32"],
-    41: ["Exodus(പുറപ്പാട്) 33-35"],
-    42: ["Exodus(പുറപ്പാട്) 36-38"],
-    43: ["Exodus(പുറപ്പാട്) 39-40"],
-    44: ["Leviticus(ലേവ്യപുസ്തകം) 1-4"],
-    45: ["Leviticus(ലേവ്യപുസ്തകം) 5-7"],
-    46: ["Leviticus(ലേവ്യപുസ്തകം) 8-10"],
-    47: ["Leviticus(ലേവ്യപുസ്തകം) 11-13"],
-    48: ["Leviticus(ലേവ്യപുസ്തകം) 14-15"],
-    49: ["Leviticus(ലേവ്യപുസ്തകം) 16-18"],
-    50: ["Leviticus(ലേവ്യപുസ്തകം) 19-21"],
-    51: ["Leviticus(ലേവ്യപുസ്തകം) 22-23"],
-    52: ["Leviticus(ലേവ്യപുസ്തകം) 24-25"],
-    53: ["Leviticus(ലേവ്യപുസ്തകം) 26-27"],
-    54: ["Numbers(സംഖ്യാപുസ്തകം) 1-2"],
-    55: ["Numbers(സംഖ്യാപുസ്തകം) 3-4"],
-    56: ["Numbers(സംഖ്യാപുസ്തകം) 5-6"],
-    57: ["Numbers(സംഖ്യാപുസ്തകം) 7"],
-    58: ["Numbers(സംഖ്യാപുസ്തകം) 8-10"],
-    59: ["Numbers(സംഖ്യാപുസ്തകം) 11-13"],
-    60: ["Numbers(സംഖ്യാപുസ്തകം) 14-15, Psalms(സങ്കീർത്തനങ്ങൾ) 90"],
-    61: ["Numbers(സംഖ്യാപുസ്തകം) 16-17"],
-    62: ["Numbers(സംഖ്യാപുസ്തകം) 18-20"],
-    63: ["Numbers(സംഖ്യാപുസ്തകം) 21-22"],
-    64: ["Numbers(സംഖ്യാപുസ്തകം) 23-25"],
-    65: ["Numbers(സംഖ്യാപുസ്തകം) 26-27"],
-    66: ["Numbers(സംഖ്യാപുസ്തകം) 28-30"],
-    67: ["Numbers(സംഖ്യാപുസ്തകം) 31-32"],
-    68: ["Numbers(സംഖ്യാപുസ്തകം) 33-34"],
-    69: ["Numbers(സംഖ്യാപുസ്തകം) 35-36"],
-    70: ["Deuteromony(ആവർത്തനം) 01-02"],
-    71: ["Deuteromony(ആവർത്തനം) 03-04"],
-    72: ["Deuteromony(ആവർത്തനം) 05-07"],
-    73: ["Deuteromony(ആവർത്തനം) 08-10"],
-    74: ["Deuteromony(ആവർത്തനം) 11-13"],
-    75: ["Deuteromony(ആവർത്തനം) 14-16"],
-    76: ["Deuteromony(ആവർത്തനം) 17-20"],
-    77: ["Deuteromony(ആവർത്തനം) 21-23"],
-    78: ["Deuteromony(ആവർത്തനം) 24-27"],
-    79: ["Deuteromony(ആവർത്തനം) 28-29"],
-    80: ["Deuteromony(ആവർത്തനം) 30-31"],
-    81: ["Deuteromony(ആവർത്തനം) 32-34,Psalms(സങ്കീർത്തനങ്ങൾ) 91"],
-    82: ["Joshua(യോശുവ) 01-04"],
-    83: ["Joshua(യോശുവ) 05-08"],
-    84: ["Joshua(യോശുവ) 09-11"],
-    85: ["Joshua(യോശുവ) 12-15"],
-    86: ["Joshua(യോശുവ) 16-18"],
-    87: ["Joshua(യോശുവ) 19-21"],
-    88: ["Joshua(യോശുവ) 22-24"],
-    89: ["Judges(ന്യായാധിപന്മാർ) 01-02"],
-    90: ["Judges(ന്യായാധിപന്മാർ) 03-05"],
-    91: ["Judges(ന്യായാധിപന്മാർ) 06-07"],
-	92: ["Judges(ന്യായാധിപന്മാർ) 08-09"],
-	93: ["Judges(ന്യായാധിപന്മാർ) 10-12"],
-	94: ["Judges(ന്യായാധിപന്മാർ) 13-15"],
-	95: ["Judges(ന്യായാധിപന്മാർ) 16-18"],
-	96: ["Judges(ന്യായാധിപന്മാർ) 19-21"], 
-   	97: ["Ruth(രൂത്ത്) 1-4"],  
-	98: ["1 Samuel(ശമൂവേൽ) 1-3"],  
-	99: ["1 Samuel(ശമൂവേൽ) 4-8"], 
-	100: ["1 Samuel(ശമൂവേൽ) 9-12"], 
-	101: ["1 Samuel(ശമൂവേൽ) 13-14"], 
-	102: ["1 Samuel(ശമൂവേൽ) 15-17"], 
-	103: ["1 Samuel(ശമൂവേൽ) 18-20, Psalms(സങ്കീർത്തനങ്ങൾ) 11, 59"], 
-	104: ["1 Samuel(ശമൂവേൽ) 21-24"], 
-	105: ["Psalms(സങ്കീർത്തനങ്ങൾ) 7, 27, 31, 34, 52"], 
-	106: ["Psalms(സങ്കീർത്തനങ്ങൾ) 56, 120, 140-142"], 
-	107: ["1 Samuel(ശമൂവേൽ) 25-27"], 
-	108: ["Psalms(സങ്കീർത്തനങ്ങൾ) 17, 35, 54, 63"], 
-	109: ["1 Samuel(ശമൂവേൽ) 28-31, Psalm(സങ്കീർത്തനങ്ങൾ) 18"], 
-	110: ["Psalms(സങ്കീർത്തനങ്ങൾ) 121, 123-125, 128-130"], 
-	111: ["2 Samuel(ശമൂവേൽ) 1-4"], 
-	112: ["Psalms(സങ്കീർത്തനങ്ങൾ) 6, 8-10, 14, 16, 19, 21"], 
-	113: ["1 Chronicles(ദിനവൃത്താന്തം) 1-2"], 
-	114: ["Psalms(സങ്കീർത്തനങ്ങൾ) 43-45, 49, 84-85, 87"], 
-	115: ["1 Chronicles(ദിനവൃത്താന്തം) 3-5"], 
-	116: ["Psalms(സങ്കീർത്തനങ്ങൾ) 73, 77-78"], 
-	117: ["1 Chronicles(ദിനവൃത്താന്തം) 6"], 
-	118: ["Psalms(സങ്കീർത്തനങ്ങൾ) 81, 88, 92-93"], 
-	119: ["1 Chronicles(ദിനവൃത്താന്തം) 7-10"], 
-	120: ["Psalms(സങ്കീർത്തനങ്ങൾ) 102-104"], 
-	121: ["2 Samuel(ശമൂവേൽ) 5, 1 Chronicles(ദിനവൃത്താന്തം) 11-12"], 
-	122: ["Psalm(സങ്കീർത്തനങ്ങൾ) 133"], 
-	123: ["Psalms(സങ്കീർത്തനങ്ങൾ) 106-107"],
-	124: ["1 Chronicles(ദിനവൃത്താന്തം) 13-16"],
-	125: ["Psalms(സങ്കീർത്തനങ്ങൾ) 1-2, 15, 22-24, 47, 68"],
-	126: ["Psalms(സങ്കീർത്തനങ്ങൾ) 89, 96, 100-101, 105, 132"],
-	127: ["2 Samuel(ശമൂവേൽ) 6-7, 1 Chronicles(ദിനവൃത്താന്തം) 17"],
-	128: ["Psalms(സങ്കീർത്തനങ്ങൾ) 25, 29, 33, 36, 39"],
-	129: ["2 Samuel(ശമൂവേൽ) 8-9, 1 Chronicles(ദിനവൃത്താന്തം) 18"],
-	130: ["Psalms(സങ്കീർത്തനങ്ങൾ) 50, 53, 60, 75"],
-	131: ["2 Samuel(ശമൂവേൽ) 10, 1 Chronicles(ദിനവൃത്താന്തം) 19, Psalms(സങ്കീർത്തനങ്ങൾ) 20"],
-	132: ["Psalms(സങ്കീർത്തനങ്ങൾ) 65-67, 69-70"],
-	133: ["2 Samuel(ശമൂവേൽ) 11-12, 1 Chronicles(ദിനവൃത്താന്തം) 20"],
-	134: ["Psalms(സങ്കീർത്തനങ്ങൾ) 32, 51, 86, 122"],
-	135: ["2 Samuel(ശമൂവേൽ) 13-15"],
-	136: ["Psalms(സങ്കീർത്തനങ്ങൾ) 3-4, 12-13, 28, 55"],
-	137: ["2 Samuel(ശമൂവേൽ) 16-18"],
-	138: ["Psalms(സങ്കീർത്തനങ്ങൾ) 26, 40, 58, 61-62, 64"],
-	139: ["2 Samuel(ശമൂവേൽ) 19-21"],
-	140: ["Psalms(സങ്കീർത്തനങ്ങൾ) 5, 38, 41-42"],
-	141: ["2 Samuel(ശമൂവേൽ) 22-23, Psalm 57"],
-	142: ["Psalms(സങ്കീർത്തനങ്ങൾ) 95, 97-99"],
-	143: ["2 Samuel(ശമൂവേൽ) 24, 1 Chronicles(ദിനവൃത്താന്തം) 21-22, Psalms(സങ്കീർത്തനങ്ങൾ) 30"],
-	144: ["Psalms(സങ്കീർത്തനങ്ങൾ) 108-110"],
-	145: ["1 Chronicles(ദിനവൃത്താന്തം) 23-25"],
-	146: ["Psalms(സങ്കീർത്തനങ്ങൾ) 131, 138-139, 143-145"],
-	147: ["1 Chronicles(ദിനവൃത്താന്തം) 26-29, Psalms(സങ്കീർത്തനങ്ങൾ) 127"],
-	148: ["Psalms(സങ്കീർത്തനങ്ങൾ) 111-118"],
-	149: ["1 Kings(രാജാക്കന്മാർ) 1-2, Psalms(സങ്കീർത്തനങ്ങൾ) 37, 71, 94"],
-	150: ["Psalms(സങ്കീർത്തനങ്ങൾ) 119"],
-	151: ["1 Kings(രാജാക്കന്മാർ) 3-4"],
-	152: ["2 Chronicles(ദിനവൃത്താന്തം) 1, Psalms(സങ്കീർത്തനങ്ങൾ) 72"],
-	153: ["Song of Solomon(ഉത്തമ ഗീതം) 1-8"],
-	154: ["Proverbs(സദൃശ്യവാക്യങ്ങൾ) 1-3"],
-	155: ["Proverbs(സദൃശ്യവാക്യങ്ങൾ) 4-6"],
-	156: ["Proverbs(സദൃശ്യവാക്യങ്ങൾ) 7-9"],
-	157: ["Proverbs(സദൃശ്യവാക്യങ്ങൾ)  10-12"],
-	158: ["Proverbs(സദൃശ്യവാക്യങ്ങൾ) 13-15"],
-	159: ["Proverbs(സദൃശ്യവാക്യങ്ങൾ) 16-18"],
-	160: ["Proverbs(സദൃശ്യവാക്യങ്ങൾ)  19-21"],
-	161: ["Proverbs(സദൃശ്യവാക്യങ്ങൾ) 22-24"],
-	162: ["1 Kings(രാജാക്കന്മാർ)  5-6, 2 Chronicles(ദിനവൃത്താന്തം) 2-3"],
-	163: ["1 Kings(രാജാക്കന്മാർ)  7, 2 Chronicles(ദിനവൃത്താന്തം) 4"],
-	164: ["1 Kings(രാജാക്കന്മാർ)  8, 2 Chronicles(ദിനവൃത്താന്തം) 5"],
-	165: ["2 Chronicles(ദിനവൃത്താന്തം)  6-7, Psalm(സങ്കീർത്തനങ്ങൾ) 136"],
-	166: ["Psalms(സങ്കീർത്തനങ്ങൾ) 134, 146-150"],
-	167: ["1 Kings(രാജാക്കന്മാർ)  9, 2 Chronicles(ദിനവൃത്താന്തം) 8"],
-	168: ["Proverbs(സദൃശ്യവാക്യങ്ങൾ) 25-26"],
-	169: ["Proverbs(സദൃശ്യവാക്യങ്ങൾ) 27-29"],
-	170: ["Ecclesiastes(സഭാപ്രസംഗി) 1-6"],
-	171: ["Ecclesiastes(സഭാപ്രസംഗി) 7-12"],
-	172: ["1 Kings(രാജാക്കന്മാർ)  10-11, 2 Chronicles(ദിനവൃത്താന്തം) 9"],
-	173: ["Proverbs(സദൃശ്യവാക്യങ്ങൾ) 30-31"],
-	174: ["1 Kings(രാജാക്കന്മാർ) 12-14"],
-	175: ["2 Chronicles(ദിനവൃത്താന്തം)  10-12"],
-	176: ["1 Kings(രാജാക്കന്മാർ)  15, 2 Chronicles(ദിനവൃത്താന്തം)  13-16"],
-	177: ["1 Kings(രാജാക്കന്മാർ)  16, 2 Chronicles(ദിനവൃത്താന്തം)  17"],
-	178: ["1 Kings(രാജാക്കന്മാർ)  17-19"],
-	179: ["1 Kings(രാജാക്കന്മാർ)  20-21"],
-	180: ["1 Kings(രാജാക്കന്മാർ)  22, 2 Chronicles(ദിനവൃത്താന്തം)  18"],
-	181: ["2 Chronicles(ദിനവൃത്താന്തം)  19-23"],
-	182: ["Obadiah(ഓബദ്യാവു) 1, Psalms(സങ്കീർത്തനങ്ങൾ) 82-83"],
-	183: ["2 Kings(രാജാക്കന്മാർ)  1-4"],
-	};
-// --- 1. Bible Schedule Data ---
-const bibleSchedule = {
-    "2026-04-01": {portion: "Genesis(ഉൽപത്തി) 1-3"},
-    "2026-04-02": { portion: "Genesis(ഉൽപത്തി) 4-7"},
-    "2026-04-03": { portion: "Genesis(ഉൽപത്തി) 8-11"},
-    "2026-04-04": { portion: "Job(ഇയ്യോബ്) 1-5"},
-    "2026-04-05": { portion: "Job(ഇയ്യോബ്) 6-9"},
-    "2026-04-06": { portion: "Job(ഇയ്യോബ്) 10-13"},
-    "2026-04-07": { portion: "Job(ഇയ്യോബ്) 14-16"},
-    "2026-04-08": { portion: "Job(ഇയ്യോബ്) 17-20",},
-    "2026-04-09": { portion: "Job(ഇയ്യോബ്) 21-23",},
-    "2026-04-10": { portion: "Job(ഇയ്യോബ്) 24-28",},
-    "2026-04-11": { portion: "Job(ഇയ്യോബ്) 29-31",},
-    "2026-04-12": { portion: "Job(ഇയ്യോബ്) 32-34",},
-    "2026-04-13": { portion: "Job(ഇയ്യോബ്) 35-37",},
-    "2026-04-14": { portion: "Job(ഇയ്യോബ്) 38-39",},
-    "2026-04-15": { portion: "Job(ഇയ്യോബ്) 40-42",},
-    "2026-04-16": { portion: "Genesis(ഉൽപത്തി) 12-15",},
-    "2026-04-17": { portion: "Genesis(ഉൽപത്തി) 16-18",},
-    "2026-04-18": { portion: "Genesis(ഉൽപത്തി) 19-21",},
-    "2026-04-19": { portion: "Genesis(ഉൽപത്തി) 22-24",},
-    "2026-04-20": { portion: "Genesis(ഉൽപത്തി) 25-26",},
-    "2026-04-21": { portion: "Genesis(ഉൽപത്തി) 27-29",},
-    "2026-04-22": { portion: "Genesis(ഉൽപത്തി) 30-31",},
-    "2026-04-23": { portion: "Genesis(ഉൽപത്തി) 32-34",},
-    "2026-04-24": { portion: "Genesis(ഉൽപത്തി) 35-37",},
-    "2026-04-25": { portion: "Genesis(ഉൽപത്തി) 38-40",},
-    "2026-04-26": { portion: "Genesis(ഉൽപത്തി) 41-42",},
-    "2026-04-27": { portion: "Genesis(ഉൽപത്തി) 43-45",},
-    "2026-04-28": { portion: "Genesis(ഉൽപത്തി) 46-47",},
-    "2026-04-29": { portion: "Genesis(ഉൽപത്തി) 48-50",},
-    "2026-04-30": { portion: "Exodus(പുറപ്പാട്) 1-3",},
-    "2026-05-01": { portion: "Exodus(പുറപ്പാട്) 4-6",},
-    "2026-05-02": { portion: "Exodus(പുറപ്പാട്) 7-9",},
-    "2026-05-03": { portion: "Exodus(പുറപ്പാട്) 10-12",},
-    "2026-05-04": { portion: "Exodus(പുറപ്പാട്) 13-15",},
-    "2026-05-05": { portion: "Exodus(പുറപ്പാട്) 16-18",},
-    "2026-05-06": { portion: "Exodus(പുറപ്പാട്) 19-21",},
-    "2026-05-07": { portion: "Exodus(പുറപ്പാട്) 22-24",},
-    "2026-05-08": { portion: "Exodus(പുറപ്പാട്) 25-27",},
-    "2026-05-09": { portion: "Exodus(പുറപ്പാട്) 28-29",},
-    "2026-05-10": { portion: "Exodus(പുറപ്പാട്) 30-32",},
-    "2026-05-11": { portion: "Exodus(പുറപ്പാട്) 33-35",},
-    "2026-05-12": { portion: "Exodus(പുറപ്പാട്) 36-38",},
-    "2026-05-13": { portion: "Exodus(പുറപ്പാട്) 39-40",},
-    "2026-05-14": { portion: "Leviticus(ലേവ്യപുസ്തകം) 1-4",},
-    "2026-05-15": { portion: "Leviticus(ലേവ്യപുസ്തകം) 5-7",},
-    "2026-05-16": { portion: "Leviticus(ലേവ്യപുസ്തകം) 8-10",},
-    "2026-05-17": { portion: "Leviticus(ലേവ്യപുസ്തകം) 11-13",},
-    "2026-05-18": { portion: "Leviticus(ലേവ്യപുസ്തകം) 14-15",},
-    "2026-05-19": { portion: "Leviticus(ലേവ്യപുസ്തകം) 16-18",},
-    "2026-05-20": { portion: "Leviticus(ലേവ്യപുസ്തകം) 19-21",},
-    "2026-05-21": { portion: "Leviticus(ലേവ്യപുസ്തകം) 22-23",},
-    "2026-05-22": { portion: "Leviticus(ലേവ്യപുസ്തകം) 24-25",},
-    "2026-05-23": { portion: "Leviticus(ലേവ്യപുസ്തകം) 26-27",},
-    "2026-05-24": { portion: "Numbers(സംഖ്യാപുസ്തകം) 1-2",},
-    "2026-05-25": { portion: "Numbers(സംഖ്യാപുസ്തകം) 3-4",},
-    "2026-05-26": { portion: "Numbers(സംഖ്യാപുസ്തകം) 5-6",},
-    "2026-05-27": { portion: "Numbers(സംഖ്യാപുസ്തകം) 7",},
-    "2026-05-28": { portion: "Numbers(സംഖ്യാപുസ്തകം) 8-10",},
-    "2026-05-29": { portion: "Numbers(സംഖ്യാപുസ്തകം) 11-13",},
-    "2026-05-30": { portion: "Numbers(സംഖ്യാപുസ്തകം) 14-15, Psalms(സങ്കീർത്തനങ്ങൾ) 90",},
-    "2026-05-31": { portion: "Numbers(സംഖ്യാപുസ്തകം) 16-17",},
-    "2026-06-01": { portion: "Numbers(സംഖ്യാപുസ്തകം) 18-20",},
-    "2026-06-02": { portion: "Numbers(സംഖ്യാപുസ്തകം) 21-22",},
-    "2026-06-03": { portion: "Numbers(സംഖ്യാപുസ്തകം) 23-25",},
-    "2026-06-04": { portion: "Numbers(സംഖ്യാപുസ്തകം) 26-27",},
-    "2026-06-05": { portion: "Numbers(സംഖ്യാപുസ്തകം) 28-30",},
-    "2026-06-06": { portion: "Numbers(സംഖ്യാപുസ്തകം) 31-32",},
-    "2026-06-07": { portion: "Numbers(സംഖ്യാപുസ്തകം) 33-34",},
-    "2026-06-08": { portion: "Numbers(സംഖ്യാപുസ്തകം) 35-36",},
-    "2026-06-09": { portion: "Deuteromony(ആവർത്തനം) 01-02",},
-    "2026-06-10": { portion: "Deuteromony(ആവർത്തനം) 03-04",},
-    "2026-06-11": { portion: "Deuteromony(ആവർത്തനം) 05-07",},
-    "2026-06-12": { portion: "Deuteromony(ആവർത്തനം) 08-10",},
-    "2026-06-13": { portion: "Deuteromony(ആവർത്തനം) 11-13",},
-    "2026-06-14": { portion: "Deuteromony(ആവർത്തനം) 14-16",},
-    "2026-06-15": { portion: "Deuteromony(ആവർത്തനം) 17-20",},
-    "2026-06-16": { portion: "Deuteromony(ആവർത്തനം) 21-23",},
-    "2026-06-17": { portion: "Deuteromony(ആവർത്തനം) 24-27",},
-    "2026-06-18": { portion: "Deuteromony(ആവർത്തനം) 28-29",},
-    "2026-06-19": { portion: "Deuteromony(ആവർത്തനം) 30-31",},
-    "2026-06-20": { portion: "Deuteromony(ആവർത്തനം) 32-34,Psalms(സങ്കീർത്തനങ്ങൾ) 91",},
-    "2026-06-21": { portion: "Joshua(യോശുവ) 01-04",},
-    "2026-06-22": { portion: "Joshua(യോശുവ) 05-08",},
-    "2026-06-23": { portion: "Joshua(യോശുവ) 09-11",},
-    "2026-06-24": { portion: "Joshua(യോശുവ) 12-15",},
-    "2026-06-25": { portion: "Joshua(യോശുവ) 16-18",},
-    "2026-06-26": { portion: "Joshua(യോശുവ) 19-21",},
-    "2026-06-27": { portion: "Joshua(യോശുവ) 22-24",},
-    "2026-06-28": { portion: "Judges(ന്യായാധിപന്മാർ) 01-02",},
-    "2026-06-29": { portion: "Judges(ന്യായാധിപന്മാർ) 03-05",},
-    "2026-06-30": { portion: "Judges(ന്യായാധിപന്മാർ) 06-07",},
-	"2026-07-01": { portion: "Judges(ന്യായാധിപന്മാർ) 08-09",},
-	"2026-07-02": { portion: "Judges(ന്യായാധിപന്മാർ) 10-12",},
-	"2026-07-03": { portion: "Judges(ന്യായാധിപന്മാർ) 13-15",},
-	"2026-07-04": { portion: "Judges(ന്യായാധിപന്മാർ) 16-18",},
-	"2026-07-05": { portion: "Judges(ന്യായാധിപന്മാർ) 19-21",},
-	"2026-07-06": { portion: "Ruth(രൂത്ത്) 1-4",},
-	"2026-07-07": { portion: "1 Samuel(ശമൂവേൽ) 1-3",},
-	"2026-07-08": { portion: "1 Samuel(ശമൂവേൽ) 4-8",},
-	"2026-07-09": { portion: "1 Samuel(ശമൂവേൽ) 9-12",},
-	"2026-07-10": { portion: "1 Samuel(ശമൂവേൽ) 13-14",},
-	"2026-07-11": { portion: "1 Samuel(ശമൂവേൽ) 15-17",},
-	"2026-07-12": { portion: "1 Samuel(ശമൂവേൽ) 18-20, Psalms(സങ്കീർത്തനങ്ങൾ) 11, 59",},
-	"2026-07-13": { portion: "1 Samuel(ശമൂവേൽ) 21-24",},
-	"2026-07-14": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 7, 27, 31, 34, 52",},
-	"2026-07-15": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 56, 120, 140-142",},
-	"2026-07-16": { portion: "1 Samuel(ശമൂവേൽ) 25-27",},
-	"2026-07-17": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 17, 35, 54, 63",},
-	"2026-07-18": { portion: "1 Samuel(ശമൂവേൽ) 28-31, Psalm(സങ്കീർത്തനങ്ങൾ) 18",},
-	"2026-07-19": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 121, 123-125, 128-130",},
-	"2026-07-20": { portion: "2 Samuel(ശമൂവേൽ) 1-4",},
-	"2026-07-21": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 6, 8-10, 14, 16, 19, 21",},
-	"2026-07-22": { portion: "1 Chronicles(ദിനവൃത്താന്തം) 1-2",},
-	"2026-07-23": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 43-45, 49, 84-85, 87",},
-	"2026-07-24": { portion: "1 Chronicles(ദിനവൃത്താന്തം) 3-5",},
-	"2026-07-25": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 73, 77-78",},
-	"2026-07-26": { portion: "1 Chronicles(ദിനവൃത്താന്തം) 6",},
-	"2026-07-27": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 81, 88, 92-93",},
-	"2026-07-28": { portion: "1 Chronicles(ദിനവൃത്താന്തം) 7-10",},
-	"2026-07-29": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 102-104",},
-	"2026-07-30": { portion: "2 Samuel(ശമൂവേൽ) 5, 1 Chronicles(ദിനവൃത്താന്തം) 11-12",},
-	"2026-07-31": { portion: "Psalm(സങ്കീർത്തനങ്ങൾ) 133",},
-	"2026-08-01": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 106-107",},
-	"2026-08-02": { portion: "1 Chronicles(ദിനവൃത്താന്തം) 13-16",},
-	"2026-08-03": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 1-2, 15, 22-24, 47, 68",},
-	"2026-08-04": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 89, 96, 100-101, 105, 132",},
-	"2026-08-05": { portion: "2 Samuel(ശമൂവേൽ) 6-7, 1 Chronicles(ദിനവൃത്താന്തം) 17",},
-	"2026-08-06": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 25, 29, 33, 36, 39",},
-	"2026-08-07": { portion: "2 Samuel(ശമൂവേൽ) 8-9, 1 Chronicles(ദിനവൃത്താന്തം) 18",},
-	"2026-08-08": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 50, 53, 60, 75",},
-	"2026-08-09": { portion: "2 Samuel(ശമൂവേൽ) 10, 1 Chronicles(ദിനവൃത്താന്തം) 19,Psalms(സങ്കീർത്തനങ്ങൾ) 20",},
-	"2026-08-10": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 65-67, 69-70",},
-	"2026-08-11": { portion: "2 Samuel(ശമൂവേൽ) 11-12, 1 Chronicles(ദിനവൃത്താന്തം) 20",},
-	"2026-08-12": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 32, 51, 86, 122",},
-	"2026-08-13": { portion: "2 Samuel(ശമൂവേൽ) 13-15",},
-	"2026-08-14": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 3-4, 12-13, 28, 55",},
-	"2026-08-15": { portion: "2 Samuel(ശമൂവേൽ) 16-18",},
-	"2026-08-16": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 26, 40, 58, 61-62, 64",},
-	"2026-08-17": { portion: "2 Samuel(ശമൂവേൽ) 19-21",},
-	"2026-08-18": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ)  5, 38, 41-42",},
-	"2026-08-19": { portion: "2 Samuel(ശമൂവേൽ) 22-23, Psalms(സങ്കീർത്തനങ്ങൾ) 57",},
-	"2026-08-20": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 95, 97-99",},
-	"2026-08-21": { portion: "2 Samuel(ശമൂവേൽ) 24, 1 Chronicles(ദിനവൃത്താന്തം) 21-22, Psalms(സങ്കീർത്തനങ്ങൾ) 30",},
-	"2026-08-22": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 108-110",},
-	"2026-08-23": { portion: "1 Chronicles(ദിനവൃത്താന്തം) 23-25",},
-	"2026-08-24": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 131, 138-139, 143-145",},
-	"2026-08-25": { portion: "1 Chronicles(ദിനവൃത്താന്തം) 26-29, Psalms(സങ്കീർത്തനങ്ങൾ) 127",},
-	"2026-08-26": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 111-118",},
-	"2026-08-27": { portion: "1 Kings(രാജാക്കന്മാർ) 1-2, Psalms(സങ്കീർത്തനങ്ങൾ) 37, 71, 94",},
-	"2026-08-28": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 119",},
-	"2026-08-29": { portion: "1 Kings(രാജാക്കന്മാർ) 3-4",},
-	"2026-08-30": { portion: "2 Chronicles(ദിനവൃത്താന്തം) 1, Psalms(സങ്കീർത്തനങ്ങൾ) 72",},
-	"2026-08-31": { portion: "Song of Solomon(ഉത്തമ ഗീതം) 1-8",},
-	"2026-09-01": { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 1-3",},
-	"2026-09-02": { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 4-6",},
-	"2026-09-03": { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 7-9",},
-	"2026-09-04": { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ)  10-12",},
-	"2026-09-05": { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 13-15",},
-	"2026-09-06": { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 16-18",},
-	"2026-09-07": { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ)  19-21",},
-	"2026-09-08": { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 22-24",},
-	"2026-09-09": { portion: "1 Kings(രാജാക്കന്മാർ)  5-6, 2 Chronicles(ദിനവൃത്താന്തം) 2-3",},
-	"2026-09-10": { portion: "1 Kings(രാജാക്കന്മാർ)  7, 2 Chronicles(ദിനവൃത്താന്തം) 4",},
-	"2026-09-11": { portion: "1 Kings(രാജാക്കന്മാർ)  8, 2 Chronicles(ദിനവൃത്താന്തം) 5",},
-	"2026-09-12": { portion: "2 Chronicles(ദിനവൃത്താന്തം)  6-7, Psalm(സങ്കീർത്തനങ്ങൾ) 136",},
-	"2026-09-13": { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 134, 146-150",},
-	"2026-09-14": { portion: "1 Kings(രാജാക്കന്മാർ)  9, 2 Chronicles(ദിനവൃത്താന്തം) 8",},
-	"2026-09-15": { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 25-26",},
-	"2026-09-16": { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 27-29",},
-	"2026-09-17": { portion: "Ecclesiastes(സഭാപ്രസംഗി) 1-6",},
-	"2026-09-18": { portion: "Ecclesiastes(സഭാപ്രസംഗി) 7-12",},
-	"2026-09-19": { portion: "1 Kings(രാജാക്കന്മാർ)  10-11, 2 Chronicles(ദിനവൃത്താന്തം) 9",},
-	"2026-09-20": { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 30-31",},
-	"2026-09-21": { portion: "1 Kings(രാജാക്കന്മാർ) 12-14",},
-	"2026-09-22": { portion: "2 Chronicles(ദിനവൃത്താന്തം)  10-12",},
-	"2026-09-23": { portion: "1 Kings(രാജാക്കന്മാർ)  15, 2 Chronicles(ദിനവൃത്താന്തം)  13-16",},
-	"2026-09-24": { portion: "1 Kings(രാജാക്കന്മാർ)  16, 2 Chronicles(ദിനവൃത്താന്തം)  17",},
-	"2026-09-25": { portion: "1 Kings(രാജാക്കന്മാർ)  17-19",},
-	"2026-09-26": { portion: "1 Kings(രാജാക്കന്മാർ)  20-21",},
-	"2026-09-27": { portion: "1 Kings(രാജാക്കന്മാർ)  22, 2 Chronicles(ദിനവൃത്താന്തം)  18",},
-	"2026-09-28": { portion: "2 Chronicles(ദിനവൃത്താന്തം)  19-23",},
-	"2026-09-29": { portion: "Obadiah(ഓബദ്യാവു) 1, Psalms(സങ്കീർത്തനങ്ങൾ) 82-83",},
-	"2026-09-30": { portion: "2 Kings(രാജാക്കന്മാർ)  1-4",},
-	};
+     1: { portion: "Genesis(ഉൽപത്തി) 1-3", verse: "In the beginning God created the heavens and the earth.", ref: "Genesis 1:1" },
+     2: { portion: "Genesis(ഉൽപത്തി) 4-7", verse: "If you do well, will not your countenance be lifted up?", ref: "Genesis 4:7" },
+     3: { portion: "Genesis(ഉൽപത്തി) 8-11", verse: "I set My rainbow in the cloud, and it shall be for the sign of the covenant between Me and the earth.", ref: "Genesis 9:13" },
+     4: { portion: "Job(ഇയ്യോബ്) 1-5", verse: "The Lord gave, and the Lord has taken away; Blessed be the name of the Lord.", ref: "Job 1:21" },
+     5: { portion: "Job(ഇയ്യോബ്) 6-9", verse: "For I know that my Redeemer lives, and He shall stand at last on the earth.", ref: "Job 19:25" },
+     6: { portion: "Job(ഇയ്യോബ്) 10-13", verse: "Though He slay me, yet will I trust Him.", ref: "Job 13:15" },
+     7: { portion: "Job(ഇയ്യോബ്) 14-16", verse: "Man who is born of woman is of few days and full of trouble.", ref: "Job 14:1" },
+     8: { portion: "Job(ഇയ്യോബ്) 17-20", verse: "Can you search out the deep things of God? Can you find out the limits of the Almighty?", ref: "Job 11:7" },
+     9: { portion: "Job(ഇയ്യോബ്) 21-23", verse: "He knows the way that I take; when He has tested me, I shall come forth as gold.", ref: "Job 23:10" },
+     10: { portion: "Job(ഇയ്യോബ്) 24-28", verse: "Behold, the fear of the Lord, that is wisdom, and to depart from evil is understanding.", ref: "Job 28:28" },
+     11: { portion: "Job(ഇയ്യോബ്) 29-31", verse: "I have made a covenant with my eyes; why then should I look upon a young woman?", ref: "Job 31:1" },
+     12: { portion: "Job(ഇയ്യോബ്) 32-34", verse: "Surely God will not act wickedly, nor will the Almighty pervert justice.", ref: "Job 34:12" },
+     13: { portion: "Job(ഇയ്യോബ്) 35-37", verse: "Look at the heavens and see; and behold the clouds—they are higher than you.", ref: "Job 35:5" },
+     14: { portion: "Job(ഇയ്യോബ്) 38-39", verse: "Where were you when I laid the foundations of the earth? Tell Me, if you have understanding.", ref: "Job 38:4" },
+     15: { portion: "Job(ഇയ്യോബ്) 40-42", verse: "I know that You can do everything, and that no purpose of Yours can be withheld from You.", ref: "Job 42:2" },
+     16: { portion: "Genesis(ഉൽപത്തി) 12-15", verse: "I will make you a great nation; I will bless you and make your name great; and you shall be a blessing.", ref: "Genesis 12:2" },
+     17: { portion: "Genesis(ഉൽപത്തി) 16-18", verse: "Is any thing too hard for the Lord?", ref: "Genesis 18:14" },
+     18: { portion: "Genesis(ഉൽപത്തി) 19-21", verse: "God has made me laugh, and all who hear will laugh with me.", ref: "Genesis 21:6" },
+     19: { portion: "Genesis(ഉൽപത്തി) 22-24", verse: "And Abraham called the name of the place, The-Lord-Will-Provide.", ref: "Genesis 22:14" },
+     20: { portion: "Genesis(ഉൽപത്തി) 25-26", verse: "The Lord appeared to him the same night and said, 'I am the God of your father Abraham; do not fear.'", ref: "Genesis 26:24" },
+     21: { portion: "Genesis(ഉൽപത്തി) 27-29", verse: "Surely the Lord is in this place, and I did not know it.", ref: "Genesis 28:16" },
+     22: { portion: "Genesis(ഉൽപത്തി) 30-31", verse: "The Lord watch between you and me, when we are absent one from another.", ref: "Genesis 31:49" },
+     23: { portion: "Genesis(ഉൽപത്തി) 32-34", verse: "I have seen God face to face, and my life is preserved.", ref: "Genesis 32:30" },
+     24: { portion: "Genesis(ഉൽപത്തി) 35-37", verse: "Arise, go up to Bethel and dwell there; and make an altar there to God.", ref: "Genesis 35:1" },
+     25: { portion: "Genesis(ഉൽപത്തി) 38-40", verse: "How then can I do this great wickedness, and sin against God?", ref: "Genesis 39:9" },
+     26: { portion: "Genesis(ഉൽപത്തി) 41-42", verse: "Can we find such a one as this, a man in whom is the Spirit of God?", ref: "Genesis 41:38" },
+     27: { portion: "Genesis(ഉൽപത്തി) 43-45", verse: "Do not be grieved or angry with yourselves because you sold me here; for God sent me before you to preserve life.", ref: "Genesis 45:5" },
+     28: { portion: "Genesis(ഉൽപത്തി) 46-47", verse: "The days of the years of my pilgrimage are one hundred and thirty years.", ref: "Genesis 47:9" },
+     29: { portion: "Genesis(ഉൽപത്തി) 48-50", verse: "As for you, you meant evil against me; but God meant it for good.", ref: "Genesis 50:20" },
+     30: { portion: "Exodus(പുറപ്പാട്) 1-3", verse: "I have surely seen the oppression of My people who are in Egypt, and have heard their cry.", ref: "Exodus 3:7" },
+     31: { portion: "Exodus(പുറപ്പാട്) 4-6", verse: "Now therefore, go, and I will be with your mouth and teach you what you shall say.", ref: "Exodus 4:12" },
+     32: { portion: "Exodus(പുറപ്പാട്) 7-9", verse: "That you may know that there is no one like the Lord our God in all the earth.", ref: "Exodus 8:10" },
+     33: { portion: "Exodus(പുറപ്പാട്) 10-12", verse: "This month shall be your beginning of months; it shall be the first month of the year to you.", ref: "Exodus 12:2" },
+     34: { portion: "Exodus(പുറപ്പാട്) 13-15", verse: "The Lord shall reign forever and ever.", ref: "Exodus 15:18" },
+     35: { portion: "Exodus(പുറപ്പാട്) 16-18", verse: "And he called the name of the place Massah and Meribah, because of the contention of the children of Israel.", ref: "Exodus 17:7" },
+     36: { portion: "Exodus(പുറപ്പാട്) 19-21", verse: "You shall have no other gods before Me.", ref: "Exodus 20:3" },
+     37: { portion: "Exodus(പുറപ്പാട്) 22-24", verse: "You shall be holy men to Me.", ref: "Exodus 22:31" },
+     38: { portion: "Exodus(പുറപ്പാട്) 25-27", verse: "And let them make Me a sanctuary, that I may dwell among them.", ref: "Exodus 25:8" },
+     39: { portion: "Exodus(പുറപ്പാട്) 28-29", verse: "You shall consecrate them, that they may be most holy.", ref: "Exodus 29:36" },
+     40: { portion: "Exodus(പുറപ്പാട്) 30-32", verse: "My Presence will go with you, and I will give you rest.", ref: "Exodus 33:14" },
+     41: { portion: "Exodus(പുറപ്പാട്) 33-35", verse: "The Lord, the Lord God, merciful and gracious, longsuffering, and abounding in goodness and truth.", ref: "Exodus 34:6" },
+     42: { portion: "Exodus(പുറപ്പാട്) 36-38", verse: "Thus all the work of the tabernacle of the tent of Meeting was finished.", ref: "Exodus 39:32" },
+     43: { portion: "Exodus(പുറപ്പാട്) 39-40", verse: "Then the cloud covered the tabernacle of Meeting, and the glory of the Lord filled the tabernacle.", ref: "Exodus 40:34" },
+     44: { portion: "Leviticus(ലേവ്യപുസ്തകം) 1-4", verse: "If his offering is a burnt sacrifice of the herd, let him offer a male without blemish.", ref: "Leviticus 1:3" },
+     45: { portion: "Leviticus(ലേവ്യപുസ്തകം) 5-7", verse: "The fire shall be kept burning on the altar continuously; it shall not go out.", ref: "Leviticus 6:13" },
+     46: { portion: "Leviticus(ലേവ്യപുസ്തകം) 8-10", verse: "You shall distinguish between holy and unholy, and between unclean and clean.", ref: "Leviticus 10:10" },
+     47: { portion: "Leviticus(ലേവ്യപുസ്തകം) 11-13", verse: "For I am the Lord your God. You shall therefore sanctify yourselves, and you shall be holy; for I am holy.", ref: "Leviticus 11:44" },
+     48: { portion: "Leviticus(ലേവ്യപുസ്തകം) 14-15", verse: "Thus you shall separate the children of Israel from their uncleanness.", ref: "Leviticus 15:31" },
+     49: { portion: "Leviticus(ലേവ്യപുസ്തകം) 16-18", verse: "For the life of the flesh is in the blood, and I have given it to you upon the altar to make atonement for your souls.", ref: "Leviticus 17:11" },
+     50: { portion: "Leviticus(ലേവ്യപുസ്തകം) 19-21", verse: "You shall be holy, for I the Lord your God am holy.", ref: "Leviticus 19:2" },
+     51: { portion: "Leviticus(ലേവ്യപുസ്തകം) 22-23", verse: "These are the feasts of the Lord, holy convocations which you shall proclaim at their appointed times.", ref: "Leviticus 23:4" },
+     52: { portion: "Leviticus(ലേവ്യപുസ്തകം) 24-25", verse: "And you shall consecrate the fiftieth year, and proclaim liberty throughout all the land to all its inhabitants.", ref: "Leviticus 25:10" },
+     53: { portion: "Leviticus(ലേവ്യപുസ്തകം) 26-27", verse: "I will walk among you and be your God, and you shall be My people.", ref: "Leviticus 26:12" },
+     54: { portion: "Numbers(സംഖ്യാപുസ്തകം) 1-2", verse: "Take a census of all the congregation of the children of Israel, by their families.", ref: "Numbers 1:2" },
+     55: { portion: "Numbers(സംഖ്യാപുസ്തകം) 3-4", verse: "And you shall appoint Aaron and his sons, and they shall attend to their priesthood.", ref: "Numbers 3:10" },
+     56: { portion: "Numbers(സംഖ്യാപുസ്തകം) 5-6", verse: "The Lord make His face shine upon you, and be gracious to you.", ref: "Numbers 6:25" },
+     57: { portion: "Numbers(സംഖ്യാപുസ്തകം) 7", verse: "Now when Moses went into the tabernacle of meeting to speak with Him, he heard the voice of One speaking to him.", ref: "Numbers 7:89" },
+     58: { portion: "Numbers(സംഖ്യാപുസ്തകം) 8-10", verse: "We are journeying to the place of which the Lord said, 'I will give it to you.' Come with us, and we will treat you well.", ref: "Numbers 10:29" },
+     59: { portion: "Numbers(സംഖ്യാപുസ്തകം) 11-13", verse: "Is the Lord’s arm shortened? Now you shall see whether what I said will happen to you or not.", ref: "Numbers 11:23" },
+     60: { portion: "Numbers(സംഖ്യാപുസ്തകം) 14-15, Psalms(സങ്കീർത്തനങ്ങൾ) 90", verse: "So teach us to number our days, that we may gain a heart of wisdom.", ref: "Psalm 90:12" },
+     61: { portion: "Numbers(സംഖ്യാപുസ്തകം) 16-17", verse: "Now the man whom the Lord chooses shall be holy.", ref: "Numbers 16:7" },
+     62: { portion: "Numbers(സംഖ്യാപുസ്തകം) 18-20", verse: "You shall have no portion in their land, nor shall you have any heritage among them; I am your portion and your heritage.", ref: "Numbers 18:20" },
+     63: { portion: "Numbers(സംഖ്യാപുസ്തകം) 21-22", verse: "And the Lord said to Moses, 'Make a fiery serpent, and set it on a pole; and it shall be that everyone who is bitten, when he looks at it, shall live.'", ref: "Numbers 21:8" },
+     64: { portion: "Numbers(സംഖ്യാപുസ്തകം) 23-25", verse: "God is not a man, that He should lie, nor a son of man, that He should repent.", ref: "Numbers 23:19" },
+     65: { portion: "Numbers(സംഖ്യാപുസ്തകം) 26-27", verse: "Let the Lord, the God of the spirits of all flesh, set a man over the congregation.", ref: "Numbers 27:16" },
+     66: { portion: "Numbers(സംഖ്യാപുസ്തകം) 28-30", verse: "Command the children of Israel, and say to them, 'My offering, My food for My offerings made by fire as a sweet aroma to Me, you shall be careful to offer to Me at their appointed time.'", ref: "Numbers 28:2" },
+     67: { portion: "Numbers(സംഖ്യാപുസ്തകം) 31-32", verse: "Be sure your sin will find you out.", ref: "Numbers 32:23" },
+     68: { portion: "Numbers(സംഖ്യാപുസ്തകം) 33-34", verse: "You shall drive out all the inhabitants of the land from before you, and destroy all their engraved stones.", ref: "Numbers 33:52" },
+     69: { portion: "Numbers(സംഖ്യാപുസ്തകം) 35-36", verse: "So you shall not pollute the land where you are; for blood defiles the land.", ref: "Numbers 35:33" },
+     70: { portion: "Deuteromony(ആവർത്തനം) 01-02", verse: "The Lord your God has multiplied you, and here you are today as the stars of heaven in multitude.", ref: "Deuteronomy 1:10" },
+     71: { portion: "Deuteromony(ആവർത്തനം) 03-04", verse: "For what great nation is there that has God so near to it, as the Lord our God is to us, for whatever reason we may call upon Him?", ref: "Deuteronomy 4:7" },
+     72: { portion: "Deuteromony(ആവർത്തനം) 05-07", verse: "Hear, O Israel: The Lord our God, the Lord is one!", ref: "Deuteronomy 6:4" },
+     73: { portion: "Deuteromony(ആവർത്തനം) 08-10", verse: "Man shall not live by bread alone; but man lives by every word that proceeds from the mouth of the Lord.", ref: "Deuteronomy 8:3" },
+     74: { portion: "Deuteromony(ആവർത്തനം) 11-13", verse: "Behold, I set before you today a blessing and a curse.", ref: "Deuteronomy 11:26" },
+     75: { portion: "Deuteromony(ആവർത്തനം) 14-16", verse: "You shall truly tithe all the increase of your grain that the field produces year by year.", ref: "Deuteronomy 14:22" },
+     76: { portion: "Deuteromony(ആവർത്തനം) 17-20", verse: "The Lord your God will raise up for you a Prophet like me from your midst, from your brethren. Him you shall hear.", ref: "Deuteronomy 18:15" },
+     77: { portion: "Deuteromony(ആവർത്തനം) 21-23", verse: "Cursed is everyone who hangs on a tree.", ref: "Deuteronomy 21:23" },
+     78: { portion: "Deuteromony(ആവർത്തനം) 24-27", verse: "Cursed is the one who does not confirm all the words of this law by observing them.", ref: "Deuteronomy 27:26" },
+     79: { portion: "Deuteromony(ആവർത്തനം) 28-29", verse: "The secret things belong to the Lord our God, but those things which are revealed belong to us and to our children forever.", ref: "Deuteronomy 29:29" },
+     80: { portion: "Deuteromony(ആവർത്തനം) 30-31", verse: "I call heaven and earth as witnesses today against you, that I have set before you life and death, blessing and cursing; therefore choose life, that both you and your descendants may live.", ref: "Deuteronomy 30:19" },
+     81: { portion: "Deuteromony(ആവർത്തനം) 32-34,Psalms(സങ്കീർത്തനങ്ങൾ) 91", verse: "He who dwells in the secret place of the Most High shall abide under the shadow of the Almighty.", ref: "Psalm 91:1" },
+     82: { portion: "Joshua(യോശുവ) 01-04", verse: "Be strong and of good courage; do not be afraid, nor be dismayed, for the Lord your God is with you wherever you go.", ref: "Joshua 1:9" },
+     83: { portion: "Joshua(യോശുവ) 05-08", verse: "Choose for yourselves this day whom you will serve... But as for me and my house, we will serve the Lord.", ref: "Joshua 24:15" },
+     84: { portion: "Joshua(യോശുവ) 09-11", verse: "Not a word failed of any good thing which the Lord had spoken to the house of Israel. All came to pass.", ref: "Joshua 21:45" },
+     85: { portion: "Joshua(യോശുവ) 12-15", verse: "The Lord gave them rest all around, just as He had sworn to their fathers.", ref: "Joshua 21:44" },
+     86: { portion: "Joshua(യോശുവ) 16-18", verse: "How long will you neglect to go and possess the land which the Lord God of your fathers has given you?", ref: "Joshua 18:3" },
+     87: { portion: "Joshua(യോശുവ) 19-21", verse: "Not a man of all their enemies stood against them; the Lord delivered all their enemies into their hand.", ref: "Joshua 21:44" },
+     88: { portion: "Joshua(യോശുവ) 22-24", verse: "You know in all your hearts and in all your souls that not one thing has failed of all the good things which the Lord your God spoke concerning you.", ref: "Joshua 23:14" },
+     89: { portion: "Judges(ന്യായാധിപന്മാർ) 01-02", verse: "When the children of Israel cried out to the Lord, the Lord raised up a deliverer for the children of Israel.", ref: "Judges 3:9" },
+     90: { portion: "Judges(ന്യായാധിപന്മാർ) 03-05", verse: "Thus let all your enemies perish, O Lord! But let those who love Him be like the sun when it comes out in its might.", ref: "Judges 5:31" },
+     91: { portion: "Judges(ന്യായാധിപന്മാർ) 06-07", verse: "Go in this might of yours, and you shall save Israel from the hand of the Midianites. Have I not sent you?", ref: "Judges 6:14" },
+	 92: { portion: "Judges(ന്യായാധിപന്മാർ) 08-09", verse: "And Gideon said to them, 'I will not rule over you, nor shall my son rule over you; the Lord shall rule over you.'", ref: "Judges 8:23" },
+	 93: { portion: "Judges(ന്യായാധിപന്മാർ) 10-12", verse: "Go and cry out to the gods which you have chosen; let them deliver you in the time of your distress.", ref: "Judges 10:14" },
+	 94: { portion: "Judges(ന്യായാധിപന്മാർ) 13-15", verse: "And the Spirit of the Lord began to move him upon him.", ref: "Judges 13:25" },
+	 95: { portion: "Judges(ന്യായാധിപന്മാർ) 16-18", verse: "O Lord God, remember me, I pray! Strengthen me, I pray, just this once, O God.", ref: "Judges 16:28" },
+	 96: { portion: "Judges(ന്യായാധിപന്മാർ) 19-21", verse: "In those days there was no king in Israel; everyone did what was right in his own eyes.", ref: "Judges 21:25" },  
+	 97: { portion: "Ruth(രൂത്ത്) 1-4", verse: "Your people shall be my people, and your God, my God.", ref: "Ruth 1:16" },  
+	 98: { portion: "1 Samuel(ശമൂവേൽ) 1-3", verse: "For this child I prayed, and the Lord has granted me my petition which I asked of Him.", ref: "1 Samuel 1:27" },  
+	 99: { portion: "1 Samuel(ശമൂവേൽ) 4-8", verse: "Speak, Lord, for Your servant hears.", ref: "1 Samuel 3:9" }, 
+	 100: { portion: "1 Samuel(ശമൂവേൽ) 9-12", verse: "Only fear the Lord, and serve Him in truth with all your heart; for consider what great things He has done for you.", ref: "1 Samuel 12:24" }, 
+	 101: { portion: "1 Samuel(ശമൂവേൽ) 13-14", verse: "For nothing restrains the Lord from saving by many or by few.", ref: "1 Samuel 14:6" }, 
+	 102: { portion: "1 Samuel(ശമൂവേൽ) 15-17", verse: "The Lord does not see as man sees; for man looks at the outward appearance, but the Lord looks at the heart.", ref: "1 Samuel 16:7" }, 
+	 103: { portion: "1 Samuel(ശമൂവേൽ) 18-20, Psalms(സങ്കീർത്തനങ്ങൾ) 11, 59", verse: "In the Lord I put my trust; how can you say to my soul, 'Flee as a bird to your mountain'?", ref: "Psalm 11:1" }, 
+	 104: { portion: "1 Samuel(ശമൂവേൽ) 21-24", verse: "The Lord judge between you and me, and let the Lord avenge me on you.", ref: "1 Samuel 24:12" }, 
+	 105: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 7, 27, 31, 34, 52", verse: "The Lord is my light and my salvation; whom shall I fear?", ref: "Psalm 27:1" }, 
+	 106: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 56, 120, 140-142", verse: "I cried out to the Lord with my voice; with my voice to the Lord I made my supplication.", ref: "Psalm 142:1" }, 
+	 107: { portion: "1 Samuel(ശമൂവേൽ) 25-27", verse: "Blessed is your advice and blessed are you, because you have kept me this day from coming to bloodshed.", ref: "1 Samuel 25:33" }, 
+	 108: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 17, 35, 54, 63", verse: "O God, You are my God; early will I seek You; my soul thirsts for You.", ref: "Psalm 63:1" }, 
+	 109: { portion: "1 Samuel(ശമൂവേൽ) 28-31, Psalm(സങ്കീർത്തനങ്ങൾ) 18", verse: "The Lord is my rock and my fortress and my deliverer; My God, my strength, in whom I will trust.", ref: "Psalm 18:2" }, 
+	 110: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 121, 123-125, 128-130", verse: "My help comes from the Lord, who made heaven and earth.", ref: "Psalm 121:2" }, 
+	 111: { portion: "2 Samuel(ശമൂവേൽ) 1-4", verse: "How the mighty have fallen in the midst of the battle!", ref: "2 Samuel 1:25" }, 
+	 112: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 6, 8-10, 14, 16, 19, 21", verse: "The heavens declare the glory of God; and the firmament shows His handiwork.", ref: "Psalm 19:1" }, 
+	 113: { portion: "1 Chronicles(ദിനവൃത്താന്തം) 1-2", verse: "Adam, Seth, Enosh...", ref: "1 Chronicles 1:1" }, 
+	 114: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 43-45, 49, 84-85, 87", verse: "How lovely is your tabernacle, O Lord of hosts!", ref: "Psalm 84:1" }, 
+	 115: { portion: "1 Chronicles(ദിനവൃത്താന്തം) 3-5", verse: "The sons of David were...", ref: "1 Chronicles 3:1" }, 
+	 116: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 73, 77-78", verse: "Whom have I in heaven but You? And there is none upon earth that I desire besides You.", ref: "Psalm 73:25" }, 
+	 117: { portion: "1 Chronicles(ദിനവൃത്താന്തം) 6", verse: "The sons of Levi were Gershon, Kohath, and Merari.", ref: "1 Chronicles 6:1" }, 
+	 118: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 81, 88, 92-93", verse: "It is good to give thanks to the Lord, and to sing praises to Your name, O Most High.", ref: "Psalm 92:1" }, 
+	 119: { portion: "1 Chronicles(ദിനവൃത്താന്തം) 7-10", verse: "And Saul died for his unfaithfulness which he had committed against the Lord.", ref: "1 Chronicles 10:13" }, 
+	 120: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 102-104", verse: "Bless the Lord, O my soul! O Lord my God, You are very great.", ref: "Psalm 104:1" }, 
+	 121: { portion: "2 Samuel(ശമൂവേൽ) 5, 1 Chronicles(ദിനവൃത്താന്തം) 11-12", verse: "And David went on and became great, and the Lord God of hosts was with him.", ref: "2 Samuel 5:10" }, 
+	 122: { portion: "Psalm(സങ്കീർത്തനങ്ങൾ) 133", verse: "Behold, how good and how pleasant it is for brethren to dwell together in unity!", ref: "Psalm 133:1" }, 
+	 123: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 106-107", verse: "Oh, give thanks to the Lord, for He is good! For His mercy endures forever.", ref: "Psalm 107:1" },
+	 124: { portion: "1 Chronicles(ദിനവൃത്താന്തം) 13-16", verse: "Sing to the Lord, all the earth; proclaim the good news of His salvation from day to day.", ref: "1 Chronicles 16:23" },
+	 125: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 1-2, 15, 22-24, 47, 68", verse: "Blessed is the man who walks not in the counsel of the ungodly... But his delight is in the law of the Lord.", ref: "Psalm 1:1-2" },
+	 126: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 89, 96, 100-101, 105, 132", verse: "Make a joyful shout to the Lord, all you lands! Serve the Lord with gladness.", ref: "Psalm 100:1-2" },
+	 127: { portion: "2 Samuel(ശമൂവേൽ) 6-7, 1 Chronicles(ദിനവൃത്താന്തം) 17", verse: "Who am I, O Lord God, and what is my house, that You have brought me this far?", ref: "2 Samuel 7:18" },
+	 128: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 25, 29, 33, 36, 39", verse: "Show me your ways, O Lord; teach me Your paths.", ref: "Psalm 25:4" },
+	 129: { portion: "2 Samuel(ശമൂവേൽ) 8-9, 1 Chronicles(ദിനവൃത്താന്തം) 18", verse: "So David reigned over all Israel, and David administered judgment and justice to all his people.", ref: "2 Samuel 8:15" },
+	 130: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 50, 53, 60, 75", verse: "Call upon Me in the day of trouble; I will deliver you, and you shall glorify Me.", ref: "Psalm 50:15" },
+	 131: { portion: "2 Samuel(ശമൂവേൽ) 10, 1 Chronicles(ദിനവൃത്താന്തം) 19, Psalms(സങ്കീർത്തനങ്ങൾ) 20", verse: "Some trust in chariots, and some in horses; but we will remember the name of the Lord our God.", ref: "Psalm 20:7" },
+	 132: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 65-67, 69-70", verse: "Blessed is the man You choose, and cause to approach You, that he may dwell in Your courts.", ref: "Psalm 65:4" },
+	 133: { portion: "2 Samuel(ശമൂവേൽ) 11-12, 1 Chronicles(ദിനവൃത്താന്തം) 20", verse: "Create in me a clean heart, O God, and renew a steadfast spirit within me.", ref: "Psalm 51:10" },
+	 134: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 32, 51, 86, 122", verse: "I was glad when they said to me, 'Let us go into the house of the Lord.'", ref: "Psalm 122:1" },
+	 135: { portion: "2 Samuel(ശമൂവേൽ) 13-15", verse: "O Lord, I pray, turn the counsel of Ahithophel into foolishness!", ref: "2 Samuel 15:31" },
+	 136: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 3-4, 12-13, 28, 55", verse: "Cast your burden on the Lord, and He shall sustain you.", ref: "Psalm 55:22" },
+	 137: { portion: "2 Samuel(ശമൂവേൽ) 16-18", verse: "O my son Absalom—my son, my son Absalom—if only I had died in your place!", ref: "2 Samuel 18:33" },
+	 138: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 26, 40, 58, 61-62", verse: "Truly my soul silently waits for God; from Him comes my salvation.", ref: "Psalm 62:1" },
+	 139: { portion: "2 Samuel(ശമൂവേൽ) 19-21", verse: "As for God, His way is perfect; the word of the Lord is proven; He is a shield to all who trust in Him.", ref: "2 Samuel 22:31" },
+	 140: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 5, 38, 41-42", verse: "As the deer pants for the water brooks, so pants my soul for You, O God.", ref: "Psalm 42:1" },
+	 141: { portion: "2 Samuel(ശമൂവേൽ) 22-23, Psalm 57", verse: "Be merciful to me, O God, be merciful to me! For my soul trusts in You.", ref: "Psalm 57:1" },
+	 142: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 95, 97-99", verse: "Oh, come, let us worship and bow down; let us kneel before the Lord our Maker.", ref: "Psalm 95:6" },
+	 143: { portion: "2 Samuel(ശമൂവേൽ) 24, 1 Chronicles(ദിനവൃത്താന്തം) 21-22, Psalms(സങ്കീർത്തനങ്ങൾ) 30", verse: "Weeping may endure for a night, but joy comes in the morning.", ref: "Psalm 30:5" },
+	 144: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 108-110", verse: "The Lord said to my Lord, 'Sit at My right hand, till I make Your enemies Your footstool.'", ref: "Psalm 110:1" },
+	 145: { portion: "1 Chronicles(ദിനവൃത്താന്തം) 23-25", verse: "These were the sons of Levi by their fathers' houses...", ref: "1 Chronicles 23:24" },
+	 146: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 131, 138-139, 143-145", verse: "Search me, O God, and know my heart; try me, and know my anxieties.", ref: "Psalm 139:23" },
+	 147: { portion: "1 Chronicles(ദിനവൃത്താന്തം) 26-29, Psalms(സങ്കീർത്തനങ്ങൾ) 127", verse: "Unless the Lord builds the house, they labor in vain who build it.", ref: "Psalm 127:1" },
+	 148: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 111-118", verse: "This is the day the Lord has made; we will rejoice and be glad in it.", ref: "Psalm 118:24" },
+	 149: { portion: "1 Kings(രാജാക്കന്മാർ) 1-2, Psalms(സങ്കീർത്തനങ്ങൾ) 37, 71, 94", verse: "Delight yourself also in the Lord, and He shall give you the desires of your heart.", ref: "Psalm 37:4" },
+	 150: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 119", verse: "Your word is a lamp to my feet and a light to my path.", ref: "Psalm 119:105" },
+	 151: { portion: "1 Kings(രാജാക്കന്മാർ) 3-4", verse: "Therefore give to Your servant an understanding heart to judge Your people, that I may discern between good and evil.", ref: "1 Kings 3:9" },
+	 152: { portion: "2 Chronicles(ദിനവൃത്താന്തം) 1, Psalms(സങ്കീർത്തനങ്ങൾ) 72", verse: "Give the king Your judgments, O God, and Your righteousness to the king's son.", ref: "Psalm 72:1" },
+	 153: { portion: "Song of Solomon(ഉത്തമ ഗീതം) 1-8", verse: "Set me as a seal upon your heart, as a seal upon your arm; for love is as strong as death.", ref: "Song of Solomon 8:6" },
+	 154: { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 1-3", verse: "Trust in the Lord with all your heart, and lean not on your own understanding.", ref: "Proverbs 3:5" },
+	 155: { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 4-6", verse: "Keep your heart with all diligence, for out of it spring the issues of life.", ref: "Proverbs 4:23" },
+	 156: { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 7-9", verse: "The fear of the Lord is the beginning of wisdom, and the knowledge of the Holy One is understanding.", ref: "Proverbs 9:10" },
+	 157: { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 10-12", verse: "The blessing of the Lord makes one rich, and He adds no sorrow with it.", ref: "Proverbs 10:22" },
+	 158: { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 13-15", verse: "A soft answer turns away wrath, but a harsh word stirs up anger.", ref: "Proverbs 15:1" },
+	 159: { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 16-18", verse: "Commit your works to the Lord, and your thoughts will be established.", ref: "Proverbs 16:3" },
+	 160: { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 19-21", verse: "There are many plans in a man's heart, nevertheless the Lord's counsel—that will stand.", ref: "Proverbs 19:21" },
+	 161: { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 22-24", verse: "Train up a child in the way he should go, and when he is old he will not depart from it.", ref: "Proverbs 22:6" },
+	 162: { portion: "1 Kings(രാജാക്കന്മാർ) 5-6, 2 Chronicles(ദിനവൃത്താന്തം) 2-3", verse: "And the house which I build will be great, for our God is greater than all gods.", ref: "2 Chronicles 2:5" },
+	 163: { portion: "1 Kings(രാജാക്കന്മാർ) 7, 2 Chronicles(ദിനവൃത്താന്തം) 4", verse: "He also made ten tables, and placed them in the temple...", ref: "2 Chronicles 4:8" },
+	 164: { portion: "1 Kings(രാജാക്കന്മാർ) 8, 2 Chronicles(ദിനവൃത്താന്തം) 5", verse: "There was nothing in the ark except the two tablets which Moses put there at Horeb.", ref: "1 Kings 8:9" },
+	 165: { portion: "2 Chronicles(ദിനവൃത്താന്തം) 6-7, Psalm(സങ്കീർത്തനങ്ങൾ) 136", verse: "If My people who are called by My name will humble themselves, and pray and seek My face, and turn from their wicked ways, then I will hear from heaven.", ref: "2 Chronicles 7:14" },
+	 166: { portion: "Psalms(സങ്കീർത്തനങ്ങൾ) 134, 146-150", verse: "Let everything that has breath praise the Lord. Praise the Lord!", ref: "Psalm 150:6" },
+	 167: { portion: "1 Kings(രാജാക്കന്മാർ) 9, 2 Chronicles(ദിനവൃത്താന്തം) 8", verse: "And Solomon built...", ref: "1 Kings 9:15" },
+	 168: { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 25-26", verse: "As cold water to a weary soul, so is good news from a far country.", ref: "Proverbs 25:25" },
+	 169: { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 27-29", verse: "Where there is no revelation, the people cast off restraint; but happy is he who keeps the law.", ref: "Proverbs 29:18" },
+	 170: { portion: "Ecclesiastes(സഭാപ്രസംഗി) 1-6", verse: "To everything there is a season, a time for every purpose under heaven.", ref: "Ecclesiastes 3:1" },
+	 171: { portion: "Ecclesiastes(സഭാപ്രസംഗി) 7-12", verse: "Let us hear the conclusion of the whole matter: Fear God and keep His commandments, for this is man's all.", ref: "Ecclesiastes 12:13" },
+	 172: { portion: "1 Kings(രാജാക്കന്മാർ) 10-11, 2 Chronicles(ദിനവൃത്താന്തം) 9", verse: "And she said to the king: 'It was a true report which I heard in my own land about your words and your wisdom.'", ref: "2 Chronicles 9:5" },
+	 173: { portion: "Proverbs(സദൃശ്യവാക്യങ്ങൾ) 30-31", verse: "Charm is deceitful and beauty is passing, but a woman who fears the Lord, she shall be praised.", ref: "Proverbs 31:30" },
+	 174: { portion: "1 Kings(രാജാക്കന്മാർ) 12-14", verse: "And the king sought advice, and made two calves of gold.", ref: "1 Kings 12:28" },
+	 175: { portion: "2 Chronicles(ദിനവൃത്താന്തം) 10-12", verse: "O Lord, you are righteous, and we are left as a remnant this day.", ref: "2 Chronicles 12:6" },
+	 176: { portion: "1 Kings(രാജാക്കന്മാർ) 15, 2 Chronicles(ദിനവൃത്താന്തം) 13-16", verse: "For the eyes of the Lord run to and fro throughout the whole earth, to show Himself strong on behalf of those whose heart is loyal to Him.", ref: "2 Chronicles 16:9" },
+	 177: { portion: "1 Kings(രാജാക്കന്മാർ) 16, 2 Chronicles(ദിനവൃത്താന്തം) 17", verse: "And the Lord was with Jehoshaphat, because he walked in the former ways of his father David.", ref: "2 Chronicles 17:3" },
+	 178: { portion: "1 Kings(രാജാക്കന്മാർ) 17-19", verse: "How long will you falter between two opinions? If the Lord is God, follow Him; but if Baal, follow him.", ref: "1 Kings 18:21" },
+	 179: { portion: "1 Kings(രാജാക്കന്മാർ) 20-21", verse: "Let not the one who girds up his armor boast like the one who takes it off.", ref: "1 Kings 20:11" },
+	 180: { portion: "1 Kings(രാജാക്കന്മാർ) 22, 2 Chronicles(ദിനവൃത്താന്തം) 18", verse: "Is there not still a prophet of the Lord here, that we may inquire of Him?", ref: "1 Kings 22:7" },
+	 181: { portion: "2 Chronicles(ദിനവൃത്താന്തം) 19-23", verse: "Do not fear nor be dismayed... for the battle is not yours, but God's.", ref: "2 Chronicles 20:15" },
+	 182: { portion: "Obadiah(ഓബദ്യാവു) 1, Psalms(സങ്കീർത്തനങ്ങൾ) 82-83", verse: "Defend the poor and fatherless; do justice to the afflicted and needy.", ref: "Psalm 82:3" },
+	 183: { portion: "2 Kings(രാജാക്കന്മാർ) 1-4", verse: "Is it because there is no God in Israel that you are going to inquire of Baal-Zebub?", ref: "2 Kings 1:3" }
+};
 
-let currentArchiveDate = "";
-
-// --- 2. Dynamic Splitting Logic with Complete Style Isolation ---
-function processTextTo3Lines(rawText, isArchive = false) {
-    if (!rawText) return "-";
+// --- Date to Day Mapping Logic ---
+function getDayOfYearFromDate(dateString) {
+    const targetDate = new Date(dateString);
+    const startDate = new Date("2026-04-01"); // Plan start date
+    const diffTime = targetDate - startDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
     
-    const segments = rawText.split(/,\s*(?=[A-Za-z])/);
-    let outputHtml = "";
-    
-    // Unique prefix selector ensures Archive styles never overwrite Today's styles
-    const pfx = isArchive ? "arch" : "today";
-    const engColor = isArchive ? "#FFFFFF" : "#2c3e50";
-    const malColor = isArchive ? "#FFFF99" : "#5C1A1B";
-    const numColor = isArchive ? "#FFFF99" : "#3498db";
-    
-    outputHtml += `
-    <style>
-        .${pfx}-eng { font-size: 1.7rem; font-weight: 800; color: ${engColor}; margin-bottom: 2px; }
-        .${pfx}-mal { font-size: 1.4rem; font-weight: 700; color: ${malColor}; margin-bottom: 6px; word-wrap: break-word; }
-        .${pfx}-num { font-size: 2.3rem; font-weight: 800; color: ${numColor}; margin-top: 2px; }
-        
-        @media screen and (max-width: 480px) {
-            .${pfx}-eng { font-size: 1.3rem; }
-            .${pfx}-mal { font-size: 1.15rem; }
-            .${pfx}-num { font-size: 1.8rem; }
-            .single-portion-box { padding: 20px 10px !important; }
-        }
-    </style>
-    `;
-    
-    segments.forEach((segment, i) => {
-        segment = segment.trim();
-        const startBracket = segment.indexOf('(');
-        const endBracket = segment.indexOf(')');
-        
-        if (startBracket !== -1 && endBracket !== -1) {
-            const englishName = segment.substring(0, startBracket).trim();
-            const malayalamName = segment.substring(startBracket + 1, endBracket).trim();
-            const chapterNumbers = segment.substring(endBracket + 1).trim();
-            
-            if (i > 0) {
-                const separatorColor = isArchive ? "rgba(255,255,255,0.3)" : "#ccc";
-                outputHtml += `<div style="margin: 15px 0; border-top: 1px dashed ${separatorColor};"></div>`;
-            }
-            
-            outputHtml += `
-                <div class="${pfx}-eng">${englishName}</div>
-                <div class="${pfx}-mal">(${malayalamName})</div>
-                <div class="${pfx}-num">${chapterNumbers}</div>
-            `;
-        } else {
-            if (i > 0) outputHtml += "<br>";
-            outputHtml += `<div style="font-size: 1.2rem; font-weight:700; color: ${isArchive ? '#FFFFFF' : '#2c3e50'};">${segment}</div>`;
-        }
-    });
-    
-    return outputHtml;
+    // Wrap around 1 to 365 if needed, or clamp
+    if (diffDays < 1) return 1;
+    if (diffDays > 365) return ((diffDays - 1) % 365) + 1;
+    return diffDays;
 }
 
-// --- 3. Bible Logic Functions ---
-function loadToday() {
+// Populate Today's Reading on Load
+window.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
-
-    const startDate = new Date("2026-04-01");
-    const d1 = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    const d2 = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
-    
-    const diffInMs = d1 - d2;
-    const dayCount = Math.floor(diffInMs / (1000 * 60 * 60 * 24)) + 1;
-    
-    const countElement = document.getElementById('day-count-display');
-    if (countElement) {
-        if (dayCount > 0 && dayCount <= 365) {
-            countElement.innerText = "Day " + dayCount;
-        } else if (dayCount > 365) {
-            countElement.innerText = "Plan Completed";
-        } else {
-            countElement.innerText = "Starting Soon";
-        }
-    }
-    
     const yyyy = today.getFullYear();
     const mm = String(today.getMonth() + 1).padStart(2, '0');
     const dd = String(today.getDate()).padStart(2, '0');
-    const dateKey = `${yyyy}-${mm}-${dd}`;
+    const todayFormatted = `${yyyy}-${mm}-${dd}`;
 
-    const yesterday = new Date();
-    yesterday.setDate(today.getDate() - 1);
-    const y_yyyy = yesterday.getFullYear();
-    const y_mm = String(yesterday.getMonth() + 1).padStart(2, '0');
-    const y_dd = String(yesterday.getDate()).padStart(2, '0');
-    const yesterdayKey = `${y_yyyy}-${y_mm}-${y_dd}`;
+    document.getElementById("jump-to-date").value = todayFormatted;
     
-    const datePicker = document.getElementById('jump-to-date');
-    if (datePicker) {
-        datePicker.setAttribute('min', '2026-04-01');
-        datePicker.setAttribute('max', yesterdayKey);
-    }
+    const dayNum = getDayOfYearFromDate(todayFormatted);
+    const data = bibleScheduleDatabase[dayNum] || { portion: "Reading portion updating soon...", verse: "Thy word is a lamp unto my feet, and a light unto my path.", ref: "Psalm 119:105" };
 
-    const fullDate = today.toLocaleDateString('en-US', { 
-        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
-    });
-    const dateElement = document.getElementById('today-date-text');
-    if (dateElement) {
-        dateElement.innerText = fullDate;
-    }
+    document.getElementById("today-date-text").innerText = today.toDateString();
+    document.getElementById("day-count-display").innerText = `Day ${dayNum}`;
+    document.getElementById("today-portion").innerText = data.portion;
+    document.getElementById("today-verse-text").innerText = `"${data.verse}"`;
+    document.getElementById("today-verse-ref").innerText = `— ${data.ref}`;
+
+    // Build Interactive Grid Matrix (1 to 365)
+// Build Interactive Grid Matrix (1 to 365)
+const gridContainer = document.getElementById("daysGridContainer");
+
+// Calculate today's day number in the plan
+const todayStr = `${yyyy}-${mm}-${dd}`;
+const currentDayNum = getDayOfYearFromDate(todayStr);
+
+for (let i = 1; i <= 365; i++) {
+    const node = document.createElement("div");
+    node.className = "day-node-box";
+    node.innerText = i;
     
-    const data = bibleSchedule[dateKey];
-    if (data) {
-        document.getElementById('today-portion').innerHTML = processTextTo3Lines(data.portion, false);
+    // Check if the day is in the future
+    if (i > currentDayNum) {
+        node.classList.add("future-day");
+        node.title = "This day is locked (future date)";
     } else {
-        document.getElementById('today-portion').innerText = "Coming Soon";
+        node.onclick = () => selectGridDay(i);
     }
-}
-
-function searchArchive(dateString) {
-    if(!dateString) return;
-    currentArchiveDate = dateString; 
-    const data = bibleSchedule[dateString];
-    const archiveDiv = document.getElementById('archive-display');
     
-    archiveDiv.style.display = "block";
-    document.getElementById('archive-date-text').innerText = new Date(dateString).toLocaleDateString();
-
-    const startDate = new Date("2026-04-01");
-    const selectedDate = new Date(dateString);
-    
-    startDate.setHours(0,0,0,0);
-    selectedDate.setHours(0,0,0,0);
-
-    const diffInMs = selectedDate - startDate;
-    const archDayCount = Math.floor(diffInMs / (1000 * 60 * 60 * 24)) + 1;
-
-    const archDayElement = document.getElementById('archive-day-count');
-    if (archDayElement) {
-        archDayElement.innerText = "Day " + archDayCount;
-    }
-
-    if (data) {
-        document.getElementById('archive-portion').innerHTML = processTextTo3Lines(data.portion, true);
-        switchArchiveLanguage('eng'); 
-    } else {
-        document.getElementById('archive-portion').innerText = "Data not found.";
-    }
+    gridContainer.appendChild(node);
 }
+// Set max date to yesterday for the archive picker
+const yesterday = new Date();
+yesterday.setDate(yesterday.getDate() - 1);
+const yyyyYest = yesterday.getFullYear();
+const mmYest = String(yesterday.getMonth() + 1).padStart(2, '0');
+const ddYest = String(yesterday.getDate()).padStart(2, '0');
+document.getElementById("jump-to-date").max = `${yyyyYest}-${mmYest}-${ddYest}`;
 
-function switchArchiveLanguage(lang) {
-    const data = bibleSchedule[currentArchiveDate];
-    if (!data) return;
+});
 
-    const engBtn = document.getElementById('arch-btn-eng');
-    const malBtn = document.getElementById('arch-btn-mal');
+// Archive / Date Search Handler
+function searchArchive(selectedDateStr) {
+    if(!selectedDateStr) return;
+    
+    const selectedDate = new Date(selectedDateStr);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-    if (engBtn && malBtn) {
-        if (lang === 'eng') {
-            engBtn.style.background = "white"; engBtn.style.color = "#16a085";
-            malBtn.style.background = "transparent"; malBtn.style.color = "white";
-        } else {
-            malBtn.style.background = "white"; malBtn.style.color = "#16a085";
-            engBtn.style.background = "transparent"; engBtn.style.color = "white";
-        }
+    if (selectedDate >= today) {
+        alert("Please select a date prior to today for the archive.");
+        document.getElementById("jump-to-date").value = `${yyyyYest}-${mmYest}-${ddYest}`;
+        return;
     }
+
+    const dayNum = getDayOfYearFromDate(selectedDateStr);
+    const data = bibleScheduleDatabase[dayNum] || { portion: "Portion not available", verse: "Your word is truth.", ref: "John 17:17" };
+
+    document.getElementById("archive-display").style.display = "block";
+    document.getElementById("archive-date-text").innerText = selectedDateStr;
+    document.getElementById("archive-day-count").innerText = `Day ${dayNum}`;
+    document.getElementById("archive-portion").innerText = data.portion;
+    document.getElementById("archive-verse-text").innerText = `"${data.verse}"`;
+    document.getElementById("archive-verse-ref").innerText = `— ${data.ref}`;
 }
 
 function closeArchive() {
-    document.getElementById('archive-display').style.display = "none";
-    document.getElementById('jump-to-date').value = "";
+    document.getElementById("archive-display").style.display = "none";
 }
 
-// --- 4. Navigation & Dropdown Logic ---
+// Grid Node Click Handler
+function selectGridDay(dayNum) {
+    // Highlight active box
+    document.querySelectorAll('.day-node-box').forEach(el => el.classList.remove('active-selection'));
+    event.currentTarget.classList.add('active-selection');
+
+    const data = bibleScheduleDatabase[dayNum] || { portion: "Portion updating soon...", verse: "The word of our God stands forever.", ref: "Isaiah 40:8" };
+    
+    const resultBox = document.getElementById("searchResultDisplay");
+    resultBox.style.display = "block";
+    resultBox.innerHTML = `
+        <strong style="color: #800020; font-size: 1.05rem;">Day ${dayNum} Reading Portion:</strong>
+        <div style="font-size: 1.25rem; font-weight: bold; color: #2c3e50; margin: 8px 0;">${data.portion}</div>
+        <div style="border-top: 1px dashed #ebdcd0; padding-top: 10px; margin-top: 10px;">
+            <div style="font-size: 0.75rem; text-transform: uppercase; color: #800020; font-weight: bold; letter-spacing: 1px;">Key Verse</div>
+            <p style="font-style: italic; color: #333; margin: 4px 0;">"${data.verse}"</p>
+            <p style="font-size: 0.85rem; font-weight: bold; color: #555; text-align: right; margin: 0;">— ${data.ref}</p>
+        </div>
+    `;
+}
+
+// Mobile Menu Toggle Script
 function toggleMenu() {
-    document.getElementById("nav-links").classList.toggle("active");
+    const navLinks = document.getElementById("nav-links");
+    navLinks.classList.toggle("active");
 }
 
-document.querySelectorAll('.dropdown > a').forEach(item => {
-    item.addEventListener('click', function(e) {
-        if (window.innerWidth <= 600) {
-            e.preventDefault();
-            const currentContent = this.nextElementSibling;
-            
-            document.querySelectorAll('.dropdown-content').forEach(otherContent => {
-                if (otherContent !== currentContent) {
-                    otherContent.style.display = 'none';
-                }
-            });
-
-            currentContent.style.display = (currentContent.style.display === 'block') ? 'none' : 'block';
-        }
-    });
-});
-
-// --- 5. Back to Top Button ---
-window.onscroll = () => {
-    const btn = document.getElementById("backToTopBtn");
-    if (btn) btn.style.display = (window.scrollY > 100) ? "block" : "none";
+// --- Back to Top Button Logic ---
+window.onscroll = function() {
+    scrollFunction();
 };
 
-if (document.getElementById("backToTopBtn")) {
-    document.getElementById("backToTopBtn").onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+function scrollFunction() {
+    const topBtn = document.getElementById("backToTopBtn");
+    if (topBtn) {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+    }
 }
 
-window.onload = loadToday;
-
-// 1. Core Render Engine: Creates clickable grid boxes (1 to 365) right away
-document.addEventListener("DOMContentLoaded", function() {
-    const gridContainer = document.getElementById('daysGridContainer');
-    let dynamicGridHTML = '';
-    
-    for (let day = 1; day <= 365; day++) {
-        dynamicGridHTML += `<div class="day-node-box" id="dayBtn_${day}" onclick="selectGridDay(${day})">${day}</div>`;
-    }
-    gridContainer.innerHTML = dynamicGridHTML;
+// When the user clicks on the button, scroll to the top of the document
+document.getElementById("backToTopBtn").addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 });
 
-// 2. Action Controller: Runs when any Grid Box is Clicked
-function selectGridDay(dayNum) {
-    // Clear previously highlighted active grid items
-    document.querySelectorAll('.day-node-box').forEach(box => {
-        box.classList.remove('active-selection');
-    });
-    
-    // Highlight the newly selected box structure
-    const targetBox = document.getElementById(`dayBtn_${dayNum}`);
-    if(targetBox) {
-        targetBox.classList.add('active-selection');
-    }
-    
-    // Execute output display update
-    renderPortionToScreen(dayNum);
-}
-
-// 3. Interface UI Output Render engine
-function renderPortionToScreen(dayNum) {
-    const displayElement = document.getElementById('searchResultDisplay');
-    const assignedReadings = bibleScheduleDatabase[dayNum];
-    
-    displayElement.style.display = 'block';
-    
-    if (assignedReadings && assignedReadings.length > 0) {
-        // Join portions with a comma or vertical bar
-        const portionsText = assignedReadings.join(" — ");
-        
-        displayElement.innerHTML = `
-            <div style="text-align: center; color:#222; font-size: 1.05rem; line-height: 1.6;">
-                <strong style="color:#800020;">📖 Day ${dayNum} Assigned Scripture Reading: 
-                <span style="margin-left: 5px;">${portionsText}</span> </strong>
-            </div>
-        `;
-    } else {
-        displayElement.innerHTML = `
-            <div style="text-align: center; color:#777; font-style: italic;">
-                📖 Day ${dayNum}: Reading schedule coming soon.
-            </div>
-        `;
-    }
-}</script>
+</script>
 </body>
 </html>
