@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message of the Week | STECI Bangalore Parish</title> 
+     <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Read the weekly message, sermon reflections, and spiritual guidance from the St. Thomas Evangelical Church of India, Bangalore Parish."> 
+    <style>
+      
+/* Unified Navbar Styling */
+/* --- Dropdown menu --- */
+.navbar {
+  background-color: #5C1A1B; /* Wine Red to match your theme */
+  font-family: Roboto, Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #FFFF99;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-links li a {
+  display: block;
+  color: #FFFF99; 
+  text-align: center;
+  padding: 10px 30px; 
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links li a:hover {
+  background-color: #3d1112; /* Darker red on hover */
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1001;
+  text-align: left;
+  top: 100%; /* Forces the dropdown to start exactly at the bottom of the parent LI */
+  left: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #5C1A1B !important; /* Dark red text for readability on light bg */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #eee;
+  font-weight: normal;
+  white-space: nowrap;
+}
+.dropdown-content a:hover {
+  background-color: #5C1A1B; /* Change background to Maroon on hover */
+  color: #FFFF99 !important;  /* Change text to Light Yellow on hover */
+}
+
+
+/* Show the menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* --- MOBILE NAVIGATION CSS --- */
+/* Hamburger Icon Styling */
+.menu-icon {
+  display: none; /* Hidden on Desktop */
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 15px;
+}
+/* Style for the "Menu" word */
+.menu-text {
+  color: #FFFF99; /* Matching your gold/yellow theme */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase; /* Gives it that clean, modern look */
+  line-height: 1;
+}
+/* Container to keep the 3 bars stacked vertically */
+.hamburger-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+            
+.bar {
+  width: 22px;
+  height: 3px;
+  background-color: #FFFF99;
+  margin: 0;
+}
+
+/* Mobile Media Query (Screens smaller than 600px) */
+@media screen and (max-width: 600px) {
+  .menu-icon {
+    display: flex; /* Show hamburger on mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hide menu by default on mobile */
+    width: 100%;
+    flex-direction: column;
+    background-color: #5C1A1B;
+  }
+
+  /* Show menu when "active" class is added via JS */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-top: 1px solid #7a2425;
+  }
+
+  .dropdown-content {
+    position: static; /* Stack dropdown items vertically on mobile */
+    width: 100%;
+    background-color: #4a1415;
+  }
+  .dropdown-content a {
+    color: #FFFF99 !important; /* Golden/Light Yellow */
+    background-color: #4a1415 !important;
+    padding: 12px 40px; /* Indented for visual hierarchy */
+    border-bottom: 1px solid #5C1A1B;
+    white-space: normal; /* Allows long text to wrap */
+  }
+}
+
+        body {
+          background-color: #FFFFFF;
+          margin: 0;
+          font-family: Roboto, sans-serif;
+          color: darkblue;
+          padding: 0; 
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        
+        .main-content {
+            padding-top: 0px;
+        }
+        
+        html {
+          scroll-padding-top: 90px;
+        }
+
+        .mission-heading {
+          text-align: center;
+          vertical-align: middle;
+          color: #FFFF99;
+          background-color: #243117;
+        }
+
+        .mission-heading h1 {
+          text-align: center;
+          margin: 0;
+          padding: 20px 0;
+        }
+        
+        /* Global Image Scaling */
+        img {
+            max-width: 100%; 
+            height: auto;
+            display: block; 
+            margin: 0 auto; 
+        }
+
+        .header-banner {
+            line-height: 0;
+            font-size: 0;
+        }
+
+        /* Message Layout Container */
+        .message-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fcfcfc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .message-meta {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #5C1A1B;
+        }
+
+        .message-meta .msg-date {
+            font-weight: bold;
+            color: #5C1A1B;
+            font-size: 1.1em;
+        }
+
+        .message-meta .msg-theme {
+            font-size: 1.25em;
+            color: #243117;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        .message-meta .msg-verse-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #5C1A1B;
+            padding: 10px 15px;
+            margin-top: 15px;
+            text-align: left;
+            font-style: italic;
+            color: #2d3748;
+        }
+
+        .message-body {
+            color: #2d3748;
+            font-size: 1.05rem;
+        }
+
+        .message-body p {
+            margin-bottom: 16px;
+        }
+
+        .message-body h3 {
+            color: #5C1A1B;
+            margin-top: 25px;
+            font-size: 1.2rem;
+        }
+          
+        /* Style the button */
+        #backToTopBtn {
+          display: none; /* Hidden by default */
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 99;
+          font-size: 14px;
+          border: none;
+          outline: none;
+          background-color: #006400; /* Dark green */
+          color: white;
+          cursor: pointer;
+          padding: 10px 15px;
+          border-radius: 4px;
+          transition: opacity 0.3s ease;
+        }
+        #backToTopBtn:hover {
+          background-color: #228B22; /* Lighter green on hover */
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #222; 
+            color: #fff;
+            padding: 20px 8%;
+            border-top: 2px solid #444;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between; 
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-left {
+            text-align: left;
+        }
+
+        .footer-right {
+            text-align: right;
+            align-self: center; 
+            font-size: 0.9rem;
+        }
+
+        .quick-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 10px 30px;
+        }
+
+        .quick-links li a {
+            color: #bbb;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .quick-links li a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Mobile View: Stack them vertically */
+        @media (max-width: 600px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .footer-left, .footer-right {
+                text-align: center;
+                width: 100%;
+            }
+            .quick-links {
+                justify-content: center;
+            }
+            .message-container {
+                margin: 10px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-banner">
+    <img src="Steciblr_files/steciblrbanner.png" alt="St. Thomas Evangelical Church of India Bangalore Parish Banner" width="100%" border="0" />
+</div>
+
+<nav class="navbar">
+<div class="menu-icon" onclick="toggleMenu()">
+  <span class="menu-text">Menu</span>
+  <div class="hamburger-bars">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+</div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Church ▾</a>
+      <div class="dropdown-content">
+        <a href="church-leaders.html">Church Leaders</a>
+        <a href="church-history.html">Church History</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Parish ▾</a>
+      <div class="dropdown-content">
+        <a href="parish-vicar.html">Parish Vicars</a>
+        <a href="parish-history.html">Parish History</a>
+        <a href="lectionary.html">Lectionary</a>
+        <a href="parish-bulletin.html">Parish Bulletin</a>
+        <a href="executive-committee.html">Executive Committee</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Foundation ▾</a>
+      <div class="dropdown-content">
+        <a href="mission-vision.html">Mission & Vision</a>
+        <a href="our-belief.html">Our Faith</a>
+        <a href="bible-reading.html">365 Day Bible Reading</a>
+      </div>
+    </li>
+      
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Liturgy ▾</a>
+      <div class="dropdown-content">
+        <a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
+        <a href="liturgy-public.html">Order of Public worship</a>
+        <a href="manglish-liturgy-holycommunion.html">Holy Communion – Manglish</a>
+        <a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
+        <a href="mal-liturgy-holycommunion.html">തിരുവത്താഴ ശുശ്രൂഷാ ക്രമം</a>
+        <a href="mal-liturgy-public.html">പരസ്യാരാധനാക്രമം</a>
+      </div>
+    </li>
+      <li><a href="message.html">Message</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Gallery ▾</a>
+      <div class="dropdown-content">
+        <a href="photos-gallery.html">Photo Gallery</a>
+        <a href="videos-gallery.html">Video Gallery</a>
+      </div>
+    </li>
+
+    <li><a href="contact-us.html">Contact</a></li>
+  </ul>
+</nav>
+
+<button id="backToTopBtn" title="Go to top">↑ Top</button>
+
+<main class="main-content">
+<div>
+    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td class="mission-heading">
+              <h1><strong>Message of the Week</strong></h1>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+<div class="message-container">
+    <div class="message-meta">
+        <div class="msg-date">Date: 13 Sep 2026</div>
+        <div class="msg-theme">Theme: Faith Requires Patience to Wait</div>
+        <div class="msg-verse-box">
+            “Now faith is the substance of things hoped for, the evidence of things not seen.” <br>
+            <strong>— Hebrews 11:1 (NKJV)</strong>
+        </div>
+    </div>
+
+    <div class="message-body">
+        <p>Dear brothers and sisters,</p>
+        <p>We live in a world where people want everything immediately. Technology has changed our expectations. We want instant messages, instant replies, instant deliveries, instant results, and instant solutions. Technology is continually pushing us toward a faster way of living.</p>
+        <p>Unfortunately, this influence can also enter our spiritual life. We expect God to answer our prayers immediately. We want healing in one day. We want our problems to disappear quickly. When we pray, sometimes we expect an immediate answer. But the Bible never teaches us that every blessing comes instantly. God may answer immediately, but many times God asks us to wait. And waiting is not a waste of time. Waiting is part of God's preparation.</p>
+
+        <h3>1. Faith teaches us to wait for God's promise</h3>
+        <p>Abraham received a wonderful promise from God (Genesis 12:1-3). God promised that he would have a son and that through him God would fulfil His covenant. But Abraham had to wait for many years. It was not easy. He and Sarah grew old, and humanly speaking, the promise seemed impossible. Yet Abraham continued to believe.</p>
+        <p>His faith was not based on what he could see. His faith was based on the God who had given the promise (Romans 4:18-21). Sometimes God gives us a promise, but the fulfilment does not come immediately. During that waiting period, we may face challenges, disappointments and temptations. We may even begin to wonder, “When will God answer me?”</p>
+        <p><strong>Remember:</strong> God never drops His promises (2 Peter 3:9). The waiting period may be God's way of preparing us for what He has already prepared for us. Joseph is another example. God gave Joseph dreams about his future (Genesis 37:5-11). But before Joseph saw the fulfilment of those dreams, he went through rejection, betrayal, slavery, false accusation and imprisonment (Genesis 39–40). Joseph's journey was not easy, but every difficulty was part of the journey toward God's purpose (Genesis 50:20). Therefore, when we are waiting, we should not conclude that God has forgotten us. Delay does not mean denial.</p>
+
+        <h3>2. Faith teaches us not to lose hope when the answer is delayed</h3>
+        <p>Look at the man at the pool of Bethesda. The Bible tells us that he had been suffering for 38 years (John 5:5). He was lying among many sick people, waiting for an opportunity. But year after year, he remained in the same condition. Imagine waiting for something for 38 years. He could have given up and said, “There is no hope for me.” But he remained there until Jesus came.</p>
+        <p>Jesus asked him, “Do you want to be made well?” (John 5:6) and did what nobody else could do. His long period of waiting finally came to an end when he encountered Jesus. Think also about the woman who had suffered from bleeding for 12 years (Luke 8:43-44). Instead of losing hope, she came to Jesus believing that even touching His garment would make her well. Her 12-year wait ended when she met Jesus (Luke 8:48). The length of our waiting does not determine the greatness of God's power (Ephesians 3:20).</p>
+
+        <h3>3. Waiting is a time of spiritual preparation</h3>
+        <p>Sometimes we think: “God, why are You making me wait?” But perhaps God is saying: “I am preparing you.” The waiting period can develop our patience (James 1:3-4), strengthen our faith (1 Peter 1:6-7), teach us dependence on God (Proverbs 3:5-6), and change our character (Romans 5:3-4). It prepares us to receive the blessing without being destroyed by it. God may be working in us before He works through us (Philippians 1:6).</p>
+        <p>Therefore, don't waste your waiting period. Use it to pray more (1 Thessalonians 5:17), draw closer to God (James 4:8), study His Word (Psalm 119:105), and strengthen your faith (Jude 1:20).</p>
+
+        <h3>Conclusion</h3>
+        <p>Brothers and sisters, we live in a world of instant results. But God works according to His perfect timing, not according to our timetable (Ecclesiastes 3:11). We want instant answers; God may be preparing a lasting answer (Isaiah 40:31). We want immediate blessings; God may be preparing us to receive a greater blessing (1 Corinthians 2:9).</p>
+        <p>So, keep praying, keep believing, keep trusting, keep hoping, and keep waiting (Psalm 27:14). When the answer is delayed, don't think that God has forgotten you (Isaiah 49:15-16). When the road becomes difficult, don't abandon your faith (Hebrews 10:35-36). When you cannot see the answer, remember what Hebrews 11:1 says:</p>
+        <p><em>“Faith is the substance of things hoped for, the evidence of things not seen.”</em></p>
+        <p>We may not see the blessing today or understand what God is doing today, but we can trust the One who holds our tomorrow (Proverbs 16:9). God's timing is always better than our timing (Isaiah 55:8-9). So let us patiently wait upon the Lord, holding firmly to His promises, because the God who promised is faithful (Hebrews 10:23).</p>
+        <p style="margin-top: 20px;"><strong>Amen</strong></p>
+    </div>
+</div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="quick-links">
+                <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
+                <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
+                <li><a href="our-belief.html">Our Faith - What we believe</a></li>
+                <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
+                <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
+                <li><a href="contact-us.html">Parish Location</a></li>
+                <li><a href="parish-history.html">Bangalore Parish History</a></li> 
+            </ul>
+        </div>
+        <div class="footer-right">
+            <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+            <p>#17,18, Church Lane, Defence Colony,<br> Kavery Nagar, Horamavu Agara, <br> Bangalore - 560 113</p>
+            <p> Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> 
+                <br> Treasurer: <a href="tel:+919742699916" style="color: #FFFF99;">97426 99916</a>
+                <br> Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a>  
+                <br> Treasurer Email: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+  // 1. Back to Top Button Logic
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.onscroll = function() {
+    if (backToTopBtn) {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    }
+  };
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // 2. Main Mobile Menu Toggle
+  function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    nav.classList.toggle("active");
+  }
+
+  // 3. Submenu (Dropdown) Logic for Mobile
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown > a');
+
+    dropdowns.forEach(item => {
+      item.addEventListener('click', function(e) {
+        // Only run this on mobile screens (600px or less)
+        if (window.innerWidth <= 600) {
+          e.preventDefault(); // Stop the link from following the URL
+          const currentContent = this.nextElementSibling;
+          
+          // Close all OTHER open submenus first (prevents the overlapping glitch)
+          document.querySelectorAll('.dropdown-content').forEach(otherContent => {
+            if (otherContent !== currentContent) {
+              otherContent.style.display = 'none';
+            }
+          });
+
+          // Toggle ONLY this specific golden submenu
+          if (currentContent.style.display === 'block') {
+            currentContent.style.display = 'none';
+          } else {
+            currentContent.style.display = 'block';
+          }
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
