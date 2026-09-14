@@ -984,7 +984,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById("today-date-text").innerText = today.toDateString();
     document.getElementById("day-count-display").innerText = `Day ${dayNum}`;
-    document.getElementById("today-portion").innerText = data.portion;
+  //  document.getElementById("today-portion").innerText = data.portion;
+	document.getElementById("today-portion").innerHTML = data.portion;
     document.getElementById("today-verse-text").innerText = `"${data.verse}"`;
     document.getElementById("today-verse-ref").innerText = `— ${data.ref}`;
 
