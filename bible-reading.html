@@ -984,8 +984,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById("today-date-text").innerText = today.toDateString();
     document.getElementById("day-count-display").innerText = `Day ${dayNum}`;
-  //  document.getElementById("today-portion").innerText = data.portion;
-	document.getElementById("today-portion").innerHTML = data.portion;
+  	document.getElementById("today-portion").innerHTML = data.portion;
     document.getElementById("today-verse-text").innerText = `"${data.verse}"`;
     document.getElementById("today-verse-ref").innerText = `— ${data.ref}`;
 
@@ -1049,8 +1048,7 @@ function searchArchive(selectedDateStr) {
     document.getElementById("archive-display").style.display = "block";
     document.getElementById("archive-date-text").innerText = selectedDateStr;
     document.getElementById("archive-day-count").innerText = `Day ${dayNum}`;
-   // document.getElementById("archive-portion").innerText = data.portion;
-	document.getElementById("archive-portion").innerHTML = data.portion;
+   	document.getElementById("archive-portion").innerHTML = data.portion;
     document.getElementById("archive-verse-text").innerText = `"${data.verse}"`;
     document.getElementById("archive-verse-ref").innerText = `— ${data.ref}`;
 }
@@ -1071,8 +1069,7 @@ function selectGridDay(dayNum) {
     resultBox.style.display = "block";
     resultBox.innerHTML = `
         <strong style="color: #800020; font-size: 1.05rem;">Day ${dayNum} Reading Portion:</strong>
-
-	   <div style="font-size: 1.25rem; font-weight: bold; color: #2c3e50; margin: 8px 0; line-height: 1.5;">${data.portion}</div>
+   	    <div style="font-size: 1.25rem; font-weight: bold; color: #2c3e50; margin: 8px 0; line-height: 1.5;">${data.portion}</div>
         <div style="border-top: 1px dashed #ebdcd0; padding-top: 10px; margin-top: 10px;">
             <div style="font-size: 0.75rem; text-transform: uppercase; color: #800020; font-weight: bold; letter-spacing: 1px;">Key Verse</div>
             <p style="font-style: italic; color: #333; margin: 4px 0;">"${data.verse}"</p>
