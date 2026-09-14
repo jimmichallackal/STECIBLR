@@ -313,16 +313,23 @@
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 200px;
+ /*   width: 200px; */
+   width: 100%; /* Changed from fixed 200px to fluid layout for mobile safety */
+    max-width: 250px;
     text-align: center;
+    box-sizing: border-box;
+
 }
 
 .archive-box {
     background: #16a085;
     color: white;
-    padding: 25px;
+   /* padding: 25px; */
+    padding: 20px; /* Adjusted padding slightly for compact mobile screens */
     border-radius: 12px;
     margin-top: 20px;
+    box-sizing: border-box;
+    word-wrap: break-word;
 }
 
   /* Style the button */
@@ -407,6 +414,10 @@ font-size: 0.9rem;
     }
     .quick-links {
         justify-content: center;
+    }
+    /* Mobile-specific padding tweaks for the reading card container */
+    .reading-card {
+        padding: 20px 15px;
     }
 }
 
@@ -991,6 +1002,13 @@ yesterday.setDate(yesterday.getDate() - 1);
 const yyyyYest = yesterday.getFullYear();
 const mmYest = String(yesterday.getMonth() + 1).padStart(2, '0');
 const ddYest = String(yesterday.getDate()).padStart(2, '0');
+
+// Safe fallback or calculation handled via layout
+    
+    // Formatting max constraints cleanly
+    const yyyyYestStr = yesterday.getFullYear();
+    const mmYestStr = String(yesterday.getMonth() + 1).padStart(2, '0');
+    const ddYestStr = String(yesterday.getDate()).padStart(2, '0');
 document.getElementById("jump-to-date").max = `${yyyyYest}-${mmYest}-${ddYest}`;
 
 });
@@ -1005,7 +1023,7 @@ function searchArchive(selectedDateStr) {
 
     if (selectedDate >= today) {
         alert("Please select a date prior to today for the archive.");
-        document.getElementById("jump-to-date").value = `${yyyyYest}-${mmYest}-${ddYest}`;
+  //      document.getElementById("jump-to-date").value = `${yyyyYest}-${mmYest}-${ddYest}`;
         return;
     }
 
