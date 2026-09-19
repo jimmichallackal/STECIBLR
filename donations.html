@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Church Offerings and Funds - STECI Bangalore</title> 
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="View Church Offerings, Special Offerings, and Fund details for STECI Bangalore"> 
+    
+    <style>
+        /* Base Page Styles */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            font-family: Roboto, Arial, sans-serif;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        img {
+            max-width: 100%; 
+            height: auto;
+            display: block; 
+        }
+
+        /* Header Banner & Title */
+        .header-banner {
+            width: 100%;
+        }
+
+        .mission-heading {
+            text-align: center;
+            vertical-align: middle;
+            color: #FFFF99;
+            background-color: #243117;
+        }
+
+        .mission-heading h1 {
+            text-align: center;
+            margin: 0;
+            padding: 20px 0;
+            font-size: 1.8rem;
+        }
+
+        /* Unified Navbar Styling */
+        .navbar {
+            background-color: #5C1A1B;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #FFFF99;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            display: block;
+            color: #FFFF99; 
+            text-align: center;
+            padding: 10px 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links li a:hover {
+            background-color: #3d1112;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1001;
+            text-align: left;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: #5C1A1B !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #eee;
+            font-weight: normal;
+            white-space: nowrap;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #5C1A1B;
+            color: #FFFF99 !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Mobile Navigation CSS */
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 15px;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #FFFF99;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        @media screen and (max-width: 600px) {
+            .menu-icon {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background-color: #5C1A1B;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+                border-top: 1px solid #7a2425;
+            }
+
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                background-color: #4a1415;
+            }
+
+            .dropdown-content a {
+                color: #FFFF99 !important;
+                background-color: #4a1415 !important;
+                padding: 12px 40px;
+                border-bottom: 1px solid #5C1A1B;
+                white-space: normal;
+            }
+        }
+
+        /* Container & Tables Styling */
+        .special-offerings-container, 
+        .other-donations-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 15px;
+            overflow-x: auto;
+        }
+
+        .special-offerings-container h2, 
+        .other-donations-container h2 {
+            text-align: center;
+            font-family: sans-serif;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+/* Keeps specific columns or cells on a single line */
+.no-wrap {
+    white-space: nowrap;
+}
+
+/* Optional: Slightly compact padding for the donations table if needed */
+.other-donations-container .scripture-table th,
+.other-donations-container .scripture-table td {
+    padding: 6px 10px;
+}
+        .scripture-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: sans-serif;
+            font-size: 14px;
+            border: 1px solid #000;
+            background-color: #fff;
+        }
+
+        .scripture-table th {
+            background-color: #f8f9fa;
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .scripture-table th.center-align,
+        .scripture-table td.center-align {
+            text-align: center;
+        }
+
+        .scripture-table td {
+            border: 1px solid #000;
+            padding: 6px 8px;
+            vertical-align: middle;
+        }
+
+        .scripture-table tbody tr:nth-child(even) {
+            background-color: #fcfcfc;
+        }
+
+        .scripture-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Back to Top Button */
+        #backToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 14px;
+            border: none;
+            outline: none;
+            background-color: #006400;
+            color: white;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        #backToTopBtn:hover {
+            background-color: #228B22;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px 8%;
+            border-top: 2px solid #444;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-left {
+            text-align: left;
+        }
+
+        .footer-right {
+            text-align: right;
+            align-self: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-heading {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .quick-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 30px;
+        }
+
+        .quick-links li a {
+            color: #bbb;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .quick-links li a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .footer-left, .footer-right {
+                text-align: center;
+                width: 100%;
+            }
+            .quick-links {
+                justify-content: center;
+            }
+        }
+/* Donation Encouragement Section */
+.donation-banner-card {
+    max-width: 1000px;
+    margin: 30px auto 20px auto;
+    background: #fdfefd;
+    border: 1px solid #d4af37;
+    border-left: 5px solid #5C1A1B;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.donation-banner-flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.donation-banner-img {
+    flex: 0 0 270px; /* Increased by 50% from 180px */
+    text-align: center;
+}
+
+.donation-banner-img img {
+    width: 100%;
+    max-height: 225px; /* Increased by 50% from 150px */
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.donation-banner-text {
+    flex: 1;
+}
+
+.donation-banner-text h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #5C1A1B;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+}
+
+.donation-banner-text p {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.bible-verse-quote {
+    font-style: italic;
+    color: #243117;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Responsive design: Stack image above text on mobile devices */
+@media (max-width: 768px) {
+    .donation-banner-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    .donation-banner-img {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 250px; /* Adjusted slightly for mobile view */
+        margin: 0 auto;
+    }
+}
+    </style>
+</head>
+<body>
+
+<button id="backToTopBtn" title="Go to top">↑ Top</button>
+
+<!-- Header Banner -->
+<div class="header-banner">
+    <img src="Steciblr_files/steciblrbanner.png" alt="Church banner or logo" width="100%" border="0" />
+</div>
+
+<!-- Navigation Menu -->
+<nav class="navbar">
+  <div class="menu-icon" onclick="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Church ▾</a>
+      <div class="dropdown-content">
+        <a href="church-leaders.html">Church Leaders</a>
+        <a href="church-history.html">Church History</a>
+        <a href="donations.html">Church Donations</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Parish ▾</a>
+      <div class="dropdown-content">
+        <a href="parish-vicar.html">Parish Vicars</a>
+        <a href="parish-history.html">Parish History</a>
+        <a href="lectionary.html">Lectionary</a>
+        <a href="parish-bulletin.html">Parish Bulletin</a>
+        <a href="executive-committee.html">Executive Committee</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Foundation ▾</a>
+      <div class="dropdown-content">
+        <a href="mission-vision.html">Mission & Vision</a>
+        <a href="our-belief.html">Our Faith</a>
+        <a href="bible-reading.html">365 Day Bible Reading</a>
+      </div>
+    </li>
+    
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Liturgy ▾</a>
+      <div class="dropdown-content">
+        <a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
+        <a href="liturgy-public.html">Order of Public worship</a>
+        <a href="manglish-liturgy-holycommunion.html">Holy Communion – Manglish</a>
+        <a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
+        <a href="mal-liturgy-holycommunion.html">തിരുവത്താഴ ശുശ്രൂഷാ ക്രമം</a>
+        <a href="mal-liturgy-public.html">പരസ്യാരാധനാക്രമം</a>
+      </div>
+    </li>
+
+    <li><a href="message.html">Message</a></li>
+    
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Gallery ▾</a>
+      <div class="dropdown-content">
+        <a href="photos-gallery.html">Photo Gallery</a>
+        <a href="videos-gallery.html">Video Gallery</a>
+      </div>
+    </li>
+
+    <li><a href="contact-us.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Main Banner Header -->
+<main class="main-content">
+    <table border="1" style="width: 100%; border-collapse: collapse;" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td class="mission-heading">
+                    <h1><strong>Church Offerings and Funds</strong></h1>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<!-- Bible-Based Encouragement Banner -->
+<div class="donation-banner-card">
+    <div class="donation-banner-flex">
+        <div class="donation-banner-img">
+            <img src="Steciblr_files/donation.jpg" alt="Give with a joyful heart">
+        </div>
+        <div class="donation-banner-text">
+            <h3>A Cheerful Giver</h3>
+            <p>Giving is an act of worship and gratitude. We encourage everyone to support the mission and ministry of the church and parish willingly, out of a heart filled with love and thankfulness for God's endless blessings.</p>
+            <p class="bible-verse-quote">"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver." <br>— 2 Corinthians 9:7</p>
+        </div>
+    </div>
+</div>
+
+<!-- Special Offerings Section -->
+<div class="special-offerings-container">
+  <h2>2026 Special Offerings</h2>
+  <table class="scripture-table">
+    <thead>
+      <tr>
+        <th class="center-align" style="width: 80px;">Sl. No.</th>
+        <th>Offering / Fund Name</th>
+        <th>Board Name</th>
+        <th>Month</th>
+        <th class="center-align" style="width: 100px;">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="center-align">1</td>
+        <td>Church Day (സഭാ ദിനം)</td>
+        <td>Church General Fund</td>
+        <td>January</td>
+        <td class="center-align">11</td>
+      </tr>
+      <tr>
+        <td class="center-align">2</td>
+        <td>Sunday School Day (സണ്ടേസ്കൂൾ ദിനം)</td>
+        <td>Board for Sunday School work</td>
+        <td>February</td>
+        <td class="center-align">8</td>
+      </tr>
+      <tr>
+        <td class="center-align">3</td>
+        <td>Bible Seminary (ബൈബിൾ സെമിനാരി)</td>
+        <td>Church General Fund</td>
+        <td>April</td>
+        <td class="center-align">5</td>
+      </tr>
+      <tr>
+        <td class="center-align">4</td>
+        <td>Development Fund (വികസന ഫണ്ട്)</td>
+        <td>Church General Fund</td>
+        <td>April</td>
+        <td class="center-align">19</td>
+      </tr>
+      <tr>
+        <td class="center-align">5</td>
+        <td>Sevini Sunday (സേവിനി സണ്ടേ)</td>
+        <td>Board for Women's work</td>
+        <td>May</td>
+        <td class="center-align">3</td>
+      </tr>
+      <tr>
+        <td class="center-align">6</td>
+        <td>Vijaya Sthothram (വിജയ സ്തോത്രം)</td>
+        <td>Board for Youth work</td>
+        <td>June</td>
+        <td class="center-align">7</td>
+      </tr>
+      <tr>
+        <td class="center-align">7</td>
+        <td>Education Day (വിദ്യാഭ്യാസ ദിനം)</td>
+        <td>Education Board</td>
+        <td>June</td>
+        <td class="center-align">21</td>
+      </tr>
+      <tr>
+        <td class="center-align">8</td>
+        <td>J.M.B.C. (ജെ.എം.ബി.സി.)</td>
+        <td>Church General Fund</td>
+        <td>July</td>
+        <td class="center-align">5</td>
+      </tr>
+      <tr>
+        <td class="center-align">9</td>
+        <td>Clergy Aid Fund (പട്ടക്കാരുടെ സഹായനിധി)</td>
+        <td>Church General Fund</td>
+        <td>August</td>
+        <td class="center-align">2</td>
+      </tr>
+      <tr>
+        <td class="center-align">10</td>
+        <td>Bible Society (ബൈബിൾ സൊസൈറ്റി)</td>
+        <td>Church General Fund</td>
+        <td>September</td>
+        <td class="center-align">6</td>
+      </tr>
+      <tr>
+        <td class="center-align">11</td>
+        <td>Youth Sunday (യുവജന സണ്ടേ)</td>
+        <td>Board for Youth work</td>
+        <td>October</td>
+        <td class="center-align">4</td>
+      </tr>
+      <tr>
+        <td class="center-align">12</td>
+        <td>Missionary Sunday (മിഷനറി സണ്ടേ)</td>
+        <td>Board for Evangelistic work</td>
+        <td>November</td>
+        <td class="center-align">1</td>
+      </tr>
+      <tr>
+        <td class="center-align">13</td>
+        <td>Poor Aid (സാധുസഹായ നിധി)</td>
+        <td>Church General Fund</td>
+        <td>December</td>
+        <td class="center-align">6</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Other Donations Section -->
+<div class="other-donations-container">
+  <h2>Other Donations</h2>
+  <table class="scripture-table">
+    <thead>
+      <tr>
+        <th class="center-align" style="width: 80px;">Sl. No.</th>
+        <th>Offertory / Fund name</th>
+        <th>Board Name</th>
+        <th class="no-wrap">Month</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="center-align">1</td>
+        <td class="no-wrap">Clegry Compensatory Fund (പട്ടക്കാരുടെ നഷ്ടപരിഹാര നിധി)</td>
+        <td>Church General Fund</td>
+        <td class="no-wrap">Before 31 March</td>
+      </tr>
+      <tr>
+        <td class="center-align">2</td>
+        <td class="no-wrap">Nithya Chilavu (നിത്യ ചിലവ്)</td>
+        <td>Church General Fund</td>
+        <td class="no-wrap">Before 31 March</td>
+      </tr>
+      <tr>
+        <td class="center-align">3</td>
+        <td class="no-wrap">Tithe Offering (ദശാംശം)</td>
+        <td>Church General Fund</td>
+        <td class="no-wrap">Before 31 March</td>
+      </tr>
+      <tr>
+        <td class="center-align">4</td>
+        <td class="no-wrap">Harvest Festival (ആദ്യഫലം)</td>
+        <td>Board for Evangelistic work</td>
+        <td>December</td>
+      </tr>
+      <tr>
+        <td class="center-align">5</td>
+        <td class="no-wrap">Anduvari (ആണ്ടുവരി)</td>
+        <td>Board for Evangelistic work</td>
+        <td>February</td>
+      </tr>
+      <tr>
+        <td class="center-align">6</td>
+        <td class="no-wrap">Self Denial (ഉപോഷണം)</td>
+        <td>Board for Evangelistic work</td>
+        <td class="no-wrap">Passion Week</td>
+      </tr>
+      <tr>
+        <td class="center-align">7</td>
+        <td class="no-wrap">Nullari (നുള്ളരി)</td>
+        <td>Board for Sunday School work</td>
+        <td class="no-wrap">Before 31 March</td>
+      </tr>
+      <tr>
+        <td class="center-align">8</td>
+        <td class="no-wrap">Rupee Collection (രൂപാ പിരിവ്)</td>
+        <td>Board for Sunday School work</td>
+        <td class="no-wrap">Before 31 March</td>
+      </tr>
+      <tr>
+        <td class="center-align">9</td>
+        <td class="no-wrap">Goods Collection (സാധനങ്ങളുടെ ശേഖരണം)</td>
+        <td>Board for Sunday School work</td>
+        <td class="no-wrap">Before 31 March</td>
+      </tr>
+      <tr>
+        <td class="center-align">10</td>
+        <td class="no-wrap">Soujanya Dhaanam (സൗജന്യ ദാനം)</td>
+        <td>Board for Women's work</td>
+        <td>October</td>
+      </tr>
+      <tr>
+        <td class="center-align">11</td>
+        <td class="no-wrap">Annual Collection (വാർഷിക സംഭാവന)</td>
+        <td>Board for Women's work</td>
+        <td>December</td>
+      </tr>
+      <tr>
+        <td class="center-align">12</td>
+        <td class="no-wrap">Deppy Collection (ഡെപ്പി പിരിവ്)</td>
+        <td>Board for Women's work</td>
+        <td>December</td>
+      </tr>
+      <tr>
+        <td class="center-align">13</td>
+        <td>Convention Song Book, Pen Drive & Media <br>(കൺവെൻഷൻ പാട്ട് പുസ്തകവും, മറ്റും)</td>
+        <td class="no-wrap">Department of Music and Communications</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Footer Section -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="quick-links">
+                <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
+                <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
+                <li><a href="our-belief.html">Our Faith - What we believe</a></li>
+                <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
+                <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
+                <li><a href="contact-us.html">Parish Location</a></li>
+                <li><a href="parish-history.html">Bangalore Parish History</a></li> 
+            </ul>
+        </div>
+        <div class="footer-right">
+            <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+            <p>#17,18, Church Lane, Defence Colony,<br> Kavery Nagar, Horamavu Agara, <br> Bangalore - 560 113</p>
+            <p> Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> 
+                <br> Treasurer: <a href="tel:+919742699916" style="color: #FFFF99;">97426 99916</a>
+                <br> Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a>  
+                <br> Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 1. Mobile Navigation Toggle
+    function toggleMenu() {
+        const nav = document.getElementById("nav-links");
+        if (nav) {
+            nav.classList.toggle("active");
+        }
+    }
+
+    // 2. Mobile Submenu Accordion Setup
+    document.addEventListener("DOMContentLoaded", function() {
+        const dropdowns = document.querySelectorAll('.dropdown > a');
+
+        dropdowns.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 600) {
+                    e.preventDefault();
+                    const currentContent = this.nextElementSibling;
+                    
+                    document.querySelectorAll('.dropdown-content').forEach(other => {
+                        if (other !== currentContent) {
+                            other.style.display = 'none';
+                        }
+                    });
+
+                    if (currentContent.style.display === 'block') {
+                        currentContent.style.display = 'none';
+                    } else {
+                        currentContent.style.display = 'block';
+                    }
+                }
+            });
+        });
+    });
+
+    // 3. Back to Top Button
+    const backToTopBtn = document.getElementById("backToTopBtn");
+    
+    window.onscroll = function() {
+        if (backToTopBtn) {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        }
+    };
+
+    if (backToTopBtn) {
+        backToTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    }
+</script>
+
+</body>
+</html>
