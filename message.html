@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Message of the Week | STECI Bangalore Parish</title> 
-     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta name="description" content="Read the weekly message, sermon reflections, and spiritual guidance from the St. Thomas Evangelical Church of India, Bangalore Parish."> 
     <style>
@@ -193,6 +193,32 @@
             font-size: 0;
         }
 
+        /* Selector Bar Styling */
+        .selector-bar {
+            max-width: 900px;
+            margin: 20px auto 0 auto;
+            padding: 15px 20px;
+            background-color: #f4f6f8;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-weight: bold;
+            color: #5C1A1B;
+        }
+
+        .selector-bar select {
+            padding: 8px 12px;
+            font-size: 1rem;
+            border: 1px solid #94a3b8;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #1e293b;
+            cursor: pointer;
+        }
+
         /* Message Layout Container */
         .message-container {
             max-width: 900px;
@@ -335,6 +361,11 @@
                 margin: 10px;
                 padding: 15px;
             }
+            .selector-bar {
+                margin: 10px;
+                flex-direction: column;
+                gap: 8px;
+            }
         }
     </style>
 </head>
@@ -425,40 +456,27 @@
       </table>
 </div>
 
+<!-- Date Selector Dropdown Bar -->
+<div class="selector-bar">
+    <label for="sundaySelect">Select Sunday Message:</label>
+    <select id="sundaySelect" onchange="changeMessage(this.value)">
+        <option value="2026-09-20" selected>20 Sep 2026</option>
+        <option value="2026-09-13">13 Sep 2026</option>
+    </select>
+</div>
+
 <div class="message-container">
     <div class="message-meta">
-        <div class="msg-date">Date: 13 Sep 2026</div>
-        <div class="msg-theme">Theme: Faith Requires Patience to Wait</div>
-        <div class="msg-verse-box">
-            “Now faith is the substance of things hoped for, the evidence of things not seen.” <br>
-            <strong>— Hebrews 11:1 (NKJV)</strong>
+        <div class="msg-date" id="displayDate">Date: 20 Sep 2026</div>
+        <div class="msg-theme" id="displayTheme">Theme: Be Filled with the Holy Spirit</div>
+        <div class="msg-verse-box" id="displayVerse">
+            “And they were all filled with the Holy Spirit” <br>
+            <strong>— Acts 2:4[a] (NKJV)</strong>
         </div>
     </div>
 
-    <div class="message-body">
-        <p>Dear brothers and sisters,</p>
-        <p>We live in a world where people want everything immediately. Technology has changed our expectations. We want instant messages, instant replies, instant deliveries, instant results, and instant solutions. Technology is continually pushing us toward a faster way of living.</p>
-        <p>Unfortunately, this influence can also enter our spiritual life. We expect God to answer our prayers immediately. We want healing in one day. We want our problems to disappear quickly. When we pray, sometimes we expect an immediate answer. But the Bible never teaches us that every blessing comes instantly. God may answer immediately, but many times God asks us to wait. And waiting is not a waste of time. Waiting is part of God's preparation.</p>
-
-        <h3>1. Faith teaches us to wait for God's promise</h3>
-        <p>Abraham received a wonderful promise from God (Genesis 12:1-3). God promised that he would have a son and that through him God would fulfil His covenant. But Abraham had to wait for many years. It was not easy. He and Sarah grew old, and humanly speaking, the promise seemed impossible. Yet Abraham continued to believe.</p>
-        <p>His faith was not based on what he could see. His faith was based on the God who had given the promise (Romans 4:18-21). Sometimes God gives us a promise, but the fulfilment does not come immediately. During that waiting period, we may face challenges, disappointments and temptations. We may even begin to wonder, “When will God answer me?”</p>
-        <p> Joseph is another example. God gave Joseph dreams about his future (Genesis 37:5-11). But before Joseph saw the fulfilment of those dreams, he went through rejection, betrayal, slavery, false accusation and imprisonment (Genesis 39–40). Joseph's journey was not easy, but every difficulty was part of the journey toward God's purpose (Genesis 50:20). Therefore, when we are waiting, we should not conclude that God has forgotten us. Delay does not mean denial.</p>
-        <p><strong>Remember:</strong> God never drops His promises (2 Peter 3:9). The waiting period may be God's way of preparing us for what He has already prepared for us.</p>
-        <h3>2. Faith teaches us not to lose hope when the answer is delayed</h3>
-        <p>Look at the man at the pool of Bethesda. The Bible tells us that he had been suffering for 38 years (John 5:5). He was lying among many sick people, waiting for an opportunity. But year after year, he remained in the same condition. Imagine waiting for something for 38 years. He could have given up and said, “There is no hope for me.” But he remained there until Jesus came.</p>
-        <p>Jesus asked him, “Do you want to be made well?” (John 5:6) and did what nobody else could do. His long period of waiting finally came to an end when he encountered Jesus. Think also about the woman who had suffered from bleeding for 12 years (Luke 8:43-44). Instead of losing hope, she came to Jesus believing that even touching His garment would make her well. Her 12-year wait ended when she met Jesus (Luke 8:48). The length of our waiting does not determine the greatness of God's power (Ephesians 3:20).</p>
-
-        <h3>3. Waiting is a time of spiritual preparation</h3>
-        <p>Sometimes we think: “God, why are You making me wait?” But perhaps God is saying: “I am preparing you.” The waiting period can develop our patience (James 1:3-4), strengthen our faith (1 Peter 1:6-7), teach us dependence on God (Proverbs 3:5-6), and change our character (Romans 5:3-4). It prepares us to receive the blessing without being destroyed by it. God may be working in us before He works through us (Philippians 1:6).</p>
-        <p>Therefore, don't waste your waiting period. Use it to pray more (1 Thessalonians 5:17), draw closer to God (James 4:8), study His Word (Psalm 119:105), and strengthen your faith (Jude 1:20).</p>
-
-        <h3>Conclusion</h3>
-        <p>Brothers and sisters, we live in a world of instant results. But God works according to His perfect timing, not according to our timetable (Ecclesiastes 3:11). We want instant answers; God may be preparing a lasting answer (Isaiah 40:31). We want immediate blessings; God may be preparing us to receive a greater blessing (1 Corinthians 2:9).</p>
-        <p>So, keep praying, keep believing, keep trusting, keep hoping, and keep waiting (Psalm 27:14). When the answer is delayed, don't think that God has forgotten you (Isaiah 49:15-16). When the road becomes difficult, don't abandon your faith (Hebrews 10:35-36). When you cannot see the answer, remember what Hebrews 11:1 says:</p>
-        <p><em>“Faith is the substance of things hoped for, the evidence of things not seen.”</em></p>
-        <p>We may not see the blessing today or understand what God is doing today, but we can trust the One who holds our tomorrow (Proverbs 16:9). God's timing is always better than our timing (Isaiah 55:8-9). So let us patiently wait upon the Lord, holding firmly to His promises, because the God who promised is faithful (Hebrews 10:23).</p>
-        <p style="margin-top: 20px;"><strong>Amen</strong></p>
+    <div class="message-body" id="displayBody">
+        <!-- Message text gets injected here dynamically -->
     </div>
 </div>
 </main>
@@ -472,13 +490,13 @@
                 <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
                 <li><a href="our-belief.html">Our Faith - What we believe</a></li>
                 <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
-                <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
+                <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Memorial Bible College</a></li>
                 <li><a href="contact-us.html">Parish Location</a></li>
                 <li><a href="parish-history.html">Bangalore Parish History</a></li> 
                 <li><a href="donations.html">Donations</a></li> 
-				<li><a href="mal-liturgy-holycommunion.html">Liturgy - Malayalam Holy Communion</a></li> 
-				<li><a href="manglish-liturgy-holycommunion.html">Liturgy - Manglish Holy Communion</a></li> 
-				<li><a href="message.html">Message</a></li> 
+                <li><a href="mal-liturgy-holycommunion.html">Liturgy - Malayalam Holy Communion</a></li> 
+                <li><a href="manglish-liturgy-holycommunion.html">Liturgy - Manglish Holy Communion</a></li> 
+                <li><a href="message.html">Message</a></li> 
             </ul>
         </div>
         <div class="footer-right">
@@ -494,59 +512,246 @@
 </footer>
 
 <script>
-  // 1. Back to Top Button Logic
-  const backToTopBtn = document.getElementById("backToTopBtn");
+    // Database containing messages for different Sundays
+    const messagesData = {
+        "2026-09-13": {
+            date: "13 Sep 2026",
+            theme: "Theme: Faith Requires Patience to Wait",
+            verse: `“Now faith is the substance of things hoped for, the evidence of things not seen.” <br><strong>— Hebrews 11:1 (NKJV)</strong>`,
+            body: `
+                <p>Dear brothers and sisters,</p>
+                <p>We live in a world where people want everything immediately. Technology has changed our expectations. We want instant messages, instant replies, instant deliveries, instant results, and instant solutions. Technology is continually pushing us toward a faster way of living.</p>
+                <p>Unfortunately, this influence can also enter our spiritual life. We expect God to answer our prayers immediately. We want healing in one day. We want our problems to disappear quickly. When we pray, sometimes we expect an immediate answer. But the Bible never teaches us that every blessing comes instantly. God may answer immediately, but many times God asks us to wait. And waiting is not a waste of time. Waiting is part of God's preparation.</p>
 
-  window.onscroll = function() {
-    if (backToTopBtn) {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        backToTopBtn.style.display = "block";
-      } else {
-        backToTopBtn.style.display = "none";
-      }
-    }
-  };
+                <h3>1. Faith teaches us to wait for God's promise</h3>
+                <p>Abraham received a wonderful promise from God (Genesis 12:1-3). God promised that he would have a son and that through him God would fulfil His covenant. But Abraham had to wait for many years. It was not easy. He and Sarah grew old, and humanly speaking, the promise seemed impossible. Yet Abraham continued to believe.</p>
+                <p>His faith was not based on what he could see. His faith was based on the God who had given the promise (Romans 4:18-21). Sometimes God gives us a promise, but the fulfilment does not come immediately. During that waiting period, we may face challenges, disappointments and temptations. We may even begin to wonder, “When will God answer me?”</p>
+                <p>Joseph is another example. God gave Joseph dreams about his future (Genesis 37:5-11). But before Joseph saw the fulfilment of those dreams, he went through rejection, betrayal, slavery, false accusation and imprisonment (Genesis 39–40). Joseph's journey was not easy, but every difficulty was part of the journey toward God's purpose (Genesis 50:20). Therefore, when we are waiting, we should not conclude that God has forgotten us. Delay does not mean denial.</p>
+                <p><strong>Remember:</strong> God never drops His promises (2 Peter 3:9). The waiting period may be God's way of preparing us for what He has already prepared for us.</p>
+                
+                <h3>2. Faith teaches us not to lose hope when the answer is delayed</h3>
+                <p>Look at the man at the pool of Bethesda. The Bible tells us that he had been suffering for 38 years (John 5:5). He was lying among many sick people, waiting for an opportunity. But year after year, he remained in the same condition. Imagine waiting for something for 38 years. He could have given up and said, “There is no hope for me.” But he remained there until Jesus came.</p>
+                <p>Jesus asked him, “Do you want to be made well?” (John 5:6) and did what nobody else could do. His long period of waiting finally came to an end when he encountered Jesus. Think also about the woman who had suffered from bleeding for 12 years (Luke 8:43-44). Instead of losing hope, she came to Jesus believing that even touching His garment would make her well. Her 12-year wait ended when she met Jesus (Luke 8:48). The length of our waiting does not determine the greatness of God's power (Ephesians 3:20).</p>
 
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener("click", function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
+                <h3>3. Waiting is a time of spiritual preparation</h3>
+                <p>Sometimes we think: “God, why are You making me wait?” But perhaps God is saying: “I am preparing you.” The waiting period can develop our patience (James 1:3-4), strengthen our faith (1 Peter 1:6-7), teach us dependence on God (Proverbs 3:5-6), and change our character (Romans 5:3-4). It prepares us to receive the blessing without being destroyed by it. God may be working in us before He works through us (Philippians 1:6).</p>
+                <p>Therefore, don't waste your waiting period. Use it to pray more (1 Thessalonians 5:17), draw closer to God (James 4:8), study His Word (Psalm 119:105), and strengthen your faith (Jude 1:20).</p>
 
-  // 2. Main Mobile Menu Toggle
-  function toggleMenu() {
-    const nav = document.getElementById("nav-links");
-    nav.classList.toggle("active");
-  }
+                <h3>Conclusion</h3>
+                <p>Brothers and sisters, we live in a world of instant results. But God works according to His perfect timing, not according to our timetable (Ecclesiastes 3:11). We want instant answers; God may be preparing a lasting answer (Isaiah 40:31). We want immediate blessings; God may be preparing us to receive a greater blessing (1 Corinthians 2:9).</p>
+                <p>So, keep praying, keep believing, keep trusting, keep hoping, and keep waiting (Psalm 27:14). When the answer is delayed, don't think that God has forgotten you (Isaiah 49:15-16). When the road becomes difficult, don't abandon your faith (Hebrews 10:35-36). When you cannot see the answer, remember what Hebrews 11:1 says:</p>
+                <p><em>“Faith is the substance of things hoped for, the evidence of things not seen.”</em></p>
+                <p>We may not see the blessing today or understand what God is doing today, but we can trust the One who holds our tomorrow (Proverbs 16:9). God's timing is always better than our timing (Isaiah 55:8-9). So let us patiently wait upon the Lord, holding firmly to His promises, because the God who promised is faithful (Hebrews 10:23).</p>
+                <p style="margin-top: 20px;"><strong>Amen</strong></p>
+            `
+        },
+        "2026-09-20": {
+            date: "20 Sep 2026",
+            theme: "Theme: Be Filled with the Holy Spirit",
+            verse: `“And they were all filled with the Holy Spirit” <br><strong>— Acts 2:4[a] (NKJV)</strong>`,
+            body: `
+                <p>Dear brothers and sisters in Christ,</p>
+                <p>Imagine someone comes to you and speaks very harshly. They insult you, disturb you, or treat you unfairly.</p>
+                <p>What happens immediately?</p>
+                <p>We may feel anger rising within us. We may want to answer back. Sometimes one harsh word leads to another, and a small situation becomes a big problem.</p>
+                <p>But there is a difference between reacting and responding.</p>
+                <p>Our natural nature may say, “Answer them back.”</p>
+                <p>But the Holy Spirit teaches us to respond with wisdom, patience and grace.</p>
+                <p>Proverbs 15:1 says:<br>
+                <em>“A soft answer turns away wrath.”</em></p>
+                <p>Sometimes, if we speak gently, we may even turn a difficult person into a friend.</p>
+                <p>This is one practical way we can see the work of the Holy Spirit in our lives.</p>
+                <p>So today, let us think about three important questions:</p>
+                <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 15px;">
+                    <li>What does the Holy Spirit do in us?</li>
+                    <li>How can we recognise His work in our lives?</li>
+                    <li>And how can we live under the leading of the Holy Spirit?</li>
+                </ul>
 
-  // 3. Submenu (Dropdown) Logic for Mobile
-  document.addEventListener('DOMContentLoaded', function() {
-    const dropdowns = document.querySelectorAll('.dropdown > a');
+                <h3>1. We need the Holy Spirit every day</h3>
+                <p>Jesus promised His disciples the Holy Spirit.</p>
+                <p>John 14:26 says:<br>
+                <em>“But the Helper, the Holy Spirit, whom the Father will send in My name, He will teach you all things.”</em></p>
+                <p>The Holy Spirit is our Helper, Teacher and Guide.</p>
+                <p>For the success of the Christian life, we need the Holy Spirit. We are strengthened when the Holy Spirit comes upon us. The Holy Spirit brings conviction of sin, righteousness, and judgment.</p>
+                <p>We cannot depend only on our own strength, knowledge or experience.</p>
+                <p>We need the Spirit of God to guide us.</p>
+                <p>In Acts 2:4 we read:<br>
+                <em>“And they were all filled with the Holy Spirit.”</em></p>
+                <p>The disciples were filled with the Holy Spirit at Pentecost. Believers have already received the Holy Spirit, but we need to be filled again and again—we need to be filled with the Holy Spirit every single day.</p>
+                <p>For example, in Acts 4:31, after the believers prayed, “they were all filled with the Holy Spirit.”</p>
+                <p>This teaches us something important:</p>
+                <p>Our need for the Holy Spirit is continual.</p>
+                <p>We should not think, “I had a spiritual experience many years ago, so I am fine.”</p>
+                <p>Every day we need God's guidance. Every day we need His strength. Every day we need His presence.</p>
+                <p>Therefore, our prayer should be:<br>
+                <em>“Lord, fill me with Your Holy Spirit today.”</em></p>
 
-    dropdowns.forEach(item => {
-      item.addEventListener('click', function(e) {
-        // Only run this on mobile screens (600px or less)
-        if (window.innerWidth <= 600) {
-          e.preventDefault(); // Stop the link from following the URL
-          const currentContent = this.nextElementSibling;
-          
-          // Close all OTHER open submenus first (prevents the overlapping glitch)
-          document.querySelectorAll('.dropdown-content').forEach(otherContent => {
-            if (otherContent !== currentContent) {
-              otherContent.style.display = 'none';
-            }
-          });
+                <h3>2. What is the evidence of the Holy Spirit in you?</h3>
+                <p>This is an important question.</p>
+                <p>Galatians 5:22–23 says:<br>
+                <em>“But the fruit of the Spirit is love, joy, peace, longsuffering, kindness, goodness, faithfulness, gentleness, self-control.”</em></p>
+                <p>So we should not look only for an external manifestation. We should also look at the fruit in our lives:</p>
+                <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 15px;">
+                    <li>Are we becoming more loving?</li>
+                    <li>Are we becoming more patient?</li>
+                    <li>Are we becoming more forgiving?</li>
+                    <li>Are we developing self-control?</li>
+                    <li>Are we becoming more like Christ?</li>
+                </ul>
+                <p>The Holy Spirit changes our inner life, and that change becomes visible through our behaviour.</p>
+                <p>Jesus said in Matthew 7:20:<br>
+                <em>“Therefore by their fruits you will know them.”</em></p>
+                <p>The evidence is not merely what happens during worship. It is also what happens after worship:</p>
+                <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 15px;">
+                    <li>How do I behave at home?</li>
+                    <li>How do I treat my family?</li>
+                    <li>How do I speak to people at work?</li>
+                    <li>How do I respond when somebody disagrees with me?</li>
+                    <li>How do I behave when I am under pressure?</li>
+                </ul>
+                <p>These are practical places where the work of the Holy Spirit becomes visible.</p>
 
-          // Toggle ONLY this specific golden submenu
-          if (currentContent.style.display === 'block') {
-            currentContent.style.display = 'none';
-          } else {
-            currentContent.style.display = 'block';
-          }
+                <h3>3. Which spirit is leading us?</h3>
+                <p>The Bible also teaches us to have spiritual discernment.</p>
+                <p>In Mark 1:23, we read about a man with an unclean spirit.</p>
+                <p>Therefore, we should not assume that every spiritual experience or manifestation automatically comes from the Holy Spirit. We must ask whether it is consistent with God's Word and produces godly fruit.</p>
+                <p>The Holy Spirit leads us toward Christ, truth, holiness, love and obedience.</p>
+                <p>A useful test is:<br>
+                Does what is happening bring glory to God and produce the character of Christ?</p>
+                <p>There can be many external activities, but our lives must ultimately be aligned with God's purpose. The Holy Spirit does not simply give us an experience. He transforms our lives.</p>
+
+                <h3>4. The Holy Spirit is required in every area of Christian life</h3>
+                <p>The Holy Spirit is not only for Sunday worship. He is needed in every part of our Christian journey:</p>
+                <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 15px;">
+                    <li><strong>For Prayer:</strong> Romans 8:26 says, <em>“Likewise the Spirit also helps in our weaknesses.”</em> When we don't know how to pray, the Holy Spirit helps us.</li>
+                    <li><strong>For Witnessing:</strong> Acts 1:8 says, <em>“But you shall receive power when the Holy Spirit has come upon you; and you shall be witnesses to Me.”</em> He gives us strength to witness for Christ so that people can see Jesus through our lives.</li>
+                    <li><strong>For Speaking God's Word:</strong> The Holy Spirit gives wisdom and courage to speak God's truth.</li>
+                    <li><strong>For Church Service:</strong> Whether preaching, teaching, singing, praying, helping, organizing, or doing administration in the church, we need to serve under God's guidance rather than simply relying on our own ability.</li>
+                    <li><strong>For Spiritual Gifts:</strong> The Holy Spirit gives spiritual gifts for the building up of the body of Christ.</li>
+                    <li><strong>For Freedom:</strong> 2 Corinthians 3:17 says, <em>“Where the Spirit of the Lord is, there is liberty.”</em> He brings freedom from the things that hold us back from living for God.</li>
+                    <li><strong>For Understanding God:</strong> The Holy Spirit helps us know God more deeply and understand spiritual truth.</li>
+                    <li><strong>For God's Presence:</strong> The Holy Spirit makes us conscious of God's presence in our daily lives, connecting the believer's life with the hope of eternal life.</li>
+
+<li><strong>For  providing strength in difficult situations:</strong> </li>
+
+                      <p>One of the most powerful examples is Stephen. Stephen was serving God faithfully, but he faced opposition and eventually was killed because of his faith.</p>
+                <p>Yet Acts 7:55 says:<br>
+                <em>“But he, being full of the Holy Spirit, gazed into heaven and saw the glory of God.”</em></p>
+                <p>Being filled with the Holy Spirit did not mean Stephen had no difficulties. Instead, the Holy Spirit gave him strength in the middle of the difficulty.</p>
+                <p>This is important for us. We sometimes pray: <em>“Lord, remove every problem from my life.”</em> But sometimes God's answer is: <em>“I will give you strength to go through it.”</em> The Holy Spirit strengthens us when circumstances are difficult.</p>
+
+          </ul>
+
+             
+
+
+                <h3>5. Signs of the Holy Spirit in You:</h3>
+                <p>One of the clearest signs of the Holy Spirit is how we treat other people.</p>
+                <p>1 John 4:7 says: <em>“Beloved, let us love one another, for love is of God.”</em><br>
+                Jesus said in John 13:35: <em>“By this all will know that you are My disciples, if you have love for one another.”</em></p>
+                <p>If we claim to be Spirit-filled but continually create problems for others, hurt people with our words, refuse to forgive, and show no concern, we need to examine our spiritual life. The Spirit produces love.</p>
+                <p>Our face, words, actions and relationships should reflect the presence of God:</p>
+                <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 15px;">
+                    <li>When someone needs support, do we care?</li>
+                    <li>When someone is struggling, do we help?</li>
+                    <li>When someone makes a mistake, do we restore them or condemn them?</li>
+                    <li>When someone disagrees with us, can we remain gracious?</li>
+                </ul>
+                <p>This is where our faith becomes visible—not only in church, but through what happens in us every day.</p>
+
+                <h3>6. How can we be filled with the Holy Spirit?</h3>
+                <p>The Bible gives us simple principles:</p>
+                <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 15px;">
+                    <li><strong>Ask:</strong> Jesus said in Luke 11:13, <em>“How much more will your heavenly Father give the Holy Spirit to those who ask Him!”</em> We should ask God sincerely: <em>“Lord, fill me with Your Holy Spirit.”</em></li>
+                    <li><strong>Obey:</strong> When the Holy Spirit convicts us, we must respond. If we need to forgive, forgive. If we need to apologise, apologise. If we need to stop something wrong, stop.</li>
+                    <li><strong>Have Faith:</strong> We receive God's promises through faith. We don't need to manufacture an experience; we come before God with humility, faith, and surrender.</li>
+                </ul>
+
+                <h3>Conclusion</h3>
+                <p>Does my life reflect the Holy Spirit?</p>
+                <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 15px;">
+                    <li>When people disturb me, does my response reflect Christ?</li>
+                    <li>When I have an opportunity to help someone, do I show love and care?</li>
+                    <li>When I face a difficult situation, do I depend on God?</li>
+                    <li>And most importantly, am I submitting myself to the leading of the Holy Spirit?</li>
+                </ul>
+                <p>Let us not be concerned only about what we can demonstrate outwardly. Let us allow God to transform us inwardly.</p>
+                <p>Let our prayer be:<br>
+                <em>“Lord, I surrender myself to You. Fill me with Your Holy Spirit. Lead me every day. Make me Your child and make my life reflect Jesus.”</em></p>
+                <p>May God help us to live not merely by our natural reactions, but by the leading of the Holy Spirit.</p>
+                <p style="margin-top: 20px;"><strong>May God bless us all. Amen.</strong></p>
+            `
         }
-      });
+    };
+
+    // Function to switch messages dynamically when dropdown changes
+    function changeMessage(dateKey) {
+        const msg = messagesData[dateKey];
+        if (msg) {
+            document.getElementById("displayDate").innerText = "Date: " + msg.date;
+            document.getElementById("displayTheme").innerText = msg.theme;
+            document.getElementById("displayVerse").innerHTML = msg.verse;
+            document.getElementById("displayBody").innerHTML = msg.body;
+        }
+    }
+
+    // Initialize with default selected option on page load
+    document.addEventListener("DOMContentLoaded", function() {
+        const initialDropdownValue = document.getElementById("sundaySelect").value;
+        changeMessage(initialDropdownValue);
     });
-  });
+
+    // 1. Back to Top Button Logic
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.onscroll = function() {
+        if (backToTopBtn) {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        }
+    };
+
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // 2. Main Mobile Menu Toggle
+    function toggleMenu() {
+        const nav = document.getElementById("nav-links");
+        nav.classList.toggle("active");
+    }
+
+    // 3. Submenu (Dropdown) Logic for Mobile
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdowns = document.querySelectorAll('.dropdown > a');
+
+        dropdowns.forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (window.innerWidth <= 600) {
+                    e.preventDefault(); 
+                    const currentContent = this.nextElementSibling;
+                    
+                    document.querySelectorAll('.dropdown-content').forEach(otherContent => {
+                        if (otherContent !== currentContent) {
+                            otherContent.style.display = 'none';
+                        }
+                    });
+
+                    if (currentContent.style.display === 'block') {
+                        currentContent.style.display = 'none';
+                    } else {
+                        currentContent.style.display = 'block';
+                    }
+                }
+            });
+        });
+    });
 </script>
 </body>
 </html>
