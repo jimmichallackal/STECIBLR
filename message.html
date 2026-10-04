@@ -460,7 +460,8 @@
 <div class="selector-bar">
     <label for="sundaySelect">Select Sunday Message:</label>
     <select id="sundaySelect" onchange="changeMessage(this.value)">
-        <option value="2026-09-27" selected>27 Sep 2026</option>
+        <option value="2026-10-04" selected>04 Oct 2026</option>
+        <option value="2026-09-27">27 Sep 2026</option>
         <option value="2026-09-20">20 Sep 2026</option>
         <option value="2026-09-13">13 Sep 2026</option>
     </select>
@@ -468,11 +469,24 @@
 
 <div class="message-container">
     <div class="message-meta">
-        <div class="msg-date" id="displayDate">Date: 27 Sep 2026</div>
-        <div class="msg-theme" id="displayTheme">Theme: Senior Citizen's Day — Caring for and Accepting the Elderly</div>
+        <div class="msg-date" id="displayDate">Date: 04 Oct 2026</div>
+        <div class="msg-theme" id="displayTheme">Theme: The Choices We Make</div>
         <div class="msg-verse-box" id="displayVerse">
-            “Honor your father and mother,” which is the first commandment with promise: <br>
-            <strong>— Ephesians 6:2 (NKJV)</strong>
+         9 Rejoice, O young man, in your youth,
+And let your heart cheer you in the days of your youth;
+Walk in the [a]ways of your heart,
+And [b]in the sight of your eyes;
+But know that for all these
+God will bring you into judgment.
+10 Therefore remove [c]sorrow from your heart,
+And put away evil from your flesh,
+For childhood and [d]youth are vanity.
+
+12:1 Remember now your Creator in the days of your youth,
+Before the [e]difficult days come,
+And the years draw near when you say,
+“I have no pleasure in them <br>
+            <strong>— Ecclesiastes 11:9–10; 12:1 (NKJV)</strong>
         </div>
     </div>
 
@@ -513,8 +527,135 @@
 </footer>
 
 <script>
+   const messagesData = {
+        "2026-10-04": {
+            date: "04 Oct 2026",
+            theme: "The Choices We Make",
+            verse: `9 Rejoice, O young man, in your youth,
+And let your heart cheer you in the days of your youth;
+Walk in the [a]ways of your heart,
+And [b]in the sight of your eyes;
+But know that for all these
+God will bring you into judgment.
+10 Therefore remove [c]sorrow from your heart,
+And put away evil from your flesh,
+For childhood and [d]youth are vanity.
+
+12:1 Remember now your Creator in the days of your youth,
+Before the [e]difficult days come,
+And the years draw near when you say,
+“I have no pleasure in them”:<br><strong>— Ecclesiastes 11:9–10; 12:1 (NKJV)</strong>`,
+        body: `
+            <h3>Introduction</h3>
+            <p>Every day of our life is filled with choices.</p>
+            <p>Some choices may appear small—what we say, where we go, whom we spend time with, and how we use our time. But many of our choices shape our character, our future, our relationship with God, and ultimately our destiny.</p>
+            <p>The Bible reminds us that God has given us the freedom to choose. But freedom of choice also comes with responsibility and accountability.</p>
+            
+            <p><strong>Ecclesiastes 11:9 says:</strong><br>
+            <em>“Rejoice, O young man, in your youth, and let your heart cheer you in the days of your youth...”</em></p>
+            
+            <p>God does not want young people to live without joy. Youth is a gift from God. It is a season of energy, opportunity, dreams and possibilities.</p>
+            <p>But the verse continues with an important warning:</p>
+            <p><em>“But know that for all these things God will bring you into judgment.”</em></p>
+            <p>So the message is not simply, “Enjoy life.” It is, “Enjoy the life God has given you, but remember that you are accountable to God for the choices you make.”</p>
+            <p>And Ecclesiastes 12:1 gives us the most important instruction:<br>
+            <em>“Remember now your Creator in the days of your youth.”</em></p>
+
+            <h3>1. Make God-Centered Decisions</h3>
+            <p>In Joshua 24:14–15, Joshua challenged the people of Israel to make a choice:<br>
+            <em>“Choose for yourselves this day whom you will serve...”</em></p>
+            <p>Joshua had already made his decision:<br>
+            <em>“But as for me and my house, we will serve the Lord.”</em></p>
+            <p>Joshua did not wait to see what everyone else would choose. He made a personal commitment to God.</p>
+            
+            <p><strong>What is our choice? We make many decisions in life:</strong></p>
+            <ul>
+                <li>What career will I choose?</li>
+                <li>Whom will I marry?</li>
+                <li>How will I use my money?</li>
+                <li>What kind of friends will I have?</li>
+                <li>What will I watch and listen to?</li>
+                <li>How will I spend my time?</li>
+                <li>Will I put God first?</li>
+            </ul>
+            
+            <p>As Christians, our choices should begin with one question:<br>
+            <strong>“Will this choice glorify God?”</strong></p>
+            
+            <p>Colossians 4:17 says:<br>
+            <em>“Take heed to the ministry which you have received in the Lord, that you may fulfill it.”</em></p>
+            
+            <p>Whatever God has entrusted to us, we should use it faithfully for Him. Our career, family, talents, relationships, and our entire life should glorify God.</p>
+            
+            <p><strong>Do we really trust God?</strong><br>
+            Abraham stepped out without knowing the entire journey. Moses obeyed God's call even when the future was uncertain. We often say that we have faith in God, but sometimes we worry about what will happen tomorrow. Faith means saying: <em>“Lord, I may not know what tomorrow holds, but I know You hold tomorrow.”</em> When God is at the centre of our decisions, we can move forward with confidence.</p>
+
+            <h3>2. Our Choices Must Be Aligned With God's Will</h3>
+            <p>It is not enough to ask, “What do I want?” As God's children, we must also ask: <strong>“What does God want?”</strong> This requires the submission of our will to God's will.</p>
+            
+            <p>David is a powerful example. He had opportunities to kill Saul, but understood that God's will was greater than his personal desire, choosing to wait for God's timing. In 1 Samuel 22:1–5, David was also careful to seek God's direction regarding his actions.</p>
+            
+            <p><strong>David teaches us an important principle:</strong> Before making an important choice, seek God's will. Sometimes God may say “Go,” sometimes “Wait,” and sometimes “No.” Our responsibility is to obey.</p>
+            
+            <p><strong>Saul's example:</strong><br>
+            God gave Saul clear instructions, but Saul did not completely obey. He kept what God had commanded him to destroy and later tried to justify his actions. <strong>Partial obedience is still disobedience.</strong> We cannot say, “I will obey God in the things I like, but I will decide the rest myself.” True faith means surrendering our will to God.</p>
+
+            <h3>3. Choosing to Live for God Has a Cost</h3>
+            <p>Following God is a wonderful privilege, but it also requires sacrifice. Jesus never promised that following Him would always be easy.</p>
+            
+            <p><strong>Sometimes choosing God may mean leaving behind:</strong></p>
+            <ul>
+                <li>Old habits & wrong relationships</li>
+                <li>Worldly passions & personal ambitions</li>
+                <li>Unhealthy friendships, comfort, and convenience</li>
+            </ul>
+            
+            <p>Sometimes our decision to follow Christ may even bring misunderstanding, rejection, or persecution. Job is an example of someone who experienced tremendous loss but continued to trust God. Whatever we give up for God can never compare with what God has prepared for us. The choice to live for God may have a cost today, but the reward from God is eternal.</p>
+            
+            <p><strong>Deuteronomy 30:19:</strong><br>
+            Moses told Israel: <em>“I have set before you life and death, blessing and cursing; therefore choose life...”</em> Our choices are witnessed by heaven. When we choose God in the midst of difficulties, we are declaring that God is more valuable to us than the things of this world.</p>
+
+            <h3>4. Our Choices Should Reflect God's Character</h3>
+            <p>Our choices are not only about what we do; they reveal who we are becoming. Ephesians 5:1–2 tells us to be imitators of God and walk in love. Colossians 3:12–14 reminds us to put on compassion, kindness, humility, meekness, patience, forgiveness, and love.</p>
+            
+            <p><strong>Can people see Christ in us?</strong><br>
+            When someone hurts us, insults us, or treats us unfairly, what choice do we make? It is easy to love those who love us, but Christ calls us to selfless and sacrificial love. Ephesians 4:31–32 calls us to put away bitterness and be kind, tenderhearted, and forgiving one another.</p>
+            
+            <p>Forgiveness is not always easy, but the Gospel calls us to forgive because we ourselves have received forgiveness from Christ. Paul is a powerful example of a transformed life when choices are surrendered to God.</p>
+
+            <h3>Where Does Your Heart Belong?</h3>
+            <p>Ultimately, our choices reveal where our heart belongs. We may say that God is first in our life, but our decisions reveal our true priorities.</p>
+            
+            <p><strong>Am I choosing based on:</strong></p>
+            <ul>
+                <li>Fear, money, or popularity?</li>
+                <li>Personal pleasure, pressure from others, or my own ambition?</li>
+                <li>Or am I asking: “Lord, what is Your will for my life?”</li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>Life is a collection of choices. Some choices change our circumstances or our future, but the greatest choice we can make is the choice to live for God. Joshua said, <em>“As for me and my house, we will serve the Lord.”</em> That must become our decision too.</p>
+            
+            <p><strong>Let us choose:</strong></p>
+            <ul>
+                <li>God over the world & Faith over fear</li>
+                <li>Obedience over convenience & God's will over our own desires</li>
+                <li>Forgiveness over bitterness & Love over hatred</li>
+                <li>Eternal things over temporary things</li>
+            </ul>
+            
+            <p>Especially for our young people, remember the words of Ecclesiastes: <em>“Remember now your Creator in the days of your youth.”</em> Trust God, walk with God, seek His will, and let every choice you make bring glory to God.</p>
+
+            <h3>Final Question</h3>
+            <p>When you stand before God, will your choices show that your heart truly belonged to Him?</p>
+            
+            <p><strong>Closing Prayer:</strong><br>
+            <em>“Lord, help me not only to make my own choices, but to surrender my choices to You. Let my life, my decisions and my actions reflect Your will and bring glory to Your name. Amen.”</em></p>
+        `
+    },
+
+
     // Database containing messages for different Sundays
-    const messagesData = {
         "2026-09-27": {
             date: "27 Sep 2026",
             theme: "Theme: Senior Citizen's Day — Caring for and Accepting the Elderly",
