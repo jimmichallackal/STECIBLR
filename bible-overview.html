@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Bible | St. Thomas Evangelical Church of India</title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="description" content="God's Story of Creation, Salvation, and Hope - A Simple Introduction to the Message of the Holy Bible.">  
+    <style>
+    /* Global Styles */
+    :root {
+      --primary-maroon: #5C1A1B;
+      --primary-dark-maroon: #3d1112;
+      --accent-yellow: #FFFF99;
+      --accent-green: #243117;
+      --speaker-min: #8B0000;
+      --speaker-con: #00008B;
+      --speaker-deacon: #2E8B57;
+      --speaker-all: #4B0082;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #F8F9FA;
+      margin: 0;
+      padding: 0;
+      font-family: Roboto, Arial, sans-serif;
+      color: #333333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation */
+    .header-banner {
+      line-height: 0;
+      font-size: 0;
+    }
+
+    img {
+      max-width: 100%; 
+      width: 100%;
+      height: auto;
+    }
+
+    .navbar {
+      background-color: var(--primary-maroon);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--accent-yellow);
+    }
+
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      display: block;
+      color: var(--accent-yellow); 
+      text-align: center;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links li a:hover {
+      background-color: var(--primary-dark-maroon);
+    }
+
+    /* Dropdown Navigation */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 220px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1001;
+      text-align: left;
+      top: 100%;
+      left: 0;
+    }
+
+    .dropdown-content a {
+      color: var(--primary-maroon) !important;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #eee;
+      font-weight: normal;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--primary-maroon);
+      color: var(--accent-yellow) !important;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Mobile Navigation Drawer */
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 15px;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: var(--accent-yellow);
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    /* Page Titles */
+    .mission-heading {
+      text-align: center;
+      color: var(--accent-yellow);
+      background-color: var(--accent-green);
+      padding: 20px 10px;
+      margin-bottom: 30px;
+    }
+
+    .mission-heading h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    /* Main Content Layout */
+    .main-content {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 15px 50px 15px;
+    }
+
+    /* Introduction & Summary Sections */
+    .bible-section, .bible-summary-section {
+      background-color: #ffffff;
+      border-top: 4px solid var(--accent-green);
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      padding: 25px 30px;
+      margin-bottom: 30px;
+    }
+
+    .bible-section h2, .bible-summary-section h2 {
+      color: var(--accent-green);
+      margin-top: 0;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    /* Part Container (Main Box) */
+    .bible-part {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-left: 5px solid var(--primary-maroon);
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      padding: 25px;
+      margin-bottom: 35px;
+    }
+
+    .bible-part > h2 {
+      color: var(--primary-maroon);
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 10px;
+    }
+
+    /* Article Container (Sub-Box) */
+    .bible-chapter {
+      background-color: #fcfcfc;
+      border: 1px solid #eaeaea;
+      border-radius: 6px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .bible-chapter:last-child {
+      margin-bottom: 0;
+    }
+
+    .bible-chapter:hover {
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .bible-chapter h3 {
+      color: var(--accent-green);
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    .reference {
+      font-style: italic;
+      color: #666666;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px dashed #e8e8e8;
+    }
+
+    .bible-chapter p, .bible-section p, .bible-summary-section p {
+      margin-bottom: 12px;
+    }
+
+    .bible-chapter p:last-child, .bible-section p:last-child, .bible-summary-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bible-quote {
+      background-color: #f7f9f5;
+      border-left: 4px solid var(--accent-green);
+      padding: 12px 18px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+
+    .bible-quote cite {
+      display: block;
+      margin-top: 4px;
+      font-style: normal;
+      font-weight: bold;
+      color: var(--accent-green);
+      font-size: 0.9rem;
+    }
+
+    .central-message-list, .reading-list {
+      margin: 10px 0 0 0;
+      padding-left: 20px;
+    }
+
+    .central-message-list li, .reading-list li {
+      margin-bottom: 6px;
+    }
+
+    .amen {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--primary-maroon);
+      margin-top: 20px;
+    }
+
+    /* Back to Top Button */
+    #backToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      font-size: 14px;
+      border: none;
+      outline: none;
+      background-color: var(--accent-green);
+      color: var(--accent-yellow);
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    /* Footer Layout */
+    .site-footer {
+      background-color: #222222;
+      color: #ffffff;
+      padding: 25px 8%;
+      border-top: 2px solid #444444;
+      margin-top: 40px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-right {
+      text-align: right;
+      font-size: 0.9rem;
+    }
+
+    .quick-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 30px;
+    }
+
+    .quick-links li a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .quick-links li a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Mobile Responsive Optimizations (< 768px) */
+    @media screen and (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--primary-maroon);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+        border-top: 1px solid #7a2425;
+      }
+
+      .dropdown-content {
+        position: static;
+        width: 100%;
+        background-color: #4a1415;
+        box-shadow: none;
+      }
+
+      .dropdown-content a {
+        color: var(--accent-yellow) !important;
+        background-color: #4a1415 !important;
+        padding: 12px 30px;
+        border-bottom: 1px solid var(--primary-maroon);
+        white-space: normal;
+      }
+
+      .bible-part {
+        padding: 15px;
+      }
+
+      .bible-chapter {
+        padding: 12px;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .footer-left, .footer-right {
+        text-align: center;
+        width: 100%;
+      }
+
+      .quick-links {
+        grid-template-columns: 1fr;
+      }
+    }
+    </style>
+</head>
+<body>
+
+<button id="backToTopBtn" title="Go to top">↑ Top</button>
+
+<div class="header-banner">
+    <img src="Steciblr_files/steciblrbanner.png" alt="Church banner or logo" />
+</div>
+
+<nav class="navbar">
+  <div class="menu-icon" onclick="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Church ▾</a>
+      <div class="dropdown-content">
+        <a href="church-leaders.html">Church Leaders</a>
+        <a href="church-history.html">Church History</a>
+        <a href="donations.html">Church Donations</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Parish ▾</a>
+      <div class="dropdown-content">
+        <a href="parish-vicar.html">Parish Vicars</a>
+        <a href="parish-history.html">Parish History</a>
+        <a href="lectionary.html">Lectionary</a>
+        <a href="parish-bulletin.html">Parish Bulletin</a>
+        <a href="executive-committee.html">Executive Committee</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Foundation ▾</a>
+      <div class="dropdown-content">
+        <a href="mission-vision.html">Mission & Vision</a>
+        <a href="our-belief.html">Our Faith</a>
+        <a href="bible-reading.html">365 Day Bible Reading</a>
+        <a href="bible-overview.html">Bible Overview</a>
+       </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Liturgy ▾</a>
+      <div class="dropdown-content">
+        <a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
+        <a href="liturgy-public.html">Order of Public worship</a>
+        <a href="manglish-liturgy-holycommunion.html">Holy Communion – Manglish</a>
+        <a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
+        <a href="mal-liturgy-holycommunion.html">തിരുവത്താഴ ശുശ്രൂഷാ ക്രമം</a>
+        <a href="mal-liturgy-public.html">പരസ്യാരാധനാക്രമം</a>
+      </div>
+    </li>
+
+    <li><a href="message.html">Message</a></li>
+  
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Gallery ▾</a>
+      <div class="dropdown-content">
+        <a href="photos-gallery.html">Photo Gallery</a>
+        <a href="videos-gallery.html">Video Gallery</a>
+      </div>
+    </li>
+
+    <li><a href="contact-us.html">Contact</a></li>
+  </ul>
+</nav>
+
+
+  <div class="mission-heading">
+    <h1><strong>The Bible Overview - God's Story of Creation, Salvation, and Hope</strong></h1>
+  </div>
+<main class="main-content">
+  <section class="bible-section">
+    <h2>Introduction</h2>
+    <p>The Bible is the living story of God and His relationship with humanity.</p>
+    <p>It begins with God creating the heavens and the earth and ends with God's promise of a new heaven and a new earth.</p>
+    <p>Throughout the Bible, we see God's holiness, love, justice, mercy, and faithfulness. We also see the human story: people created by God, separated from Him through sin, and God's continuing work to redeem and restore people to Himself.</p>
+    <p><strong>The central message of the Bible is fulfilled in Jesus Christ.</strong></p>
+    <p>This short book presents the main story of the Bible in simple English. It does not replace the Bible. Instead, it is intended to help anyone—Christian or non-Christian—understand its basic message and discover the Bible for themselves.</p>
+  </section>
+
+  <!-- PART ONE -->
+  <section class="bible-part">
+    <h2>Part One: The Beginning</h2>
+      
+    <article class="bible-chapter">
+      <h3>1. God Created the Heavens and the Earth</h3>
+      <p class="reference"><strong>Read: Genesis 1–2</strong></p>
+      <p>In the beginning, God created the heavens and the earth.</p>
+      <p>The earth was formless and empty, and darkness covered the deep. God brought light into the darkness. He created the sky, the seas, and dry land. He created plants and trees.</p>
+      <p>God created the sun, moon, and stars. He created the creatures of the sea, the birds of the air, and the animals of the earth.</p>
+      <p><strong>Then God created human beings in His own image.</strong> He created humanity as male and female and blessed them. He gave them responsibility to rule over and care for His creation.</p>
+      <p>God looked at everything He had made, and it was very good. The Bible begins with God. He is the Creator of everything.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>2. Sin Enters the World</h3>
+      <p class="reference"><strong>Read: Genesis 3</strong></p>
+      <p>God placed Adam and Eve in the Garden of Eden. They could freely enjoy God's creation, but God commanded them not to eat from the tree of the knowledge of good and evil.</p>
+      <p>The serpent deceived the woman. She ate the fruit and gave some to Adam, and he also ate. Their disobedience brought sin, alienation from God, and death into human experience. They became ashamed and hid from God.</p>
+      <p>God judged the serpent, the woman, and the man. Human life would now include pain, struggle, and death. Adam and Eve were removed from the garden and from access to the tree of life.</p>
+      <p><em>Yet even in judgment, God gave hope.</em> The Bible's story of God's plan to overcome sin begins here.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>3. Cain and Abel</h3>
+      <p class="reference"><strong>Read: Genesis 4</strong></p>
+      <p>Adam and Eve had two sons, Cain and Abel. God regarded Abel and his offering favorably, but He did not regard Cain and his offering in the same way. Cain became jealous and angry, and killed his brother Abel.</p>
+      <p>Sin had now brought violence and death into the human family. God confronted Cain, showing that human beings are accountable for their actions. As generations passed, human wickedness increased.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>4. Noah and the Flood</h3>
+      <p class="reference"><strong>Read: Genesis 6–9</strong></p>
+      <p>Human wickedness became widespread, and the earth was filled with violence. But Noah found favor with God. God instructed Noah to build an ark because a great flood was coming.</p>
+      <p>Noah obeyed God. He entered the ark with his family, together with representatives of the animals, as God commanded. The flood covered the earth, but God preserved Noah and those with him.</p>
+      <p>After the flood, God made a covenant with Noah and promised never again to destroy all living creatures with a flood. The rainbow became a sign of this covenant. The story shows both God's judgment against wickedness and His mercy in preserving Noah and his family.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>5. The Tower of Babel</h3>
+      <p class="reference"><strong>Read: Genesis 11:1–9</strong></p>
+      <p>Human beings gathered together and decided to build a city and a tower reaching toward heaven. They wanted to make a name for themselves.</p>
+      <p>God confused their language, and the people were scattered across the earth. The Bible shows that human pride cannot replace dependence on God.</p>
+    </article>
+  </section>
+
+  <!-- PART TWO -->
+  <section class="bible-part">
+    <h2>Part Two: God's Promise to Abraham</h2>
+      
+    <article class="bible-chapter">
+      <h3>6. God Calls Abraham</h3>
+      <p class="reference"><strong>Read: Genesis 12:1–9</strong></p>
+      <p>God called Abram, later named Abraham, to leave his country and family and go to a land God would show him. God promised to make him into a great nation and to bless him.</p>
+      <p>God also promised that through Abraham, all the families of the earth would be blessed. This promise becomes an important part of the entire Bible story and is ultimately connected with God's blessing to the nations through Christ.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>7. Abraham, Isaac, and Jacob</h3>
+      <p class="reference"><strong>Read: Genesis 15–36</strong></p>
+      <p>God established His covenant with Abraham and promised him descendants and the land of Canaan. Abraham's son was Isaac. Isaac's son was Jacob. Jacob had twelve sons, whose descendants became the twelve tribes of Israel.</p>
+      <p>God continued His promises even when the people were imperfect. The Bible repeatedly shows that God's faithfulness does not depend on human perfection.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>8. Joseph and God's Providence</h3>
+      <p class="reference"><strong>Read: Genesis 37–50</strong></p>
+      <p>Joseph was one of Jacob's sons. His brothers became jealous and sold him into slavery. Joseph eventually became a powerful leader in Egypt. During a severe famine, his brothers came to Egypt seeking food.</p>
+      <p>Joseph could have taken revenge, but instead he forgave them. Joseph recognized that although his brothers had intended evil, God had used the circumstances to preserve many lives. Joseph's family eventually settled in Egypt.</p>
+    </article>
+  </section>
+
+  <!-- PART THREE -->
+  <section class="bible-part">
+    <h2>Part Three: Moses and the Exodus</h2>
+      
+    <article class="bible-chapter">
+      <h3>9. Israel Becomes Slaves</h3>
+      <p class="reference"><strong>Read: Exodus 1–2</strong></p>
+      <p>Joseph and his generation died. Over time, the Israelites became numerous in Egypt. A new Pharaoh feared them and made them slaves, ordering that Hebrew male babies should be killed.</p>
+      <p>Moses was born during this dangerous time. His mother placed him in a basket among the reeds of the Nile. Pharaoh's daughter found him, adopted him, and he grew up in Pharaoh's household as God prepared him to lead Israel out of Egypt.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>10. God Calls Moses</h3>
+      <p class="reference"><strong>Read: Exodus 3–4</strong></p>
+      <p>God appeared to Moses in a burning bush. God told Moses that He had seen the suffering of the Israelites and had heard their cries, and sent Moses to Pharaoh to bring His people out of Egypt.</p>
+      <p>Moses was afraid and felt unable to do the task, but God promised to be with him. The Bible repeatedly shows that God's work does not depend on human strength alone.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>11. The Exodus from Egypt</h3>
+      <p class="reference"><strong>Read: Exodus 5–14</strong></p>
+      <p>Pharaoh refused to release the Israelites, so God sent a series of judgments upon Egypt. The final plague was the death of the firstborn, with God providing protection through the Passover (the blood of a lamb marking their houses).</p>
+      <p>The Israelites left Egypt. When Pharaoh pursued them to the Red Sea, God opened a way through the sea, and the Israelites crossed safely while the Egyptian army was overwhelmed. Israel was delivered from slavery in one of the greatest acts of God's deliverance in the Old Testament.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>12. The Ten Commandments</h3>
+      <p class="reference"><strong>Read: Exodus 19–20</strong></p>
+      <p>God brought Israel to Mount Sinai, established His covenant with them, and gave them His commandments. The Ten Commandments taught Israel to worship God alone, respect His name, honor parents, protect human life, remain faithful in marriage, respect what belongs to others, speak truthfully, and avoid coveting, teaching His people how to live as a community belonging to Him.</p>
+    </article>
+  </section>
+
+  <!-- PART FOUR -->
+  <section class="bible-part">
+    <h2>Part Four: The Promised Land</h2>
+      
+    <article class="bible-chapter">
+      <h3>13. Israel Enters the Promised Land</h3>
+      <p class="reference"><strong>Read: Joshua 1–24</strong></p>
+      <p>After Moses died, Joshua became Israel's leader, guiding them into the land God had promised to Abraham and his descendants. Israel faced many challenges, but God repeatedly called them to trust and obey Him.</p>
+      <p>Joshua reminded the people that they had to choose whom they would serve, declaring: <em>“As for me and my house, we will serve the LORD.”</em></p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>14. The Time of the Judges</h3>
+      <p class="reference"><strong>Read: Judges</strong></p>
+      <p>After Joshua's generation died, Israel repeatedly turned away from God. When difficulties came, they cried to God, and He raised up judges to deliver them.</p>
+      <p>A recurring pattern emerged: the people turned away from God, suffered the consequences, cried for help, and God delivered them. The book of Judges shows the consequences of rejecting God's ways and the Lord's repeated mercy.</p>
+    </article>
+  </section>
+
+  <!-- PART FIVE -->
+  <section class="bible-part">
+    <h2>Part Five: The Kings of Israel</h2>
+      
+    <article class="bible-chapter">
+      <h3>15. Samuel and Saul</h3>
+      <p class="reference"><strong>Read: 1 Samuel</strong></p>
+      <p>Israel asked for a king, and Saul became the first king of Israel. At first Saul showed promise, but he repeatedly disobeyed God's commands, leading God to eventually reject Saul as king and choose David.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>16. David</h3>
+      <p class="reference"><strong>Read: 1 Samuel 16–31; 2 Samuel</strong></p>
+      <p>As a young man, David trusted God and defeated Goliath, eventually becoming king of Israel. God made a special covenant with David, promising that his royal line would continue with a future ruler whose kingdom would be established by God.</p>
+      <p>David was not a perfect man—he committed serious sins including adultery and arranging the death of Uriah—but he confessed his sin and sought God's forgiveness. The Bible describes David as a man after God's heart because he was devoted to God and responsive to correction. The promised Messiah would later come through David's line.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>17. Solomon and the Temple</h3>
+      <p class="reference"><strong>Read: 1 Kings 1–11</strong></p>
+      <p>David's son Solomon became king and was granted great wisdom by God. Solomon built the temple in Jerusalem where Israel worshiped God. However, as he grew wealthy and powerful, he later turned away from God by allowing idolatry and following foreign influences. After Solomon's death, the kingdom divided.</p>
+    </article>
+  </section>
+
+  <!-- PART SIX -->
+  <section class="bible-part">
+    <h2>Part Six: The Divided Kingdom</h2>
+      
+    <article class="bible-chapter">
+      <h3>18. Israel and Judah</h3>
+      <p class="reference"><strong>Read: 1 Kings 12–22; 2 Kings</strong></p>
+      <p>The kingdom divided into two: the northern kingdom called <strong>Israel</strong>, and the southern kingdom called <strong>Judah</strong>. Many kings turned away from God and worshiped idols.</p>
+      <p>God sent prophets to warn the people and call them to return to God. While some kings followed God, many did not, and eventually both kingdoms experienced judgment.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>19. The Prophets</h3>
+      <p class="reference"><strong>Read: Isaiah; Jeremiah; Ezekiel; Daniel; Minor Prophets</strong></p>
+      <p>God sent prophets to speak His word, warning people about sin, injustice, idolatry, and disobedience while speaking about God's mercy and future restoration. They looked forward to God's coming salvation, including a promised King, Servant, and Savior (such as Isaiah speaking of a suffering servant, and Micah pointing to Bethlehem as the place from which a ruler would come).</p>
+    </article>
+  </section>
+
+  <!-- PART SEVEN -->
+  <section class="bible-part">
+    <h2>Part Seven: Exile and Return</h2>
+      
+    <article class="bible-chapter">
+      <h3>20. Judah Goes into Exile</h3>
+      <p class="reference"><strong>Read: 2 Kings 24–25; Jeremiah 25; Ezekiel</strong></p>
+      <p>As Judah continued to turn away from God, Jerusalem was conquered by Babylon. The temple was destroyed, and many people were taken into exile—a terrible judgment.</p>
+      <p>Yet God did not abandon His people. Through the prophets, He promised that the people would eventually return and that God would continue His covenant purposes.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>21. The Return to Jerusalem</h3>
+      <p class="reference"><strong>Read: Ezra; Nehemiah</strong></p>
+      <p>After many years, the people were allowed to return to Jerusalem. They rebuilt the temple, Ezra taught the people God's Law, and Nehemiah led the rebuilding of Jerusalem's walls, reminding the people that their relationship with God was central to their identity.</p>
+    </article>
+  </section>
+
+  <!-- PART EIGHT -->
+  <section class="bible-part">
+    <h2>Part Eight: The Promise of the Messiah</h2>
+      
+    <article class="bible-chapter">
+      <h3>22. God's Promise of a Savior</h3>
+      <p>The Old Testament repeatedly points toward God's future salvation: God promised Abraham that all nations would be blessed through his descendants, promised David that his royal line would continue, and sent prophets who spoke about a coming King, a suffering servant, and a ruler who would bring God's kingdom.</p>
+      <p>The Old Testament closes with God's people still waiting for the fulfillment of God's promises, setting the stage for the coming of Jesus Christ.</p>
+    </article>
+  </section>
+
+  <!-- PART NINE -->
+  <section class="bible-part">
+    <h2>Part Nine: Jesus Christ</h2>
+      
+    <article class="bible-chapter">
+      <h3>23. The Birth of Jesus</h3>
+      <p class="reference"><strong>Read: Matthew 1–2; Luke 1–2</strong></p>
+      <p>Hundreds of years after the prophets, an angel announced to Mary that she would have a son named Jesus, who would be called the Son of the Most High. Joseph was told the child was conceived by the Holy Spirit.</p>
+      <p>Jesus was born in Bethlehem, with angels announcing His birth to shepherds and wise men later coming to worship Him. His birth is presented in the New Testament as the fulfillment of God's promises.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>24. John the Baptist Prepares the Way</h3>
+      <p class="reference"><strong>Read: Matthew 3; Mark 1; Luke 3; John 1</strong></p>
+      <p>John the Baptist preached repentance, calling people to turn away from sin and prepare for God's kingdom. When Jesus came to John and was baptized, the Spirit of God descended upon Him, and a voice from heaven identified Him as God's beloved Son.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>25. Jesus Begins His Ministry</h3>
+      <p class="reference"><strong>Read: Matthew 4; Mark 1; Luke 4</strong></p>
+      <p>Jesus began preaching that the kingdom of God had come near, calling people to repent, believe, and follow Him as disciples. Teaching in synagogues, villages, and homes, He healed the sick, gave sight to the blind, cleansed lepers, and performed miracles demonstrating God's authority and compassion.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>26. Jesus Teaches About God's Kingdom</h3>
+      <p class="reference"><strong>Read: Matthew 5–7</strong></p>
+      <p>Jesus taught His followers to love their enemies, forgive others, care for those in need, pray sincerely, and trust God, emphasizing that God looks not only at outward actions but also at the human heart. He summarized God's commandments around love for God and love for one's neighbor.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>27. Jesus' Miracles</h3>
+      <p class="reference"><strong>Read: Matthew 8–9; Mark 4–5; Luke 7–8; John 6; John 11</strong></p>
+      <p>Throughout His ministry, Jesus healed disease, calmed storms, fed large crowds, cast out demons, and raised the dead. These miracles were signs pointing to His authority and identity, showing deep compassion to ordinary people, including those whom society rejected.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>28. Jesus and the Lost</h3>
+      <p class="reference"><strong>Read: Luke 15</strong></p>
+      <p>Jesus repeatedly showed God's concern for people who were lost and separated from Him through parables like the lost sheep, the lost coin, and the prodigal son, teaching that heaven rejoices when a sinner repents.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>29. Jesus and Salvation</h3>
+      <p class="reference"><strong>Read: John 3; John 14</strong></p>
+      <p>Jesus taught that human beings need to be born again, telling Nicodemus that God loved the world and that whoever believes in God's Son should not perish but have eternal life. He declared Himself to be the way, the truth, and the life, teaching that no one comes to the Father except through Him.</p>
+    </article>
+  </section>
+
+  <!-- PART TEN -->
+  <section class="bible-part">
+    <h2>Part Ten: The Cross</h2>
+      
+    <article class="bible-chapter">
+      <h3>30. Jesus Is Arrested</h3>
+      <p class="reference"><strong>Read: Matthew 26–27; Mark 14–15; Luke 22–23; John 18–19</strong></p>
+      <p>Opposed by religious leaders and betrayed by Judas, Jesus was arrested, questioned, and brought before the Roman governor Pontius Pilate. Although Pilate found no proper basis for a death sentence, he eventually handed Jesus over to be crucified.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>31. Jesus Is Crucified</h3>
+      <p class="reference"><strong>Read: Isaiah 53; Matthew 27; Mark 15; Luke 23; John 19</strong></p>
+      <p>Jesus was beaten, nailed to a cross between two criminals, and died. His body was placed in a tomb. For His followers, it appeared that everything had ended, but the New Testament explains that Christ died for sins and that His death was part of God's saving purpose.</p>
+    </article>
+  </section>
+
+  <!-- PART ELEVEN -->
+  <section class="bible-part">
+    <h2>Part Eleven: The Resurrection</h2>
+      
+    <article class="bible-chapter">
+      <h3>32. Jesus Rises from the Dead</h3>
+      <p class="reference"><strong>Read: Matthew 28; Mark 16; Luke 24; John 20–21</strong></p>
+      <p>On the first day of the week, women came to the tomb to find the stone rolled away and the tomb empty. Jesus rose on the third day and appeared to Mary Magdalene, His disciples, and many others, becoming the cornerstone of Christian faith.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>33. Jesus Sends His Followers</h3>
+      <p class="reference"><strong>Read: Matthew 28:18–20</strong></p>
+      <p>After His resurrection, Jesus gave His disciples a mission to go to all nations, make disciples, baptize them, and teach them to obey His commands, promising to be with His followers as the message was proclaimed to all people.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>34. Jesus Ascends to Heaven</h3>
+      <p class="reference"><strong>Read: Acts 1</strong></p>
+      <p>After instructing His disciples to wait for the Holy Spirit, Jesus was taken up into heaven with the promise that He would return, prompting the disciples to return to Jerusalem and wait as commanded.</p>
+    </article>
+  </section>
+
+  <!-- PART TWELVE -->
+  <section class="bible-part">
+    <h2>Part Twelve: The Holy Spirit and the Church</h2>
+      
+    <article class="bible-chapter">
+      <h3>35. The Holy Spirit Comes</h3>
+      <p class="reference"><strong>Read: Acts 2</strong></p>
+      <p>On the Day of Pentecost, the Holy Spirit came upon the disciples, and Peter preached about Jesus. About three thousand people received his message, were baptized, and devoted themselves to the apostles' teaching, fellowship, breaking of bread, and prayer.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>36. The Gospel Spreads</h3>
+      <p class="reference"><strong>Read: Acts 3–12</strong></p>
+      <p>As the apostles preached, performed miracles, and cared for the needy, they faced opposition and persecution (including Stephen becoming the first recorded Christian martyr). This persecution caused believers to scatter, spreading the message to new places and growing the church.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>37. Paul Becomes a Follower of Jesus</h3>
+      <p class="reference"><strong>Read: Acts 9; Acts 13–28</strong></p>
+      <p>Saul, who strongly opposed followers of Jesus, encountered the risen Jesus while traveling to Damascus. Becoming a believer known as Paul, he became one of the early church's most important missionaries, traveling widely to preach Jesus Christ, establish churches, and write letters to believers.</p>
+    </article>
+  </section>
+
+  <!-- PART THIRTEEN -->
+  <section class="bible-part">
+    <h2>Part Thirteen: What Christians Believe</h2>
+      
+    <article class="bible-chapter">
+      <h3>38. Salvation Through Jesus Christ</h3>
+      <p class="reference"><strong>Read: Romans 3–6; Ephesians 2:1–10</strong></p>
+      <p>The New Testament teaches that all people have sinned and cannot make themselves righteous before God simply by good works. Instead, God offers salvation as a gift received through faith in Jesus Christ, who died for our sins and rose again so believers can be forgiven, reconciled to God, and called to live a new life of obedience and good works.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>39. The Christian Life</h3>
+      <p class="reference"><strong>Read: Galatians 5; Ephesians 4–6; Philippians 2–4; Colossians 3–4</strong></p>
+      <p>Following Jesus requires becoming more like Christ—loving God and others, forgiving, serving, living honestly and humbly, caring for the poor, and rejecting hatred, sexual immorality, greed, and dishonesty, with the help of the Holy Spirit.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>40. Love</h3>
+      <p class="reference"><strong>Read: 1 Corinthians 13</strong></p>
+      <p>The Bible places great importance on love—which is patient, kind, does not seek its own advantage, does not rejoice in wrongdoing, but rejoices in truth and outlasts other things—calling followers of Jesus to love God and people rather than producing hatred or pride.</p>
+    </article>
+  </section>
+
+  <!-- PART FOURTEEN -->
+  <section class="bible-part">
+    <h2>Part Fourteen: The Hope of Christ's Return</h2>
+      
+    <article class="bible-chapter">
+      <h3>41. Jesus Will Return</h3>
+      <p class="reference"><strong>Read: Matthew 24–25; 1 Thessalonians 4–5; 2 Peter 3</strong></p>
+      <p>The New Testament teaches that Jesus Christ will return in a visible and glorious way. Because no one knows the exact time, believers are encouraged to remain faithful, watchful, ready, and responsible.</p>
+    </article>
+
+    <article class="bible-chapter">
+      <h3>42. Resurrection and Judgment</h3>
+      <p class="reference"><strong>Read: John 5:28–29; Acts 17:30–31; Revelation 20</strong></p>
+      <p>Death is not the end; there will be a resurrection of the dead and final judgment where every person is accountable to God. The Bible speaks of eternal life for those who belong to Christ and final judgment for those who reject God, reflecting His perfect justice.</p>
+    </article>
+  </section>
+
+  <!-- PART FIFTEEN -->
+  <section class="bible-part">
+    <h2>Part Fifteen: The New Creation</h2>
+      
+    <article class="bible-chapter">
+      <h3>43. A New Heaven and a New Earth</h3>
+      <p class="reference"><strong>Read: Revelation 21–22</strong></p>
+      <p>The Bible ends with a vision of a new heaven and a new earth where God dwells with His people. There will be no more death, mourning, crying, pain, or curse as God makes all things new, and His servants worship Him and see His face.</p>
+    </article>
+  </section>
+
+  <!-- SUMMARY SECTIONS -->
+  <section class="bible-summary-section">
+    <h2>The Message of the Whole Bible</h2>
+    <p>The Bible begins with creation and humanity created in the image of God. Sin entered through disobedience, bringing alienation and death, but God did not abandon humanity. He called Abraham, formed Israel, delivered them from Egypt, gave commandments, and sent prophets to call people back while promising a Savior.</p>
+    <p>That promise is fulfilled in Jesus Christ—who was born, lived without sin, taught about God's kingdom, performed miracles, died on the cross, and rose from the dead. Through Him, God offers forgiveness, reconciliation, and eternal life, commanding His followers to take this message to all nations.</p>
+  </section>
+
+  <section class="bible-summary-section">
+    <h2>The Central Message</h2>
+    <ul class="central-message-list">
+      <li>God created us.</li>
+      <li>We have sinned and turned away from God.</li>
+      <li>God has not abandoned us.</li>
+      <li>God sent Jesus Christ.</li>
+      <li>Jesus died for our sins and rose again.</li>
+      <li>God offers forgiveness and eternal life through Jesus Christ.</li>
+      <li>Those who follow Christ are called to love God and love others.</li>
+      <li>Jesus Christ will return.</li>
+      <li>God will establish His eternal kingdom and make all things new.</li>
+    </ul>
+  </section>
+
+  <section class="bible-summary-section">
+    <h2>An Invitation to Read the Bible</h2>
+    <p>The Bible is not merely a book about history. It asks every person an important question: <strong>What will you do with Jesus Christ?</strong></p>
+    <p>The Bible invites us to know God, turn away from sin, believe in Jesus Christ, receive God's forgiveness, and live according to His will.</p>
+    
+    <blockquote class="bible-quote">
+      <p>“Come to Me, all you who labor and are heavy laden, and I will give you rest.”</p>
+      <cite>— Matthew 11:28</cite>
+    </blockquote>
+    
+    <blockquote class="bible-quote">
+      <p>“For God so loved the world that He gave His only begotten Son, that whoever believes in Him should not perish but have everlasting life.”</p>
+      <cite>— John 3:16</cite>
+    </blockquote>
+  </section>
+
+  <section class="bible-summary-section">
+    <h2>Where to Begin Reading the Bible</h2>
+    <p>For someone reading the Bible for the first time, a helpful starting point is:</p>
+    <ol class="reading-list">
+      <li><strong>Genesis</strong> — Creation and the beginning of God's relationship with humanity</li>
+      <li><strong>Exodus</strong> — Moses and God's deliverance of Israel</li>
+      <li><strong>Psalms</strong> — Prayer, worship, suffering, and trust in God</li>
+      <li><strong>Proverbs</strong> — Wisdom for everyday life</li>
+      <li><strong>Luke</strong> — The life and ministry of Jesus</li>
+      <li><strong>John</strong> — Who Jesus is and why He came</li>
+      <li><strong>Acts</strong> — The beginning and growth of the Christian church</li>
+      <li><strong>Romans</strong> — Sin, salvation, and faith</li>
+      <li><strong>Ephesians</strong> — Life in Christ</li>
+      <li><strong>Revelation</strong> — Christ's victory and God's final restoration</li>
+    </ol>
+  </section>
+
+  <section class="bible-summary-section">
+    <h2>Final Word</h2>
+    <p>From the first words of Genesis to the final promise of Revelation, the Bible tells one great story: God is the Creator; humanity is created in His image but has fallen into sin; God continues to seek and call people to Himself through Jesus Christ.</p>
+    <p>The Bible begins with creation and ends with restoration. It begins with humanity separated from God's presence and ends with God's people dwelling with Him. It begins with death entering the world and ends with death being no more. And throughout the entire story, God remains faithful.</p>
+    
+    <blockquote class="bible-quote">
+      <p>“Behold, I am coming quickly.”</p>
+      <cite>— Revelation 22:12</cite>
+    </blockquote>
+    
+    <blockquote class="bible-quote">
+      <p>“Surely I am coming quickly.”</p>
+      <cite>— Revelation 22:20</cite>
+    </blockquote>
+    
+    <p class="amen"><strong>Amen. Even so, come, Lord Jesus!</strong></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="quick-links">
+       	        <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
+                <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
+                <li><a href="our-belief.html">Our Faith - What we believe</a></li>
+                <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
+                <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
+	    	 	<li><a href="contact-us.html">Parish Location</a></li>
+				<li><a href="parish-history.html">Bangalore Parish History</a></li> 
+				<li><a href="donations.html">Donations</a></li> 
+				<li><a href="mal-liturgy-holycommunion.html">Liturgy - Malayalam Holy Communion</a></li> 
+				<li><a href="manglish-liturgy-holycommunion.html">Liturgy - Manglish Holy Communion</a></li> 
+				<li><a href="message.html">Message</a></li> 
+            </ul>
+        </div>
+<div class="footer-right">
+    	<p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+	<p>#17,18, Church Lane, Defence Colony,<br> Kavery Nagar, Horamavu Agara, <br> Bangalore - 560 013</p>
+    	<p> Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> 
+  	    <br> Treasurer: <a href="tel:+919742699916"style="color: #FFFF99;">97426 99916</a>
+            <br>Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a>  
+            <br>Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+   	</p>
+
+</div>
+</footer>
+
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    nav.classList.toggle("active");
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const currentSubmenu = this.nextElementSibling;
+          
+          document.querySelectorAll('.dropdown-content').forEach(other => {
+            if (other !== currentSubmenu) {
+              other.style.display = 'none';
+            }
+          });
+
+          if (currentSubmenu.style.display === 'block') {
+            currentSubmenu.style.display = 'none';
+          } else {
+            currentSubmenu.style.display = 'block';
+          }
+        }
+      });
+    });
+  });
+
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.onscroll = function() {
+    if (backToTopBtn) {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    }
+  };
+
+  if (backToTopBtn) {
+    backToTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  }
+</script>
+
+</body>
+</html>
