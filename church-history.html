@@ -622,6 +622,22 @@ font-size: 0.9rem;
     }
 }
 
+
+.diagram-container {
+    max-width: 100%;
+    overflow-x: auto;
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+.diagram-container svg {
+    max-width: 100%;
+    height: auto;
+}
+
     </style>
 </head>
 <body>
@@ -801,6 +817,101 @@ font-size: 0.9rem;
   <p>
     <em>From Apostolic roots (AD 52) → Catholic & Orthodox splits (1599, 1653) → Protestant reform (1836) → Evangelical witness (1961).</em>
   </p>
+<div class="diagram-container">
+    <h3>Early Beginning to STECI</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 920" width="100%" height="100%" style="font-family: sans-serif;">
+        <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#4a5568"/>
+            </marker>
+            <style>
+                .box { fill: #f7fafc; stroke: #cbd5e0; stroke-width: 2px; rx: 8px; ry: 8px; }
+                .root-box { fill: #ebf8ff; stroke: #3182ce; stroke-width: 2px; rx: 8px; ry: 8px; }
+                .split-box { fill: #fffaf0; stroke: #dd6b20; stroke-width: 2px; rx: 8px; ry: 8px; }
+                .church-box { fill: #f0fff4; stroke: #38a169; stroke-width: 2px; rx: 8px; ry: 8px; }
+                .steci-box { fill: #ebf4ff; stroke: #2b6cb0; stroke-width: 3px; rx: 8px; ry: 8px; }
+                .text-title { font-weight: bold; font-size: 13px; fill: #2d3748; }
+                .text-desc { font-size: 11px; fill: #4a5568; }
+                .line { stroke: #4a5568; stroke-width: 2px; fill: none; marker-end: url(#arrow); }
+            </style>
+        </defs>
+
+        <!-- AD 52 & 345 -->
+        <rect x="350" y="45" width="350" height="65" class="root-box"/>
+        <text x="525" y="67" text-anchor="middle" class="text-title">AD 52 &amp; AD 345: Early Beginnings</text>
+        <text x="525" y="85" text-anchor="middle" class="text-desc">St. Thomas arrives in Kerala (AD 52); Knayi Thomman</text>
+        <text x="525" y="99" text-anchor="middle" class="text-desc">&amp; Syrian Christians arrive (AD 345)[cite: 1]</text>
+        <path d="M 525 110 L 525 135" class="line"/>
+
+        <!-- AD 1599: Synod of Diamper -->
+        <rect x="350" y="140" width="350" height="65" class="box"/>
+        <text x="525" y="162" text-anchor="middle" class="text-title">AD 1599: Synod of Diamper</text>
+        <text x="525" y="180" text-anchor="middle" class="text-desc">Portuguese imposition of Roman Catholic yoke &amp;</text>
+        <text x="525" y="194" text-anchor="middle" class="text-desc">suppression/burning of ancient Syrian texts[cite: 1]</text>
+        <path d="M 525 205 L 525 230" class="line"/>
+
+        <!-- AD 1653: Coonan Cross Oath -->
+        <rect x="350" y="235" width="350" height="65" class="split-box"/>
+        <text x="525" y="257" text-anchor="middle" class="text-title">AD 1653: Coonan Cross Oath</text>
+        <text x="525" y="275" text-anchor="middle" class="text-desc">Revolt against Roman supremacy at Mattancherry</text>
+        <text x="525" y="289" text-anchor="middle" class="text-desc">church; split into two major groups[cite: 1]</text>
+        <path d="M 525 300 L 525 325" class="line"/>
+
+        <!-- Split after 1653 -->
+        <rect x="150" y="330" width="330" height="65" class="box"/>
+        <text x="315" y="352" text-anchor="middle" class="text-title">Pazhayakootukar</text>
+        <text x="315" y="370" text-anchor="middle" class="text-desc">Remained under or returned to</text>
+        <text x="315" y="384" text-anchor="middle" class="text-desc">Roman Catholic allegiance[cite: 1]</text>
+
+        <rect x="570" y="330" width="330" height="65" class="church-box"/>
+        <text x="735" y="352" text-anchor="middle" class="text-title">Puthenkootukar</text>
+        <text x="735" y="370" text-anchor="middle" class="text-desc">Independent Malankara Syrian Church</text>
+        <text x="735" y="384" text-anchor="middle" class="text-desc">under First Mar Thoma Metropolitan[cite: 1]</text>
+
+        <path d="M 735 395 L 735 425" class="line"/>
+
+        <!-- 19th Century CMS & Reformation -->
+        <rect x="570" y="430" width="330" height="65" class="box"/>
+        <text x="735" y="452" text-anchor="middle" class="text-title">Early 19th Century: CMS &amp; Reformation</text>
+        <text x="735" y="470" text-anchor="middle" class="text-desc">CMS missionaries, Col. Munro's support, Bible</text>
+        <text x="735" y="484" text-anchor="middle" class="text-desc">translation, &amp; Abraham Malpan's reforms[cite: 1]</text>
+        <path d="M 735 495 L 735 525" class="line"/>
+
+        <!-- AD 1889: Seminary Case Verdict -->
+        <rect x="570" y="530" width="330" height="65" class="split-box"/>
+        <text x="735" y="552" text-anchor="middle" class="text-title">AD 1889: Seminary Case Verdict</text>
+        <text x="735" y="570" text-anchor="middle" class="text-desc">Royal Court of Appeal verdict separates</text>
+        <text x="735" y="584" text-anchor="middle" class="text-desc">reformists from traditional church properties[cite: 1]</text>
+        <path d="M 735 595 L 735 625" class="line"/>
+
+        <!-- Split after 1889 -->
+        <rect x="360" y="630" width="330" height="65" class="box"/>
+        <text x="525" y="652" text-anchor="middle" class="text-title">Jacobite Church</text>
+        <text x="525" y="670" text-anchor="middle" class="text-desc">Traditionalist / Non-reformed</text>
+        <text x="525" y="684" text-anchor="middle" class="text-desc">branch[cite: 1]</text>
+
+        <rect x="710" y="630" width="240" height="65" class="church-box"/>
+        <text x="830" y="652" text-anchor="middle" class="text-title">Mar Thoma Church</text>
+        <text x="830" y="670" text-anchor="middle" class="text-desc">Reformed Syrian</text>
+        <text x="830" y="684" text-anchor="middle" class="text-desc">Church branch[cite: 1]</text>
+
+        <path d="M 830 695 L 830 730" class="line"/>
+
+        <!-- Mid-20th Century Internal Crisis -->
+        <rect x="635" y="735" width="390" height="65" class="box"/>
+        <text x="830" y="757" text-anchor="middle" class="text-title">Mid-20th Century: Internal Drift</text>
+        <text x="830" y="775" text-anchor="middle" class="text-desc">Shift toward traditional rituals, disputed 1952</text>
+        <text x="830" y="789" text-anchor="middle" class="text-desc">elections, &amp; penalizing of reform priests[cite: 1]</text>
+        <path d="M 830 800 L 830 830" class="line"/>
+
+        <!-- Jan 26, 1961: Formation of STECI -->
+        <rect x="615" y="835" width="430" height="75" class="steci-box"/>
+        <text x="830" y="859" text-anchor="middle" font-weight="bold" font-size="14" fill="#2b6cb0">January 26, 1961: STECI Formed</text>
+        <text x="830" y="878" text-anchor="middle" class="text-desc">Secession of evangelical clergy and members;</text>
+        <text x="830" y="893" text-anchor="middle" class="text-desc">Formal Inauguration of the St. Thomas Evangelical</text>
+        <text x="830" y="907" text-anchor="middle" class="text-desc">Church of India (STECI) at Thiruvalla[cite: 1]</text>
+    </svg>
+</div>
 </div>
 
 <div id="സഭാചരിത്രം" class="chapter-box">
@@ -1741,4 +1852,3 @@ From six believers in a Bible college room to a thriving, multi-lingual parish w
 </script>
 </body>
 </html>
-
