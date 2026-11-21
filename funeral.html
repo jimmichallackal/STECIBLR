@@ -20,6 +20,8 @@
 
     html {
       scroll-behavior: smooth;
+      max-width: 100%;
+      overflow-x: clip;
     }
 
     body {
@@ -30,6 +32,8 @@
       color: #333333;
       font-size: 16px;
       line-height: 1.5;
+      max-width: 100%;
+      overflow-x: clip;
     }
 
     /* Header & Navigation */
@@ -127,18 +131,19 @@
     }
 
     /* Page Titles */
-        .mission-heading {
-          text-align: center;
-          vertical-align: middle;
-          color: #FFFF99;
-          background-color: #243117;
-        }
+    .mission-heading {
+      text-align: center;
+      vertical-align: middle;
+      color: #FFFF99;
+      background-color: #243117;
+    }
 
-        .mission-heading h1 {
-          text-align: center;
-          margin: 0;
-          padding: 20px 0;
-        }
+    .mission-heading h1 {
+      text-align: center;
+      margin: 0;
+      padding: 20px 12px;
+      overflow-wrap: break-word;
+    }
 
     /* Responsive Grid Layout for Liturgy */
     .liturgy-grid {
@@ -176,6 +181,7 @@
 
     .liturgy-text {
       text-align: left;
+      overflow-wrap: break-word;
     }
 
     .liturgy-instruction {
@@ -185,6 +191,55 @@
       text-align: center;
       padding: 12px 0;
       font-weight: 600;
+      overflow-wrap: break-word;
+    }
+
+    .liturgy-instruction h2 {
+      margin: 0;
+      font-size: 1.35rem;
+      line-height: 1.4;
+      overflow-wrap: break-word;
+    }
+
+    .liturgy-initialstatements {
+      grid-column: 1 / -1;
+      font-style: italic;
+      color: #2C353D;
+      text-align: left;
+      padding: 12px 0;
+      font-weight: 600;
+      overflow-wrap: break-word;
+    }
+
+    /* Responsive Table Container */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 10px 0;
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    .table-responsive table {
+      width: 100%;
+      min-width: 420px;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      color: #333333;
+    }
+
+    .table-responsive th,
+    .table-responsive td {
+      border: 1px solid #888888;
+      padding: 8px 10px;
+      text-align: left;
+      overflow-wrap: break-word;
+    }
+
+    .table-responsive th {
+      background-color: #f2f2f2;
+      font-weight: bold;
     }
 
     /* Back to Top Button */
@@ -289,7 +344,7 @@
       }
 
       .liturgy-grid {
-        grid-template-columns: 65px 1fr;
+        grid-template-columns: 65px minmax(0, 1fr);
         gap: 8px 10px;
         padding: 0 10px;
       }
@@ -338,7 +393,7 @@
       <div class="dropdown-content">
         <a href="church-leaders.html">Church Leaders</a>
         <a href="church-history.html">Church History</a>
-	    <a href="donations.html">Church Donations</a>
+        <a href="donations.html">Church Donations</a>
       </div>
     </li>
 
@@ -359,17 +414,17 @@
         <a href="mission-vision.html">Mission & Vision</a>
         <a href="our-belief.html">Our Faith</a>
         <a href="bible-reading.html">365 Day Bible Reading</a>
-		<a href="bible-overview.html">Bible Overview</a>
+        <a href="bible-overview.html">Bible Overview</a>
        </div>
     </li>
 
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Liturgy ▾</a>
       <div class="dropdown-content">
-    	<a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
+        <a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
         <a href="liturgy-public.html">Order of Public worship</a>
         <a href="manglish-liturgy-holycommunion.html">Holy Communion – Manglish</a>
-  		<a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
+        <a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
         <a href="mal-liturgy-holycommunion.html">തിരുവത്താഴ ശുശ്രൂഷാ ക്രമം</a>
         <a href="mal-liturgy-public.html">പരസ്യാരാധനാക്രമം</a>
         <a href="funeral.html">ശവസംസ്കാര ശുശ്രൂഷാക്രമം</a>
@@ -397,8 +452,9 @@
   <div class="liturgy-grid">
 <div class="liturgy-instruction"> <h2> ദുഃഖസമയത്തേക്കുള്ള ചില വായനകൾ </h2> </div>
 
-<div class="liturgy-instruction">
-<table border="1" cellpadding="5" cellspacing="0">
+<div class="liturgy-initialstatements">
+<div class="table-responsive">
+<table>
   <thead>
     <tr>
       <th>ബൈബിൾ ഭാഗം</th>
@@ -420,12 +476,12 @@
     <tr>
       <td>ഉല്പത്തി</td>
       <td>50:1–13</td>
-      <td>യാക്കോബിന്റെ മരണം</td>
+      <td>യാക്കോബിൻ്റെ മരണം</td>
     </tr>
     <tr>
       <td>2 ശമൂവേൽ</td>
       <td>12:16–23</td>
-      <td>ദാവീദിന്റെ കുഞ്ഞിന്റെ മരണം</td>
+      <td>ദാവീദിൻ്റെ കുഞ്ഞിൻ്റെ മരണം</td>
     </tr>
     <tr>
       <td>2 രാജാക്കന്മാർ</td>
@@ -435,7 +491,7 @@
     <tr>
       <td>ഇയ്യോബ്</td>
       <td>1:1–22</td>
-      <td>ഇയ്യോബിന്റെ മക്കൾ</td>
+      <td>ഇയ്യോബിൻ്റെ മക്കൾ</td>
     </tr>
     <tr>
       <td>യെഹെസ്കേൽ</td>
@@ -445,42 +501,42 @@
     <tr>
       <td>ദാനിയേൽ</td>
       <td>12:1–13</td>
-      <td>ദാനിയേലിന്റെ ദർശനം</td>
+      <td>ദാനിയേലിൻ്റെ ദർശനം</td>
     </tr>
     <tr>
       <td>മത്തായി</td>
       <td>28:1–20</td>
-      <td>കർത്താവിന്റെ പുനരുത്ഥാനം</td>
+      <td>കർത്താവിൻ്റെ പുനരുത്ഥാനം</td>
     </tr>
     <tr>
       <td>മർക്കൊസ്</td>
       <td>16:1–20</td>
-      <td>അതേ വിഷയം</td>
+      <td>കർത്താവിൻ്റെ പുനരുത്ഥാനം</td>
     </tr>
     <tr>
       <td>ലൂക്കൊസ്</td>
       <td>24:1–50</td>
-      <td>അതേ വിഷയം</td>
+      <td>കർത്താവിൻ്റെ പുനരുത്ഥാനം</td>
     </tr>
     <tr>
       <td>യോഹന്നാൻ</td>
       <td>20:1–20</td>
-      <td>അതേ വിഷയം</td>
+      <td>കർത്താവിൻ്റെ പുനരുത്ഥാനം</td>
     </tr>
     <tr>
       <td>മത്തായി</td>
       <td>9:18–26</td>
-      <td>യായീറോസിന്റെ മകൾ</td>
+      <td>യായീറോസിൻ്റെ മകൾ</td>
     </tr>
     <tr>
       <td>മർക്കൊസ്</td>
       <td>5:21–43</td>
-      <td>അതേ വിഷയം</td>
+      <td>യായീറോസിൻ്റെ മകൾ</td>
     </tr>
     <tr>
       <td>ലൂക്കൊസ്</td>
       <td>8:40–56</td>
-      <td>അതേ വിഷയം</td>
+      <td>യായീറോസിൻ്റെ മകൾ</td>
     </tr>
     <tr>
       <td>ലൂക്കൊസ്</td>
@@ -565,7 +621,7 @@
     <tr>
       <td>2 പത്രൊസ്</td>
       <td>3:8–13</td>
-      <td>കർത്താവിന്റെ ദിവസം</td>
+      <td>കർത്താവിൻ്റെ ദിവസം</td>
     </tr>
     <tr>
       <td>വെളിപ്പാട്</td>
@@ -580,10 +636,11 @@
   </tbody>
 </table>
 </div>
+</div>
 <div class="liturgy-instruction">
-<h2> <strong>മരണം ദൈവവചനത്തിൻ്റെ വെളിച്ചത്തിൽ</strong></h2> </div>
-<div class="liturgy-instruction">
-"അവനവൻ ശരീരത്തിൽ ഇരിക്കുമ്പോൾ ചെയ്തതു നല്ലതാകിലും തീയതാകിലും അതിനു തക്കവണ്ണം പ്രാപിക്കേണ്ടതിനു നാം എല്ലാവരും ക്രിസ്തുവിന്റെ ന്യായാസനത്തിന്റെ മുമ്പാകെ വെളിപ്പെടേണ്ടതാകുന്നു." 2 കൊരിന്ത്യർ 5:10<br> <br>
+<h2>മരണം ദൈവവചനത്തിൻ്റെ വെളിച്ചത്തിൽ</h2> </div>
+<div class="liturgy-initialstatements">
+"അവനവൻ ശരീരത്തിൽ ഇരിക്കുമ്പോൾ ചെയ്തതു നല്ലതാകിലും തീയതാകിലും അതിനു തക്കവണ്ണം പ്രാപിക്കേണ്ടതിനു നാം എല്ലാവരും ക്രിസ്തുവിൻ്റെ ന്യായാസനത്തിൻ്റെ മുമ്പാകെ വെളിപ്പെടേണ്ടതാകുന്നു." 2 കൊരിന്ത്യർ 5:10<br> <br>
 
 "അത്രയുമല്ല ഞങ്ങൾക്കും നിങ്ങൾക്കും നടുവേ വലിയൊരു പിളർപ്പുണ്ടാക്കിയിരിക്കുന്നു. ഇവിടെനിന്നു നിങ്ങളുടെ അടുക്കൽ കടന്നുവരുവാൻ ഇച്ഛിക്കുന്നവർക്കു കഴിവില്ല; അവിടെനിന്നു ഞങ്ങളുടെ അടുക്കൽ കടന്നുവരുവാനും പാടില്ല എന്നു പറഞ്ഞു."  <br> ലൂക്കൊസ് 16:26<br><br>
 
@@ -594,27 +651,25 @@
 
 "എന്നാൽ അന്ത്യകാഹളനാദത്തിങ്കൽ പെട്ടെന്നു കണ്ണിമയ്ക്കുന്നിടയിൽ നാം എല്ലാവരും രൂപാന്തരപ്പെടും. കാഹളം ധ്വനിക്കും; മരിച്ചവർ അക്ഷയരായി ഉയിർക്കുകയും നാം രൂപാന്തരപ്പെടുകയും ചെയ്യും."  1 കൊരിന്ത്യർ 15:52 <br> <br>
 
-"തന്റെ ഭക്തന്മാരുടെ മരണം യഹോവയ്ക്കു വിലയേറിയതാകുന്നു." സങ്കീർത്തനങ്ങൾ 116:15<br> <br>
+"തൻ്റെ ഭക്തന്മാരുടെ മരണം യഹോവയ്ക്കു വിലയേറിയതാകുന്നു." സങ്കീർത്തനങ്ങൾ 116:15<br> <br>
 
 “എനിക്കു ജീവിക്കുന്നതു ക്രിസ്തുവും മരിക്കുന്നതു ലാഭവുമാകുന്നു.”  ഫിലിപ്പിയർ 1:21.<br> <br>
 
-“കൂടാരമായ ഞങ്ങളുടെ ഭവനനം അഴിഞ്ഞുപോയാൽ കൈപ്പണിയല്ലാത്ത നിത്യഭവനമായി ദൈവത്തിന്റെ ദാനമായൊരു കെട്ടിടം ഞങ്ങള്‍ക്കു സ്വര്‍ഗ്ഗത്തില്‍ ഉണ്ടെന്നു അറിയുന്നു” 2 കൊരിന്ത്യർ 5:1.<br> <br>
+“കൂടാരമായ ഞങ്ങളുടെ ഭവനനം അഴിഞ്ഞുപോയാൽ കൈപ്പണിയല്ലാത്ത നിത്യഭവനമായി ദൈവത്തിൻ്റെ ദാനമായൊരു കെട്ടിടം ഞങ്ങള്‍ക്കു സ്വര്‍ഗ്ഗത്തില്‍ ഉണ്ടെന്നു അറിയുന്നു” 2 കൊരിന്ത്യർ 5:1.<br> <br>
 
-"മക്കൾ ജഡരക്തങ്ങളോടു കൂടിയവർ ആകകൊണ്ട് അവനും അവരെപ്പോലെ ജഡരക്തങ്ങളോടു കൂടിയവനായി മരണത്തിന്റെ അധികാരിയായ പിശാചിനെ തന്റെ മരണത്താൽ നീക്കി ജീവപര്യന്തം മരണഭീതിയാൽ അടിമകളായിരുന്നവരെയൊക്കെയും വിടുവിച്ചു." എബ്രായർ 2:14,15.
+"മക്കൾ ജഡരക്തങ്ങളോടു കൂടിയവർ ആകകൊണ്ട് അവനും അവരെപ്പോലെ ജഡരക്തങ്ങളോടു കൂടിയവനായി മരണത്തിൻ്റെ അധികാരിയായ പിശാചിനെ തൻ്റെ മരണത്താൽ നീക്കി ജീവപര്യന്തം മരണഭീതിയാൽ അടിമകളായിരുന്നവരെയൊക്കെയും വിടുവിച്ചു." എബ്രായർ 2:14,15.
 <br> <br>
-“ആദാമിൽ എല്ലാവരും മരിക്കുന്നതുപോലെ ക്രിസ്തുവിൽ എല്ലാവരും ജീവിക്കപ്പെടും. ഓരോരുത്തനും താന്താന്റെ നിരയിലത്രേ; ആദ്യഫലം ക്രിസ്തു; പിന്നെ ക്രിസ്തുവിനുള്ളവർ അവന്റെ വരവിങ്കൽ”<br> 1 കൊരിന്ത്യർ 15:22,23.<br> <br>
+“ആദാമിൽ എല്ലാവരും മരിക്കുന്നതുപോലെ ക്രിസ്തുവിൽ എല്ലാവരും ജീവിക്കപ്പെടും. ഓരോരുത്തനും താന്താൻ്റെ നിരയിലത്രേ; ആദ്യഫലം ക്രിസ്തു; പിന്നെ ക്രിസ്തുവിനുള്ളവർ അവൻ്റെ വരവിങ്കൽ”<br> 1 കൊരിന്ത്യർ 15:22,23.<br> <br>
 
 “നന്മ ചെയ്തവർ ജീവനായും  തിന്മ ചെയ്തവർ ന്യായവിധിക്കായും പുനരുത്ഥാനം ചെയ്യുവാനുള്ള നാഴിക വരുന്നു.” യോഹന്നാൻ 5:29.<br> <br>
 
-“യേശു മരിക്കുകയും ജീവിച്ചെഴുന്നേല്‍ക്കുകയും  ചെയ്തു എന്നു നാം വിശ്വസിക്കുന്നു എങ്കില്‍ അങ്ങനെ തന്നെ ദൈവം നിദ്രകൊണ്ടവരെയും യേശു മുഖാന്തരം അവനോടുകൂടെ വരുത്തും. കര്‍ത്താവിന്റെ പ്രത്യക്ഷതവരെ ജീവനോടെ ശേഷിക്കുന്നവരായ നാം നിദ്രകൊണ്ടവര്‍ക്കു മുമ്പാകയില്ല  എന്നു ഞങ്ങള്‍ കര്‍ത്താവിന്റെ വചനത്താൽ നിങ്ങളോടു പറയുന്നു.”1 തെസ്സലൊനീക്യർ 4:14-15. <br> <br>
+“യേശു മരിക്കുകയും ജീവിച്ചെഴുന്നേല്‍ക്കുകയും  ചെയ്തു എന്നു നാം വിശ്വസിക്കുന്നു എങ്കില്‍ അങ്ങനെ തന്നെ ദൈവം നിദ്രകൊണ്ടവരെയും യേശു മുഖാന്തരം അവനോടുകൂടെ വരുത്തും. കര്‍ത്താവിൻ്റെ പ്രത്യക്ഷതവരെ ജീവനോടെ ശേഷിക്കുന്നവരായ നാം നിദ്രകൊണ്ടവര്‍ക്കു മുമ്പാകയില്ല  എന്നു ഞങ്ങള്‍ കര്‍ത്താവിൻ്റെ വചനത്താൽ നിങ്ങളോടു പറയുന്നു.”1 തെസ്സലൊനീക്യർ 4:14-15. <br> <br>
 
-"കര്‍ത്താവാകുന്നു താൻ ഗംഭീരനാദത്തോടും പ്രധാന ദൂതന്റെ ശബ്ദത്തോടും ദൈവത്തിന്റെ കാഹളത്തോടും കൂടെ സ്വര്‍ഗ്ഗത്തിൽനിന്നു ഇറങ്ങി വരികയും ക്രിസ്തുവിൽ മരിച്ചവർ മുമ്പെ ഉയിർത്തെഴുന്നേൽക്കുകയും ചെയ്യും, പിന്നെ ജീവനോടെ ശേഷിക്കുന്ന നാം അവരോടു ഒരമിച്ച് ആകാശത്തിൽ കര്‍ത്താവിനെ എതിരേല്പാൻ മേഘങ്ങളിൽ എടുക്കപ്പെടും. ഇങ്ങനെ നാം എപ്പോഴും കര്‍ത്താവിനോടു കൂടെ ഇരിക്കും” 1 തെസ്സലൊനീക്യർ 4:16-17.
+"കര്‍ത്താവാകുന്നു താൻ ഗംഭീരനാദത്തോടും പ്രധാന ദൂതൻ്റെ ശബ്ദത്തോടും ദൈവത്തിൻ്റെ കാഹളത്തോടും കൂടെ സ്വര്‍ഗ്ഗത്തിൽനിന്നു ഇറങ്ങി വരികയും ക്രിസ്തുവിൽ മരിച്ചവർ മുമ്പെ ഉയിർത്തെഴുന്നേൽക്കുകയും ചെയ്യും, പിന്നെ ജീവനോടെ ശേഷിക്കുന്ന നാം അവരോടു ഒരമിച്ച് ആകാശത്തിൽ കര്‍ത്താവിനെ എതിരേല്പാൻ മേഘങ്ങളിൽ എടുക്കപ്പെടും. ഇങ്ങനെ നാം എപ്പോഴും കര്‍ത്താവിനോടു കൂടെ ഇരിക്കും” 1 തെസ്സലൊനീക്യർ 4:16-17.
 <hr>
-<h2>ഒന്നാം ഭാഗം ശുശ്രൂഷാക്രമം</h2>
-<div class="liturgy-instruction"> (ഭവനത്തിൽ വെച്ച്)</div>
 
+<div class="liturgy-instruction"><h2>ഒന്നാം ഭാഗം ശുശ്രൂഷാക്രമം</h2> <br>(ഭവനത്തിൽ വെച്ച്)</div>
 </div>
-
 
 
 <div class="speaker min">പ:</div>
@@ -945,7 +1000,7 @@
 
 <div class="liturgy-instruction">(വീട്ടിൽവെച്ചുള്ള ശുശ്രൂഷ അവസാനിച്ച് മൃതശരീരം വീട്ടിൽനിന്ന് പള്ളിയിലേക്ക് കൊണ്ടുപോകുന്നു. യാത്രയിൽ ഗീതങ്ങളും വാക്യങ്ങളും സമയോചിതമായി ചൊല്ലുന്നു)</div>
 
-<div class="liturgy-instruction"><h2>രണ്ടാംഭാഗം ശുശ്രൂഷാക്രമം</h2> <br> (ആരാധനാലയത്തിൽ വെച്ച്)</div>
+<div class="liturgy-instruction"><h2>രണ്ടാം ഭാഗം ശുശ്രൂഷാക്രമം</h2> <br> (ആരാധനാലയത്തിൽ വെച്ച്)</div>
 
 <div class="speaker min">പ:</div>
 <div class="liturgy-text min">പിതാവിനും പുത്രനും പരിശുദ്ധാത്മാവിനും സ്തുതി.</div>
@@ -1084,7 +1139,7 @@
 
 <div class="speaker min">പ:</div>
 <div class="liturgy-text min">ലോകത്തിനു ജീവനും രക്ഷയും പ്രസംഗിക്കുന്ന വി.യോഹന്നാൻ അപ്പൊസ്തലൻ എഴുതിയ ജീവൻ നൽകുന്ന പ്രസംഗമായ നമ്മുടെ കർത്താവ് യേശുശിഹായുടെ സുവിശേഷം അഞ്ചാം അദ്ധ്യായം 19-ാം വാക്യം മുതൽ 29-ാം വാക്യം വരെ.<br><br>
-ആകയാൽ യേശു അവരോട് ഉത്തരം പറഞ്ഞത്: ആമേൻ, ആമേൻ, ഞാൻ നിങ്ങളോടു പറയുന്നു: പിതാവു ചെയ്തു കാണുന്നത് അല്ലാതെ പുത്രനു സ്വതേ ഒന്നും ചെയ്‍വാൻ കഴികയില്ല; അവൻ ചെയ്യുന്നത് എല്ലാം പുത്രനും അവ്വണ്ണംതന്നെ ചെയ്യുന്നു. പിതാവ് പുത്രനെ സ്നേഹിക്കയും താൻ ചെയ്യുന്നതൊക്കെയും അവനു കാണിച്ചുകൊടുക്കയും ചെയ്യുന്നു; നിങ്ങൾ ആശ്ചര്യപ്പെടുമാറ് ഇവയിൽ വലിയ പ്രവൃത്തികളും അവനു കാണിച്ചുകൊടുക്കും. പിതാവു മരിച്ചവരെ ഉണർത്തി ജീവിപ്പിക്കുന്നതുപോലെ പുത്രനും താൻ ഇച്ഛിക്കുന്നവരെ ജീവിപ്പിക്കുന്നു. എല്ലാവരും പിതാവിനെ ബഹുമാനിക്കുന്നതുപോലെ പുത്രനെയും ബഹുമാനിക്കേണ്ടതിനു പിതാവ് ആരെയും ന്യായം വിധിക്കാതെ ന്യായവിധി എല്ലാം പുത്രനു കൊടുത്തിരിക്കുന്നു. പുത്രനെ ബഹുമാനിക്കാത്തവൻ അവനെ അയച്ച പിതാവിനെയും ബഹുമാനിക്കുന്നില്ല. ആമേൻ, ആമേൻ, ഞാൻ നിങ്ങളോടു പറയുന്നു: എന്റെ വചനം കേട്ട് എന്നെ അയച്ചവനെ വിശ്വസിക്കുന്നവനു നിത്യജീവൻ ഉണ്ട്; അവൻ ന്യായവിധിയിൽ ആകാതെ മരണത്തിൽനിന്നു ജീവങ്കലേക്കു കടന്നിരിക്കുന്നു. ആമേൻ, ആമേൻ, ഞാൻ നിങ്ങളോടു പറയുന്നു: മരിച്ചവർ ദൈവപുത്രന്റെ ശബ്ദം കേൾക്കയും കേൾക്കുന്നവർ ജീവിക്കയും ചെയ്യുന്ന നാഴിക വരുന്നു; ഇപ്പോൾ വന്നുമിരിക്കുന്നു. പിതാവിനു തന്നിൽത്തന്നെ ജീവനുള്ളതുപോലെ അവൻ പുത്രനും തന്നിൽത്തന്നെ ജീവനുള്ളവൻ ആകുമാറ് വരം നല്കിയിരിക്കുന്നു. അവൻ മനുഷ്യപുത്രൻ ആകയാൽ ന്യായവിധി നടത്തുവാൻ അവന് അധികാരവും നല്കിയിരിക്കുന്നു. ഇതിങ്കൽ ആശ്ചര്യപ്പെടരുത്; കല്ലറകളിൽ ഉള്ളവർ എല്ലാവരും അവന്റെ ശബ്ദം കേട്ടു, നന്മ ചെയ്തവർ ജീവനായും തിന്മ ചെയ്തവർ ന്യായവിധിക്കായും, പുനരുത്ഥാനം ചെയ്‍വാനുള്ള നാഴിക വരുന്നു.</div>
+ആകയാൽ യേശു അവരോട് ഉത്തരം പറഞ്ഞത്: ആമേൻ, ആമേൻ, ഞാൻ നിങ്ങളോടു പറയുന്നു: പിതാവു ചെയ്തു കാണുന്നത് അല്ലാതെ പുത്രനു സ്വതേ ഒന്നും ചെയ്‍വാൻ കഴികയില്ല; അവൻ ചെയ്യുന്നത് എല്ലാം പുത്രനും അവ്വണ്ണംതന്നെ ചെയ്യുന്നു. പിതാവ് പുത്രനെ സ്നേഹിക്കയും താൻ ചെയ്യുന്നതൊക്കെയും അവനു കാണിച്ചുകൊടുക്കയും ചെയ്യുന്നു; നിങ്ങൾ ആശ്ചര്യപ്പെടുമാറ് ഇവയിൽ വലിയ പ്രവൃത്തികളും അവനു കാണിച്ചുകൊടുക്കും. പിതാവു മരിച്ചവരെ ഉണർത്തി ജീവിപ്പിക്കുന്നതുപോലെ പുത്രനും താൻ ഇച്ഛിക്കുന്നവരെ ജീവിപ്പിക്കുന്നു. എല്ലാവരും പിതാവിനെ ബഹുമാനിക്കുന്നതുപോലെ പുത്രനെയും ബഹുമാനിക്കേണ്ടതിനു പിതാവ് ആരെയും ന്യായം വിധിക്കാതെ ന്യായവിധി എല്ലാം പുത്രനു കൊടുത്തിരിക്കുന്നു. പുത്രനെ ബഹുമാനിക്കാത്തവൻ അവനെ അയച്ച പിതാവിനെയും ബഹുമാനിക്കുന്നില്ല. ആമേൻ, ആമേൻ, ഞാൻ നിങ്ങളോടു പറയുന്നു: എൻ്റെ വചനം കേട്ട് എന്നെ അയച്ചവനെ വിശ്വസിക്കുന്നവനു നിത്യജീവൻ ഉണ്ട്; അവൻ ന്യായവിധിയിൽ ആകാതെ മരണത്തിൽനിന്നു ജീവങ്കലേക്കു കടന്നിരിക്കുന്നു. ആമേൻ, ആമേൻ, ഞാൻ നിങ്ങളോടു പറയുന്നു: മരിച്ചവർ ദൈവപുത്രൻ്റെ ശബ്ദം കേൾക്കയും കേൾക്കുന്നവർ ജീവിക്കയും ചെയ്യുന്ന നാഴിക വരുന്നു; ഇപ്പോൾ വന്നുമിരിക്കുന്നു. പിതാവിനു തന്നിൽത്തന്നെ ജീവനുള്ളതുപോലെ അവൻ പുത്രനും തന്നിൽത്തന്നെ ജീവനുള്ളവൻ ആകുമാറ് വരം നല്കിയിരിക്കുന്നു. അവൻ മനുഷ്യപുത്രൻ ആകയാൽ ന്യായവിധി നടത്തുവാൻ അവന് അധികാരവും നല്കിയിരിക്കുന്നു. ഇതിങ്കൽ ആശ്ചര്യപ്പെടരുത്; കല്ലറകളിൽ ഉള്ളവർ എല്ലാവരും അവൻ്റെ ശബ്ദം കേട്ടു, നന്മ ചെയ്തവർ ജീവനായും തിന്മ ചെയ്തവർ ന്യായവിധിക്കായും, പുനരുത്ഥാനം ചെയ്‍വാനുള്ള നാഴിക വരുന്നു.</div>
 <div class="speaker min">പ:</div>
 <div class="liturgy-text min">നമുക്കെല്ലാവർക്കും സമാധാനം ഉണ്ടായിരിക്കട്ടെ.</div>
 <div class="speaker con">ജ:</div>
@@ -1103,7 +1158,7 @@
 <div class="liturgy-instruction">ഇവിടെ സമയോചിതമായി പ്രസംഗിക്കാം<br>അതിനുശേഷം ഒരു പ്രാർത്ഥന<br>അതിനുശേഷം മൃതശരീരം സെമിത്തേരിയിലേക്ക് ശാന്തമായി കൊണ്ടുപോകുന്നു.</div>
 
 <div class="speaker min">പ:</div>
-<div class="liturgy-text min">മനസ്സോടെ മരണം പ്രാപിച്ചുയർപ്പിൻ<br>പ്രത്യാശ-തന്ന-നാഥാ-സ്തോത്രം<br>മേലുള്ള-യെരുശ-ലേമിൽ-നിന്മുൻ<br>നിൽപ്പാൻ നീ-ഞങ്ങളെ യോഗ്യരാക്ക<br>കർത്താവേ-തിരുമുന്നടിയാർ ചെയ്ത<br>അകൃത്യങ്ങൾ-പോക്കി-ക്ഷമിച്ചിടണേമെ<br>തിരുമുമ്പിൽ-നിന്നു തള്ളാ-തെങ്ങളെ <br>നരകത്തിൽ-നിന്നു രക്ഷിക്കണമെ<br>സോദരരെ-നിങ്ങൾ മറക്കാ-തെ മരണ<സമയമോ-ർത്തുകൊൾവിൻ മണ്ണെ-ത്ര നാം<br>ഉയിർപ്പും ജീവനും നീയാകയാലെ<br>അവരോടു കൂടെ-സ്തുതി പാടുമെങ്ങൾ<br>നിനക്കും താ-തനും വിശുദ്ധ-റൂഹാക്കും<br>എന്നനേ-ക്കും സ്തോത്രം-ആമ്മേനാമ്മേൻ</div>
+<div class="liturgy-text min">മനസ്സോടെ മരണം പ്രാപിച്ചുയർപ്പിൻ<br>പ്രത്യാശ-തന്ന-നാഥാ-സ്തോത്രം<br>മേലുള്ള-യെരുശ-ലേമിൽ-നിന്മുൻ<br>നിൽപ്പാൻ നീ-ഞങ്ങളെ യോഗ്യരാക്ക<br>കർത്താവേ-തിരുമുന്നടിയാർ ചെയ്ത<br>അകൃത്യങ്ങൾ-പോക്കി-ക്ഷമിച്ചിടണേമെ<br>തിരുമുമ്പിൽ-നിന്നു തള്ളാ-തെങ്ങളെ <br>നരകത്തിൽ-നിന്നു രക്ഷിക്കണമെ<br>സോദരരെ-നിങ്ങൾ മറക്കാ-തെ മരണ&lt;സമയമോ-ർത്തുകൊൾവിൻ മണ്ണെ-ത്ര നാം&gt;<br>ഉയിർപ്പും ജീവനും നീയാകയാലെ<br>അവരോടു കൂടെ-സ്തുതി പാടുമെങ്ങൾ<br>നിനക്കും താ-തനും വിശുദ്ധ-റൂഹാക്കും<br>എന്നനേ-ക്കും സ്തോത്രം-ആമ്മേനാമ്മേൻ</div>
 
 <div class="liturgy-instruction">*മൃതശരീരം മുഖം മൂടിയശേഷം*</div>
 <div class="speaker min">പ:</div>
@@ -1169,5 +1224,86 @@
 
 <div class="speaker con">ജ:</div>
 <div class="liturgy-text con">ആമേൻ</div>
+</div>
 
-```
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="quick-links">
+                <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
+                <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
+                <li><a href="our-belief.html">Our Faith - What we believe</a></li>
+                <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
+                <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
+                <li><a href="contact-us.html">Parish Location</a></li>
+                <li><a href="parish-history.html">Bangalore Parish History</a></li> 
+                <li><a href="donations.html">Donations</a></li> 
+                <li><a href="mal-liturgy-holycommunion.html">Liturgy - Malayalam Holy Communion</a></li> 
+                <li><a href="manglish-liturgy-holycommunion.html">Liturgy - Manglish Holy Communion</a></li> 
+                <li><a href="message.html">Message</a></li> 
+            </ul>
+        </div>
+<div class="footer-right">
+    <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+    <p>#17,18, Church Lane, Defence Colony,<br> Kavery Nagar, Horamavu Agara, <br> Bangalore - 560 013</p>
+    <p> Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> 
+      <br> Treasurer: <a href="tel:+919742699916" style="color: #FFFF99;">97426 99916</a>
+            <br>Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a>  
+            <br>Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+    </p>
+</div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    nav.classList.toggle("active");
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const currentSubmenu = this.nextElementSibling;
+          
+          document.querySelectorAll('.dropdown-content').forEach(other => {
+            if (other !== currentSubmenu) {
+              other.style.display = 'none';
+            }
+          });
+
+          if (currentSubmenu.style.display === 'block') {
+            currentSubmenu.style.display = 'none';
+          } else {
+            currentSubmenu.style.display = 'block';
+          }
+        }
+      });
+    });
+  });
+
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.onscroll = function() {
+    if (backToTopBtn) {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    }
+  };
+
+  if (backToTopBtn) {
+    backToTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  }
+</script>
+
+</body>
+</html>
