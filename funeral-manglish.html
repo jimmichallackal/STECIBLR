@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manglish Funeral Liturgy | St. Thomas Evangelical Church of India</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Order of Funeral Worship - St. Thomas Evangelical Church of India (STECI)."> 
+    <style>
+    /* Global Styles */
+    :root {
+      --primary-maroon: #5C1A1B;
+      --primary-dark-maroon: #3d1112;
+      --accent-yellow: #FFFF99;
+      --accent-green: #243117;
+      --speaker-min: #8B0000;
+      --speaker-con: #00008B;
+      --speaker-deacon: #2E8B57;
+      --speaker-all: #4B0082;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      max-width: 100%;
+      overflow-x: clip;
+    }
+
+    body {
+      background-color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      font-family: Roboto, Arial, sans-serif;
+      color: #333333;
+      font-size: 16px;
+      line-height: 1.5;
+      max-width: 100%;
+      overflow-x: clip;
+    }
+
+    /* Header & Navigation */
+    .header-banner {
+      line-height: 0;
+      font-size: 0;
+    }
+
+    img {
+      max-width: 100%; 
+      width: 100%;
+      height: auto;
+    }
+
+    .navbar {
+      background-color: var(--primary-maroon);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--accent-yellow);
+    }
+
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      display: block;
+      color: var(--accent-yellow); 
+      text-align: center;
+      padding: 10px 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links li a:hover {
+      background-color: var(--primary-dark-maroon);
+    }
+
+    /* Dropdown Navigation */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 220px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1001;
+      text-align: left;
+      top: 100%;
+      left: 0;
+    }
+
+    .dropdown-content a {
+      color: var(--primary-maroon) !important;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #eee;
+      font-weight: normal;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--primary-maroon);
+      color: var(--accent-yellow) !important;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Mobile Navigation Drawer */
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 15px;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: var(--accent-yellow);
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    /* Page Titles */
+    .mission-heading {
+      text-align: center;
+      vertical-align: middle;
+      color: #FFFF99;
+      background-color: #243117;
+    }
+
+    .mission-heading h1 {
+      text-align: center;
+      margin: 0;
+      padding: 20px 12px;
+      overflow-wrap: break-word;
+    }
+
+    /* Responsive Grid Layout for Liturgy */
+    .liturgy-grid {
+      display: grid;
+      grid-template-columns: 100px minmax(0, 1fr);
+      gap: 12px 15px;
+      margin: 30px auto;
+      padding: 0 15px;
+      max-width: 900px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .speaker {
+      font-weight: bold;
+      text-align: right;
+      padding-right: 5px;
+      min-width: 0;
+      overflow-wrap: break-word;
+    }
+
+    .speaker.min, .liturgy-text.min {
+      color: var(--speaker-min); 
+    }
+
+    .speaker.con, .liturgy-text.con {
+      color: var(--speaker-con); 
+    }
+
+    .speaker.deacon {
+      color: var(--speaker-deacon);
+    }
+
+    .speaker.all {
+      color: var(--speaker-all);
+    }
+
+    .liturgy-text {
+      text-align: left;
+      min-width: 0;
+      overflow-wrap: break-word;
+    }
+
+    .liturgy-instruction {
+      grid-column: 1 / -1;
+      font-style: italic;
+      color: #555555;
+      text-align: center;
+      padding: 12px 0;
+      font-weight: 600;
+      min-width: 0;
+      overflow-wrap: break-word;
+    }
+
+    .liturgy-instruction h2 {
+      margin: 0;
+      font-size: 1.35rem;
+      line-height: 1.4;
+      overflow-wrap: break-word;
+    }
+
+    .liturgy-initialstatements {
+      grid-column: 1 / -1;
+      font-style: italic;
+      color: #2C353D;
+      text-align: left;
+      padding: 12px 0;
+      font-weight: 600;
+      min-width: 0;
+      overflow-wrap: break-word;
+    }
+
+    /* Responsive Table Container */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 10px 0;
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    .table-responsive table {
+      width: 100%;
+      min-width: 420px;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      color: #333333;
+    }
+
+    .table-responsive th,
+    .table-responsive td {
+      border: 1px solid #888888;
+      padding: 1px 10px;
+      text-align: left;
+      overflow-wrap: break-word;
+    }
+
+    .table-responsive th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    /* Back to Top Button */
+    #backToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      font-size: 14px;
+      border: none;
+      outline: none;
+      background-color: var(--accent-green);
+      color: var(--accent-yellow);
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    /* Footer Layout */
+    .site-footer {
+      background-color: #222222;
+      color: #ffffff;
+      padding: 25px 8%;
+      border-top: 2px solid #444444;
+      margin-top: 40px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-left {
+      text-align: left;
+      min-width: 0;
+    }
+
+    .footer-right {
+      text-align: right;
+      font-size: 0.9rem;
+      min-width: 0;
+      overflow-wrap: break-word;
+    }
+
+    .quick-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 30px;
+    }
+
+    .quick-links li a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 0.9rem;
+      overflow-wrap: break-word;
+    }
+
+    .quick-links li a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Mobile Responsive Optimizations (< 768px) */
+    @media screen and (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--primary-maroon);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+        border-top: 1px solid #7a2425;
+      }
+
+      .dropdown-content {
+        position: static;
+        width: 100%;
+        background-color: #4a1415;
+        box-shadow: none;
+      }
+
+      .dropdown-content a {
+        color: var(--accent-yellow) !important;
+        background-color: #4a1415 !important;
+        padding: 12px 30px;
+        border-bottom: 1px solid var(--primary-maroon);
+        white-space: normal;
+      }
+
+      .liturgy-grid {
+        grid-template-columns: 65px minmax(0, 1fr);
+        gap: 8px 10px;
+        padding: 0 10px;
+      }
+
+      .speaker {
+        text-align: left;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .footer-left, .footer-right {
+        text-align: center;
+        width: 100%;
+      }
+
+      .quick-links {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    </style>
+</head>
+<body>
+
+<button id="backToTopBtn" title="Go to top">↑ Top</button>
+
+<div class="header-banner">
+    <img src="Steciblr_files/steciblrbanner.png" alt="Church banner or logo" />
+</div>
+
+<nav class="navbar">
+  <div class="menu-icon" onclick="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Church ▾</a>
+      <div class="dropdown-content">
+        <a href="church-leaders.html">Church Leaders</a>
+        <a href="church-history.html">Church History</a>
+        <a href="donations.html">Church Donations</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Parish ▾</a>
+      <div class="dropdown-content">
+        <a href="parish-vicar.html">Parish Vicars</a>
+        <a href="parish-history.html">Parish History</a>
+        <a href="lectionary.html">Lectionary</a>
+        <a href="parish-bulletin.html">Parish Bulletin</a>
+        <a href="executive-committee.html">Executive Committee</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Foundation ▾</a>
+      <div class="dropdown-content">
+        <a href="mission-vision.html">Mission & Vision</a>
+        <a href="our-belief.html">Our Faith</a>
+        <a href="bible-reading.html">365 Day Bible Reading</a>
+        <a href="bible-overview.html">Bible Overview</a>
+       </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Liturgy ▾</a>
+      <div class="dropdown-content">
+        <a href="liturgy-holycommunion.html">English Holy communion worship</a>
+        <a href="liturgy-public.html">English Public worship</a>
+        <a href="manglish-liturgy-holycommunion.html">Holy Communion – Manglish</a>
+        <a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
+        <a href="mal-liturgy-holycommunion.html">തിരുവത്താഴ ശുശ്രൂഷാ ക്രമം</a>
+        <a href="mal-liturgy-public.html">പരസ്യാരാധനാക്രമം</a>
+        <a href="funeral-malayalam.html">ശവസംസ്കാര ശുശ്രൂഷാക്രമം</a>
+        <a href="funeral-manglish.html">Funeral Service - Manglish</a>
+      </div>
+    </li>
+
+    <li><a href="message.html">Message</a></li>
+  
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Gallery ▾</a>
+      <div class="dropdown-content">
+        <a href="photos-gallery.html">Photo Gallery</a>
+        <a href="videos-gallery.html">Video Gallery</a>
+      </div>
+    </li>
+
+    <li><a href="contact-us.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="main-content">
+  <div class="mission-heading">
+    <h1><strong>Shavasamskara Shushroosha Kramam</strong></h1>
+  </div>
+  <div class="liturgy-grid">
+<div class="liturgy-instruction"> <h2> Dhukhasamayathekkulla Chila Vaayanakal </h2> </div>
+
+<div class="liturgy-initialstatements">
+<div class="table-responsive">
+<table>
+  <thead>
+    <tr>
+      <th>Bible Bhaagam</th>
+      <th>Adhyaayam / Vaakyangal</th>
+      <th>Vishayam</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sankeerthanangal</td>
+      <td>23, 34, 46, 68, 90</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Ulpathi</td>
+      <td>23:1–20</td>
+      <td>Saaraayude maranam</td>
+    </tr>
+    <tr>
+      <td>Ulpathi</td>
+      <td>50:1–13</td>
+      <td>Yaakkobinte maranam</td>
+    </tr>
+    <tr>
+      <td>2 Shamoovel</td>
+      <td>12:16–23</td>
+      <td>Dhaaveedhinte kunjinte maranam</td>
+    </tr>
+    <tr>
+      <td>2 Raajaakkanmaar</td>
+      <td>4:18–37</td>
+      <td>Shoonemkaari sthreeyude makan</td>
+    </tr>
+    <tr>
+      <td>Iyyob</td>
+      <td>1:1–22</td>
+      <td>Iyyobinte makkal</td>
+    </tr>
+    <tr>
+      <td>Yeheskel</td>
+      <td>37:1–10</td>
+      <td>Unangiya asthikal</td>
+    </tr>
+    <tr>
+      <td>Dhaaniyel</td>
+      <td>12:1–13</td>
+      <td>Dhaaniyelinte dharshanam</td>
+    </tr>
+    <tr>
+      <td>Matthai</td>
+      <td>28:1–20</td>
+      <td>Karthaavinte punaruthaanam</td>
+    </tr>
+    <tr>
+      <td>Markose</td>
+      <td>16:1–20</td>
+      <td>Karthaavinte punaruthaanam</td>
+    </tr>
+    <tr>
+      <td>Lukkos</td>
+      <td>24:1–50</td>
+      <td>Karthaavinte punaruthaanam</td>
+    </tr>
+    <tr>
+      <td>Yohannaan</td>
+      <td>20:1–20</td>
+      <td>Karthaavinte punaruthaanam</td>
+    </tr>
+    <tr>
+      <td>Matthai</td>
+      <td>9:18–26</td>
+      <td>Yaayeerosinte makal</td>
+    </tr>
+    <tr>
+      <td>Markose</td>
+      <td>5:21–43</td>
+      <td>Yaayeerosinte makal</td>
+    </tr>
+    <tr>
+      <td>Lukkos</td>
+      <td>8:40–56</td>
+      <td>Yaayeerosinte makal</td>
+    </tr>
+    <tr>
+      <td>Lukkos</td>
+      <td>7:11–17</td>
+      <td>Nayin pattanathile vidhavayude makan</td>
+    </tr>
+    <tr>
+      <td>Lukkos</td>
+      <td>16:19–31</td>
+      <td>Dhanavaanum Laasarum</td>
+    </tr>
+    <tr>
+      <td>Yohannaan</td>
+      <td>5:19–29</td>
+      <td>Nithyajeevan</td>
+    </tr>
+    <tr>
+      <td>Yohannaan</td>
+      <td>11:1–44</td>
+      <td>Bethanyayile Laasar</td>
+    </tr>
+    <tr>
+      <td>Yohannaan</td>
+      <td>14:1–30</td>
+      <td>Ningalude hridayam kalangippokaruthu</td>
+    </tr>
+    <tr>
+      <td>Appo. Pravrithi</td>
+      <td>9:36–43</td>
+      <td>Thabeethaa</td>
+    </tr>
+    <tr>
+      <td>Appo. Pravrithi</td>
+      <td>20:7–12</td>
+      <td>Yoothikkos</td>
+    </tr>
+    <tr>
+      <td>Romar</td>
+      <td>8:31–39</td>
+      <td>Dhaivam namukkanukoolamengil</td>
+    </tr>
+    <tr>
+      <td>1 Kori.</td>
+      <td>15:1–58</td>
+      <td>Punaruthaanam</td>
+    </tr>
+    <tr>
+      <td>2 Kori.</td>
+      <td>5:1–10</td>
+      <td>Kaippaniyallaatha nithyabhavanam</td>
+    </tr>
+    <tr>
+      <td>Philippiyar</td>
+      <td>1:20–30</td>
+      <td>Jeevanaal aakatte maranatthaal aakatte</td>
+    </tr>
+    <tr>
+      <td>1 Thessalonikyar</td>
+      <td>4:13–18</td>
+      <td>Prathyaasha</td>
+    </tr>
+    <tr>
+      <td>2 Thimotheyos</td>
+      <td>4:1–8</td>
+      <td>Nalla por poruthu, ottam thikachu</td>
+    </tr>
+    <tr>
+      <td>Ebraayar</td>
+      <td>11:1–40</td>
+      <td>Vishvaasaveeranmaar</td>
+    </tr>
+    <tr>
+      <td>Ebraayar</td>
+      <td>12:1–13</td>
+      <td>Saakshikalude samooham</td>
+    </tr>
+    <tr>
+      <td>1 Pathros</td>
+      <td>1:1–25</td>
+      <td>Jeevanulla prathyaasha</td>
+    </tr>
+    <tr>
+      <td>2 Pathros</td>
+      <td>3:8–13</td>
+      <td>Karthaavinte divasam</td>
+    </tr>
+    <tr>
+      <td>Velippaadu</td>
+      <td>14:1–16</td>
+      <td>Seeyon malayil</td>
+    </tr>
+    <tr>
+      <td>Velippaadu</td>
+      <td>21:1–8</td>
+      <td>Puthiya aakashavum puthiya bhoomiyum</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+<div class="liturgy-instruction">
+<h2>Maranam Dhaivavachanathinte Velichathil</h2> </div>
+<div class="liturgy-initialstatements">
+"Avanavan shareerathil irikkumbol cheythathu nallathaakilum theeyathaakilum athinu thakkavannam praapikkendathinu naam ellaavarum Khristuvinte nyaayaasanathinte mumpaake velippedendathaakunnu." 2 Korinthyar 5:10<br> <br>
+
+"Athrayumalla njangalkkum ningalkkum naduve valiyoru pilarppundaakkiyirikkunnu. Ividennu ningalude adukkal kadannuvaruvaan ichikkunnavarkku kazhivilla; avidennu njangalude adukkal kadannuvaruvaanum paadilla ennu paranju."  <br> Lukkos 16:26<br><br>
+
+"Njaan swargathilninnu oru shabdham kettu; athu paranjathu: ezhuthuka: innumuthal karthaavil marikkunna mrithanmaar bhagyavaanmaar; athe, avar thangalude prayathnangalilninnu vishramikkendathaakunnu; avarude pravrithi avare pinthudarunnu ennu aathmaavu parayunnu." Velippaadu 14:13<br> <br>
+
+"Ithu paranjittu avan: nammude snehithanaaya Laasar nidrakollunnu; enkilum njaan avane unarthuvaan pokunnu ennu avarodu paranju. "Yohannaan 11:11<br> <br>
+
+"Ennal anthya kaahalanaadhathinkal pettennu kannimaykkunnidatil naam ellaavarum roopantharappedum. Kaahalam dhvanikkum; marichavar akshayaraayi uyirkkukayum naam roopantharappedukayum cheyyum."  1 Korinthyar 15:52 <br> <br>
+
+"Thante bhakthanmaarude maranam Yehovaykku vilayeriyathaakunnu." Sankeerthanangal 116:15<br> <br>
+
+“Enikku jeevikkunnathu Khristuvum marikkunnathu laabhavumaakunnu.”  Philippiyar 1:21.<br> <br>
+
+“Koodaaramaaya njangalude bhavanam azhinjupoyaal kaippaniyallaatha nithyabhavanamaayi Dhaivathinte daanamaayoru kettidam njangalkku swargathil undennu ariyunnu” 2 Korinthyar 5:1.<br> <br>
+
+"Makkal jadarakthangalodu koodiyavar aakakondu avanum avareppole jadarakthangalodu koodiyavanaayi maranathinte adhikaariyaaya pishaachine thante maranatthaal neekki jeevaparyantham maranabheethiyaal adimakalaayirunnnavareyokkeyum viduvichu." Ebraayar 2:14,15.
+<br> <br>
+“Aadaamil ellaavarum marikkunnathupole Khristuvil ellaavarum jeevikkappedum. Orooruthanum thaanthaante nirayilathre; aadyaphalam Khristu; pinne Khristuvinullavar avante varavinkal”<br> 1 Korinthyar 15:22,23.<br> <br>
+
+“Nanma cheythavar jeevanaayum thinma cheythavar nyaayavidhikkaayum punaruthaanam cheyyuvaanulla naazhika varunnu.” Yohannaan 5:29.<br> <br>
+
+“Yeshu marikkukayum jeevichu ezhunnelkkukayum cheythu ennu naam vishvasikkunnu enkil angane thanne Dhaivam nidrakkondavareyum Yeshu mukhaantharam avanodukoode varuthum. Karthaavinte prathyakshathavare jeevanode sheshikkunnvaraaya naam nidrakkondavarkku mumpaakayilla ennu njangal karthaavinte vachanatthaal ningalodu parayunnu.”1 Thessalonikyar 4:14-15. <br> <br>
+
+"Karthaavaakunnu thaan gambheeranaadhathodum pradhaana doothante shabdhatthodum Dhaivathinte kaahalatthodum koode swargathilninnu irangi varikayum Khristuvil marichavar mumpe uyirthezhunnelkkukayum cheyyum, pinne jeevanode sheshikkunna naam avarodum orumichu aakashathil karthaavine ethirelppaan meghangalil edukkappedum. Ingane naam eppozhum karthaavinodu koode irikkum” 1 Thessalonikyar 4:16-17.
+<hr>
+
+<div class="liturgy-instruction"><h2>Onnaam Bhaagam Shushroosha Kramam</h2> <br>(Bhavanathil vechu)</div>
+</div>
+
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Pithaavinum Puthranum Parishudhaathmaavinum sthuthi.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aadhi muthal ennannekkum thanne, Aamen.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Aakashavum bhoomiyum thante mahathvam kondu niranjirikkunna balavanaya Dhaivam Thampuran parishudhan - parishudhan - parishudhan - unnathangalil sthuthi.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Karthaavinte thirunaamathil vannavanum - varuvanirikkunnavanum - vazhthappettavanakunnu - unnathangalil sthuthi.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">* Dhaivame, nee parishudhanaakunnu.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">* Balavaane, nee parishudhanaakunnu.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">* Maranamillathavane, nee parishudhanaakunnu.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">* Njangalkku vendi krooshikkappetta Mashiha Thampuraane, njangaludemel anugraham choriyename.</div>
+
+<div class="liturgy-instruction">*(Iprakaram moonnu pravashyam chollanam)</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Njangalude karthaave - njangaludemel anugraham choriyename.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Njangalude karthaave - kripa thonni njangaludemel anugraham choriyename.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Njangalude karthaave - njangalude prarthanayum apekshayum kaikkondu njangaludemel anugraham choriyename.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Dhaivame, ninakku sthuthi</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Srishtaave, ninakku sthuthi</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Paapikalaya adiyaarodu kripa cheyyunna Mashiha raajaave, ninakku sthuthi.</div>
+
+<div class="liturgy-instruction">Karthaavinte Prarthana (Matthai 6:9-13)</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Swarggasthanaaya njangalude Pithaave...</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Ninte naamam vishudheekarikkappadename; ninte rajyam varename; ninte ishtam swargathileppole - bhoomiyilum aakename; njangalkku aavashyamulla aaharam innu tharename; njangalude kadakkarodu njangal kshamichirikkunnathupole - njangalude kadangale njangalodum kshamikkename; njangale pareekshayil kadathathe - dushtangal ninnu njangale viduvikkename; rajyamum shakthiyum mahathvavum - ennekkum ninakkullathallo. Aamen.</div>
+
+<div class="liturgy-instruction">Praarambha Prarthana</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">“Njaan thanne punaruthaanavum jeevanum aakunnu; ennil vishvasikkunnavan marichaalum jeevikkum; jeevichirunnu ennil vishvasikkunnavan aarum orunaalum marikkilla” ennu njangalkku urappu nalkiyirunna karthaave, njangal ninakku sthothram cheyyunnu. Jeevakaramaya avidathe vaagdathangalorthu thirunaamathe njangal vazhthunnu. Maranathinupolum njangale ninte snehathilninnu akattuvaan saadhyamallaaykaayaal ninakku sthuthi.<br><br>
+
+Njangalude karthaave, njangal balaheenarum, vishvasathil kuravullavarumaakayaal, agnishodhanayil thottupokaathe ninte balamulla kaikalal njangale thaangikollename. Karthaave, njangalude sankadangaludeyum niraashakaludeyum sandharbhangale prathyaashayudeyum dhairyathinteyum avasarangalaayi nee roopantharappeduthename.<br><br>
+
+Sneham niranjja Pithaave, bhaarappettum dhukhichumirikkunna ee ninte makkaleyum sakala buddhiyeyum kaviyunna dhaiveeka samaadhaanatthaal samaashvasippikkename. Ee lokathile njangalude bandhangal thaalkaalikamaakunnuvallo; njangalkku ivide sthiramaya vaasavum vaasasthalamum illallo. Ennal njangal Dhaivathinte makkalaakayaal swarggeeya paurathvathinte prathyaasha njangalkkundu. Ee lokam Dhaivajanakalkku yogyamallaallo. Nee lokatheyum maranatheyum jayichavanaakayaal njangalkkum aa jayathil nee avakaasham nalkiyirikkunnu. Ee santhoshakaramaya arivodukoodi pakalullappol ayachavante vela thikachukondu, prathyaashayodukoodi jeevikkuvaan njangale sahaayikkename. “Karthaavu thannu, karthaaveduthu, karthaavinte naamam vazhthappedu maarakatte.” Ennu paranju dhaivahithathinu keezhppettirikkaan njangale sahaayikkename. Maranatheyum paathaalatheyum tholppichu njangalkku uyirpinteyum nithyajeevanteyum prathyaasha daanam cheythirikkunna priya rakshakante naamathil njangalude prarthana kelkkumaaraakename.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Eka manushyanaal paapavum, paapatthaal maranavum lokathil kadannu. Ingane ellaavarum paapam cheyyukaayaal maranam sakala manushyarilum parannirikkunnu. Romar 5:12.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Jeevichirunnu maranam kaanathe irikkunna manushyan aaru? Thante praanane paathaalathinte kaiyilninnu viduvikkunnavanum aarulloo? Sankeer. 89:48.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Sthree prasavicha manushyan alpaayussullavanum kashtasampoornnanum aakunnu. Avan poo pole vidarnnu pozhinju pokunnu. Nilnilkkaathe nizhalpole odippokunnu. Iyyob. 14:1,2.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Paapathinte shambalam maranamathre; Dhaivathinte kripaavaramo nammude karthaavaaya Yeshukhristuvil nithyajeevan thanne. Romar 6:23.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Jadathinte chintha maranam; aathmaavinte chinthayo jeevanum samaadhaanavum thanne. Roma. 8:6.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Thante bhakthanmaarude maranam Yehovaykku vilayeriyathaakunnu. Sankeer. 116:15.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Dhaivam namukku uddhaarannangalude Dhaivam aakunnu; maranathil ninnulla neekkupokkuakal karthaavaaya Yehovaykkullava thanne. Sankeer. 68:20.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Njaan avare paathaalathinte adheenathayilninnu veendedukkum; maranathilninnu njaan avare viduvikkum; maraname, ninte baadhakal evide? Paathaalame, ninte samhaaram evide? Hoshea. 13:14.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Avan maranathe sadaakaalathekkum neekkikkalayum; Yehovaaya karthaavu sakala mukhangalilum ninnu kannuneer thudakkukayum, thante janathinte nindha sakala bhoomiyilninnum neekkikkalakayum cheyyum. Yeshayyaa. 25:8.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Marikkunnavante maranatthil enikkishtamilla ennu Yehovaaya karthaavinte arulappaadu; aakayaal ningal manam thirinju jeevichukollvin. Yeheskel. 18:32.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Ennal Khristu nidrakkondavaril aadyaphalamaayi marichavarude idayilninnu uyirthirikkunnu. 1Kori. 15:20.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen, aamen njaan ningalodu parayunnu; ente vachanam kettu enne ayachavane vishvasikkunnavanu nithyajeevanundu; avan nyaayavidhiyil aakaathe maranathilninnu jeevanilekku kadannirikkunnu. Yohan. 5:25.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Aamen, aamen njaan ningalodu parayunnu; marichavar Dhaivaputhrante shabdham kelkkukayum, kelkkunnavar jeevikkukayum cheyyunna naazhika varunnu; ippol vannumirikkunnu. Yohan. 5:25.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Ithinkal aashcharyappedaruthu; kallarayilullavar ellaavarum avante shabdham kettu nanma cheythavar jeevanaayum thinma cheythavar nyaayavidhikkaayum punaruthaanam cheyyuvaanulla naazhika varunnu. Yohan. 5:28,29.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Makkal jadarakthangalodu koodiyavar aakakondu avanum avareppole jadarakthangalodu koodiyavanaayi maranathinte adhikaariyaaya pishaachine thante maranatthaal neekki jeevaparyantham maranabheethiyaal adimakalaayirunnnavare okkeyum viduvichu. Ebraayar. 2:14.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Ini maranam undaakayilla; dhukhavum muraviliyum kashtathayum ini undaakayilla. Velippaadu. 21:5.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Naamo namme snehichavan mukhaantharam ithil okkeyum poornnajayam praapikkunnu. Maranathino jeevano doothanmaarkko vaazhchakalkko adhikaarangalkko, ippolullathino varuvaanullathino uyarathino aazhathino mattu yaathoru srishtikko nammude karthaavaaya Yeshukhristuvilulla Dhaivasnehathilninnum namme verpirippaan kazhikayilla ennu njaan urachirikkunnu. Romar 8:37-39.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Ee dhravathvamullathu adhravathvatheyum ee marthyamaayathu amarthvatheyum dharikkumbol maranam neengi jayam vannirikkunnu ennu ezhutiya vachanam nivruthiyaakum. He maraname, ninte jayam evide? He maraname, ninte vishamullathu evide? 1Kori. 15:54,55.</div>
+
+<div class="liturgy-instruction">Prarthana</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Njangalude swarggeeya Pithaave, aviduthe vazhthappetta puthranaaya Yeshukhristu Laasarinte kallaraykkal kannuneer vaarthavanaannallo. Ippol kannuneerilum manovyasanathilumirikkunna ee ninte makkale ninte aardhrathayodukoode kadaakshikkename. Karthaave, kripa niranja swaanthanangalal avare samaashvasippikkename. Dhaivathe snehikkunnavarkku sakalavum nanmakkaayi koodi vyaaparikkkunnu ennu avare grahippikkename. Avidatthe pithrusnehatheppattiyum karuthalinekkurichum avarkku varddhamaanamaya nishchayavum vishvasavum urappum nalkename. Njangalude karthaavaaya Yeshukhristuvinte naamathil njangalude prarthana kelkkumaaraakaname.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen.</div>
+
+<div class="liturgy-instruction">90-am Sankeerthanam</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Karthaave, nee thalamura thalamurayaayi njangalude sankethamaayirikkunnu.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Parvathangal undaayathinum, nee bhoomiyeyum bhoomandalatheyum nirmmichathinum mumpe, nee anaadiyaayum shaashwathamaayum Dhaivam aakunnu.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Nee marthyane podiyilekku madangicherrumaarakkunnu; manushyaputhrenmaare, thirike varuvin ennum arulicheyyunnu.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aayiram samvatsaram ninte drishtiyil innale kazhinjupoya divasampoleyum raathriyile oru yaamam poleyum maathram irikkunnu.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Nee avare ozhukkikkalayunnu; avar urakkam polethre; avar raavile mulachuvurunna pullupoleyakkunnu.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Athu raavile thazhachuvalarunnu; vaikkunneram athu arinju vaadippokunnu.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Njangal ninte kopatthaal kshayichum ninte krodhatthaal bhramichum pokunnu.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Nee njangalude akrithyangale ninte mumpilum njangalude rahasyapaapangale ninte mukhaprakashathilum vechirikkunnu.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Njangalude naalukalokkeyum ninte krodhatthil kazhinjupoyi, njangalude samvatsarangale njangal oru neduveerppupole kazhikkunnu.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Njangalude aayushkaalam ezhupathu samvatsaram; ereyaayaal enpathu samvatsaram; athinte prathaapam prayaasavum dhukhavumathre; athu vegam theerukayum njangal parannupokukayum cheyyunnu.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Ninte kopathinte shakthiyeyum, ninne bhayappeduvaan thakkavannam ninte krodhatheyum grahikkunnavan aaru?</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Njangal jnaanamulloru hridayam praapikkathakkavannam njangalude naalukale ennuvaan njangale upadeshikkename.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Yehovaye, madangi varename; etthra tholam thaamasam? Adiyangalodu sahathaapam thonnaname.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Kaalatthuthanne njangale ninte dhayakondu thripthiraakkaname; ennal njangalude aayushkaalamokkeyum njangal ghoshichaanandhikkum.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Nee njangale kleshippicha divasangalkkum, njangal anartham anubhavicha samvatsarangalkkum thakkavannam njangale santhoshippikkename.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Ninte daasanmaarkku ninte pravrithiyum avarude makkalkku ninte mahathvavum velippedumaarakkatte.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Njangalude Dhaivamaaya Yehovayude prasaadam njangaludemel irikkumaarakkatte; njangalude kaikalude pravrithiye saadhyamaakki tharename.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Athe, njangalude kaikalude pravrithiye saadhyamaakkittharename.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Pithaavinum Puthranum Parishudhaathmaavinum sthuthi.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aadhi muthal ennannekkum thanne. Aamen.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">“Adhvaanikkunnavarum bhaaram chumannukonnavarum aayullore, ellaavarum ente adukkal varuvin; njaan ningale aashwasippikkum.” Ennu aruliya karthaave, aakulamaanasareyum chinthaabhaaramullavareyum thrikkarengalil bharamelppikkunnu. Sakala buddhiyeyum kaviyunna ninte samaadhaanatthaal avarkku samaadhaanavum nalkename. Rogavum daaridryavum nimitham sankadatthilaayavarkku vendi njangal prarthikkunnu. Prakrithikshobhatthaalum pettennulla aapathukalaalum kashtathilaayirikkunnavare karthaave, nee kadaakshikkename. Snehikkunnavarude verppaadu nimitham manassu kalangiyirikkunnavare karunayode nokkename. Pareekshakkaayi sanghadippichirikkunna agnishodhanayil aarum athisayichupokaruthe; hridayam kadhinappedukayum vishvaasam balaheenamaakukayumaruthe. Dhukhatthil irikkunna ee ninte makkale aashwasippikkename. Prathyaashayillaathavareppole njangal dhukhichupokaathe, ninte samaadhaanatthaal njangale nirachu aashwasippikkukayum cheyyename. “Ente samaadhaanavum njaan ningalkku tharunnu. Lokam tharunnathupoleyalla njaan ningalkku tharunnathu. Ningalude hridayam kalangaruthu; bhramikkayumaruthu.” Ennu arulicheytha priya rakshakante naamathil njangalude prarthana kelkkumaaraakaname.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen.</div>
+
+<div class="liturgy-instruction">Geetham</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Manmayanaaya Aadaamin - makkalkku punaruthaanam<br>
+Vaagdhaanam than kripayaale cheythavanaam Mashiha naathaa <br>
+Jeevan nalkum nin maranathe - njangal shlaaghichheedatte<br>
+Ninnude punaruthaanathe njangal sthuthikkayum cheyyunnu</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Aadaaminte sakala makkaludeyum jeevantemelum maranathintemelum adhikaaramulla njangalude Mashiha thampuraane, ninte mahathvaprathyaashayude divasathil njangalodu karunayundaakename.</div>
+
+<div class="liturgy-instruction">Allenkil</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Thannude kannukalil munnil - sakalavum muzhuvan velivaayum <br>
+Parasyamaayumirikkunna karunaanidhiyaam karthaave<br>
+Nin shreshtathvamudikkunna aa divasathil njangalude<br>
+Kuttam, paapam ennivakal velippedutheedaruthe naathaa.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Orooruthanum avanavante pravruthikku thakkavannam pakaram nalkunna neethiyulla nyaayaadhipathiyaaya karthaave, njangalude kuttangal maayikkukayum njangalude anyaayangal kazhukikkalakayum ninte neethi vasthram njangale dharippikkukayum cheyyename.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Oro pravruthikkothapole - pakaram nalkum Mashihaaye,<br>
+Kuttangale nee maayichu - anyaayangale kazhukename.<br> 
+Nin mahimaykku cherunna vennilayanki adiyaare <br>
+Dharippikkaname ennekkum nyaayaadhipanaam Mashihaaye  </div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Prakashatthinte makkale, ningalellaavarum unarnezhuunettu unnathathile manavaalanodukoode manavarayil praveshippaan ningalude deepangale theliyichu avante ethirelppinaayi orungikollvin.
+</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">
+Divyavelichathil suthare - ningalunarnezhuunettittu<br>
+Unnatha manavaalanumaayi - manavarayil praveshippaan <br>
+Ningal deepayashtikale nannaayi theliyichittavane<br>
+Ethirelppaanaayi vegathil orungikkondu purappeduvin
+</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Laasarine marichavarude idayilninnu vilichu uyirthezhunnelppicha aa shabdham vishvaasikale avarude kallarakalilninnu vilichu uyirthezhunnelppikkum</div>
+
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Than sakhiyaaya Laasarine-<br>
+Maranathilninnum uyirppicha <br>
+Aa shabdham vishvaasikale<br>
+Kabaril ninnezhunnelppikkum.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Sakala srishtikaludeyum raajaavum, sakala rahasyangalum parasyamaayi kaanunnavanumaaya karthaave ninte karuna njangalkku kaalaavaraayirikkename. Ninte chirakinkeezhil njangale marachukollename.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Rahasyangal velivaaykkaanum <br>
+Srishtaavaam - Mashiha raajaa  <br>
+Karunayode chirakinkeezhil <br>
+Njangale - maracharuleedaname.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Unnathathile raajaavu thante sarvasainyangalumaayi velippedumbol, arukkappetta kunjaatinte rakthathil kulichittulla ellaavarum avante munpil mukhaprasaadhathode nilkkum.</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">
+Unnatha raajan sainyavumaay <br>
+Udhikkumbol kunjaatinte  <br>
+Rakthathil kulichavarellaam <br>
+Thirumumpil ninnidume.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Thrithvathinte rahasyamaayirikkunna Pithaavinum Puthranum Parishudhaathmaavinum sthuthiyum vandanavum pukazhchayum naam 
+karettanam.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Thrithva rahasyamaayulla<br>
+Pithru puthraathmaakkalkkennum <br>
+Sthuthiyum vandanavum pukazhum<br>
+Unnathiyum naam ettenam.</div>
+
+<div class="liturgy-instruction">Prarthana</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Jeevanullavanum, jeevan pradaanam cheyyunnavanum, marichavarkku uyirpinte jeevene vaagdhaanam cheythavanumaaya njangalude Mashiha raajaave, ninakku sthuthi ninakku sthothram. Nee njangalude andhakaarathe prakaashippikkunna rashmiyum, njangalude maranathe jayichu maranabheethiyil ninnu njangale viduvichu paathaalathinte shakthiye thakartthirikkunna jayaveeranumaakayaal njangal ninne vazhthipukazhthunnu. Sthuthiyum bahumaanavum aadhipathyavum ennennekkum ninakku yogyamaayirikkunnu.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Karunayulla karthaave, manassalivukalude Pithaave, dhukhichum vishaadichumirikkunna njangal eyum prathyekichu ee kudumbathilulla ellaavarayum ninte karunakalude bahuthvatthaal aashwasippikkukayum dhairyappeduthukayum cheyyumaaraakaname. Ivarude kannukalilninnu kannuneerineyum, ivarude hridayangalilninnu athivedhanayeyum neekkikkalayename.
+<br><br>Aakulachinthayillaatha samaadhaanatthaal ivarkku samaadhaanavum nalkename. Aashwaasamillaatha manovyasanathilninnu ivare viduvikkename. Theeraatha dhukhatthil ivar veenupokaathe dhaiveekamaya prathyaashayaal ivare nirachukollename. Kashtangalaal anusaranam padichavaraaya vishudhanmaarkkulla poornnathayilekku ivare nadathename. Prathyaashayillaatha jaathikaleppole, thangalude dhukhatthil niraashappedaathe, ninnilulla vishvaasavum aashrayavumkondu ivar samaadhaanavum dhairyavum praapikkumaaraakaname.
+
+<br><br>Karthaave, njangalude ihalokavaasathinu nee avasaanam varuthumbol, santhoshakaramaya yaathrakku njangale orukkamullavaraakkename. Ninte sannidhiyil lajja koodaatha nilaykku njangal yogyaraayi kaanppedename. Avide ninne sthuthikkuvaan njangal yogyaraayi bhavikkukayum cheyyename. Aayathu ellaayppozhum thanne.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Karthaave, ee aayussinte anithyathekkurichulla ormma eppozhum njangale bharikkename. Ee lokathil njangal anyarum paradeshiyalumaanennu njangalude nithyavaasasthalam swargathilaanennullabodhamkondu njangale niraykkename. Njangalude Pithaave, nee njangale eppol vilichaalum, ee lokathe vittupirinju swarggakanaanilekku purappeduvaan orukkamullavarum kaatthirikkunnavaraayi kaanppedumaaraakaname. Yeshu Mashiha moolam njangalude prarthana kelkkumaaraakaname.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Ente sahodharanmaare, innu naam evideyaakunnu ennum, naale naam evideyaayirikkum ennum orthukollvin. Innu naam nammude bhavanangalilirikkunnu; pravarthikkunnu; samsaarikkunnu. Naaleyo, shavakkuzhikalil maunamullavaraayitheerunnu. Divasanthorum ithorkkunna manushyan bhagyavaanaakunnu.<br><br>Sahodharanmaare, dhanavum saundaryavum shreshthaadhikaaravumaaya sakalavum azhinju onnumillathathupole maanju pokunnu. Neekkam varaatha adhikaaramullavan vazhthappettavanaakunnu.<br> <br>
+Marichavare uyirppikkukayum punaruthaanathil avarude shareerangale mahathvam dharippikkukayum cheyyunna Mashiha vazhthappettavanaakunnu.</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Haa! Marichavarkku- punarjeevan aduthallo<br>Dhukhikkendo- dehanashatthinkal<br>Nammale srishtichon- dehathe uyirppichu<br>Pravruthikkothapole- neethiyaay phalamekum<br>Marichavaridayil nee thaazhthappettallo,<br>Paathaalatthil nee yaathra cheythallo,<br>Aadaamin suthare nee uyirppippaanetthumbol<br>Ninnil vishvasichavaraam adiyaare uyirppikka.</div>
+
+<div class="liturgy-instruction">Prarthana</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Njangalude karthaavaaya karthaave, ninne njangal nokki vilikkunnu. Njangalude sahaayathinaayi varename. Njangalude apeksha kettu njangale anugrahikkename.<br>Punaruthaana divasathil marichavare shavakkuzhikalilninnu uyirthezhunnelppichu avare vellanilaayanki dharippikkunnavanaayullavane, ninakku sthuthi.<br>Mannilninnu Aadaamine menanjundaakkiya Pithaavinu sthuthi. Kurishile kashtaanubhavangalaal avane veendedutha puthranu vandanam; avasaanathil ezhunnelli avane uyirppikkukayum punaruthaana naalil avaneyum avante santhaanangaleyum mahathvam dharippikkukayum cheyyunna Parishudhaathmaavinu sthothravum undaayirikkatte.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen.</div>
+
+<div class="liturgy-instruction">Lekhanam</div>
+<div class="speaker min">Shushru:</div>
+<div class="liturgy-text min">Apposthalanaaya vishudha Paulos Korinthyarkku ezhutiya onnaam lekhanam 15-am adhyaayam 12 muthal 19 vareyulla vaakyangal.
+<br><br> Khristu marichittu uyirthezhunnettu ennu prasangichuvurunna avasthaykku marichavarude punaruthaanam illa ennu ningalil chilar parayunnathu engane? Marichavarude punaruthaanam illa enkil Khristuvum uyirthezhunnettitilla. Khristu uyirthezhunnettitilla enkil njangalude prasangam vyartham; ningalude vishvaasavum vyartham. Marichavar uyirkkunnilla ennu varikil Dhaivam uyirppichittillaatha Khristuvine avan uyirppichu ennu Dhaivathinu virodhamaayi saakshyam parakaayaal njangal Dhaivathinu kallassaakshikal ennuvarum. Marichavar uyirkkunnilla enkil Khristuvum uyirthitilla. Khristu uyirthitilla enkil ningalude vishvaasam vyarthamathre; ningal innum ningalude paapangalil irikkunnu. Khristuvil nidrakkondavarum nashichupoyi. Naam ee aayussil maathram Khristuvil prathyaasha vechirikkunnu enkil sakala manushyarilum arishtanmaarathre.</div>
+
+<div class="liturgy-instruction">Prarthana</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Swarggasthanaaya njangalude Pithaave,</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Ninte naamam vishudheekarikkappadename; ninte rajyam varename; ninte ishtam swargathileppole - bhoomiyilum aakename; njangalkku aavashyamulla aaharam innu tharename; njangalude kadakkarodu njangal kshamichirikkunnathupole - njangalude kadangale njangalodum kshamikkename; njangale pareekshayil kadathathe - dushtangal ninnu njangale viduvikkename; rajyamum shakthiyum mahathvavum - ennekkum ninakkullathallo. Aamen.</div>
+
+<div class="liturgy-instruction">Aashirvaadam</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Sakala buddhiyeyum kaviyunnathaaya Dhaivathinte samaadhaanavum Dhaivatheyum avante puthranum nammude rakshithavumaaya Yeshu Mashihaayeyum kurichulla arivilum snehatthilum nammude hridayangaleyum manassukaleyum kaakkatte. Pithaavum Puthranum Parishudhaathmaavumaaya thriyeka Dhaivathinte krupayum anugrahavum aashwaasavum nammodukoodeyum nammude marachu, sakala nanmakalkkum namme yogyathayullavaraakkitheerkkukayum cheyyumaaraakatte.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen.</div>
+
+<div class="liturgy-instruction">(Veettil vechulla shushroosha avasaanichu mrithashareeram veettilninnu palliyilekku kondupookunnu. Yaathrayil geethangalum vaakyangalum samayochithamaayi chollunnu)</div>
+
+<div class="liturgy-instruction"><h2>Randaam Bhaagam Shushroosha Kramam</h2> <br> (Aaraadhanaalayathil vechu)</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Pithaavinum Puthranum Parishudhaathmaavinum sthuthi.</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aadhi muthal ennannekkum thanne, Aamen.</div>
+
+<div class="liturgy-instruction">Praarambha Prarthana</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Manassalivulla Pithaave, sarva aashwaasathinteyum ulpathisthaanavumaaya Dhaivame, maranathinu vidheyaraayitheernna manushyavargathe paapatthilninnum maranathilninnum viduvichu rakshippaan swanthaputhrane njangalkku vendi maranathinu elppichukodutha ninte manushyasnehatheyorthu njangal ninne sthuthikkunnu. Swantha maranatthaal maranathinte shakthiye thakarkkukayum paathaalathinte bhayakarathvathe maattikkalakayum cheytha njangalude rakshithave, ninne njangal vazhthi pukazhthunnu. Ninte uyirthezhunnelpinaal njangalkku nithyajeevante prathyaasha nalkiyirikkunnathukondu njangal ninne mahathvappeduthunnu.<br>Karthaave, ninte vijayathinu njangale avakaashikalum ninte punaruthaanathinu njangale pankukaarumaakkiyirikkayaal, lokathinu kodukkuvaano, edukkuvaano, kazhiyaatha ninte samaadhaanavum kondu, sakala buddhiyeyum kaviyunna dhaiveeka samaadhaanavum kondutthanne, njangale aashwasippikkename. Prathyekamaayi sankadatthilirikkunna ee priyappetta kudumbathilulla ellaavarayum swarggeeyamaya prathyaashakondu dhairyappeduthukayum aashwasippikkukayum cheyyename. Niraashayum avishvaasavum njangalilninnu doorikkarikkaname. Karthaave, dhukhatthilum njerukkilumirikkunna ellaavarayum njangal orkkunnu. Adhvaanikkunnavarkkum bhaaram chumannukonnavarkkum nee ettavum nalla sahaayakan aakunnuvallo. Ninte vaagdathangalil vishvasikkuvaanum ninte vachanam murukkeduthukolluvaanum njangale shakthikarikkename. Ninte vishudha sabhayile angangalkku vendi njangal prarthikkunnu. Ninte vishudhanmaarkku vaagdhaatham cheyyappettirikkunna bhagyaavasthayorthu njangal aanandhikkunnu.<br>Karthaave ninte randaamathe varavinkal, mahathvatthodukoode nee prathyakshanaakukayum, bhoothalathe neethiyaayi nyaayam vidhikkukayum orooruthanum, avanavante pravruthikku thakkavannam pakaram nalkukayum cheyyumbol theranjedukkappetta kunjaatukalodukoode ninte valathubhaagathulla nilppinu njangaleyum yogyaraakkitheerkkename. Pithaavum Puthranum Parishudhaathmaavumaaya Dhaivame, sthuthiyum sthothravum ellaayppozhum ninakku samarppikkuvaan njangale yogyaraakkukayum cheyyumaaraakatte.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen.</div>
+
+<div class="liturgy-instruction">103-am Sankeerthanathilninnu</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">En maname, Yehovaye vazhthuka; ente sarvaantharangavume, avante vishudha naamathe vazhthuka.</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">En maname, Yehovaye vazhthuka; avante upakaarangal onnum marakkaruthu.</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Avan ninte akrithyamokkeyum mochikkunnu; ninte sakala rogangaleyum saukhyamaakkunnu;</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Avan ninte jeevane naashathilninnu veendedukkunnu; avan dhayayum karunayum ninne aniyikkunnu.</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Ninte yauvanam kazhukanepole puthukki varathakkavannam avan ninte vaaykku nanmakondu thripthivaruthunnu.</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Yehova sakala peedithanmaarkkum vendi neethiyum nyaayavum nadathunnu.</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Avan thante vazhikale Moshayeyum thante pravruthikale Yisraayel makkaleyum ariyichu.</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Yehova karunayum kripayum niranjavan aakunnu, dheerghakshamayum mahaadhayayum ullavan thanne.</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Avan ellaayppozhum bharthsikkayilla; ennekkum kopam samgrahikkayumilla.</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Avan nammude paapangalkku otthavannam nammodu cheyyunnilla; nammude akrithyangalkku otthavannam nammodu pakaram cheyyunnuthumilla.</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Aakasham bhoomikkumeethe uyarnnirikkunnathupole avante dhaya avante bhakthanmaarodu valuthayirikkunnu.</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Udhayam asthamayathodu akannirikkunnathupole avan nammude lamghangale nammodu akattiyirikkunnu.</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Appanu makkalodu karuna thonnunnathupole Yehovaykku thante bhakthanmaarodu karuna thonnunnu.</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Avan nammude prakrithi ariyunnuvallo; naam podi ennu avan orkkunnu.</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Manushyante aayussu pullupoleyakkunnu; vayalile poo pole avan pookkunnu.</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Kaattu athinmel adikkumbol athu illaathe pokunnu; athinte sthalam pinne athine arikayumilla.</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Yehovayude dhayayo ennum ennekkum avante bhakthanmaarkkum, avante neethi makkalude makkalkkum undaakum.</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Avante niyamathe pramaanikkunnavarkkum avante kalpanakale orthu aacharikkunnavarkkum thanne.</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Pithaavinum Puthranum Parishudhaathmaavinum sthuthi.</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aadhi muthal ennannekkum thanne. Aamen.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Sakala srishtikalum avayude sthaanathilninnu azhinjupokunna divasam varunnu. Sooryanum chandhranum nakshatrangalum prakaashikkaathavannam maanjupokunnu. Srishtaavinte kalpanayaal lokam avasaanathinkalekku adukkunnu. Kallarakal ilakkathodukoode thurakkappedunnu. Avayilulla marichavar uyirthezhunnettu neethiyum sathyamullathum, thettippokaathathumaaya nyaayavidhiyil thangalude prathiphalam praapikkuvaan nyaayasthalathekku orungi chellukayum cheyyunnu.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Thante mahathvathinte shreshtathayil swarlokasenakal bhramikkukayum, thante mukhathejassil devadoothanmaar vismayichupokukayum cheyyathakkavannamulla neethisooryanum thante saannidhyamkondu andhakaarathe prakaashamaakkukayum cheyyunna saakshaal prakaashavum thante shabdhatthaal marichavare uyirppikkukayum thante ishtatthaal nidrapraapichavare unarthukayum cheyyunna jeevanullavanum, jeevippikkunnavanum, jeevanullavarudeyum marichavarudeyum nyaayaadhipathiyumaaya Mashiha thampuraanu shavasamskaara shushrooshayude ee neratthum nammude aayussinte naalukalokkeyum sthuthiyum bahumaanavum vandanavum yogyamaayirikkunnu.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Nithyapithaavaaya Dhaivathinte shakthiyum jnaanumaakunna Mashiha thampuraane, nee sakalasrishtikaludeyum srishtaavum, jeevadaathaavum jeevanodirikkunnavarude Dhaivavum, marichavarude saakshaal punaruthaanavumaakunnu ennu njangal arinjum vishvasichirikkunnu. Naashathilum kshayathilum veenupoya njangale paapatthilninnum maranathilninnum veendedukkaan nee manushyanaayi theernnu. Ninte krooshumaranatthaalum uyirthezhunnelpinaalum maranathinte adhikaarathe nee thakartthu; puthujeevaneyum uyirthezhunnelpaneyum njangalkku nee daanam cheythu. Uyirpinte jeevanteyum puthukkathilum dhaivaathmaavinte shakthiyilum samruddhiyaaya jeevanteyum anubhavathilum dinamthorum ninne saakshichu jeevikkuvaan njangalkku kripa nalkumaaraakaname.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Karunyavaanaaya karthaave, kripa niranja Dhaivame, ee samayatthu vilapichum dhukhichumirikkunna njangale ellaavarayum aashwasippichu paripaakathayulla nadapadikallilum vishudhapaathakalilum nadathi shakthikarikkename. Ee lokathil paapam koodaathe njangale kaathukollename. Ninte krupayude chirakinkeezhil njangale marachu dhukhavum athivedhanayumillaatha santhoshangalude vaasasthalamaayi ninte sannidhiyilekku njangale aduppikkename. Karthaave, ninte randaamathe varavinkal lajjikkaatha mukhatthodukoode ninne ethirelppaan njangale yogyaraakkename. Ninakkum ninte Pithaavinum ninte Parishudhaathmaavinum njangal sthuthiyum sthothravum karettuvaanaayittuthanne.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Manassalivulla karthaave, ninte sannidhiyil paapamochanavum, ninte adukkal eriya veendeduppum ullathinaal arinju ariyaatheyum, manassodum manassu koodaatheyum njangal cheythupoya sakala lamghangalum paapangalum karunayulla Pithaavineppole pariharichu kshamikkename. Nee njangale vilippaan ishtappedumbol ninte anugrahangal moolam, ninnaal kaikkollppedathakkavannam yaathra cheyyuvaan njangale orukkename. Ninte manushyasnehatthinothavannam ivideyulla jeevithathil njangal ninakku sthuthipaadukayum cheyyumaaraakaname.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen.</div>
+
+<div class="liturgy-instruction">Geetham</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Varume Yeshu unarnnirippin-varume vegam<br>
+Perum kaahalam dhvanicheedumappol -arulappaadaale<br>
+Niranirayaayi marichavaruyirthudume<br>
+Ariganangalum urukum manassil<br>
+Veeryaprathaapatthodukoode varume, vidhi naathaa<br>
+Paaridatthil bahukoottan paaram dhukhikkum<br>
+Hallelujah-u-Hallelujah<br>
+Vaanam bhoovanam kidukidungum-Manuvel varavinkal<br>
+Heenathayodu chernnavarum ninavil kalangeedum<br>
+Anpulloru-thampuraan thanne<br>
+Nambiduvorkku-imbam neridume<br>
+Dushtar kalangum thirumumpil shishtanmaar theliyum<br>
+Shishtanmaaril ninnudane-dushtare verpeduthi<br>
+Neethiyinnaathan-kashtathayil thallum<br>
+Naathaa anugrahichengale thunacheedaname</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Thante snehatthaal varikayum, thante maranatthaal namme veendedukkukayum cheythavanum, veendum vannu Aadaamin santhaanangale uyirthezhunnelppippaanum, avare mahathvatthinte vellanilaayanki dharippippaanumaayirikkunna jayaveeranaakunna nammude raajaavaaya Yeshuvine naam sthothram cheythu vandikkanam.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Orooruthanu avanavante pravruthikku thakkavannam prathiphalam nalkaan raajaputhran anthya naalil ezhunnallunnu.</div>
+
+<div class="liturgy-instruction">Geetham</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Paapam cheythadiyaar, kuravullavaraayi<br>
+Ariyunnuthithu njangal-alivuniranjone<br>
+Dhayaverunnon nee-ninnanugrahathinaay<br>
+Kaatthidunnengal-kripa thonneedaname<br>
+Vishudhar swargabhaagyam kaikkondeedunnu <br>
+Oduvil manavarayil aayavar pookidum<br>
+Thannetthaanarppichu-baliyaayi theernnone<br>
+Ninnude rudhirathil kazhukenamengale nee<br>
+Unnathamanavaalan vilikkum neratthu<br>
+Orungiyirikkunnor-aanandhichidum<br>
+Mahathvam naathanum bahumathi thaathanum<br>
+Vandanavum sthuthiyum-vishudha roohaaykkum</div>
+
+<div class="liturgy-instruction">Allenkil</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Irulokangalilum njangal-ninakkullavaraakunnullo<br>
+Ihathilum parathilum nee- ee njangale anugrahikka<br>
+Njangale srishticha ninte sneham thikavullathre.<br>
+Nee njangale jeevippichaal-njangal naasham kaanukayilla<br>
+Jeevithathil orooruthan cheythittulla pravruthikku <br>
+Thakkavannam ellaavarkkum prathiphalam nalkum naathan<br>
+Karthaave nee aa neratthil njangalude kuttangale-ethume<br>
+Nee ortheedaathe ee njangale anugrahikka<br>
+Thaathanaakum Dhaivathinum mahathvavum than suthanum<br>
+Parishudharoohaakkum sthuthiyum ennennekkum, Aammeenaammeen</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Unnathathilninnu irangi vannu marikkukayum maranathe kollukayum cheytha shakthiyaaya thanikku sthuthi. Maranadivasam kaippulla divasamaakunnu. Athu karachilinteyum sankadatthinteyum divasamaakunnu.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Karthaave, nee njangale aashwasippikkename.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Sahodharan rakshikkunnilla; snehithan sahaayikkunnilla ennulla pravaachakante vachanam pravruthyaal nivruthiyaayi.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Karthaave, nee njangale sahaayikkename.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Karthaave, marichavar ninnaal jeevikkukayum mrithanmaar uyirthezhunnelkkukayum raajyam avakaashamaakki sthuthi paadukayum cheyyunnathaakakondu ellaa naavukalilninnum ninakku sthuthi.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen</div>
+
+<div class="liturgy-instruction">Lekhanam vaayikkunnu</div>
+<div class="speaker min">Shushru:</div>
+<div class="liturgy-text min">Apposthalanaaya vishudha Paulos Thessalonikyarkku ezhutiya onnaam lekhanam 4-am adhyaayam 13 muthal 18 vareyulla vaakyangal<br><br>
+Sahodharanmaare, ningal prathyaashayillaatha mattullavareppole dhukhikkaathirikkendathinu nidrakkondavarekkurichu arivillaathirikkarnnu ennu njangal aagrahikkunnu. Yeshu marikkukayum jeevichu ezhunnelkkukayum cheythu ennu naam vishvasikkunnu enkil angane thanne Dhaivam nidrakkondavareyum Yeshu mukhaantharam avanodukoode varuthum. Karthaavinte prathyakshathavare jeevanode sheshikkunnvaraaya naam nidrakkondavarkku mumpaakayilla ennu njangal karthaavinte vachanatthaal ningalodu parayunnu. Karthaavaakunnu thaan gambheeranaadhathodum pradhaana doothante shabdhatthodum Dhaivathinte kaahalatthodum koode swargathilninnu irangi varikayum Khristuvil marichavar mumpe uyirthezhunnelkkukayum cheyyum. Pinne jeevanode sheshikkunna naam avarodum orumichu aakashathil karthaavine ethirelppaan meghangalil edukkappedum; ingane naam eppozhum karthaavinodu koode irikkum. Ee vachangalakondu anyonyam aashwasippichu kollvin.</div>
+
+<div class="liturgy-instruction">Suvishesham</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Namukkellaavarkkum samaadhaanam undaayirikkatte.</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Lokathinu jeevanum rakshayum prasangikkunna vi.Yohannaan apposthalan ezhutiya jeevan nalkunna prasangamaaya nammude karthaavu Yeshu Mashihaayude suvishesham anjaam adhyaayam 19-am vaakyam muthal 29-am vaakyam vare.<br><br>
+Aakayaal Yeshu avarodu uttharam paranjathu: Aamen, aamen, njaan ningalodu parayunnu: Pithaavu cheythu kaanunnathu allaathe puthranu swathe onnum cheyvaan kazhikayilla; avan cheyyunnathu ellaam puthranum avvannamthanne cheyyunnu. Pithaavu puthrane snehikkukayum thaan cheyyunnathokkeyum avanu kaanichukodukkukayum cheyyunnu; ningal aashcharyappedumaaru ivayil valiya pravruthikalum avanu kaanichukodukkum. Pithaavu marichavare unarthi jeevippikkunnathupole puthranum thaan ichikkunnavare jeevippikkunnu. Ellaavarum Pithaavine bahumaanikkunnathupole puthraneyum bahumaanikkendathinu Pithaavu aareyum nyaayam vidhikkathe nyaayavidhi ellaam puthranu kodutthirikkunnu. Puthrane bahumaanikkaathavan avane ayacha Pithaavineyum bahumaanikkunnilla. Aamen, aamen, njaan ningalodu parayunnu: ente vachanam kettu enne ayachavane vishvasikkunnavanu nithyajeevanundu; avan nyaayavidhiyil aakaathe maranathilninnu jeevanilekku kadannirikkunnu. Aamen, aamen, njaan ningalodu parayunnu: marichavar Dhaivaputhrante shabdham kelkkukayum kelkkunnavar jeevikkukayum cheyyunna naazhika varunnu; ippol vannumirikkunnu. Pithaavinu thannilthanne jeevanullathupole avan puthranum thannilthanne jeevanullavan aakumaaru varam nalkiyirikkunnu. Avan manushyaputhran aakayaal nyaayavidhi nadathuvaan avanu adhikaaravum nalkiyirikkunnu. Ithinkal aashcharyappedaruthu; kallarayilullavar ellaavarum avante shabdham kettu, nanma cheythavar jeevanaayum thinma cheythavar nyaayavidhikkaayum, punaruthaanam cheyvaanulla naazhika varunnu.</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Namukkellaavarkkum samaadhaanam undaayirikkatte.</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen</div>
+
+<div class="liturgy-instruction">Allenkil</div>
+<div class="liturgy-instruction">Yohannaan 11:23-27</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Yeshu avalodu: ninte sahodharan uyirthezhunnelkkum ennu paranju. Maartha avanodu: odukatthe naalile punaruthaanathil avan uyirthezhunnelkkum ennu njaan ariyunnu. Ennu paranju. Yeshu avalodu njaan thanne punaruthaanavum jeevanum aakunnu. Ennil vishvasikkunnavan marichaalum jeevikkum. Jeevichirunnu ennil vishvasikkunnavan aarum orunaalum marikkilla; ithu nee vishvasikkunnuvo ennu uttharam paranju. Aval avanodu uvvu, karthaave lokathil varuvaanulla Dhaivaputhranaaya Khristu nee thanne ennu njaan vishvasichirikkunnu ennu paranjittu poyi thante sahodhariyaaya Mariyaye swakaaryamaayi vilichu: guru vannittundu: ninne vilikkunnu ennu paranju. Aval kettudane ezhunnettu avante adukkal vannu.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Namukkellaavarkkum samaadhaanam undaayirikkatte.</div>
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen</div>
+
+<div class="liturgy-instruction">Ivide samayochithamaayi prasangikkaam<br>Athinu shesham oru prarthana<br>Athinu shesham mrithashareeram semitheryilekku shaanthamaayi kondupookunnu.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Manassode maranam praapichuyirpinte<br>Prathyaasha-thanna-naathaa-sthothram<br>Melulla-Yerushalemil-ninmun<br>Nilppaan nee-njangale yogyaraakka<br>Karthaave-thirumunadiyaar cheytha<br>Akrithyangal-pokki-kshamicheedaname<br>Thirumumpil-ninnu thallaathengale <br>Narakatthil-ninnu rakshikkaname<br>Sodharare-ningal marakkaathe marana&lt;samayamorthukollvin manne-thra naam&gt;<br>Uyirpum jeevanum neeyaakayaale<br>Avarodukoode-sthuthi paadumengal<br>Ninakkum thaathanum vishudha-roohaakkum<br>Ennannekkum sthothram-Aammeenaammeen</div>
+
+<div class="liturgy-instruction">*Mrithashareeram mukham moodiya shesham*</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Haa! Enthu khedham ee kaazhcha athidhukham<br>Chinthayilettam venthurukum sodharare<br>Enningane marthyakulam mrithyu anubhavicheedunnu<br>Chanthamerum meniyaake cheenjalinju dhravicheedunnu<br><br>Edanthottathil Aadam thinnoru kaniyaal<br>Naasham vannee bhoothale maanusharkku<br>Kalpanayin lamghanatthaal ipparushaykkeevannam<br>Khedham rogam maranam mediniyil vannithayyo<br><br>Paapam cheythoraam Havva ivarmel<br>Kopam vannu Dhaivathinkalninnu<br>Paapavum shaapavum naashavumadhikarichu<br>Paapikalaaya marthyakaalam shaapamakkal aayitheernnu<br><br>Maanichavane mannilekkayakkunnu<br>Snehichavane shokatthodadakkunnu<br>Snehithar bandhukkallellaamaake murayidunnu <br>Puzhikkum puzhuvinum irayaavaanaayakkunnu<br><br>Sneham niranjja Yeshuve ninnaagamanam<br>Dhaahatthote kaatthirikkunnu njangal<br>Lokathil njangale dhoshamaanye kaatthu<br>Khedhamullavare nee modhippicheedaname <br><br>Naathaa ninte varavinkal njangalkku<br>Thaathaa tharika santhosham mokshavum<br>Ennannekkum njangal ninte thirumumpil<br>Aanandhichaallelujah<br>Paadisthuthichiduvaan kripa arulka</div>
+
+<div class="liturgy-instruction">(Pattakkaaran ee vaachakam chollikkondu mrithashareerathil manneedunnu)</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Nee mannaakunnu; nee mannilekku thirike cherrumennu njangalude vargathekkurichu arulicheythavanaaya Dhaivame, oduvilathe divasathil nithyajeevanaayi uyirthezhunnelkkumennulla prathyaashayode ee shareeram njangal mannilekku elppikkunnu.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Ente sahodharanmaare, ithaakunnu nammude aihikavaasathinte avasaanamengil raajaakkanmaarum prabhukkanmaarum ponnine shekharikkunnathu enthinu? - Ithaakunnu nammude jadikasukhangalude avasaanamengil saundaryamullavar thangalude saundaryathil aahlaadhikkunnathu enthinu? Ithaakunnu nammude bhauthikaanugrahangalude avasaanamengil, dhanavaanmaar thangalude dhanatheppatti ahangarikkunnathu enthinu? Ithaakunnu nammude laukikajnaanathinte avasaanamengil vidvaanmaar thangalude vidyayil pukazhnnathentinu? Jnaanikal thangalude jnaanathil prashamsikkunnathu enthinu? Ithaakunnu nammude prathaapathinte avasaanamengil adhikaarikal thangalude shakthiyil nigalikkunnathu enthinu? Ithaakunnu nammude shareerabalathinte avasaanamengil, yauvanakkaar thangalude saamarthyathil pukazhnnathum enthinu?<br><br>Manushyan thaalkaalikanaakunnu; avante divasangal aavi pole maanju pokunnu; vayalile pushpam pole poothu vaadippokunnu ennu dhaiveeka sangeethakkaaranaaya Dhaaveedh thante kinnarangalil paadiyirikkunnu. Ennaalo, “ee dhravathvamullathu adhravathvatheyum, ee marthyamaayathu amarthvatheyum dharikkanam. Ee dhravathvamullathu adhravathvatheyum ee marthyamaayathu amarthvatheyum dharikkumbol maranam neengi jayam vannirikkunnu” ennu ezhutiya vachanam poortthiyaakum. Haa! Maraname, ninte jayam evide? He maraname, ninte vishamullu evide? “Nammude karthaavaaya Yeshukhristu mukhaantharam namukku jayam nalkunna Dhaivathinu sthothram.” Ithu nimithamaayi marichavare uyirppikkunnavane ninakku sthuthi. Sakalatthinteyum udayavanaaya Dhaivathinu sthuthi.</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">
+*Hallelujah-Hallelujah-Hallelujah </div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">*Dhaivame ninakku sthuthi</div>
+<div class="liturgy-instruction">*(Iprakaram moonnu pravashyam chollanam)</div>
+<div class="liturgy-instruction">Athinu shesham</div>
+
+<div class="liturgy-instruction">Nikhya Vishvaasapramaanaam</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Pithaavaaya-Sarvashakthanaaya...</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aakashathinteyum bhoomiyudeyum - kaanappedunnavayum kaanappedathavayumaaya - sakalatthinteyum Srishtaavaaya - sathya eka Dhaivathil njangal vishvasikkunnu.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Dhaivathinte Ekaputhranum...</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Sarvalokangalkkum mumpe Pithaavilninnu janichavanum - prakaashathil ninnulla prakaashavum - sathya Dhaivathil ninnulla sathya Dhaivavum - janichavanum, srishtiyallaathavanum, thathvathil Pithaavinodu ekathvamullavanum - sakala srishtikkum mukhaantharamaayavanum - manushyaraaya njangalkkum njangalude rakshaykkum vendi - swargathil ninnirangi, Parishudhaathmaavinaal Kanyakamariyaamil ninnu - shareeram dharichu manushyanaayi - Ponthiyos Peelathosinte naalukalil, njangalkkuvendi krooshikkappattu - kashtathayanubhavichu marichu adakkappattu - thiruhithaprakaaram moonnaam divasam uyirthezhunnettu - swargathilekku kareri - thante Pithaavinte valathubhaagathirikkunnavanum - avasaanamillaatha raajathvamullavanum - jeevichirikkunnavareyum marichavareyum vidhippaan, thante mahaprabhaavatthode iniyum varuvaanirikkunnavanumaaya, Yeshu Mashiha aaya eka Karthaavilum njangal vishvasikkunnu.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Sakalatheyum jeevippikkunna Karthaavum...</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Pithaavilninnu purappattu - Pithaavinodum Puthranodum koode vandikkappattu sthuthikkappedunnavanum - pravaachakanmaarum apposthalanmaarum mukhaantharam samsaarichavanumaaya - jeevanum vishudhiyumulla eka Aathmaavilum - saarvathrikavum apposthalikavumaaya - eka vishudha sabhayilum njangal vishvasikkunnu.</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Paapamochanathinulla Snaanam...</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Onnumaatthremennu njangal ettuparanju - marichavarude uyirthezhunnelppinum - varuvaanirikkunna lokathile puthiya jeevanum - njangal nokkippaarkkukayum cheyyunnu. Aamen</div>
+
+
+<div class="liturgy-instruction">Samaapana Prarthana</div>
+
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Swarggasthanaaya njangalude Pithaave...</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Ninte naamam vishudheekarikkappadename; ninte rajyam varename; ninte ishtam swargathileppole - bhoomiyilum aakename; njangalkku aavashyamulla aaharam innu tharename; njangalude kadakkarodu njangal kshamichirikkunnathupole - njangalude kadangale njangalodum kshamikkename; njangale pareekshayil kadathathe - dushtangal ninnu njangale viduvikkename; rajyamum shakthiyum mahathvavum - ennekkum ninakkullathallo. Aamen.</div>
+
+<div class="liturgy-instruction">Aashirvaadam</div>
+<div class="speaker min">P:</div>
+<div class="liturgy-text min">Aakashavum bhoomiyum srishticha Karthaavinaal ningal ellaavarum anugrahikkappettavar aakunnu. Aathmeekamaaya ee shushrooshayil njangalodukoode orungivannu sambandhichittulla ellaavarayum Dhaivamaaya Karthaavu anugrahichu shuddhikarikkatte. Pithaavum Puthranum Parishudhaathmaavumaaya Dhaivam balaheenathayum kuravumulla nammude prarthanakal unnathamaaya thante simhaasanathinu munpaake kelkkukayum kaikollukayum cheyyumaaraakatte.</div>
+
+<div class="speaker con">J:</div>
+<div class="liturgy-text con">Aamen</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="quick-links">
+                <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
+                <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
+                <li><a href="our-belief.html">Our Faith - What we believe</a></li>
+                <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
+                <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
+                <li><a href="contact-us.html">Parish Location</a></li>
+                <li><a href="parish-history.html">Bangalore Parish History</a></li> 
+                <li><a href="donations.html">Donations</a></li> 
+                <li><a href="mal-liturgy-holycommunion.html">Liturgy - Malayalam Holy Communion</a></li> 
+                <li><a href="manglish-liturgy-holycommunion.html">Liturgy - Manglish Holy Communion</a></li> 
+                <li><a href="message.html">Message</a></li> 
+            </ul>
+        </div>
+<div class="footer-right">
+    <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+    <p>#17,18, Church Lane, Defence Colony,<br> Kavery Nagar, Horamavu Agara, <br> Bangalore - 560 013</p>
+    <p> Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a> 
+      <br> Treasurer: <a href="tel:+919742699916" style="color: #FFFF99;">97426 99916</a>
+            <br>Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a>  
+            <br>Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+    </p>
+</div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    nav.classList.toggle("active");
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const currentSubmenu = this.nextElementSibling;
+          
+          document.querySelectorAll('.dropdown-content').forEach(other => {
+            if (other !== currentSubmenu) {
+              other.style.display = 'none';
+            }
+          });
+
+          if (currentSubmenu.style.display === 'block') {
+            currentSubmenu.style.display = 'none';
+          } else {
+            currentSubmenu.style.display = 'block';
+          }
+        }
+      });
+    });
+  });
+
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.onscroll = function() {
+    if (backToTopBtn) {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    }
+  };
+
+  if (backToTopBtn) {
+    backToTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  }
+</script>
+
+</body>
+</html>
