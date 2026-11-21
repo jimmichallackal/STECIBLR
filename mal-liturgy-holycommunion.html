@@ -20,6 +20,8 @@
 
     html {
       scroll-behavior: smooth;
+      max-width: 100%;
+      overflow-x: clip;
     }
 
     body {
@@ -30,6 +32,8 @@
       color: #333333;
       font-size: 16px;
       line-height: 1.5;
+      max-width: 100%;
+      overflow-x: clip;
     }
 
     /* Header & Navigation */
@@ -127,23 +131,24 @@
     }
 
     /* Page Titles */
-        .mission-heading {
-          text-align: center;
-          vertical-align: middle;
-          color: #FFFF99;
-          background-color: #243117;
-        }
+    .mission-heading {
+      text-align: center;
+      vertical-align: middle;
+      color: #FFFF99;
+      background-color: #243117;
+    }
 
-        .mission-heading h1 {
-          text-align: center;
-          margin: 0;
-          padding: 20px 0;
-        }
+    .mission-heading h1 {
+      text-align: center;
+      margin: 0;
+      padding: 20px 12px;
+      overflow-wrap: break-word;
+    }
 
     /* Responsive Grid Layout for Liturgy */
     .liturgy-grid {
       display: grid;
-      grid-template-columns: 100px 1fr;
+      grid-template-columns: 100px minmax(0, 1fr);
       gap: 12px 15px;
       margin: 30px auto;
       padding: 0 15px;
@@ -156,6 +161,8 @@
       font-weight: bold;
       text-align: right;
       padding-right: 5px;
+      min-width: 0;
+      overflow-wrap: break-word;
     }
 
     .speaker.min, .liturgy-text.min {
@@ -176,6 +183,9 @@
 
     .liturgy-text {
       text-align: left;
+      min-width: 0;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
     .liturgy-instruction {
@@ -185,6 +195,8 @@
       text-align: center;
       padding: 12px 0;
       font-weight: 600;
+      min-width: 0;
+      overflow-wrap: break-word;
     }
 
     /* Back to Top Button */
@@ -224,11 +236,14 @@
 
     .footer-left {
       text-align: left;
+      min-width: 0;
     }
 
     .footer-right {
       text-align: right;
       font-size: 0.9rem;
+      min-width: 0;
+      overflow-wrap: break-word;
     }
 
     .quick-links {
@@ -236,7 +251,7 @@
       padding: 0;
       margin: 0;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px 30px;
     }
 
@@ -244,6 +259,7 @@
       color: #bbb;
       text-decoration: none;
       font-size: 0.9rem;
+      overflow-wrap: break-word;
     }
 
     .quick-links li a:hover {
@@ -289,7 +305,7 @@
       }
 
       .liturgy-grid {
-        grid-template-columns: 65px 1fr;
+        grid-template-columns: 55px minmax(0, 1fr);
         gap: 8px 10px;
         padding: 0 10px;
       }
@@ -310,7 +326,7 @@
       }
 
       .quick-links {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
     }
     </style>
@@ -339,7 +355,7 @@
         <a href="church-leaders.html">Church Leaders</a>
         <a href="church-history.html">Church History</a>
         <a href="donations.html">Church Donations</a>
-	  </div>
+      </div>
     </li>
 
     <li class="dropdown">
@@ -359,19 +375,20 @@
         <a href="mission-vision.html">Mission & Vision</a>
         <a href="our-belief.html">Our Faith</a>
         <a href="bible-reading.html">365 Day Bible Reading</a>
-		<a href="bible-overview.html">Bible Overview</a>
+        <a href="bible-overview.html">Bible Overview</a>
        </div>
     </li>
 
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Liturgy ▾</a>
       <div class="dropdown-content">
-    	<a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
+        <a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
         <a href="liturgy-public.html">Order of Public worship</a>
         <a href="manglish-liturgy-holycommunion.html">Holy Communion – Manglish</a>
-  		<a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
+        <a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
         <a href="mal-liturgy-holycommunion.html">തിരുവത്താഴ ശുശ്രൂഷാ ക്രമം</a>
         <a href="mal-liturgy-public.html">പരസ്യാരാധനാക്രമം</a>
+		<a href="funeral.html">ശവസംസ്കാര ശുശ്രൂഷാക്രമം</a>
       </div>
     </li>
 
@@ -580,85 +597,86 @@
 
     <div class="speaker all"></div>
     <div class="liturgy-text">
-      	ദൈവത്തിൻ സുവിശേഷം-വിലമതിയാതുള്ളത്<br>
-	ദാനം ഇ-തതിശയം  ഗുണമേറീട്ടുള്ളത്<br>
-	തേനേക്കാൾ നല്ല രസം-ഇതിനുണ്ട് നിശ്ചയം<br>
-	ഹല്ലേലൂയ്യാ ഉ-ഹല്ലേലൂയ്യാ പുഷ്പമണം ഒപ്പമല്ല<br> <br>
-	കൃപ തന്നിൽ വളരുന്ന - ആത്മാവിതിൻ-രസമറിയും <br>
-	ദുഃഖം പൂണ്ടാത്മാവും-സന്തോഷം-പ്രാപിക്കും <br>
-	ഇതുമൂലം-വിശ്വാസി-മോചനം നേടുന്നു <br>
-	ഹല്ലേലൂയ്യാ-ഉ-ഹല്ലേലൂയ്യാ-സ്വർഗ്ഗതലം മോദിക്കും <br><br>
-	രക്ഷകനെ ഈ വചനം-രക്ഷയ്ക്കായ് ഞങ്ങളുടെ <br>
-	ഹൃദയേ നീ ഫലിപ്പിച്ച്-ഈക്ഷിതിയിൽ നിൻ അടിയാർ <br>
-	സൂക്ഷ്മതയായ് നടപ്പാനും മോക്ഷത്തിൽ വരുവാനും <br>
-	ഹല്ലേലൂയ്യാ-ഉ-ഹല്ലേലൂയ്യാ-നീ കൃപ നൽകീടണമേ <br> <br>
-	പാപികളെ പരലോകെ-ചേർപ്പാൻ-നൽവഴിയായി <br>
-	പഴുതറ്റ-സുവിശേഷം-കല്പിച്ച രക്ഷകനെ <br>
-	പാപികളാം-ഞങ്ങളുടെ-മദ്ധ്യേ നീ-എഴുന്നള്ളി <br>
-	ഹല്ലേ-ലൂയ്യാ-ഉ-ഹല്ലേ-ലൂയ്യാ-ഈ വചനം-വിളങ്ങിക്ക <br> <br>
-	സത്യാത്മാവേ-വന്നീ-ജീവൻ്റെ-വചനത്തെ <br>
-	പാപത്താൽ ഇരുളായ-ദാസരുടെ ഹൃദയത്തിൽ <br>
-	ദീപം പോൽ നിലനിർത്തി-ശോഭിപ്പിച്ചടിയാരെ <br>
-	ഹാലേ-ലൂയ്യാ-ഉ-ഹല്ലേ-ലൂയ്യാ-സുവിശേഷേ-നടത്തേണമേ <br> <br>
-	അതിശയമാം ദാനത്തിൻ-നാഥനാമീശോയേ <br>
-	ഹൃത്തുങ്കൽ-ശോഭിച്ച് <br>
-	ഏവൻഗേലിയോൻ രസത്തെയും അതിനുള്ള ബലത്തെയും <br>
-	അടിയാരെ-ഗ്രഹിപ്പിച്ച്  <br>
-	ഹാലേ-ലൂയ്യാ-ഉ-ഹല്ലേ-ലൂയ്യാ-സുവിശേഷേ-നടത്തേണമേ <br> <br>
+      ദൈവത്തിൻ സുവിശേഷം-വിലമതിയാതുള്ളത്<br>
+      ദാനം ഇ-തതിശയം  ഗുണമേറീട്ടുള്ളത്<br>
+      തേനേക്കാൾ നല്ല രസം-ഇതിനുണ്ട് നിശ്ചയം<br>
+      ഹല്ലേലൂയ്യാ ഉ-ഹല്ലേലൂയ്യാ പുഷ്പമണം ഒപ്പമല്ല<br> <br>
+      കൃപ തന്നിൽ വളരുന്ന - ആത്മാവിതിൻ-രസമറിയും <br>
+      ദുഃഖം പൂണ്ടാത്മാവും-സന്തോഷം-പ്രാപിക്കും <br>
+      ഇതുമൂലം-വിശ്വാസി-മോചനം നേടുന്നു <br>
+      ഹല്ലേലൂയ്യാ-ഉ-ഹല്ലേലൂയ്യാ-സ്വർഗ്ഗതലം മോദിക്കും <br><br>
+      രക്ഷകനെ ഈ വചനം-രക്ഷയ്ക്കായ് ഞങ്ങളുടെ <br>
+      ഹൃദയേ നീ ഫലിപ്പിച്ച്-ഈക്ഷിതിയിൽ നിൻ അടിയാർ <br>
+      സൂക്ഷ്മതയായ് നടപ്പാനും മോക്ഷത്തിൽ വരുവാനും <br>
+      ഹല്ലേലൂയ്യാ-ഉ-ഹല്ലേലൂയ്യാ-നീ കൃപ നൽകീടണമേ <br> <br>
+      പാപികളെ പരലോകെ-ചേർപ്പാൻ-നൽവഴിയായി <br>
+      പഴുതറ്റ-സുവിശേഷം-കല്പിച്ച രക്ഷകനെ <br>
+      പാപികളാം-ഞങ്ങളുടെ-മദ്ധ്യേ നീ-എഴുന്നള്ളി <br>
+      ഹല്ലേ-ലൂയ്യാ-ഉ-ഹല്ലേ-ലൂയ്യാ-ഈ വചനം-വിളങ്ങിക്ക <br> <br>
+      സത്യാത്മാവേ-വന്നീ-ജീവൻ്റെ-വചനത്തെ <br>
+      പാപത്താൽ ഇരുളായ-ദാസരുടെ ഹൃദയത്തിൽ <br>
+      ദീപം പോൽ നിലനിർത്തി-ശോഭിപ്പിച്ചടിയാരെ <br>
+      ഹാലേ-ലൂയ്യാ-ഉ-ഹല്ലേ-ലൂയ്യാ-സുവിശേഷേ-നടത്തേണമേ <br> <br>
+      അതിശയമാം ദാനത്തിൻ-നാഥനാമീശോയേ <br>
+      ഹൃത്തുങ്കൽ-ശോഭിച്ച് <br>
+      ഏവൻഗേലിയോൻ രസത്തെയും അതിനുള്ള ബലത്തെയും <br>
+      അടിയാരെ-ഗ്രഹിപ്പിച്ച്  <br>
+      ഹാലേ-ലൂയ്യാ-ഉ-ഹല്ലേ-ലൂയ്യാ-സുവിശേഷേ-നടത്തേണമേ
+    </div>
 
     <div class="liturgy-instruction">അല്ലെങ്കിൽ</div>
 
-	എല്ലാവരും: നിങ്കലേക്ക് അടുത്തു വരുവാനായി ലോകത്തിൻ്റെ പ്രകാശമായ സുവിശേഷം ഞങ്ങൾക്കു തരുന്നവനായ കർത്താവേ, നിനക്കു സ്തുതി. ഇപ്പോൾ നിൻ്റെ സുവിശേഷത്തിൽനിന്ന് ഞങ്ങൾ കേട്ടിരിക്കുന്ന ജീവനുള്ള വചനങ്ങൾ നിമിത്തം നിന്നെ മഹത്വീകരിപ്പാൻ ഞങ്ങളെ യോഗ്യതയുള്ളവരാക്കിത്തീർക്കേണമേ- ആമേൻ.
+    <div class="speaker all">എല്ലാവരും:</div>
+    <div class="liturgy-text">നിങ്കലേക്ക് അടുത്തു വരുവാനായി ലോകത്തിൻ്റെ പ്രകാശമായ സുവിശേഷം ഞങ്ങൾക്കു തരുന്നവനായ കർത്താവേ, നിനക്കു സ്തുതി. ഇപ്പോൾ നിൻ്റെ സുവിശേഷത്തിൽനിന്ന് ഞങ്ങൾ കേട്ടിരിക്കുന്ന ജീവനുള്ള വചനങ്ങൾ നിമിത്തം നിന്നെ മഹത്വീകരിപ്പാൻ ഞങ്ങളെ യോഗ്യതയുള്ളവരാക്കിത്തീർക്കേണമേ- ആമേൻ.</div>
 
-    </div>
  <div class="liturgy-instruction">3</div>
 
     <div class="speaker all"></div>
     <div class="liturgy-text">
-   	ദൈവവചനമേ ദിവ്യവിശേഷം സർവ്വദാ മോദമോടെ - അതിൽ<br>
-	ദൈവമേ നോക്കുവാൻ കണ്ണെനിക്കേകുക ജീവദായാപരനേ
+      ദൈവവചനമേ ദിവ്യവിശേഷം സർവ്വദാ മോദമോടെ - അതിൽ<br>
+      ദൈവമേ നോക്കുവാൻ കണ്ണെനിക്കേകുക ജീവദായാപരനേ
     </div>
 
  <div class="liturgy-instruction">4</div>
 
     <div class="speaker all"></div>
     <div class="liturgy-text">
-   	കർത്താവേ നിന്നോ-ടടുപ്പാൻ വിശ്വവെളിച്ചമാം <br>
-	സുവിശേഷം നീ-തന്നതിനാൽ സ്തോത്രം<br>
-	നിന്നറിയിപ്പിൻ-നിന്നുയിർവചനം കേൾക്കയിൽ നിന്നെ<br>
-	മഹത്വീകരിപ്പാൻ-യോഗ്യരാക്ക ഞങ്ങളെ<br><br>
-	സുവിശേഷ വെളിച്ചം-സകലർക്കും ശോഭിച്ചീടുവാൻ <br>
-	വന്നവനായ-മഹിമയെഴും രക്ഷകാ<br>
-	പാപികളാം ഞങ്ങൾ അന്ധത നീങ്ങി ശോഭിപ്പാനായ്<br>
-	ഈ സുവിശേഷം-ഫലകരമാക്കീടുക
+      കർത്താവേ നിന്നോ-ടടുപ്പാൻ വിശ്വവെളിച്ചമാം <br>
+      സുവിശേഷം നീ-തന്നതിനാൽ സ്തോത്രം<br>
+      നിന്നറിയിപ്പിൻ-നിന്നുയിർവചനം കേൾക്കയിൽ നിന്നെ<br>
+      മഹത്വീകരിപ്പാൻ-യോഗ്യരാക്ക ഞങ്ങളെ<br><br>
+      സുവിശേഷ വെളിച്ചം-സകലർക്കും ശോഭിച്ചീടുവാൻ <br>
+      വന്നവനായ-മഹിമയെഴും രക്ഷകാ<br>
+      പാപികളാം ഞങ്ങൾ അന്ധത നീങ്ങി ശോഭിപ്പാനായ്<br>
+      ഈ സുവിശേഷം-ഫലകരമാക്കീടുക
     </div>
 
  <div class="liturgy-instruction">5</div>
     <div class="speaker all"></div>
     <div class="liturgy-text">
-	യേശുവിൻ തിരുപ്പാദത്തിൽ-ഇരുന്നു കേൾക്ക നാം<br>
-	തൻ്റെ വിശുദ്ധ വാക്യത്തിൽ-നമ്മുടെ ജീവനാം<br>
-	യേശുവിൻ സുവിശേഷം-ദിവ്യമാം ഉപദേശം<br>
-	കേൾക്കുക നാം-കാക്കുക നാം-<br>
-	ജീവൻ്റെ വാക്യങ്ങൾ (2)
+      യേശുവിൻ തിരുപ്പാദത്തിൽ-ഇരുന്നു കേൾക്ക നാം<br>
+      തൻ്റെ വിശുദ്ധ വാക്യത്തിൽ-നമ്മുടെ ജീവനാം<br>
+      യേശുവിൻ സുവിശേഷം-ദിവ്യമാം ഉപദേശം<br>
+      കേൾക്കുക നാം-കാക്കുക നാം-<br>
+      ജീവൻ്റെ വാക്യങ്ങൾ (2)
     </div>
 
  <div class="liturgy-instruction">6</div>
     <div class="speaker all"></div>
     <div class="liturgy-text">
-	വേദപ്രമാണത്തിൽനിന്നു <br>
-	വേഗം ഞാനത്ഭുത കാര്യം<br>
-	സാദരം കാൺമാനെൻ കൺകൾ<br>
-	നാഥാ! തുറക്കണമെ!<br>
+      വേദപ്രമാണത്തിൽനിന്നു <br>
+      വേഗം ഞാനത്ഭുത കാര്യം<br>
+      സാദരം കാൺമാനെൻ കൺകൾ<br>
+      നാഥാ! തുറക്കണമെ!<br>
     </div>
 
  <div class="liturgy-instruction">7</div>
     <div class="speaker all"></div>
     <div class="liturgy-text">
-	നല്ല ദേവനേ! ഞങ്ങൾ എല്ലാവരെയും<br>
-	നല്ലതാക്കി നിൻ ഇഷ്ടത്തെ ചൊല്ലീടേണമേ<br>
-	വേദവാക്യങ്ങൾ ഞങ്ങൾക്കാദായമാവാൻ<br>
-	വേദനാഥനേ! നിൻ്റെ ജ്ഞാനം നൽകുകേ<br>
+      നല്ല ദേവനേ! ഞങ്ങൾ എല്ലാവരെയും<br>
+      നല്ലതാക്കി നിൻ ഇഷ്ടത്തെ ചൊല്ലീടേണമേ<br>
+      വേദവാക്യങ്ങൾ ഞങ്ങൾക്കാദായമാവാൻ<br>
+      വേദനാഥനേ! നിൻ്റെ ജ്ഞാനം നൽകുകേ<br>
     </div>
 
     <div class="speaker min">പ:</div>
@@ -669,7 +687,7 @@
     <div class="liturgy-text con">ആമേൻ.</div>
 
     <div class="speaker min">പ:</div>
-    <div class="liturgy-text min">സർവ്വശക്തിയുള്ള പിതാവായ ദൈവമേ, നിൻെറ മുമ്പാകെയും, നിൻെറ സ്നേഹം മൂലം ലോകത്തിനു വെളിപ്പെട്ട നിൻെറ വാത്സല്യ പുത്രൻ്റെ മുമ്പാകെയും, തൻ്റെ ആവസിപ്പാൽ ലോകത്തെ പരിപാവനം ആക്കിത്തീർക്കുന്ന നിൻെറ പരിശുദ്ധാത്മാവിൻെറ മുമ്പാകെയും, ഞങ്ങളുടെ സത്യ അനുതാപവും സ്‌തുതി സ്തോത്രങ്ങളും ഞങ്ങൾ സമർപ്പിച്ചുകൊള്ളുന്നു.<br>
+    <div class="liturgy-text min">സർവ്വശക്തിയുള്ള പിതാവായ ദൈവമേ, നിൻെറ മുമ്പാകെയും, നിൻെറ സ്നേഹം മൂലം ലോകത്തിനു വെളിപ്പെട്ട നിൻെറ വാത്സല്യ പുത്രൻ്റെ മുമ്പാകെയും, തൻ്റെ ആവസിപ്പാൽ ലോകത്തെ പരിപാവനം ആക്കിത്തീർക്കുന്ന നിൻ്റെ പരിശുദ്ധാത്മാവിൻെറ മുമ്പാകെയും, ഞങ്ങളുടെ സത്യ അനുതാപവും സ്‌തുതി സ്തോത്രങ്ങളും ഞങ്ങൾ സമർപ്പിച്ചുകൊള്ളുന്നു.<br>
 കർത്താവേ, വിശുദ്ധിയോടെ നിൻെറ വിശുദ്ധ മേശയിൽ സംബന്ധിപ്പാൻ  ഞങ്ങളെ നീ യോഗ്യതയുള്ളവരാക്കേണമേ. ഞങ്ങളുടെ ആയുഷ്ക്കാലമൊക്കെയും നിരപരാധവും നിർമ്മലവുമായ ജീവിതത്തിൽ ഞങ്ങളെ കാത്തുകൊള്ളേണമേ. കർത്താവേ ഞങ്ങളുടെ വയോധികരെ താങ്ങിക്കൊള്ളേണമേ. ഞങ്ങളുടെ യുവജനങ്ങളെ പരിപക്വതയുള്ളവരാക്കേണമേ. ഞങ്ങളുടെ പൈതങ്ങളെ നിൻെറ കൃപയിൽ വളർത്തേണമേ. ഞങ്ങളുടെ സ്ത്രീകളെ സൗമ്യതയും സാവധാനതയുമാകുന്ന അക്ഷയഭൂഷണത്താൽ അലങ്കരിക്കേണമേ. ഞങ്ങളുടെ രോഗികളെ നീ സൗഖ്യമാക്കേണമേ. അനാഥരേയും വിധവമാരേയും നീ സംരക്ഷിക്കേണമേ. നിൻെറ സമാധാനം ഞങ്ങളുടെ ഇടയിൽ വാഴുമാറാകേണമേ. ഞങ്ങൾ നിനക്കും നിൻ്റെ പിതാവിനും പരിശുദ്ധാത്മാവിനും സ്‌തുതിയും സ്തോത്രവും കരേററുന്നു.</div>
 
     <div class="speaker con">ജ:</div>
@@ -704,7 +722,6 @@
 
     <div class="speaker all"></div>
     <div class="liturgy-text">
-
 1. പാഠം വായന: പഴയ നിയമവും പുതിയ നിയമവും
 <p></p>
 2. പാട്ട്  
@@ -717,8 +734,9 @@
 <p></p>
 6. പ്രസംഗം
 <p></p>
+    </div>
+
     <div class="liturgy-instruction">എല്ലാവരും എഴുന്നേൽക്കുകയും ആരാധന തുടരുകയും ചെയ്യുന്നു </div>
-</div>
 
     <div class="speaker min">പ:</div>
     <div class="liturgy-text min">പിതാവിനും പുത്രനും പരിശുദ്ധാത്മാവിനും സ്‌തുതി.</div>
@@ -845,7 +863,6 @@
 നിൻ തുണയ്ക്കായ്, ബലഹീനർ- കുറിയേലായിസ്സോൻ<br><br>
 3. നല്ലവനേ, കേട്ട് യാചനങ്ങൾ-ഹാലേലൂയ്യാ-ഉ-ഹാലേലൂയ്യാ<br>
 നൽകണമേ നിൻ കാരുണ്യത്താൽ- കുറിയേലായിസ്സോൻ
-
     </div>
 
     <div class="speaker min">പ:</div>
@@ -963,10 +980,10 @@
     <div class="liturgy-text con">കാലോചിതമാം ഭാഗ്യത്താൽ - തുഷ്ടിവരുത്തണമെങ്ങൾക്ക്.</div>
 
     <div class="speaker min">പ:</div>
-    <div class="liturgy-text min">പ്രിയരെ, നമ്മുടെ കർത്താവിൻ്റെ ക്രൂശിലെ യാഗത്താൽ നാം പ്രാപിച്ചിരിക്കുന്ന വാഴ്‌വുകളോടും  അനുഗ്രഹങ്ങളോടും കൂടെ വിശുദ്ധിയും മഹത്വവുമുള്ള മഹാ ദൈവത്തിൻ്റെ കൃപയ്ക്ക് നമ്മൾ അർഹരായിരിക്കുന്ന ഈ സമയത്ത് സമാധാനത്തോടെ പോകുവീൻ. ബലഹീന ദാസനായ എനിക്കും നിങ്ങളുടെ പ്രാർത്ഥനയാൽ കരുണയും സഹായവും ലഭിപ്പാൻ നിങ്ങൾ സന്തോഷപൂർവ്വം എനിക്കുവേണ്ടിയും പ്രാർത്ഥിപ്പിൻ.</div>
+    <div class="liturgy-text min">പ്രിയരെ, നമ്മുടെ കർത്താവിൻ്റെ ക്രൂശിലെ യാഗത്താൽ നാം പ്രാപിച്ചിരിക്കുന്ന വാഴ്‌വുകളോടും  അനുഗ്രഹങ്ങളോടും കൂടെ വിശുദ്ധിയും മഹത്വവുമുള്ള മഹാ ദൈവത്തിൻ്റെ കൃപയ്ക്ക് നമ്മൾ അർഹരായിരിക്കുന്ന ഈ സമയത്ത് സമാധാനത്തോടെ പോകുവീൻ. ബലഹീന ദാസരായ ഞങ്ങൾക്കും നിങ്ങളുടെ പ്രാർത്ഥനയാൽ കരുണയും സഹായവും ലഭിപ്പാൻ നിങ്ങൾ സന്തോഷപൂർവ്വം ഞങ്ങൾക്കുവേണ്ടിയും പ്രാർത്ഥിപ്പിൻ.</div>
 
     <div class="speaker con">ജ:</div>
-    <div class="liturgy-text con">കർത്താവേ, തിരുസന്നിധിയിൽ ശുശ്രൂഷ ചെയ്ത നിൻ്റെ ദാസനെ അനുഗ്രഹിക്കേണമേ - ഞങ്ങളുടെ പ്രാർത്ഥനകളും അപേക്ഷകളും കൈക്കൊള്ളേണമേ; നിൻെറ വാഴ്‌വുകൾക്കും അനുഗ്രഹങ്ങൾക്കും ഞങ്ങളെ യോഗ്യരാക്കി സമാധാനത്തോടെ അയക്കേണമേ.</div>
+    <div class="liturgy-text con">കർത്താവേ, തിരുസന്നിധിയിൽ ശുശ്രൂഷ ചെയ്ത നിൻ്റെ ദാസരെ അനുഗ്രഹിക്കേണമേ - ഞങ്ങളുടെ പ്രാർത്ഥനകളും അപേക്ഷകളും കൈക്കൊള്ളേണമേ; നിൻെറ വാഴ്‌വുകൾക്കും അനുഗ്രഹങ്ങൾക്കും ഞങ്ങളെ യോഗ്യരാക്കി സമാധാനത്തോടെ അയക്കേണമേ.</div>
  <div class="liturgy-instruction">പ്രാർത്ഥന, ആശീർവ്വാദം </div>
 
     <div class="liturgy-instruction">ഗീതം</div>
@@ -977,15 +994,13 @@
       2. തിരുക്കരുണാസനത്തിൽ - നിന്നു കൃപയടിയാരുടെമേൽ <br> വരണം എല്ലായ്‌പ്പോഴും  ഇരിക്കണം രാപ്പകൽ വന്ദനം നിനക്കാമേൻ.<br><br>
       3. തിരുസമാധാനവാക്യം അടിയാർ സ്ഥിരപ്പെടാൻ അരുൾക ഇപ്പോൾ<br>അരുമ നിൻ വേദത്തെ അരുളിയ പരനെ ഹല്ലേലുയ്യാ! ആമേൻ.
 
- <div class="liturgy-instruction">(അല്ലെങ്കിൽ)</div>
+      <div class="liturgy-instruction">(അല്ലെങ്കിൽ)</div>
 
-എന്നേക്കും മഹത്വം - ഏകപിതാ<br>
-എന്നേക്കും മഹത്വം - ഏകസുതാ<br>
-എന്നും എന്നേക്കുമേ - ഏവം ഭവിക്കട്ടെ<br>
-ഏകാത്മാവായോനും - ഏറ്റം സ്‌തുതി.
+      എന്നേക്കും മഹത്വം - ഏകപിതാ<br>
+      എന്നേക്കും മഹത്വം - ഏകസുതാ<br>
+      എന്നും എന്നേക്കുമേ - ഏവം ഭവിക്കട്ടെ<br>
+      ഏകാത്മാവായോനും - ഏറ്റം സ്‌തുതി.
     </div>
-
-
 
    <div class="liturgy-instruction"><strong>തിരുവത്താഴ സമയം ഉപയോഗിക്കാവുന്ന ഗീതങ്ങൾ</strong></div>
    <div class="liturgy-instruction">1. സ്നേഹ വിരുന്നനുഭവിപ്പാൻ</div>
@@ -1035,11 +1050,9 @@
         <em>(സ്നേഹ...)</em></p>
       </div>
 
-
   <div class="liturgy-instruction">2. വാഴ്ത്തീടുന്നു വാഴ്ത്തീടുന്നു</div>
   <div class="speaker all"></div>
   <div class="liturgy-text">
-  
         <p>1. വാഴ്ത്തീടുന്നു വാഴ്ത്തീടുന്നു വാഴ്ത്തീടുന്നു ഞാൻ എൻ<br>
         രക്ഷകനെ നന്ദിയോടെ വാഴ്ത്തീടുന്നു ഞാൻ</p>
 
@@ -1055,7 +1068,6 @@
         <p>5. കുരിശിലേറി മരിച്ചുയർത്തു സ്വർഗ്ഗേപോയോനേ<br>
         നിത്യം ജീവിക്കുന്നവനേ വാഴ്ത്തീടുന്നു ഞാൻ</p>
       </div>
- 
 
   <div class="liturgy-instruction">3. മനസ്സോടെ ശാപ-മരത്തിൽ തൂങ്ങിയ</div>
   <div class="speaker all"></div>
@@ -1096,11 +1108,10 @@
         നിറഞ്ഞ  കർത്താ-വേ</p>
       </div>
 
-    <!-- Song 4 -->
   <div class="liturgy-instruction">4. പാപത്തിൻ മാ വിഷത്തെയൊഴിപ്പാൻ</div>
   <div class="speaker all"></div>
   <div class="liturgy-text">
-         <p>1. പാപത്തിൻ മാ വിഷത്തെയൊഴിപ്പാൻ<br>
+        <p>1. പാപത്തിൻ മാ വിഷത്തെയൊഴിപ്പാൻ<br>
         സാത്താൻ തന്നുടെ ബലമഴിപ്പാൻ<br>
         രക്ഷകൻ ഇക്ഷിതിയിൽ വന്നാൻ - യേശുവിനു മഹത്വം!<br><br>
         <em>യേശുവിനു മഹത്വം! മഹത്വം യേശുവിനു മഹത്വം</em><br>
@@ -1131,11 +1142,9 @@
         പാവനജീവിതമാകണമെൻ - യേശുവിനു മഹത്വം!</p>
       </div>
 
-
   <div class="liturgy-instruction">5. കുഞ്ഞാട്ടിൻ തിരു രക്തത്താൽ</div>
   <div class="speaker all"></div>
   <div class="liturgy-text">
-   
         <p>1. കുഞ്ഞാട്ടിൻ തിരു രക്തത്താൽ ഞാൻ ശുദ്ധനായ് തീർന്നു<br>
         തൻ ചങ്കിലെ ശുദ്ധരക്തത്താൽ ഞാൻ ജയം പാടിടും<br>
         മഹത്വം രക്ഷകാ സ്തുതി നിനക്കെന്നും<br>
@@ -1165,12 +1174,9 @@
         ശ്രീയേശു രാജൻ മുമ്പാകെ</p>
       </div>
 
-
-    <!-- Song 6 -->
   <div class="liturgy-instruction">6. ക്രിസ്തുവിൻ്റെ ദാനം എത്ര മധുരം</div>
   <div class="speaker all"></div>
   <div class="liturgy-text">
-    
         <p>1. ക്രിസ്തുവിൻ്റെ ദാനം എത്ര മധുരം<br>
         പൂർണ്ണസമാധാനം പൂർണ്ണ ആനന്ദം<br>
         എത്രയോ വിസ്താരം ഉള്ളോർ നദിപോൽ<br>
@@ -1203,12 +1209,9 @@
         <em>(എൻ്റെ....)</em></p>
       </div>
 
-
-
   <div class="liturgy-instruction">7. ആശിഷമാരിയുണ്ടാകും </div>
   <div class="speaker all"></div>
   <div class="liturgy-text">
-    
         <p>1. ആശിഷമാരിയുണ്ടാകും - ആനന്ദവാഗ്ദത്തമേ<br>
         മേൽ നിന്നു രക്ഷകൻ നൽകും- ആശ്വാസകാലങ്ങളെ<br><br>
         <em>ആശിഷമാരി-ആശിഷം പെയ്യേണമേ</em><br>
@@ -1225,12 +1228,10 @@
         <p>4. ആശിഷമാരിയുണ്ടാകും  എത്ര നന്നിനു പെയ്കിൽ<br>
         പുത്രൻ്റെ പേരിൽ തന്നാലും ദൈവമേ ഇന്നേരത്തിൽ<br>
         <em>(ആശി....)</em></p>
-
     </div>
 
   </div>
 </main>
-
 
 <footer class="site-footer">
     <div class="footer-container">
@@ -1244,10 +1245,10 @@
                 <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
                 <li><a href="contact-us.html">Parish Location</a></li>
                 <li><a href="parish-history.html">Bangalore Parish History</a></li> 
-				<li><a href="donations.html">Donations</a></li> 
-				<li><a href="mal-liturgy-holycommunion.html">Liturgy - Malayalam Holy Communion</a></li> 
-				<li><a href="manglish-liturgy-holycommunion.html">Liturgy - Manglish Holy Communion</a></li> 
-				<li><a href="message.html">Message</a></li> 
+                <li><a href="donations.html">Donations</a></li> 
+                <li><a href="mal-liturgy-holycommunion.html">Liturgy - Malayalam Holy Communion</a></li> 
+                <li><a href="manglish-liturgy-holycommunion.html">Liturgy - Manglish Holy Communion</a></li> 
+                <li><a href="message.html">Message</a></li> 
             </ul>
         </div>
         <div class="footer-right">
