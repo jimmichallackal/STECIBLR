@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Holy Communion Liturgy | St. Thomas Evangelical Church of India</title> 
+    <title>Manglsh Public Liturgy | St. Thomas Evangelical Church of India</title> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta name="description" content="Order of Worship For The Holy Communion - St. Thomas Evangelical Church of India (STECI)."> 
     <style>
@@ -20,6 +20,8 @@
 
     html {
       scroll-behavior: smooth;
+      max-width: 100%;
+      overflow-x: clip;
     }
 
     body {
@@ -30,6 +32,8 @@
       color: #333333;
       font-size: 16px;
       line-height: 1.5;
+      max-width: 100%;
+      overflow-x: clip;
     }
 
     /* Header & Navigation */
@@ -128,24 +132,26 @@
     }
 
     /* Page Titles */
-        .mission-heading {
-          text-align: center;
-          vertical-align: middle;
-          color: #FFFF99;
-          background-color: #243117;
-        }
+    .mission-heading {
+      text-align: center;
+      vertical-align: middle;
+      color: #FFFF99;
+      background-color: #243117;
+    }
 
-        .mission-heading h1 {
-          text-align: center;
-          margin: 0;
-          padding: 20px 0;
-        }
-        
+    .mission-heading h1 {
+      text-align: center;
+      margin: 0;
+      padding: 20px 12px;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
 
     /* Responsive Grid Layout for Liturgy */
     .liturgy-grid {
       display: grid;
-      grid-template-columns: 100px 1fr;
+      grid-template-columns: 100px minmax(0, 1fr);
       gap: 12px 15px;
       margin: 30px auto;
       padding: 0 15px;
@@ -158,6 +164,9 @@
       font-weight: bold;
       text-align: right;
       padding-right: 5px;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: normal;
     }
 
     .speaker.min, .liturgy-text.min {
@@ -178,6 +187,9 @@
 
     .liturgy-text {
       text-align: left;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: normal;
     }
 
     .liturgy-instruction {
@@ -187,6 +199,9 @@
       text-align: center;
       padding: 12px 0;
       font-weight: 600;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: normal;
     }
 
     /* Back to Top Button */
@@ -226,11 +241,14 @@
 
     .footer-left {
       text-align: left;
+      min-width: 0;
     }
 
     .footer-right {
       text-align: right;
       font-size: 0.9rem;
+      min-width: 0;
+      overflow-wrap: break-word;
     }
 
     .quick-links {
@@ -238,7 +256,7 @@
       padding: 0;
       margin: 0;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px 30px;
     }
 
@@ -246,6 +264,7 @@
       color: #bbb;
       text-decoration: none;
       font-size: 0.9rem;
+      overflow-wrap: break-word;
     }
 
     .quick-links li a:hover {
@@ -291,7 +310,7 @@
       }
 
       .liturgy-grid {
-        grid-template-columns: 65px 1fr;
+        grid-template-columns: 65px minmax(0, 1fr);
         gap: 8px 10px;
         padding: 0 10px;
       }
@@ -312,7 +331,7 @@
       }
 
       .quick-links {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
     }
     </style>
@@ -361,19 +380,20 @@
         <a href="mission-vision.html">Mission & Vision</a>
         <a href="our-belief.html">Our Faith</a>
         <a href="bible-reading.html">365 Day Bible Reading</a>
-		<a href="bible-overview.html">Bible Overview</a>
+        <a href="bible-overview.html">Bible Overview</a>
        </div>
     </li>
 
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Liturgy ▾</a>
       <div class="dropdown-content">
-    	<a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
+        <a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
         <a href="liturgy-public.html">Order of Public worship</a>
         <a href="manglish-liturgy-holycommunion.html">Holy Communion – Manglish</a>
-  		<a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
+        <a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
         <a href="mal-liturgy-holycommunion.html">തിരുവത്താഴ ശുശ്രൂഷാ ക്രമം</a>
         <a href="mal-liturgy-public.html">പരസ്യാരാധനാക്രമം</a>
+        <a href="funeral.html">ശവസംസ്കാര ശുശ്രൂഷാക്രമം</a>
       </div>
     </li>
 
@@ -536,13 +556,12 @@
     <div class="speaker con">J:</div>
     <div class="liturgy-text con">Aamen.</div>
 
-<div class="liturgy-instruction">(Allenkil)</div>
+    <div class="liturgy-instruction">(Allenkil)</div>
 
     <div class="speaker min">P:</div>
-    <div class="liturgy-text min">
-Karunanidhiyum, snehapoornanumaaya Pithaavaaya Dhaivame, njangalude kuravukalum kuttangalum thirusannidhiyil ettu parayunnathinu nalkiya ee avasaratthinu sthuthi. Ninte Puthranum, njangalude veendeduppukaaranumaaya Yeshumashihaayude chattangalum, kalpanakalum lamghicha kuravukale njangalodu kshamikkename. Snehippaanum, kshamippaanum, aavashyangalil irikkunnavare sahayippaanum, roogikaleyum, dukhithareyum sandarshippaanum, karuthuvaanum padhippicha Karthaave, ee vaka karyangalil vanna veezhchakal njangalodu kshamikkayum – thiru hitham ella karyangalilum nivarthippaan – njangale praapthippeduthukayum cheyyename. Yeshumashiha moolam njangalude praarthana kelkkumaarakename.</div>
+    <div class="liturgy-text min">Karunanidhiyum, snehapoornanumaaya Pithaavaaya Dhaivame, njangalude kuravukalum kuttangalum thirusannidhiyil ettu parayunnathinu nalkiya ee avasaratthinu sthuthi. Ninte Puthranum, njangalude veendeduppukaaranumaaya Yeshumashihaayude chattangalum, kalpanakalum lamghicha kuravukale njangalodu kshamikkename. Snehippaanum, kshamippaanum, aavashyangalil irikkunnavare sahayippaanum, roogikaleyum, dukhithareyum sandarshippaanum, karuthuvaanum padhippicha Karthaave, ee vaka karyangalil vanna veezhchakal njangalodu kshamikkayum – thiru hitham ella karyangalilum nivarthippaan – njangale praapthippeduthukayum cheyyename. Yeshumashiha moolam njangalude praarthana kelkkumaarakename.</div>
 
-     <div class="speaker con">J:</div>
+    <div class="speaker con">J:</div>
     <div class="liturgy-text con">Aamen.</div>
 
     <div class="liturgy-instruction">(Allenkil)</div>
@@ -842,7 +861,7 @@ Karunanidhiyum, snehapoornanumaaya Pithaavaaya Dhaivame, njangalude kuravukalum 
     <div class="liturgy-instruction">Parishudhathma Niravinuvendiyulla Apeksha</div>
 
     <div class="speaker min">P:</div>
-    <div class="liturgy-text min">Swargasthnaya njangalude Pithaave, ninte Puthrane ayachu ninne thanneyum ninte pithrusnehatheyum - aa sneham nalkunna sakala anugrahangaleyum - njangalkku velippeduthiyathinal ninne njangal sthuthikkunnu. Penthakosthu naalil ayachuthanna Parishudhaathmaavinal njangale niraykkanamennu njangal vanchichu prarthikkunnu. Paranju theeratha aathmavinte anugrahangalum Dhaivasnehavum njangalude hridhayangalilekku choriyename. Kristhuvinte manassum jeevanum kondu niranju Yesuvineppole aakuvanum Pithaavinte snehathil vasikkuvanum njangale praptharakkename. Pithaave, njangalude jeevitha vijayathinum pravarthanangalude unnamathinum Parishudhaathmaavinal njangale shakthippuduthename. Chodikkunnavarkkum, vishvasikkunnavarkkum, anusarikkunnavarkkum Parishudhaathmaavine nalkamennulla vagdathathil vishvasichukondum - aviduthe kalpanakale anusarichukondum - aduthuvannu yachikkunna aviduthe makkale Parishudhaathmaavukondu niraykkename. Aathmavinte phalam purappeduvechu thirumeniye mahathvappeduvanum, divya varangalaal Dhaiveeka vyapaaram cheythu yajamananau aadhaaayam varuthuvanum -	njangale sahayikkukayum - ninte sabhaye shakthipputhukayum cheyyumaragkename.</div>
+    <div class="liturgy-text min">Swargasthnaya njangalude Pithaave, ninte Puthrane ayachu ninne thanneyum ninte pithrusnehatheyum - aa sneham nalkunna sakala anugrahangaleyum - njangalkku velippeduthiyathinal ninne njangal sthuthikkunnu. Penthakosthu naalil ayachuthanna Parishudhaathmaavinal njangale niraykkanamennu njangal vanchichu prarthikkunnu. Paranju theeratha aathmavinte anugrahangalum Dhaivasnehavum njangalude hridhayangalilekku choriyename. Kristhuvinte manassum jeevanum kondu niranju Yesuvineppole aakuvanum Pithaavinte snehathil vasikkuvanum njangale praptharakkename. Pithaave, njangalude jeevitha vijayathinum pravarthanangalude unnamathinum Parishudhaathmaavinal njangale shakthippuduthename. Chodikkunnavarkkum, vishvasikkunnavarkkum, anusarikkunnavarkkum Parishudhaathmaavine nalkamennulla vagdathathil vishvasichukondum - aviduthe kalpanakale anusarichukondum - aduthuvannu yachikkunna aviduthe makkale Parishudhaathmaavukondu niraykkename. Aathmavinte phalam purappeduvechu thirumeniye mahathvappeduvanum, divya varangalaal Dhaiveeka vyapaaram cheythu yajamananau aadhaaayam varuthuvanum - njangale sahayikkukayum - ninte sabhaye shakthipputhukkum cheyyumaragkename.</div>
 
     <div class="speaker con">J:</div>
     <div class="liturgy-text con">Aamen.</div>
@@ -858,7 +877,7 @@ Karunanidhiyum, snehapoornanumaaya Pithaavaaya Dhaivame, njangalude kuravukalum 
     <div class="liturgy-instruction">(Allenkil)</div>
 
     <div class="speaker min">P:</div>
-    <div class="liturgy-text min">Karthaave, ninte kalpana anusarichu uyarathil ninnu shakthi prapippanayi orumanappattu kaathirunna ninte shishyanmarude koottathinu chinthikkodutha aa Parishudhaathmaa varathinu njangaleyum arharakkiyirikkunnathinaal njangal ninne sthuthikkunnu. Njangal ninte kripaavarangale prapikkunnu engilum, avaye nashtappaduthikkalayunna paapa swabhavamullavarakunnu ennu njangal ettu paranjukollunnu.<br>,br> Ninte Parishudhaathmaavinte shakthiye njangalil puthukkename. Karthaave, njangale snehamullavarakkename. Njangal njangalil thanne santhoshamullavarum mattullavare santhoshippikkunnavarum ayitheerename. Njangal samadhanam anubhavikkunnavarayirikkename. Dheerghakshamayum dhayayum njangalkku tharename. Njangal ninnodum mattullavarodum njangaloduthanneyum vishvasthatha ullavarayirikkename. Saumyathayaakunna akshayabhushanathaal njangale alankarikkename. Indriyajayam njangalkku nalkename. Angane njangal aathmavinte phalam purappeduvekkunnavarum, aathmavinte varaprasadam prapichavarum sakala karyangalilum vivekamullavarum ayi samadhanavum, santhoshavum anubhavikkukayum cheyyuvan kripayarullename.</div>
+    <div class="liturgy-text min">Karthaave, ninte kalpana anusarichu uyarathil ninnu shakthi prapippanayi orumanappattu kaathirunna ninte shishyanmarude koottathinu chinthikkodutha aa Parishudhaathmaa varathinu njangaleyum arharakkiyirikkunnathinaal njangal ninne sthuthikkunnu. Njangal ninte kripaavarangale prapikkunnu engilum, avaye nashtappaduthikkalayunna paapa swabhavamullavarakunnu ennu njangal ettu paranjukollunnu.<br> Ninte Parishudhaathmaavinte shakthiye njangalil puthukkename. Karthaave, njangale snehamullavarakkename. Njangal njangalil thanne santhoshamullavarum mattullavare santhoshippikkunnavarum ayitheerename. Njangal samadhanam anubhavikkunnavarayirikkename. Dheerghakshamayum dhayayum njangalkku tharename. Njangal ninnodum mattullavarodum njangaloduthanneyum vishvasthatha ullavarayirikkename. Saumyathayaakunna akshayabhushanathaal njangale alankarikkename. Indriyajayam njangalkku nalkename. Angane njangal aathmavinte phalam purappeduvekkunnavarum, aathmavinte varaprasadam prapichavarum sakala karyangalilum vivekamullavarum ayi samadhanavum, santhoshavum anubhavikkukayum cheyyuvan kripayarullename.</div>
 
     <div class="speaker con">J:</div>
     <div class="liturgy-text con">Aamen.</div>
@@ -877,7 +896,7 @@ Karunanidhiyum, snehapoornanumaaya Pithaavaaya Dhaivame, njangalude kuravukalum 
     <div class="liturgy-text min">Athyunnathangalil Karthaavinte thirunaamam ennekkum vazhthappattathaakunnu.</div>
 
     <div class="speaker con">J:</div>
-    <div class="liturgy-text con">Athyunnathangalil Karthaavinte thirunaamam ennekkum vazhthappattathakunnu. Athyunnathangalil Karthaavinte thirunaamam ennennekkum vazhthappattathaakunnu.</div>
+    <div class="liturgy-text con">Athyunnathangalil Karthaavinte thirunaamam ennekkum vazhthappattathaakunnu. Athyunnathangalil Karthaavinte thirunaamam ennennekkum vazhthappattathaakunnu.</div>
 
     <div class="speaker min">P:</div>
     <div class="liturgy-text min">Vishudhiyum mahathvavamulla Thrithvame - njangaludemel anugrahamarulename.</div>
@@ -1022,9 +1041,8 @@ Karunanidhiyum, snehapoornanumaaya Pithaavaaya Dhaivame, njangalude kuravukalum 
 
 <div class="speaker min">P:</div>
 <div class="liturgy-text min">
-Sakala anugrahangaludeyum nanmakaludeyum uravum ulpathisthaanavum ella nalla dhaanangaleyum pradaanam cheyyunnavanum manushyarude jeevanekkurichu karuthalullavanumaaya mashihaa thamburaane, ee kazhinja oru vatsarakaalam ninkal ninn anubhavichittulla ella anugrahangalkkum kripakalkkum vendi sthothram cheyaan ivide aduthuvanneirikkunna ee ninte adiyaare karunyapoorvam kadakshikkename. Ivarkku varamaayirunna sakala aapathanarthangalil ninnum kaathu sookshichathinuvendiyum thirusannidhiyilninnu praapichittulla vivida kripakalkku vendi sthothram cheyvaan ivide aduthuvanneirikkunna ee ninte adiyaare kaarunyapoorvam kadaakshikkename.
-<p></p>
-Karthave, ivar praveshikkunna ee puthuvatsarathil ninte puthiya kripakal ivarkku daanam cheyyename. Ninte samruddhiyaaya jeevan kondu ivare niraykkename. Ivarude sharirangale nirmalamaayi sookshippaan ivare shakthikarikkename. Ivarude manassine ulkrishtavum parishuddhavumaaya kaaryangale chinthikkunnathinu praaptippaduttename. Ellattinum melaayi ivarude aathmavine ninte parishuddhaathmaavinal niraykkename. Puthiya varsham ivarkku anugrahathinte varshamaakki theerkkename. Ninnodu koothuthalaayi adukkvaan ivarkku kripa nalkename. Thiruvachana dhyaanathilum praarthanayilum poorvaadhikam thaalparyavum Dhaiveekaaraadhanayilum thiruvathazhattilum sambandhikkunnathinu koothuthalaaya aakaamkshayum ivarkku nalkename. Thangal anubhavikkunna sakala suka saukaryangalum Dhaivathinte daanamaanenna arinju ninnodu adhikam nandiyullavar aayirippaanum, labhichittulla anugrahangale mattullavarude nanmakkaayittu upayogippaanum ivarkku kripa nalkename. Ivarude priyappetta kudumbamangaleyum nee vaazhthi aashirvadikkename. Karthaave, innivide vannucheeruvaan saadhikkathe poya ellavareyum njangal thirusannidhiyil orkkukayum avarkkuvendi praarthikkukayum cheyyunnu. Avarkkum aavashyamulla ella kripakalum nalki ninte karunayude chirakin keezhil evarayum marachukollename. Njangalum avarum ninakkum ninte Pithaavinum Parishuddhaathmavinum sthuthiyum sthothravum karettikkollunnu.
+Sakala anugrahangaludeyum nanmakaludeyum uravum ulpathisthaanavum ella nalla dhaanangaleyum pradaanam cheyyunnavanum manushyarude jeevanekkurichu karuthalullavanumaaya mashihaa thamburaane, ee kazhinja oru vatsarakaalam ninkal ninn anubhavichittulla ella anugrahangalkkum kripakalkkum vendi sthothram cheyaan ivide aduthuvanneirikkunna ee ninte adiyaare karunyapoorvam kadakshikkename. Ivarkku varamaayirunna sakala aapathanarthangalil ninnum kaathu sookshichathinuvendiyum thirusannidhiyilninnu praapichittulla vivida kripakalkku vendi sthothram cheyvaan ivide aduthuvanneirikkunna ee ninte adiyaare kaarunyapoorvam kadaakshikkename.<br><br>
+Karthave, ivar praveshikkunna ee puthuvatsarathil ninte puthiya kripakal ivarkku daanam cheyyename. Ninte samruddhiyaaya jeevan kondu ivare niraykkename. Ivarude sharirangale nirmalamaayi sookshippaan ivare shakthikarikkename. Ivarude manassine ulkrishtavum parishuddhavumaaya kaaryangale chinthikkunnathinu praaptippaduttename. Ellattinum melaayi ivarude aathmavine ninte parishudhaathmaavinal niraykkename. Puthiya varsham ivarkku anugrahathinte varshamaakki theerkkename. Ninnodu koothuthalaayi adukkvaan ivarkku kripa nalkename. Thiruvachana dhyaanathilum praarthanayilum poorvaadhikam thaalparyavum Dhaiveekaaraadhanayilum thiruvathazhattilum sambandhikkunnathinu koothuthalaaya aakaamkshayum ivarkku nalkename. Thangal anubhavikkunna sakala suka saukaryangalum Dhaivathinte daanamaanenna arinju ninnodu adhikam nandiyullavar aayirippaanum, labhichittulla anugrahangale mattullavarude nanmakkaayittu upayogippaanum ivarkku kripa nalkename. Ivarude priyappetta kudumbamangaleyum nee vaazhthi aashirvadikkename. Karthaave, innivide vannucheeruvaan saadhikkathe poya ellavareyum njangal thirusannidhiyil orkkukayum avarkkuvendi praarthikkukayum cheyyunnu. Avarkkum aavashyamulla ella kripakalum nalki ninte karunayude chirakin keezhil evarayum marachukollename. Njangalum avarum ninakkum ninte Pithaavinum Parishuddhaathmavinum sthuthiyum sthothravum karettikkollunnu.
 </div>
 
 <div class="speaker con">J:</div>
@@ -1037,8 +1055,7 @@ Vivaha varshika sthothra praarthana<br>
 
 <div class="speaker min">P:</div>
 <div class="liturgy-text min">
-Skala nanmakaludeyum anugrahangaludeyum daathaavaaya Dhaivame, njangal vyakthikalayum kudumbangalayum ninkal ninnupraapichirikkunna ellavidha nanmakalkkum, kripakalkkumayi angaye vaazhthi sthuthikkunnu. Swargaththilum bhoomiyilumulla sakala kudumbathinum peru varuvaan kaaranamaaya Dhaivathe njangal vaazhthippaadunnu. Bhoomiyil kudumbangale sthapikkunnavanum avaye anugrahikkunnavanumaaya snehanidhivaaya Dhaivame, njangaleude kudumbangalkkaayum kudumba bandhangalkkaayum njangal angaye vaazhthukayum mahatvappeduthukayum cheyyunnu.
-<p></p>
+Skala nanmakaludeyum anugrahangaludeyum daathaavaaya Dhaivame, njangal vyakthikalayum kudumbangalayum ninkal ninnupraapichirikkunna ellavidha nanmakalkkum, kripakalkkumayi angaye vaazhthi sthuthikkunnu. Swargaththilum bhoomiyilumulla sakala kudumbathinum peru varuvaan kaaranamaaya Dhaivathe njangal vaazhthippaadunnu. Bhoomiyil kudumbangale sthapikkunnavanum avaye anugrahikkunnavanumaaya snehanidhivaaya Dhaivame, njangaleude kudumbangalkkaayum kudumba bandhangalkkaayum njangal angaye vaazhthukayum mahatvappeduthukayum cheyyunnu.<br><br>
 Ippol vivaha varshika sthothra praarthanakkaayi thirusannidhiyil aduthuvanneirikkunna ee bhaaryabharthanmarkkaayi ninne vaazhthunnu. Kazhinja oru varsham ivarkku vyakthikalayum kudumbangalayum nalkiya ella nanmakalkku vendiyum njangal sthuthi sthothrangal arppikkunnu. Priya Pithaave santhoshaththilum santhapaththilum, sampaththilum daaridryaththilum aarogyaththilum roagaththilum thammil snehikkukayum, shushrooshikkukayum, santhushtippaduthuvanum ivar sabhayudeyum, sakala hridayangale shodhana cheyyunna Dhaivathinte sannidhiyilum vivahanalil cheythittulla theerumanam sadaa ormmichu anthyaththolam athinprakaaram jeevichu bhoomiyil orumichu ninne mahimappeduthuvaan kripa arulenam. Ivar kudumbapraarthanayilum thiruvachana dhyaanathilum, aathmeeya shushrooshakalilum, aavashyathilirikkunnavare sahayikkunnathilum, roagikale shushrooshikkunnathilum utsukarayi irikkunnathinum, "njanoom ente kudumbavumo, njangal yahovaye sevikkum" ennu yoshuvayepole ettu paranjum maathrika kudumbamaayi jeevikkunnathinum kripa arulename. Ivar praveshikkunna puthuvasham anugrahathinteyum nanmakaludeyum varshamaakkename. Ivarude makkaleyum, maathapithakaleyum, sahodharangaleum bandhumithraadhikaleum anugrahichu aashirvadikkenam. Dhaivame, innivide vannucheeruvaan saadhikkathe poyittullavareyum njangal thirusannidhiyil orkkukayum avarkkuvendiyum praarthikkukayum cheyyunnu. Avarkkum aavashyamulla ella kripakalum anugrahangalum nalki ninte sarvashakthiyulla bhujangalin keezhe avareyum marachukollename. Njangaleude ella kudumbangalum ninne mahatvappeduthunna kudumbangalayirippaanum, thandhinmel prakashikkunna vilakkupoleyum, malamel shobhikkunna pattanaam poleyum ayirippaanum evarayum anugrahikkename. Njangal Ninakkum, ninte Puthranum, Parishuddhaathmaavinum sthuthiyum sthothravum karettikkollunnu.
 </div>
 
@@ -1097,16 +1114,11 @@ Swarggaththilum bhoomiyilumulla sakala kudumbathinnum peru varuvaan kaarankaaran
 <div class="speaker all"></div>
 <div class="liturgy-text">
 
-1. Paatam vaayana: pazhaya niyamavum puthiya niyamavum, Paattu  
-<p></p>
-2. Kalpanakal, Parasyaakal muthalaayava 
-<p></p>
-3. Madhyastha praarthana
-<p></p>
-4. Paattu, Sthothrakaazhcha
-<p></p>
-5. Prasangam
-<p></p>
+1. Paatam vaayana: pazhaya niyamavum puthiya niyamavum, Paattu<br><br>
+2. Kalpanakal, Parasyaakal muthalaayava<br><br>
+3. Madhyastha praarthana<br><br>
+4. Paattu, Sthothrakaazhcha<br><br>
+5. Prasangam<br><br>
 6. Praarthana, Aashirvaadam (Thaazhe ullathil Ethenkilum)
 </div>
 
@@ -1114,27 +1126,16 @@ Swarggaththilum bhoomiyilumulla sakala kudumbathinnum peru varuvaan kaarankaaran
 
 <div class="speaker min"></div>
 <div class="liturgy-text min">
-1. Karthavaaya Yesukhristuvinte krupayum Dhaivathinte snehavum Parishuddhaathmavinte koottaymayum ningalellavarodum koode irikkumaarakaatte. (2 Kori. 13:14)
-<p></p>
-
-2. Sakala buddhiyeyum kaviyunna Dhaivasamaadhaanam ningalude hridayangaleum ninavukaleum Khristuyesuvil kaakkumaarakaatte. (Phili. 4:7)
-<p></p>
-3. Karthavaaya Yesukhristuvinte krupa ningalude aathmavinodukoode irikkumaarakaatte. (Phili. 4:23)
-<p></p>
-4. Prathyasha nalkunna Dhaivam Parishuddhaathmaavinte shakthiyaal ningal prathyashayil samruddhiyullavarayi vishwasikkunnathilulla sakala santhosavum samaadhaanavum kondu ningale niraykkumaarakaatte. (Roma. 15:13)
-<p></p>
-5. Samaadhaanathinte Dhaivam ningalellavarodum koode irikkumaarakaatte. (Roma. 15:33)
-<p></p>
-6. Samaadhaanathinte Dhaivam thanne ningale muzhuvanum shuddhikarikkumaarakaatte. Ningalude aathmavum praananum dehavum ashesham nammade Karthavaaya Yesukhristuvinte prathyakshathayil anindyamaayi velippedum vannam kaakkappettumaarakaatte. Ningale vilikkunnavan vishwasthan aakunnu. Nammude Karthavaaya Yesukhristuvinte krupa ningalodukoode irikkumaarakaatte. (1 Thessa. 5:23,24,25)
-<p></p>
-7. Samaadhaanathinte Karthavaayavan thaan ningalkku eppozhum sakala vidhaththilum samaadhaanam nalkumaarakaatte. (2 Thessa. 3:16)
-<p></p>
-8. Nithyaniyamathinte rakthathaal aadukalude valiya idayanaaya nammade Karthavaaya Yesuvine marichavarude idayilninnu madakki varuththiya Samaadhaanathinte Dhaivam ningale avante ishtam cheyvaan thakkavannam ella nanmayilum yathaasthaanappettu thanikku prasaadhamullathu Yesukhristu mukhaantharam nammil nivarththikkumaarakaatte; avanukku ennannekkum mahatvam; Aamen. (Ebra. 13:20-21)
-<p></p>
-9. Yahova ningale anugrahichu kaakkumaarakaatte. Yahova thirumukham nintemel prakaashippichu ninnodu krupayullavan aakumaarakaatte; Yahova thirumukham nintemel uyarththi ninakku samaadhaanam nalkumaarakaatte. (Sankhya 6:24-26)
-<p></p>
-10. Pithruputhra Parishuddhaathmaavaam Thriyeka Dhaivathinte krupayum anugrahangalum ningalodukoode undaayirikkatte.
-<p></p>
+1. Karthavaaya Yesukhristuvinte krupayum Dhaivathinte snehavum Parishuddhaathmavinte koottaymayum ningalellavarodum koode irikkumaarakaatte. (2 Kori. 13:14)<br><br>
+2. Sakala buddhiyeyum kaviyunna Dhaivasamaadhaanam ningalude hridayangaleum ninavukaleum Khristuyesuvil kaakkumaarakaatte. (Phili. 4:7)<br><br>
+3. Karthavaaya Yesukhristuvinte krupa ningalude aathmavinodukoode irikkumaarakaatte. (Phili. 4:23)<br><br>
+4. Prathyasha nalkunna Dhaivam Parishuddhaathmaavinte shakthiyaal ningal prathyashayil samruddhiyullavarayi vishwasikkunnathilulla sakala santhosavum samaadhaanavum kondu ningale niraykkumaarakaatte. (Roma. 15:13)<br><br>
+5. Samaadhaanathinte Dhaivam ningalellavarodum koode irikkumaarakaatte. (Roma. 15:33)<br><br>
+6. Samaadhaanathinte Dhaivam thanne ningale muzhuvanum shuddhikarikkumaarakaatte. Ningalude aathmavum praananum dehavum ashesham nammade Karthavaaya Yesukhristuvinte prathyakshathayil anindyamaayi velippedum vannam kaakkappettumaarakaatte. Ningale vilikkunnavan vishwasthan aakunnu. Nammude Karthavaaya Yesukhristuvinte krupa ningalodukoode irikkumaarakaatte. (1 Thessa. 5:23,24,25)<br><br>
+7. Samaadhaanathinte Karthavaayavan thaan ningalkku eppozhum sakala vidhaththilum samaadhaanam nalkumaarakaatte. (2 Thessa. 3:16)<br><br>
+8. Nithyaniyamathinte rakthathaal aadukalude valiya idayanaaya nammade Karthavaaya Yesuvine marichavarude idayilninnu madakki varuththiya Samaadhaanathinte Dhaivam ningale avante ishtam cheyvaan thakkavannam ella nanmayilum yathaasthaanappettu thanikku prasaadhamullathu Yesukhristu mukhaantharam nammil nivarththikkumaarakaatte; avanukku ennannekkum mahatvam; Aamen. (Ebra. 13:20-21)<br><br>
+9. Yahova ningale anugrahichu kaakkumaarakaatte. Yahova thirumukham nintemel prakaashippichu ninnodu krupayullavan aakumaarakaatte; Yahova thirumukham nintemel uyarththi ninakku samaadhaanam nalkumaarakaatte. (Sankhya 6:24-26)<br><br>
+10. Pithruputhra Parishuddhaathmaavaam Thriyeka Dhaivathinte krupayum anugrahangalum ningalodukoode undaayirikkatte.<br><br>
 11. Aakaashavum bhoomiyum srishticha Karthavinaal ningal ellavaram anugrahikkappettavar aakunnu. Aathmeekamaaya ee shushrooshayil njangalodukoode orungi vannu sambandhichittulla ellavarayum Dhaivamaaya Karthavu anugrahichu shuddhikarikkatte. Pithaavum Puthranum Parishuddhaathmavumaaya Dhaivam nammade praarthanakal unnathamaaya thante simhaasanathin mumpaake kelkkukayum kaikollukayum cheyyumaarakaatte. 
 </div>
 
@@ -1169,9 +1170,9 @@ Thammil thammil samaadhaanam aacharikunnu.
                 <li><a href="contact-us.html">Parish Location</a></li>
                 <li><a href="parish-history.html">Bangalore Parish History</a></li> 
                 <li><a href="donations.html">Donations</a></li> 
-				<li><a href="mal-liturgy-holycommunion.html">Liturgy - Malayalam Holy Communion</a></li> 
-				<li><a href="manglish-liturgy-holycommunion.html">Liturgy - Manglish Holy Communion</a></li> 
-				<li><a href="message.html">Message</a></li> 
+                <li><a href="mal-liturgy-holycommunion.html">Liturgy - Malayalam Holy Communion</a></li> 
+                <li><a href="manglish-liturgy-holycommunion.html">Liturgy - Manglish Holy Communion</a></li> 
+                <li><a href="message.html">Message</a></li> 
             </ul>
         </div>
         <div class="footer-right">
