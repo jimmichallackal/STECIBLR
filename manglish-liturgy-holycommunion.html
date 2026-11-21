@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Holy Communion Liturgy | St. Thomas Evangelical Church of India</title> 
+    <title>Manglish Holy Communion Liturgy | St. Thomas Evangelical Church of India</title> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta name="description" content="Order of Worship For The Holy Communion - St. Thomas Evangelical Church of India (STECI)."> 
     <style>
@@ -20,6 +20,8 @@
 
     html {
       scroll-behavior: smooth;
+      max-width: 100%;
+      overflow-x: clip;
     }
 
     body {
@@ -30,6 +32,8 @@
       color: #333333;
       font-size: 16px;
       line-height: 1.5;
+      max-width: 100%;
+      overflow-x: clip;
     }
 
     /* Header & Navigation */
@@ -128,23 +132,24 @@
     }
 
     /* Page Titles */
-        .mission-heading {
-          text-align: center;
-          vertical-align: middle;
-          color: #FFFF99;
-          background-color: #243117;
-        }
+    .mission-heading {
+      text-align: center;
+      vertical-align: middle;
+      color: #FFFF99;
+      background-color: #243117;
+    }
 
-        .mission-heading h1 {
-          text-align: center;
-          margin: 0;
-          padding: 20px 0;
-        }
+    .mission-heading h1 {
+      text-align: center;
+      margin: 0;
+      padding: 20px 12px;
+      overflow-wrap: break-word;
+    }
 
     /* Responsive Grid Layout for Liturgy */
     .liturgy-grid {
       display: grid;
-      grid-template-columns: 100px 1fr;
+      grid-template-columns: 100px minmax(0, 1fr);
       gap: 12px 15px;
       margin: 30px auto;
       padding: 0 15px;
@@ -157,6 +162,8 @@
       font-weight: bold;
       text-align: right;
       padding-right: 5px;
+      min-width: 0;
+      overflow-wrap: break-word;
     }
 
     .speaker.min, .liturgy-text.min {
@@ -177,6 +184,9 @@
 
     .liturgy-text {
       text-align: left;
+      min-width: 0;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
     .liturgy-instruction {
@@ -186,6 +196,8 @@
       text-align: center;
       padding: 12px 0;
       font-weight: 600;
+      min-width: 0;
+      overflow-wrap: break-word;
     }
 
     /* Back to Top Button */
@@ -225,11 +237,14 @@
 
     .footer-left {
       text-align: left;
+      min-width: 0;
     }
 
     .footer-right {
       text-align: right;
       font-size: 0.9rem;
+      min-width: 0;
+      overflow-wrap: break-word;
     }
 
     .quick-links {
@@ -237,7 +252,7 @@
       padding: 0;
       margin: 0;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px 30px;
     }
 
@@ -245,6 +260,7 @@
       color: #bbb;
       text-decoration: none;
       font-size: 0.9rem;
+      overflow-wrap: break-word;
     }
 
     .quick-links li a:hover {
@@ -290,7 +306,7 @@
       }
 
       .liturgy-grid {
-        grid-template-columns: 65px 1fr;
+        grid-template-columns: 65px minmax(0, 1fr);
         gap: 8px 10px;
         padding: 0 10px;
       }
@@ -311,7 +327,7 @@
       }
 
       .quick-links {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
     }
     </style>
@@ -360,19 +376,20 @@
         <a href="mission-vision.html">Mission & Vision</a>
         <a href="our-belief.html">Our Faith</a>
         <a href="bible-reading.html">365 Day Bible Reading</a>
-		<a href="bible-overview.html">Bible Overview</a>
+        <a href="bible-overview.html">Bible Overview</a>
        </div>
     </li>
 
     <li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Liturgy ▾</a>
       <div class="dropdown-content">
-    	 <a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
+        <a href="liturgy-holycommunion.html">Order of Holy communion worship</a>
         <a href="liturgy-public.html">Order of Public worship</a>
         <a href="manglish-liturgy-holycommunion.html">Holy Communion – Manglish</a>
-  		<a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
+        <a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
         <a href="mal-liturgy-holycommunion.html">തിരുവത്താഴ ശുശ്രൂഷാ ക്രമം</a>
         <a href="mal-liturgy-public.html">പരസ്യാരാധനാക്രമം</a>
+        <a href="funeral.html">ശവസംസ്കാര ശുശ്രൂഷാക്രമം</a>
       </div>
     </li>
 
@@ -447,7 +464,7 @@
     <div class="liturgy-text min">Swarggasthanaaya njangalude Pithaave</div>
 
     <div class="speaker con">J:</div>
-    <div class="liturgy-text con">Ninte naamam vishudheekarikkappadename; ninte rajyam varename; ninte ishtam swargathileppole - bhoomiyilum aakename; njangalkku aavashyamulla aaharam innu tharename; njangalude kadakkarodu njangal kshamichirikkunnathupole - njangalude kadangale njangalodum kshamikkename; njangale pareekshayil kadathathe - dushtangal ninnu njangale viduvikkename; rajyamum shakthiyum mahathvavum - ennekkum ninakkullathallo. Aamen.</div>
+    <div class="liturgy-text con">Ninte naamam vishudheekarikkappadename; ninte rajyam varename; ninte ishtam swargathileppole - bhoomiyilum aakename; njangalkku aavashyamulla aaharam innu tharename; njangalude kadakkarodu njangal kshamichirikkunnathupole - njangalude kadangale njangalodum kshamikkename; njangale pareekshayil kadathathe - dushtangal ninnu njangale viduvikkename; raajyamum shakthiyum mahathvavum - ennekkum ninakkullathallo. Aamen.</div>
 
 
 <div class="liturgy-instruction">Allenkil geetham</div>
@@ -457,8 +474,8 @@
 
     <div class="speaker con">Ja:</div>
     <div class="liturgy-text con">* Balavaane! Nee parishuddhan Haa-le-looyyaa <br>
-	Mruthirahithaa nee parishuddhan Haa-le-looyyaa <br>
-	Adiyaarkkaay krooshatravane, anugrahicheedaname
+    Mruthirahithaa nee parishuddhan Haa-le-looyyaa <br>
+    Adiyaarkkaay krooshatravane, anugrahicheedaname
 </div>
 
  <div class="liturgy-instruction">*(Iprakaaram moonnu praavashyam chollanam)</div>
@@ -468,7 +485,7 @@
 
     <div class="speaker con">Ja:</div>
     <div class="liturgy-text con">Dayavaay nee, anugrahikka, Haa-le-looyyaa <br>
-	Praarthana yaachana kaikkondu- anugrahicheedaname.
+    Praarthana yaachana kaikkondu- anugrahicheedaname.
 </div>
 
     <div class="speaker min">Pa:</div>
@@ -476,7 +493,7 @@
 
     <div class="speaker con">Ja:</div>
     <div class="liturgy-text con">Srashtaave! Sthuthi ninakku, Haa-le-looyyaa<br>
-	Paapikalil kaniyum, Mshihaa-raajaa-sthuthi ninakkennennekkum 
+    Paapikalil kaniyum, Mshihaa-raajaa-sthuthi ninakkennennekkum 
 </div>
 
   <div class="liturgy-instruction">Karthaavinte praarthana geetham</div>
@@ -581,85 +598,86 @@ Daivathinnupadesham thottavasaanippippon dhanyan <br>
 
     <div class="speaker all"></div>
     <div class="liturgy-text">
-      	Daivathin suvishesham-vilamathiyaathullathu<br>
-	Daanam i-tathishayam gunamaereettullathu<br>
-	Thenekkal nalla rasam-ithinundu nishchayam<br>
-	Hallelooyyaa u-hallelooyyaa pushpamanam oppamalla<br> <br>
-	Kripa thannil valaruna - aathmaavithin-rasamariyum<br>
-	Dukkham poondaathmaavum-santhosham-praapikkum<br>
-	Ithumoolam-viswaasi-mochanam nedunnu <br>
-	Hallelooyyaa-u-hallelooyyaa-swarggathalam modikkum <br><br>
-	Rakshakane ee vachanam-rakshakkaay njangalude<br>
-	Hhrudaye nee phalppichu-eekshithiyil nin adiyaar<br>
-	Sookshmathayaay nadappaanum mokshathil varuvaanum<br>
-	Hallelooyyaa-u-hallelooyyaa-nee kripa nalkeedaname <br> <br>
-	Paapikale paraloke-cherppaan-nalvazhiyaayi<br>
-	Pazhuthatta-suvishesham-kalppicha rakshakane<br>
-	Paapikalaam-njangalude-madhye nee-ezhunalli<br>
-	Halle-looyyaa-u-halle-looyyaa-ee vachanam-vilangikka <br> <br>
-	Satyaathmaave-vannee-jeevante-vachanatthe<br>
-	Paapathaal irulaaya-daasarude hhrudayathil<br>
-	Deepam pol nilanirthi-shobhippichadiyaare <br>
-	Haale-looyyaa-u-halle-looyyaa-suvisheshe-nattheedaname <br> <br>
-	Athishayamaam daanathin-naathanaameeshohye<br>
-	Hhruthunkal-shobhichu <br>
-	Evangeliyon rasatheyum athinulla balatheyum<br>
-	Adiyaare-grahippichu  <br>
-	Haale-looyyaa-u-halle-looyyaa-suvisheshe-nattheedaname <br> <br>
+        Daivathin suvishesham-vilamathiyaathullathu<br>
+    Daanam i-tathishayam gunamaereettullathu<br>
+    Thenekkal nalla rasam-ithinundu nishchayam<br>
+    Hallelooyyaa u-hallelooyyaa pushpamanam oppamalla<br> <br>
+    Kripa thannil valaruna - aathmaavithin-rasamariyum<br>
+    Dukkham poondaathmaavum-santhosham-praapikkum<br>
+    Ithumoolam-viswaasi-mochanam nedunnu <br>
+    Hallelooyyaa-u-hallelooyyaa-swarggathalam modikkum <br><br>
+    Rakshakane ee vachanam-rakshakkaay njangalude<br>
+    Hhrudaye nee phalppichu-eekshithiyil nin adiyaar<br>
+    Sookshmathayaay nadappaanum mokshathil varuvaanum<br>
+    Hallelooyyaa-u-hallelooyyaa-nee kripa nalkeedaname <br> <br>
+    Paapikale paraloke-cherppaan-nalvazhiyaayi<br>
+    Pazhuthatta-suvishesham-kalppicha rakshakane<br>
+    Paapikalaam-njangalude-madhye nee-ezhunalli<br>
+    Halle-looyyaa-u-halle-looyyaa-ee vachanam-vilangikka <br> <br>
+    Satyaathmaave-vannee-jeevante-vachanatthe<br>
+    Paapathaal irulaaya-daasarude hhrudayathil<br>
+    Deepam pol nilanirthi-shobhippichadiyaare <br>
+    Haale-looyyaa-u-halle-looyyaa-suvisheshe-nattheedaname <br> <br>
+    Athishayamaam daanathin-naathanaameeshohye<br>
+    Hhruthunkal-shobhichu <br>
+    Evangeliyon rasatheyum athinulla balatheyum<br>
+    Adiyaare-grahippichu  <br>
+    Haale-looyyaa-u-halle-looyyaa-suvisheshe-nattheedaname
+    </div>
 
     <div class="liturgy-instruction">Allenkil</div>
 
-	Ellaavarum: Ningalekk aduthu varuvaanaayi lokathinre prakaashamaay suvishesham njangalkku tharunavanaaya karthaave, ninakku sthuthi. Ippol ninte suvisheshathilninn njangal kettirikkuna jeevanulla vachanam nimitham ninne mahatvaveekrippaan njangale yogyathayullavaraakkitheerkkename- aamen.
+    <div class="speaker all">Ellaavarum:</div>
+    <div class="liturgy-text">Ningalekk aduthu varuvaanaayi lokathinre prakaashamaay suvishesham njangalkku tharunavanaaya karthaave, ninakku sthuthi. Ippol ninte suvisheshathilninn njangal kettirikkuna jeevanulla vachanam nimitham ninne mahatvaveekrippaan njangale yogyathayullavaraakkitheerkkename- aamen.</div>
 
-    </div>
  <div class="liturgy-instruction">3</div>
 
     <div class="speaker all"></div>
     <div class="liturgy-text">
-	Daivavachaname divyavishesham sarvvaa modamode - athil<br>
-	Dhaivame nokkuvaan kannenikekuga jeevadaayaparane
+    Daivavachaname divyavishesham sarvvaa modamode - athil<br>
+    Dhaivame nokkuvaan kannenikekuga jeevadaayaparane
     </div>
 
  <div class="liturgy-instruction">4</div>
 
     <div class="speaker all"></div>
     <div class="liturgy-text">
-	Karthaave nino-daduppaan vishwaVelichamaam <br>
-	Suvishesham nee-thannathinaal sthothram<br>
-	Ninnariyippin-ninnuyirvachanam kelkayil ninne<br>
-	Mahatvaveekrippaan-yogyaraakka njangale<br><br>
-	Suvishesha velicham-sakalarkkum shobheeeduvaan <br>
-	Vannavanaaya-mahimayezhum rakshaka<br>
-	Paapikalaam njangal andhatha neengi shobhippaanaay<br>
-	Ee suvishesham-phalakaramaakeeduga
+    Karthaave nino-daduppaan vishwaVelichamaam <br>
+    Suvishesham nee-thannathinaal sthothram<br>
+    Ninnariyippin-ninnuyirvachanam kelkayil ninne<br>
+    Mahatvaveekrippaan-yogyaraakka njangale<br><br>
+    Suvishesha velicham-sakalarkkum shobheeeduvaan <br>
+    Vannavanaaya-mahimayezhum rakshaka<br>
+    Paapikalaam njangal andhatha neengi shobhippaanaay<br>
+    Ee suvishesham-phalakaramaakeeduga
     </div>
 
  <div class="liturgy-instruction">5</div>
     <div class="speaker all"></div>
     <div class="liturgy-text">
-	Yesuvin thirupaadathil-irunnu kelka naam<br>
-	Thanre vishuddha vaakyathil-nammude jeevanam<br>
-	Yesuvin suvishesham-divyamaam upadesham<br>
-	Kelkkuka naam-kaakkuka naam-<br>
-	Jeevante vaakyangal (2)
+    Yesuvin thirupaadathil-irunnu kelka naam<br>
+    Thanre vishuddha vaakyathil-nammude jeevanam<br>
+    Yesuvin suvishesham-divyamaam upadesham<br>
+    Kelkkuka naam-kaakkuka naam-<br>
+    Jeevante vaakyangal (2)
     </div>
 
  <div class="liturgy-instruction">6</div>
     <div class="speaker all"></div>
     <div class="liturgy-text">
-	Vedapramanathilninnu <br>
-	Vegam njaanatbhutha kaaryam<br>
-	Saadaram kaanmanen kanqal<br>
-	Naadhaa! Thurakkaname!<br>
+    Vedapramanathilninnu <br>
+    Vegam njaanatbhutha kaaryam<br>
+    Saadaram kaanmanen kanqal<br>
+    Naadhaa! Thurakkaname!<br>
     </div>
 
  <div class="liturgy-instruction">7</div>
     <div class="speaker all"></div>
     <div class="liturgy-text">
-	Nalla devane! Njangal ellaavareyum<br>
-	Nallathaakki nin isthathe cholleedename<br>
-	Vedavaakyangal njangalkaadaayamaavaan<br>
-	Vedanaadhane! Ninte jnaanam nalkuge<br>
+    Nalla devane! Njangal ellaavareyum<br>
+    Nallathaakki nin isthathe cholleedename<br>
+    Vedavaakyangal njangalkaadaayamaavaan<br>
+    Vedanaadhane! Ninte jnaanam nalkuge<br>
     </div>
 
     <div class="speaker min">P:</div>
@@ -840,12 +858,12 @@ Daivathinnupadesham thottavasaanippippon dhanyan <br>
 
     <div class="speaker all"></div>
     <div class="liturgy-text">
-	1. Aardramathe, vaathilil muttunnu-Hallelooyyaa-u-hallelooyyaa <br>
-	Praarthanayil naadamengalude- Kuriyeelaayisson<br><br>
-	2. Ninne vilikkunnu, naayakane-Hallelooyyaa-u-hallelooyyaa<br>
-	Nin thunaykkaay, balaheenar- Kuriyeelaayisson<br><br>
-	3. Nallavane, kettu yaachanangal-Hallelooyyaa-u-hallelooyyaa<br>
-	Nalkaname nin kaarunyathaal- Kuriyeelaayisson
+    1. Aardramathe, vaathilil muttunnu-Hallelooyyaa-u-hallelooyyaa <br>
+    Praarthanayil naadamengalude- Kuriyeelaayisson<br><br>
+    2. Ninne vilikkunnu, naayakane-Hallelooyyaa-u-hallelooyyaa<br>
+    Nin thunaykkaay, balaheenar- Kuriyeelaayisson<br><br>
+    3. Nallavane, kettu yaachanangal-Hallelooyyaa-u-hallelooyyaa<br>
+    Nalkaname nin kaarunyathaal- Kuriyeelaayisson
 
     </div>
 
@@ -961,10 +979,10 @@ Daivathinnupadesham thottavasaanippippon dhanyan <br>
     <div class="liturgy-text con">Kaalochithamaam bhaagyathaal tushtivarutthanamengalkku</div>
 
     <div class="speaker min">P:</div>
-    <div class="liturgy-text min">Priyare, nammude karthaavinte krooshile yaagathaal naam praapichirikkunna vaazhvukalodu anugrangalodum koode vishuddhiyum mahathvamulla mahaa daivathinte krupaykku nammal arharaayirikkunna ee samayathu samaadhaanathode pokuveen balaheena daasanaaya enakku ningalude praarthnayaal karunayum sahaayavum labhippaan ningal santhoshapoorvvam enikkuvendiyum praarthippin.</div>
+    <div class="liturgy-text min">Priyare, nammude karthaavinte krooshile yaagathaal naam praapichirikkunna vaazhvukalodu anugrangalodum koode vishuddhiyum mahathvamulla mahaa daivathinte krupaykku nammal arharaayirikkunna ee samayathu samaadhaanathode pokuveen. Balaheena dhaasaraaya njangalkkum ningalude praarthnayaal karunayum sahaayavum labhippaan ningal santhoshapoorvvam njangalkkuvendiyum praarthippin.</div>
 
     <div class="speaker con">J:</div>
-    <div class="liturgy-text con">Karthaave, thirusannidhiyil shushroosacheytha ninte daasane anugrahikkename - njangalude praarthnakalum apekshakalum kaikkollename. Ninte vaazhvukalkkum anugrangalkkum njangale yogyaraakki samaadhaanathode njangale ayakkename.</div>
+    <div class="liturgy-text con">Karthaave, thirusannidhiyil shushroosacheytha ninte daasare anugrahikkename - njangalude praarthnakalum apekshakalum kaikkollename. Ninte vaazhvukalkkum anugrangalkkum njangale yogyaraakki samaadhaanathode njangale ayakkename.</div>
 
 <div class="liturgy-instruction">Praarthana, Aashirvaadam </div>
 
@@ -1024,7 +1042,7 @@ Ekaathmaavaayonum - Ettam sthuthi.
         <em>(Sneha...)</em></p>
 
         <p>Kristhan thiruchintha tharippin<br>
-        Kurisെടുത്തuthu thaazhyodaavan pin chelluvin<br>
+        Kuriseduthu thaazhmayodavan pin chelluvin<br>
         Thirukripa labhippan<br>
         Eka manasoda japippin<br>
         Avasaanatholam nilanneeduvin<br>
@@ -1241,9 +1259,9 @@ Ekaathmaavaayonum - Ettam sthuthi.
                 <li><a href="contact-us.html">Parish Location</a></li>
                 <li><a href="parish-history.html">Bangalore Parish History</a></li>
                 <li><a href="donations.html">Donations</a></li> 
-				<li><a href="mal-liturgy-holycommunion.html">Liturgy - Malayalam Holy Communion</a></li> 
-				<li><a href="manglish-liturgy-holycommunion.html">Liturgy - Manglish Holy Communion</a></li> 
-				<li><a href="message.html">Message</a></li> 
+                <li><a href="mal-liturgy-holycommunion.html">Liturgy - Malayalam Holy Communion</a></li> 
+                <li><a href="manglish-liturgy-holycommunion.html">Liturgy - Manglish Holy Communion</a></li> 
+                <li><a href="message.html">Message</a></li> 
             </ul>
         </div>
         <div class="footer-right">
