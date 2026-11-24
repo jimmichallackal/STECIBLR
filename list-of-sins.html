@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblical Classification of Sins | St. Thomas Evangelical Church of India</title>
+  <meta name="description" content="Biblical Classification of Sins in English and Malayalam with Scripture references for Bible study." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Global Styles (Inherited from bible-overview.html) */
+    :root {
+      --primary-maroon: #5C1A1B;
+      --primary-dark-maroon: #3d1112;
+      --accent-yellow: #FFFF99;
+      --accent-green: #243117;
+      --speaker-min: #8B0000;
+      --speaker-con: #00008B;
+      --speaker-deacon: #2E8B57;
+      --speaker-all: #4B0082;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #F8F9FA;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', 'Manjari', Arial, sans-serif;
+      color: #333333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .ml {
+      font-family: 'Manjari', sans-serif;
+    }
+
+    /* Header & Navigation */
+    .header-banner {
+      line-height: 0;
+      font-size: 0;
+    }
+
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+
+    .navbar {
+      background-color: var(--primary-maroon);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--accent-yellow);
+    }
+
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      display: block;
+      color: var(--accent-yellow);
+      text-align: center;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links li a:hover {
+      background-color: var(--primary-dark-maroon);
+    }
+
+    /* Dropdown Navigation */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 220px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1001;
+      text-align: left;
+      top: 100%;
+      left: 0;
+    }
+
+    .dropdown-content a {
+      color: var(--primary-maroon) !important;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #eee;
+      font-weight: normal;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--primary-maroon);
+      color: var(--accent-yellow) !important;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Mobile Navigation Drawer */
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 15px;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: var(--accent-yellow);
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    /* Page Title Banner */
+    .mission-heading {
+      text-align: center;
+      color: var(--accent-yellow);
+      background-color: var(--accent-green);
+      padding: 20px 15px;
+      margin-bottom: 30px;
+    }
+
+    .mission-heading h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    .mission-heading .ml-subtitle {
+      font-family: 'Manjari', sans-serif;
+      font-size: 1.15rem;
+      margin: 6px 0 0;
+      color: #ffffff;
+    }
+
+    /* Main Content Layout */
+    .main-content {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 15px 50px 15px;
+    }
+
+    /* Search & Quick Jump Controls */
+    .controls-card {
+      background-color: #ffffff;
+      border-top: 4px solid var(--accent-green);
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      padding: 20px 25px;
+      margin-bottom: 30px;
+    }
+
+    .search-box {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 11px 14px;
+      font-size: 1rem;
+      font-family: 'Roboto', 'Manjari', Arial, sans-serif;
+      color: #333333;
+      background-color: #fcfcfc;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      outline: none;
+    }
+
+    .search-box:focus {
+      border-color: var(--primary-maroon);
+      box-shadow: 0 0 0 3px rgba(92, 26, 27, 0.12);
+    }
+
+    .toc-title {
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .toc-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .toc-grid a {
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--primary-maroon);
+      background-color: #f4f6f8;
+      border: 1px solid #e0e0e0;
+      padding: 5px 11px;
+      border-radius: 4px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .toc-grid a:hover {
+      background-color: var(--primary-maroon);
+      color: var(--accent-yellow);
+      border-color: var(--primary-maroon);
+    }
+
+    /* Study Section Cards */
+    .study-part {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-left: 5px solid var(--primary-maroon);
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      padding: 25px;
+      margin-bottom: 35px;
+    }
+
+    .study-part > h2 {
+      color: var(--primary-maroon);
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 10px;
+    }
+
+    .study-part > h2 .ml-heading {
+      display: block;
+      font-family: 'Manjari', sans-serif;
+      color: var(--accent-green);
+      font-size: 1.15rem;
+      margin-top: 4px;
+    }
+
+    .section-note {
+      font-family: 'Manjari', sans-serif;
+      font-size: 1.05rem;
+      color: #444444;
+      background-color: #f7f9f5;
+      border-left: 4px solid var(--accent-green);
+      padding: 10px 16px;
+      margin: 0 0 16px 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .scripture-ref {
+      font-weight: bold;
+      color: var(--accent-green);
+      margin: 0 0 14px 0;
+      font-size: 0.98rem;
+    }
+
+    /* Tables */
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+    }
+
+    thead th {
+      background-color: var(--primary-maroon);
+      color: var(--accent-yellow);
+      text-align: left;
+      padding: 10px 12px;
+      font-weight: bold;
+      border-bottom: 2px solid var(--accent-green);
+    }
+
+    tbody td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #eaeaea;
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #fcfcfc;
+    }
+
+    tbody tr:hover {
+      background-color: #f7f9f5;
+    }
+
+    td.col-no {
+      width: 50px;
+      font-weight: bold;
+      color: var(--accent-green);
+    }
+
+    td.col-ml {
+      font-family: 'Manjari', sans-serif;
+      font-size: 1.05rem;
+    }
+
+    td.col-ref {
+      white-space: nowrap;
+      font-weight: 500;
+      color: var(--primary-maroon);
+    }
+
+    /* Scripture Quote Block */
+    .bible-quote {
+      background-color: #f7f9f5;
+      border-left: 4px solid var(--accent-green);
+      padding: 12px 18px;
+      margin: 18px 0 0 0;
+      font-style: italic;
+    }
+
+    .bible-quote cite {
+      display: block;
+      margin-top: 6px;
+      font-style: normal;
+      font-weight: bold;
+      color: var(--accent-green);
+      font-size: 0.92rem;
+    }
+
+    .bible-quote p.ml-quote {
+      font-family: 'Manjari', sans-serif;
+      font-style: normal;
+      font-size: 1.1rem;
+      margin: 0;
+      color: #222222;
+    }
+
+    /* Concluding Summary Section */
+    .bible-summary-section {
+      background-color: #ffffff;
+      border-top: 4px solid var(--accent-green);
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      padding: 25px 30px;
+      margin-bottom: 30px;
+    }
+
+    .bible-summary-section h2 {
+      color: var(--accent-green);
+      margin-top: 0;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    .central-message-list {
+      margin: 12px 0 18px 0;
+      padding-left: 22px;
+    }
+
+    .central-message-list li {
+      margin-bottom: 8px;
+    }
+
+    .solution-box {
+      background-color: #fcfcfc;
+      border: 1px solid #eaeaea;
+      border-left: 4px solid var(--primary-maroon);
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-top: 14px;
+    }
+
+    /* Back to Top Button */
+    #backToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      font-size: 14px;
+      border: none;
+      outline: none;
+      background-color: var(--accent-green);
+      color: var(--accent-yellow);
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    #backToTopBtn:hover {
+      background-color: var(--primary-maroon);
+    }
+
+    /* Footer Layout */
+    .site-footer {
+      background-color: #222222;
+      color: #ffffff;
+      padding: 25px 8%;
+      border-top: 2px solid #444444;
+      margin-top: 40px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-right {
+      text-align: right;
+      font-size: 0.9rem;
+    }
+
+    .quick-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 30px;
+    }
+
+    .quick-links li a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .quick-links li a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Mobile Responsive Optimizations (< 768px) */
+    @media screen and (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--primary-maroon);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+        border-top: 1px solid #7a2425;
+      }
+
+      .dropdown-content {
+        position: static;
+        width: 100%;
+        background-color: #4a1415;
+        box-shadow: none;
+      }
+
+      .dropdown-content a {
+        color: var(--accent-yellow) !important;
+        background-color: #4a1415 !important;
+        padding: 12px 30px;
+        border-bottom: 1px solid var(--primary-maroon);
+        white-space: normal;
+      }
+
+      .study-part {
+        padding: 15px;
+      }
+
+      .controls-card,
+      .bible-summary-section {
+        padding: 18px;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .footer-left,
+      .footer-right {
+        text-align: center;
+        width: 100%;
+      }
+
+      .quick-links {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .controls-card,
+      #backToTopBtn,
+      .navbar,
+      .site-footer {
+        display: none;
+      }
+      .study-part {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<button id="backToTopBtn" title="Go to top">↑ Top</button>
+
+<div class="header-banner">
+  <img src="Steciblr_files/steciblrbanner.png" alt="Church banner or logo" />
+</div>
+
+<nav class="navbar">
+  <div class="menu-icon" onclick="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Church ▾</a>
+      <div class="dropdown-content">
+        <a href="church-leaders.html">Church Leaders</a>
+        <a href="church-history.html">Church History</a>
+        <a href="donations.html">Church Donations</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Parish ▾</a>
+      <div class="dropdown-content">
+        <a href="parish-vicar.html">Parish Vicars</a>
+        <a href="parish-history.html">Parish History</a>
+        <a href="lectionary.html">Lectionary</a>
+        <a href="parish-bulletin.html">Parish Bulletin</a>
+        <a href="executive-committee.html">Executive Committee</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Foundation ▾</a>
+      <div class="dropdown-content">
+        <a href="mission-vision.html">Mission & Vision</a>
+        <a href="our-belief.html">Our Faith</a>
+        <a href="bible-reading.html">365 Day Bible Reading</a>
+        <a href="bible-overview.html">Bible Overview</a>
+        <a href="list-of-sins.html">Biblical Classification of Sins</a>
+
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Liturgy ▾</a>
+      <div class="dropdown-content">
+        <a href="liturgy-holycommunion.html">English Holy communion worship</a>
+        <a href="liturgy-public.html">English Public worship</a>
+        <a href="manglish-liturgy-holycommunion.html">Holy Communion – Manglish</a>
+        <a href="manglish-liturgy-public.html">Public Worship – Manglish</a>
+        <a href="mal-liturgy-holycommunion.html">തിരുവത്താഴ ശുശ്രൂഷാ ക്രമം</a>
+        <a href="mal-liturgy-public.html">പരസ്യാരാധനാക്രമം</a>
+        <a href="funeral-malayalam.html">ശവസംസ്കാര ശുശ്രൂഷാക്രമം</a>
+        <a href="funeral-manglish.html">Funeral Service - Manglish</a>
+      </div>
+    </li>
+
+    <li><a href="message.html">Message</a></li>
+
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Gallery ▾</a>
+      <div class="dropdown-content">
+        <a href="photos-gallery.html">Photo Gallery</a>
+        <a href="videos-gallery.html">Video Gallery</a>
+      </div>
+    </li>
+
+    <li><a href="contact-us.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="mission-heading">
+  <h1><strong>Biblical Classification of Sins</strong></h1>
+  <p class="ml-subtitle">ബൈബിൾ അടിസ്ഥാനമാക്കിയുള്ള പാപങ്ങളുടെ വർഗ്ഗീകരണം</p>
+</div>
+
+<main class="main-content">
+
+  <!-- Search & Quick Jump -->
+  <div class="controls-card">
+    <input
+      type="text"
+      id="searchInput"
+      class="search-box"
+      placeholder="Search by sin, Malayalam term, or Bible verse (e.g., Pride, അഹങ്കാരം, Exodus 20)..."
+      aria-label="Search sins or scripture references"
+    />
+    <div class="toc-title">Jump to Section</div>
+    <nav class="toc-grid">
+      <a href="#sec-1">1. Against God</a>
+      <a href="#sec-2">2. Heart &amp; Mind</a>
+      <a href="#sec-3">3. Speech &amp; Tongue</a>
+      <a href="#sec-4">4. Fellow Humans</a>
+      <a href="#sec-5">5. Sexual &amp; Family</a>
+      <a href="#sec-6">6. Money &amp; Possessions</a>
+      <a href="#sec-7">7. Lifestyle &amp; Behaviour</a>
+      <a href="#sec-8">8. Church &amp; Ministry</a>
+      <a href="#sec-9">9. Sins of Omission</a>
+      <a href="#sec-10">10. Major Passages</a>
+      <a href="#sec-11">11. Seven Things God Hates</a>
+      <a href="#sec-12">12. Three Dimensions</a>
+      <a href="#conclusion">Conclusion</a>
+    </nav>
+  </div>
+
+  <!-- Section 1 -->
+  <section class="study-part" id="sec-1">
+    <h2>1. Sins against God <span class="ml-heading">ദൈവത്തിനെതിരായ പാപങ്ങൾ</span></h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>English</th>
+            <th class="ml">മലയാളം</th>
+            <th>Bible portion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-no">1</td><td>Idolatry</td><td class="col-ml">വിഗ്രഹാരാധന</td><td class="col-ref">Exodus 20:3–5</td></tr>
+          <tr><td class="col-no">2</td><td>Unbelief</td><td class="col-ml">അവിശ്വാസം</td><td class="col-ref">Hebrews 3:12</td></tr>
+          <tr><td class="col-no">3</td><td>Disobedience</td><td class="col-ml">അനുസരണക്കേട്</td><td class="col-ref">1 Samuel 15:22–23</td></tr>
+          <tr><td class="col-no">4</td><td>Rebellion</td><td class="col-ml">ദൈവത്തോടുള്ള മത്സരഭാവം</td><td class="col-ref">Isaiah 1:2</td></tr>
+          <tr><td class="col-no">5</td><td>Blasphemy</td><td class="col-ml">ദൈവദൂഷണം</td><td class="col-ref">Leviticus 24:16</td></tr>
+          <tr><td class="col-no">6</td><td>Taking God's name in vain</td><td class="col-ml">ദൈവനാമത്തെ വൃഥാ ഉപയോഗിക്കൽ</td><td class="col-ref">Exodus 20:7</td></tr>
+          <tr><td class="col-no">7</td><td>Testing God</td><td class="col-ml">ദൈവത്തെ പരീക്ഷിക്കൽ</td><td class="col-ref">Deuteronomy 6:16</td></tr>
+          <tr><td class="col-no">8</td><td>Rejecting God's Word</td><td class="col-ml">ദൈവവചനം തള്ളിക്കളയൽ</td><td class="col-ref">1 Samuel 15:23</td></tr>
+          <tr><td class="col-no">9</td><td>Hypocrisy in worship</td><td class="col-ml">കപടഭക്തി</td><td class="col-ref">Isaiah 29:13</td></tr>
+          <tr><td class="col-no">10</td><td>Forgetting God</td><td class="col-ml">ദൈവത്തെ മറക്കൽ</td><td class="col-ref">Deuteronomy 8:11</td></tr>
+          <tr><td class="col-no">11</td><td>Loving the world</td><td class="col-ml">ലോകത്തെ സ്നേഹിക്കൽ</td><td class="col-ref">1 John 2:15–16</td></tr>
+          <tr><td class="col-no">12</td><td>Resisting the Holy Spirit</td><td class="col-ml">പരിശുദ്ധാത്മാവിനോട് എതിർത്തുനിൽക്കൽ</td><td class="col-ref">Acts 7:51</td></tr>
+          <tr><td class="col-no">13</td><td>Grieving the Holy Spirit</td><td class="col-ml">പരിശുദ്ധാത്മാവിനെ ദുഃഖിപ്പിക്കൽ</td><td class="col-ref">Ephesians 4:30</td></tr>
+          <tr><td class="col-no">14</td><td>Quenching the Spirit</td><td class="col-ml">പരിശുദ്ധാത്മാവിന്റെ പ്രവർത്തനത്തെ കെടുത്തിക്കളയൽ</td><td class="col-ref">1 Thessalonians 5:19</td></tr>
+          <tr><td class="col-no">15</td><td>Seeking other gods</td><td class="col-ml">അന്യദൈവങ്ങളെ അന്വേഷിക്കൽ</td><td class="col-ref">Deuteronomy 6:14</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="study-part" id="sec-2">
+    <h2>2. Sins of the heart and mind <span class="ml-heading">ഹൃദയത്തിലും ചിന്തയിലും ഉള്ള പാപങ്ങൾ</span></h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>English</th>
+            <th class="ml">മലയാളം</th>
+            <th>Bible portion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-no">1</td><td>Pride</td><td class="col-ml">അഹങ്കാരം</td><td class="col-ref">Proverbs 16:18</td></tr>
+          <tr><td class="col-no">2</td><td>Arrogance</td><td class="col-ml">ഗർവ്വം</td><td class="col-ref">Proverbs 8:13</td></tr>
+          <tr><td class="col-no">3</td><td>Jealousy</td><td class="col-ml">അസൂയ</td><td class="col-ref">James 3:14–16</td></tr>
+          <tr><td class="col-no">4</td><td>Envy</td><td class="col-ml">കുശുമ്പ് / അസൂയ</td><td class="col-ref">Galatians 5:21</td></tr>
+          <tr><td class="col-no">5</td><td>Hatred</td><td class="col-ml">വിദ്വേഷം</td><td class="col-ref">1 John 3:15</td></tr>
+          <tr><td class="col-no">6</td><td>Greed</td><td class="col-ml">അത്യാഗ്രഹം</td><td class="col-ref">Luke 12:15</td></tr>
+          <tr><td class="col-no">7</td><td>Covetousness</td><td class="col-ml">മോഹം / പരദ്രവ്യാഗ്രഹം</td><td class="col-ref">Exodus 20:17</td></tr>
+          <tr><td class="col-no">8</td><td>Lust</td><td class="col-ml">കാമമോഹം</td><td class="col-ref">Matthew 5:28</td></tr>
+          <tr><td class="col-no">9</td><td>Evil thoughts</td><td class="col-ml">ദുഷ്ചിന്തകൾ</td><td class="col-ref">Matthew 15:19</td></tr>
+          <tr><td class="col-no">10</td><td>Bitterness</td><td class="col-ml">കയ്പ്പ് / പക</td><td class="col-ref">Hebrews 12:15</td></tr>
+          <tr><td class="col-no">11</td><td>Malice</td><td class="col-ml">ദുരുദ്ദേശം</td><td class="col-ref">Colossians 3:8</td></tr>
+          <tr><td class="col-no">12</td><td>Selfish ambition</td><td class="col-ml">സ്വാർത്ഥമോഹം</td><td class="col-ref">Philippians 2:3</td></tr>
+          <tr><td class="col-no">13</td><td>Unforgiving spirit</td><td class="col-ml">ക്ഷമിക്കാത്ത മനോഭാവം</td><td class="col-ref">Matthew 6:14–15</td></tr>
+          <tr><td class="col-no">14</td><td>Anger</td><td class="col-ml">കോപം</td><td class="col-ref">Ephesians 4:31</td></tr>
+          <tr><td class="col-no">15</td><td>Resentment</td><td class="col-ml">വിദ്വേഷവും പകയും</td><td class="col-ref">Leviticus 19:18</td></tr>
+          <tr><td class="col-no">16</td><td>Lack of love</td><td class="col-ml">സ്നേഹമില്ലായ്മ</td><td class="col-ref">1 Corinthians 13:1–3</td></tr>
+          <tr><td class="col-no">17</td><td>Worldliness</td><td class="col-ml">ലൗകികത</td><td class="col-ref">James 4:4</td></tr>
+          <tr><td class="col-no">18</td><td>Love of pleasure</td><td class="col-ml">ഭോഗപ്രിയത</td><td class="col-ref">2 Timothy 3:4</td></tr>
+          <tr><td class="col-no">19</td><td>Doubt</td><td class="col-ml">സംശയം</td><td class="col-ref">James 1:6–8</td></tr>
+          <tr><td class="col-no">20</td><td>Self-exaltation</td><td class="col-ml">സ്വയം ഉയർത്തൽ</td><td class="col-ref">Luke 14:11</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="study-part" id="sec-3">
+    <h2>3. Sins of speech and tongue <span class="ml-heading">നാവുകൊണ്ടും വാക്കുകൊണ്ടും ചെയ്യുന്ന പാപങ്ങൾ</span></h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>English</th>
+            <th class="ml">മലയാളം</th>
+            <th>Bible portion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-no">1</td><td>Lying</td><td class="col-ml">കള്ളം പറയൽ</td><td class="col-ref">Proverbs 12:22</td></tr>
+          <tr><td class="col-no">2</td><td>False witness</td><td class="col-ml">കള്ളസാക്ഷ്യം</td><td class="col-ref">Exodus 20:16</td></tr>
+          <tr><td class="col-no">3</td><td>Slander</td><td class="col-ml">അപവാദം പറയൽ</td><td class="col-ref">Ephesians 4:31</td></tr>
+          <tr><td class="col-no">4</td><td>Gossip</td><td class="col-ml">പരദൂഷണം</td><td class="col-ref">Romans 1:29</td></tr>
+          <tr><td class="col-no">5</td><td>Backbiting</td><td class="col-ml">പുറകിൽ കുറ്റം പറയൽ</td><td class="col-ref">2 Corinthians 12:20</td></tr>
+          <tr><td class="col-no">6</td><td>Cursing</td><td class="col-ml">ശപിക്കൽ</td><td class="col-ref">James 3:9–10</td></tr>
+          <tr><td class="col-no">7</td><td>Abusive language</td><td class="col-ml">ദുഷിച്ച വാക്കുകൾ</td><td class="col-ref">Colossians 3:8</td></tr>
+          <tr><td class="col-no">8</td><td>Boasting</td><td class="col-ml">പ്രശംസിച്ചുപറയൽ</td><td class="col-ref">James 4:16</td></tr>
+          <tr><td class="col-no">9</td><td>Flattery</td><td class="col-ml">മുഖസ്തുതി</td><td class="col-ref">Psalm 12:2–3</td></tr>
+          <tr><td class="col-no">10</td><td>Quarrelling</td><td class="col-ml">വാക്കുതർക്കം</td><td class="col-ref">2 Timothy 2:23</td></tr>
+          <tr><td class="col-no">11</td><td>Foolish talk</td><td class="col-ml">ബുദ്ധിഹീനമായ സംസാരം</td><td class="col-ref">Ephesians 5:4</td></tr>
+          <tr><td class="col-no">12</td><td>Corrupt communication</td><td class="col-ml">ദുഷിച്ച സംസാരം</td><td class="col-ref">Ephesians 4:29</td></tr>
+          <tr><td class="col-no">13</td><td>Mockery</td><td class="col-ml">പരിഹാസം</td><td class="col-ref">Proverbs 14:9</td></tr>
+          <tr><td class="col-no">14</td><td>Rumour spreading</td><td class="col-ml">കിംവദന്തി പ്രചരിപ്പിക്കൽ</td><td class="col-ref">Leviticus 19:16</td></tr>
+          <tr><td class="col-no">15</td><td>Uncontrolled speech</td><td class="col-ml">നിയന്ത്രണമില്ലാത്ത സംസാരം</td><td class="col-ref">James 1:26</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="study-part" id="sec-4">
+    <h2>4. Sins against fellow human beings <span class="ml-heading">സഹമനുഷ്യർക്കെതിരായ പാപങ്ങൾ</span></h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>English</th>
+            <th class="ml">മലയാളം</th>
+            <th>Bible portion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-no">1</td><td>Murder</td><td class="col-ml">കൊലപാതകം</td><td class="col-ref">Exodus 20:13</td></tr>
+          <tr><td class="col-no">2</td><td>Violence</td><td class="col-ml">അക്രമം</td><td class="col-ref">Genesis 6:11</td></tr>
+          <tr><td class="col-no">3</td><td>Stealing</td><td class="col-ml">മോഷണം</td><td class="col-ref">Exodus 20:15</td></tr>
+          <tr><td class="col-no">4</td><td>Cheating</td><td class="col-ml">വഞ്ചന</td><td class="col-ref">Leviticus 19:13</td></tr>
+          <tr><td class="col-no">5</td><td>Oppression</td><td class="col-ml">പീഡനം</td><td class="col-ref">Isaiah 10:1–2</td></tr>
+          <tr><td class="col-no">6</td><td>Injustice</td><td class="col-ml">അനീതി</td><td class="col-ref">Micah 6:8</td></tr>
+          <tr><td class="col-no">7</td><td>Exploitation</td><td class="col-ml">ചൂഷണം</td><td class="col-ref">Amos 8:4–6</td></tr>
+          <tr><td class="col-no">8</td><td>Dishonesty</td><td class="col-ml">സത്യസന്ധതയില്ലായ്മ</td><td class="col-ref">Proverbs 11:1</td></tr>
+          <tr><td class="col-no">9</td><td>Revenge</td><td class="col-ml">പ്രതികാരം</td><td class="col-ref">Romans 12:19</td></tr>
+          <tr><td class="col-no">10</td><td>Unforgiveness</td><td class="col-ml">ക്ഷമിക്കാതിരിക്കൽ</td><td class="col-ref">Matthew 18:21–35</td></tr>
+          <tr><td class="col-no">11</td><td>Partiality</td><td class="col-ml">പക്ഷപാതം</td><td class="col-ref">James 2:1–9</td></tr>
+          <tr><td class="col-no">12</td><td>Disrespecting parents</td><td class="col-ml">മാതാപിതാക്കളെ അനാദരിക്കൽ</td><td class="col-ref">Exodus 20:12</td></tr>
+          <tr><td class="col-no">13</td><td>Betrayal</td><td class="col-ml">വഞ്ചന / വിശ്വാസവഞ്ചന</td><td class="col-ref">Luke 22:48</td></tr>
+          <tr><td class="col-no">14</td><td>Causing others to stumble</td><td class="col-ml">മറ്റുള്ളവർക്ക് ഇടർച്ച വരുത്തൽ</td><td class="col-ref">Romans 14:13</td></tr>
+          <tr><td class="col-no">15</td><td>Neglecting the needy</td><td class="col-ml">ദരിദ്രരെ അവഗണിക്കൽ</td><td class="col-ref">1 John 3:17</td></tr>
+          <tr><td class="col-no">16</td><td>Withholding wages</td><td class="col-ml">കൂലി കൊടുക്കാതിരിക്കൽ</td><td class="col-ref">James 5:4</td></tr>
+          <tr><td class="col-no">17</td><td>Oppressing widows and orphans</td><td class="col-ml">വിധവകളെയും അനാഥരെയും പീഡിപ്പിക്കൽ</td><td class="col-ref">James 1:27</td></tr>
+          <tr><td class="col-no">18</td><td>Lack of compassion</td><td class="col-ml">കരുണയില്ലായ്മ</td><td class="col-ref">Matthew 25:41–45</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section class="study-part" id="sec-5">
+    <h2>5. Sexual and family-related sins <span class="ml-heading">ലൈംഗികവും കുടുംബബന്ധങ്ങളുമായി ബന്ധപ്പെട്ട പാപങ്ങൾ</span></h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>English</th>
+            <th class="ml">മലയാളം</th>
+            <th>Bible portion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-no">1</td><td>Adultery</td><td class="col-ml">വ്യഭിചാരം</td><td class="col-ref">Exodus 20:14</td></tr>
+          <tr><td class="col-no">2</td><td>Fornication</td><td class="col-ml">പരസംഗം</td><td class="col-ref">1 Corinthians 6:18</td></tr>
+          <tr><td class="col-no">3</td><td>Incest</td><td class="col-ml">രക്തബന്ധത്തിലുള്ളവരുമായുള്ള ലൈംഗികബന്ധം</td><td class="col-ref">Leviticus 18:6–18</td></tr>
+          <tr><td class="col-no">4</td><td>Prostitution</td><td class="col-ml">വേശ്യാവൃത്തി</td><td class="col-ref">1 Corinthians 6:15–16</td></tr>
+          <tr><td class="col-no">5</td><td>Lustful looking</td><td class="col-ml">കാമമോഹത്തോടെ നോക്കൽ</td><td class="col-ref">Matthew 5:28</td></tr>
+          <tr><td class="col-no">6</td><td>Sexual immorality</td><td class="col-ml">ലൈംഗിക അധാർമ്മികത</td><td class="col-ref">Galatians 5:19</td></tr>
+          <tr><td class="col-no">7</td><td>Unfaithfulness in marriage</td><td class="col-ml">ദാമ്പത്യ അവിശ്വസ്തത</td><td class="col-ref">Malachi 2:14–16</td></tr>
+          <tr><td class="col-no">8</td><td>Sexual exploitation</td><td class="col-ml">ലൈംഗിക ചൂഷണം</td><td class="col-ref">1 Thessalonians 4:6</td></tr>
+          <tr><td class="col-no">9</td><td>Drunkenness and immorality</td><td class="col-ml">മദ്യപാനവും അധാർമ്മികതയും</td><td class="col-ref">Romans 13:13</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 6 -->
+  <section class="study-part" id="sec-6">
+    <h2>6. Sins related to money and possessions <span class="ml-heading">ധനവും സമ്പത്തുമായി ബന്ധപ്പെട്ട പാപങ്ങൾ</span></h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>English</th>
+            <th class="ml">മലയാളം</th>
+            <th>Bible portion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-no">1</td><td>Love of money</td><td class="col-ml">ധനമോഹം</td><td class="col-ref">1 Timothy 6:10</td></tr>
+          <tr><td class="col-no">2</td><td>Greed</td><td class="col-ml">അത്യാഗ്രഹം</td><td class="col-ref">Ephesians 5:3</td></tr>
+          <tr><td class="col-no">3</td><td>Dishonest gain</td><td class="col-ml">അന്യായമായ ലാഭം</td><td class="col-ref">Proverbs 15:27</td></tr>
+          <tr><td class="col-no">4</td><td>Bribery</td><td class="col-ml">കൈക്കൂലി</td><td class="col-ref">Exodus 23:8</td></tr>
+          <tr><td class="col-no">5</td><td>Fraud</td><td class="col-ml">തട്ടിപ്പ്</td><td class="col-ref">Mark 10:19</td></tr>
+          <tr><td class="col-no">6</td><td>Business dishonesty</td><td class="col-ml">വ്യാപാരത്തിലെ വഞ്ചന</td><td class="col-ref">Leviticus 19:35–36</td></tr>
+          <tr><td class="col-no">7</td><td>Hoarding wealth</td><td class="col-ml">സമ്പത്ത് സ്വാർത്ഥമായി കുന്നുകൂട്ടൽ</td><td class="col-ref">James 5:1–3</td></tr>
+          <tr><td class="col-no">8</td><td>Trusting in riches</td><td class="col-ml">സമ്പത്തിൽ ആശ്രയിക്കൽ</td><td class="col-ref">Mark 10:24</td></tr>
+          <tr><td class="col-no">9</td><td>Neglecting the poor</td><td class="col-ml">ദരിദ്രരെ അവഗണിക്കൽ</td><td class="col-ref">Luke 16:19–31</td></tr>
+          <tr><td class="col-no">10</td><td>Unjust wages</td><td class="col-ml">അന്യായമായ കൂലി</td><td class="col-ref">James 5:4</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 7 -->
+  <section class="study-part" id="sec-7">
+    <h2>7. Sins of lifestyle and behaviour <span class="ml-heading">ജീവിതശൈലിയിലും പെരുമാറ്റത്തിലുമുള്ള പാപങ്ങൾ</span></h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>English</th>
+            <th class="ml">മലയാളം</th>
+            <th>Bible portion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-no">1</td><td>Drunkenness</td><td class="col-ml">മദ്യപാനം</td><td class="col-ref">Ephesians 5:18</td></tr>
+          <tr><td class="col-no">2</td><td>Gluttony</td><td class="col-ml">അമിതഭക്ഷണം / തീറ്റക്കൊതി</td><td class="col-ref">Proverbs 23:20–21</td></tr>
+          <tr><td class="col-no">3</td><td>Laziness</td><td class="col-ml">മടിയൻ സ്വഭാവം</td><td class="col-ref">Proverbs 6:9–11</td></tr>
+          <tr><td class="col-no">4</td><td>Uncontrolled anger</td><td class="col-ml">നിയന്ത്രണമില്ലാത്ത കോപം</td><td class="col-ref">Proverbs 29:22</td></tr>
+          <tr><td class="col-no">5</td><td>Quarrelling</td><td class="col-ml">കലഹം</td><td class="col-ref">Galatians 5:20</td></tr>
+          <tr><td class="col-no">6</td><td>Dissension</td><td class="col-ml">ഭിന്നത സൃഷ്ടിക്കൽ</td><td class="col-ref">Romans 16:17</td></tr>
+          <tr><td class="col-no">7</td><td>Lack of self-control</td><td class="col-ml">ആത്മനിയന്ത്രണമില്ലായ്മ</td><td class="col-ref">2 Timothy 3:3</td></tr>
+          <tr><td class="col-no">8</td><td>Self-indulgence</td><td class="col-ml">സ്വയംഭോഗത്തിൽ മുഴുകൽ</td><td class="col-ref">James 5:5</td></tr>
+          <tr><td class="col-no">9</td><td>Unthankfulness</td><td class="col-ml">നന്ദിയില്ലായ്മ</td><td class="col-ref">2 Timothy 3:2</td></tr>
+          <tr><td class="col-no">10</td><td>Disobedience</td><td class="col-ml">അനുസരണക്കേട്</td><td class="col-ref">2 Timothy 3:2</td></tr>
+          <tr><td class="col-no">11</td><td>Foolishness</td><td class="col-ml">മൂഢത്തരം</td><td class="col-ref">Proverbs 24:9</td></tr>
+          <tr><td class="col-no">12</td><td>Disorderliness</td><td class="col-ml">ക്രമരഹിതമായ പെരുമാറ്റം</td><td class="col-ref">2 Thessalonians 3:11</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 8 -->
+  <section class="study-part" id="sec-8">
+    <h2>8. Sins within the church and Christian ministry <span class="ml-heading">സഭയിലും ക്രിസ്തീയ ശുശ്രൂഷയിലും സംഭവിക്കുന്ന പാപങ്ങൾ</span></h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>English</th>
+            <th class="ml">മലയാളം</th>
+            <th>Bible portion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-no">1</td><td>Hypocrisy</td><td class="col-ml">കാപട്യം</td><td class="col-ref">Matthew 23:27–28</td></tr>
+          <tr><td class="col-no">2</td><td>Spiritual pride</td><td class="col-ml">ആത്മീയ അഹങ്കാരം</td><td class="col-ref">Luke 18:11–14</td></tr>
+          <tr><td class="col-no">3</td><td>Seeking human recognition</td><td class="col-ml">മനുഷ്യരിൽനിന്നുള്ള പ്രശംസ ആഗ്രഹിക്കൽ</td><td class="col-ref">Matthew 6:1–2</td></tr>
+          <tr><td class="col-no">4</td><td>Loving positions and titles</td><td class="col-ml">സ്ഥാനമാനങ്ങളോടുള്ള ആസക്തി</td><td class="col-ref">Matthew 23:6–12</td></tr>
+          <tr><td class="col-no">5</td><td>Abuse of authority</td><td class="col-ml">അധികാരദുർവിനിയോഗം</td><td class="col-ref">1 Peter 5:2–3</td></tr>
+          <tr><td class="col-no">6</td><td>False teaching</td><td class="col-ml">വ്യാജോപദേശം</td><td class="col-ref">2 Peter 2:1</td></tr>
+          <tr><td class="col-no">7</td><td>False prophecy</td><td class="col-ml">വ്യാജപ്രവചനം</td><td class="col-ref">Jeremiah 23:16</td></tr>
+          <tr><td class="col-no">8</td><td>Creating divisions</td><td class="col-ml">സഭയിൽ ഭിന്നത സൃഷ്ടിക്കൽ</td><td class="col-ref">Titus 3:10–11</td></tr>
+          <tr><td class="col-no">9</td><td>Favouritism</td><td class="col-ml">മുഖപക്ഷം കാണിക്കൽ</td><td class="col-ref">James 2:1</td></tr>
+          <tr><td class="col-no">10</td><td>Neglecting spiritual gifts</td><td class="col-ml">ആത്മീയവരങ്ങളെ അവഗണിക്കൽ</td><td class="col-ref">1 Timothy 4:14</td></tr>
+          <tr><td class="col-no">11</td><td>Ministry for personal gain</td><td class="col-ml">സ്വാർത്ഥലാഭത്തിനുവേണ്ടിയുള്ള ശുശ്രൂഷ</td><td class="col-ref">1 Timothy 6:5</td></tr>
+          <tr><td class="col-no">12</td><td>Abandoning first love</td><td class="col-ml">ആദ്യസ്നേഹം വിട്ടുകളയൽ</td><td class="col-ref">Revelation 2:4</td></tr>
+          <tr><td class="col-no">13</td><td>Spiritual lukewarmness</td><td class="col-ml">ആത്മീയ ശീതോഷ്ണാവസ്ഥ</td><td class="col-ref">Revelation 3:15–16</td></tr>
+          <tr><td class="col-no">14</td><td>Tolerating false teaching</td><td class="col-ml">തെറ്റായ ഉപദേശങ്ങളെ അനുവദിക്കൽ</td><td class="col-ref">Revelation 2:20</td></tr>
+          <tr><td class="col-no">15</td><td>Denying Christ</td><td class="col-ml">ക്രിസ്തുവിനെ തള്ളിപ്പറയൽ</td><td class="col-ref">2 Timothy 2:12</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 9 -->
+  <section class="study-part" id="sec-9">
+    <h2>9. Sins of omission <span class="ml-heading">ചെയ്യേണ്ട നന്മ ചെയ്യാതിരിക്കുന്ന പാപങ്ങൾ</span></h2>
+    <p class="section-note">ഇത് വളരെ പ്രധാനപ്പെട്ട ഒരു വിഭാഗമാണ്. പാപം ചെയ്യുന്നത് മാത്രമല്ല, ചെയ്യേണ്ട നന്മ ചെയ്യാതിരിക്കുന്നതും പാപമാണ്.</p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>English</th>
+            <th class="ml">മലയാളം</th>
+            <th>Bible portion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-no">1</td><td>Not doing what is good</td><td class="col-ml">നന്മ ചെയ്യാതിരിക്കൽ</td><td class="col-ref">James 4:17</td></tr>
+          <tr><td class="col-no">2</td><td>Neglecting the needy</td><td class="col-ml">ആവശ്യക്കാരെ സഹായിക്കാതിരിക്കൽ</td><td class="col-ref">Proverbs 3:27</td></tr>
+          <tr><td class="col-no">3</td><td>Neglecting justice and mercy</td><td class="col-ml">നീതിയും കരുണയും അവഗണിക്കൽ</td><td class="col-ref">Matthew 23:23</td></tr>
+          <tr><td class="col-no">4</td><td>Failing to forgive</td><td class="col-ml">ക്ഷമിക്കാതിരിക്കൽ</td><td class="col-ref">Matthew 6:15</td></tr>
+          <tr><td class="col-no">5</td><td>Neglecting prayer</td><td class="col-ml">പ്രാർത്ഥനയിൽ വീഴ്ച വരുത്തൽ</td><td class="col-ref">1 Samuel 12:23</td></tr>
+          <tr><td class="col-no">6</td><td>Neglecting family responsibilities</td><td class="col-ml">കുടുംബ ഉത്തരവാദിത്വങ്ങൾ നിറവേറ്റാതിരിക്കൽ</td><td class="col-ref">1 Timothy 5:8</td></tr>
+          <tr><td class="col-no">7</td><td>Neglecting the Great Commission</td><td class="col-ml">സുവിശേഷപ്രഘോഷണ ഉത്തരവാദിത്വം അവഗണിക്കൽ</td><td class="col-ref">Matthew 28:19–20</td></tr>
+          <tr><td class="col-no">8</td><td>Failing to encourage others</td><td class="col-ml">മറ്റുള്ളവരെ പ്രോത്സാഹിപ്പിക്കാതിരിക്കൽ</td><td class="col-ref">Hebrews 3:13</td></tr>
+          <tr><td class="col-no">9</td><td>Hiding one's light</td><td class="col-ml">വെളിച്ചം മറച്ചുവെക്കൽ</td><td class="col-ref">Matthew 5:15–16</td></tr>
+          <tr><td class="col-no">10</td><td>Burying God-given talents</td><td class="col-ml">ദൈവം നൽകിയ താലന്തുകൾ ഉപയോഗിക്കാതിരിക്കൽ</td><td class="col-ref">Matthew 25:24–30</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+<!-- Section 10 -->
+  <section class="study-part" id="sec-10">
+    <h2>10. Major biblical passages listing multiple sins <span class="ml-heading">വിവിധ പാപങ്ങൾ വിവരിക്കുന്ന പ്രധാന ബൈബിൾ ഭാഗങ്ങൾ</span></h2>
+    <p class="section-note">ഈ ഭാഗങ്ങൾ ഒരുമിച്ച് പഠിക്കുന്നത് പാപങ്ങളെക്കുറിച്ചുള്ള ബൈബിളിന്റെ സമഗ്രമായ കാഴ്ചപ്പാട് മനസ്സിലാക്കാൻ സഹായിക്കും.</p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>English</th>
+            <th class="ml">മലയാളം</th>
+            <th>Bible portion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>The Ten Commandments</td>
+            <td class="col-ml">പത്തു കല്പനകൾ</td>
+            <td class="col-ref">Exodus 20:1–17</td>
+          </tr>
+          <tr>
+            <td>Seven things God hates</td>
+            <td class="col-ml">ദൈവം വെറുക്കുന്ന ഏഴ് കാര്യങ്ങൾ</td>
+            <td class="col-ref">Proverbs 6:16–19</td>
+          </tr>
+          <tr>
+            <td>Sins that defile from within the heart</td>
+            <td class="col-ml">ഹൃദയത്തിൽനിന്ന് പുറപ്പെടുന്ന പാപങ്ങൾ</td>
+            <td class="col-ref">Mark 7:20–23</td>
+          </tr>
+          <tr>
+            <td>Various forms of unrighteousness and evil</td>
+            <td class="col-ml">അനീതിയുടെയും ദുഷ്ടതയുടെയും വിവിധ രൂപങ്ങൾ</td>
+            <td class="col-ref">Romans 1:28–32</td>
+          </tr>
+          <tr>
+            <td>Characteristics of those who will not inherit the kingdom of God</td>
+            <td class="col-ml">ദൈവരാജ്യം അവകാശമാക്കാത്തവരുടെ സ്വഭാവങ്ങൾ</td>
+            <td class="col-ref">1 Corinthians 6:9–10</td>
+          </tr>
+          <tr>
+            <td>Sexual immorality, greed, idolatry, and related sins</td>
+            <td class="col-ml">അധാർമ്മികത, അത്യാഗ്രഹം, വിഗ്രഹാരാധന തുടങ്ങിയവ</td>
+            <td class="col-ref">1 Corinthians 5:9–11</td>
+          </tr>
+          <tr>
+            <td>Works of the flesh</td>
+            <td class="col-ml">ജഡത്തിന്റെ പ്രവൃത്തികൾ</td>
+            <td class="col-ref">Galatians 5:19–21</td>
+          </tr>
+          <tr>
+            <td>Sins in behaviour and speech</td>
+            <td class="col-ml">പെരുമാറ്റത്തിലും സംസാരത്തിലുമുള്ള പാപങ്ങൾ</td>
+            <td class="col-ref">Ephesians 4:25–31</td>
+          </tr>
+          <tr>
+            <td>Impurity, lustful desire, and greed</td>
+            <td class="col-ml">അശുദ്ധി, ദുർമോഹം, അത്യാഗ്രഹം</td>
+            <td class="col-ref">Ephesians 5:3–5</td>
+          </tr>
+          <tr>
+            <td>Earthly evil practices and desires</td>
+            <td class="col-ml">ഭൂമിയിലുള്ള ദുഷിച്ച സ്വഭാവങ്ങൾ</td>
+            <td class="col-ref">Colossians 3:5–9</td>
+          </tr>
+          <tr>
+            <td>Evil traits seen in people in the last days</td>
+            <td class="col-ml">അന്ത്യകാലത്ത് മനുഷ്യരിൽ കാണപ്പെടുന്ന ദുഷിച്ച സ്വഭാവങ്ങൾ</td>
+            <td class="col-ref">2 Timothy 3:1–5</td>
+          </tr>
+          <tr>
+            <td>Jealousy and selfish ambition</td>
+            <td class="col-ml">അസൂയയും സ്വാർത്ഥമോഹവും</td>
+            <td class="col-ref">James 3:14–16</td>
+          </tr>
+          <tr>
+            <td>Various sins and their consequences</td>
+            <td class="col-ml">വിവിധ പാപങ്ങളും അവയുടെ പരിണതഫലങ്ങളും</td>
+            <td class="col-ref">Revelation 21:8</td>
+          </tr>
+          <tr>
+            <td>Those who practice evil and falsehood</td>
+            <td class="col-ml">ദുഷ്ടത പ്രവർത്തിക്കുന്നവർ</td>
+            <td class="col-ref">Revelation 22:15</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <!-- Section 11 -->
+  <section class="study-part" id="sec-11">
+    <h2>11. Seven things God hates <span class="ml-heading">ദൈവം വെറുക്കുന്ന ഏഴ് കാര്യങ്ങൾ</span></h2>
+    <p class="scripture-ref">Proverbs 6:16–19 – <span class="ml">സദൃശവാക്യങ്ങൾ 6:16–19</span></p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>English</th>
+            <th class="ml">മലയാളം</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-no">1</td><td>A proud look</td><td class="col-ml">നിഗളമുള്ള കണ്ണുകൾ</td></tr>
+          <tr><td class="col-no">2</td><td>A lying tongue</td><td class="col-ml">വ്യാജമുള്ള നാവ്</td></tr>
+          <tr><td class="col-no">3</td><td>Hands that shed innocent blood</td><td class="col-ml">കുറ്റമില്ലാത്ത രക്തം ചൊരിയുന്ന കൈകൾ</td></tr>
+          <tr><td class="col-no">4</td><td>A heart that devises wicked plans</td><td class="col-ml">ദുഷ്ടചിന്തകൾ നിരൂപിക്കുന്ന ഹൃദയം</td></tr>
+          <tr><td class="col-no">5</td><td>Feet swift to run to evil</td><td class="col-ml">ദോഷം ചെയ്യുവാൻ ബദ്ധപ്പെടുന്ന കാലുകൾ</td></tr>
+          <tr><td class="col-no">6</td><td>A false witness who speaks lies</td><td class="col-ml">വ്യാജം പറയുന്ന കള്ളസാക്ഷി</td></tr>
+          <tr><td class="col-no">7</td><td>One who sows discord among brethren</td><td class="col-ml">സഹോദരന്മാരുടെ ഇടയിൽ കലഹം ഉണ്ടാക്കുന്നവൻ</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 12 -->
+  <section class="study-part" id="sec-12">
+    <h2>12. Three fundamental dimensions of sin <span class="ml-heading">പാപത്തിന്റെ മൂന്ന് അടിസ്ഥാന രൂപങ്ങൾ</span></h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>English</th>
+            <th class="ml">മലയാളം</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Sins of commission</strong></td>
+            <td class="col-ml">ചെയ്തുപോകുന്ന പാപങ്ങൾ</td>
+            <td>God forbids us from doing something, but we do it</td>
+          </tr>
+          <tr>
+            <td><strong>Sins of attitude</strong></td>
+            <td class="col-ml">മനോഭാവത്തിലെ പാപങ്ങൾ</td>
+            <td>Wrong attitudes and intentions in the heart</td>
+          </tr>
+          <tr>
+            <td><strong>Sins of omission</strong></td>
+            <td class="col-ml">ചെയ്യേണ്ടത് ചെയ്യാതിരിക്കുന്ന പാപങ്ങൾ</td>
+            <td>Failing to do what God expects us to do</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+  </section>
+
+  <!-- Conclusion -->
+  <section class="bible-summary-section" id="conclusion">
+<div class="solution-box">
+        <p><strong>The Bible teaches that sin is much deeper than individual wrong actions.</strong></p>
+    <ul class="central-message-list">
+      <li><strong>Sin in the heart</strong> – <span class="ml">ഹൃദയത്തിലെ പാപം</span>: <strong style="color: var(--primary-maroon);">Matthew 15:19</strong></li>
+      <li><strong>Sin in thoughts</strong> – <span class="ml">ചിന്തയിലെ പാപം</span>: <strong style="color: var(--primary-maroon);">Matthew 5:28</strong></li>
+      <li><strong>Sin in words</strong> – <span class="ml">വാക്കുകളിലെ പാപം</span>: <strong style="color: var(--primary-maroon);">Matthew 12:36–37</strong></li>
+      <li><strong>Sin in actions</strong> – <span class="ml">പ്രവൃത്തികളിലെ പാപം</span>: <strong style="color: var(--primary-maroon);">Galatians 5:19–21</strong></li>
+      <li><strong>Sin through omission</strong> – <span class="ml">ചെയ്യേണ്ട നന്മ ചെയ്യാതിരിക്കുന്ന പാപം</span>: <strong style="color: var(--primary-maroon);">James 4:17</strong></li>
+    </ul>
+</div>
+    <div class="solution-box">
+      <p><strong>The ultimate solution is not merely avoiding sinful activities but repentance, transformation of the heart and a renewed life in Christ.</strong></p>
+      <ul class="central-message-list" style="margin-bottom: 0;">
+        <li><strong>Romans 12:2</strong> – <span class="ml">മനസ്സിന്റെ പുതുക്കം.</span></li>
+        <li><strong>1 John 1:9</strong> – <span class="ml">പാപങ്ങളെ ഏറ്റുപറഞ്ഞ് ക്ഷമ പ്രാപിക്കൽ.</span></li>
+        <li><strong>2 Corinthians 5:17</strong> – <span class="ml">ക്രിസ്തുവിൽ പുതിയ സൃഷ്ടി.</span></li>
+        <li><strong>Galatians 5:16</strong> – <span class="ml">ആത്മാവിനെ അനുസരിച്ച് നടക്കുക.</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h4 class="footer-heading">Quick Links</h4>
+      <ul class="quick-links">
+        <li><a href="lectionary.html">Lectionary - Scripture reading</a></li>
+        <li><a href="parish-bulletin.html">Parish Bulletin</a></li>
+        <li><a href="our-belief.html">Our Faith - What we believe</a></li>
+        <li><a href="bible-reading.html">365 Days Bible Reading</a></li>
+        <li><a href="https://jmbc.ac.in/" target="_blank" rel="noopener noreferrer">Jubilee Memorial Bible College</a></li>
+        <li><a href="contact-us.html">Parish Location</a></li>
+        <li><a href="parish-history.html">Bangalore Parish History</a></li>
+        <li><a href="donations.html">Donations</a></li>
+        <li><a href="mal-liturgy-holycommunion.html">Liturgy - Malayalam Holy Communion</a></li>
+        <li><a href="manglish-liturgy-holycommunion.html">Liturgy - Manglish Holy Communion</a></li>
+        <li><a href="message.html">Message</a></li>
+      </ul>
+    </div>
+    <div class="footer-right">
+      <p style="font-size: 1.2em;"><strong>STECI Bangalore Parish</strong></p>
+      <p>#17,18, Church Lane, Defence Colony,<br> Kavery Nagar, Horamavu Agara, <br> Bangalore - 560 013</p>
+      <p> Vicar: <a href="tel:+919742699915" style="color: #FFFF99;">97426 99915</a>
+        <br> Treasurer: <a href="tel:+919742699916" style="color: #FFFF99;">97426 99916</a>
+        <br>Secretary: <a href="mailto:secysteciblr@yahoo.com" style="color: #FFFF99;">secysteciblr@yahoo.com</a>
+        <br>Treasurer: <a href="mailto:treassteciblr@yahoo.com" style="color: #FFFF99;">treassteciblr@yahoo.com</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("nav-links");
+    nav.classList.toggle("active");
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const currentSubmenu = this.nextElementSibling;
+
+          document.querySelectorAll('.dropdown-content').forEach(other => {
+            if (other !== currentSubmenu) {
+              other.style.display = 'none';
+            }
+          });
+
+          if (currentSubmenu.style.display === 'block') {
+            currentSubmenu.style.display = 'none';
+          } else {
+            currentSubmenu.style.display = 'block';
+          }
+        }
+      });
+    });
+  });
+
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.onscroll = function() {
+    if (backToTopBtn) {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    }
+  };
+
+  if (backToTopBtn) {
+    backToTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  }
+
+  const searchInput = document.getElementById('searchInput');
+  const sections = document.querySelectorAll('.study-part');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase().trim();
+
+      sections.forEach(section => {
+        const rows = section.querySelectorAll('tbody tr');
+        let visibleRows = 0;
+
+        rows.forEach(row => {
+          const text = row.textContent.toLowerCase();
+          const match = text.includes(query);
+          row.style.display = match ? '' : 'none';
+          if (match) visibleRows++;
+        });
+
+        section.style.display = visibleRows > 0 || query === '' ? '' : 'none';
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
